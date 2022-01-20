@@ -1,0 +1,22 @@
+# Triggers when the game starts
+on_game_start = {
+	events = {
+		verustart.1 				# Set Global Flag
+	}
+}
+
+# Executed as a leader has died
+# This = Country
+# From = Leader
+on_leader_death = {
+	events = {
+		veru.5500    			# Remove Grateful Leader modifier when installed vassal leader dies
+	}
+}
+
+# No scope, like on_game_start
+on_bi_yearly_pulse = {
+	events = {
+		veru_l.1000				# Subject Loyalty Pulse
+	}
+}

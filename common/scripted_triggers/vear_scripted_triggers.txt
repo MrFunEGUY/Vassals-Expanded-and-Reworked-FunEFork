@@ -1,0 +1,64 @@
+is_vear_vassal = {
+	OR = {
+		is_subject_type = vervassal
+		is_subject_type = vertributary
+		is_subject_type = versubsidiary
+		is_subject_type = verappendage
+		is_subject_type = verautonomous
+		is_subject_type = verbeneficiary
+		is_subject_type = verdisciple
+		is_subject_type = verfoederatus
+		is_subject_type = verjrpartner
+		is_subject_type = verpuppet
+		is_subject_type = verserf
+		is_subject_type = versister
+		is_subject_type = verorganic
+		is_subject_type = verparallel
+		is_subject_type = verblood
+		is_subject_type = verdevotee
+		is_subject_type = verkobun
+		is_subject_type = versupplier
+		is_subject_type = verworshipper
+		is_subject_type = verdebtor
+		is_subject_type = versubscriber
+		is_subject_type = verarmsdealer
+		is_subject_type = versubcontractor
+		is_subject_type = verdependency
+	}
+}
+
+is_vear_vassal_reform = {
+	OR = {
+		# Default
+		is_subject_type = protectorate
+		is_subject_type = vervassal
+		is_subject_type = vassal
+		is_subject_type = vertributary
+		is_subject_type = tributary
+		is_subject_type = versubsidiary
+		is_subject_type = subsidiary
+		# Regular
+		is_subject_type = verappendage
+		is_subject_type = verautonomous
+		is_subject_type = verbeneficiary
+		is_subject_type = verdisciple
+		is_subject_type = verfoederatus
+		is_subject_type = verjrpartner
+		is_subject_type = verpuppet
+		is_subject_type = verserf
+		is_subject_type = versister
+		is_subject_type = verorganic
+		is_subject_type = verparallel
+		is_subject_type = verblood
+		# Megacorp
+		is_subject_type = verdevotee
+		is_subject_type = verkobun
+		is_subject_type = versupplier
+		is_subject_type = verworshipper
+		is_subject_type = verdebtor
+		is_subject_type = versubscriber
+		is_subject_type = verarmsdealer
+		is_subject_type = versubcontractor
+		is_subject_type = verdependency
+	}
+}
