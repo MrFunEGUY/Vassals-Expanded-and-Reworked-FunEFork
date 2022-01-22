@@ -12,7 +12,10 @@ country_event = {
 		# Count how many valid Subject States there are
 		every_subject = {
 			limit = {
-				NOT = { is_subject_type = devstate }
+				NOR = {
+					is_subject_type = devstate
+					is_subject_type = satrapy
+				}
 			}
 			set_country_flag = subject_country
 			overlord = { change_variable = { which = veru_total_subjects value = 1 } }

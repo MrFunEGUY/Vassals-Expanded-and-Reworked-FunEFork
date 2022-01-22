@@ -61,6 +61,7 @@ country_event = {
 		NOR = {
 			is_subject_type = devstate
 			is_subject_type = dummy_vassal
+			is_subject_type = satrapy
 			# z Expanded Traits, Civics, Pops, and More
 			is_subject_type = duchy
 			# Expanded Gestalts: Forgotten Queens
