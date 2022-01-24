@@ -1007,7 +1007,7 @@ country_event = {
 		}
 	}
 
-	# Transform into Member State (Decentralized Empires)
+	# Transform into Member State [Decentralized Empires]
 	option = {
 		allow = {
 			custom_tooltip = {
@@ -1045,6 +1045,139 @@ country_event = {
 				set_subject_of = {
 					who = ROOT
 					subject_type = member_state
+				}
+			}
+			get_intervention_effect = yes
+		}
+	}
+
+	# Transform into Duchy (z Expanded Traits, Civics, Pops, and More)
+	option = {
+		name = SUBJECT_duchy
+		custom_tooltip = SUBJECT_DESC_duchy
+		trigger = {
+			has_global_flag = expanded_pops_active
+			has_valid_civic = civic_feudal_realm
+		}
+		ai_chance = {
+			factor = 10
+		}
+		hidden_effect = {
+			from = {
+				set_subject_of = {
+					who = ROOT
+					subject_type = duchy
+				}
+			}
+		}
+	}
+
+	# Transform into Foundry Colony [Government Variety Pack]
+	option = {
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru
+				has_resource = { type = influence amount >= 100 }
+			}
+			NOT = { any_subject = { is_subject_type = lrsk_gvp_vassal_foundry } }
+		}
+		add_resource = { influence = -100 }
+		name = SUBJECT_lrsk_gvp_vassal_foundry
+		custom_tooltip = SUBJECT_DESC_lrsk_gvp_vassal_foundry
+		trigger = {
+			has_global_flag = lrsk_government_variety_pack_mod_active
+			has_valid_civic = lrsk_gov_var_civic_imperial_economy
+			event_target:chosen_subject = { NOT = { has_authority = auth_machine_intelligence } }
+		}
+		hidden_effect = {
+			event_target:chosen_subject = {
+				set_subject_of = {
+					who = ROOT
+					subject_type = lrsk_gvp_vassal_foundry
+				}
+			}
+			get_intervention_effect = yes
+		}
+	}
+
+	# Transform into Market Colony [Government Variety Pack]
+	option = {
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru
+				has_resource = { type = influence amount >= 100 }
+			}
+			NOT = { any_subject = { is_subject_type = lrsk_gvp_vassal_market } }
+		}
+		add_resource = { influence = -100 }
+		name = SUBJECT_lrsk_gvp_vassal_market
+		custom_tooltip = SUBJECT_DESC_lrsk_gvp_vassal_market
+		trigger = {
+			has_global_flag = lrsk_government_variety_pack_mod_active
+			has_valid_civic = lrsk_gov_var_civic_imperial_economy
+			event_target:chosen_subject = { NOT = { has_authority = auth_machine_intelligence } }
+		}
+		hidden_effect = {
+			event_target:chosen_subject = {
+				set_subject_of = {
+					who = ROOT
+					subject_type = lrsk_gvp_vassal_market
+				}
+			}
+			get_intervention_effect = yes
+		}
+	}
+
+	# Transform into Trophy Colony [Government Variety Pack]
+	option = {
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru
+				has_resource = { type = influence amount >= 100 }
+			}
+			NOT = { any_subject = { is_subject_type = lrsk_gvp_vassal_trophy } }
+		}
+		add_resource = { influence = -100 }
+		name = SUBJECT_lrsk_gvp_vassal_trophy
+		custom_tooltip = SUBJECT_DESC_lrsk_gvp_vassal_trophy
+		trigger = {
+			has_global_flag = lrsk_government_variety_pack_mod_active
+			has_valid_civic = lrsk_gov_var_civic_imperial_economy
+			event_target:chosen_subject = { NOT = { has_authority = auth_machine_intelligence } }
+		}
+		hidden_effect = {
+			event_target:chosen_subject = {
+				set_subject_of = {
+					who = ROOT
+					subject_type = lrsk_gvp_vassal_trophy
+				}
+			}
+			get_intervention_effect = yes
+		}
+	}
+
+	# Transform into Prospecting Colony [Government Variety Pack]
+	option = {
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru
+				has_resource = { type = influence amount >= 100 }
+			}
+			NOT = { any_subject = { is_subject_type = lrsk_gvp_vassal_prospector } }
+		}
+		add_resource = { influence = -100 }
+		name = SUBJECT_lrsk_gvp_vassal_prospector
+		custom_tooltip = SUBJECT_DESC_lrsk_gvp_vassal_prospector
+		trigger = {
+			has_global_flag = lrsk_government_variety_pack_mod_active
+			has_valid_civic = lrsk_gov_var_civic_imperial_economy
+			event_target:chosen_subject = { NOT = { has_authority = auth_machine_intelligence } }
+		}
+		hidden_effect = {
+			event_target:chosen_subject = {
+				set_subject_of = {
+					who = ROOT
+					subject_type = lrsk_gvp_vassal_prospector
 				}
 			}
 			get_intervention_effect = yes
@@ -1528,7 +1661,7 @@ country_event = {
 				has_resource = { type = influence amount >= 300 }
 			}
 		}
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		hidden_effect = {
 			get_ethics_check_egal_auth = yes
 			event_target:chosen_subject = {
@@ -1554,7 +1687,7 @@ country_event = {
 				has_resource = { type = influence amount >= 300 }
 			}
 		}
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		hidden_effect = {
 			event_target:chosen_subject = {
 				get_ethics_check_egal_auth = yes
@@ -1580,7 +1713,7 @@ country_event = {
 				has_resource = { type = influence amount >= 300 }
 			}
 		}
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		hidden_effect = {
 			event_target:chosen_subject = {
 				get_ethics_check_fan = yes
@@ -1607,7 +1740,7 @@ country_event = {
 				has_resource = { type = influence amount >= 300 }
 			}
 		}
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		hidden_effect = {
 			event_target:chosen_subject = {
 				get_ethics_check_fan = yes
@@ -1633,7 +1766,7 @@ country_event = {
 				has_resource = { type = influence amount >= 300 }
 			}
 		}
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		hidden_effect = {
 			event_target:chosen_subject = {
 				get_ethics_check_auth_egal = yes
@@ -1660,7 +1793,7 @@ country_event = {
 				has_resource = { type = influence amount >= 300 }
 			}
 		}
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		hidden_effect = {
 			event_target:chosen_subject = {
 				get_ethics_check_auth_egal = yes
@@ -1687,7 +1820,7 @@ country_event = {
 				has_resource = { type = influence amount >= 300 }
 			}
 		}
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		hidden_effect = {
 			event_target:chosen_subject = {
 				get_ethics_check_auth_egal = yes
@@ -1713,7 +1846,7 @@ country_event = {
 				has_resource = { type = influence amount >= 300 }
 			}
 		}
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		hidden_effect = {
 			event_target:chosen_subject = {
 				get_ethics_check_fan = yes
@@ -1740,7 +1873,7 @@ country_event = {
 				has_resource = { type = influence amount >= 300 }
 			}
 		}
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		hidden_effect = {
 			event_target:chosen_subject = {
 				get_ethics_check_egal_auth = yes
@@ -1869,7 +2002,7 @@ country_event = {
 	option = { name = veru.back }
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.governor_leader_1
 		trigger = { check_variable = { which = total_governors value >= 1 } }
 		allow = {
@@ -1901,7 +2034,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.governor_leader_2
 		trigger = { check_variable = { which = total_governors value >= 2 } }
 		allow = {
@@ -1933,7 +2066,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.governor_leader_3
 		trigger = { check_variable = { which = total_governors value >= 3 } }
 		allow = {
@@ -1965,7 +2098,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.governor_leader_4
 		trigger = { check_variable = { which = total_governors value >= 4 } }
 		allow = {
@@ -1997,7 +2130,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.governor_leader_5
 		trigger = { check_variable = { which = total_governors value >= 5 } }
 		allow = {
@@ -2029,7 +2162,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.governor_leader_6
 		trigger = { check_variable = { which = total_governors value >= 6 } }
 		allow = {
@@ -2061,7 +2194,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.governor_leader_7
 		trigger = { check_variable = { which = total_governors value >= 7 } }
 		allow = {
@@ -2093,7 +2226,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.governor_leader_8
 		trigger = { check_variable = { which = total_governors value >= 8 } }
 		allow = {
@@ -2125,7 +2258,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.governor_leader_9
 		trigger = { check_variable = { which = total_governors value >= 9 } }
 		allow = {
@@ -2157,7 +2290,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.governor_leader_10
 		trigger = { check_variable = { which = total_governors value >= 10 } }
 		allow = {
@@ -2225,7 +2358,7 @@ country_event = {
 	option = { name = veru.back }
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.admiral_leader_1
 		trigger = { check_variable = { which = total_admirals value >= 1 } }
 		allow = {
@@ -2257,7 +2390,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.admiral_leader_2
 		trigger = { check_variable = { which = total_admirals value >= 2 } }
 		allow = {
@@ -2289,7 +2422,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.admiral_leader_3
 		trigger = { check_variable = { which = total_admirals value >= 3 } }
 		allow = {
@@ -2321,7 +2454,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.admiral_leader_4
 		trigger = { check_variable = { which = total_admirals value >= 4 } }
 		allow = {
@@ -2353,7 +2486,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.admiral_leader_5
 		trigger = { check_variable = { which = total_admirals value >= 5 } }
 		allow = {
@@ -2385,7 +2518,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.admiral_leader_6
 		trigger = { check_variable = { which = total_admirals value >= 6 } }
 		allow = {
@@ -2417,7 +2550,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.admiral_leader_7
 		trigger = { check_variable = { which = total_admirals value >= 7 } }
 		allow = {
@@ -2449,7 +2582,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.admiral_leader_8
 		trigger = { check_variable = { which = total_admirals value >= 8 } }
 		allow = {
@@ -2481,7 +2614,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.admiral_leader_9
 		trigger = { check_variable = { which = total_admirals value >= 9 } }
 		allow = {
@@ -2513,7 +2646,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.admiral_leader_10
 		trigger = { check_variable = { which = total_admirals value >= 10 } }
 		allow = {
@@ -2581,7 +2714,7 @@ country_event = {
 	option = { name = veru.back }
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.general_leader_1
 		trigger = { check_variable = { which = total_generals value >= 1 } }
 		allow = {
@@ -2613,7 +2746,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.general_leader_2
 		trigger = { check_variable = { which = total_generals value >= 2 } }
 		allow = {
@@ -2645,7 +2778,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.general_leader_3
 		trigger = { check_variable = { which = total_generals value >= 3 } }
 		allow = {
@@ -2677,7 +2810,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.general_leader_4
 		trigger = { check_variable = { which = total_generals value >= 4 } }
 		allow = {
@@ -2709,7 +2842,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.general_leader_5
 		trigger = { check_variable = { which = total_generals value >= 5 } }
 		allow = {
@@ -2741,7 +2874,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.general_leader_6
 		trigger = { check_variable = { which = total_generals value >= 6 } }
 		allow = {
@@ -2773,7 +2906,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.general_leader_7
 		trigger = { check_variable = { which = total_generals value >= 7 } }
 		allow = {
@@ -2805,7 +2938,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.general_leader_8
 		trigger = { check_variable = { which = total_generals value >= 8 } }
 		allow = {
@@ -2837,7 +2970,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.general_leader_9
 		trigger = { check_variable = { which = total_generals value >= 9 } }
 		allow = {
@@ -2869,7 +3002,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.general_leader_10
 		trigger = { check_variable = { which = total_generals value >= 10 } }
 		allow = {
@@ -2937,7 +3070,7 @@ country_event = {
 	option = { name = veru.back }
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.scientist_leader_1
 		trigger = { check_variable = { which = total_scientists value >= 1 } }
 		allow = {
@@ -2969,7 +3102,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.scientist_leader_2
 		trigger = { check_variable = { which = total_scientists value >= 2 } }
 		allow = {
@@ -3001,7 +3134,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.scientist_leader_3
 		trigger = { check_variable = { which = total_scientists value >= 3 } }
 		allow = {
@@ -3033,7 +3166,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.scientist_leader_4
 		trigger = { check_variable = { which = total_scientists value >= 4 } }
 		allow = {
@@ -3065,7 +3198,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.scientist_leader_5
 		trigger = { check_variable = { which = total_scientists value >= 5 } }
 		allow = {
@@ -3097,7 +3230,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.scientist_leader_6
 		trigger = { check_variable = { which = total_scientists value >= 6 } }
 		allow = {
@@ -3129,7 +3262,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.scientist_leader_7
 		trigger = { check_variable = { which = total_scientists value >= 7 } }
 		allow = {
@@ -3161,7 +3294,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.scientist_leader_8
 		trigger = { check_variable = { which = total_scientists value >= 8 } }
 		allow = {
@@ -3193,7 +3326,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.scientist_leader_9
 		trigger = { check_variable = { which = total_scientists value >= 9 } }
 		allow = {
@@ -3225,7 +3358,7 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -300 }
+		add_resource = { influence = -150 }
 		name = veru.5000.scientist_leader_10
 		trigger = { check_variable = { which = total_scientists value >= 10 } }
 		allow = {

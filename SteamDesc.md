@@ -87,6 +87,8 @@ Disloyal Subjects: 20 Years
 - Obviously credit to lpslucasps and their original mod. I never got to use  it, but it was great idea that I wanted to be able to use. Check out the original mod description for more info.
 https://steamcommunity.com/sharedfiles/filedetails/?id=1813104049
 
+- Spanish Localisation by [url=https://steamcommunity.com/profiles/76561198199986345]Darh[/url]. Thank you!
+
 
 [hr][/hr]
 

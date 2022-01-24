@@ -31,7 +31,7 @@
  SUBJECT_DESC_verblood: "Blood Tributaries pay a special tribute, the blood tax. Between every 15 and 20 years, 10% of their population is sent to their Overlord as tribute. As this subject type is seem as little more than a source of slaves by their Overlord, it has no diplomatic freedom whatsoever, being unable to expand or wage war independently.\n\nCan Expand: £trigger_no£\nCan Wage War: £trigger_no£\nProtected: £trigger_yes£\nJoins Overlord's Wars: £trigger_yes£\nCan Integrate: £trigger_no£\nTribute: §Y10%§! £pops£ §HPops§! every 15-20 years\nSpecial Effect: §R-1000§! Opinion towards Overlord"
  # Corporate Subjects
  SUBJECT_versubsidiary: "$SUBJECT_subsidiary$"
- SUBJECT_DESC_versubsidiary: "Subsidiaries are diplomatically subservient to and protected by their Corporate Overlord, but are permitted to expand and wage wars among themselves. They also pay §Y25%§! of their monthly Energy Credits in tribute."
+ SUBJECT_DESC_versubsidiary: "Subsidiaries are diplomatically subservient to and protected by their Corporate Overlord, but are permitted to expand and wage wars among themselves.\n\nCan Expand: £trigger_yes£\nCan Wage War: £trigger_yes£\nProtected: £trigger_yes£\nJoins Overlord's Wars: £trigger_yes£\nCan Integrate: £trigger_no£\nTribute: §Y25%§! £energy£ §HEnergy§!"
  SUBJECT_verdevotee: "Devotee"
  SUBJECT_DESC_verdevotee: "Devotees pay §Y20%§! of their monthly Energy Credits and §Y5%§! of their montlhy Unity in tribute but are permitted to expand and wage wars.\n\nCan Expand: £trigger_yes£\nCan Wage War: £trigger_yes£\nProtected: £trigger_yes£\nJoins Overlord's Wars: £trigger_yes£\nCan Integrate: £trigger_no£\nTribute: §Y20%§! £energy£ §HEnergy§!, §Y5%§! £unity£ §HUnity§!"
  SUBJECT_verkobun: "Kobun"

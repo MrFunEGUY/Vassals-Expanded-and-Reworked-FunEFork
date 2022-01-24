@@ -562,6 +562,42 @@ country_event = {
 		}
 	}
 
+	# Transform into Member State [Decentralized Empires]
+	option = {
+		name = veru.3000.member_state
+		custom_tooltip = SUBJECT_DESC_member_state
+		trigger = {
+			has_global_flag = gf_regentmaker_active
+			has_ascension_perk = ap_decentralization
+			event_target:chosen_subject = { NOT = { has_authority = auth_machine_intelligence } }
+			OR = {
+				has_valid_civic = civic_feudal_realm
+				has_ethic = ethic_egalitarian
+				has_ethic = ethic_fanatic_egalitarian
+				has_ethic = ethic_pacifist
+				has_ethic = ethic_fanatic_pacifist
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				NOR = {
+					has_valid_civic = civic_barbaric_despoilers
+					has_valid_civic = civic_slaver_guilds
+				}
+			}
+		}
+		hidden_effect = {
+			event_target:chosen_subject = {
+				set_subject_of = {
+					who = ROOT
+					subject_type = member_state
+				}
+			}
+		}
+	}
+
 	# Transform into Duchy (z Expanded Traits, Civics, Pops, and More)
 	option = {
 		name = SUBJECT_duchy
@@ -578,6 +614,94 @@ country_event = {
 				set_subject_of = {
 					who = ROOT
 					subject_type = duchy
+				}
+			}
+		}
+	}
+
+	# Transform into Foundry Colony [Government Variety Pack]
+	option = {
+		name = SUBJECT_lrsk_gvp_vassal_foundry
+		custom_tooltip = SUBJECT_DESC_lrsk_gvp_vassal_foundry
+		allow = {
+			NOT = { any_subject = { is_subject_type = lrsk_gvp_vassal_foundry } }
+		}
+		trigger = {
+			has_global_flag = lrsk_government_variety_pack_mod_active
+			has_valid_civic = lrsk_gov_var_civic_imperial_economy
+			event_target:chosen_subject = { NOT = { has_authority = auth_machine_intelligence } }
+		}
+		hidden_effect = {
+			event_target:chosen_subject = {
+				set_subject_of = {
+					who = ROOT
+					subject_type = lrsk_gvp_vassal_foundry
+				}
+			}
+		}
+	}
+
+	# Transform into Market Colony [Government Variety Pack]
+	option = {
+		name = SUBJECT_lrsk_gvp_vassal_market
+		custom_tooltip = SUBJECT_DESC_lrsk_gvp_vassal_market
+		allow = {
+			NOT = { any_subject = { is_subject_type = lrsk_gvp_vassal_market } }
+		}
+		trigger = {
+			has_global_flag = lrsk_government_variety_pack_mod_active
+			has_valid_civic = lrsk_gov_var_civic_imperial_economy
+			event_target:chosen_subject = { NOT = { has_authority = auth_machine_intelligence } }
+		}
+		hidden_effect = {
+			event_target:chosen_subject = {
+				set_subject_of = {
+					who = ROOT
+					subject_type = lrsk_gvp_vassal_market
+				}
+			}
+		}
+	}
+
+	# Transform into Trophy Colony [Government Variety Pack]
+	option = {
+		name = SUBJECT_lrsk_gvp_vassal_trophy
+		custom_tooltip = SUBJECT_DESC_lrsk_gvp_vassal_trophy
+		allow = {
+			NOT = { any_subject = { is_subject_type = lrsk_gvp_vassal_trophy } }
+		}
+		trigger = {
+			has_global_flag = lrsk_government_variety_pack_mod_active
+			has_valid_civic = lrsk_gov_var_civic_imperial_economy
+			event_target:chosen_subject = { NOT = { has_authority = auth_machine_intelligence } }
+		}
+		hidden_effect = {
+			event_target:chosen_subject = {
+				set_subject_of = {
+					who = ROOT
+					subject_type = lrsk_gvp_vassal_trophy
+				}
+			}
+		}
+	}
+
+	# Transform into Prospecting Colony [Government Variety Pack]
+	option = {
+		name = SUBJECT_lrsk_gvp_vassal_prospector
+		custom_tooltip = SUBJECT_DESC_lrsk_gvp_vassal_prospector
+		allow = {
+			NOT = { any_subject = { is_subject_type = lrsk_gvp_vassal_prospector } }
+		}
+		trigger = {
+			has_global_flag = lrsk_government_variety_pack_mod_active
+			has_valid_civic = lrsk_gov_var_civic_imperial_economy
+			event_target:chosen_subject = { NOT = { has_authority = auth_machine_intelligence } }
+		}
+		hidden_effect = {
+			event_target:chosen_subject = {
+				set_subject_of = {
+					who = ROOT
+					subject_type = lrsk_gvp_vassal_prospector
 				}
 			}
 		}
@@ -605,8 +729,6 @@ country_event = {
 	option = {
 		name = SUBJECT_vervassal
 		custom_tooltip = SUBJECT_DESC_vervassal
-		trigger = {
-		}
 
 		hidden_effect = {
 			log = "ver.100: Leaving [Root.GetName] as Ver Vassal"
