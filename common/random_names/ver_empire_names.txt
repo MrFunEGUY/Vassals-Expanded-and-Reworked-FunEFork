@@ -9,8 +9,7 @@ empire_name_format = {
 			has_government = "ver_gov_single_party_republic"
 			is_pirate = no
 			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
+			is_fallen_empire = no
 		}
 	}
 	format = "format.dem_gen.1"
@@ -28,8 +27,7 @@ empire_name_format = {
 			has_government = "ver_gov_single_party_republic"
 			is_pirate = no
 			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
+			is_fallen_empire = no
 		}
 	}
 	format = "format.dem_gen.2"
@@ -47,8 +45,7 @@ empire_name_format = {
 			has_government = "ver_gov_single_party_republic"
 			is_pirate = no
 			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
+			is_fallen_empire = no
 		}
 	}
 	format = "format.dem_gen.3"
@@ -66,8 +63,7 @@ empire_name_format = {
 				has_government = "ver_gov_single_party_republic"
 			is_pirate = no
 			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
+			is_fallen_empire = no
 		}
 	}
 	format = "format.dem_gen.4"
@@ -85,8 +81,7 @@ empire_name_format = {
 			has_government = "ver_gov_single_party_republic"
 			is_pirate = no
 			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
+			is_fallen_empire = no
 		}
 	}
 	format = "format.dem_gen.5"

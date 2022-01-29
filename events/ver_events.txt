@@ -107,8 +107,7 @@ country_event = {
 		custom_tooltip = ver.100.puppet.tooltip
 		trigger = {
 			OR = {
-				has_ethic = ethic_authoritarian
-				has_ethic = ethic_fanatic_authoritarian
+				is_authoritarian = yes
 				has_valid_civic = civic_feudal_realm
 			}
 		}
@@ -148,8 +147,7 @@ country_event = {
 		custom_tooltip = ver.100.sister.tooltip
 		trigger = {
 			OR = {
-				has_ethic = ethic_egalitarian
-				has_ethic = ethic_fanatic_egalitarian
+				is_egalitarian = yes
 				has_valid_civic = civic_feudal_realm
 			}
 			from = {
@@ -226,8 +224,7 @@ country_event = {
 		custom_tooltip = ver.100.jrpartner.tooltip
 		trigger = {
 			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
+				is_materialist = yes
 				has_valid_civic = civic_feudal_realm
 			}
 		}
@@ -262,8 +259,7 @@ country_event = {
 		custom_tooltip = ver.100.foederatus.tooltip
 		trigger = {
 			OR = {
-				has_ethic = ethic_militarist
-				has_ethic = ethic_fanatic_militarist
+				is_militarist = yes
 				has_valid_civic = civic_feudal_realm
 			}
 			from = {
@@ -302,8 +298,7 @@ country_event = {
 		custom_tooltip = ver.100.autonomous.tooltip
 		trigger = {
 			OR = {
-				has_ethic = ethic_pacifist
-				has_ethic = ethic_fanatic_pacifist
+				is_pacifist = yes
 				has_valid_civic = civic_machine_servitor
 				has_valid_civic = civic_feudal_realm
 			}
@@ -342,10 +337,7 @@ country_event = {
 		name = ver.100.disciple
 		custom_tooltip = ver.100.disciple.tooltip
 		trigger = {
-			OR = {
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_spiritualist
-			}
+			is_spiritualist = yes
 		}
 		ai_chance = {
 			factor = 100
@@ -383,8 +375,7 @@ country_event = {
 		custom_tooltip = ver.100.beneficiary.tooltip
 		trigger = {
 			OR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
+				is_xenophile = yes
 				has_valid_civic = civic_feudal_realm
 			}
 		}
@@ -419,8 +410,7 @@ country_event = {
 		custom_tooltip = ver.100.serf.tooltip
 		trigger = {
 			OR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
+				is_xenophobe = yes
 				has_valid_civic = civic_feudal_realm
 			}
 		}
@@ -572,10 +562,8 @@ country_event = {
 			event_target:chosen_subject = { NOT = { has_authority = auth_machine_intelligence } }
 			OR = {
 				has_valid_civic = civic_feudal_realm
-				has_ethic = ethic_egalitarian
-				has_ethic = ethic_fanatic_egalitarian
-				has_ethic = ethic_pacifist
-				has_ethic = ethic_fanatic_pacifist
+				is_egalitarian = yes
+				is_pacifist = yes
 			}
 		}
 		ai_chance = {
