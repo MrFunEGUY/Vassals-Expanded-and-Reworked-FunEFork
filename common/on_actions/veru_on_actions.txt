@@ -5,18 +5,53 @@ on_game_start = {
 	}
 }
 
-# Executed as a leader has died
-# This = Country
-# From = Leader
-on_leader_death = {
+# no scope
+on_monthly_pulse = {
 	events = {
-		veru.5500    			# Remove Grateful Leader modifier when installed vassal leader dies
+		vermain.11 					# Removes no longer applicable modifiers
+		vermain.12 					# Reapply modifiers
+	}
+}
+
+# this = country
+on_monthly_pulse_country = {
+	events = {
+		vermain.13 					# Apply Parallel Processors effects
+		# vermain.2 				# Select all countries which are taxing its subjects
+		vermain.22 					# If the country has no more subjects, remove trade bonus
+		vermain.23 					# Apply taxes to any newly-acquired subject.
 	}
 }
 
 # No scope, like on_game_start
 on_bi_yearly_pulse = {
 	events = {
-		veru_l.1000				# Subject Loyalty Pulse
+		# veru_l.1000					# Subject Loyalty Pulse
+	}
+}
+
+# No scope, like on_game_start
+on_five_year_pulse_country = {
+	events = {
+		vermain.40 					# The Blood Tax
+	}
+}
+
+# Executed as a leader has died
+# This = Country
+# From = Leader
+on_leader_death = {
+	events = {
+		veru.5900    				# Remove Grateful Leader modifier when installed vassal leader dies
+	}
+}
+
+# A war has been lost
+# Root = Loser Warleader
+# From = Winner Warleader
+# FromFrom = War
+on_war_lost = {
+	events = {
+		veru.6220					# On Buffer Zone War lost
 	}
 }

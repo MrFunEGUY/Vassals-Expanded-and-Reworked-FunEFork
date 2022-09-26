@@ -2,36 +2,6 @@
 
 namespace = vermain
 
-# vermain.10: Call ver.11, which transform Vassals into custom subject types. (on_monthly_pulse_country)
-country_event = {
-	id = vermain.10
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-		is_overlord = yes
-		any_subject = {
-			OR = {
-				is_subject_type = vassal
-				is_subject_type = subsidiary
-				is_subject_type = tributary
-			}
-		}
-	}
-
-	immediate = {
-		every_subject = {
-			limit = {
-				OR = {
-					is_subject_type = vassal
-					is_subject_type = subsidiary
-					is_subject_type = tributary
-				}
-			}
-			country_event = { id = ver.11 }
-		}
-	}
-}
 
 # vermain.11: Removes no longer applicable modifiers. (on_monthly_pulse)
 event = {
@@ -44,10 +14,11 @@ event = {
 		# Removes Overlord Indoctrination from former Disciples and Worhsippers
 		every_country = {
 			limit = {
+				is_subject = yes
 				has_modifier = ver_overlord_indoctrination
 				OR = {
-					NOT = { is_subject_type = verdisciple }
-					NOT = { is_subject_type = verworshipper }
+					NOT = { any_agreement = { agreement_preset = preset_verdisciple } }
+					NOT = { any_agreement = { agreement_preset = preset_verworshipper } }
 					is_at_war_with = overlord
 				}
 			}
@@ -57,9 +28,10 @@ event = {
 		# Removes Demilitarized from former Autonomous Regions
 		every_country = {
 			limit = {
+				is_subject = yes
 				has_modifier = ver_demilitarized
 				OR = {
-					NOT = { is_subject_type = verautonomous }
+					NOT = { any_agreement = { agreement_preset = preset_verdevolved } }
 					is_at_war_with = overlord
 				}
 			}
@@ -69,10 +41,11 @@ event = {
 		# Removes Military Subsidies from former Foederati
 		every_country = {
 			limit = {
+				is_subject = yes
 				has_modifier = ver_military_subsidies
 				OR = {
-					NOT = { is_subject_type = verfoederatus }
-					NOT = { is_subject_type = verarmsdealer }
+					NOT = { any_agreement = { agreement_preset = preset_verfoederatus } }
+					NOT = { any_agreement = { agreement_preset = preset_verarmsdealer } }
 					is_at_war_with = overlord
 				}
 			}
@@ -82,9 +55,10 @@ event = {
 		# Removes Puppet State from former Puppets
 		every_country = {
 			limit = {
+				is_subject = yes
 				has_modifier = ver_puppet_state
 				OR = {
-					NOT = { is_subject_type = verpuppet }
+					NOT = { any_agreement = { agreement_preset = preset_verpuppet } }
 					is_at_war_with = overlord
 				}
 			}
@@ -94,9 +68,10 @@ event = {
 		# Removes Kobun from former Kobuns
 		every_country = {
 			limit = {
+				is_subject = yes
 				has_modifier = ver_kobun_malus
 				OR = {
-					NOT = { is_subject_type = verkobun }
+					NOT = { any_agreement = { agreement_preset = preset_verkobun } }
 					is_at_war_with = overlord
 				}
 			}
@@ -106,8 +81,9 @@ event = {
 		# Remove taxes from subject empires that are no longer taxed or former subject empires
 		every_country = {
 			limit = {
+				is_subject = yes
 				OR = {
-					is_country_type = default
+					is_country_type_with_subjects = yes
 					is_country_type = awakened_fallen_empire
 					is_country_type = ascended_empire
 				}
@@ -131,14 +107,14 @@ event = {
 		every_country = {
 			limit = {
 				OR = {
-					is_country_type = default
+					is_country_type_with_subjects = yes
 					is_country_type = awakened_fallen_empire
 					is_country_type = ascended_empire
 				}
 				has_authority = auth_machine_intelligence
 				OR = {
 					is_overlord = no
-					NOT = { any_subject = { is_subject_type = verparallel } }
+					NOT = { any_subject = { any_agreement = { agreement_preset = preset_verparallel } } }
 				}
 			}
 			ver_remove_parallel_processor_bonuses = yes
@@ -155,7 +131,8 @@ event = {
 	immediate = {
 		every_country = {
 			limit = {
-				is_subject_type = verautonomous
+				is_subject = yes
+				any_agreement = { agreement_preset = preset_verdevolved }
 				NOR = {
 					has_modifier = ver_demilitarized
 					is_at_war_with = overlord
@@ -165,9 +142,10 @@ event = {
 		}
 		every_country = {
 			limit = {
+				is_subject = yes
 				OR = {
-					is_subject_type = verfoederatus
-					is_subject_type = verarmsdealer
+					any_agreement = { agreement_preset = preset_verfoederatus }
+					any_agreement = { agreement_preset = preset_verarmsdealer }
 				}
 				NOR = {
 					has_modifier = ver_military_subsidies
@@ -178,7 +156,8 @@ event = {
 		}
 		every_country = {
 			limit = {
-				is_subject_type = verpuppet
+				is_subject = yes
+				any_agreement = { agreement_preset = preset_verpuppet }
 				NOR = {
 					has_modifier = ver_puppet_state
 					is_at_war_with = overlord
@@ -188,7 +167,8 @@ event = {
 		}
 		every_country = {
 			limit = {
-				is_subject_type = verkobun
+				is_subject = yes
+				any_agreement = { agreement_preset = preset_verkobun }
 				NOR = {
 					has_modifier = ver_kobun_malus
 					is_at_war_with = overlord
@@ -198,9 +178,10 @@ event = {
 		}
 		every_country = {
 			limit = {
+				is_subject = yes
 				OR = {
-					is_subject_type = verdisciple
-					is_subject_type = verworshipper
+					any_agreement = { agreement_preset = preset_verdisciple }
+					any_agreement = { agreement_preset = preset_verworshipper }
 				}
 				NOR = {
 					has_modifier = ver_overlord_indoctrination
@@ -220,13 +201,13 @@ country_event = {
 
 	trigger = {
 		OR = {
-			is_country_type = default
+			is_country_type_with_subjects = yes
 			is_country_type = awakened_fallen_empire
 			is_country_type = ascended_empire
 		}
 		has_authority = auth_machine_intelligence
 		is_overlord = yes
-		any_subject = {	is_subject_type = verparallel }
+		any_subject = {	any_agreement = { agreement_preset = preset_verparallel } }
 	}
 
 	immediate = {
@@ -234,7 +215,7 @@ country_event = {
 
 		every_subject = {
 			limit = {
-				is_subject_type = verparallel
+				any_agreement = { agreement_preset = preset_verparallel }
 				NOT = { is_at_war_with = overlord }
 			}
 			prev = { change_variable = { which = ver_total_parallel_processors value = 1 } }
@@ -289,7 +270,7 @@ country_event = {
 
 	trigger = {
 		OR = {
-			is_country_type = default
+			is_country_type_with_subjects = yes
 			is_country_type = awakened_fallen_empire
 			is_country_type = ascended_empire
 		}
@@ -363,59 +344,12 @@ country_event = {
 	immediate = {
 		capital_scope = {
 			solar_system = {
-				switch = {
-					trigger = trade_route_value
-					5 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 1 } } }
-					10 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 5 } } }
-					25 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 10 } } }
-					50 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 25 } } }
-					75 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 50 } } }
-					100 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 75 } } }
-					125 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 100 } } }
-					150 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 125 } } }
-					175 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 150 } } }
-					200 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 175 } } }
-					225 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 200 } } }
-					250 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 225 } } }
-					275 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 250 } } }
-					300 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 275 } } }
-					350 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 300 } } }
-					400 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 350 } } }
-					450 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 400 } } }
-					500 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 450 } } }
-					600 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 500 } } }
-					700 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 600 } } }
-					800 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 700 } } }
-					900 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 800 } } }
-					1000 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 900 } } }
-					1250 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 1000 } } }
-					1500 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 1250 } } }
-					1750 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 1500 } } }
-					2000 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 1750 } } }
-					2250 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 2000 } } }
-					2500 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 2250 } } }
-					2750 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 2500 } } }
-					3000 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 2750 } } }
-					3250 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 3000 } } }
-					3500 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 3250 } } }
-					3750 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 3500 } } }
-					4000 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 3750 } } }
-					4250 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 4000 } } }
-					4500 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 4250 } } }
-					4750 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 4500 } } }
-					5000 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 4750 } } }
-					5500 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 5000 } } }
-					6000 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 5500 } } }
-					6500 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 6000 } } }
-					7000 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 6500 } } }
-					7500 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 7000 } } }
-					8000 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 7500 } } }
-					8500 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 8000 } } }
-					9000 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 8500 } } }
-					9500 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 9000 } } }
-					10000 < { owner.overlord = { change_variable = { which = ver_subjects_trade value = 9500 } } }
-					default = { owner.overlord = { change_variable = { which = ver_subjects_trade value = 10000 } } }
+				export_trigger_value_to_variable = {
+				    trigger = trade_route_value
+				    variable = subject_capital_trade
+				    rounded = no
 				}
+				owner.overlord = { change_variable = { which = ver_subjects_trade value = prev.subject_capital_trade } } 
 			}
 		}
 	}
@@ -429,8 +363,7 @@ country_event = {
 
 	trigger = {
 		OR = {
-			is_country_type = default
-			is_country_type = awakened_fallen_empire
+			is_country_type_with_subjects = yes
 			is_country_type = ascended_empire
 		}
 		OR = {
@@ -452,7 +385,7 @@ country_event = {
 
 	trigger = {
 		OR = {
-			is_country_type = default
+			is_country_type_with_subjects = yes
 			is_country_type = awakened_fallen_empire
 			is_country_type = ascended_empire
 		}
@@ -512,16 +445,12 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		OR = {
-			is_country_type = default
-			is_country_type = awakened_fallen_empire
-			is_country_type = ascended_empire
-		}
+		is_country_type_with_subjects = yes
 		is_overlord = yes
 		any_subject = {
 			OR = {
-				is_subject_type = verblood
-				is_subject_type = verkobun
+				any_agreement = { agreement_preset = preset_verblood }
+				any_agreement = { agreement_preset = preset_verdebtor }
 			}
 			NOT = { is_at_war_with = overlord }
 		}

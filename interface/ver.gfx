@@ -5,8 +5,8 @@ spriteTypes = {
 	}
 
 	spriteType = {
-		name = "GFX_diplomacy_status_is_verautonomous"
-		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isverautonomous.dds"
+		name = "GFX_diplomacy_status_is_verdevolved"
+		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isverdevolved.dds"
 	}
 
 	spriteType = {
@@ -115,5 +115,11 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_diplomacy_status_is_vertributary"
 		texturefile = "gfx/interface/icons/diplomacy/diplomacy_istributary.dds"
+	}
+
+	spriteType = {
+		name = "GFX_wg_claim_subject"
+		texturefile = "gfx/interface/icons/diplomacy/diplomacy_being_integrated.dds"
+		noOfFrames = 1
 	}
 }

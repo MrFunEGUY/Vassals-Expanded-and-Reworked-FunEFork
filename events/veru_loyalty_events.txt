@@ -9,7 +9,7 @@ country_event = {
 	trigger = {
 		is_subject = yes
 		NOR = {
-			is_subject_type = devstate
+			any_agreement = { agreement_preset = preset_auto_state }
 			years_passed < 20
 		}
 	}
@@ -590,7 +590,7 @@ country_event = {
 		event_target:demanding_subject = {
 			set_subject_of = {
 				who = root
-				subject_type = devstate
+				preset = preset_auto_state
 			}
 			add_opinion_modifier = {
 				who = root
@@ -608,7 +608,7 @@ country_event = {
 			15 = {
 				set_subject_of = {
 					who = root
-					subject_type = devstate
+					preset = preset_auto_state
 				}
 				add_opinion_modifier = {
 					who = root
@@ -691,7 +691,7 @@ country_event = {
 		event_target:demanding_subject = {
 			set_subject_of = {
 				who = root
-				subject_type = devstate
+				preset = preset_auto_state
 			}
 			add_opinion_modifier = {
 				who = root
@@ -709,7 +709,7 @@ country_event = {
 			15 = {
 				set_subject_of = {
 					who = root
-					subject_type = devstate
+					preset = preset_auto_state
 				}
 				add_opinion_modifier = {
 					who = root

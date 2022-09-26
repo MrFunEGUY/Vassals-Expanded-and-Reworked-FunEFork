@@ -1,0 +1,121 @@
+guiTypes = {
+	# Template for resource term value inside term_value_grid
+	# RESOURCE CONTRIBUTION
+	containerWindowType = {
+		name = "resource_term_value_entry"
+		position = { x = 0 y = 0 }
+		size = { width = 451 height = 56 }
+
+		background = {
+			name = "background"
+			spriteType = "GFX_resource_contribution_bg"
+			alwaysTransparent = yes
+		}
+
+		# Uncomment if separate text/resource_icons are 
+		# instantTextBoxType = {
+		# 	name = "term_value_entry_text"
+		# 	font = "font_text_14"
+		# 	text = "A_TERM_VALUE_ENTRY"
+		# 	position = { x = 5 y = 5 }
+		# 	maxWidth = 200
+		# 	maxHeight = 16
+		# 	format = left
+		# 	text_color_code = "Y"
+		# }
+
+		# instantTextBoxType={
+		# 	name = "term_value_entry_resource_icons"
+		# 	font = "font_text_14"
+		# 	text = "XXX"
+		# 	position = { x = 85 y = 5 }
+		# 	maxWidth = 135
+		# 	maxHeight = 42
+		# 	format = left
+		# 	text_color_code = "Y"
+		# }
+
+		instantTextBoxType = {
+			name = "term_value_entry_text_and_resource_icons"
+			font = "font_text_14"
+			text = "A_TERM_VALUE_ENTRY"
+			position = { x = 7 y = 6 }
+			maxWidth = 200
+			maxHeight = 20
+			format = left
+			text_color_code = "W"
+		}
+
+		instantTextBoxType = {
+			name = "resource_value"
+			font = "font_text_14"
+			text = "XXXX"
+			position = { x = 372 y = 6 }
+			maxWidth = 70
+			maxHeight = 20
+			format = right
+			text_color_code = "E"
+		}
+
+		scrollbartype = {
+			id = "num_resource_slider"
+			name = "resource_slider"
+			slider = "scrollbar_SliderButton"
+			track = "scrollbar_TrackButton"
+			leftbutton = "scrollbar_upButton"
+			rightbutton = "scrollbar_downButton"
+			size = {x = 449 y = 19 }
+			position = { x = 0 y = 28 }
+			#priority = 100
+			borderSize = {x = 0 y = 0 }
+			maxValue = 0.75
+			minValue = -0.75
+			stepSize = 0.05
+			startValue = 0
+			horizontal = 1
+			snappoint_center = "scrollbar_snappoint_center"
+			snappoint = "scrollbar_snappoint"
+
+			guiButtonType = {
+				name = "scrollbar_SliderButton"
+				quadTextureSprite = "GFX_na_settings_scroll_dragger"
+				tooltip = ""
+				tooltipText =""
+				delayedTooltipText = ""
+				position = { x = 0 y = 0 }
+			}
+
+			guiButtonType = {
+				name = "scrollbar_TrackButton"
+				quadTextureSprite = "GFX_na_scrollbar_track"
+				position = { x = 0 y = 0 }
+			}
+
+			guiButtonType = {
+				name = "scrollbar_upButton"
+				quadTextureSprite = "GFX_na_scrollbar_left_button"
+				position = { x = 0 y = 0 }
+			}
+
+			guiButtonType = {
+				name = "scrollbar_downButton"
+				quadTextureSprite = "GFX_na_scrollbar_right_button"
+				position = { x = 0 y = 0 }
+			}
+
+			iconType = {
+				name = "scrollbar_snappoint_center"
+				spriteType = "GFX_na_scroll_snap_point_center"
+				position = { x = 0 y = 0 }
+				alwaysTransparent = yes
+			}
+
+			guiButtonType = {
+				name = "scrollbar_snappoint"
+				quadTextureSprite = "GFX_na_scroll_snap_point"
+				position = { x = 0 y = 0 }
+				alwaysTransparent = yes
+			}			
+		}
+	}
+}

@@ -89,3 +89,22 @@ empire_name_format = {
 	prefix_format = "[This.GetSpeciesName] <democratic_gen>"
 	# Human Star Empire
 }
+
+
+############ 
+## War Names
+
+war_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 999
+			using_war_goal = {
+				type = wg_claim_subject
+				owner = attacker
+			}
+		}
+	}
+	lookups = "[This.MainDefender.GetAdj]"
+	format = NAME_veru_buffer_war # War for the [This.MainDefender.GetAdj] Client State
+}

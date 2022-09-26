@@ -1,4 +1,12 @@
-﻿l_spanish:
+﻿# l_english:
+l_spanish:
+# l_german:
+# l_french:
+# l_polish:
+# l_russian:
+# l_braz_por:
+# l_simp_chinese:
+
  ####################################
  # Vassals Expanded and reworked
  ####################################
@@ -8,8 +16,8 @@
   SUBJECT_DESC_verappendage: "Los anexos pagan §Y25%§! de su comida mensual en homenaje a su señor y se puede integrar. Este tipo de sujeto puede ampliarse pacíficamente o a través de la guerra. Su señor vendrá a su protección en casos de agresión, pero también los llamarán a sus propias guerras.\n\nPuede expandirse: £trigger_yes£\nPuede librar guerras: £trigger_yes£\nEs protegido: £trigger_yes£\nSe une a las guerras de su señor: £trigger_yes£\nSe puede integrar: £trigger_yes£\nTributo: §Y25%§! £food£ §HFood§!"
   ver.100.autonomous: "Tienen nuestra protección incondicional."
 
-  SUBJECT_verautonomous: "Región Autónoma"
-  SUBJECT_DESC_verautonomous: "Las regiones autónomas pueden estar integradas, pueden expandirse pacíficamente y están protegidas por su señor. A cambio, su Señor recibe. §G+0.50§! £influence£ mensualmente por cada región autónoma en su posesión. Este tipo de sujeto también tiene su §YCapacidad naval§! reducida por §R50%§!.\n\nPuede expandirse: £trigger_yes£\nPuede librar guerras: £trigger_no£\nEs protegido: £trigger_yes£\nSe une a las guerras de su señor: £trigger_no£\nSe puede integrar: £trigger_yes£\nTributo: §G+0.50§! £influence£ §HInfluencia§!\nEfecto especial: §R-50%§! §YCapacidad naval§!"
+  SUBJECT_verdevolved: "Región Autónoma"
+  SUBJECT_DESC_verdevolved: "Las regiones autónomas pueden estar integradas, pueden expandirse pacíficamente y están protegidas por su señor. A cambio, su Señor recibe. §G+0.50§! £influence£ mensualmente por cada región autónoma en su posesión. Este tipo de sujeto también tiene su §YCapacidad naval§! reducida por §R50%§!.\n\nPuede expandirse: £trigger_yes£\nPuede librar guerras: £trigger_no£\nEs protegido: £trigger_yes£\nSe une a las guerras de su señor: £trigger_no£\nSe puede integrar: £trigger_yes£\nTributo: §G+0.50§! £influence£ §HInfluencia§!\nEfecto especial: §R-50%§! §YCapacidad naval§!"
 
   SUBJECT_verbeneficiary: "Beneficiario"
   SUBJECT_DESC_verbeneficiary: "Los beneficiarios son en su mayoría independientes, no se llaman a las guerras de su Señor, están protegidos y no pagan impuestos. Se pueden integrar.\n\nPuede expandirse: £trigger_yes£\nPuede librar guerras: £trigger_yes£\nProtegido: £trigger_yes£\nSe une a las guerras de su señor: £trigger_no£\nSe puede integrar: £trigger_yes£\nTributo: Ninguno"
@@ -80,7 +88,7 @@
   ver.100.appendage: "Anexo"
   ver.100.appendage.tooltip: "$SUBJECT_DESC_verappendage$"
   ver.100.autonomous: "Región Autónoma"
-  ver.100.autonomous.tooltip: "$SUBJECT_DESC_verautonomous$"
+  ver.100.autonomous.tooltip: "$SUBJECT_DESC_verdevolved$"
   ver.100.beneficiary: "Beneficiario"
   ver.100.beneficiary.tooltip: "$SUBJECT_DESC_verbeneficiary$"
   ver.100.disciple: "Discípulo"
@@ -323,6 +331,7 @@
   ver_triggered_opinion_moderate_overlord_taxes: "Impuestos moderados de su Señors"
   ver_triggered_opinion_heavy_overlord_taxes: "Impuestos pesados de su Señors"
   ver_triggered_opinion_burdensome_overlord_taxes: "Impuestos máximos de su Señors"
+  opinion_installed_as_vassal_leader:0 "Instalado como Gobernante"
   ##### Policies #####
   policy_ver_taxation_of_subject_empires: "Impuestos de imperios de sujetos."
   policy_ver_taxation_of_subject_empires_desc: "Podemos decidir si el comercio civil generado por nuestros imperios temáticos debería ser agotado."
@@ -412,7 +421,7 @@
  veru.3000.puppet: "Serás un §YPuppet State§!."
  veru.3000.serf: "Serás un §YSerf§!."
  veru.3000.sister: "Serás un §YSister Republic§!."
- veru.3000.organic: Serás un §YOrganic Auxiliary§!."
+ veru.3000.organic: "Serás un §YOrganic Auxiliary§!."
  veru.3000.parallel: "Serás un §YParallel Processor§!."
  veru.3000.blood: "Serás un §YBlood Tributary§!."
 
@@ -469,10 +478,11 @@
  veru.5000.loyal.desc: "Si bien preferiría permanecer en el poder, haré lo que me ordenara."
  veru.5000.disloyal.desc: "¡Esto es indignante! No tienes derecho a llevarme mi posición."
 
- veru.5000.governor: "Uno de nuestros §YGovernors§! se hará cargo"
- veru.5000.admiral: "¡Uno de nuestros §YAdmirals§! se hará cargo"
- veru.5000.general: "¡Uno de nuestros §YGenerales§! se hará cargo"
- veru.5000.scientist: "¡Uno de nuestros  §YScientists§! se hará cargo"
+ veru.5000.governor: "Uno de nuestros §YGobernadores§! se hará cargo."
+ veru.5000.admiral: "Uno de nuestros §YAlmirantes§! se hará cargo."
+ veru.5000.general: "Uno de nuestros §YGenerales§! se hará cargo."
+ veru.5000.scientist: "Uno de nuestros  §YCientíficos§! se hará cargo."
+ veru.5000.heir: "Nuestro  §YHeredero§! se hará cargo."
 
  # Governors
  veru.5000.governor_leader_1: "§Y[event_target:governor_leader_1.GetName]§!"

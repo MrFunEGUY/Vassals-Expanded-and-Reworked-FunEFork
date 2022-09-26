@@ -111,6 +111,7 @@ get_intervention_effect_gov = {
 		event_target:chosen_subject = {
 			every_pop_faction = {
 				limit = {
+					exists = leader
 					leader = { NOT = { leader_class = ruler } }
 				}
 				add_modifier = {
@@ -120,6 +121,7 @@ get_intervention_effect_gov = {
 			}
 			random_pop_faction = {
 				limit = {
+					exists = leader
 					leader = { leader_class = ruler }
 				}
 				add_modifier = {
@@ -128,9 +130,7 @@ get_intervention_effect_gov = {
 	            }
 			}
 			every_owned_planet = {
-				limit = {
-					num_pops > 3
-				}
+				limit = { num_pops > 3 }
 				add_modifier = {
 	                modifier = overlord_intervention_disloyal_planet_gov
 	                days = 7200
@@ -278,7 +278,7 @@ get_governors = {
 			leader_class = governor
 		}
 		set_leader_flag = governor_leader
-		root = { change_variable = { which = total_governors value = 1 } }
+		prev = { change_variable = { which = total_governors value = 1 } }
 	}
 
 	# Next, we save each subject as an Event Target
@@ -374,7 +374,7 @@ get_admirals = {
 			leader_class = admiral
 		}
 		set_leader_flag = admiral_leader
-		root = { change_variable = { which = total_admirals value = 1 } }
+		prev = { change_variable = { which = total_admirals value = 1 } }
 	}
 
 	# Next, we save each subject as an Event Target
@@ -470,7 +470,7 @@ get_generals = {
 			leader_class = general
 		}
 		set_leader_flag = general_leader
-		root = { change_variable = { which = total_generals value = 1 } }
+		prev = { change_variable = { which = total_generals value = 1 } }
 	}
 
 	# Next, we save each subject as an Event Target
@@ -566,7 +566,7 @@ get_scientists = {
 			leader_class = scientist
 		}
 		set_leader_flag = scientist_leader
-		root = { change_variable = { which = total_scientists value = 1 } }
+		prev = { change_variable = { which = total_scientists value = 1 } }
 	}
 
 	# Next, we save each subject as an Event Target
@@ -650,6 +650,50 @@ get_scientists = {
 			remove_leader_flag = scientist_leader
 			save_event_target_as = scientist_leader_10
 		}
+	}
+}
+
+# Remove All Civics 
+get_remove_civics = {
+	if = {
+		limit = { civics_count >= 10 }
+		force_remove_civic = 10
+	}
+	if = {
+		limit = { civics_count >= 9 }
+		force_remove_civic = 9
+	}
+	if = {
+		limit = { civics_count >= 8 }
+		force_remove_civic = 8
+	}
+	if = {
+		limit = { civics_count >= 7 }
+		force_remove_civic = 7
+	}
+	if = {
+		limit = { civics_count >= 6 }
+		force_remove_civic = 6
+	}
+	if = {
+		limit = { civics_count >= 5 }
+		force_remove_civic = 5
+	}
+	if = {
+		limit = { civics_count >= 4 }
+		force_remove_civic = 4
+	}
+	if = {
+		limit = { civics_count >= 3 }
+		force_remove_civic = 3
+	}
+	if = {
+		limit = { civics_count >= 2 }
+		force_remove_civic = 2
+	}
+	if = {
+		limit = { civics_count >= 1 }
+		force_remove_civic = 1
 	}
 }
 
@@ -747,9 +791,7 @@ get_ethics_check_fan = {
 			}
 		}
 		if = {
-			limit = {
-				has_ethic = ethic_fanatic_egalitarian
-			}
+			limit = { has_ethic = ethic_fanatic_egalitarian }
 			shift_ethic = ethic_fanatic_authoritarian
 		}
 		else = {
@@ -781,12 +823,7 @@ get_new_autocratic_gov = {
 		if = {
 			limit = {
 				is_authoritarian = yes
-				NOR = {
-					has_authority = auth_dictatorial
-					has_authority = auth_imperial
-					has_authority = auth_corporate_imperial
-					has_authority = auth_democratic_dictatorship
-				}
+				NOT = { is_autocracy = yes }
 			}
 			random_list = {
 				50 = {
@@ -808,11 +845,54 @@ get_new_autocratic_gov = {
 		if = {
 			limit = {
 				is_authoritarian = no
+				NOT = { is_autocracy = yes }
 			}
 			change_government = {
 				authority = auth_dictatorial
 				remove_invalid_civics = yes
 				cooldown = no
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					exists = heir
+					any_owned_leader = {
+						OR = {
+							has_leader_flag = appointed_heir
+							has_leader_flag = clone_heir_base
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					exists = heir
+				}
+				heir = {
+					set_leader_flag = dead_ruler
+					kill_leader = { show_notification = no }
+				}
+			}
+			if = {
+				limit = {
+					any_owned_leader = {
+						OR = {
+							has_leader_flag = appointed_heir
+							has_leader_flag = clone_heir_base
+						}
+					}
+				}
+				every_owned_leader = {
+					limit = {
+						OR = {
+							has_leader_flag = appointed_heir
+							has_leader_flag = clone_heir_base
+						}
+					}
+					set_leader_flag = dead_ruler
+					kill_leader = { show_notification = no }
+				}
 			}
 		}
 		ruler = { set_leader_flag = grateful_installed_vassal_leader_@this }
@@ -822,4 +902,503 @@ get_new_autocratic_gov = {
 		}
 	}
 	set_country_flag = vassal_installer_country_@event_target:chosen_subject.ruler
+}
+
+# Get New Government
+get_new_autocratic_gov_no_penalty = {
+	event_target:chosen_subject = {
+		if = {
+			limit = {
+				is_egalitarian = yes
+			}
+			if = {
+				limit = {
+					has_ethic = ethic_egalitarian
+				}
+				country_remove_ethic = ethic_egalitarian
+				country_add_ethic = ethic_authoritarian
+			}
+			else = {
+				country_remove_ethic = ethic_fanatic_egalitarian
+				country_add_ethic = ethic_fanatic_authoritarian
+			}
+		}
+		if = {
+			limit = {
+				is_authoritarian = yes
+				NOT = { is_autocracy = yes }
+			}
+			random_list = {
+				50 = {
+					change_government = {
+						authority = auth_imperial
+						remove_invalid_civics = yes
+						cooldown = no
+					}
+				}
+				50 = {
+					change_government = {
+						authority = auth_dictatorial
+						remove_invalid_civics = yes
+						cooldown = no
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				is_authoritarian = no
+				NOT = { is_autocracy = yes }
+			}
+			change_government = {
+				authority = auth_dictatorial
+				remove_invalid_civics = yes
+				cooldown = no
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					exists = heir
+					any_owned_leader = {
+						OR = {
+							has_leader_flag = appointed_heir
+							has_leader_flag = clone_heir_base
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					exists = heir
+				}
+				heir = {
+					set_leader_flag = dead_ruler
+					kill_leader = { show_notification = no }
+				}
+			}
+			if = {
+				limit = {
+					any_owned_leader = {
+						OR = {
+							has_leader_flag = appointed_heir
+							has_leader_flag = clone_heir_base
+						}
+					}
+				}
+				every_owned_leader = {
+					limit = {
+						OR = {
+							has_leader_flag = appointed_heir
+							has_leader_flag = clone_heir_base
+						}
+					}
+					set_leader_flag = dead_ruler
+					kill_leader = { show_notification = no }
+				}
+			}
+		}
+	}
+}
+
+##########
+
+# Get Subject Planets
+get_relocation_planets = {
+	set_variable = { which = total_relocation_planets value = 0 }
+
+	every_owned_planet = {
+		limit = {
+			is_capital = no
+			is_occupied_flag = no
+			is_under_colonization = no
+			has_orbital_bombardment = no
+		}
+		set_planet_flag = relocation_planet
+		prev = { change_variable = { which = total_relocation_planets value = 1 } }
+	}
+
+	# Next, we save each subject as an Event Target
+	# As the scripting language doesn't have proper loops, we use a lot of ifs if there are more than 10, the event can be run again.
+	if = {
+		limit = { check_variable = { which = total_relocation_planets value >= 1 } }
+		random_owned_planet = {
+			limit = { has_planet_flag = relocation_planet }
+			remove_planet_flag = relocation_planet
+			save_event_target_as = relocation_planet_1
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_relocation_planets value >= 2 } }
+		random_owned_planet = {
+			limit = { has_planet_flag = relocation_planet }
+			remove_planet_flag = relocation_planet
+			save_event_target_as = relocation_planet_2
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_relocation_planets value >= 3 } }
+		random_owned_planet = {
+			limit = { has_planet_flag = relocation_planet }
+			remove_planet_flag = relocation_planet
+			save_event_target_as = relocation_planet_3
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_relocation_planets value >= 4 } }
+		random_owned_planet = {
+			limit = { has_planet_flag = relocation_planet }
+			remove_planet_flag = relocation_planet
+			save_event_target_as = relocation_planet_4
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_relocation_planets value >= 5 } }
+		random_owned_planet = {
+			limit = { has_planet_flag = relocation_planet }
+			remove_planet_flag = relocation_planet
+			save_event_target_as = relocation_planet_5
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_relocation_planets value >= 6 } }
+		random_owned_planet = {
+			limit = { has_planet_flag = relocation_planet }
+			remove_planet_flag = relocation_planet
+			save_event_target_as = relocation_planet_6
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_relocation_planets value >= 7 } }
+		random_owned_planet = {
+			limit = { has_planet_flag = relocation_planet }
+			remove_planet_flag = relocation_planet
+			save_event_target_as = relocation_planet_7
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_relocation_planets value >= 8 } }
+		random_owned_planet = {
+			limit = { has_planet_flag = relocation_planet }
+			remove_planet_flag = relocation_planet
+			save_event_target_as = relocation_planet_8
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_relocation_planets value >= 9 } }
+		random_owned_planet = {
+			limit = { has_planet_flag = relocation_planet }
+			remove_planet_flag = relocation_planet
+			save_event_target_as = relocation_planet_9
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_relocation_planets value >= 10 } }
+		random_owned_planet = {
+			limit = { has_planet_flag = relocation_planet }
+			remove_planet_flag = relocation_planet
+			save_event_target_as = relocation_planet_10
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_relocation_planets value >= 11 } }
+		random_owned_planet = {
+			limit = { has_planet_flag = relocation_planet }
+			remove_planet_flag = relocation_planet
+			save_event_target_as = relocation_planet_11
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_relocation_planets value >= 12 } }
+		random_owned_planet = {
+			limit = { has_planet_flag = relocation_planet }
+			remove_planet_flag = relocation_planet
+			save_event_target_as = relocation_planet_12
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_relocation_planets value >= 13 } }
+		random_owned_planet = {
+			limit = { has_planet_flag = relocation_planet }
+			remove_planet_flag = relocation_planet
+			save_event_target_as = relocation_planet_13
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_relocation_planets value >= 14 } }
+		random_owned_planet = {
+			limit = { has_planet_flag = relocation_planet }
+			remove_planet_flag = relocation_planet
+			save_event_target_as = relocation_planet_14
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_relocation_planets value >= 15 } }
+		random_owned_planet = {
+			limit = { has_planet_flag = relocation_planet }
+			remove_planet_flag = relocation_planet
+			save_event_target_as = relocation_planet_15
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_relocation_planets value >= 16 } }
+		random_owned_planet = {
+			limit = { has_planet_flag = relocation_planet }
+			remove_planet_flag = relocation_planet
+			save_event_target_as = relocation_planet_16
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_relocation_planets value >= 17 } }
+		random_owned_planet = {
+			limit = { has_planet_flag = relocation_planet }
+			remove_planet_flag = relocation_planet
+			save_event_target_as = relocation_planet_17
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_relocation_planets value >= 18 } }
+		random_owned_planet = {
+			limit = { has_planet_flag = relocation_planet }
+			remove_planet_flag = relocation_planet
+			save_event_target_as = relocation_planet_18
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_relocation_planets value >= 19 } }
+		random_owned_planet = {
+			limit = { has_planet_flag = relocation_planet }
+			remove_planet_flag = relocation_planet
+			save_event_target_as = relocation_planet_19
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_relocation_planets value >= 20 } }
+		random_owned_planet = {
+			limit = { has_planet_flag = relocation_planet }
+			remove_planet_flag = relocation_planet
+			save_event_target_as = relocation_planet_20
+		}
+	}
+}
+
+# Get Own Planets
+get_gift_planets = {
+	set_variable = { which = total_gift_systems value = 0 }
+
+	every_owned_planet = {
+		limit = {
+			is_capital = no
+			is_occupied_flag = no
+			is_under_colonization = no
+			has_orbital_bombardment = no
+		}
+		solar_system = { set_star_flag = gift_system }
+	}
+
+	every_system_within_border = {
+		limit = { has_star_flag = gift_system }
+		prev = { change_variable = { which = total_gift_systems value = 1 } }
+	}
+
+	if = {
+		limit = { check_variable = { which = total_gift_systems value >= 1 } }
+		random_owned_planet = {
+			limit = { solar_system = { has_star_flag = gift_system } }
+			solar_system = {
+				remove_star_flag = gift_system
+				save_event_target_as = gift_system_1
+			}
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_gift_systems value >= 2 } }
+		random_owned_planet = {
+			limit = { solar_system = { has_star_flag = gift_system } }
+			solar_system = {
+				remove_star_flag = gift_system
+				save_event_target_as = gift_system_2
+			}
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_gift_systems value >= 3 } }
+		random_owned_planet = {
+			limit = { solar_system = { has_star_flag = gift_system } }
+			solar_system = {
+				remove_star_flag = gift_system
+				save_event_target_as = gift_system_3
+			}
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_gift_systems value >= 4 } }
+		random_owned_planet = {
+			limit = { solar_system = { has_star_flag = gift_system } }
+			solar_system = {
+				remove_star_flag = gift_system
+				save_event_target_as = gift_system_4
+			}
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_gift_systems value >= 5 } }
+		random_owned_planet = {
+			limit = { solar_system = { has_star_flag = gift_system } }
+			solar_system = {
+				remove_star_flag = gift_system
+				save_event_target_as = gift_system_5
+			}
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_gift_systems value >= 6 } }
+		random_owned_planet = {
+			limit = { solar_system = { has_star_flag = gift_system } }
+			solar_system = {
+				remove_star_flag = gift_system
+				save_event_target_as = gift_system_6
+			}
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_gift_systems value >= 7 } }
+		random_owned_planet = {
+			limit = { solar_system = { has_star_flag = gift_system } }
+			solar_system = {
+				remove_star_flag = gift_system
+				save_event_target_as = gift_system_7
+			}
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_gift_systems value >= 8 } }
+		random_owned_planet = {
+			limit = { solar_system = { has_star_flag = gift_system } }
+			solar_system = {
+				remove_star_flag = gift_system
+				save_event_target_as = gift_system_8
+			}
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_gift_systems value >= 9 } }
+		random_owned_planet = {
+			limit = { solar_system = { has_star_flag = gift_system } }
+			solar_system = {
+				remove_star_flag = gift_system
+				save_event_target_as = gift_system_9
+			}
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_gift_systems value >= 10 } }
+		random_owned_planet = {
+			limit = { solar_system = { has_star_flag = gift_system } }
+			solar_system = {
+				remove_star_flag = gift_system
+				save_event_target_as = gift_system_10
+			}
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_gift_systems value >= 11 } }
+		random_owned_planet = {
+			limit = { solar_system = { has_star_flag = gift_system } }
+			solar_system = {
+				remove_star_flag = gift_system
+				save_event_target_as = gift_system_11
+			}
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_gift_systems value >= 12 } }
+		random_owned_planet = {
+			limit = { solar_system = { has_star_flag = gift_system } }
+			solar_system = {
+				remove_star_flag = gift_system
+				save_event_target_as = gift_system_12
+			}
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_gift_systems value >= 13 } }
+		random_owned_planet = {
+			limit = { solar_system = { has_star_flag = gift_system } }
+			solar_system = {
+				remove_star_flag = gift_system
+				save_event_target_as = gift_system_13
+			}
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_gift_systems value >= 14 } }
+		random_owned_planet = {
+			limit = { solar_system = { has_star_flag = gift_system } }
+			solar_system = {
+				remove_star_flag = gift_system
+				save_event_target_as = gift_system_14
+			}
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_gift_systems value >= 15 } }
+		random_owned_planet = {
+			limit = { solar_system = { has_star_flag = gift_system } }
+			solar_system = {
+				remove_star_flag = gift_system
+				save_event_target_as = gift_system_15
+			}
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_gift_systems value >= 16 } }
+		random_owned_planet = {
+			limit = { solar_system = { has_star_flag = gift_system } }
+			solar_system = {
+				remove_star_flag = gift_system
+				save_event_target_as = gift_system_16
+			}
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_gift_systems value >= 17 } }
+		random_owned_planet = {
+			limit = { solar_system = { has_star_flag = gift_system } }
+			solar_system = {
+				remove_star_flag = gift_system
+				save_event_target_as = gift_system_17
+			}
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_gift_systems value >= 18 } }
+		random_owned_planet = {
+			limit = { solar_system = { has_star_flag = gift_system } }
+			solar_system = {
+				remove_star_flag = gift_system
+				save_event_target_as = gift_system_18
+			}
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_gift_systems value >= 19 } }
+		random_owned_planet = {
+			limit = { solar_system = { has_star_flag = gift_system } }
+			solar_system = {
+				remove_star_flag = gift_system
+				save_event_target_as = gift_system_19
+			}
+		}
+	}
+	if = {
+		limit = { check_variable = { which = total_gift_systems value >= 20 } }
+		random_owned_planet = {
+			limit = { solar_system = { has_star_flag = gift_system } }
+			solar_system = {
+				remove_star_flag = gift_system
+				save_event_target_as = gift_system_20
+			}
+		}
+	}
 }
