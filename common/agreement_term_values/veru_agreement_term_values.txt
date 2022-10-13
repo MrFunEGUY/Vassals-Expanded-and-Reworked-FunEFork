@@ -2325,12 +2325,12 @@ subject_loyalty_effects = {
 	term = subject_loyalty
 
 	potential = {
-		NOT = { any_agreement = { agreement_preset = preset_auto_state } }
+		NOT = { agreement_preset = preset_auto_state }
 	}
 
-	target_modifier = {
-		diplo_weight_mult = -0.5
-	}
+	# target_modifier = {
+	# 	diplo_weight_mult = -0.5
+	# }
 
 	activate_effect = {
 		target = { save_event_target_as = new_subject }
