@@ -92,6 +92,10 @@ preset_verdevolved = {
 				key = subject_loyalty
 				value = subject_loyalty_effects
 			}
+			{
+				key = protectorate
+				value = subject_is_not_protectorate
+			}
 			####
 			{
 				key = subject_ver_effects
@@ -198,6 +202,10 @@ preset_verfoederatus = {
 			{
 				key = subject_loyalty
 				value = subject_loyalty_effects
+			}
+			{
+				key = protectorate
+				value = subject_is_not_protectorate
 			}
 			####
 			{
@@ -313,6 +321,10 @@ preset_verdisciple = {
 				key = subject_loyalty
 				value = subject_loyalty_effects
 			}
+			{
+				key = protectorate
+				value = subject_is_not_protectorate
+			}
 			####
 			{
 				key = subject_ver_effects
@@ -424,6 +436,10 @@ preset_verjrpartner = {
 			{
 				key = subject_loyalty
 				value = subject_loyalty_effects
+			}
+			{
+				key = protectorate
+				value = subject_is_not_protectorate
 			}
 			####
 			{
@@ -539,6 +555,10 @@ preset_verserf = {
 			{
 				key = subject_loyalty
 				value = subject_loyalty_effects
+			}
+			{
+				key = protectorate
+				value = subject_is_not_protectorate
 			}
 		}
 		resource_terms = {
@@ -664,6 +684,10 @@ preset_verpuppet = {
 				key = subject_loyalty
 				value = subject_loyalty_effects
 			}
+			{
+				key = protectorate
+				value = subject_is_not_protectorate
+			}
 			####
 			{
 				key = subject_ver_effects
@@ -786,6 +810,10 @@ preset_verblood = {
 				key = subject_loyalty
 				value = subject_loyalty_effects
 			}
+			{
+				key = protectorate
+				value = subject_is_not_protectorate
+			}
 			####
 			{
 				key = subject_ver_effects
@@ -882,6 +910,10 @@ preset_verappendage = {
 				key = subject_loyalty
 				value = subject_loyalty_effects
 			}
+			{
+				key = protectorate
+				value = subject_is_not_protectorate
+			}
 		}
 		resource_terms = {
 			{
@@ -967,6 +999,10 @@ preset_verorganic = {
 				key = subject_loyalty
 				value = subject_loyalty_effects
 			}
+			{
+				key = protectorate
+				value = subject_is_not_protectorate
+			}
 		}
 		resource_terms = {
 			{
@@ -985,7 +1021,7 @@ preset_verorganic = {
 
 	potential = {
 		NOR = {
-			has_authority = auth_machine_intelligence
+			is_machine_empire = yes
 			any_agreement = {
 				OR = {
 					agreement_preset = preset_protectorate
@@ -995,7 +1031,7 @@ preset_verorganic = {
 			}
 		}
 		from = {
-			has_authority = auth_machine_intelligence
+			is_machine_empire = yes
 			NOT = { has_valid_civic = civic_machine_servitor }
 		}
 	}
@@ -1056,6 +1092,10 @@ preset_verparallel = {
 				key = subject_loyalty
 				value = subject_loyalty_effects
 			}
+			{
+				key = protectorate
+				value = subject_is_not_protectorate
+			}
 		}
 	}
 
@@ -1067,7 +1107,7 @@ preset_verparallel = {
 	}
 
 	potential = {
-		has_authority = auth_machine_intelligence
+		is_machine_empire = yes
 		NOT = {
 			any_agreement = {
 				OR = {
@@ -1077,7 +1117,7 @@ preset_verparallel = {
 				}
 			}
 		}
-		from = { has_authority = auth_machine_intelligence }
+		from = { is_machine_empire = yes }
 	}
 }
 
@@ -1137,6 +1177,10 @@ preset_verdevotee = {
 			{
 				key = subject_loyalty
 				value = subject_loyalty_effects
+			}
+			{
+				key = protectorate
+				value = subject_is_not_protectorate
 			}
 			####
 			{
@@ -1249,6 +1293,10 @@ preset_verkobun = {
 			{
 				key = subject_loyalty
 				value = subject_loyalty_effects
+			}
+			{
+				key = protectorate
+				value = subject_is_not_protectorate
 			}
 			####
 			{
@@ -1370,6 +1418,10 @@ preset_verworshipper = {
 				key = subject_loyalty
 				value = subject_loyalty_effects
 			}
+			{
+				key = protectorate
+				value = subject_is_not_protectorate
+			}
 			####
 			{
 				key = subject_ver_effects
@@ -1482,6 +1534,10 @@ preset_verdebtor = {
 				key = subject_loyalty
 				value = subject_loyalty_effects
 			}
+			{
+				key = protectorate
+				value = subject_is_not_protectorate
+			}
 			####
 			{
 				key = subject_ver_effects
@@ -1581,6 +1637,10 @@ preset_versubscriber = {
 			{
 				key = subject_loyalty
 				value = subject_loyalty_effects
+			}
+			{
+				key = protectorate
+				value = subject_is_not_protectorate
 			}
 		}
 		resource_terms = {
@@ -1683,6 +1743,10 @@ preset_verarmsdealer = {
 			{
 				key = subject_loyalty
 				value = subject_loyalty_effects
+			}
+			{
+				key = protectorate
+				value = subject_is_not_protectorate
 			}
 			####
 			{
@@ -1796,6 +1860,10 @@ preset_versubcontractor = {
 			{
 				key = subject_loyalty
 				value = subject_loyalty_effects
+			}
+			{
+				key = protectorate
+				value = subject_is_not_protectorate
 			}
 			####
 			{
@@ -1916,6 +1984,10 @@ preset_vassal = {
 				key = subject_loyalty
 				value = subject_loyalty_effects
 			}
+			{
+				key = protectorate
+				value = subject_is_not_protectorate
+			}
 			####
 			{
 				key = subject_ver_effects
@@ -1934,7 +2006,7 @@ preset_vassal = {
 		base = 100
 	}
 	subject_weight = {
-		base = 100
+		base = 25
 	}
 
 	potential = {
@@ -2018,6 +2090,10 @@ preset_subsidiary = {
 				key = subject_loyalty
 				value = subject_loyalty_effects
 			}
+			{
+				key = protectorate
+				value = subject_is_not_protectorate
+			}
 			####
 			{
 				key = subject_ver_effects
@@ -2042,6 +2118,10 @@ preset_subsidiary = {
 
 	overlord_weight = {
 		base = 100
+	}
+
+	subject_weight = {
+		base = 50
 	}
 
 	potential = {
@@ -2115,6 +2195,10 @@ preset_tributary = {
 				key = subject_loyalty
 				value = subject_loyalty_effects
 			}
+			{
+				key = protectorate
+				value = subject_is_not_protectorate
+			}
 			####
 			{
 				key = subject_ver_effects
@@ -2141,7 +2225,7 @@ preset_tributary = {
 		base = 90
 	}
 	subject_weight = {
-		base = 80
+		base = 50
 	}
 
 	potential = {
@@ -2216,6 +2300,10 @@ preset_protectorate = {
 				key = subject_loyalty
 				value = subject_loyalty_effects
 			}
+			{
+				key = protectorate
+				value = subject_is_protectorate
+			}
 			####
 			{
 				key = subject_ver_effects
@@ -2243,7 +2331,7 @@ preset_protectorate = {
 		base = 200
 	}
 	subject_weight = {
-		base = 80
+		base = 50
 	}
 }
 
@@ -2317,6 +2405,10 @@ preset_bulwark = {
 				key = subject_loyalty
 				value = subject_loyalty_effects
 			}
+			{
+				key = protectorate
+				value = subject_is_not_protectorate
+			}
 			####
 			{
 				key = subject_ver_effects
@@ -2344,17 +2436,10 @@ preset_bulwark = {
 			factor = 1.2
 			num_rivals > 0
 		}
-		modifier = {
-			factor = 0
-			OR = {
-				has_ethic = ethic_fanatic_pacifist
-				has_ethic = ethic_pacifist
-			}
-		}
 	}
 
 	subject_weight = {
-		base =  @specialist_base_acceptance_value
+		base =  25
 		modifier = {
 			add = @specialist_aligned_ethics_value
 			is_militarist = yes
@@ -2438,6 +2523,10 @@ preset_scholarium = {
 				key = subject_loyalty
 				value = subject_loyalty_effects
 			}
+			{
+				key = protectorate
+				value = subject_is_not_protectorate
+			}
 			####
 			{
 				key = subject_ver_effects
@@ -2464,7 +2553,7 @@ preset_scholarium = {
 	}
 
 	subject_weight = {
-		base =  @specialist_base_acceptance_value
+		base =  @specialist_subject_base_acceptance_value
 		modifier = {
 			add = @specialist_aligned_ethics_value
 			is_materialist = yes
@@ -2554,6 +2643,10 @@ preset_prospectorium = {
 				key = subject_loyalty
 				value = subject_loyalty_effects
 			}
+			{
+				key = protectorate
+				value = subject_is_not_protectorate
+			}
 			####
 			{
 				key = subject_ver_effects
@@ -2580,7 +2673,7 @@ preset_prospectorium = {
 	}
 
 	subject_weight = {
-		base =  @specialist_base_acceptance_value
+		base =  @specialist_subject_base_acceptance_value
 		modifier = {
 			add = @specialist_aligned_ethics_value
 			is_pacifist = yes
@@ -2658,6 +2751,10 @@ preset_auto_state = {
 			{
 				key = subject_loyalty
 				value = subject_loyalty_effects
+			}
+			{
+				key = protectorate
+				value = subject_is_not_protectorate
 			}
 			####
 			{

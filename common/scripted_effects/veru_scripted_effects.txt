@@ -3,6 +3,118 @@
 ### FunEFork by MrFunEGUY ###
 ###############################
 
+# Find Subjects
+get_subjects_effect = {
+
+	set_variable = { which = veru_total_subjects value = 0 }
+
+	# Count how many valid Subject States there are
+	every_subject = {
+		limit = {
+			NOR = {
+				# is_country_type = exile_country
+				any_agreement = {
+					agreement_preset = preset_protectorate
+					agreement_preset = preset_auto_state
+					agreement_preset = preset_satrapy
+				}
+			}
+		}
+		set_country_flag = subject_country
+		overlord = { change_variable = { which = veru_total_subjects value = 1 } }
+	}
+
+	if = {
+		limit = { check_variable = { which = veru_total_subjects value >= 1 } }
+		random_subject = {
+			limit = { has_country_flag = subject_country }
+			remove_country_flag = subject_country
+			save_event_target_as = subject_1
+		}
+	}
+	if = {
+		limit = { check_variable = { which = veru_total_subjects value >= 2 } }
+		random_subject = {
+			limit = { has_country_flag = subject_country }
+			remove_country_flag = subject_country
+			save_event_target_as = subject_2
+		}
+	}
+	if = {
+		limit = { check_variable = { which = veru_total_subjects value >= 3 } }
+		random_subject = {
+			limit = { has_country_flag = subject_country }
+			remove_country_flag = subject_country
+			save_event_target_as = subject_3
+		}
+	}
+	if = {
+		limit = { check_variable = { which = veru_total_subjects value >= 4 } }
+		random_subject = {
+			limit = { has_country_flag = subject_country }
+			remove_country_flag = subject_country
+			save_event_target_as = subject_4
+		}
+	}
+	if = {
+		limit = { check_variable = { which = veru_total_subjects value >= 5 } }
+		random_subject = {
+			limit = { has_country_flag = subject_country }
+			remove_country_flag = subject_country
+			save_event_target_as = subject_5
+		}
+	}
+	if = {
+		limit = { check_variable = { which = veru_total_subjects value >= 6 } }
+		random_subject = {
+			limit = { has_country_flag = subject_country }
+			remove_country_flag = subject_country
+			save_event_target_as = subject_6
+		}
+	}
+	if = {
+		limit = { check_variable = { which = veru_total_subjects value >= 7 } }
+		random_subject = {
+			limit = { has_country_flag = subject_country }
+			remove_country_flag = subject_country
+			save_event_target_as = subject_7
+		}
+	}
+	if = {
+		limit = { check_variable = { which = veru_total_subjects value >= 8 } }
+		random_subject = {
+			limit = { has_country_flag = subject_country }
+			remove_country_flag = subject_country
+			save_event_target_as = subject_8
+		}
+	}
+	if = {
+		limit = { check_variable = { which = veru_total_subjects value >= 9 } }
+		random_subject = {
+			limit = { has_country_flag = subject_country }
+			remove_country_flag = subject_country
+			save_event_target_as = subject_9
+		}
+	}
+	if = {
+		limit = { check_variable = { which = veru_total_subjects value >= 10 } }
+		random_subject = {
+			limit = { has_country_flag = subject_country }
+			remove_country_flag = subject_country
+			save_event_target_as = subject_10
+		}
+	}
+
+	if = {
+		limit = { any_country = { has_country_flag = subject_country } }
+		every_country = {
+			limit = { has_country_flag = subject_country }
+			remove_country_flag = subject_country
+		}
+	}
+
+	country_event = { id = veru.1000 }
+}
 
 # Get Intervention Effects
 get_intervention_effect = {
@@ -700,13 +812,9 @@ get_remove_civics = {
 # Remove Egalitarian and add Authoritarian 
 get_ethics_check_egal_auth = {
 	if = {
-		limit = {
-			is_egalitarian = yes
-		}
+		limit = { is_egalitarian = yes }
 		if = {
-			limit = {
-				has_ethic = ethic_egalitarian
-			}
+			limit = { has_ethic = ethic_egalitarian }
 			country_remove_ethic = ethic_egalitarian
 			country_add_ethic = ethic_authoritarian
 		}
@@ -716,9 +824,7 @@ get_ethics_check_egal_auth = {
 		}
 	}
 	if = {
-		limit = {
-			is_authoritarian = no
-		}
+		limit = { is_authoritarian = no }
 		shift_ethic = ethic_authoritarian
 	}
 }
@@ -726,13 +832,9 @@ get_ethics_check_egal_auth = {
 # Remove Authoritarian and add Egalitarian 
 get_ethics_check_auth_egal = {
 	if = {
-		limit = {
-			is_authoritarian = yes
-		}
+		limit = { is_authoritarian = yes }
 		if = {
-			limit = {
-				has_ethic = ethic_authoritarian
-			}
+			limit = { has_ethic = ethic_authoritarian }
 			country_remove_ethic = ethic_authoritarian
 			country_add_ethic = ethic_egalitarian
 		}
@@ -742,9 +844,7 @@ get_ethics_check_auth_egal = {
 		}
 	}
 	if = {
-		limit = {
-			is_egalitarian = no
-		}
+		limit = { is_egalitarian = no }
 		shift_ethic = ethic_egalitarian
 	}
 }
@@ -759,9 +859,7 @@ get_ethics_check_soc_cap = {
 			}
 		}
 		if = {
-			limit = {
-				has_ethic = ethic_socialism
-			}
+			limit = { has_ethic = ethic_socialism }
 			country_remove_ethic = ethic_socialism
 			country_add_ethic = ethic_capitalism
 		}
@@ -1297,227 +1395,6 @@ get_relocation_planets = {
 			limit = { has_planet_flag = relocation_planet }
 			remove_planet_flag = relocation_planet
 			save_event_target_as = relocation_planet_20
-		}
-	}
-}
-
-# Get Own Planets
-get_gift_planets = {
-	set_variable = { which = total_gift_systems value = 0 }
-
-	every_owned_planet = {
-		limit = {
-			is_capital = no
-			is_occupied_flag = no
-			is_under_colonization = no
-			has_orbital_bombardment = no
-		}
-		solar_system = { set_star_flag = gift_system }
-	}
-
-	every_system_within_border = {
-		limit = { has_star_flag = gift_system }
-		prev = { change_variable = { which = total_gift_systems value = 1 } }
-	}
-
-	if = {
-		limit = { check_variable = { which = total_gift_systems value >= 1 } }
-		random_owned_planet = {
-			limit = { solar_system = { has_star_flag = gift_system } }
-			solar_system = {
-				remove_star_flag = gift_system
-				save_event_target_as = gift_system_1
-			}
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_gift_systems value >= 2 } }
-		random_owned_planet = {
-			limit = { solar_system = { has_star_flag = gift_system } }
-			solar_system = {
-				remove_star_flag = gift_system
-				save_event_target_as = gift_system_2
-			}
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_gift_systems value >= 3 } }
-		random_owned_planet = {
-			limit = { solar_system = { has_star_flag = gift_system } }
-			solar_system = {
-				remove_star_flag = gift_system
-				save_event_target_as = gift_system_3
-			}
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_gift_systems value >= 4 } }
-		random_owned_planet = {
-			limit = { solar_system = { has_star_flag = gift_system } }
-			solar_system = {
-				remove_star_flag = gift_system
-				save_event_target_as = gift_system_4
-			}
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_gift_systems value >= 5 } }
-		random_owned_planet = {
-			limit = { solar_system = { has_star_flag = gift_system } }
-			solar_system = {
-				remove_star_flag = gift_system
-				save_event_target_as = gift_system_5
-			}
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_gift_systems value >= 6 } }
-		random_owned_planet = {
-			limit = { solar_system = { has_star_flag = gift_system } }
-			solar_system = {
-				remove_star_flag = gift_system
-				save_event_target_as = gift_system_6
-			}
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_gift_systems value >= 7 } }
-		random_owned_planet = {
-			limit = { solar_system = { has_star_flag = gift_system } }
-			solar_system = {
-				remove_star_flag = gift_system
-				save_event_target_as = gift_system_7
-			}
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_gift_systems value >= 8 } }
-		random_owned_planet = {
-			limit = { solar_system = { has_star_flag = gift_system } }
-			solar_system = {
-				remove_star_flag = gift_system
-				save_event_target_as = gift_system_8
-			}
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_gift_systems value >= 9 } }
-		random_owned_planet = {
-			limit = { solar_system = { has_star_flag = gift_system } }
-			solar_system = {
-				remove_star_flag = gift_system
-				save_event_target_as = gift_system_9
-			}
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_gift_systems value >= 10 } }
-		random_owned_planet = {
-			limit = { solar_system = { has_star_flag = gift_system } }
-			solar_system = {
-				remove_star_flag = gift_system
-				save_event_target_as = gift_system_10
-			}
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_gift_systems value >= 11 } }
-		random_owned_planet = {
-			limit = { solar_system = { has_star_flag = gift_system } }
-			solar_system = {
-				remove_star_flag = gift_system
-				save_event_target_as = gift_system_11
-			}
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_gift_systems value >= 12 } }
-		random_owned_planet = {
-			limit = { solar_system = { has_star_flag = gift_system } }
-			solar_system = {
-				remove_star_flag = gift_system
-				save_event_target_as = gift_system_12
-			}
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_gift_systems value >= 13 } }
-		random_owned_planet = {
-			limit = { solar_system = { has_star_flag = gift_system } }
-			solar_system = {
-				remove_star_flag = gift_system
-				save_event_target_as = gift_system_13
-			}
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_gift_systems value >= 14 } }
-		random_owned_planet = {
-			limit = { solar_system = { has_star_flag = gift_system } }
-			solar_system = {
-				remove_star_flag = gift_system
-				save_event_target_as = gift_system_14
-			}
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_gift_systems value >= 15 } }
-		random_owned_planet = {
-			limit = { solar_system = { has_star_flag = gift_system } }
-			solar_system = {
-				remove_star_flag = gift_system
-				save_event_target_as = gift_system_15
-			}
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_gift_systems value >= 16 } }
-		random_owned_planet = {
-			limit = { solar_system = { has_star_flag = gift_system } }
-			solar_system = {
-				remove_star_flag = gift_system
-				save_event_target_as = gift_system_16
-			}
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_gift_systems value >= 17 } }
-		random_owned_planet = {
-			limit = { solar_system = { has_star_flag = gift_system } }
-			solar_system = {
-				remove_star_flag = gift_system
-				save_event_target_as = gift_system_17
-			}
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_gift_systems value >= 18 } }
-		random_owned_planet = {
-			limit = { solar_system = { has_star_flag = gift_system } }
-			solar_system = {
-				remove_star_flag = gift_system
-				save_event_target_as = gift_system_18
-			}
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_gift_systems value >= 19 } }
-		random_owned_planet = {
-			limit = { solar_system = { has_star_flag = gift_system } }
-			solar_system = {
-				remove_star_flag = gift_system
-				save_event_target_as = gift_system_19
-			}
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_gift_systems value >= 20 } }
-		random_owned_planet = {
-			limit = { solar_system = { has_star_flag = gift_system } }
-			solar_system = {
-				remove_star_flag = gift_system
-				save_event_target_as = gift_system_20
-			}
 		}
 	}
 }

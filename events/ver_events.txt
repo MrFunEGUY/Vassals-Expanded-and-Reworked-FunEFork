@@ -29,7 +29,7 @@ country_event = {
 
 	immediate = {
 		every_subject = {
-			limit = { NOT = { has_ethic = ethic_gestalt_consciousness } }
+			limit = { is_gestalt = no }
 			ver_remove_overlord_taxes = yes
 			add_modifier = { modifier = ver_light_overlord_taxes days = -1 }
 		}
@@ -45,7 +45,7 @@ country_event = {
 
 	immediate = {
 		every_subject = {
-			limit = { NOT = { has_ethic = ethic_gestalt_consciousness } }
+			limit = { is_gestalt = no }
 			ver_remove_overlord_taxes = yes
 			add_modifier = { modifier = ver_moderate_overlord_taxes days = -1 }
 		}
@@ -61,7 +61,7 @@ country_event = {
 
 	immediate = {
 		every_subject = {
-			limit = { NOT = { has_ethic = ethic_gestalt_consciousness } }
+			limit = { is_gestalt = no }
 			ver_remove_overlord_taxes = yes
 			add_modifier = { modifier = ver_heavy_overlord_taxes days = -1 }
 		}
@@ -77,7 +77,7 @@ country_event = {
 
 	immediate = {
 		every_subject = {
-			limit = { NOT = { has_ethic = ethic_gestalt_consciousness } }
+			limit = { is_gestalt = no }
 			ver_remove_overlord_taxes = yes
 			add_modifier = { modifier = ver_burdensome_overlord_taxes days = -1 }
 		}
@@ -575,7 +575,7 @@ country_event = {
 	is_triggered_only = yes
 
 	# Back
-	option = { name = veru.2000.back }
+	option = { name = veru.1000.back }
 
 	option = {
 		name = ver.33.puppet_neighbor_1

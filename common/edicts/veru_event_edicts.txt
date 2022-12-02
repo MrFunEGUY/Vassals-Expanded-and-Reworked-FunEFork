@@ -14,7 +14,7 @@ veru_manage_subject = {
 
 	effect = {
 		custom_tooltip = edict_veru_manage_subject_tooltip
-		hidden_effect = { country_event = { id = veru.1000 } }
+		hidden_effect = { get_subjects_effect = yes }
 	}
 
 	potential = {

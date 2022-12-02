@@ -111,7 +111,7 @@ event = {
 					is_country_type = awakened_fallen_empire
 					is_country_type = ascended_empire
 				}
-				has_authority = auth_machine_intelligence
+				is_machine_empire = yes
 				OR = {
 					is_overlord = no
 					NOT = { any_subject = { any_agreement = { agreement_preset = preset_verparallel } } }
@@ -205,7 +205,7 @@ country_event = {
 			is_country_type = awakened_fallen_empire
 			is_country_type = ascended_empire
 		}
-		has_authority = auth_machine_intelligence
+		is_machine_empire = yes
 		is_overlord = yes
 		any_subject = {	any_agreement = { agreement_preset = preset_verparallel } }
 	}
@@ -301,7 +301,7 @@ country_event = {
 		every_subject = {
 			limit = {
 				NOR = {
-					has_ethic = ethic_gestalt_consciousness
+					is_gestalt = yes
 					is_at_war_with = overlord
 					is_country_type = iisc_space_corporation
 				}
@@ -390,7 +390,7 @@ country_event = {
 			is_country_type = ascended_empire
 		}
 		is_subject = yes
-		NOT = { has_ethic = ethic_gestalt_consciousness }
+		is_gestalt = no
 		overlord = {
 			OR = {
 				has_policy_flag = ver_light_taxes

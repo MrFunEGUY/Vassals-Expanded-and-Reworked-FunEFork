@@ -47,6 +47,6 @@ wg_claim_subject = {
 	}
 
 	ai_weight = {
-		weight = 100
+		weight = 25
 	}
 }
