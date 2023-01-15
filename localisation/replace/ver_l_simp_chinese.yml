@@ -6,6 +6,8 @@
 # l_russian:
 # l_braz_por:
 l_simp_chinese:
+# l_korean:
+# l_japanese:
 
  ####################################
  # Vassals Expanded and reworked
@@ -184,13 +186,13 @@ l_simp_chinese:
  ver.40.distribute.tooltip: "[This.ver_blood_tributary_total_population] £pops£ §HPops§! will be sent to our worlds, with priority to colonies with free housing"
  ver.40.thrall: "Send them all to our Thrall-Worlds."
  ver.40.thrall.tooltip: "[This.ver_blood_tributary_total_population] £pops£ §HPops§! will be distributed among our Thrall-Worlds"
- ##### Government #####
- ## Governmment type
- ver_gov_single_party_republic: "Single-Party Republic"
- ver_gov_single_party_republic_desc: "This nominal democracy is a de facto dictatorship controlled by the State-Party leader."
- ## Civics
- civic_staged_elections: "Staged Elections"
- civic_staged_elections_desc: "This society has big formal elections where every citizen can cast its vote - as long as it's the right vote."
+#  ##### Government #####
+#  ## Governmment type
+#  ver_gov_single_party_republic: "Single-Party Republic"
+#  ver_gov_single_party_republic_desc: "This nominal democracy is a de facto dictatorship controlled by the State-Party leader."
+#  ## Civics
+#  civic_staged_elections: "Staged Elections"
+#  civic_staged_elections_desc: "This society has big formal elections where every citizen can cast its vote - as long as it's the right vote."
  ##### Modifiers #####
  ## Static Modifiers
  ver_overlord_indoctrination: "Overlord Indoctrionation"
@@ -394,6 +396,7 @@ l_simp_chinese:
  veru.1050.name: "[event_target:chosen_subject.ruler.GetTitle] §H[event_target:chosen_subject.ruler.GetName]§! of the §Y[event_target:chosen_subject.GetName]§!"
  veru.1050.loyal.desc: "How may I serve the §Y[root.GetName]§!?"
  veru.1050.disloyal.desc: "What do you want?"
+ veru.1050.exile.desc: "We appreciate you hosting us during this difficult time for our nation."
 
  veru.1050.type: "We need to alter our relationship."
  veru.1050.gov: "We need to alter your governing structure."
@@ -401,6 +404,7 @@ l_simp_chinese:
  veru.1050.leader: "We're installing a new leader."
  veru.1050.proxy: "We're initiating a Proxy War."
  veru.1050.tech: "We're giving you access to all of our technology."
+ veru.1050.exile: "We'll grant you territory."
  veru.1050.tech.tooltip: "The §Y[event_target:chosen_subject.GetName]§! will be given access to all of the technologies that we have researched thus far."
  veru.1050.name_change: "We're changing the name of your nation."
  veru.1050.name_change.tooltip: "The §Y[event_target:chosen_subject.GetName]§! will be renamed to the §Y[root.capital_scope.solar_system.GetName]§!."
@@ -659,22 +663,25 @@ l_simp_chinese:
  # Contracts
 
  subject_ver_ruler: "Ruler Designation"
+ subject_ver_ruler_desc: "This Term dictates whether an Overlord is permitted to install their preferred leader as the ruler of the Subject nation."
 
  subject_ver_ruler_restricted: "Designation Prohibited"
  subject_ver_ruler_restricted_desc: "The Overlord does not have permission to change the Subject's ruler."
  subject_ver_ruler_them: "Limited Designation"
- subject_ver_ruler_them_desc: "The Overlord may choose the subject's ruler, but only from amongst the subject's leaders."
+ subject_ver_ruler_them_desc: "The Overlord may choose the subject's ruler, but only from amongst the Subject's leaders."
  subject_ver_ruler_anyone: "Unrestricted Designation"
  subject_ver_ruler_anyone_desc: "The Overlord may choose any leader as the Subject's ruler."
 
  subject_ver_naming: "Naming Rights"
+ subject_ver_naming_desc: "This Term dictates whether the Overlord is allowed to rename the Subject."
 
  subject_ver_naming_restricted: "Renaming Prohibited"
- subject_ver_naming_restricted_desc: "The Overlord is restricted from renaming the Subject's nation."
+ subject_ver_naming_restricted_desc: "The Overlord is restricted from renaming the Subject."
  subject_ver_naming_allowed: "Renaming Permitted"
- subject_ver_naming_allowed_desc: "The Overlord is allowed to rename the Subject's nation"
+ subject_ver_naming_allowed_desc: "The Overlord is allowed to rename the Subject."
 
  subject_ver_capital: "Capital Relocation"
+ subject_ver_capital_desc: "This Term dictates whether the Overlord may choose to relocate the capital of the Subject."
 
  subject_ver_capital_restricted: "Relocation Prohibited"
  subject_ver_capital_restricted_desc: "The Overlord is restricted from relocating the Subject's capital."
@@ -682,6 +689,7 @@ l_simp_chinese:
  subject_ver_capital_allowed_desc: "The Overlord is permitted to relocate the Subject's capital."
 
  subject_ver_government: "Goverment Restructuring"
+ subject_ver_government_desc: "This Term dictates whether the Overlord is allowed to change the form of government within the Subject."
 
  subject_ver_government_restricted: "Restructuring Prohibited"
  subject_ver_government_restricted_desc: "The Overlord is restricted from changing the Subject's form of government."
@@ -698,20 +706,22 @@ l_simp_chinese:
  resource_subsidies_ver_rare_crystals: "Rare Crystals"
  resource_subsidies_ver_minor_artifacts: "Minor Artifacts"
  resource_subsidies_ver_research: "Research"
+ resource_subsidies_ver_hidden_unity: "Unity"
 
  resource_subsidies_ver: "Contribution"
 
- veru_contract_fail: "Prohibited by Contract"
+ contract_fail: "Prohibited by Contract"
  veru_tree_of_life_fail: "Due to this subject relying on their §YTree of Life§!, their capital cannot be relocated."
 
- subject_verdevolved_effect: "$SUBJECT_verdevolved$"
- subject_verfoederatus_effect: "$SUBJECT_verfoederatus$"
- subject_verdisciple_effect: "$SUBJECT_verdisciple$"
- subject_verjrpartner_effect: "$SUBJECT_verjrpartner$"
- subject_verpuppet_effect: "$SUBJECT_verpuppet$"
- subject_verdisciple_effect: "$SUBJECT_verdisciple$"
- subject_verdevotee_effect: "$SUBJECT_verdevotee$"
- subject_verworshipper_effect: "$SUBJECT_verworshipper$"
+ subject_verdevolved_effect: "$preset_verdevolved$"
+ subject_verfoederatus_effect: "$preset_verfoederatus$"
+ subject_verdisciple_effect: "$preset_verdisciple$"
+ subject_verjrpartner_effect: "$preset_verjrpartner$"
+ subject_verpuppet_effect: "$preset_verpuppet$"
+ subject_verdisciple_effect: "$preset_verdisciple$"
+ subject_verdevotee_effect: "$preset_verdevotee$"
+ subject_verworshipper_effect: "$preset_verworshipper$"
+ subject_auto_state_effect: "$preset_auto_state$"
 
  subject_ver_effects: "Special Effects"
  subject_ver_hidden_resources: "Special Resources"
@@ -723,6 +733,8 @@ l_simp_chinese:
 
  ver_blood_tax_subject: "Tribute: §Y10%§! £pops£ §HPops§! every 15-20 years\nSpecial Effect: §R-1000§! Opinion towards Overlord"
  ver_blood_tax_overlord: "§Y10%§! of subject's £pops£ §HPops§! every 15-20 years"
+
+ autostate_extra_overlord: "Monthly: £influence£ §R-0.25§!"
 
  ver_extra_subject: "$MODIFIER$\n$RESOURCES$"
 
@@ -741,14 +753,14 @@ l_simp_chinese:
  ver_rec_extra_subject: "$RESOURCES$"
  ver_rec_extra_overlord: "$RESOURCES$"
 
- verdisciple_rec_extra_subject: "Monthly Tax: £unity£ §R-15%§"
- verdisciple_rec_extra_overlord: "Monthly Subject Tax: £unity£ §G15%§"
+ verdisciple_rec_extra_subject: "Monthly Tax: £unity£ §R-15%§!"
+ verdisciple_rec_extra_overlord: "Monthly Subject Tax: £unity£ §G15%§!"
 
- verdevotee_rec_extra_subject: "Monthly Tax: £unity£ §R-5%§"
- verdevotee_rec_extra_overlord: "Monthly Subject Tax: £unity£ §G5%§"
+ verdevotee_rec_extra_subject: "Monthly Tax: £unity£ §R-5%§!"
+ verdevotee_rec_extra_overlord: "Monthly Subject Tax: £unity£ §G5%§!"
 
- verworshipper_rec_extra_subject: "Monthly Tax: £unity£ §R-10%§"
- verworshipper_rec_extra_overlord: "Monthly Subject Tax: £unity£ §G10%§"
+ verworshipper_rec_extra_subject: "Monthly Tax: £unity£ §R-10%§!"
+ verworshipper_rec_extra_overlord: "Monthly Subject Tax: £unity£ §G10%§!"
 
  d_overlord_unity_capital: "Subject Guidance Center"
  d_overlord_unity_capital_desc: "At this center, members of some of our subject's priestly class recieve guidance on how to better facilitate cooperation between our nations."
@@ -759,7 +771,7 @@ l_simp_chinese:
  # Other
  ai.random: "Random"
  as_they_are: "Leave them as they are."
- veru_autonomous_state.tooltip: "The §Y[event_target:demanding_subject.GetName]§! will become an §YAutonomous State§! within our nation. They will pay us §Y15% of all their resources§!. They will be able to expand and declare war. They won't be required to help us in our wars, and will also be responsible for their own defense. They will cost us 0.2 £influence£ §HInfluence§! per month. §RWe will never be able to integrate them.§!"
+ veru_autonomous_state.tooltip: "The §Y[event_target:demanding_subject.GetName]§! will become an §YAutonomous State§! within our nation. They will pay us §Y15%§! of all their resources§!. They will be able to expand and declare war. They won't be required to help us in our wars, and will also be responsible for their own defense. They will cost us 0.2 £influence£ §HInfluence§! per month. §RWe will never be able to integrate them.§!"
 
  # Overwrites
  # Preset blocked terms
@@ -768,22 +780,28 @@ l_simp_chinese:
  not_allowed_for_bulwark: "$TRIGGER_FAIL$Not allowed for §YBulwarks§!."
  not_allowed_for_scholarium: "$TRIGGER_FAIL$Not allowed for §YScholaria§!."
  not_allowed_for_prospectorium: "$TRIGGER_FAIL$Not allowed for §YProspectoria§!."
- not_allowed_for_verappendage: "$TRIGGER_FAIL$Not allowed for §Y$preset_verappendage$s§."
- not_allowed_for_verdevolved: "$TRIGGER_FAIL$Not allowed for §Y$preset_verdevolved$s§."
- not_allowed_for_verdisciple: "$TRIGGER_FAIL$Not allowed for §Y$preset_verdisciple$s§."
- not_allowed_for_verfoederatus: "$TRIGGER_FAIL$Not allowed for §YFoederati§."
- not_allowed_for_verjrpartner: "$TRIGGER_FAIL$Not allowed for §Y$preset_verjrpartner$s§."
- not_allowed_for_verpuppet: "$TRIGGER_FAIL$Not allowed for §Y$preset_verpuppet$s§."
- not_allowed_for_verserf: "$TRIGGER_FAIL$Not allowed for §Y$preset_verserf$s§."
- not_allowed_for_verorganic: "$TRIGGER_FAIL$Not allowed for §Y$preset_verorganic$s§."
- not_allowed_for_verparallel: "$TRIGGER_FAIL$Not allowed for §Y$preset_verparallel$s§."
- not_allowed_for_verblood: "$TRIGGER_FAIL$Not allowed for §Y$preset_verblood$s§."
- not_allowed_for_verdevotee: "$TRIGGER_FAIL$Not allowed for §Y$preset_verdevotee$s§."
- not_allowed_for_verkobun: "$TRIGGER_FAIL$Not allowed for §Y$preset_verkobun$s§."
- not_allowed_for_versupplier: "$TRIGGER_FAIL$Not allowed for §Y$preset_versupplier$s§."
- not_allowed_for_verworshipper: "$TRIGGER_FAIL$Not allowed for §Y$preset_verworshipper$s§."
- not_allowed_for_verdebtor: "$TRIGGER_FAIL$Not allowed for §Y$preset_verdebtor$s§."
- not_allowed_for_versubscriber: "$TRIGGER_FAIL$Not allowed for §Y$preset_versupplier$s§."
- not_allowed_for_verarmsdealer: "$TRIGGER_FAIL$Not allowed for §Y$preset_verarmsdealer$s§."
- not_allowed_for_versubcontractor: "$TRIGGER_FAIL$Not allowed for §Y$preset_versubcontractor$s§."
+ not_allowed_for_verappendage: "$TRIGGER_FAIL$Not allowed for §Y$preset_verappendage$s§!."
+ not_allowed_for_verdevolved: "$TRIGGER_FAIL$Not allowed for §Y$preset_verdevolved$s§!."
+ not_allowed_for_verdisciple: "$TRIGGER_FAIL$Not allowed for §Y$preset_verdisciple$s§!."
+ not_allowed_for_verfoederatus: "$TRIGGER_FAIL$Not allowed for §YFoederati§!."
+ not_allowed_for_verjrpartner: "$TRIGGER_FAIL$Not allowed for §Y$preset_verjrpartner$s§!."
+ not_allowed_for_verpuppet: "$TRIGGER_FAIL$Not allowed for §Y$preset_verpuppet$s§!."
+ not_allowed_for_verserf: "$TRIGGER_FAIL$Not allowed for §Y$preset_verserf$s§!."
+ not_allowed_for_verorganic: "$TRIGGER_FAIL$Not allowed for §Y$preset_verorganic$s§!."
+ not_allowed_for_verparallel: "$TRIGGER_FAIL$Not allowed for §Y$preset_verparallel$s§!."
+ not_allowed_for_verblood: "$TRIGGER_FAIL$Not allowed for §Y$preset_verblood$s§!."
+ not_allowed_for_verdevotee: "$TRIGGER_FAIL$Not allowed for §Y$preset_verdevotee$s§!."
+ not_allowed_for_verkobun: "$TRIGGER_FAIL$Not allowed for §Y$preset_verkobun$s§!."
+ not_allowed_for_versupplier: "$TRIGGER_FAIL$Not allowed for §Y$preset_versupplier$s§!."
+ not_allowed_for_verworshipper: "$TRIGGER_FAIL$Not allowed for §Y$preset_verworshipper$s§!."
+ not_allowed_for_verdebtor: "$TRIGGER_FAIL$Not allowed for §Y$preset_verdebtor$s§!."
+ not_allowed_for_versubscriber: "$TRIGGER_FAIL$Not allowed for §Y$preset_versupplier$s§!."
+ not_allowed_for_verarmsdealer: "$TRIGGER_FAIL$Not allowed for §Y$preset_verarmsdealer$s§!."
+ not_allowed_for_versubcontractor: "$TRIGGER_FAIL$Not allowed for §Y$preset_versubcontractor$s§!."
  not_allowed_for_megacorp: "$TRIGGER_FAIL$Not allowed for §YMegacorps§!."
+ not_allowed_for_auto_state: "$TRIGGER_FAIL$Not allowed for §YAutonomous States§!."
+
+# Subject Buffer Zone War
+
+ NAME_vassal_War: "[This.MainAttacker.GetAdj] Independence War"
+ NAME_veru_buffer_war: "[This.MainDefender.GetAdj] Client War"

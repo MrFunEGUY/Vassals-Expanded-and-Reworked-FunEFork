@@ -1,4 +1,4 @@
-﻿l_english:
+﻿# l_english:
 # l_spanish:
 # l_german:
 # l_french:
@@ -7,7 +7,7 @@
 # l_braz_por:
 # l_simp_chinese:
 # l_korean:
-# l_japenese:
+l_japanese:
 
  ####################################
  # Vassals Expanded and reworked
@@ -26,8 +26,8 @@
  preset_verfoederatus_desc:"Foederati are obligated to participate into their Overlord's wars. However, they cannot be integrated.\n\nSpecial Effect: £navy_size£ §YNaval Capacity§!: §G25%§!"
  preset_verjrpartner: "Jr. Partner"
  preset_verjrpartner_desc:"Jr. Partners cannot be integrated.\n\nSpecial Effect: §Y-30%§! cost to known Overlord Technologies"
- preset_verpuppet: "Client State"
- preset_verpuppet_desc: "Client States, through the use of influence, can be used to fight Proxy Wars for their Overlord. They are protected by their Overlord and they have to participate in their wars.\n\nSpecial Effects: §R-10§! £stability£ §YStability§!"
+ preset_verpuppet: "Puppet State"
+ preset_verpuppet_desc: "Puppet States, through the use of influence, can be used to fight Proxy Wars for their Overlord. They are protected by their Overlord and they have to participate in their wars.\n\nSpecial Effects: §R-10§! £stability£ §YStability§!"
  preset_verserf: "Serf"
  preset_verserf_desc:"Serfs have no diplomatic freedom, and are usually not protected by their Overlord. They cannot be integrated. This type of subject greatly resents its condition.\n\nSpecial Effect: §R-100§! Opinion towards Overlord"
  # preset_versister: "Sister Republic"
@@ -61,7 +61,7 @@
  # SUBJECT_DESC_verdependency: "Dependencies are one of the most exploited types of subsidiaries, paying §Y10%§! of their Energy, Minerals and Food in tribute.\n\nCan Expand: £trigger_yes£\nCan Wage War: £trigger_yes£\nProtected: £trigger_yes£\nJoins Overlord's Wars: £trigger_yes£\nCan Integrate: £trigger_no£\nTribute: §Y10%§! £energy£ §HEnergy§!, £minerals£ §HMinerals§! and £food£ §HFood§!"
 
  # Term Window:
- preset_verpuppet_flavor_desc: "# any_agreement = { agreement_preset = preset_auto_state }s through the use of influence, can be used to fight Proxy Wars for their Overlord. They are protected by their Overlord and they have to participate in their wars."
+ preset_verpuppet_flavor_desc: "Puppet States through the use of influence, can be used to fight Proxy Wars for their Overlord. They are protected by their Overlord and they have to participate in their wars."
  preset_verdevolved_flavor_desc: "Devolved Regions may be integrated, can peacefully expand and are protected by their Overlord."
  preset_verfoederatus_flavor_desc: "Foederati are obligated to participate into their Overlord's wars. However, they cannot be integrated."
  preset_verdisciple_flavor_desc: "Disciples are protected by their Overlord."
@@ -95,7 +95,7 @@
  ver.100.foederatus.tooltip: "$SUBJECT_DESC_verfoederatus$"
  ver.100.jrpartner: "Jr. Partner"
  ver.100.jrpartner.tooltip: "$SUBJECT_DESC_verjrpartner$"
- ver.100.puppet: "Client State"
+ ver.100.puppet: "Puppet State"
  ver.100.puppet.tooltip: "$SUBJECT_DESC_verpuppet$"
  ver.100.serf: "Serf"
  ver.100.serf.tooltip: "$SUBJECT_DESC_verserf$"
@@ -129,32 +129,32 @@
  ver.101.dependency: "Dependency"
  ver.101.dependency.tooltip: "$SUBJECT_DESC_verdependency$"
  ## Proxy War
- # ver.31.name: "Proxy War"
- # ver.31.desc: "We've made contact with the client kings, hand-picked dictators and bought elected leaders from our puppet states. It's time to attack one of our enemies. The only question remaining is, who'll do the job?"
- # ver.31.desc.fail: "None of our Client States has a valid target at the moment."
- # ver.31.fail: "Unfortunate."
- # ver.31.puppet_1: "[puppet_1.GetName]"
- # ver.31.puppet_1.tooltip: "A list with valid targets neighboring the [puppet_1.GetName] will be shown."
- # ver.31.puppet_2: "[puppet_2.GetName]"
- # ver.31.puppet_2.tooltip: "A list with valid targets neighboring the [puppet_2.GetName] will be shown."
- # ver.31.puppet_3: "[puppet_3.GetName]"
- # ver.31.puppet_3.tooltip: "A list with valid targets neighboring the [puppet_3.GetName] will be shown."
- # ver.31.puppet_4: "[puppet_4.GetName]"
- # ver.31.puppet_4.tooltip: "A list with valid targets neighboring the [puppet_4.GetName] will be shown."
- # ver.31.puppet_5: "[puppet_5.GetName]"
- # ver.31.puppet_5.tooltip: "A list with valid targets neighboring the [puppet_5.GetName] will be shown."
- # ver.31.puppet_6: "[puppet_6.GetName]"
- # ver.31.puppet_6.tooltip: "A list with valid targets neighboring the [puppet_6.GetName] will be shown."
- # ver.31.puppet_7: "[puppet_7.GetName]"
- # ver.31.puppet_7.tooltip: "A list with valid targets neighboring the [puppet_7.GetName] will be shown."
- # ver.31.puppet_8: "[puppet_8.GetName]"
- # ver.31.puppet_8.tooltip: "A list with valid targets neighboring the [puppet_8.GetName] will be shown."
- # ver.31.puppet_9: "[puppet_9.GetName]"
- # ver.31.puppet_9.tooltip: "A list with valid targets neighboring the [puppet_9.GetName] will be shown."
- # ver.31.puppet_10: "[puppet_10.GetName]"
- # ver.31.puppet_10.tooltip: "A list with valid targets neighboring the [puppet_10.GetName] will be shown."
- # ver.31.back: "Maybe that's not a good idea after all..."
- # ver.31.back.tooltip: "Dismiss our Client States for the time being."
+ ver.31.name: "Proxy War"
+ ver.31.desc: "We've made contact with the client kings, hand-picked dictators and bought elected leaders from our puppet states. It's time to attack one of our enemies. The only question remaining is, who'll do the job?"
+ ver.31.desc.fail: "None of our Puppet States has a valid target at the moment."
+ ver.31.fail: "Unfortunate."
+ ver.31.puppet_1: "[puppet_1.GetName]"
+ ver.31.puppet_1.tooltip: "A list with valid targets neighboring the [puppet_1.GetName] will be shown."
+ ver.31.puppet_2: "[puppet_2.GetName]"
+ ver.31.puppet_2.tooltip: "A list with valid targets neighboring the [puppet_2.GetName] will be shown."
+ ver.31.puppet_3: "[puppet_3.GetName]"
+ ver.31.puppet_3.tooltip: "A list with valid targets neighboring the [puppet_3.GetName] will be shown."
+ ver.31.puppet_4: "[puppet_4.GetName]"
+ ver.31.puppet_4.tooltip: "A list with valid targets neighboring the [puppet_4.GetName] will be shown."
+ ver.31.puppet_5: "[puppet_5.GetName]"
+ ver.31.puppet_5.tooltip: "A list with valid targets neighboring the [puppet_5.GetName] will be shown."
+ ver.31.puppet_6: "[puppet_6.GetName]"
+ ver.31.puppet_6.tooltip: "A list with valid targets neighboring the [puppet_6.GetName] will be shown."
+ ver.31.puppet_7: "[puppet_7.GetName]"
+ ver.31.puppet_7.tooltip: "A list with valid targets neighboring the [puppet_7.GetName] will be shown."
+ ver.31.puppet_8: "[puppet_8.GetName]"
+ ver.31.puppet_8.tooltip: "A list with valid targets neighboring the [puppet_8.GetName] will be shown."
+ ver.31.puppet_9: "[puppet_9.GetName]"
+ ver.31.puppet_9.tooltip: "A list with valid targets neighboring the [puppet_9.GetName] will be shown."
+ ver.31.puppet_10: "[puppet_10.GetName]"
+ ver.31.puppet_10.tooltip: "A list with valid targets neighboring the [puppet_10.GetName] will be shown."
+ ver.31.back: "Maybe that's not a good idea after all..."
+ ver.31.back.tooltip: "Dismiss our Puppet States for the time being."
  ver.33.name: "Proxy War - Target"
  ver.33.desc: "The [event_target:chosen_subject.GetName] shares its borders with the following states that are not alled with us. Which one should they should attack?"
  ver.33.puppet_neighbor_1: "[puppet_neighbor_1.GetName]"
@@ -178,7 +178,7 @@
  ver.33.puppet_neighbor_19: "[puppet_neighbor_19.GetName]"
  ver.33.puppet_neighbor_20: "[puppet_neighbor_20.GetName]"
  ver.33.back: "Thinking better, the [FROM.GetName] may not be up to the task."
- ver.33.back.tooltip: "Show a list of all available Client States again."
+ ver.33.back.tooltip: "Show a list of all available Puppet States again."
  ## The Blood Tax
  ver.40.name: "The Blood Tax"
  ver.40.desc: "Our tribute is due. Our soldiers have already been sent to our Blood Tributaries to take away the most promising and strong-looking youths. They'll soon be educated about the fundamentals of our culture, and more importantly, how to best serve their masters."
@@ -201,7 +201,7 @@
  ver_demilitarized: "We were demilitarized by our Overlord."
  ver_military_subsidies: "Military Subsidies"
  ver_military_subsidies_desc: "Our Overlord is subsidizing part of our military apparatus."
- ver_puppet_state: "Client State"
+ ver_puppet_state: "Puppet State"
  ver_puppet_state_desc: "The leader of this empire was hand-picked by its Overlord."
  ver_called_proxy_war: "Recent Proxy War"
  ver_kobun_malus: "Kobun"
@@ -321,8 +321,8 @@
  ver_subjects_taxes_49: "Subjects' Taxes"
  ver_subjects_taxes_49_desc: "We're taxing part of our Subject Empires' civilian trade."
  ## Opinion modifiers
- ver_triggered_opinion_serfdom: "Client"
- ver_triggered_opinion_puppeteer: "Overlord"
+ ver_triggered_opinion_serfdom: "Serfdom"
+ ver_triggered_opinion_puppeteer: "Puppeteer"
  ver_triggered_opinion_blood: "Blood Tribute"
  ver_triggered_opinion_subscriber: "Subscriber"
  ver_triggered_opinion_light_overlord_taxes: "Light Overlord Taxes"
@@ -349,8 +349,8 @@
  ver_burdensome_taxes_desc: "A subject has no right other than to serve its master.\n\n§EWe'll tax up to 30% of our Subject Empires' collected £trade_value£ §YTrade Value§!, leaving them ."
  ##### Edicts #####
  edict_ver_proxy_war: "Proxy War"
- edict_ver_proxy_war_desc: "The blood spilled during war need not be our own. In order to further our interests without being directly involved, wee can influence one of our Client States to declare war against one of our enemies."
- edict_ver_proxy_war_effect: "All of our Client States currently at peace and with valid targets will be shown. Valid targets are any Client State neighboring country that is not in a non-agression pact, defensive pact or in federation with us."
+ edict_ver_proxy_war_desc: "The blood spilled during war need not be our own. In order to further our interests without being directly involved, wee can influence one of our Puppet States to declare war against one of our enemies."
+ edict_ver_proxy_war_effect: "All of our Puppet States currently at peace and with valid targets will be shown. Valid targets are any Puppet State neighboring country that is not in a non-agression pact, defensive pact or in federation with us."
 
 # Vassals Expanded and Reworked Updated
  exalted_subjects.52.name: "New Subsidiary"
@@ -424,7 +424,7 @@
  veru.3000.disciple: "You will be a §YDisciple§!."
  veru.3000.foederatus: "You will be a §YFoederatus§!."
  veru.3000.jrpartner: "You will be a §YJr. Partner§!."
- veru.3000.puppet: "You will be a §YClient State§!."
+ veru.3000.puppet: "You will be a §YPuppet State§!."
  veru.3000.serf: "You will be a §YSerf§!."
  veru.3000.sister: "You will be a §YSister Republic§!."
  veru.3000.organic: "You will be an §YOrganic Auxiliary§!."

@@ -22,15 +22,10 @@ action_invite_to_federation = {
 			from = { is_fallen_machine_empire = no }
 		}
 		hidden_trigger = {
-			# if = {
-			# 	limit = {
-			# 		FROM = {
-			# 			is_subject = yes
-			# 		}
-			# 	}
-			# 	has_federation = yes
-			# 	is_overlord_to = FROM
-			# }
+			if = {
+				limit = { FROM = { is_subject = yes } }
+				is_overlord_to = FROM
+			}
 		}
 	}
 
@@ -98,12 +93,7 @@ action_invite_to_federation = {
 				NOT = { has_civic = civic_machine_terminator }
 				AND = {
 					has_civic = civic_machine_terminator
-					from = {
-						OR = {
-							has_country_flag = synthetic_empire
-							is_machine_empire = yes
-						}
-					}
+					from = { is_synthetic_empire = yes }
 				}
 			}
 		}
@@ -115,10 +105,7 @@ action_invite_to_federation = {
 				from = { NOT = { has_civic = civic_machine_terminator } }
 				AND = {
 					from = { has_civic = civic_machine_terminator }
-					OR = {
-						has_country_flag = synthetic_empire
-						is_machine_empire = yes
-					}
+					is_synthetic_empire = yes
 				}
 			}
 		}

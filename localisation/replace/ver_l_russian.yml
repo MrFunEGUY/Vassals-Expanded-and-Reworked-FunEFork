@@ -6,61 +6,82 @@
 l_russian:
 # l_braz_por:
 # l_simp_chinese:
+# l_korean:
+# l_japanese:
 
  ####################################
- # Vassals Расширениеed and reworked
+ # Vassals Expanded and reworked
  ####################################
 
-  ##### Subject types #####
- SUBJECT_verappendage: "Придаток"
- SUBJECT_DESC_verappendage: "Придатки платят §Y25%§! ежемесячного дохода пищи Как дань своему Сюзерену и могут быть присоединены. Этот тип субъекта может Расширениеся мирным путем или путем войны. Их Повелитель придет к ним на защиту в случае агрессии, но также призовет их к их собственным войнам.\n\nРасширение: £trigger_yes£\nМожет Вести Войну: £trigger_yes£\nЗащищенный Сюзереном: £trigger_yes£\nПрисоединяется к войнам Сюзерена: £trigger_yes£\nМожет быть присоединен: £trigger_yes£\nдань: §Y25%§! £food£ §HЕда§!"
- ver.100.autonomous: "Они находятся под нашей безоговорочной защитой."
- SUBJECT_verdevolved: "Автономный Регион"
- SUBJECT_DESC_verdevolved: "Автономные регионы могут быть присоединены, могут мирно Расширениеся и находиться под защитой своего Сюзерена. Взамен их Повелитель получает §G+0.50§! £influence£ ежемесячно для каждой автономной области, находящейся в их распоряжении. Этот тип предмета также имеет свой §YВместимость флотилии§! уменьшенный на §R50%§!.\n\nРасширение: £trigger_yes£\nМожет Вести Войну: £trigger_no£\nЗащищенный Сюзереном: £trigger_yes£\nПрисоединяется к войнам Сюзерена: £trigger_no£\nМожет быть присоединен: £trigger_yes£\nдань: §G+0.50§! £influence£ §HВлияние§!\nОсобый эффект: §R-50%§! §YВместимость флотилии§!"
- SUBJECT_verbeneficiary: "Бенефициар"
- SUBJECT_DESC_verbeneficiary: "Бенефициары в основном независимы, их не призывают на войны их Сюзерена, они защищены и не платят налоги. Они могут быть присоединены.\n\nРасширение: £trigger_yes£\nМожет Вести Войну: £trigger_yes£\nЗащищенный Сюзереном: £trigger_yes£\nПрисоединяется к войнам Сюзерена: £trigger_no£\nМожет быть присоединен: £trigger_yes£\nдань: None"
- SUBJECT_verdisciple: "Последователь"
- SUBJECT_DESC_verdisciple: "Последовательs не могут строить новые звездные базы, следовать за своим Сюзереном в войнах, получать §Y+50%§! Влечение к §H$ethic_spiritualist$§! и платить §Y15%§! об их ежемесячном единстве в качестве налогов. Хотя в конечном итоге они могут быть присоединены, они могут Расширениеся войной.\n\nРасширение: £trigger_no£\nМожет Вести Войну: £trigger_yes£\nЗащищенный Сюзереном: £trigger_yes£\nПрисоединяется к войнам Сюзерена: £trigger_yes£\nМожет быть присоединен: £trigger_yes£\nдань: §Y15%§! £unity£ §HUnity§!\nОсобый эффект: §Y+50%§! Влечение к §H$ethic_spiritualist$§!"
- SUBJECT_verfoederatus: "Федерат"
- SUBJECT_DESC_verfoederatus: "Федераты платят §Y15%§! ежемесячного дохода сплавов в дань и обязаны участвовать в войне своего Сюзерена. Они получают §G+25%§! бонук к §YВместимость флотилии§! и могут Расширениеся агресивно. Этот тип субъекта не может быть интегрирован.\n\nРасширение: £trigger_no£\nМожет Вести Войну: £trigger_yes£\nЗащищенный Сюзереном: £trigger_yes£\nПрисоединяется к войнам Сюзерена: £trigger_yes£\nМожет быть присоединен: £trigger_no£\nдань: §Y15%§! £alloys£ §HСплавы§!\nОсобый эффект: §G+25%§! §YВместимость флотилии§!"
- SUBJECT_verjrpartner: "Младший партнер"
- SUBJECT_DESC_verjrpartner: "Младший партнер платит §Y10%§! своих ежемесячные физические, общественные и инженерные исследования своему Сюзерену и вынуждены вступать в его войны, но способны мирно Расширениеся, не могут быть присоединены, защищенны их Сюзереном и получает §Y30%§! сниженную стоимость технологий для любой технологии, которую знает их Повелитель.\n\nРасширение: £trigger_yes£\nМожет Вести Войну: £trigger_no£\nЗащищенный Сюзереном: £trigger_yes£\nПрисоединяется к войнам Сюзерена: £trigger_yes£\nМожет быть присоединен: £trigger_no£\nдань: §Y10%§! £science£ §HНаука§!\nОсобый эффект: §Y-30%§! стоимость для технологий "Сюзерена""
- SUBJECT_verpuppet: "Марионеточное государство"
- SUBJECT_DESC_verpuppet: "Марионеточные государства не имеют дипломатической свободы и, используя влияние, могут быть использованы для ведения опосредованных войн за своего Сюзерена. Они не подчиняются своему Сюзерену, даже несмотря на то, что им приходится участвовать в их войнах. Этот тип субъекта также оплачивается §Y5%§! их ежемесячной энергии и минералов в качестве дань. Их Повелитель не заинтересован в интеграции.\n\nРасширение: £trigger_no£\nМожет Вести Войну: £trigger_no£\nЗащищенный Сюзереном: £trigger_no£\nПрисоединяется к войнам Сюзерена: £trigger_yes£\nМожет быть присоединен: £trigger_no£\nдань: §Y5%§! £energy£ §HЭнергия§! и £minerals£ §HМинералы§!\nОсобый эффектs: §R-10§! Стабильности; Может использоваться для Прокси-Войн"
- SUBJECT_verserf: "Крепостной"
- SUBJECT_DESC_verserf: "Крепостные не имеют дипломатической свободы, платят §Y25%§! ежемесячного дохода Товары массового спроса и §Y10%§! своих основных ресурсов своему Сюзерену и не защищенны им. Они не могут быть присоединины и не могут быть призваны в войны своего Сюзерена. Этот тип субъекта сильно жалеет о своем положении.\n\nРасширение: £trigger_no£\nМожет Вести Войну: £trigger_no£\nЗащищенный Сюзереном: £trigger_no£\nПрисоединяется к войнам Сюзерена: £trigger_no£\nМожет быть присоединен: £trigger_no£\nдань: §Y25%§! £consumer_goods£ §HТовары массового спроса§!, §Y10%§! Расширенные ресурсы\nОсобый эффект: §R-100§! Мнение по отношению к Сюзерену"
- SUBJECT_versister: "Братская Республика"
- SUBJECT_DESC_versister: "Братские республики вынуждены принять демократическую форму правления, но в основном свободны и не платят налоги. Они защищенны их Сюзереном, но ожидается, что взамен они окажут им военную помощь.\n\nРасширение: £trigger_yes£\nМожет Вести Войну: £trigger_yes£\nЗащищенный Сюзереном: £trigger_yes£\nПрисоединяется к войнам Сюзерена: £trigger_yes£\nМожет быть присоединен: £trigger_yes£\nдань: None\nОсобый эффект: Внедрять демократию"
- SUBJECT_verorganic: "Органический помощник"
- SUBJECT_DESC_verorganic: "Органические помощники не имеют дипломатической свободы, присоединяются к войнам своего Сюзерена и платить §Y25%§! ежемесячного дохода Энергии Как дань. Они не могут быть присоединены и подчиняются своему Сюзерену.\n\nРасширение: £trigger_no£\nМожет Вести Войну: £trigger_no£\nЗащищенный Сюзереном: £trigger_yes£\nПрисоединяется к войнам Сюзерена: £trigger_yes£\nМожет быть присоединен: £trigger_no£\nдань: §Y25%§! £energy£ §HЭнергия§!"
- SUBJECT_verparallel: "Параллельный процессор"
- SUBJECT_DESC_verparallel: "Параллельные процессоры не имеют дипломатической свободы, присоединяются к войнам своего Сюзерена, могут быть присоединены. Повелитель получает §G+5%§ скорость исследования для каждого параллельного процессора, находящегося в их распоряжении, максимум до 20%.\n\nРасширение: £trigger_no£\nМожет Вести Войну: £trigger_no£\nЗащищенный Сюзереном: £trigger_yes£\nПрисоединяется к войнам Сюзерена: £trigger_yes£\nМожет быть присоединен: £trigger_yes£\nдань: None\nОсобый эффект: §S(Сюзерен)§! §G+5%§ Скорость исследования для каждого Каждого параллельного процессора (Максимум до 20%)"
- SUBJECT_verblood: "Данник крови"
- SUBJECT_DESC_verblood: "Притоки крови платят особую дань, налог кровью. Каждые 15-20 лет 10% их населения отправляется к своему Сюзерену Как дань.Поскольку этот тип подданных, по-видимому, является не более чем источником рабов для их Сюзерена, он не имеет ниКакой дипломатической свободы, будучи неспособным Расширениеся или вести войну независимо.\n\nРасширение: £trigger_no£\nМожет Вести Войну: £trigger_no£\nЗащищенный Сюзереном: £trigger_yes£\nПрисоединяется к войнам Сюзерена: £trigger_yes£\nМожет быть присоединен: £trigger_no£\nдань: §Y10%§! £pops£ §HПоселения§! каждые 15-20 лет\nОсобый эффект: §R-1000§! Мнение по отношению к Сюзерену"
+ ##### Subject types #####
+ preset_verappendage: "Придаток"
+ preset_verappendage_desc:"Придатки могут быть интегрированы."
+ preset_verdevolved: "Автономный регион"
+ preset_verdevolved_desc:"Автономные регионы могут быть интегрированы, могут мирно расширяться и находятся под защитой своего Сюзерена.\n\nНалог: £influence£ §G25§!\nСпец.эффект: £navy_size£ §YВместимость флота§!: §R-50%§!"
+ # preset_verbeneficiary: "Бенефициар"
+ # preset_verbeneficiary_desc:"Бенефициары в основном независимы, их не призывают на войны их Сюзерена, они защищены и не платят налоги. Они могут быть интегрированы."
+ preset_verdisciple: "Последователь"
+ preset_verdisciple_desc:"Последователи находятся под защитой своего Повелителя.\n\nНалог: §Y15%§! £unity£ §HЕдинства§!\nСпец.эффект: §Y+50%§! Привлекательности §H$ethic_spiritualist$§!"
+ preset_verfoederatus: "Марка"
+ preset_verfoederatus_desc:"Марки обязаны участвовать в войнах своего Сюзерена. Однако они не могут быть интегрированы.\n\nСпец.эффект: £navy_size£ §YВместимость флота§!: §G25%§!"
+ preset_verjrpartner: "Младший партнёр"
+ preset_verjrpartner_desc:"Младшие партнёры не могут быть интегрированы.\n\nСпец.эффект: §Y-30%§! стоимость известных технологий Сюзерена"
+ preset_verpuppet: "Марионеточное государство"
+ preset_verpuppet_desc: "Марионеточные государства, используя влияние, могут быть использованы для ведения Опосредованных войн за своего Сюзерена. Они находятся под защитой своего Сюзерена, и им приходится участвовать в его войнах.\n\nСпец.эффект: §R-10§! £stability£ §YСтабильности§!"
+ preset_verserf: "Крепостной"
+ preset_verserf_desc: "У крепостных нет дипломатической свободы, и обычно они не защищены своим Сюзереном. Они не могут быть интегрированы. Этот тип субъекта сильно возмущается своим состоянием.\n\nСпец.эффект: §R-100§! Мнения о Сюзерене"
+ # preset_versister: "Братская республика"
+ # preset_versister_desc: "Братские республики вынуждены принять демократическую форму правления, но в основном свободны и не платят налогов. Они находятся под защитой своего Сюзерена, но взамен от них ожидают военной помощи.\n\nМожет расширяться: £trigger_yes£\nМожет вести войны: £trigger_yes£\nЗащищён: £trigger_yes£\nПрисоединяется к войнам Сюзерена: £trigger_yes£\nИнтеграция: £trigger_yes£\nНалог: Нет\nСпец.эффект: Установление демократии"
+ preset_verorganic: "Органический ауксиляр"
+ preset_verorganic_desc:"Органические ауксиляры не имеют дипломатической свободы, но не могут быть интегрированы и защищены своим Сюзереном."
+ preset_verparallel: "Параллельный процессор"
+ preset_verparallel_desc:"Параллельные процессоры не имеют дипломатической свободы, присоединяются к войнам своего Сюзерена, защищены и могут быть интегрированы.\n\nСпец.эффект: §S(Overlord)§! §G+5%§ Скорости исследований за каждый параллельный процессор (до 20%)"
+ preset_verblood: "Кровавый данник"
+ preset_verblood_desc:"Кровные данники платят особую дань, налог на кровь. Каждые 15-20 лет 10% их населения отправляется своему Сюзерену в качестве дани.\n\nНалог: §Y10%§! £pops£ §HПоселений§! каждые 15-20 лет\nСпец.эффект: §R-1000§! Мнения о Сюзерене"
  # Corporate Subjects
- SUBJECT_versubsidiary: "$SUBJECT_subsidiary$"
- SUBJECT_DESC_versubsidiary: "Дочерние компании дипломатически подчиняются своему Корпоративному Сюзерену и подчиняются ему, но им разрешено расширяться и вести войны между собой.\n\nРасширение: £trigger_yes£\nМожет Вести Войну: £trigger_yes£\nЗащищенный Сюзереном: £trigger_yes£\nПрисоединяется к войнам Сюзерена: £trigger_yes£\nМожет быть присоединен: £trigger_no£\nдань: §Y25%§! £energy£ §HЭнергия§!"
- SUBJECT_verdevotee: "Преданный"
- SUBJECT_DESC_verdevotee: "Преданные платят §Y20%§! ежемесячного дохода Энергии и §Y5%§! Единства в дань, но им разрешено расширяться и вести войны.\n\nРасширение: £trigger_yes£\nМожет Вести Войну: £trigger_yes£\nЗащищенный Сюзереном: £trigger_yes£\nПрисоединяется к войнам Сюзерена: £trigger_yes£\nМожет быть присоединен: £trigger_no£\nдань: §Y20%§! £energy£ §HЭнергия§!, §Y5%§! £unity£ §HUnity§!"
- SUBJECT_verkobun: "Кобун"
- SUBJECT_DESC_verkobun: "Кобуны получают §R+50§! Преступность на их планетах и должны платить §Y10%§! ежемесячного дохода Энергии и Минералов в дань. Их можно использовать для Прокси-Войн.\n\nРасширение: £trigger_yes£\nМожет Вести Войну: £trigger_yes£\nЗащищенный Сюзереном: £trigger_yes£\nПрисоединяется к войнам Сюзерена: £trigger_yes£\nМожет быть присоединен: £trigger_no£\nдань: §Y10%§! £energy£ §HЭнергия§! и £minerals£ §HМинералы§!\nОсобый эффект: §R+50§! Crime; Может использоваться для Прокси-Войн"
- SUBJECT_versupplier: "Поставщик"
- SUBJECT_DESC_versupplier: "Поставщики платят §Y10%§! ежемесячного дохода Энергии и Товары массового спроса в дань.\n\nРасширение: £trigger_yes£\nМожет Вести Войну: £trigger_yes£\nЗащищенный Сюзереном: £trigger_yes£\nПрисоединяется к войнам Сюзерена: £trigger_yes£\nМожет быть присоединен: £trigger_no£\nдань: §Y10%§! £energy£ §HЭнергия§! и £consumer_goods£ §HТовары массового спроса§!"
- SUBJECT_verworshipper: "Поклонник"
- SUBJECT_DESC_verworshipper: "Поклонник платит §Y15%§! ежемесячного дохода Энергии и §Y10%§! и Единства в дань. Их присутствие в церкви Сюзерена обязательно, что приводит к повышению этики Спиритуализма. \n\nРасширение: £trigger_yes£\nМожет Вести Войну: £trigger_yes£\nЗащищенный Сюзереном: £trigger_yes£\nПрисоединяется к войнам Сюзерена: £trigger_yes£\nМожет быть присоединен: £trigger_no£\nдань: §Y15%§! £energy£ §HЭнергия§!, §Y10%§! £unity£ §HUnity§!\nОсобый эффект: §Y+50%§! Влечение к §H$ethic_spiritualist$§!"
- SUBJECT_verdebtor: "Должник"
- SUBJECT_DESC_verdebtor: "Должник платит особую дань, это дань кровью. Каждые 15-20 лет 5% их населения отправляется к своему Сюзерену в качестве дани.\n\nРасширение: £trigger_yes£\nМожет Вести Войну: £trigger_yes£\nЗащищенный Сюзереном: £trigger_yes£\nПрисоединяется к войнам Сюзерена: £trigger_yes£\nМожет быть присоединен: £trigger_no£\nдань: §Y5%§! £pops£ §HПоселения§! every 15-20 years\nОсобый эффект: §R-1000§! Мнение по отношению к Сюзерену"
- SUBJECT_versubscriber: "Последователь"
- SUBJECT_DESC_versubscriber: "Последователь платит §Y15%§! ежемесячного дохода Энергии Как часть особого 'последовательского плана.' Каждый последователь также дает Сюзерену §G+0.25§! £influence£ monthly.\n\nРасширение: £trigger_yes£\nМожет Вести Войну: £trigger_yes£\nЗащищенный Сюзереном: £trigger_yes£\nПрисоединяется к войнам Сюзерена: £trigger_yes£\nМожет быть присоединен: £trigger_no£\nдань: §Y15%§! £energy£ §HЭнергия§!\nОсобый эффект: §G+0.25§! £influence£ от каждого Абонента"
- SUBJECT_verarmsdealer: "Торговец оружием"
- SUBJECT_DESC_verarmsdealer: "Торговец оружием платит §Y5%§! ежемесячного дохода Энергии и §Y10%§! и Сплавов в дань. В рамках своего контракта на военные субсидии они получают §Y25%§! увеличение Вместимости флота.\n\nРасширение: £trigger_yes£\nМожет Вести Войну: £trigger_yes£\nЗащищенный Сюзереном: £trigger_yes£\nПрисоединяется к войнам Сюзерена: £trigger_yes£\nМожет быть присоединен: £trigger_no£\nдань: §Y5%§! £energy£ §HЭнергия§!, §Y10%§! £alloys£ §HСплавы§!\nОсобый эффект: §G+25%§! §YВместимость флотилии§!"
- SUBJECT_versubcontractor: "Субподрядчик"
- SUBJECT_DESC_versubcontractor: "Субподрядчик платит §Y10%§! ежемесячного дохода Энергии в дань а также делится §Y5%§! ежемесячными Физическими, Социальными и Инженерными исследованиями своему Повелителю благодаря их опыту.\n\nРасширение: £trigger_yes£\nМожет Вести Войну: £trigger_yes£\nЗащищенный Сюзереном: £trigger_yes£\nПрисоединяется к войнам Сюзерена: £trigger_yes£\nМожет быть присоединен: £trigger_no£\nдань: §Y10%§! £energy£ §HЭнергия§!, §Y5%§! £science£ §HНаука§!\nОсобый эффект: §Y-30%§! стоимость для технологий "Сюзерена""
- SUBJECT_verdependency: "Зависимый"
- SUBJECT_DESC_verdependency: "Зависимые являются одним из наиболее часто используемых типов дочерних компаний, выплачивающих §Y10%§! ежемесячного дохода Энергии, Минералов и Еды в дань.\n\nРасширение: £trigger_yes£\nМожет Вести Войну: £trigger_yes£\nЗащищенный Сюзереном: £trigger_yes£\nПрисоединяется к войнам Сюзерена: £trigger_yes£\nМожет быть присоединен: £trigger_no£\nдань: §Y10%§! £energy£ §HЭнергия§!, £minerals£ §HМинералы§! и £food£ §HЕда§!"
+ # preset_versubsidiary: "$preset_subsidiary$"
+ # preset_versubsidiary_desc:"Дочерние компании дипломатически подчинены своему Корпоративному Сюзерену и защищены им, но им разрешено расширяться и вести войны между собой.\n\nМожет расширяться: £trigger_yes£\nМожет вести войны: £trigger_yes£\nЗащищён: £trigger_yes£\nПрисоединяется к войнам Сюзерена: £trigger_yes£\nИнтеграция: £trigger_no£\nНалог: §Y25%§! £energy£ §HЭнергии§!"
+ preset_verdevotee: "Приверженец"
+ preset_verdevotee_desc:"У Приверженцев есть открытое вассальное соглашение и несколько доступных вариантов как для Приверженца, так и для Сюзерена.\n\nНалог: §Y5%§! £unity£ §HЕдинства§!" 
+ preset_verkobun: "Кобун"
+ preset_verkobun_desc:"У Кобуна есть открытое вассальное соглашение и несколько доступных вариантов как для Кобуна, так и для Сюзерена. Они также могут быть использованы для прокси-войн.\n\nСпец.эффект: §R+50§! Преступности"
+ # preset_versupplier: "Поставщик"
+ # preset_versupplier_desc:"Поставщики платят §Y10%§! от их ежемесячных энергокредитов и ТМС в качестве налога.\n\nМожет расширяться: £trigger_yes£\nМожет вести войны: £trigger_yes£\nЗащищён: £trigger_yes£\nПрисоединяется к войнам Сюзерена: £trigger_yes£\nИнтеграция: £trigger_no£\nНалог: §Y10%§! £energy£ §HЭнергокредитов§! и £consumer_goods£ §HТМС§!"
+ preset_verworshipper: "Поклоняющийся"
+ preset_verworshipper_desc:"Поклоняющиеся имеют открытое вассальное соглашение и несколько доступных вариантов как для Поклоняющегося, так и для Сюзерена. Их присутствие в церкви Сюзерена обязательно, что приводит к усилению этического влечения к спиритизму.\n\nНалог: §Y10%§! £unity£ §HЕдинства§!\nСпец.эффект: §Y+50%§! Привлекательности §H$ethic_spiritualist$§!"
+ preset_verdebtor: "Должник"
+ preset_verdebtor_desc:"Должники платят особую дань, налог на кровь. Каждые 15-20 лет 5% их населения отправляется своему Сюзерену в качестве дани.\n\nНалог: §Y5%§! £pops£ §HПоселений§! каждые 15-20 лет\nСпец.эффект: §R-1000§! Мнения о Сюзерене"
+ preset_versubscriber: "Подписчик"
+ preset_versubscriber_desc:"Подписчики имеют открытое вассальное соглашение и несколько доступных опций как для Подписчика, так и для Сюзерена.\n\nНалог: £influence£ §G25§!"
+ preset_verarmsdealer: "Торговец оружием"
+ preset_verarmsdealer_desc:"У торговцев оружием есть открытое вассальное соглашение и несколько доступных вариантов как для Торговца оружием, так и для Сюзерена.\n\nСпец.эффект: £navy_size£ §YВместимость флота§!: §G25%§!"
+ preset_versubcontractor: "Субподрядчик"
+ preset_versubcontractor_desc:"Субподрядчики имеют открытое вассальное соглашение и несколько доступных вариантов как для Субподрядчика, так и для Сюзерена.\n\nСпец.эффект: §Y-30%§! стоимости к технологиями Сюзерена"
+ # SUBJECT_verdependency: "Зависимость"
+ # SUBJECT_DESC_verdependency: "Dependencies are one of the most exploited types of subsidiaries, paying §Y10%§! of their Energy, Minerals and Food in tribute.\n\nCan Expand: £trigger_yes£\nCan Wage War: £trigger_yes£\nProtected: £trigger_yes£\nJoins Overlord's Wars: £trigger_yes£\nCan Integrate: £trigger_no£\nTribute: §Y10%§! £energy£ §HEnergy§!, £minerals£ §HMinerals§! and £food£ §HFood§!"
+
+ # Term Window:
+ preset_verpuppet_flavor_desc: "Марионеточные государства, используя влияние, могут быть использованы для ведения Опосредованных войн за своего Сюзерена. Они находятся под защитой своего Сюзерена, и им приходится участвовать в его войнах."
+ preset_verdevolved_flavor_desc: "Автономные регионы могут быть интегрированы, могут мирно расширяться и находятся под защитой своего Сюзерена."
+ preset_verfoederatus_flavor_desc: "Марки обязаны участвовать в войнах своего Сюзерена. Однако они не могут быть интегрированы."
+ preset_verdisciple_flavor_desc: "Последователи находятся под защитой своего Сюзерена."
+ preset_verjrpartner_flavor_desc: "Младшие партнёры не могут быть интегрированы."
+ preset_verserf_flavor_desc: "У крепостных нет дипломатической свободы, и обычно они не защищены своим Сюзереном. Они не могут быть интегрированы. Этот тип субъекта сильно возмущается своим состоянием."
+ preset_verblood_flavor_desc: "Кровные данники платят особую дань, налог на кровь. Каждые 15-20 лет 10% их населения отправляется своему Сюзерену в качестве дани."
+ preset_verappendage_flavor_desc: "Придатки могут быть интегрированы."
+ preset_verorganic_flavor_desc: "Органические ауксиляры не имеют дипломатической свободы, но не могут быть интегрированы и находятся под защитой своего Сюзерена."
+ preset_verparallel_flavor_desc: "Параллельные процессоры не имеют дипломатической свободы, присоединяются к войнам своего Сюзерена, защищены и могут быть интегрированы.\n\nСпец.эффект: §S(Overlord)§! §G+5%§ Скорости исследований за каждый параллельный процессор (до 20%)"
+ preset_verdevotee_flavor_desc: "У Поклоняющихся есть открытое вассальное соглашение и несколько доступных вариантов как для Поклоняющегося, так и для Сюзерена."
+ preset_verkobun_flavor_desc: "У Кобуна есть открытое вассальное соглашение и несколько доступных вариантов как для Кобуна, так и для Сюзерена. Они также могут быть использованы для прокси-войн."
+ preset_verworshipper_flavor_desc: "Поклоняющиеся имеют открытое вассальное соглашение и несколько доступных вариантов как для Поклоняющегося, так и для Сюзерена. Их присутствие в церкви Сюзерена обязательно, что приводит к усилению этического влечения к спиритизму."
+ preset_verdebtor_flavor_desc: "Должники платят особую дань, налог на кровь. Каждые 15-20 лет 5% их населения отправляется своему Сюзерену в качестве дани."
+ preset_versubscriber_flavor_desc: "Подписчики имеют открытое вассальное соглашение и несколько доступных опций как для Подписчика, так и для Сюзерена."
+ preset_verarmsdealer_flavor_desc: "У торговцев оружием есть открытое вассальное соглашение и несколько доступных вариантов как для Торговца оружием, так и для Сюзерена."
+ preset_versubcontractor_flavor_desc: "Субподрядчики имеют открытое вассальное соглашение и несколько доступных вариантов как для Субподрядчика, так и для Сюзерена."
+
  ##### Events #####
  ## Becoming a vassal
- ver.100.name: "Новый Субъект Государства"
+ ver.100.name: "Новый субъект государства"
  ver.100.desc: "Государство §Y[From.GetName]§! недавно был интегрирован в нашу сферу влияния. Теперь нам предстоит решить, Как [From.GetAdj] лучше распорядиться [Root.GetAdj] с пользой."
  ver.100.appendage: "Придаток"
  ver.100.appendage.tooltip: "$SUBJECT_DESC_verappendage$"
@@ -165,13 +186,13 @@ l_russian:
  ver.40.distribute.tooltip: "[This.ver_blood_tributary_total_population] £pops£ §HПоселения§! будут отправлены в наши миры, с приоритетом на колонии с свободным жильем"
  ver.40.thrall: "Отправьте их всех в наши Миры Рабов."
  ver.40.thrall.tooltip: "[This.ver_blood_tributary_total_population] £pops£ §HПоселения§! будут распределены между нашими Рабскими Мирами"
- ##### Government #####
- ## Governmment type
- ver_gov_single_party_republic: "Однопартийная Республика"
- ver_gov_single_party_republic_desc: "Эта номинальная демократия является фактической диктатурой, контролируемой лидером государственной партии."
+#  ##### Government #####
+#  ## Governmment type
+# ver_gov_single_party_republic: "Однопартийная Республика"
+# ver_gov_single_party_republic_desc: "Эта номинальная демократия является фактической диктатурой, контролируемой лидером государственной партии."
  ## Civics
- civic_staged_elections: "Инсценированные выборы"
- civic_staged_elections_desc: "В этом обществе есть большие официальные выборы, где каждый гражданин может отдать свой голос - при условии, что это правильный голос."
+# civic_staged_elections: "Инсценированные выборы"
+# civic_staged_elections_desc: "В этом обществе есть большие официальные выборы, где каждый гражданин может отдать свой голос - при условии, что это правильный голос."
  ##### Modifiers #####
  ## Static Modifiers
  ver_overlord_indoctrination: "Идеологическая обработка Сюзерена"
@@ -346,7 +367,7 @@ l_russian:
 
  SUBJECT_DESC_protectorate:5 "Протекторатам гарантируется независимость их Сюзереном, ускоряющий на §Y80%§! изучение любой технологии, которую знает Сюзерен, и превращаются в вассалов, как только они достигают §Y50%§! от технологического уровня Сюзерена.\n\nРасширение: £trigger_yes£\nОбладает Дипломатической Свободой: £trigger_yes£\nЗащищенный Сюзереном: £trigger_yes£\nЗащищает Сюзерена: £trigger_no£\nМожет быть Присоединен: £trigger_no£\nдань: §Y0.1§! £influence£ §HВлияние§!"
 
- edict_veru_manage_subject:0 "Управление Субъектом"
+ edict_veru_manage_subject:0 "Управление субъектами"
  edict_veru_manage_subject_desc:0 "Позволяет нам управлять нашими Субъектами."
  edict_veru_manage_subject_tooltip:0 "Позволяет нам управлять нашими Субъектами."
 
@@ -355,7 +376,7 @@ l_russian:
  ver.100.member.tooltip:0 "Автономная территория в рамках более крупной империи."
  
  # Manage Subject
- veru.1000.name: "Усправление Субъектом"
+ veru.1000.name: "Усправление субъектами"
  veru.1000.desc: "Какой Субъект необходимо рассмотреть?"
  veru.1000.desc.fail: "У нас нет Субъектов, которыми мы могли бы управлять."
  veru.1000.fail: "Несчастный."
@@ -379,8 +400,11 @@ l_russian:
 
  veru.1050.type: "Нам нужно изменить наши отношения."
  veru.1050.gov: "Нам нужно изменить вашу структуру управления."
+ veru.1050.cap: "Мы должны перенести вашу столицу."
  veru.1050.leader: "Мы назначаем нового лидера."
  veru.1050.tech: "Мы предоставляем вам доступ ко всем нашим технологиям."
+ veru.1050.exile: "Мы даём вам территорию."
+ veru.1050.proxy: "Мы начинаем опосредованную войну."
  veru.1050.tech.tooltip: "Государство §Y[event_target:chosen_subject.GetName]§! будет предоставлен доступ ко всем технологиям, которые мы исследовали до настоящего времени."
  veru.1050.name_change: "Мы меняем название вашей Империи."
  veru.1050.name_change.tooltip: "Государство §Y[event_target:chosen_subject.GetName]§! будет именоваться §Y[root.capital_scope.solar_system.GetName]§!."
@@ -395,9 +419,9 @@ l_russian:
  veru.3000.vervassal: "Вы будете §YВассалом§!."
  veru.3000.appendage: "Вы будете §YПридатком§!."
  veru.3000.autonomous: "Вы будете §YАвтономным Регионом§!."
- veru.3000.beneficiary: "Вы будете §Y Бенефициаром§!."
+ veru.3000.beneficiary: "Вы будете §YБенефициаром§!."
  veru.3000.disciple: "Вы будете §YПоследователь§!."
- veru.3000.foederatus: "Вы будете §YФедератом§!."
+ veru.3000.foederatus: "Вы будете §YМаркой§!."
  veru.3000.jrpartner: "Вы будете §YМладшим партнером§!."
  veru.3000.puppet: "Вы будете §YМарионеткой§!."
  veru.3000.serf: "Вы будете §YКрепостным§!."
@@ -559,14 +583,224 @@ l_russian:
  # Vanilla Vassals
  choice_veru_vassal:0 "Вассал"
  choice_veru_tributary:0 "Данник"
- choice_veru_subsidiary:0 "Дочерняя Компания"
+ choice_veru_subsidiary:0 "Дочерняя компания"
 
  influencefail_text_veru:0 "§HТребует§! §Y100§! £influence£ §HВлияние§!"
+ influencefail_text_veru_150: "§RТребует§! §Y150§! £influence£ §HВлияние§!"
  influencefail_text_veru_200:0 "§HТребует§! §Y200§! £influence£ §HВлияние§!"
  influencefail_text_veru_300:0 "§HТребует§! §Y300§! £influence£ §HВлияние§!"
  
- capitalist_auth_fail:0 "§RТребует§! Комбинации §YCompetitive§Y и §YАвторитарной§Y этик."
+ capitalist_auth_fail:0 "§RТребует§! Комбинации §YКонкурентный§Y и §YАвторитарной§Y этик."
+ 
+ # CBs and War Goals
+ veru.6100.border_subject_1: "§Y[event_target:border_subject_1.GetName]§!"
+ veru.6100.border_subject_2: "§Y[event_target:border_subject_2.GetName]§!"
+ veru.6100.border_subject_3: "§Y[event_target:border_subject_3.GetName]§!"
+ veru.6100.border_subject_4: "§Y[event_target:border_subject_4.GetName]§!"
+ veru.6100.border_subject_5: "§Y[event_target:border_subject_5.GetName]§!"
+ veru.6100.border_subject_6: "§Y[event_target:border_subject_6.GetName]§!"
+ veru.6100.border_subject_7: "§Y[event_target:border_subject_7.GetName]§!"
+ veru.6100.border_subject_8: "§Y[event_target:border_subject_8.GetName]§!"
+ veru.6100.border_subject_9: "§Y[event_target:border_subject_9.GetName]§!"
+ veru.6100.border_subject_10: "§Y[event_target:border_subject_10.GetName]§!"
+ veru.6100.name: "[from.Ruler.GetTitle] §H[from.ruler.GetName]§!"
+ veru.6100.desc: "На какой из наших соседних субъектов вы претендуете?"
+
+ casus_belli_cb_buffer_zone: "Буферная зона"
+ war_goal_wg_claim_subject: "Захватить субъект"
+ war_goal_wg_claim_subject_desc: "Война ведётся с целью захвата контроля над важнейшим буферным государством. После начала войны мы уточним, на какое соседнее подчинённое государство мы претендуем."
+ chosen_subject_text: "Мы §Yустановим предпочтительного нами лидера§! в стране, которую мы выбрали в начале войны, §Yделая их нашим субъектом§!."
+
+ veru.6400.name: "Руководство §Y[event_target:chosen_subject.GetName]§!"
+ veru.6400.desc: "Теперь, когда мы обеспечили контроль над §Y[event_target:chosen_subject.GetName]§!, нам нужно установить руководство, которое подчинялось бы нашему правлению. Мы можем выбрать лидера, симпатизирующего нашему правлению, из числа их собственного народа. Преимущество этого заключается в том, что это, скорее всего, сделает переход намного более плавным. Однако мы также можем выбрать лидера из числа наших собственных людей, что практически гарантирует их лояльность."
+
+ veru.6400.them: "Один из §Yих§! людей."
+ veru.6400.them.tooltip: "Выбор одного из их лидеров позволит нам избежать любых штрафов к £stability£ §YСтабильности§! и £happiness£ §YСчастью§! понесённых за §Y[event_target:chosen_subject.GetName]§!."
+ veru.6400.us: "Один из §Yнаших§! людей."
+ veru.6400.us.tooltip: "Выбор одного из наших лидеров даст нам большой буст к £opinion£ §YМнению§! с §Y[event_target:chosen_subject.GetName]§! пока наш установленный лидер не умрёт. Однако это также повлечет за собой §Rштрафы§! к £stability£ §YСтабильности§! и £happiness£ §YСчастью§! в §Y[event_target:chosen_subject.GetName]§! на следующие §Y15-20§! лет."
+
+ veru.6510.name: "Губернаторы"
+ veru.6520.name: "Адмиралы"
+ veru.6530.name: "Генералы"
+ veru.6540.name: "Учёные"
+
+ veru.6510.desc: "Кто должен возглавить §Y[event_target:chosen_subject.GetName]§!?"
+
+ veru.6500.governor: "Один из их §YГубернаторов§!."
+ veru.6500.admiral: "Один из их §YАдмиралов§!."
+ veru.6500.general: "Один из их §YГенералов§!."
+ veru.6500.scientist: "Один из их §YУчёных§!."
+
+ ###############
+ # Relocate Capital
+ veru.7000.loyal.desc: "Куда бы вы хотели, чтобы мы перенесли нашу столицу?"
+ veru.7000.disloyal.desc: "Переносим нашу столицу? Как будто мы не подвергались достаточному унижению. Куда?"
+
+ # Potential Capitals
+ veru.7000.relocation_planet_1: "§Y[event_target:relocation_planet_1.GetName]§!"
+ veru.7000.relocation_planet_2: "§Y[event_target:relocation_planet_2.GetName]§!"
+ veru.7000.relocation_planet_3: "§Y[event_target:relocation_planet_3.GetName]§!"
+ veru.7000.relocation_planet_4: "§Y[event_target:relocation_planet_4.GetName]§!"
+ veru.7000.relocation_planet_5: "§Y[event_target:relocation_planet_5.GetName]§!"
+ veru.7000.relocation_planet_6: "§Y[event_target:relocation_planet_6.GetName]§!"
+ veru.7000.relocation_planet_7: "§Y[event_target:relocation_planet_7.GetName]§!"
+ veru.7000.relocation_planet_8: "§Y[event_target:relocation_planet_8.GetName]§!"
+ veru.7000.relocation_planet_9: "§Y[event_target:relocation_planet_9.GetName]§!"
+ veru.7000.relocation_planet_10: "§Y[event_target:relocation_planet_10.GetName]§!"
+ veru.7000.relocation_planet_11: "§Y[event_target:relocation_planet_11.GetName]§!"
+ veru.7000.relocation_planet_12: "§Y[event_target:relocation_planet_12.GetName]§!"
+ veru.7000.relocation_planet_13: "§Y[event_target:relocation_planet_13.GetName]§!"
+ veru.7000.relocation_planet_14: "§Y[event_target:relocation_planet_14.GetName]§!"
+ veru.7000.relocation_planet_15: "§Y[event_target:relocation_planet_15.GetName]§!"
+ veru.7000.relocation_planet_16: "§Y[event_target:relocation_planet_16.GetName]§!"
+ veru.7000.relocation_planet_17: "§Y[event_target:relocation_planet_17.GetName]§!"
+ veru.7000.relocation_planet_18: "§Y[event_target:relocation_planet_18.GetName]§!"
+ veru.7000.relocation_planet_19: "§Y[event_target:relocation_planet_19.GetName]§!"
+ veru.7000.relocation_planet_20: "§Y[event_target:relocation_planet_20.GetName]§!"
+
+ ####################
+ # Contracts
+
+ subject_ver_ruler: "Назначение правителя"
+ subject_ver_ruler_desc: "Этот пункт определяет, разрешено ли Сюзерену назначать своего предпочтительного лидера правителем Подчинённой нации."
+
+ subject_ver_ruler_restricted: "Назначение запрещено"
+ subject_ver_ruler_restricted_desc: "У Сюзерена нет разрешения менять правителя Субъекта."
+ subject_ver_ruler_them: "Ограниченное назначение"
+ subject_ver_ruler_them_desc: "Сюзерен может выбрать правителя субъекта, но только из числа лидеров самого Субъекта."
+ subject_ver_ruler_anyone: "Неограниченное назначение"
+ subject_ver_ruler_anyone_desc: "Сюзерен может выбрать любого лидера в качестве правителя Субъекта."
+
+ subject_ver_naming: "Права на присвоение имен"
+ subject_ver_naming_desc: "Этот пункт определяет, разрешено ли Сюзерену переименовывать Субъект."
+
+ subject_ver_naming_restricted: "Переименование запрещено"
+ subject_ver_naming_restricted_desc: "Сюзерену запрещено переименовывать Субъект."
+ subject_ver_naming_allowed: "Переименование разрешено"
+ subject_ver_naming_allowed_desc: "Сюзерену разрешено переименовывать Субъект."
+
+ subject_ver_capital: "Перенос столицы"
+ subject_ver_capital_desc: "Этот Термин определяет, может ли Сюзерен принять решение о переносе столицы Субъекта."
+
+ subject_ver_capital_restricted: "Перенос запрещён"
+ subject_ver_capital_restricted_desc: "Сюзерену запрещено перемещать столицу Субъекта."
+ subject_ver_capital_allowed: "Перенос разрешён"
+ subject_ver_capital_allowed_desc: "Сюзерену разрешается переместить столицу Субъекта."
+
+ subject_ver_government: "Реструктизация посягательства"
+ subject_ver_government_desc: "Этот пункт определяет, разрешено ли Сюзерену изменять форму правления в пределах Субъекта."
+
+ subject_ver_government_restricted: "Реструктизация запрещена"
+ subject_ver_government_restricted_desc: "Сюзерену запрещено изменять форму правления Субъекта."
+ subject_ver_government_allowed: "Реструктизация разрешена"
+ subject_ver_government_allowed_desc: "Сюзерену может изменить форму правления Субъекта."
+
+ resource_subsidies_ver_energy: "Энергокредиты"
+ resource_subsidies_ver_minerals: "Минералы"
+ resource_subsidies_ver_food: "Еда"
+ resource_subsidies_ver_alloys: "Сплавы"
+ resource_subsidies_ver_consumer_goods: "Потребительские товары"
+ resource_subsidies_ver_volatile_motes: "Летучие пылинки"
+ resource_subsidies_ver_exotic_gases: "Экзотические газы"
+ resource_subsidies_ver_rare_crystals: "Редкие кристаллы"
+ resource_subsidies_ver_minor_artifacts: "Малые артефакты"
+ resource_subsidies_ver_research: "Исследования"
+ resource_subsidies_ver_hidden_unity: "Единство"
+
+ resource_subsidies_ver: "Контрибуция"
+
+ contract_fail: "Запрещено контрактом"
+ veru_tree_of_life_fail: "В связи с этим субъектом, полагающимся на их §YДрево Жизни§!, их столица не может быть перемещена."
+
+ subject_verdevolved_effect: "$preset_verdevolved$"
+ subject_verfoederatus_effect: "$preset_verfoederatus$"
+ subject_verdisciple_effect: "$preset_verdisciple$"
+ subject_verjrpartner_effect: "$preset_verjrpartner$"
+ subject_verpuppet_effect: "$preset_verpuppet$"
+ subject_verdisciple_effect: "$preset_verdisciple$"
+ subject_verdevotee_effect: "$preset_verdevotee$"
+ subject_verworshipper_effect: "$preset_verworshipper$"
+ subject_auto_state_effect: "$preset_auto_state$"
+
+ subject_ver_effects: "Специальные эффекты"
+ subject_ver_hidden_resources: "Специальные ресурсы"
+
+ ver_proxy_overlord: "Может заставить субъекты начинать §YОпосредованные войны§!."
+
+ verdevolved_extra_subject: "Ежемесячно: £influence£ §R-0.25§!\nВместимость флота: £navy_size£ §R-50%§!"
+ verdevolved_extra_overlord: "Ежемесячно: £influence£ §G0.25§!"
+
+ ver_blood_tax_subject: "Налог: §Y10%§! £pops£ §HНаселения§! каждые 15-20 лет\nСпец.эффект: §R-1000§! Мнения о Сюзерене"
+ ver_blood_tax_overlord: "§Y10%§! £pops£ §HПоселений§! субъекта каждые 15-20 лет"
+
+ autostate_extra_overlord: "Ежемесячно: £influence£ §R-0.25§"
+
+ ver_extra_subject: "$MODIFIER$\n$RESOURCES$"
+
+ verfoederatus_extra_subject: "$MODIFIER$"
+
+ verdisciple_extra_subject: "$MODIFIER$"
+
+ verjrpartner_extra_subject: "$MODIFIER$"
+
+ verpuppet_extra_subject: "$MODIFIER$"
+
+ verkobun_extra_subject: "$MODIFIER$"
+
+ versubscriber_extra_subject: "$MODIFIER$"
+
+ ver_rec_extra_subject: "$RESOURCES$"
+ ver_rec_extra_overlord: "$RESOURCES$"
+
+ verdisciple_rec_extra_subject: "Ежемесячный налог: £unity£ §R-15%§"
+ verdisciple_rec_extra_overlord: "Ежемесячные налог субъекта: £unity£ §G15%§"
+
+ verdevotee_rec_extra_subject: "Ежемесячный налог: £unity£ §R-5%§"
+ verdevotee_rec_extra_overlord: "Ежемесячные налог субъекта: £unity£ §G5%§"
+
+ verworshipper_rec_extra_subject: "Ежемесячный налог: £unity£ §R-10%§"
+ verworshipper_rec_extra_overlord: "Ежемесячные налог субъекта: £unity£ §G10%§"
+
+ d_overlord_unity_capital: "Центр руководства субъектов"
+ d_overlord_unity_capital_desc: "В этом центре члены некоторых священнических классов нашего предмета получают рекомендации о том, как лучше способствовать сотрудничеству между нашими народами."
+
+ d_subject_unity_capital: "Храм Сюзерена"
+ d_subject_unity_capital_desc: "В этом центре наша правящая элита получила указания от нашего сюзерена о том, как лучше содействовать сотрудничеству между нашими народами."
 
  # Other
- ai.random: "Random"
- veru_autonomous_state.tooltip:0 "Государство §Y[event_target:demanding_subject.GetName]§! станет §YНезависимым§! вприделах нашей нации. Они заплатят нам §Y15% из всех их ресурсов§!. Они смогут вмешаться и объявить войну. Они не будут обязаны помогать нам в наших войнах, а также будут нести ответственность за свою собственную оборону. Они будут стоить нам 0.2 £influence£ §HВлияние§! в месяц. §RМы никогда не сможем интегрировать их.§!"
+ ai.random: "Рандомно"
+ as_they_are: "Оставьте их такими, какие они есть."
+ veru_autonomous_state.tooltip: "§Y[event_target:demanding_subject.GetName]§! станет §YАвтономным государством§! в пределах нашей империи. Они будут платить нам §Y15%§! всех их ресурсов§!. Они смогут расширяться и объявлять войну. От них не потребуется помогать нам в наших войнах, и они также будут нести ответственность за свою собственную оборону. Они будут стоить нам 0.2 £influence£ §HВлияния§! ежемесячно. §RМы никогда не сможем их интегрировать.§!"
+
+ # Overwrites
+ # Preset blocked terms
+ not_allowed_for_protectorate:0 "$TRIGGER_FAIL$Не допускается для §YПротекторатов§!."
+ not_allowed_for_tributary: "$TRIGGER_FAIL$Не допускается дляr §YДанников§!."
+ not_allowed_for_bulwark: "$TRIGGER_FAIL$Не допускается для §YБастионов§!."
+ not_allowed_for_scholarium: "$TRIGGER_FAIL$Не допускается для §YСхолариев§!."
+ not_allowed_for_prospectorium: "$TRIGGER_FAIL$Не допускается для §YПроспекториев§!."
+ not_allowed_for_verappendage: "$TRIGGER_FAIL$Не допускается для §Y$preset_verappendage$s§."
+ not_allowed_for_verdevolved: "$TRIGGER_FAIL$Не допускается для §Y$preset_verdevolved$s§."
+ not_allowed_for_verdisciple: "$TRIGGER_FAIL$Не допускается для §Y$preset_verdisciple$s§."
+ not_allowed_for_verfoederatus: "$TRIGGER_FAIL$Не допускается для §YFoederati§."
+ not_allowed_for_verjrpartner: "$TRIGGER_FAIL$Не допускается для §Y$preset_verjrpartner$s§."
+ not_allowed_for_verpuppet: "$TRIGGER_FAIL$Не допускается для §Y$preset_verpuppet$s§."
+ not_allowed_for_verserf: "$TRIGGER_FAIL$Не допускается для §Y$preset_verserf$s§."
+ not_allowed_for_verorganic: "$TRIGGER_FAIL$Не допускается для §Y$preset_verorganic$s§."
+ not_allowed_for_verparallel: "$TRIGGER_FAIL$Не допускается для §Y$preset_verparallel$s§."
+ not_allowed_for_verblood: "$TRIGGER_FAIL$Не допускается для §Y$preset_verblood$s§."
+ not_allowed_for_verdevotee: "$TRIGGER_FAIL$Не допускается для §Y$preset_verdevotee$s§."
+ not_allowed_for_verkobun: "$TRIGGER_FAIL$Не допускается для §Y$preset_verkobun$s§."
+ not_allowed_for_versupplier: "$TRIGGER_FAIL$Не допускается для §Y$preset_versupplier$s§."
+ not_allowed_for_verworshipper: "$TRIGGER_FAIL$Не допускается дляr §Y$preset_verworshipper$s§."
+ not_allowed_for_verdebtor: "$TRIGGER_FAIL$Не допускается для §Y$preset_verdebtor$s§."
+ not_allowed_for_versubscriber: "$TRIGGER_FAIL$Не допускается для §Y$preset_versupplier$s§."
+ not_allowed_for_verarmsdealer: "$TRIGGER_FAIL$Не допускается для §Y$preset_verarmsdealer$s§."
+ not_allowed_for_versubcontractor: "$TRIGGER_FAIL$Не допускается для §Y$preset_versubcontractor$s§."
+ not_allowed_for_megacorp: "$TRIGGER_FAIL$Не допускается для §YМегакорпораций§!."
+ not_allowed_for_auto_state: "$TRIGGER_FAIL$Не допускается для §YАвтономных государств§!."
+
+# Subject Buffer Zone War
+
+ NAME_vassal_War: "[This.MainAttacker.GetAdj] Война за независимость"
+ NAME_veru_buffer_war: "Война за [This.MainDefender.GetAdj] Клиентское государство"

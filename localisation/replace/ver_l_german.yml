@@ -6,6 +6,8 @@ l_german:
 # l_russian:
 # l_braz_por:
 # l_simp_chinese:
+# l_korean:
+# l_japanese:
 
  ####################################
  # Vassals Expanded and reworked
@@ -701,7 +703,7 @@ l_german:
 
  resource_subsidies_ver: "Contribution"
 
- veru_contract_fail: "Prohibited by Contract"
+ contract_fail: "Prohibited by Contract"
  veru_tree_of_life_fail: "Due to this subject relying on their §YTree of Life§!, their capital cannot be relocated."
 
  subject_verdevolved_effect: "$SUBJECT_verdevolved$"

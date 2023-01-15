@@ -188,7 +188,7 @@ country_event = {
 		}
 		allow = {
 			custom_tooltip = {
-				fail_text = veru_contract_fail
+				fail_text = contract_fail
 				event_target:chosen_subject = {
 					is_gestalt = no
 					OR = {
@@ -211,7 +211,7 @@ country_event = {
 		}
 		allow = {
 			custom_tooltip = {
-				fail_text = veru_contract_fail
+				fail_text = contract_fail
 				event_target:chosen_subject = {
 					is_gestalt = no
 					has_country_flag = ver_government_allowed
@@ -231,7 +231,7 @@ country_event = {
 		}
 		allow = {
 			custom_tooltip = {
-				fail_text = veru_contract_fail
+				fail_text = contract_fail
 				event_target:chosen_subject = {
 					has_country_flag = ver_capital_allowed
 				}
@@ -286,7 +286,7 @@ country_event = {
 				has_resource = { type = influence amount >= 100 }
 			}
 			custom_tooltip = {
-				fail_text = veru_contract_fail
+				fail_text = contract_fail
 				event_target:chosen_subject = {
 					has_country_flag = ver_naming_allowed
 				}
@@ -5080,5 +5080,71 @@ country_event = {
 		}
 		event_target:chosen_subject = { event_target:relocation_planet_20 = { set_capital = yes } }
 		ai_chance = { factor = 1 }
+	}
+}
+
+################
+################
+################
+# FIX
+
+# Inward Perfection Issues
+country_event = {
+	id = veru.9000
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_civic = civic_inwards_perfection
+		OR = {
+			AND = {
+				is_overlord = yes
+				any_subject = {
+					any_agreement = {
+						NOR = {
+							agreement_preset = preset_tributary
+							agreement_preset = preset_auto_state
+							agreement_preset = preset_protectorate
+						}
+					}
+				}
+			}
+			AND = {
+				has_overlord = yes
+				any_agreement = {
+					NOR = {
+						agreement_preset = preset_tributary
+						agreement_preset = preset_auto_state
+						agreement_preset = preset_protectorate
+					}
+				}
+			}
+		}
+	}
+
+	immediate = {
+
+		if = {
+			limit = { is_overlord = yes }
+			every_subject = {
+				limit = {
+					any_agreement = {
+						NOR = {
+							agreement_preset = preset_tributary
+							agreement_preset = preset_auto_state
+							agreement_preset = preset_protectorate
+						}
+					}
+				}
+				random_agreement = {
+					set_agreement_preset = { preset = preset_tributary }
+				}
+			}
+		}
+		else = {
+			random_agreement = {
+				set_agreement_preset = { preset = preset_tributary }
+			}
+		}
 	}
 }

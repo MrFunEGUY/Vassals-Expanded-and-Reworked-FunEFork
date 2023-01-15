@@ -905,7 +905,7 @@ get_autocratic_gov = {
 		if = { # Already Auth, more amenable to a Monarchy
 			limit = {
 				is_authoritarian = yes
-				is_autocracy = no
+				is_imp_or_dict = no
 			}
 			random_list = {
 				50 = {
@@ -937,7 +937,7 @@ get_autocratic_gov = {
 			}
 		}
 		if = { # Wasn't already Auth, just make a Dictatorship
-			limit = { is_autocracy = no }
+			limit = { is_imp_or_dict = no }
 			change_government = {
 				authority = auth_dictatorial
 				remove_invalid_civics = yes
@@ -983,7 +983,7 @@ get_autocratic_gov_subject_leader = {
 		if = { # Already Auth, more amenable to a Monarchy
 			limit = {
 				is_authoritarian = yes
-				is_autocracy = no
+				is_imp_or_dict = no
 			}
 			random_list = {
 				50 = {
@@ -1015,7 +1015,7 @@ get_autocratic_gov_subject_leader = {
 			}
 		}
 		if = { # Wasn't already Auth, just make a Dictatorship
-			limit = { is_autocracy = no }
+			limit = { is_imp_or_dict = no }
 			change_government = {
 				authority = auth_dictatorial
 				remove_invalid_civics = yes
@@ -1063,7 +1063,7 @@ get_autocratic_gov_no_penalty = {
 		if = { # Already Auth, more amenable to a Monarchy
 			limit = {
 				is_authoritarian = yes
-				is_autocracy = no
+				is_imp_or_dict = no
 			}
 			random_list = {
 				50 = {
@@ -1095,7 +1095,7 @@ get_autocratic_gov_no_penalty = {
 			}
 		}
 		if = { # Wasn't already Auth, just make a Dictatorship
-			limit = { is_autocracy = no }
+			limit = { is_imp_or_dict = no }
 			change_government = {
 				authority = auth_dictatorial
 				remove_invalid_civics = yes
@@ -1142,7 +1142,7 @@ get_autocratic_gov_no_penalty_subject_leader = {
 		if = { # Already Auth, more amenable to a Monarchy
 			limit = {
 				is_authoritarian = yes
-				is_autocracy = no
+				is_imp_or_dict = no
 			}
 			random_list = {
 				50 = {
@@ -1174,7 +1174,7 @@ get_autocratic_gov_no_penalty_subject_leader = {
 			}
 		}
 		if = { # Wasn't already Auth, just make a Dictatorship
-			limit = { is_autocracy = no }
+			limit = { is_imp_or_dict = no }
 			change_government = {
 				authority = auth_dictatorial
 				remove_invalid_civics = yes

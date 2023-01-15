@@ -37,7 +37,7 @@
 # VER Vassals #
 ###############
 
-# Pacifist
+# Originally Pacifist - Turn into anti-bulwark? What does that entail?
 preset_verdevolved = {
 	icon = "GFX_diplomacy_status_is_verdevolved"
 	term_data = {
@@ -127,9 +127,10 @@ preset_verdevolved = {
 	}
 
 	potential = {
-		NOT = {
+		OR = {
+			is_subject = no
 			any_agreement = {
-				OR = {
+				NOR = {
 					agreement_preset = preset_protectorate
 					agreement_preset = preset_tributary
 					agreement_preset = preset_auto_state
@@ -148,7 +149,7 @@ preset_verdevolved = {
 	}
 }
 
-# Militarist
+# Originally Militarist - Maybe Superceded by Bulwark
 preset_verfoederatus = {
 	icon = "GFX_diplomacy_status_is_verfoederatus"
 	term_data = {
@@ -245,9 +246,10 @@ preset_verfoederatus = {
 	}
 
 	potential = {
-		NOT = {
+		OR = {
+			is_subject = no
 			any_agreement = {
-				OR = {
+				NOR = {
 					agreement_preset = preset_protectorate
 					agreement_preset = preset_tributary
 					agreement_preset = preset_auto_state
@@ -257,16 +259,11 @@ preset_verfoederatus = {
 		from = {
 			is_megacorp = no
 			is_gestalt = no
-			# OR = {
-			# 	is_militarist = yes
-			# 	has_valid_civic = civic_feudal_realm
-			# 	has_ascension_perk = ap_shared_destiny
-			# }
 		}
 	}
 }
 
-# Spiritualist
+# Originally Spiritualist - Turn into advanced type?
 preset_verdisciple = {
 	icon = "GFX_diplomacy_status_is_verdisciple"
 	term_data = {
@@ -361,9 +358,10 @@ preset_verdisciple = {
 	}
 
 	potential = {
-		NOT = {
+		OR = {
+			is_subject = no
 			any_agreement = {
-				OR = {
+				NOR = {
 					agreement_preset = preset_protectorate
 					agreement_preset = preset_tributary
 					agreement_preset = preset_auto_state
@@ -373,16 +371,11 @@ preset_verdisciple = {
 		from = {
 			is_megacorp = no
 			is_gestalt = no
-			# OR = {
-			# 	is_spiritualist = yes
-			# 	has_valid_civic = civic_feudal_realm
-			# 	has_ascension_perk = ap_shared_destiny
-			# }
 		}
 	}
 }
 
-# Materialist
+# Originally Materialist - Maybe Superceded by Scholarium
 preset_verjrpartner = {
 	icon = "GFX_diplomacy_status_is_verjrpartner"
 	term_data = {
@@ -480,9 +473,10 @@ preset_verjrpartner = {
 	}
 
 	potential = {
-		NOT = {
+		OR = {
+			is_subject = no
 			any_agreement = {
-				OR = {
+				NOR = {
 					agreement_preset = preset_protectorate
 					agreement_preset = preset_tributary
 					agreement_preset = preset_auto_state
@@ -492,16 +486,11 @@ preset_verjrpartner = {
 		from = {
 			is_megacorp = no
 			is_gestalt = no
-			# OR = {
-			# 	is_materialist = yes
-			# 	has_valid_civic = civic_feudal_realm
-			# 	has_ascension_perk = ap_shared_destiny
-			# }
 		}
 	}
 }
 
-# Xenophobe
+# Originally Xenophobe - Maybe combine with Puppet into Advanced Design?
 preset_verserf = {
 	icon = "GFX_diplomacy_status_is_verserf"
 	term_data = {
@@ -608,9 +597,10 @@ preset_verserf = {
 	}
 
 	potential = {
-		NOT = {
+		OR = {
+			is_subject = no
 			any_agreement = {
-				OR = {
+				NOR = {
 					agreement_preset = preset_protectorate
 					agreement_preset = preset_tributary
 					agreement_preset = preset_auto_state
@@ -620,16 +610,11 @@ preset_verserf = {
 		from = {
 			is_megacorp = no
 			is_gestalt = no
-			# OR = {
-			# 	is_xenophobe = yes
-			# 	has_valid_civic = civic_feudal_realm
-			# 	has_ascension_perk = ap_shared_destiny
-			# }
 		}
 	}
 }
 
-# Authoritarian
+# Originally Authoritarian
 preset_verpuppet = {
 	icon = "GFX_diplomacy_status_is_verpuppet"
 	term_data = {
@@ -734,9 +719,10 @@ preset_verpuppet = {
 	}
 
 	potential = {
-		NOT = {
+		OR = {
+			is_subject = no
 			any_agreement = {
-				OR = {
+				NOR = {
 					agreement_preset = preset_protectorate
 					agreement_preset = preset_tributary
 					agreement_preset = preset_auto_state
@@ -746,11 +732,6 @@ preset_verpuppet = {
 		from = {
 			is_megacorp = no
 			is_gestalt = no
-			# OR = {
-			# 	is_authoritarian = yes
-			# 	has_valid_civic = civic_feudal_realm
-			# 	has_ascension_perk = ap_shared_destiny
-			# }
 		}
 	}
 }
@@ -830,9 +811,10 @@ preset_verblood = {
 	}
 
 	potential = {
-		NOT = {
+		OR = {
+			is_subject = no
 			any_agreement = {
-				OR = {
+				NOR = {
 					agreement_preset = preset_protectorate
 					agreement_preset = preset_tributary
 					agreement_preset = preset_auto_state
@@ -931,9 +913,10 @@ preset_verappendage = {
 	}
 
 	potential = {
-		NOT = {
+		OR = {
+			is_subject = no
 			any_agreement = {
-				OR = {
+				NOR = {
 					agreement_preset = preset_protectorate
 					agreement_preset = preset_tributary
 					agreement_preset = preset_auto_state
@@ -1022,11 +1005,14 @@ preset_verorganic = {
 	potential = {
 		NOR = {
 			is_machine_empire = yes
-			any_agreement = {
-				OR = {
-					agreement_preset = preset_protectorate
-					agreement_preset = preset_tributary
-					agreement_preset = preset_auto_state
+			OR = {
+				is_subject = no
+				any_agreement = {
+					NOR = {
+						agreement_preset = preset_protectorate
+						agreement_preset = preset_tributary
+						agreement_preset = preset_auto_state
+					}
 				}
 			}
 		}
@@ -1108,9 +1094,10 @@ preset_verparallel = {
 
 	potential = {
 		is_machine_empire = yes
-		NOT = {
+		OR = {
+			is_subject = no
 			any_agreement = {
-				OR = {
+				NOR = {
 					agreement_preset = preset_protectorate
 					agreement_preset = preset_tributary
 					agreement_preset = preset_auto_state
@@ -1220,22 +1207,17 @@ preset_verdevotee = {
 	}
 
 	potential = {
-		NOT = {
+		OR = {
+			is_subject = no
 			any_agreement = {
-				OR = {
+				NOR = {
 					agreement_preset = preset_protectorate
 					agreement_preset = preset_tributary
 					agreement_preset = preset_auto_state
 				}
 			}
 		}
-		from = {
-			is_megacorp = yes
-			# OR = {
-			# 	has_valid_civic = civic_brand_loyalty
-			# 	has_valid_civic = civic_franchising
-			# }
-		}
+		from = { is_megacorp = yes }
 	}
 }
 
@@ -1344,22 +1326,17 @@ preset_verkobun = {
 	}
 
 	potential = {
-		NOT = {
+		OR = {
+			is_subject = no
 			any_agreement = {
-				OR = {
+				NOR = {
 					agreement_preset = preset_protectorate
 					agreement_preset = preset_tributary
 					agreement_preset = preset_auto_state
 				}
 			}
 		}
-		from = {
-			is_megacorp = yes
-			# OR = {
-			# 	has_valid_civic = civic_criminal_heritage
-			# 	has_valid_civic = civic_franchising
-			# }
-		}
+		from = { is_megacorp = yes }
 	}
 }
 
@@ -1460,22 +1437,17 @@ preset_verworshipper = {
 	}
 
 	potential = {
-		NOT = {
+		OR = {
+			is_subject = no
 			any_agreement = {
-				OR = {
+				NOR = {
 					agreement_preset = preset_protectorate
 					agreement_preset = preset_tributary
 					agreement_preset = preset_auto_state
 				}
 			}
 		}
-		from = {
-			is_megacorp = yes
-			# OR = {
-			# 	has_valid_civic = civic_gospel_of_the_masses
-			# 	has_valid_civic = civic_franchising
-			# }
-		}
+		from = { is_megacorp = yes }
 	}
 }
 
@@ -1560,9 +1532,10 @@ preset_verdebtor = {
 	}
 
 	potential = {
-		NOT = {
+		OR = {
+			is_subject = no
 			any_agreement = {
-				OR = {
+				NOR = {
 					agreement_preset = preset_protectorate
 					agreement_preset = preset_tributary
 					agreement_preset = preset_auto_state
@@ -1575,10 +1548,6 @@ preset_verdebtor = {
 			NOT = {
 				any_subject = { any_agreement = { agreement_preset = preset_verdebtor } }
 			}
-			# OR = {
-			# 	has_valid_civic = civic_indentured_assets
-			# 	has_valid_civic = civic_franchising
-			# }
 		}
 	}
 }
@@ -1670,22 +1639,17 @@ preset_versubscriber = {
 	}
 
 	potential = {
-		NOT = {
+		OR = {
+			is_subject = no
 			any_agreement = {
-				OR = {
+				NOR = {
 					agreement_preset = preset_protectorate
 					agreement_preset = preset_tributary
 					agreement_preset = preset_auto_state
 				}
 			}
 		}
-		from = {
-			is_megacorp = yes
-			# OR = {
-			# 	has_valid_civic = civic_media_conglomerate
-			# 	has_valid_civic = civic_franchising
-			# }
-		}
+		from = { is_megacorp = yes }
 	}
 }
 
@@ -1786,23 +1750,17 @@ preset_verarmsdealer = {
 	}
 
 	potential = {
-		NOT = {
+		OR = {
+			is_subject = no
 			any_agreement = {
-				OR = {
+				NOR = {
 					agreement_preset = preset_protectorate
 					agreement_preset = preset_tributary
 					agreement_preset = preset_auto_state
 				}
 			}
 		}
-		from = {
-			is_megacorp = yes
-			# OR = {
-			# 	has_valid_civic = civic_private_military_companies
-			# 	has_valid_civic = civic_naval_contractors
-			# 	has_valid_civic = civic_franchising
-			# }
-		}
+		from = { is_megacorp = yes }
 	}
 }
 
@@ -1907,22 +1865,17 @@ preset_versubcontractor = {
 	}
 
 	potential = {
-		NOT = {
+		OR = {
+			is_subject = no
 			any_agreement = {
-				OR = {
+				NOR = {
 					agreement_preset = preset_protectorate
 					agreement_preset = preset_tributary
 					agreement_preset = preset_auto_state
 				}
 			}
 		}
-		from = {
-			is_megacorp = yes
-			# OR = {
-			# 	has_valid_civic = civic_private_prospectors
-			# 	has_valid_civic = civic_franchising
-			# }
-		}
+		from = { is_megacorp = yes }
 	}
 }
 
@@ -1993,12 +1946,6 @@ preset_vassal = {
 				key = subject_ver_effects
 				value = subject_no_ver_effect
 			}
-
-			####
-			{
-				key = subject_ver_effects
-				value = subject_no_ver_effect
-			}
 		}
 	}
 
@@ -2010,9 +1957,10 @@ preset_vassal = {
 	}
 
 	potential = {
-		NOT = {
+		OR = {
+			is_subject = no
 			any_agreement = {
-				OR = {
+				NOR = {
 					agreement_preset = preset_tributary
 					agreement_preset = preset_auto_state
 				}
@@ -2125,9 +2073,10 @@ preset_subsidiary = {
 	}
 
 	potential = {
-		NOT = {
+		OR = {
+			is_subject = no
 			any_agreement = {
-				OR = {
+				NOR = {
 					agreement_preset = preset_tributary
 					agreement_preset = preset_auto_state
 				}
@@ -2229,9 +2178,10 @@ preset_tributary = {
 	}
 
 	potential = {
-		NOT = {
+		OR = {
+			is_subject = no
 			any_agreement = {
-				OR = {
+				NOR = {
 					agreement_preset = preset_protectorate
 					agreement_preset = preset_auto_state
 				}
@@ -2455,7 +2405,13 @@ preset_bulwark = {
 		NOR = {
 			has_civic = civic_inwards_perfection
 			FROM = { has_civic = civic_inwards_perfection }
-			any_agreement = { agreement_preset = preset_auto_state }
+			AND = {
+				is_subject = yes
+				OR = {
+					any_agreement = { agreement_preset = preset_tributary }
+					any_agreement = { agreement_preset = preset_auto_state }
+				}
+			}
 		}
 		OR = {
 			FROM = { has_origin = origin_imperial_vassal_overlord }
@@ -2569,7 +2525,13 @@ preset_scholarium = {
 		NOR = {
 			has_civic = civic_inwards_perfection
 			FROM = { has_civic = civic_inwards_perfection }
-			any_agreement = { agreement_preset = preset_auto_state }
+			AND = {
+				is_subject = yes
+				OR = {
+					any_agreement = { agreement_preset = preset_tributary }
+					any_agreement = { agreement_preset = preset_auto_state }
+				}
+			}
 		}
 		OR = {
 			FROM = { has_origin = origin_imperial_vassal_overlord }
@@ -2689,7 +2651,13 @@ preset_prospectorium = {
 		NOR = {
 			has_civic = civic_inwards_perfection
 			FROM = { has_civic = civic_inwards_perfection }
-			any_agreement = { agreement_preset = preset_auto_state }
+			AND = {
+				is_subject = yes
+				OR = {
+					any_agreement = { agreement_preset = preset_tributary }
+					any_agreement = { agreement_preset = preset_auto_state }
+				}
+			}
 		}
 		OR = {
 			FROM = { has_origin = origin_imperial_vassal_overlord }
@@ -2700,6 +2668,672 @@ preset_prospectorium = {
 				ratio >= @protectorate_tech_threshold
 			}
 		}
+	}
+}
+
+#####
+
+preset_vassal_oppressive = {
+	parent = preset_vassal
+	icon = "GFX_diplomacy_status_is_vassal"
+	hidden = yes
+	term_data = {
+		has_cooldown_on_first_renegotiation = no
+		forced_initial_loyalty = -100
+		discrete_terms = {
+			{
+				key = specialist_type
+				value = specialist_none
+			}
+			{
+				key = subject_integration
+				value = subject_can_be_integrated
+			}
+			{
+				key = subject_diplomacy
+				value = subject_can_not_do_diplomacy
+			}
+			{
+				key = subject_expand
+				value = subject_cannot_expand
+			}
+			####
+			{
+				key = subject_ver_ruler
+				value = subject_ver_ruler_anyone
+			}
+			{
+				key = subject_ver_government
+				value = subject_ver_government_allowed
+			}
+			{
+				key = subject_ver_naming
+				value = subject_ver_naming_allowed
+			}
+			{
+				key = subject_ver_capital
+				value = subject_ver_capital_allowed
+			}
+			####
+			{
+				key = joins_overlord_wars
+				value = joins_overlord_wars_all
+			}
+			{
+				key = joins_subject_wars
+				value = joins_subject_wars_defensive
+			}
+			{
+				key = subject_holdings_limit
+				value = subject_holdings_limit_1
+			}
+			{
+				key = subject_loyalty
+				value = subject_loyalty_effects
+			}
+			{
+				key = protectorate
+				value = subject_is_not_protectorate
+			}
+			####
+			{
+				key = subject_ver_effects
+				value = subject_no_ver_effect
+			}
+		}
+	}
+
+	overlord_weight = {
+		base = 0
+	}
+
+	subject_weight = {
+		base = 0
+	}
+}
+
+preset_vassal_oppressive_ai = {
+	parent = preset_vassal
+	icon = "GFX_diplomacy_status_is_vassal"
+	hidden = yes
+	term_data = {
+		has_cooldown_on_first_renegotiation = no
+		forced_initial_loyalty = -100
+		resource_terms = {
+			{
+				key = resource_subsidies_basic
+				value = 0.15
+			}
+		}
+		discrete_terms = {
+			{
+				key = specialist_type
+				value = specialist_none
+			}
+			{
+				key = subject_integration
+				value = subject_can_not_be_integrated
+			}
+			{
+				key = subject_diplomacy
+				value = subject_can_not_do_diplomacy
+			}
+			{
+				key = subject_expand
+				value = subject_cannot_expand
+			}
+			####
+			{
+				key = subject_ver_ruler
+				value = subject_ver_ruler_anyone
+			}
+			{
+				key = subject_ver_government
+				value = subject_ver_government_allowed
+			}
+			{
+				key = subject_ver_naming
+				value = subject_ver_naming_allowed
+			}
+			{
+				key = subject_ver_capital
+				value = subject_ver_capital_allowed
+			}
+			####
+			{
+				key = joins_overlord_wars
+				value = joins_overlord_wars_all
+			}
+			{
+				key = joins_subject_wars
+				value = joins_subject_wars_defensive
+			}
+			{
+				key = subject_holdings_limit
+				value = subject_holdings_limit_1
+			}
+			{
+				key = subject_loyalty
+				value = subject_loyalty_effects
+			}
+			{
+				key = protectorate
+				value = subject_is_not_protectorate
+			}
+			####
+			{
+				key = subject_ver_effects
+				value = subject_no_ver_effect
+			}
+		}
+	}
+
+	overlord_weight = {
+		base = 0
+	}
+
+	subject_weight = {
+		base = 0
+	}
+}
+
+preset_vassal_balanced = {
+	parent = preset_vassal
+	icon = "GFX_diplomacy_status_is_vassal"
+	hidden = yes
+	term_data = {
+		has_cooldown_on_first_renegotiation = no
+		forced_initial_loyalty = -50
+		discrete_terms = {
+			{
+				key = specialist_type
+				value = specialist_none
+			}
+			{
+				key = subject_integration
+				value = subject_can_not_be_integrated
+			}
+			{
+				key = subject_diplomacy
+				value = subject_can_do_diplomacy_but_not_vote
+			}
+			{
+				key = subject_expand
+				value = subject_can_expand_with_tithe
+			}
+			####
+			{
+				key = subject_ver_ruler
+				value = subject_ver_ruler_them
+			}
+			{
+				key = subject_ver_government
+				value = subject_ver_government_allowed
+			}
+			{
+				key = subject_ver_naming
+				value = subject_ver_naming_restricted
+			}
+			{
+				key = subject_ver_capital
+				value = subject_ver_capital_restricted
+			}
+			####
+			{
+				key = joins_overlord_wars
+				value = joins_overlord_wars_defensive
+			}
+			{
+				key = joins_subject_wars
+				value = joins_subject_wars_defensive
+			}
+			{
+				key = subject_holdings_limit
+				value = subject_holdings_limit_1
+			}
+			{
+				key = subject_loyalty
+				value = subject_loyalty_effects
+			}
+			{
+				key = protectorate
+				value = subject_is_not_protectorate
+			}
+			####
+			{
+				key = subject_ver_effects
+				value = subject_no_ver_effect
+			}
+		}
+	}
+
+	overlord_weight = {
+		base = 0
+	}
+
+	subject_weight = {
+		base = 0
+	}
+}
+
+preset_vassal_benevolent = {
+	parent = preset_vassal
+	icon = "GFX_diplomacy_status_is_vassal"
+	hidden = yes
+	term_data = {
+		has_cooldown_on_first_renegotiation = no
+		forced_initial_loyalty = 0
+		discrete_terms = {
+			{
+				key = specialist_type
+				value = specialist_none
+			}
+			{
+				key = subject_integration
+				value = subject_can_not_be_integrated
+			}
+			{
+				key = subject_diplomacy
+				value = subject_can_do_diplomacy
+			}
+			{
+				key = subject_expand
+				value = subject_can_expand
+			}
+			####
+			{
+				key = subject_ver_ruler
+				value = subject_ver_ruler_restricted
+			}
+			{
+				key = subject_ver_government
+				value = subject_ver_government_restricted
+			}
+			{
+				key = subject_ver_naming
+				value = subject_ver_naming_restricted
+			}
+			{
+				key = subject_ver_capital
+				value = subject_ver_capital_restricted
+			}
+			####
+			{
+				key = joins_overlord_wars
+				value = joins_overlord_wars_defensive
+			}
+			{
+				key = joins_subject_wars
+				value = joins_subject_wars_defensive
+			}
+			{
+				key = subject_holdings_limit
+				value = subject_holdings_limit_1
+			}
+			{
+				key = subject_loyalty
+				value = subject_loyalty_effects
+			}
+			{
+				key = protectorate
+				value = subject_is_not_protectorate
+			}
+			####
+			{
+				key = subject_ver_effects
+				value = subject_no_ver_effect
+			}
+		}
+	}
+
+	overlord_weight = {
+		base = 0
+	}
+
+	subject_weight = {
+		base = 0
+	}
+}
+
+preset_subsidiary_oppressive = {
+	parent = preset_subsidiary
+	icon = "GFX_diplomacy_status_is_subsidiary"
+	hidden = yes
+	term_data = {
+		has_cooldown_on_first_renegotiation = no
+		forced_initial_loyalty = -100
+		resource_terms = {
+			{
+				key = resource_subsidies_basic
+				value = 0.45
+			}
+			{
+				key = resource_subsidies_advanced
+				value = 0.15
+			}
+		}
+		discrete_terms = {
+			{
+				key = specialist_type
+				value = specialist_none
+			}
+			{
+				key = subject_integration
+				value = subject_can_not_be_integrated
+			}
+			{
+				key = subject_diplomacy
+				value = subject_can_do_diplomacy_but_not_vote
+			}
+			{
+				key = subject_expand
+				value = subject_can_expand_with_tithe
+			}
+			####
+			{
+				key = subject_ver_ruler
+				value = subject_ver_ruler_anyone
+			}
+			{
+				key = subject_ver_government
+				value = subject_ver_government_allowed
+			}
+			{
+				key = subject_ver_naming
+				value = subject_ver_naming_allowed
+			}
+			{
+				key = subject_ver_capital
+				value = subject_ver_capital_allowed
+			}
+			####
+			{
+				key = joins_overlord_wars
+				value = joins_overlord_wars_all
+			}
+			{
+				key = joins_subject_wars
+				value = joins_subject_wars_defensive
+			}
+			{
+				key = subject_holdings_limit
+				value = subject_holdings_limit_1
+			}
+			{
+				key = subject_loyalty
+				value = subject_loyalty_effects
+			}
+			{
+				key = protectorate
+				value = subject_is_not_protectorate
+			}
+			####
+			{
+				key = subject_ver_effects
+				value = subject_no_ver_effect
+			}
+		}
+	}
+	overlord_weight = {
+		base = 0
+	}
+
+	subject_weight = {
+		base = 0
+	}
+}
+
+preset_subsidiary_oppressive_ai = {
+	parent = preset_subsidiary
+	icon = "GFX_diplomacy_status_is_subsidiary"
+	hidden = yes
+	term_data = {
+		has_cooldown_on_first_renegotiation = no
+		forced_initial_loyalty = -100
+		resource_terms = {
+			{
+				key = resource_subsidies_basic
+				value = 0.45
+			}
+		}
+		discrete_terms = {
+			{
+				key = specialist_type
+				value = specialist_none
+			}
+			{
+				key = subject_integration
+				value = subject_can_not_be_integrated
+			}
+			{
+				key = subject_diplomacy
+				value = subject_can_not_do_diplomacy
+			}
+			{
+				key = subject_expand
+				value = subject_cannot_expand
+			}
+			####
+			{
+				key = subject_ver_ruler
+				value = subject_ver_ruler_anyone
+			}
+			{
+				key = subject_ver_government
+				value = subject_ver_government_allowed
+			}
+			{
+				key = subject_ver_naming
+				value = subject_ver_naming_allowed
+			}
+			{
+				key = subject_ver_capital
+				value = subject_ver_capital_allowed
+			}
+			####
+			{
+				key = joins_overlord_wars
+				value = joins_overlord_wars_all
+			}
+			{
+				key = joins_subject_wars
+				value = joins_subject_wars_defensive
+			}
+			{
+				key = subject_holdings_limit
+				value = subject_holdings_limit_1
+			}
+			{
+				key = subject_loyalty
+				value = subject_loyalty_effects
+			}
+			{
+				key = protectorate
+				value = subject_is_not_protectorate
+			}
+			####
+			{
+				key = subject_ver_effects
+				value = subject_no_ver_effect
+			}
+		}
+	}
+	overlord_weight = {
+		base = 0
+	}
+
+	subject_weight = {
+		base = 0
+	}
+}
+
+preset_subsidiary_balanced = {
+	parent = preset_subsidiary
+	icon = "GFX_diplomacy_status_is_subsidiary"
+	hidden = yes
+	term_data = {
+		has_cooldown_on_first_renegotiation = no
+		forced_initial_loyalty = -50
+		resource_terms = {
+			{
+				key = resource_subsidies_basic
+				value = 0.3
+			}
+		}
+		discrete_terms = {
+			{
+				key = specialist_type
+				value = specialist_none
+			}
+			{
+				key = subject_integration
+				value = subject_can_not_be_integrated
+			}
+			{
+				key = subject_diplomacy
+				value = subject_can_do_diplomacy_but_not_vote
+			}
+			{
+				key = subject_expand
+				value = subject_can_expand_with_tithe
+			}
+			####
+			{
+				key = subject_ver_ruler
+				value = subject_ver_ruler_them
+			}
+			{
+				key = subject_ver_government
+				value = subject_ver_government_allowed
+			}
+			{
+				key = subject_ver_naming
+				value = subject_ver_naming_restricted
+			}
+			{
+				key = subject_ver_capital
+				value = subject_ver_capital_restricted
+			}
+			####
+			{
+				key = joins_overlord_wars
+				value = joins_overlord_wars_defensive
+			}
+			{
+				key = joins_subject_wars
+				value = joins_subject_wars_defensive
+			}
+			{
+				key = subject_holdings_limit
+				value = subject_holdings_limit_1
+			}
+			{
+				key = subject_loyalty
+				value = subject_loyalty_effects
+			}
+			{
+				key = protectorate
+				value = subject_is_not_protectorate
+			}
+			####
+			{
+				key = subject_ver_effects
+				value = subject_no_ver_effect
+			}
+		}
+	}
+
+	overlord_weight = {
+		base = 0
+	}
+
+	subject_weight = {
+		base = 0
+	}
+}
+
+preset_subsidiary_benevolent = {
+	parent = preset_subsidiary
+	icon = "GFX_diplomacy_status_is_subsidiary"
+	hidden = yes
+	term_data = {
+		has_cooldown_on_first_renegotiation = no
+		forced_initial_loyalty = 0
+		resource_terms = {
+			{
+				key = resource_subsidies_basic
+				value = 0.3
+			}
+		}
+		discrete_terms = {
+			{
+				key = specialist_type
+				value = specialist_none
+			}
+			{
+				key = subject_integration
+				value = subject_can_not_be_integrated
+			}
+			{
+				key = subject_diplomacy
+				value = subject_can_do_diplomacy
+			}
+			{
+				key = subject_expand
+				value = subject_can_expand
+			}
+			####
+			{
+				key = subject_ver_ruler
+				value = subject_ver_ruler_restricted
+			}
+			{
+				key = subject_ver_government
+				value = subject_ver_government_restricted
+			}
+			{
+				key = subject_ver_naming
+				value = subject_ver_naming_restricted
+			}
+			{
+				key = subject_ver_capital
+				value = subject_ver_capital_restricted
+			}
+			####
+			{
+				key = joins_overlord_wars
+				value = joins_overlord_wars_defensive
+			}
+			{
+				key = joins_subject_wars
+				value = joins_subject_wars_defensive
+			}
+			{
+				key = subject_holdings_limit
+				value = subject_holdings_limit_1
+			}
+			{
+				key = subject_loyalty
+				value = subject_loyalty_effects
+			}
+			{
+				key = protectorate
+				value = subject_is_not_protectorate
+			}
+			####
+			{
+				key = subject_ver_effects
+				value = subject_no_ver_effect
+			}
+		}
+	}
+
+	overlord_weight = {
+		base = 0
+	}
+
+	subject_weight = {
+		base = 0
 	}
 }
 
@@ -2765,6 +3399,7 @@ preset_auto_state = {
 	}
 
 	potential = {
+		is_subject = yes
 		any_agreement = { agreement_preset = preset_auto_state }
 	}
 
