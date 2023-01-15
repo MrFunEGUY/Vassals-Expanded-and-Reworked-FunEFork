@@ -1552,10 +1552,8 @@ joins_overlord_wars_defensive = {
 	triggered_loyalty_change = {
 		trigger = {
 			target = {
-				OR = {
-					has_ethic = ethic_pacifist
-					has_ethic = ethic_fanatic_pacifist
-				}
+				
+				is_pacifist = yes
 			}
 		}
 		loyalty_change = -10
@@ -1587,10 +1585,8 @@ joins_overlord_wars_offensive = {
 	triggered_loyalty_change = {
 		trigger = {
 			target = {
-				OR = {
-					has_ethic = ethic_pacifist
-					has_ethic = ethic_fanatic_pacifist
-				}
+				
+				is_pacifist = yes
 			}
 		}
 		loyalty_change = -20
@@ -1622,10 +1618,8 @@ joins_overlord_wars_all = {
 	triggered_loyalty_change = {
 		trigger = {
 			target = {
-				OR = {
-					has_ethic = ethic_pacifist
-					has_ethic = ethic_fanatic_pacifist
-				}
+				
+				is_pacifist = yes
 			}
 		}
 		loyalty_change = -30
@@ -2240,7 +2234,7 @@ subject_holdings_limit_3 = {
 		custom_tooltip = {
 			fail_text = not_allowed_for_galcom_resolution
 			OR = {
-				NOT = { owner = { is_galactic_community_member = yes } }
+				owner = { is_galactic_community_member = no }
 				NOT = { is_active_resolution = resolution_bureaucraticsurveillance_personal_oversight }
 			}
 		}
@@ -2273,7 +2267,7 @@ subject_holdings_limit_4 = {
 		custom_tooltip = {
 			fail_text = not_allowed_for_galcom_resolution
 			OR = {
-				NOT = { owner = { is_galactic_community_member = yes } }
+				owner = { is_galactic_community_member = no }
 				NOT = { is_active_resolution = resolution_bureaucraticsurveillance_borderless_authority }
 			}
 		}

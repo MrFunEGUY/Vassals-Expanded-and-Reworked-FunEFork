@@ -1,33 +1,35 @@
 [h1]Short Description:[/h1]
 
-- This is a fork of the [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1813104049]Vassals Expanded and Reworked mod by lpslucasps[/url]. Most of the effects and the way everything works is the same as in the original, so please see the original's description for more info. I outline new features below.
+- This is a fork of the [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1813104049]Vassals Expanded and Reworked mod by lpslucasps[/url].
 
 
 [hr][/hr]
 
-[h1]New Features:[/h1]
+[h1]New Contract Terms:[/h1]
 
-- All of the subject interaction features of the mod are handled through a new edict: Manage Subject States
+- Ruler Designation: Determines whether or not the Overlord can change the subject's ruler. Limited Designation allows the Overlord to choose from amongst the subject's leaders, while Unrestricted Designation allows the Overlord to choose from their own ruler's as well.
 
-- You can change your subject's name. To do this, I made it so your subject name will change to the name of your Capital system. You can easily rename your capital system, and so, you can easily rename your subjects.
+- Government Restructuring: Determines whether or not the Overlord can change the subject's government authority (Democratic, Imperial, etc.).
 
-- You can change the authority type of your subject states.
+- Capital Relocation: Determines whether the Overlord can relocate the capital of their subject.
 
-- You can change the capital location of your subject states.
+- Naming Rights: Determines whether the overlord is allowed to rename their subject.
 
-- You can install your own heir or leaders as the rulers of subject states.
+[h1]Other Features:[/h1]
+
+- All of the subject interaction features of the mod are handled through a new edict: Manage Subject States.
+
+- Changing your subject's name: To do this, I made it so your subject name will change to the name of your Capital system. You can easily rename your capital system, and so, you can easily rename your subjects.
 
 - You can give subjects all of the technology that you have researched.
 
 - Taxes can be more fine-tuned, with separate tax options for each resource, and 5% increments.
 
+- New Casus Belli and War Goal to take another empire's subject if they border you. Think Rome and Parthia fighting over Armenia.
+
 --
 
 - Subjects will now get an impact to the stability of their planets and their faction happiness every time something is changed. This is to represent the populace's feeling of resentment at foreign intervention. Loyal subjects will have a lower stability hit, for less time. These effects will not apply for the first two times you change their name/subject type, or the first time you change their authority.
-
-- Subject will now occasionally ask or demand to be released from vassalage. They will rarely ask (and never demand) if they are loyal, but will become increasingly likely to ask/demand the more disloyal they are. If you deny them from being released, there is a chance an independence war will break out. If you deny them when they demand it, an independence war will break out.
-
-- If you have my [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2434790082]Civil Wars mod[/url] installed, Subjects may also ask/demand to be made into Autonomous States, with all the same effects.
 
 --
 
@@ -37,6 +39,10 @@
 [hr][/hr]
 
 [h1]Notes:[/h1]
+
+- If using my [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2434790082]Civil Wars[/url] mod, place this mod after it in the load order.
+
+- For the best experience, you should use [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1623423360]UI Overhaul Dynamic.[/url] It makes the negotiation screen larger, which is very nice with the newly added terms. It is used for the screenshots.
 
 - Regular Empires can choose from any of the available Subject Types.
 
@@ -49,60 +55,15 @@
 
 [hr][/hr]
 
-[h1]Effects on subject from changing their name or subject type:[/h1]
-
-Loyal Subjects: 10 Years
-- -2 Stability on all planets with more than 3 pops
-- Non-Ruler factions: -10% happiness
-- Ruler faction: -5% happiness
-
-Disloyal Subjects: 15 Years
-- -5 Stability on all planets with more than 3 pops
-- non-Ruler factions: -15% Happiness
-- Ruler faction: -5% Happiness
-
-[h1]Effects on subject from changing their Authority:[/h1]
-
-Loyal Subjects: 15 Years
-- -5 Stability on all planets with more than 3 pops
-- Non-Ruler factions: -10% happiness
-- Ruler faction: -5% happiness
-
-Disloyal Subjects: 20 Years
-- -7 Stability on all planets with more than 3 pops
-- non-Ruler factions: -15% Happiness
-- Ruler faction: -5% Happiness
-
-[h1]Effects on subject from installing a leader:[/h1]
-
-Loyal Subjects: 15 Years
-- -10 Stability on all planets with more than 3 pops
-- Non-Ruler factions: -10% happiness
-- Ruler faction: -5% happiness
-
-Disloyal Subjects: 20 Years
-- -15 Stability on all planets with more than 3 pops
-- non-Ruler factions: -15% Happiness
-- Ruler faction: -5% Happiness
-
-
-[hr][/hr]
-
-[h1]Patches:[/h1]
-
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2401801947]- Exalted Domination[/url]
-
-
-[hr][/hr]
-
 [h1]Credit:[/h1]
 
-- Obviously credit to lpslucasps and their original mod. I never got to use  it, but it was great idea that I wanted to be able to use. Check out the original mod description for more info.
-https://steamcommunity.com/sharedfiles/filedetails/?id=1813104049
+- Obviously credit to lpslucasps and their original mod. I never got to use  it, but it was great idea that I wanted to be able to use. [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1813104049]Check out the original mod page for more info[/url].
 
 - Spanish Localisation by [url=https://steamcommunity.com/profiles/76561198199986345]Darh[/url]. Thank you!
 
-- Russian Localisation by [url=https://steamcommunity.com/profiles/76561198163085576]Bramstok[/url]. Thank you!
+- Russian Localisation by [url=https://steamcommunity.com/profiles/99006664646]Anti4iteR[/url]. Thank you!
+
+- Thumbnail Image: [i]The submission of Torrhen Stark, the King Who Knelt[/i] by Chase Stone
 
 
 [hr][/hr]
@@ -125,6 +86,8 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=1813104049
 
 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2732567565]- No More Exclaves[/url]
 
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2801992671]- Occupied Resources[/url]
+
 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2177145527]- Intervene: Help Friendly Nations - FunEFork[/url]
 
 
@@ -134,4 +97,4 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=1813104049
 
 For the best support, find me at [b]#mrfuneguys-mods[/b] on the Stellaris Modding Den Discord:
 
-[url=https://discord.gg/REvVK2fjJF][img]https://i.imgur.com/4Und3QN.png[/img][/url]
+[url=https://discord.gg/REvVK2fjJF][img]https://i.imgur.com/jZkBbLR.png[/img][/url]

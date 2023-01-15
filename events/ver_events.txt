@@ -242,7 +242,7 @@ country_event = {
 # 		name = ver.31.fail
 # 		trigger = { check_variable = { which = ver_total_puppet_states value = 0 } }
 # 		add_resource = { influence = 300 }
-# 		set_timed_country_flag = { flag = ver_called_proxy_war days = 1800 }
+# 		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
 # 	}
 
 # 	# Now we show a list of the puppet states to the player
@@ -587,7 +587,7 @@ country_event = {
 			}
 		}
 		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war days = 1800 }
+		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
 		FROM = { declare_war = { target = event_target:puppet_neighbor_1 attacker_war_goal = wg_humiliation } }
 	}
 	option = {
@@ -600,7 +600,7 @@ country_event = {
 			}
 		}
 		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war days = 1800 }
+		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
 		FROM = { declare_war = { target = event_target:puppet_neighbor_2 attacker_war_goal = wg_humiliation } }
 	}
 	option = {
@@ -613,7 +613,7 @@ country_event = {
 			}
 		}
 		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war days = 1800 }
+		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
 		FROM = { declare_war = { target = event_target:puppet_neighbor_3 attacker_war_goal = wg_humiliation } }
 	}
 	option = {
@@ -626,7 +626,7 @@ country_event = {
 			}
 		}
 		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war days = 1800 }
+		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
 		FROM = { declare_war = { target = event_target:puppet_neighbor_4 attacker_war_goal = wg_humiliation } }
 	}
 	option = {
@@ -639,7 +639,7 @@ country_event = {
 			}
 		}
 		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war days = 1800 }
+		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
 		FROM = { declare_war = { target = event_target:puppet_neighbor_5 attacker_war_goal = wg_humiliation } }
 	}
 	option = {
@@ -652,7 +652,7 @@ country_event = {
 			}
 		}
 		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war days = 1800 }
+		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
 		FROM = { declare_war = { target = event_target:puppet_neighbor_6 attacker_war_goal = wg_humiliation } }
 	}
 	option = {
@@ -665,7 +665,7 @@ country_event = {
 			}
 		}
 		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war days = 1800 }
+		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
 		FROM = { declare_war = { target = event_target:puppet_neighbor_7 attacker_war_goal = wg_humiliation } }
 	}
 	option = {
@@ -678,7 +678,7 @@ country_event = {
 			}
 		}
 		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war days = 1800 }
+		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
 		FROM = { declare_war = { target = event_target:puppet_neighbor_8 attacker_war_goal = wg_humiliation } }
 	}
 	option = {
@@ -691,7 +691,7 @@ country_event = {
 			}
 		}
 		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war days = 1800 }
+		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
 		FROM = { declare_war = { target = event_target:puppet_neighbor_9 attacker_war_goal = wg_humiliation } }
 	}
 	option = {
@@ -704,7 +704,7 @@ country_event = {
 			}
 		}
 		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war days = 1800 }
+		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
 		FROM = { declare_war = { target = event_target:puppet_neighbor_10 attacker_war_goal = wg_humiliation } }
 	}
 	option = {
@@ -717,7 +717,7 @@ country_event = {
 			}
 		}
 		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war days = 1800 }
+		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
 		FROM = { declare_war = { target = event_target:puppet_neighbor_11 attacker_war_goal = wg_humiliation } }
 	}
 	option = {
@@ -730,7 +730,7 @@ country_event = {
 			}
 		}
 		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war days = 1800 }
+		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
 		FROM = { declare_war = { target = event_target:puppet_neighbor_12 attacker_war_goal = wg_humiliation } }
 	}
 	option = {
@@ -743,7 +743,7 @@ country_event = {
 			}
 		}
 		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war days = 1800 }
+		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
 		FROM = { declare_war = { target = event_target:puppet_neighbor_13 attacker_war_goal = wg_humiliation } }
 	}
 	option = {
@@ -756,7 +756,7 @@ country_event = {
 			}
 		}
 		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war days = 1800 }
+		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
 		FROM = { declare_war = { target = event_target:puppet_neighbor_14 attacker_war_goal = wg_humiliation } }
 	}
 	option = {
@@ -769,7 +769,7 @@ country_event = {
 			}
 		}
 		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war days = 1800 }
+		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
 		FROM = { declare_war = { target = event_target:puppet_neighbor_15 attacker_war_goal = wg_humiliation } }
 	}
 	option = {
@@ -782,7 +782,7 @@ country_event = {
 			}
 		}
 		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war days = 1800 }
+		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
 		FROM = { declare_war = { target = event_target:puppet_neighbor_16 attacker_war_goal = wg_humiliation } }
 	}
 	option = {
@@ -795,7 +795,7 @@ country_event = {
 			}
 		}
 		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war days = 1800 }
+		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
 		FROM = { declare_war = { target = event_target:puppet_neighbor_17 attacker_war_goal = wg_humiliation } }
 	}
 	option = {
@@ -808,7 +808,7 @@ country_event = {
 			}
 		}
 		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war days = 1800 }
+		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
 		FROM = { declare_war = { target = event_target:puppet_neighbor_18 attacker_war_goal = wg_humiliation } }
 	}
 	option = {
@@ -821,7 +821,7 @@ country_event = {
 			}
 		}
 		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war days = 1800 }
+		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
 		FROM = { declare_war = { target = event_target:puppet_neighbor_19 attacker_war_goal = wg_humiliation } }
 	}
 	option = {
@@ -834,7 +834,7 @@ country_event = {
 			}
 		}
 		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war days = 1800 }
+		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
 		FROM = { declare_war = { target = event_target:puppet_neighbor_20 attacker_war_goal = wg_humiliation } }
 	}
 }
@@ -1004,7 +1004,7 @@ country_event = {
 
 	after = {
 		hidden_effect = {
-			set_timed_country_flag = { flag = ver_recent_blood_tribute days = 5400 }
+			set_timed_country_flag = { flag = ver_recent_blood_tribute years = 15 }
 			set_variable = { which = ver_blood_tributary_total_population value = 0 }
 			every_subject = {
 				limit = { has_country_flag = ver_blood_tributary }

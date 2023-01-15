@@ -130,7 +130,7 @@ get_intervention_effect = {
 				}
 				add_modifier = {
 	                modifier = overlord_intervention_disloyal_faction
-	                days = 5400
+	                years = 15
 	            }
 			}
 			random_pop_faction = {
@@ -139,7 +139,7 @@ get_intervention_effect = {
 				}
 				add_modifier = {
 	                modifier = overlord_intervention_disloyal_leader
-	                days = 5400
+	                years = 15
 	            }
 			}
 			every_owned_planet = {
@@ -148,7 +148,7 @@ get_intervention_effect = {
 				}
 				add_modifier = {
 	                modifier = overlord_intervention_disloyal_planet
-	                days = 5400
+	                years = 15
 	            }
 			}
 		}
@@ -165,7 +165,7 @@ get_intervention_effect = {
 				}
 				add_modifier = {
 	                modifier = overlord_intervention_loyal_faction
-	                days = 3600
+	                years = 10
 	            }
 			}
 			random_pop_faction = {
@@ -174,7 +174,7 @@ get_intervention_effect = {
 				}
 				add_modifier = {
 	                modifier = overlord_intervention_loyal_leader
-	                days = 3600
+	                years = 10
 	            }
 			}
 			every_owned_planet = {
@@ -183,7 +183,7 @@ get_intervention_effect = {
 				}
 				add_modifier = {
 	                modifier = overlord_intervention_loyal_planet
-	                days = 3600
+	                years = 10
 	            }
 			}
 		}
@@ -228,7 +228,7 @@ get_intervention_effect_gov = {
 				}
 				add_modifier = {
 	                modifier = overlord_intervention_disloyal_faction
-	                days = 7200
+	                years = 20
 	            }
 			}
 			random_pop_faction = {
@@ -238,14 +238,14 @@ get_intervention_effect_gov = {
 				}
 				add_modifier = {
 	                modifier = overlord_intervention_disloyal_leader
-	                days = 7200
+	                years = 20
 	            }
 			}
 			every_owned_planet = {
 				limit = { num_pops > 3 }
 				add_modifier = {
 	                modifier = overlord_intervention_disloyal_planet_gov
-	                days = 7200
+	                years = 20
 	            }
 			}
 		}
@@ -264,7 +264,7 @@ get_intervention_effect_gov = {
 				}
 				add_modifier = {
 	                modifier = overlord_intervention_loyal_faction
-	                days = 5400
+	                years = 15
 	            }
 			}
 			random_pop_faction = {
@@ -273,7 +273,7 @@ get_intervention_effect_gov = {
 				}
 				add_modifier = {
 	                modifier = overlord_intervention_loyal_leader
-	                days = 5400
+	                years = 15
 	            }
 			}
 			every_owned_planet = {
@@ -282,7 +282,7 @@ get_intervention_effect_gov = {
 				}
 				add_modifier = {
 	                modifier = overlord_intervention_loyal_planet_gov
-	                days = 5400
+	                years = 15
 	            }
 			}
 			if = {
@@ -320,7 +320,7 @@ get_intervention_effect_leader = {
 				}
 				add_modifier = {
 	                modifier = overlord_intervention_disloyal_faction
-	                days = 7200
+	                years = 20
 	            }
 			}
 			random_pop_faction = {
@@ -329,7 +329,7 @@ get_intervention_effect_leader = {
 				}
 				add_modifier = {
 	                modifier = overlord_intervention_disloyal_leader
-	                days = 7200
+	                years = 20
 	            }
 			}
 			every_owned_planet = {
@@ -338,7 +338,7 @@ get_intervention_effect_leader = {
 				}
 				add_modifier = {
 	                modifier = overlord_intervention_disloyal_planet_leader
-	                days = 7200
+	                years = 20
 	            }
 			}
 		}
@@ -356,7 +356,7 @@ get_intervention_effect_leader = {
 				}
 				add_modifier = {
 	                modifier = overlord_intervention_loyal_faction
-	                days = 5400
+	                years = 15
 	            }
 			}
 			random_pop_faction = {
@@ -365,7 +365,7 @@ get_intervention_effect_leader = {
 				}
 				add_modifier = {
 	                modifier = overlord_intervention_loyal_leader
-	                days = 5400
+	                years = 15
 	            }
 			}
 			every_owned_planet = {
@@ -374,7 +374,7 @@ get_intervention_effect_leader = {
 				}
 				add_modifier = {
 	                modifier = overlord_intervention_loyal_planet_leader
-	                days = 5400
+	                years = 15
 	            }
 			}
 		}
