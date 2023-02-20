@@ -1,4 +1,4 @@
-# Spiritualist attraction for Disciples
+# Spiritualist attraction for Dependencies
 ver_overlord_indoctrination = {
 	pop_ethic_spiritualist_attraction_mult = 0.50
 }

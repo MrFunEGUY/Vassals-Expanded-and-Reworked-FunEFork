@@ -1,7 +1,7 @@
 # Serf's opinion of overlord
 ver_triggered_opinion_serfdom = {
 	trigger = {
-		any_agreement = { agreement_preset = preset_verserf }
+		any_agreement = { agreement_preset = preset_ver_serf }
 		FROM = {
 			any_subject = { is_same_value = ROOT }
 		}
@@ -17,8 +17,8 @@ ver_triggered_opinion_blood = {
 	trigger = {
 		any_agreement = {
 			OR = {
-				agreement_preset = preset_verblood
-				agreement_preset = preset_verdebtor
+				agreement_preset = preset_ver_blood
+				agreement_preset = preset_ver_debtor
 			}
 		}
 		FROM = {
@@ -34,7 +34,7 @@ ver_triggered_opinion_blood = {
 # Subscriber opinion of Overlord
 ver_triggered_opinion_subscriber = {
 	trigger = {
-		any_agreement = { agreement_preset = preset_versubscriber }
+		any_agreement = { agreement_preset = preset_ver_subscriber }
 		From = {
 			any_subject = { is_same_value = ROOT }
 		}

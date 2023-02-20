@@ -45,6 +45,7 @@ on_five_year_pulse_country = {
 on_leader_death = {
 	events = {
 		veru.5900    				# Remove Grateful Leader modifier when installed vassal leader dies
+		veru.8000    				# Client Kingdom Ruler Dies
 	}
 }
 

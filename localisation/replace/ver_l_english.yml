@@ -14,147 +14,59 @@
  ####################################
 
  ##### Subject types #####
- preset_verappendage: "Appendage"
- preset_verappendage_desc:"Appendages can be integrated."
- preset_verdevolved: "Devolved Region"
- preset_verdevolved_desc:"Devolved Regions may be integrated, can peacefully expand and are protected by their Overlord.\n\nTribute: £influence£ §G25§!\nSpecial Effect: £navy_size£ §YNaval Capacity§!: §R-50%§!"
- # preset_verbeneficiary: "Beneficiary"
- # preset_verbeneficiary_desc:"Beneficiaries are mostly independent, are not called into their Overlord's wars, are protected and don't pay taxes. They can be integrated."
- preset_verdisciple: "Disciple"
- preset_verdisciple_desc:"Disciples are protected by their Overlord.\n\nTribute: §Y15%§! £unity£ §HUnity§!\nSpecial Effect: §Y+50%§! Attraction towards §H$ethic_spiritualist$§!"
- preset_verfoederatus: "Foederatus"
- preset_verfoederatus_desc:"Foederati are obligated to participate into their Overlord's wars. However, they cannot be integrated.\n\nSpecial Effect: £navy_size£ §YNaval Capacity§!: §G25%§!"
- preset_verjrpartner: "Jr. Partner"
- preset_verjrpartner_desc:"Jr. Partners cannot be integrated.\n\nSpecial Effect: §Y-30%§! cost to known Overlord Technologies"
- preset_verpuppet: "Client State"
- preset_verpuppet_desc: "Client States, through the use of influence, can be used to fight Proxy Wars for their Overlord. They are protected by their Overlord and they have to participate in their wars.\n\nSpecial Effects: §R-10§! £stability£ §YStability§!"
- preset_verserf: "Serf"
- preset_verserf_desc:"Serfs have no diplomatic freedom, and are usually not protected by their Overlord. They cannot be integrated. This type of subject greatly resents its condition.\n\nSpecial Effect: §R-100§! Opinion towards Overlord"
- # preset_versister: "Sister Republic"
- # preset_versister_desc:"Sister Republics are forced to adopt a democratic form of government but are mostly free and don't pay taxes. They are protected by their Overlord, but are expected to help them military in return.\n\nCan Expand: £trigger_yes£\nCan Wage War: £trigger_yes£\nProtected: £trigger_yes£\nJoins Overlord's Wars: £trigger_yes£\nCan Integrate: £trigger_yes£\nTribute: None\nSpecial Effect: Implant Democracy"
- preset_verorganic: "Organic Auxiliary"
- preset_verorganic_desc:"Organic Auxiliaries have no diplomatic freedom, but cannot be integrated and are protected by their Overlord."
- preset_verparallel: "Parallel Processor"
- preset_verparallel_desc:"Parallel Processors have no diplomatic freedom, join their Overlord's wars, are protected and can be integrated.\n\nSpecial Effect: §S(Overlord)§! §G+5%§! Research Speed for each Each Parallel Processor (up to 20%)"
- preset_verblood: "Blood Tributary"
- preset_verblood_desc:"Blood Tributaries pay a special tribute, the blood tax. Every 15 to 20 years, 10% of their population is sent to their Overlord as tribute.\n\nTribute: §Y10%§! £pops£ §HPops§! every 15-20 years\nSpecial Effect: §R-1000§! Opinion towards Overlord"
- # Corporate Subjects
- # preset_versubsidiary: "$preset_subsidiary$"
- # preset_versubsidiary_desc:"Subsidiaries are diplomatically subservient to and protected by their Corporate Overlord, but are permitted to expand and wage wars among themselves.\n\nCan Expand: £trigger_yes£\nCan Wage War: £trigger_yes£\nProtected: £trigger_yes£\nJoins Overlord's Wars: £trigger_yes£\nCan Integrate: £trigger_no£\nTribute: §Y25%§! £energy£ §HEnergy§!"
- preset_verdevotee: "Devotee"
- preset_verdevotee_desc:"Devotees have open subject agreement and several available options for both the Devotee and the Overlord.\n\nTribute: §Y5%§! £unity£ §HUnity§!" 
- preset_verkobun: "Kobun"
- preset_verkobun_desc:"Kobun have open subject agreement and several available options for both the Kobun and the Overlord. They can be also used for Proxy Wars.\n\nSpecial Effect: §R+50§! Crime"
- # preset_versupplier: "Supplier"
- # preset_versupplier_desc:"Suppliers pay §Y10%§! of their montlhy Energy Credits and Consumer Goods in tribute.\n\nCan Expand: £trigger_yes£\nCan Wage War: £trigger_yes£\nProtected: £trigger_yes£\nJoins Overlord's Wars: £trigger_yes£\nCan Integrate: £trigger_no£\nTribute: §Y10%§! £energy£ §HEnergy§! and £consumer_goods£ §HConsumer Goods§!"
- preset_verworshipper: "Worshipper"
- preset_verworshipper_desc:"Worshippers have open subject agreement and several available options for both the Worshipper and the Overlord. Their presence at the Overlord's church is obligatory, resulting in increased ethics attraction towards spiritualism.\n\nTribute: §Y10%§! £unity£ §HUnity§!\nSpecial Effect: §Y+50%§! Attraction towards §H$ethic_spiritualist$§!"
- preset_verdebtor: "Debtor"
- preset_verdebtor_desc:"Debtors pay a special tribute, the blood tax. Between every 15 and 20 years, 5% of their population is sent to their Overlord as tribute.\n\nTribute: §Y5%§! £pops£ §HPops§! every 15-20 years\nSpecial Effect: §R-1000§! Opinion towards Overlord"
- preset_versubscriber: "Subscriber"
- preset_versubscriber_desc:"Subscribers have open subject agreement and several available options for both the Subscriber and the Overlord.\n\nTribute: £influence£ §G25§!"
- preset_verarmsdealer: "Arms Dealer"
- preset_verarmsdealer_desc:"Arms Dealers have open subject agreement and several available options for both the Arms Dealer and the Overlord.\n\nSpecial Effect: £navy_size£ §YNaval Capacity§!: §G25%§!"
- preset_versubcontractor: "Subcontractor"
- preset_versubcontractor_desc:"Subcontractors have open subject agreement and several available options for both the Subcontractor and the Overlord.\n\nSpecial Effect: §Y-30%§! cost to Overlord's techs"
- # SUBJECT_verdependency: "Dependency"
- # SUBJECT_DESC_verdependency: "Dependencies are one of the most exploited types of subsidiaries, paying §Y10%§! of their Energy, Minerals and Food in tribute.\n\nCan Expand: £trigger_yes£\nCan Wage War: £trigger_yes£\nProtected: £trigger_yes£\nJoins Overlord's Wars: £trigger_yes£\nCan Integrate: £trigger_no£\nTribute: §Y10%§! £energy£ §HEnergy§!, £minerals£ §HMinerals§! and £food£ §HFood§!"
+
+ preset_ver_foederatus: "Foederatus"
+ preset_ver_foederatus_desc:"Foederati have a martial relationship with their overlord, where both parties are required to participate in the other's wars. Routine joint-military exercises with their overlord allow both armed forces to be more effective.\n\n§YSubsidy§!: §R5%§! £alloys£ §HAlloys§!\n§WSpecial Effects:§! \n§YSubject§!: £navy_size£ Naval Capacity: §G+25%§!, Ship Weapons Damage: §G+10%§!\n§YOverlord§!: Ship Weapons Damage: §G+2%§! per §Y$preset_ver_foederatus$§!."
+
+ preset_ver_satellite: "Satellite State"
+ preset_ver_satellite_desc:"Satellite States are restricted in their foreign affairs and have effectively been disarmed. Whatever heavy industry remains is used to bolster the military capabilities of their overlord.\n\n§WSpecial Effects:§! \n§YSubject§!: £navy_size£ Naval Capacity: §R-50%§!\n§YOverlord§!: £navy_size£ Naval Capacity: §G+2%§! per §Y$preset_ver_satellite$§!."
+
+ preset_ver_jrpartner: "Junior Partner"
+ preset_ver_jrpartner_desc:"Junior Partners assist their overlord in their reasearch.\n\n§YSubsidy§!: §R10%§! £exotic_gases£ §HExotic Gases§!\n§WSpecial Effects:§! \n§YSubject§!: §G-85%§! cost to known overlord Technologies\n§YOverlord§!: Research Speed: §G+2%§! per §Y$preset_ver_jrpartner$§!."
+
+ preset_ver_dependency: "Dependency"
+ preset_ver_dependency_desc:"Dependencies are responsible for producing domestic propaganda for their overlord.\n\n§YTribute§!: §Y15%§! £unity£ §HUnity§!\n§YSubsidy§!: §R5%§! £energy£ §HEnergy§!\n§WSpecial Effects:§! \n§YOverlord§!: Monthly £unity£ §HUnity§!: §G+1%§! per §Y$preset_ver_dependency$§!."
+
+ preset_ver_clientkingdom: "Client Kingdom"
+ preset_ver_clientkingdom_desc:"Client Kingdoms are states that usually have rulers specifically chosen by their overlord, in order to assure their loyalty.\n\n§YSubsidy§!: §R10%§! £energy£ §HEnergy§!, §R5%§! £consumer_goods£ §HConsumer Goods§!\n§WSpecial Effects:§! \n§YSubject§!: £stability£ §HStability§!: §R-5§!\n§YOverlord§!: £stability£ §HStability§!: §G+1§! per §Y$preset_ver_clientkingdom$§!."
+ 
+ preset_ver_devolved: "Devolved Region"
+ preset_ver_devolved_desc:"Devolved Regions cannot be integrated, have compelete sovereignty over domestic affairs, and are defended by their overlord.\n\n§YTribute§!: £influence£ §G+0.25§!\n§WSpecial Effects:§! \n§YSubject§!: £happiness£ Happiness: §G+10%§!\n§YOverlord§!: Governing Ethics Attraction: §G+5%§! per §Y$preset_ver_devolved$§!."
+
+ preset_ver_condo: "Condominium"
+ preset_ver_condo_desc:"Condominia are have complete sovereignty over their foreign affairs. They serve as neutral meeting locations for diplomats throughout the galaxy.\n§WSpecial Effects:§! \n§YSubject§!: £diplo_weight£ Diplomatic Weight: §G+20%§!\n§YOverlord§!: £diplo_weight£ Diplomatic Weight: §G+2%§! per §Y$preset_ver_condo$§!."
+
+ preset_ver_puppet: "Puppet State"
+ preset_ver_puppet_desc: "Puppet States can be used to fight Proxy Wars for their overlord.\n\n§YTribute§!: §G10%§! £energy£ §HEnergy§!, §G10%§! £food£ §HFood§!\n§WSpecial Effects:§! \n§YSubject§!: £happiness£ Happiness: §R-10%§!\n§YOverlord§!: £happiness£ Happiness: §G+2%§! per §Y$preset_ver_puppet$§!."
+
+ preset_ver_neocolony: "Neo-Colony"
+ preset_ver_neocolony_desc: "Neo-Colonies are states that are economically dominated by their overlord.\n\n§YTribute§!: §G15%§! £energy£ §HEnergy§!\n§YSubsidy§!: §R10%§! £minerals£ §HMinerals§!\n§WSpecial Effects:§! \n§YSubject§!: £trade_value£ Trade Value: §G+10%§!, £crime£ Crime: §R+30%§!\n§YOverlord§!: £trade_value£ Trade Value: §G+2%§! per §Y$preset_ver_neocolony$§!."
+
+
+ preset_ver_blood: "Blood Tributary"
+ preset_ver_blood_desc:"Blood Tributaries pay a special tribute, the §YBlood Tax§!. Every 15-20 years, 5% of their population is sent to their overlord as tribute. They are always defended by their overlord.\n\n§YTribute§!: §G5%§! £pops£ §HPops§! every 15 years\n§WSpecial Effects:§! \n§YSubject§!: §R-1000§! £opinion£ §HOpinio§! and §R-5§! £loyalty£ §HLoyalty§! towards Overlord"
+
+ preset_ver_appendage: "Appendage"
+ preset_ver_appendage_desc:"Appendages can be integrated."
+
+ preset_ver_organic: "Organic Auxiliary"
+ preset_ver_organic_desc:"Organic Auxiliaries have no diplomatic freedom, but cannot be integrated and are protected by their overlord."
+
+ preset_ver_parallel: "Parallel Processor"
+ preset_ver_parallel_desc:"Parallel Processors have no diplomatic freedom, join their overlord's wars, are protected and can be integrated.\n§WSpecial Effects:§! \nOverlord: §G+5%§! Research Speed per §Y$preset_ver_parallel$§!, up to §G+20%§!."
 
  # Term Window:
- preset_verpuppet_flavor_desc: "# any_agreement = { agreement_preset = preset_auto_state }s through the use of influence, can be used to fight Proxy Wars for their Overlord. They are protected by their Overlord and they have to participate in their wars."
- preset_verdevolved_flavor_desc: "Devolved Regions may be integrated, can peacefully expand and are protected by their Overlord."
- preset_verfoederatus_flavor_desc: "Foederati are obligated to participate into their Overlord's wars. However, they cannot be integrated."
- preset_verdisciple_flavor_desc: "Disciples are protected by their Overlord."
- preset_verjrpartner_flavor_desc: "Jr. Partners cannot be integrated."
- preset_verserf_flavor_desc: "Serfs have no diplomatic freedom, and are usually not protected by their Overlord. They cannot be integrated. This type of subject greatly resents its condition."
- preset_verblood_flavor_desc: "Blood Tributaries pay a special tribute, the blood tax. Every 15 to 20 years, 10% of their population is sent to their Overlord as tribute."
- preset_verappendage_flavor_desc: "Appendages can be integrated."
- preset_verorganic_flavor_desc: "Organic Auxiliaries have no diplomatic freedom, but cannot be integrated and are protected by their Overlord."
- preset_verparallel_flavor_desc: "Parallel Processors have no diplomatic freedom, join their Overlord's wars, are protected and can be integrated.\n\nSpecial Effect: §S(Overlord)§! §G+5%§! Research Speed for each Each Parallel Processor (up to 20%)"
- preset_verdevotee_flavor_desc: "Devotees have open subject agreement and several available options for both the Devotee and the Overlord"
- preset_verkobun_flavor_desc: "Kobun have open subject agreement and several available options for both the Kobun and the Overlord. They can be also used for Proxy Wars."
- preset_verworshipper_flavor_desc: "Worshippers have open subject agreement and several available options for both the Worshipper and the Overlord. Their presence at the Overlord's church is obligatory, resulting in increased ethics attraction towards spiritualism."
- preset_verdebtor_flavor_desc: "Debtors pay a special tribute, the blood tax. Between every 15 and 20 years, 5% of their population is sent to their Overlord as tribute."
- preset_versubscriber_flavor_desc: "Subscribers have open subject agreement and several available options for both the Subscriber and the Overlord."
- preset_verarmsdealer_flavor_desc: "Arms Dealers have open subject agreement and several available options for both the Arms Dealer and the Overlord."
- preset_versubcontractor_flavor_desc: "Subcontractors have open subject agreement and several available options for both the Subcontractor and the Overlord."
+ preset_ver_puppet_flavor_desc: "Puppet States, through the use of influence, can be used to fight Proxy Wars for their Overlord. They are protected by their Overlord and they have to participate in their wars."
+ preset_ver_devolved_flavor_desc: "Devolved Regions cannot be integrated, can peacefully expand and are protected by their Overlord."
+ preset_ver_foederatus_flavor_desc: "Foederati are obligated to participate into their Overlord's wars. However, they cannot be integrated."
+ preset_ver_dependency_flavor_desc: "Dependencies are protected by their Overlord."
+ preset_ver_jrpartner_flavor_desc: "Junior Partners cannot be integrated."
+ preset_ver_serf_flavor_desc: "Serfs have no diplomatic freedom, and are usually not protected by their Overlord. They cannot be integrated. This type of subject greatly resents its condition."
+ preset_ver_blood_flavor_desc: "Blood Tributaries pay a special tribute, the blood tax. Every 15 to 20 years, 10% of their population is sent to their Overlord as tribute."
+ preset_ver_appendage_flavor_desc: "Appendages can be integrated."
+ preset_ver_organic_flavor_desc: "Organic Auxiliaries have no diplomatic freedom, but cannot be integrated and are protected by their Overlord."
+ preset_ver_parallel_flavor_desc: "Parallel Processors have no diplomatic freedom, join their Overlord's wars, are protected and can be integrated.\n\nSpecial Effect: §S(Overlord)§! §G+5%§! Research Speed for each Each Parallel Processor (up to 20%)"
 
- ##### Events #####
- ## Becoming a vassal
- ver.100.name: "New subject empire"
- ver.100.desc: "The §Y[From.GetName]§! was recently integrated into our sphere of influence. It's now up to us to decide how the [From.GetAdj] may better contribute to the [Root.GetAdj] good."
- ver.100.appendage: "Appendage"
- ver.100.appendage.tooltip: "$SUBJECT_DESC_verappendage$"
- ver.100.autonomous: "Devolved Region"
- ver.100.autonomous.tooltip: "$SUBJECT_DESC_verdevolved$"
- ver.100.beneficiary: "Beneficiary"
- ver.100.beneficiary.tooltip: "$SUBJECT_DESC_verbeneficiary$"
- ver.100.disciple: "Disciple"
- ver.100.disciple.tooltip: "$SUBJECT_DESC_verdisciple$"
- ver.100.foederatus: "Foederatus"
- ver.100.foederatus.tooltip: "$SUBJECT_DESC_verfoederatus$"
- ver.100.jrpartner: "Jr. Partner"
- ver.100.jrpartner.tooltip: "$SUBJECT_DESC_verjrpartner$"
- ver.100.puppet: "Client State"
- ver.100.puppet.tooltip: "$SUBJECT_DESC_verpuppet$"
- ver.100.serf: "Serf"
- ver.100.serf.tooltip: "$SUBJECT_DESC_verserf$"
- ver.100.sister: "Sister Republic"
- ver.100.sister.tooltip: "$SUBJECT_DESC_versister$"
- ver.100.organic: "Organic Auxiliary"
- ver.100.organic.tooltip: "$SUBJECT_DESC_verorganic$"
- ver.100.parallel: "Parallel Processor"
- ver.100.parallel.tooltip: "$SUBJECT_DESC_verparallel$"
- ver.100.blood: "Blood Tributary"
- ver.100.blood.tooltip: "$SUBJECT_DESC_verblood$"
- # Becoming a Subsidiary
- ver.101.subsidiary: "Keep as a Subsidiary"
- ver.101.subsidiary.tooltip: "$SUBJECT_DESC_versubsidiary$"
- ver.101.devotee: "Devotee"
- ver.101.devotee.tooltip: "$SUBJECT_DESC_verdevotee$"
- ver.101.kobun: "Kobun"
- ver.101.kobun.tooltip: "$SUBJECT_DESC_verkobun$"
- ver.101.supplier: "Supplier"
- ver.101.supplier.tooltip: "$SUBJECT_DESC_versupplier$"
- ver.101.worshipper: "Worshipper"
- ver.101.worshipper.tooltip: "$SUBJECT_DESC_verworshipper$"
- ver.101.debtor: "Debtor"
- ver.101.debtor.tooltip: "$SUBJECT_DESC_verdebtor$"
- ver.101.subscriber: "Subscriber"
- ver.101.subscriber.tooltip: "$SUBJECT_DESC_versubscriber$"
- ver.101.armsdealer: "Arms Dealer"
- ver.101.armsdealer.tooltip: "$SUBJECT_DESC_verarmsdealer$"
- ver.101.subcontractor: "Subcontractor"
- ver.101.subcontractor.tooltip: "$SUBJECT_DESC_versubcontractor$"
- ver.101.dependency: "Dependency"
- ver.101.dependency.tooltip: "$SUBJECT_DESC_verdependency$"
- ## Proxy War
- # ver.31.name: "Proxy War"
- # ver.31.desc: "We've made contact with the client kings, hand-picked dictators and bought elected leaders from our puppet states. It's time to attack one of our enemies. The only question remaining is, who'll do the job?"
- # ver.31.desc.fail: "None of our Client States has a valid target at the moment."
- # ver.31.fail: "Unfortunate."
- # ver.31.puppet_1: "[puppet_1.GetName]"
- # ver.31.puppet_1.tooltip: "A list with valid targets neighboring the [puppet_1.GetName] will be shown."
- # ver.31.puppet_2: "[puppet_2.GetName]"
- # ver.31.puppet_2.tooltip: "A list with valid targets neighboring the [puppet_2.GetName] will be shown."
- # ver.31.puppet_3: "[puppet_3.GetName]"
- # ver.31.puppet_3.tooltip: "A list with valid targets neighboring the [puppet_3.GetName] will be shown."
- # ver.31.puppet_4: "[puppet_4.GetName]"
- # ver.31.puppet_4.tooltip: "A list with valid targets neighboring the [puppet_4.GetName] will be shown."
- # ver.31.puppet_5: "[puppet_5.GetName]"
- # ver.31.puppet_5.tooltip: "A list with valid targets neighboring the [puppet_5.GetName] will be shown."
- # ver.31.puppet_6: "[puppet_6.GetName]"
- # ver.31.puppet_6.tooltip: "A list with valid targets neighboring the [puppet_6.GetName] will be shown."
- # ver.31.puppet_7: "[puppet_7.GetName]"
- # ver.31.puppet_7.tooltip: "A list with valid targets neighboring the [puppet_7.GetName] will be shown."
- # ver.31.puppet_8: "[puppet_8.GetName]"
- # ver.31.puppet_8.tooltip: "A list with valid targets neighboring the [puppet_8.GetName] will be shown."
- # ver.31.puppet_9: "[puppet_9.GetName]"
- # ver.31.puppet_9.tooltip: "A list with valid targets neighboring the [puppet_9.GetName] will be shown."
- # ver.31.puppet_10: "[puppet_10.GetName]"
- # ver.31.puppet_10.tooltip: "A list with valid targets neighboring the [puppet_10.GetName] will be shown."
- # ver.31.back: "Maybe that's not a good idea after all..."
- # ver.31.back.tooltip: "Dismiss our Client States for the time being."
  ver.33.name: "Proxy War - Target"
  ver.33.desc: "The [event_target:chosen_subject.GetName] shares its borders with the following states that are not alled with us. Which one should they should attack?"
  ver.33.puppet_neighbor_1: "[puppet_neighbor_1.GetName]"
@@ -178,30 +90,26 @@
  ver.33.puppet_neighbor_19: "[puppet_neighbor_19.GetName]"
  ver.33.puppet_neighbor_20: "[puppet_neighbor_20.GetName]"
  ver.33.back: "Thinking better, the [FROM.GetName] may not be up to the task."
- ver.33.back.tooltip: "Show a list of all available Client States again."
+ ver.33.back.tooltip: "Show a list of all available Puppet States again."
+
  ## The Blood Tax
  ver.40.name: "The Blood Tax"
- ver.40.desc: "Our tribute is due. Our soldiers have already been sent to our Blood Tributaries to take away the most promising and strong-looking youths. They'll soon be educated about the fundamentals of our culture, and more importantly, how to best serve their masters."
+ ver.40.desc: "Our tribute is due. Our soldiers have already been sent to our Blood Tributaries to take away the most promising youths. They'll soon be educated about the fundamentals of our culture, and more importantly, how to best serve their masters."
+
  ver.40.distribute: "Distribute them among our colonies."
- ver.40.distribute.tooltip: "[This.ver_blood_tributary_total_population] £pops£ §HPops§! will be sent to our worlds, with priority to colonies with free housing"
+ ver.40.distribute.tooltip: "[This.ver_blood_tributary_total_population] £pops£ §HPops§! will be sent to our worlds, with priority to colonies with free housing."
  ver.40.thrall: "Send them all to our Thrall-Worlds."
- ver.40.thrall.tooltip: "[This.ver_blood_tributary_total_population] £pops£ §HPops§! will be distributed among our Thrall-Worlds"
-#  ##### Government #####
-#  ## Governmment type
-#  ver_gov_single_party_republic: "Single-Party Republic"
-#  ver_gov_single_party_republic_desc: "This nominal democracy is a de facto dictatorship controlled by the State-Party leader."
-#  ## Civics
-#  civic_staged_elections: "Staged Elections"
-#  civic_staged_elections_desc: "This society has big formal elections where every citizen can cast its vote - as long as it's the right vote."
+ ver.40.thrall.tooltip: "[This.ver_blood_tributary_total_population] £pops£ §HPops§! will be distributed among our Thrall-Worlds."
+
  ##### Modifiers #####
  ## Static Modifiers
  ver_overlord_indoctrination: "Overlord Indoctrionation"
- ver_overlord_indoctrination_desc: "Our Overlord sees us as disciples that need to be taught the path to salvation."
+ ver_overlord_indoctrination_desc: "Our Overlord sees us as dependencys that need to be taught the path to salvation."
  ver_demilitarized: "Demilitarized"
  ver_demilitarized: "We were demilitarized by our Overlord."
  ver_military_subsidies: "Military Subsidies"
  ver_military_subsidies_desc: "Our Overlord is subsidizing part of our military apparatus."
- ver_puppet_state: "Client State"
+ ver_puppet_state: "Puppet State"
  ver_puppet_state_desc: "The leader of this empire was hand-picked by its Overlord."
  ver_called_proxy_war: "Recent Proxy War"
  ver_kobun_malus: "Kobun"
@@ -349,22 +257,22 @@
  ver_burdensome_taxes_desc: "A subject has no right other than to serve its master.\n\n§EWe'll tax up to 30% of our Subject Empires' collected £trade_value£ §YTrade Value§!, leaving them ."
  ##### Edicts #####
  edict_ver_proxy_war: "Proxy War"
- edict_ver_proxy_war_desc: "The blood spilled during war need not be our own. In order to further our interests without being directly involved, wee can influence one of our Client States to declare war against one of our enemies."
- edict_ver_proxy_war_effect: "All of our Client States currently at peace and with valid targets will be shown. Valid targets are any Client State neighboring country that is not in a non-agression pact, defensive pact or in federation with us."
+ edict_ver_proxy_war_desc: "The blood spilled during war need not be our own. In order to further our interests without being directly involved, we can direct one of our Puppet States to declare war against one of our enemies."
+ edict_ver_proxy_war_effect: "All of our Client States currently at peace and with valid targets will be shown. Valid targets are any countries neighboring the Client State that we have no non-agression pact, defensive pact, or in federation with."
 
-# Vassals Expanded and Reworked Updated
+ # Vassals Expanded and Reworked Updated
  exalted_subjects.52.name: "New Subsidiary"
  exalted_subjects.52.desc: "The §Y[From.GetName]§! now recognize us as their holding company. We must now decide what role the [From.GetAdj] shall play in [Root.GetAdj] history."
  
  SUBJECT_vervassal: "Vassal"
- SUBJECT_DESC_vervassal: "Vassals are subservient to their Overlord. They have limited diplomatic options, and fight alongside their Overlord.\n\nCan Expand: £trigger_no£\nHas Diplomatic Powers: £trigger_no£\nProtected By Overlord: £trigger_yes£\nDefends Overlord: £trigger_yes£\nCan Be Integrated: £trigger_yes£\nTribute: §G+0.2§! £influence£ §HInfluence§!"
+ SUBJECT_DESC_vervassal: "Vassals are subservient to their Overlord. They have limited diplomatic options, and fight alongside their Overlord.\n\nCan Expand: £trigger_no£\nHas Diplomatic Powers: £trigger_no£\nProtected By Overlord: £trigger_yes£\nDefends Overlord: £trigger_yes£\nCan Be Integrated: £trigger_yes£\n§YTribute§!: §G+0.2§! £influence£ §HInfluence§!"
 
  SUBJECT_vertributary: "Tributary"
- SUBJECT_DESC_vertributary: "Tributaries are mostly independent, but pay a tribute to their Overlord for protection.\n\nCan Expand: £trigger_yes£\nHas Diplomatic Powers: £trigger_yes£\nProtected By Overlord: £trigger_yes£\nDefends Overlord: £trigger_no£\nCan Be Integrated: £trigger_yes£\nTribute: §Y25%§! £energy£ §HEnergy§! and £minerals£ §HMinerals§!"
+ SUBJECT_DESC_vertributary: "Tributaries are mostly independent, but pay a tribute to their Overlord for protection.\n\nCan Expand: £trigger_yes£\nHas Diplomatic Powers: £trigger_yes£\nProtected By Overlord: £trigger_yes£\nDefends Overlord: £trigger_no£\nCan Be Integrated: £trigger_no£\n§YTribute§!: §Y25%§! £energy£ §HEnergy§! and £minerals£ §HMinerals§!"
 
- SUBJECT_DESC_tributary: "Tributaries are mostly independent, but pay a tribute to their Overlord for protection.\n\nCan Expand: £trigger_yes£\nHas Diplomatic Powers: £trigger_yes£\nProtected By Overlord: £trigger_yes£\nDefends Overlord: £trigger_no£\nCan Be Integrated: £trigger_no£\nTribute: §Y25%§! £energy£ §HEnergy§! and £minerals£ §HMinerals§!"
+ SUBJECT_DESC_tributary: "Tributaries are mostly independent, but pay a tribute to their Overlord for protection.\n\nCan Expand: £trigger_yes£\nHas Diplomatic Powers: £trigger_yes£\nProtected By Overlord: £trigger_yes£\nDefends Overlord: £trigger_no£\nCan Be Integrated: £trigger_no£\n§YTribute§!: §Y25%§! £energy£ §HEnergy§! and £minerals£ §HMinerals§!"
 
- SUBJECT_DESC_protectorate:5 "Protectorates are guaranteed independence by their Overlord, pay §Y80%§! less for any tech their Overlord knows, and turn into vassals once they reach §Y50%§! of their Overlord's tech level.\n\nCan Expand: £trigger_yes£\nHas Diplomatic Powers: £trigger_yes£\nProtected By Overlord: £trigger_yes£\nDefends Overlord: £trigger_no£\nCan Be Integrated: £trigger_no£\nTribute: §Y0.1§! £influence£ §HInfluence§!"
+ SUBJECT_DESC_protectorate:5 "Protectorates are guaranteed independence by their Overlord, pay §Y80%§! less for any tech their Overlord knows, and turn into vassals once they reach §Y50%§! of their Overlord's tech level.\n\nCan Expand: £trigger_yes£\nHas Diplomatic Powers: £trigger_yes£\nProtected By Overlord: £trigger_yes£\nDefends Overlord: £trigger_no£\nCan Be Integrated: £trigger_no£\n§YTribute§!: §Y0.1§! £influence£ §HInfluence§!"
 
  edict_veru_manage_subject: "Manage Subject States"
  edict_veru_manage_subject_desc: "Allows us to manage our subjects."
@@ -420,49 +328,19 @@
  veru.3000.vervassal: "You will be a §YVassal§!."
  veru.3000.appendage: "You will be an §YAppendage§!."
  veru.3000.autonomous: "You will be an §YDevlolved Region§!."
- veru.3000.beneficiary: "You will be a §YBeneficiary§!."
- veru.3000.disciple: "You will be a §YDisciple§!."
+ veru.3000.condo: "You will be a §YCondominium§!."
+ veru.3000.dependency: "You will be a §YDependency§!."
  veru.3000.foederatus: "You will be a §YFoederatus§!."
- veru.3000.jrpartner: "You will be a §YJr. Partner§!."
- veru.3000.puppet: "You will be a §YClient State§!."
+ veru.3000.jrpartner: "You will be a §YJunior Partner§!."
+ veru.3000.puppet: "You will be a §YPuppet State§!."
  veru.3000.serf: "You will be a §YSerf§!."
  veru.3000.sister: "You will be a §YSister Republic§!."
  veru.3000.organic: "You will be an §YOrganic Auxiliary§!."
  veru.3000.parallel: "You will be a §YParallel Processor§!."
  veru.3000.blood: "You will be a §YBlood Tributary§!."
 
- # Exalted Domination
- veru.3000.beneficiary: "You will be a §Y$SUBJECT_exalted_subject_beneficiary$§!."
- veru.3000.cultural_conservation: "You will be a §Y$SUBJECT_exalted_subject_cultural_conservation$§!."
- veru.3000.subject_dominion: "You will be a §Y$SUBJECT_exalted_subject_dominion$§!."
- veru.3000.exarchate: "You will be an §Y$SUBJECT_exalted_subject_exarchate$§!."
- veru.3000.noble_house: "You will be a §Y$SUBJECT_exalted_subject_noble_house$§!."
- veru.3000.special_administrative_region: "You will be a §Y$SUBJECT_exalted_subject_special_administrative_region$§!."
- veru.3000.warden: "You will be a §Y$SUBJECT_exalted_subject_warden$§!."
- veru.3000.xenoharvest: "You will be a §Y$SUBJECT_exalted_subject_xenoharvest$§!."
- veru.3000.symbiont: "You will be a §Y$SUBJECT_exalted_subject_symbiont$§!."
- veru.3000.pet: "You will be a §Y$SUBJECT_exalted_subject_pet$§!."
- veru.3000.automated_assembler: "You will be a §Y$SUBJECT_exalted_subject_pet$§!."
- veru.3000.remote_archive: "You will be a §Y$SUBJECT_exalted_subject_remote_archive$§!."
- veru.3000.prefecture: "You will be a §Y$SUBJECT_exalted_subject_prefecture$§!."
- veru.3000.satellite: "You will be a §Y$SUBJECT_exalted_subject_satellite$§!."
- veru.3000.signatory: "You will be a §Y$SUBJECT_exalted_subject_signatory$§!."
- veru.3000.thrall: "You will be a §Y$SUBJECT_exalted_subject_thrall$§!."
-
- # Decentralized Empires
- veru.3000.member_state: "You will be a §Y$SUBJECT_member_state$§!."
-
  # Megacorp
  veru.3100.subsidiary: "You will be a §YSubsidiary§!."
- veru.3100.devotee: "You will be a §YDevotee§!."
- veru.3100.kobun: "You will be a §YKobun§!."
- veru.3100.supplier: "You will be a §YSupplier§!."
- veru.3100.worshipper: "You will be a §YWorshipper§!."
- veru.3100.debtor: "You will be a §YDebtor§!."
- veru.3100.subscriber: "You will be a §YSubscriber§!."
- veru.3100.armsdealer: "You will be an §YArms Dealer§!."
- veru.3100.subcontractor: "You will be a §YSubcontractor§!."
- veru.3100.dependency: "You will be a §YDependency§!."
 
  # Change Government Type
  veru.4000.loyal.desc: "How would you like the §Y[event_target:chosen_subject.GetName]§! to be governed?"
@@ -613,7 +491,9 @@
  chosen_subject_text: "We will §Yinstall our preferred leader§! in the nation that we chose at the beginning of the war, §Ymaking them our subject§!."
 
  veru.6400.name: "Leadership of the §Y[event_target:chosen_subject.GetName]§!"
- veru.6400.desc: "Now that we've secured control over §Y[event_target:chosen_subject.GetName]§!, we need to install leadership that is amenable to our rule. We can choose a leader sympathatic to our rule from amongst their own people. The benefit of this is that it will likely make the transition much smoother. However, we can also choose to install a leader from amongst our own people, which will all but guarantee their loyalty. "
+ veru.6400.desc: "Now that we've secured control over §Y[event_target:chosen_subject.GetName]§!, we need to install leadership that is amenable to our rule. We can choose a leader sympathatic to our rule from amongst their own people. The benefit of this is that it will likely make the transition much smoother. However, we can also choose to install a leader from amongst our own people, which will all but guarantee their loyalty."
+ veru.6400.clientkingdom: "Now that we've secured control over §Y[event_target:chosen_subject.GetName]§!, we need to install leadership that is amenable to our rule. We can choose a leader sympathatic to our rule from amongst their own people, or we can choose to install a leader from amongst our own people."
+ veru.6400.clientkingdom_passes: "Our hand-picked §Y[event_target:chosen_subject.GetRulerTitle]§! in the §Y[event_target:chosen_subject.GetName]§! has passed away, so we need to choose a successor."
 
  veru.6400.them: "One of §Ytheir§! people."
  veru.6400.them.tooltip: "Choosing one of their leaders will allow us to avoid any £stability£ §YStability§! and £happiness£ §YHappiness§! penalties being incurred on the §Y[event_target:chosen_subject.GetName]§!."
@@ -713,54 +593,59 @@
  contract_fail: "Prohibited by Contract"
  veru_tree_of_life_fail: "Due to this subject relying on their §YTree of Life§!, their capital cannot be relocated."
 
- subject_verdevolved_effect: "$preset_verdevolved$"
- subject_verfoederatus_effect: "$preset_verfoederatus$"
- subject_verdisciple_effect: "$preset_verdisciple$"
- subject_verjrpartner_effect: "$preset_verjrpartner$"
- subject_verpuppet_effect: "$preset_verpuppet$"
- subject_verdisciple_effect: "$preset_verdisciple$"
- subject_verdevotee_effect: "$preset_verdevotee$"
- subject_verworshipper_effect: "$preset_verworshipper$"
+ 
+ subject_ver_foederatus_effect: "$preset_ver_foederatus$"
+ subject_ver_satellite_effect: "$preset_ver_satellite$"
+ subject_ver_jrpartner_effect: "$preset_ver_jrpartner$"
+ subject_ver_dependency_effect: "$preset_ver_dependency$"
+ subject_ver_clientkingdom_effect: "$preset_ver_clientkingdom$"
+ subject_ver_devolved_effect: "$preset_ver_devolved$"
+ subject_ver_condo_effect: "$preset_ver_condo$"
+ subject_ver_puppet_effect: "$preset_ver_puppet$"
+ subject_ver_neocolony_effect: "$preset_ver_neocolony$"
+ 
+ subject_ver_blood_effect: "$subject_ver_blood$"
  subject_auto_state_effect: "$preset_auto_state$"
 
  subject_ver_effects: "Special Effects"
  subject_ver_hidden_resources: "Special Resources"
 
- ver_proxy_overlord: "Can force subject to engage in §YProxy Wars§!."
-
- verdevolved_extra_subject: "Monthly: £influence£ §R-0.25§!\nNaval Capacity: £navy_size£ §R-50%§!"
- verdevolved_extra_overlord: "Monthly: £influence£ §G0.25§!"
-
- ver_blood_tax_subject: "Tribute: §Y10%§! £pops£ §HPops§! every 15-20 years\nSpecial Effect: §R-1000§! Opinion towards Overlord"
- ver_blood_tax_overlord: "§Y10%§! of subject's £pops£ §HPops§! every 15-20 years"
-
- autostate_extra_overlord: "Monthly: £influence£ §R-0.25§!"
-
  ver_extra_subject: "$MODIFIER$\n$RESOURCES$"
 
- verfoederatus_extra_subject: "$MODIFIER$"
+ ver_foederatus_extra_subject: "$MODIFIER$"
+ ver_foederatus_extra_overlord: "$MODIFIER$"
 
- verdisciple_extra_subject: "$MODIFIER$"
+ ver_satellite_extra_subject: "$MODIFIER$"
+ ver_satellite_extra_overlord: "$MODIFIER$"
 
- verjrpartner_extra_subject: "$MODIFIER$"
+ ver_jrpartner_extra_subject: "$MODIFIER$"
+ ver_jrpartner_extra_soverlord "$MODIFIER$"
 
- verpuppet_extra_subject: "$MODIFIER$"
+ ver_dependency_extra_subject: "Monthly Tax: £unity£ §R15%§!"
+ ver_dependency_extra_overlord: "$MODIFIER$"
 
- verkobun_extra_subject: "$MODIFIER$"
+ ver_clientkingdom_subject: "$MODIFIER$"
+ ver_clientkingdom_overlord: "$MODIFIER$"
 
- versubscriber_extra_subject: "$MODIFIER$"
+ ver_devolved_extra_subject: "Monthly: £influence£ §R-0.25§!"
+ ver_devolved_extra_overlord: "Monthly: £influence£ §G+0.25§!\n$MODIFIER$"
+
+ ver_condo_extra_subject: "$MODIFIER$"
+ ver_condo_extra_overlord: "$MODIFIER$"
+
+ ver_puppet_extra_subject: "$MODIFIER$"
+ ver_puppet_extra_overlord: "$MODIFIER$\nCan force subject to engage in §YProxy Wars§!"
+
+ ver_neocolony_extra_subject: "$MODIFIER$"
+ ver_neocolony_extra_overlord: "$MODIFIER$"
 
  ver_rec_extra_subject: "$RESOURCES$"
  ver_rec_extra_overlord: "$RESOURCES$"
 
- verdisciple_rec_extra_subject: "Monthly Tax: £unity£ §R-15%§!"
- verdisciple_rec_extra_overlord: "Monthly Subject Tax: £unity£ §G15%§!"
+ autostate_extra_overlord: "Monthly: £influence£ §R-0.25§!"
 
- verdevotee_rec_extra_subject: "Monthly Tax: £unity£ §R-5%§!"
- verdevotee_rec_extra_overlord: "Monthly Subject Tax: £unity£ §G5%§!"
-
- verworshipper_rec_extra_subject: "Monthly Tax: £unity£ §R-10%§!"
- verworshipper_rec_extra_overlord: "Monthly Subject Tax: £unity£ §G10%§!"
+ ver_blood_tax_subject: "Tribute: §Y5%§! £pops£ §HPops§! every 15-20 years\nSpecial Effect: §R-1000§! Opinion towards Overlord"
+ ver_blood_tax_overlord: "§Y5%§! of subject's £pops£ §HPops§! every 15-20 years"
 
  d_overlord_unity_capital: "Subject Guidance Center"
  d_overlord_unity_capital_desc: "At this center, members of some of our subject's priestly class recieve guidance on how to better facilitate cooperation between our nations."
@@ -768,10 +653,13 @@
  d_subject_unity_capital: "Overlord Temple"
  d_subject_unity_capital_desc: "At this center, our ruling elite recieves guidance from our overlord on how to better facilitate cooperation between our nations."
 
+ # Overwrites
+ protectorate_extra_subject:1 "$MODIFIER$\n"
+
  # Other
  ai.random: "Random"
  as_they_are: "Leave them as they are."
- veru_autonomous_state.tooltip: "The §Y[event_target:demanding_subject.GetName]§! will become an §YAutonomous State§! within our nation. They will pay us §Y15%§! of all their resources§!. They will be able to expand and declare war. They won't be required to help us in our wars, and will also be responsible for their own defense. They will cost us 0.2 £influence£ §HInfluence§! per month. §RWe will never be able to integrate them.§!"
+ veru_autonomous_state.tooltip: "The §Y[event_target:demanding_subject.GetName]§! will become an §YAutonomous State§! within our nation. They will pay us §Y15%§! of all their resources§!. They will have complete control over their domestic and foreign affairs. They will be responsible for their own defense. They will cost us 0.2 £influence£ §HInfluence§! per month. §RWe will never be able to integrate them.§!"
 
  # Overwrites
  # Preset blocked terms
@@ -780,28 +668,27 @@
  not_allowed_for_bulwark: "$TRIGGER_FAIL$Not allowed for §YBulwarks§!."
  not_allowed_for_scholarium: "$TRIGGER_FAIL$Not allowed for §YScholaria§!."
  not_allowed_for_prospectorium: "$TRIGGER_FAIL$Not allowed for §YProspectoria§!."
- not_allowed_for_verappendage: "$TRIGGER_FAIL$Not allowed for §Y$preset_verappendage$s§!."
- not_allowed_for_verdevolved: "$TRIGGER_FAIL$Not allowed for §Y$preset_verdevolved$s§!."
- not_allowed_for_verdisciple: "$TRIGGER_FAIL$Not allowed for §Y$preset_verdisciple$s§!."
- not_allowed_for_verfoederatus: "$TRIGGER_FAIL$Not allowed for §YFoederati§!."
- not_allowed_for_verjrpartner: "$TRIGGER_FAIL$Not allowed for §Y$preset_verjrpartner$s§!."
- not_allowed_for_verpuppet: "$TRIGGER_FAIL$Not allowed for §Y$preset_verpuppet$s§!."
- not_allowed_for_verserf: "$TRIGGER_FAIL$Not allowed for §Y$preset_verserf$s§!."
- not_allowed_for_verorganic: "$TRIGGER_FAIL$Not allowed for §Y$preset_verorganic$s§!."
- not_allowed_for_verparallel: "$TRIGGER_FAIL$Not allowed for §Y$preset_verparallel$s§!."
- not_allowed_for_verblood: "$TRIGGER_FAIL$Not allowed for §Y$preset_verblood$s§!."
- not_allowed_for_verdevotee: "$TRIGGER_FAIL$Not allowed for §Y$preset_verdevotee$s§!."
- not_allowed_for_verkobun: "$TRIGGER_FAIL$Not allowed for §Y$preset_verkobun$s§!."
- not_allowed_for_versupplier: "$TRIGGER_FAIL$Not allowed for §Y$preset_versupplier$s§!."
- not_allowed_for_verworshipper: "$TRIGGER_FAIL$Not allowed for §Y$preset_verworshipper$s§!."
- not_allowed_for_verdebtor: "$TRIGGER_FAIL$Not allowed for §Y$preset_verdebtor$s§!."
- not_allowed_for_versubscriber: "$TRIGGER_FAIL$Not allowed for §Y$preset_versupplier$s§!."
- not_allowed_for_verarmsdealer: "$TRIGGER_FAIL$Not allowed for §Y$preset_verarmsdealer$s§!."
- not_allowed_for_versubcontractor: "$TRIGGER_FAIL$Not allowed for §Y$preset_versubcontractor$s§!."
+
+ not_allowed_for_ver_foederatus: "$TRIGGER_FAIL$Not allowed for §YFoederati§!."
+ not_allowed_for_ver_satellite: "$TRIGGER_FAIL$Not allowed for §Y$preset_ver_satellite$s§!."
+ not_allowed_for_ver_jrpartner: "$TRIGGER_FAIL$Not allowed for §Y$preset_ver_jrpartner$s§!."
+ not_allowed_for_ver_dependency: "$TRIGGER_FAIL$Not allowed for §Y$preset_ver_dependency$s§!."
+ not_allowed_for_ver_clientkingdom: "$TRIGGER_FAIL$Not allowed for §Y$preset_ver_clientkingdom$s§!."
+ not_allowed_for_ver_devolved: "$TRIGGER_FAIL$Not allowed for §Y$preset_ver_devolved$s§!."
+ not_allowed_for_ver_condo: "$TRIGGER_FAIL$Not allowed for §YCondominia§!."
+ not_allowed_for_ver_puppet: "$TRIGGER_FAIL$Not allowed for §Y$preset_ver_puppet$s§!."
+ not_allowed_for_ver_neocolonies: "$TRIGGER_FAIL$Not allowed for §YNeo-Colonies§!."
+
+ not_allowed_for_ver_blood: "$TRIGGER_FAIL$Not allowed for §Y$preset_ver_blood$s§!."
+
+ not_allowed_for_ver_appendage: "$TRIGGER_FAIL$Not allowed for §Y$preset_ver_appendage$s§!."
+ not_allowed_for_ver_organic: "$TRIGGER_FAIL$Not allowed for §Y$preset_ver_organic$s§!."
+ not_allowed_for_ver_parallel: "$TRIGGER_FAIL$Not allowed for §Y$preset_ver_parallel$s§!."
+
  not_allowed_for_megacorp: "$TRIGGER_FAIL$Not allowed for §YMegacorps§!."
  not_allowed_for_auto_state: "$TRIGGER_FAIL$Not allowed for §YAutonomous States§!."
 
-# Subject Buffer Zone War
+ # Subject Buffer Zone War
 
  NAME_vassal_War: "[This.MainAttacker.GetAdj] Independence War"
  NAME_veru_buffer_war: "[This.MainDefender.GetAdj] Client War"

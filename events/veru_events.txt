@@ -153,27 +153,14 @@ country_event = {
 	desc = {
 		text = veru.1050.loyal.desc
 		trigger = {
-			event_target:chosen_subject = {
-				is_loyal_to = prev
-				NOT = { is_country_type = exile_country }
-			}
+			event_target:chosen_subject = { is_loyal_to = prev }
 		}
 	}
 
 	desc = {
 		text = veru.1050.disloyal.desc
 		trigger = {
-			event_target:chosen_subject = {
-				is_disloyal_to = prev
-				NOT = { is_country_type = exile_country }
-			}
-		}
-	}
-
-	desc = {
-		text = veru.1050.exile.desc
-		trigger = {
-			event_target:chosen_subject = { is_country_type = exile_country }
+			event_target:chosen_subject = { is_disloyal_to = prev }
 		}
 	}
 
@@ -183,9 +170,6 @@ country_event = {
 	# Install New Leader
 	option = {
 		name = veru.1050.leader
-		trigger = {
-			event_target:chosen_subject = { NOT = { is_country_type = exile_country } }
-		}
 		allow = {
 			custom_tooltip = {
 				fail_text = contract_fail
@@ -206,9 +190,6 @@ country_event = {
 	# Alter Government Type
 	option = {
 		name = veru.1050.gov
-		trigger = {
-			event_target:chosen_subject = { NOT = { is_country_type = exile_country } }
-		}
 		allow = {
 			custom_tooltip = {
 				fail_text = contract_fail
@@ -226,9 +207,6 @@ country_event = {
 	# Relocate Capital
 	option = {
 		name = veru.1050.cap
-		trigger = {
-			event_target:chosen_subject = { NOT = { is_country_type = exile_country } }
-		}
 		allow = {
 			custom_tooltip = {
 				fail_text = contract_fail
@@ -244,9 +222,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			event_target:chosen_subject = {
-				get_relocation_planets = yes
-			}
+			event_target:chosen_subject = { get_relocation_planets = yes }
 			country_event = { id = veru.7000 }
 		}
 	}
@@ -254,17 +230,7 @@ country_event = {
 	# Proxy War
 	option = {
 		name = veru.1050.proxy
-		trigger = {
-			event_target:chosen_subject = {
-				NOT = { is_country_type = exile_country }
-				any_agreement = {
-					OR = {
-						agreement_preset = preset_verpuppet
-						agreement_preset = preset_verkobun
-					}
-				}
-			}
-		}
+		trigger = { event_target:chosen_subject = { is_ver_puppet = yes } }
 		hidden_effect = {
 			save_event_target_as = ver_puppeteer
 			event_target:chosen_subject = {
@@ -277,9 +243,6 @@ country_event = {
 	option = {
 		name = veru.1050.name_change
 		custom_tooltip = veru.1050.name_change.tooltip
-		trigger = {
-			event_target:chosen_subject = { NOT = { is_country_type = exile_country } }
-		}
 		allow = {
 			custom_tooltip = {
 				fail_text = influencefail_text_veru
@@ -305,9 +268,6 @@ country_event = {
 	option = {
 		name = veru.1050.tech
 		custom_tooltip = veru.1050.tech.tooltip
-		trigger = {
-			event_target:chosen_subject = { NOT = { is_country_type = exile_country } }
-		}
 		allow = {
 			custom_tooltip = {
 				fail_text = influencefail_text_veru_200
@@ -373,6 +333,7 @@ country_event = {
 	# Choose one of their Leaders
 	option = {
 		name = veru.6400.them
+		trigger = { event_target:chosen_subject = { num_owned_leaders > 2 } }
 		hidden_effect = {
 			country_event = { id = veru.5020 }
 		}
@@ -1031,6 +992,7 @@ country_event = {
 	# Choose one of their Leaders
 	option = {
 		name = veru.6400.them
+		trigger = { event_target:chosen_subject = { num_owned_leaders > 2 } }
 		hidden_effect = {
 			country_event = { id = veru.5020 }
 		}
@@ -1285,7 +1247,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:governor_leader_1 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1302,7 +1268,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:governor_leader_1 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1319,7 +1289,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:governor_leader_3 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1336,7 +1310,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:governor_leader_4 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1353,7 +1331,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:governor_leader_5 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1370,7 +1352,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:governor_leader_6 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1387,7 +1373,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:governor_leader_7 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1404,7 +1394,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:governor_leader_8 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1421,7 +1415,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:governor_leader_9 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1438,7 +1436,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:governor_leader_10 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1491,7 +1493,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:admiral_leader_1 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1508,7 +1514,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:admiral_leader_2 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1525,7 +1535,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:admiral_leader_3 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1542,7 +1556,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:admiral_leader_4 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1559,7 +1577,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:admiral_leader_5 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1576,7 +1598,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:admiral_leader_6 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1593,7 +1619,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:admiral_leader_7 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1610,7 +1640,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:admiral_leader_8 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1627,7 +1661,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:admiral_leader_9 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1644,7 +1682,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:admiral_leader_10 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1697,7 +1739,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:general_leader_1 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1714,7 +1760,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:general_leader_2 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1731,7 +1781,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:general_leader_3 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1748,7 +1802,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:general_leader_4 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1765,7 +1823,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:general_leader_5 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1782,7 +1844,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:general_leader_6 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1799,7 +1865,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:general_leader_7 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1816,7 +1886,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:general_leader_8 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1833,7 +1907,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:general_leader_9 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1850,7 +1928,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:general_leader_10 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1903,7 +1985,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_1 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1920,7 +2006,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_2 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1937,7 +2027,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_3 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1954,7 +2048,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_4 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1971,7 +2069,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_5 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1988,7 +2090,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_6 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2005,7 +2111,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_7 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2022,7 +2132,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_8 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2039,7 +2153,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_9 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2056,7 +2174,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_10 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2115,7 +2237,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:governor_leader_1 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2136,7 +2262,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:governor_leader_2 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2157,7 +2287,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:governor_leader_3 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2178,7 +2312,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:governor_leader_4 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2199,7 +2337,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:governor_leader_5 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2220,7 +2362,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:governor_leader_6 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2241,7 +2387,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:governor_leader_7 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2262,7 +2412,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:governor_leader_8 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2283,7 +2437,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:governor_leader_9 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2304,7 +2462,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:governor_leader_10 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2361,7 +2523,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:admiral_leader_1 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2382,7 +2548,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:admiral_leader_2 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2403,7 +2573,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:admiral_leader_3 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2424,7 +2598,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:admiral_leader_4 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2445,7 +2623,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:admiral_leader_5 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2466,7 +2648,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:admiral_leader_6 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2487,7 +2673,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:admiral_leader_7 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2508,7 +2698,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:admiral_leader_8 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2529,7 +2723,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:admiral_leader_9 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2550,7 +2748,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:admiral_leader_10 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2607,7 +2809,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:general_leader_1 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2628,7 +2834,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:general_leader_2 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2649,7 +2859,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:general_leader_3 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2670,7 +2884,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:general_leader_4 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2691,7 +2909,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:general_leader_5 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2712,7 +2934,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:general_leader_6 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2733,7 +2959,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:general_leader_7 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2754,7 +2984,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:general_leader_8 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2775,7 +3009,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:general_leader_9 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2796,7 +3034,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:general_leader_10 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2853,7 +3095,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_1 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2874,7 +3120,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_2 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2895,7 +3145,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_3 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2916,7 +3170,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_4 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2937,7 +3195,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_5 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2958,7 +3220,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_6 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2979,7 +3245,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_7 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -3000,7 +3270,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_8 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -3021,7 +3295,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_9 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -3042,7 +3320,11 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_10 }
-			get_autocratic_gov_subject_leader = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -3423,6 +3705,27 @@ country_event = {
 
 	diplomatic = yes
 
+	desc = {
+		text = veru.6400.desc
+		trigger = { event_target:chosen_subject = { is_ver_clientkingdom = no } }
+	}
+
+	desc = {
+		text = veru.6400.clientkingdom
+		trigger = {
+			NOT = { has_country_flag = ck_desc }
+			event_target:chosen_subject = { is_ver_clientkingdom = yes }
+		}
+	}
+
+	desc = {
+		text = veru.6400.clientkingdom_passes
+		trigger = {
+			has_country_flag = ck_desc
+			event_target:chosen_subject = { is_ver_clientkingdom = yes }
+		}
+	}
+
 	picture_event_data = {
 		portrait = root.ruler
 		planet_background = event_target:chosen_subject
@@ -3431,14 +3734,16 @@ country_event = {
 		room = event_target:chosen_subject.ruler
 	}
 
-	# immediate = {
-	# 	clear_global_event_target = buffer_zone_winner
-	# }
-
 	# Choose one of their leaders
 	option = {
 		name = veru.6400.them
 		custom_tooltip = veru.6400.them.tooltip
+		trigger = {
+			event_target:chosen_subject = {
+				num_owned_leaders > 2
+				is_ver_clientkingdom = no
+			}
+		}
 		hidden_effect = {
 			country_event = { id = veru.6500 }
 		}
@@ -3449,6 +3754,36 @@ country_event = {
 	option = {
 		name = veru.6400.us
 		custom_tooltip = veru.6400.us.tooltip
+		trigger = {
+			event_target:chosen_subject = { is_ver_clientkingdom = no }
+		}
+		hidden_effect = {
+			country_event = { id = veru.6600 }
+		}
+		ai_chance = { base = 2 }
+	}
+
+	# Choose one of their leaders
+	option = {
+		name = veru.6400.them
+		trigger = {
+			event_target:chosen_subject = {
+				num_owned_leaders > 2
+				is_ver_clientkingdom = yes
+			}
+		}
+		hidden_effect = {
+			country_event = { id = veru.6500 }
+		}
+		ai_chance = { base = 5 }
+	}
+
+	# Choose one of our leaders
+	option = {
+		name = veru.6400.us
+		trigger = {
+			event_target:chosen_subject = { is_ver_clientkingdom = yes }
+		}
 		hidden_effect = {
 			country_event = { id = veru.6600 }
 		}
@@ -4264,7 +4599,11 @@ country_event = {
 		trigger = { check_variable = { which = total_governors value >= 1 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:governor_leader_1 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4274,7 +4613,11 @@ country_event = {
 		trigger = { check_variable = { which = total_governors value >= 2 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:governor_leader_2 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4284,7 +4627,11 @@ country_event = {
 		trigger = { check_variable = { which = total_governors value >= 3 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:governor_leader_3 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4294,7 +4641,11 @@ country_event = {
 		trigger = { check_variable = { which = total_governors value >= 4 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:governor_leader_4 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4304,7 +4655,11 @@ country_event = {
 		trigger = { check_variable = { which = total_governors value >= 5 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:governor_leader_5 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4314,7 +4669,11 @@ country_event = {
 		trigger = { check_variable = { which = total_governors value >= 6 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:governor_leader_6 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4324,7 +4683,11 @@ country_event = {
 		trigger = { check_variable = { which = total_governors value >= 7 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:governor_leader_7 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4334,7 +4697,11 @@ country_event = {
 		trigger = { check_variable = { which = total_governors value >= 8 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:governor_leader_8 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4344,7 +4711,11 @@ country_event = {
 		trigger = { check_variable = { which = total_governors value >= 9 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:governor_leader_9 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4354,7 +4725,11 @@ country_event = {
 		trigger = { check_variable = { which = total_governors value >= 10 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:governor_leader_10 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4384,7 +4759,11 @@ country_event = {
 		trigger = { check_variable = { which = total_admirals value >= 1 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:admiral_leader_1 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4394,7 +4773,11 @@ country_event = {
 		trigger = { check_variable = { which = total_admirals value >= 2 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:admiral_leader_2 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4404,7 +4787,11 @@ country_event = {
 		trigger = { check_variable = { which = total_admirals value >= 3 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:admiral_leader_3 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4414,7 +4801,11 @@ country_event = {
 		trigger = { check_variable = { which = total_admirals value >= 4 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:admiral_leader_4 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4424,7 +4815,11 @@ country_event = {
 		trigger = { check_variable = { which = total_admirals value >= 5 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:admiral_leader_5 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4434,7 +4829,11 @@ country_event = {
 		trigger = { check_variable = { which = total_admirals value >= 6 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:admiral_leader_6 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4444,7 +4843,11 @@ country_event = {
 		trigger = { check_variable = { which = total_admirals value >= 7 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:admiral_leader_7 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4454,7 +4857,11 @@ country_event = {
 		trigger = { check_variable = { which = total_admirals value >= 8 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:admiral_leader_8 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4464,7 +4871,11 @@ country_event = {
 		trigger = { check_variable = { which = total_admirals value >= 9 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:admiral_leader_9 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4474,7 +4885,11 @@ country_event = {
 		trigger = { check_variable = { which = total_admirals value >= 10 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:admiral_leader_10 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4504,7 +4919,11 @@ country_event = {
 		trigger = { check_variable = { which = total_generals value >= 1 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:general_leader_1 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4514,7 +4933,11 @@ country_event = {
 		trigger = { check_variable = { which = total_generals value >= 2 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:general_leader_2 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4524,7 +4947,11 @@ country_event = {
 		trigger = { check_variable = { which = total_generals value >= 3 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:general_leader_3 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4534,7 +4961,11 @@ country_event = {
 		trigger = { check_variable = { which = total_generals value >= 4 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:general_leader_4 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4544,7 +4975,11 @@ country_event = {
 		trigger = { check_variable = { which = total_generals value >= 5 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:general_leader_5 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4554,7 +4989,11 @@ country_event = {
 		trigger = { check_variable = { which = total_generals value >= 6 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:general_leader_6 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4564,7 +5003,11 @@ country_event = {
 		trigger = { check_variable = { which = total_generals value >= 7 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:general_leader_7 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4574,7 +5017,11 @@ country_event = {
 		trigger = { check_variable = { which = total_generals value >= 8 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:general_leader_8 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4584,7 +5031,11 @@ country_event = {
 		trigger = { check_variable = { which = total_generals value >= 9 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:general_leader_9 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4594,7 +5045,11 @@ country_event = {
 		trigger = { check_variable = { which = total_generals value >= 10 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:general_leader_10 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4624,7 +5079,11 @@ country_event = {
 		trigger = { check_variable = { which = total_scientists value >= 1 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_1 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4634,7 +5093,11 @@ country_event = {
 		trigger = { check_variable = { which = total_scientists value >= 2 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_2 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4644,7 +5107,11 @@ country_event = {
 		trigger = { check_variable = { which = total_scientists value >= 3 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_3 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4654,7 +5121,11 @@ country_event = {
 		trigger = { check_variable = { which = total_scientists value >= 4 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_4 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4664,7 +5135,11 @@ country_event = {
 		trigger = { check_variable = { which = total_scientists value >= 5 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_5 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4674,7 +5149,11 @@ country_event = {
 		trigger = { check_variable = { which = total_scientists value >= 6 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_6 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4684,7 +5163,11 @@ country_event = {
 		trigger = { check_variable = { which = total_scientists value >= 7 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_7 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4694,7 +5177,11 @@ country_event = {
 		trigger = { check_variable = { which = total_scientists value >= 8 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_8 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4704,7 +5191,11 @@ country_event = {
 		trigger = { check_variable = { which = total_scientists value >= 9 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_9 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4714,7 +5205,11 @@ country_event = {
 		trigger = { check_variable = { which = total_scientists value >= 10 } }
 		hidden_effect = {
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_10 }
-			get_autocratic_gov = yes
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -5084,6 +5579,32 @@ country_event = {
 }
 
 ################
+# Misc Events
+
+# Client Kingdom Ruler Dies
+# Executed as a leader has died
+# This = Country
+# From = Leader
+country_event = {
+	id = veru.8000
+	hide_window = no
+	is_triggered_only = yes
+
+	trigger = {
+		is_ver_clientkingdom = yes
+		from = { is_same_value = root.leader }
+	}
+
+	immediate = {
+		save_event_target_as = chosen_subject
+		overlord = {
+			set_timed_country_flag = { flag = ck_desc days = 7 }
+			country_event = { id = veru.6400 }
+		}
+	}
+}
+
+################
 ################
 ################
 # FIX
@@ -5110,7 +5631,7 @@ country_event = {
 				}
 			}
 			AND = {
-				has_overlord = yes
+				is_subject = yes
 				any_agreement = {
 					NOR = {
 						agreement_preset = preset_tributary

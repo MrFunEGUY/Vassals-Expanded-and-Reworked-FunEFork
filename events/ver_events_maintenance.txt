@@ -11,14 +11,14 @@ event = {
 
 	immediate = {
 
-		# Removes Overlord Indoctrination from former Disciples and Worhsippers
+		# Removes Overlord Indoctrination from former Dependencies and Worhsippers
 		every_country = {
 			limit = {
 				is_subject = yes
 				has_modifier = ver_overlord_indoctrination
 				OR = {
-					NOT = { any_agreement = { agreement_preset = preset_verdisciple } }
-					NOT = { any_agreement = { agreement_preset = preset_verworshipper } }
+					NOT = { any_agreement = { agreement_preset = preset_ver_dependency } }
+					NOT = { any_agreement = { agreement_preset = preset_ver_worshipper } }
 					is_at_war_with = overlord
 				}
 			}
@@ -31,7 +31,7 @@ event = {
 				is_subject = yes
 				has_modifier = ver_demilitarized
 				OR = {
-					NOT = { any_agreement = { agreement_preset = preset_verdevolved } }
+					NOT = { any_agreement = { agreement_preset = preset_ver_devolved } }
 					is_at_war_with = overlord
 				}
 			}
@@ -44,8 +44,8 @@ event = {
 				is_subject = yes
 				has_modifier = ver_military_subsidies
 				OR = {
-					NOT = { any_agreement = { agreement_preset = preset_verfoederatus } }
-					NOT = { any_agreement = { agreement_preset = preset_verarmsdealer } }
+					NOT = { any_agreement = { agreement_preset = preset_ver_foederatus } }
+					NOT = { any_agreement = { agreement_preset = preset_ver_armsdealer } }
 					is_at_war_with = overlord
 				}
 			}
@@ -58,7 +58,7 @@ event = {
 				is_subject = yes
 				has_modifier = ver_puppet_state
 				OR = {
-					NOT = { any_agreement = { agreement_preset = preset_verpuppet } }
+					NOT = { any_agreement = { agreement_preset = preset_ver_puppet } }
 					is_at_war_with = overlord
 				}
 			}
@@ -71,7 +71,7 @@ event = {
 				is_subject = yes
 				has_modifier = ver_kobun_malus
 				OR = {
-					NOT = { any_agreement = { agreement_preset = preset_verkobun } }
+					NOT = { any_agreement = { agreement_preset = preset_ver_kobun } }
 					is_at_war_with = overlord
 				}
 			}
@@ -114,7 +114,7 @@ event = {
 				is_machine_empire = yes
 				OR = {
 					is_overlord = no
-					NOT = { any_subject = { any_agreement = { agreement_preset = preset_verparallel } } }
+					NOT = { any_subject = { any_agreement = { agreement_preset = preset_ver_parallel } } }
 				}
 			}
 			ver_remove_parallel_processor_bonuses = yes
@@ -132,7 +132,7 @@ event = {
 		every_country = {
 			limit = {
 				is_subject = yes
-				any_agreement = { agreement_preset = preset_verdevolved }
+				any_agreement = { agreement_preset = preset_ver_devolved }
 				NOR = {
 					has_modifier = ver_demilitarized
 					is_at_war_with = overlord
@@ -144,8 +144,8 @@ event = {
 			limit = {
 				is_subject = yes
 				OR = {
-					any_agreement = { agreement_preset = preset_verfoederatus }
-					any_agreement = { agreement_preset = preset_verarmsdealer }
+					any_agreement = { agreement_preset = preset_ver_foederatus }
+					any_agreement = { agreement_preset = preset_ver_armsdealer }
 				}
 				NOR = {
 					has_modifier = ver_military_subsidies
@@ -157,7 +157,7 @@ event = {
 		every_country = {
 			limit = {
 				is_subject = yes
-				any_agreement = { agreement_preset = preset_verpuppet }
+				any_agreement = { agreement_preset = preset_ver_puppet }
 				NOR = {
 					has_modifier = ver_puppet_state
 					is_at_war_with = overlord
@@ -168,7 +168,7 @@ event = {
 		every_country = {
 			limit = {
 				is_subject = yes
-				any_agreement = { agreement_preset = preset_verkobun }
+				any_agreement = { agreement_preset = preset_ver_kobun }
 				NOR = {
 					has_modifier = ver_kobun_malus
 					is_at_war_with = overlord
@@ -180,8 +180,8 @@ event = {
 			limit = {
 				is_subject = yes
 				OR = {
-					any_agreement = { agreement_preset = preset_verdisciple }
-					any_agreement = { agreement_preset = preset_verworshipper }
+					any_agreement = { agreement_preset = preset_ver_dependency }
+					any_agreement = { agreement_preset = preset_ver_worshipper }
 				}
 				NOR = {
 					has_modifier = ver_overlord_indoctrination
@@ -207,7 +207,7 @@ country_event = {
 		}
 		is_machine_empire = yes
 		is_overlord = yes
-		any_subject = {	any_agreement = { agreement_preset = preset_verparallel } }
+		any_subject = {	any_agreement = { agreement_preset = preset_ver_parallel } }
 	}
 
 	immediate = {
@@ -215,7 +215,7 @@ country_event = {
 
 		every_subject = {
 			limit = {
-				any_agreement = { agreement_preset = preset_verparallel }
+				any_agreement = { agreement_preset = preset_ver_parallel }
 				NOT = { is_at_war_with = overlord }
 			}
 			prev = { change_variable = { which = ver_total_parallel_processors value = 1 } }
@@ -448,16 +448,13 @@ country_event = {
 		is_country_type_with_subjects = yes
 		is_overlord = yes
 		any_subject = {
-			OR = {
-				any_agreement = { agreement_preset = preset_verblood }
-				any_agreement = { agreement_preset = preset_verdebtor }
-			}
+			is_ver_blood = yes
 			NOT = { is_at_war_with = overlord }
 		}
 		NOT = { has_country_flag = ver_recent_blood_tribute }
 	}
 
 	immediate = {
-		country_event = { id = ver.40 days = 300 random = 600 }
+		country_event = { id = ver.40 days = 1 random = 359 }
 	}
 }

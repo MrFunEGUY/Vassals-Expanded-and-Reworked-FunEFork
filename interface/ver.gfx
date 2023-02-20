@@ -1,121 +1,92 @@
 spriteTypes = {
+
 	spriteType = {
-		name = "GFX_diplomacy_status_is_verappendage"
-		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isverappendage.dds"
+		name = "GFX_diplomacy_status_is_ver_foederatus"
+		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isver_foederatus.dds"
 	}
 
 	spriteType = {
-		name = "GFX_diplomacy_status_is_verdevolved"
-		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isverdevolved.dds"
+		name = "GFX_diplomacy_status_is_ver_satellite"
+		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isver_satellite.dds"
 	}
 
 	spriteType = {
-		name = "GFX_diplomacy_status_is_verbeneficiary"
-		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isverbeneficiary.dds"
+		name = "GFX_diplomacy_status_is_ver_jrpartner"
+		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isver_jrpartner.dds"
 	}
 
 	spriteType = {
-		name = "GFX_diplomacy_status_is_verdisciple"
-		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isverdisciple.dds"
+		name = "GFX_diplomacy_status_is_ver_dependency"
+		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isver_dependency.dds"
 	}
 
 	spriteType = {
-		name = "GFX_diplomacy_status_is_verfoederatus"
-		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isverfoederatus.dds"
+		name = "GFX_diplomacy_status_is_ver_clientkingdom"
+		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isver_clientkingdom.dds"
 	}
 
 	spriteType = {
-		name = "GFX_diplomacy_status_is_verjrpartner"
-		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isverjrpartner.dds"
+		name = "GFX_diplomacy_status_is_ver_devolved"
+		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isver_devolved.dds"
 	}
 
 	spriteType = {
-		name = "GFX_diplomacy_status_is_verpuppet"
-		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isverpuppet.dds"
+		name = "GFX_diplomacy_status_is_ver_condo"
+		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isver_condo.dds"
 	}
 
 	spriteType = {
-		name = "GFX_diplomacy_status_is_verserf"
-		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isverserf.dds"
+		name = "GFX_diplomacy_status_is_ver_puppet"
+		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isver_puppet.dds"
 	}
 
 	spriteType = {
-		name = "GFX_diplomacy_status_is_versister"
-		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isversister.dds"
+		name = "GFX_diplomacy_status_is_ver_neocolony"
+		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isver_neocolony.dds"
+	}
+
+	##############
+
+	spriteType = {
+		name = "GFX_diplomacy_status_is_ver_blood"
+		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isver_blood.dds"
+	}
+
+	##############
+
+	spriteType = {
+		name = "GFX_diplomacy_status_is_ver_appendage"
+		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isver_appendage.dds"
 	}
 
 	spriteType = {
-		name = "GFX_diplomacy_status_is_verorganic"
-		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isverorganic.dds"
+		name = "GFX_diplomacy_status_is_ver_organic"
+		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isver_organic.dds"
 	}
 
 	spriteType = {
-		name = "GFX_diplomacy_status_is_verparallel"
-		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isverparallel.dds"
+		name = "GFX_diplomacy_status_is_ver_parallel"
+		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isver_parallel.dds"
 	}
 
-	spriteType = {
-		name = "GFX_diplomacy_status_is_verblood"
-		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isverblood.dds"
-	}
+	##############
 
 	spriteType = {
-		name = "GFX_diplomacy_status_is_versubsidiary"
-		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isversubsidiary.dds"
-	}
-
-	spriteType = {
-		name = "GFX_diplomacy_status_is_verdevotee"
-		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isverdevotee.dds"
-	}
-
-	spriteType = {
-		name = "GFX_diplomacy_status_is_verkobun"
-		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isverkobun.dds"
-	}
-
-	spriteType = {
-		name = "GFX_diplomacy_status_is_versupplier"
-		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isversupplier.dds"
-	}
-
-	spriteType = {
-		name = "GFX_diplomacy_status_is_verworshipper"
-		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isverworshipper.dds"
-	}
-
-	spriteType = {
-		name = "GFX_diplomacy_status_is_verdebtor"
-		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isverdebtor.dds"
-	}
-
-	spriteType = {
-		name = "GFX_diplomacy_status_is_versubscriber"
-		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isversubscriber.dds"
-	}
-
-	spriteType = {
-		name = "GFX_diplomacy_status_is_verarmsdealer"
-		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isverarmsdealer.dds"
-	}
-
-	spriteType = {
-		name = "GFX_diplomacy_status_is_versubcontractor"
-		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isversubcontractor.dds"
-	}
-
-	spriteType = {
-		name = "GFX_diplomacy_status_is_verdependency"
-		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isverdependency.dds"
-	}
-	spriteType = {
-		name = "GFX_diplomacy_status_is_vervassal"
+		name = "GFX_diplomacy_status_is_ver_vassal"
 		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isvassal.dds"
 	}
+
 	spriteType = {
-		name = "GFX_diplomacy_status_is_vertributary"
+		name = "GFX_diplomacy_status_is_ver_subsidiary"
+		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isver_subsidiary.dds"
+	}
+
+	spriteType = {
+		name = "GFX_diplomacy_status_is_ver_tributary"
 		texturefile = "gfx/interface/icons/diplomacy/diplomacy_istributary.dds"
 	}
+
+	##############
 
 	spriteType = {
 		name = "GFX_wg_claim_subject"

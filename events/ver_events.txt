@@ -85,274 +85,7 @@ country_event = {
 	}
 }
 
-### Proxy Wars
-
-# # ver.30: Save Puppet States as event targets
-# country_event = {
-# 	id = ver.30
-# 	hide_window = yes
-# 	is_triggered_only = yes
-
-# 	immediate = {
-# 		save_event_target_as = ver_puppeteer # For use later
-# 		set_variable = { which = ver_total_puppet_states value = 0 }
-
-# 		# Count how many valid Puppet States there are
-# 		every_subject = {
-# 			limit = {
-# 				OR = {
-# 					any_agreement = { agreement_preset = preset_verpuppet }
-# 					any_agreement = { agreement_preset = preset_verkobun }
-# 				}
-# 				is_at_war = no
-# 				any_neighbor_country = {
-# 					OR = {
-# 						is_country_type_with_subjects = yes
-# 						is_country_type = awakened_fallen_empire
-# 						is_country_type = ascended_empire
-# 					}
-# 					NOR = {
-# 						is_same_value = event_target:ver_puppeteer
-# 						has_defensive_pact = event_target:ver_puppeteer
-# 						is_in_federation_with = event_target:ver_puppeteer
-# 						has_association_status = event_target:ver_puppeteer
-# 						AND = {
-# 							is_subject = yes
-# 							OR = {
-# 								overlord = { is_same_value = event_target:ver_puppeteer }
-# 								overlord = { has_defensive_pact = event_target:ver_puppeteer }
-# 								overlord = { is_in_federation_with = event_target:ver_puppeteer }
-# 								overlord = { has_association_status = event_target:ver_puppeteer }
-# 							}
-# 						}
-# 					}
-# 				}
-# 			}
-# 			set_country_flag = ver_puppet_counted
-# 			overlord = { change_variable = { which = ver_total_puppet_states value = 1 } }
-# 		}
-
-# 		# Next, we save each puppet as an Event Target
-# 		# As the scripting language doesn't have proper loops, we use a lot of ifs and hope no one ever has more than 10 puppets.
-# 		if = {
-# 			limit = { check_variable = { which = ver_total_puppet_states value >= 1 } }
-# 			random_subject = {
-# 				limit = { has_country_flag = ver_puppet_counted }
-# 				remove_country_flag = ver_puppet_counted
-# 				save_event_target_as = puppet_1
-# 			}
-# 		}
-# 		if = {
-# 			limit = { check_variable = { which = ver_total_puppet_states value >= 2 } }
-# 			random_subject = {
-# 				limit = { has_country_flag = ver_puppet_counted }
-# 				remove_country_flag = ver_puppet_counted
-# 				save_event_target_as = puppet_2
-# 			}
-# 		}
-# 		if = {
-# 			limit = { check_variable = { which = ver_total_puppet_states value >= 3 } }
-# 			random_subject = {
-# 				limit = { has_country_flag = ver_puppet_counted }
-# 				remove_country_flag = ver_puppet_counted
-# 				save_event_target_as = puppet_3
-# 			}
-# 		}
-# 		if = {
-# 			limit = { check_variable = { which = ver_total_puppet_states value >= 4 } }
-# 			random_subject = {
-# 				limit = { has_country_flag = ver_puppet_counted }
-# 				remove_country_flag = ver_puppet_counted
-# 				save_event_target_as = puppet_4
-# 			}
-# 		}
-# 		if = {
-# 			limit = { check_variable = { which = ver_total_puppet_states value >= 5 } }
-# 			random_subject = {
-# 				limit = { has_country_flag = ver_puppet_counted }
-# 				remove_country_flag = ver_puppet_counted
-# 				save_event_target_as = puppet_5
-# 			}
-# 		}
-# 		if = {
-# 			limit = { check_variable = { which = ver_total_puppet_states value >= 6 } }
-# 			random_subject = {
-# 				limit = { has_country_flag = ver_puppet_counted }
-# 				remove_country_flag = ver_puppet_counted
-# 				save_event_target_as = puppet_6
-# 			}
-# 		}
-# 		if = {
-# 			limit = { check_variable = { which = ver_total_puppet_states value >= 7 } }
-# 			random_subject = {
-# 				limit = { has_country_flag = ver_puppet_counted }
-# 				remove_country_flag = ver_puppet_counted
-# 				save_event_target_as = puppet_7
-# 			}
-# 		}
-# 		if = {
-# 			limit = { check_variable = { which = ver_total_puppet_states value >= 8 } }
-# 			random_subject = {
-# 				limit = { has_country_flag = ver_puppet_counted }
-# 				remove_country_flag = ver_puppet_counted
-# 				save_event_target_as = puppet_8
-# 			}
-# 		}
-# 		if = {
-# 			limit = { check_variable = { which = ver_total_puppet_states value >= 9 } }
-# 			random_subject = {
-# 				limit = { has_country_flag = ver_puppet_counted }
-# 				remove_country_flag = ver_puppet_counted
-# 				save_event_target_as = puppet_9
-# 			}
-# 		}
-# 		if = {
-# 			limit = { check_variable = { which = ver_total_puppet_states value >= 10 } }
-# 			random_subject = {
-# 				limit = { has_country_flag = ver_puppet_counted }
-# 				remove_country_flag = ver_puppet_counted
-# 				save_event_target_as = puppet_10
-# 			}
-# 		}
-
-# 		country_event = { id = ver.31 }
-# 	}
-# }
-
-# # ver.31: List Puppet States
-# country_event = {
-# 	id = ver.31
-# 	title = ver.31.name
-# 	desc = {
-# 		trigger = { check_variable = { which = ver_total_puppet_states value > 0 } }
-# 		text = ver.31.desc
-# 	}
-# 	desc = {
-# 		trigger = { check_variable = { which = ver_total_puppet_states value = 0 } }
-# 		text = ver.31.desc.fail
-# 	}
-# 	picture = GFX_evt_board_meeting
-# 	show_sound = event_laboratory_sound
-# 	location = ROOT
-
-# 	is_triggered_only = yes
-
-# 	# No valid target
-# 	option = {
-# 		name = ver.31.fail
-# 		trigger = { check_variable = { which = ver_total_puppet_states value = 0 } }
-# 		add_resource = { influence = 300 }
-# 		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
-# 	}
-
-# 	# Now we show a list of the puppet states to the player
-# 	option = {
-# 		name = ver.31.puppet_1
-# 		custom_tooltip = ver.31.puppet_1.tooltip
-# 		trigger = { check_variable = { which = ver_total_puppet_states value >= 1 } }
-# 		hidden_effect = {
-# 			event_target:puppet_1 = {
-# 				country_event = { id = ver.32 }
-# 			}
-# 		}
-# 	}
-# 	option = {
-# 		name = ver.31.puppet_2
-# 		custom_tooltip = ver.31.puppet_2.tooltip
-# 		trigger = { check_variable = { which = ver_total_puppet_states value >= 2 } }
-# 		hidden_effect = {
-# 			event_target:puppet_2 = {
-# 				country_event = { id = ver.32 }
-# 			}
-# 		}
-# 	}
-# 	option = {
-# 		name = ver.31.puppet_3
-# 		custom_tooltip = ver.31.puppet_3.tooltip
-# 		trigger = { check_variable = { which = ver_total_puppet_states value >= 3 } }
-# 		hidden_effect = {
-# 			event_target:puppet_3 = {
-# 				country_event = { id = ver.32 }
-# 			}
-# 		}
-# 	}
-# 	option = {
-# 		name = ver.31.puppet_4
-# 		custom_tooltip = ver.31.puppet_4.tooltip
-# 		trigger = { check_variable = { which = ver_total_puppet_states value >= 4 } }
-# 		hidden_effect = {
-# 			event_target:puppet_4 = {
-# 				country_event = { id = ver.32 }
-# 			}
-# 		}
-# 	}
-# 	option = {
-# 		name = ver.31.puppet_5
-# 		custom_tooltip = ver.31.puppet_5.tooltip
-# 		trigger = { check_variable = { which = ver_total_puppet_states value >= 5 } }
-# 		hidden_effect = {
-# 			event_target:puppet_5 = {
-# 				country_event = { id = ver.32 }
-# 			}
-# 		}
-# 	}
-# 	option = {
-# 		name = ver.31.puppet_6
-# 		custom_tooltip = ver.31.puppet_6.tooltip
-# 		trigger = { check_variable = { which = ver_total_puppet_states value >= 6 } }
-# 		hidden_effect = {
-# 			event_target:puppet_6 = {
-# 				country_event = { id = ver.32 }
-# 			}
-# 		}
-# 	}
-# 	option = {
-# 		name = ver.31.puppet_7
-# 		custom_tooltip = ver.31.puppet_7.tooltip
-# 		trigger = { check_variable = { which = ver_total_puppet_states value >= 7 } }
-# 		hidden_effect = {
-# 			event_target:puppet_7 = {
-# 				country_event = { id = ver.32 }
-# 			}
-# 		}
-# 	}
-# 	option = {
-# 		name = ver.31.puppet_8
-# 		custom_tooltip = ver.31.puppet_8.tooltip
-# 		trigger = { check_variable = { which = ver_total_puppet_states value >= 8 } }
-# 		hidden_effect = {
-# 			event_target:puppet_8 = {
-# 				country_event = { id = ver.32 }
-# 			}
-# 		}
-# 	}
-# 	option = {
-# 		name = ver.31.puppet_9
-# 		custom_tooltip = ver.31.puppet_9.tooltip
-# 		trigger = { check_variable = { which = ver_total_puppet_states value >= 9 } }
-# 		hidden_effect = {
-# 			event_target:puppet_9 = {
-# 				country_event = { id = ver.32 }
-# 			}
-# 		}
-# 	}
-# 	option = {
-# 		name = ver.31.puppet_10
-# 		custom_tooltip = ver.31.puppet_10.tooltip
-# 		trigger = { check_variable = { which = ver_total_puppet_states value >= 10 } }
-# 		hidden_effect = {
-# 			event_target:puppet_10 = {
-# 				country_event = { id = ver.32 }
-# 			}
-# 		}
-# 	}
-
-# 	option = {
-# 		name = ver.31.back
-# 		custom_tooltip = ver.31.back.tooltip
-# 		trigger = { check_variable = { which = ver_total_puppet_states value > 0 } }
-# 	}
-# }
+## Proxy Wars
 
 # ver.32: Save valid targets as event targets
 country_event = {
@@ -854,10 +587,7 @@ country_event = {
 	trigger = {
 		is_overlord = yes
 		any_subject = {
-			OR = {
-				any_agreement = { agreement_preset = preset_verblood }
-				any_agreement = { agreement_preset = preset_verdebtor }
-			}
+			is_ver_blood = yes
 			NOT = { is_at_war_with = overlord }
 		}
 	}
@@ -866,15 +596,11 @@ country_event = {
 		set_variable = { which = ver_blood_tributary_total_population value = 0 }
 		every_subject = {
 			limit = {
-				OR = {
-					any_agreement = { agreement_preset = preset_verblood }
-					any_agreement = { agreement_preset = preset_verdebtor }
-				}
+				is_ver_blood = yes
 				NOT = { is_at_war_with = overlord }
 			}
-			set_country_flag = ver_blood_tributary
 			every_owned_pop = {
-				Root = {
+				ROOT = {
 					change_variable = { which = ver_blood_tributary_total_population value = 1 }
 				}
 			}
@@ -896,36 +622,29 @@ country_event = {
 		custom_tooltip = ver.40.distribute.tooltip
 
 		hidden_effect = {
-			set_variable = { which = ver_blood_tributary_total_population value = 0 }
+			
 			every_subject = {
-				limit = { has_country_flag = ver_blood_tributary }
+				limit = { is_ver_blood = yes }
+				set_variable = { which = ver_blood_tributary_total_population value = 0 }
 				every_owned_pop = {
-					Root = {
-						change_variable = { which = ver_blood_tributary_total_population value = 1 }
-					}
+					PREV = { change_variable = { which = ver_blood_tributary_total_population value = 1 } }
 				}
-				Root = {
-					if = {
-						limit = { is_megacorp = no }
-						divide_variable = { which = ver_blood_tributary_total_population value = 10 }
-					}
-					else_if = {
-						limit = { is_megacorp = yes }
-						divide_variable = { which = ver_blood_tributary_total_population value = 20 }
-					}
-					while = {
-						count = ver_blood_tributary_total_population
 
-						Prev = {
-							random_owned_planet = {
-								limit = { num_pops > 1 }
-								random_owned_pop = {
-									species = { save_event_target_as = blood_tribute_species }
-									kill_pop = yes
-								}
-							}
+				divide_variable = { which = ver_blood_tributary_total_population value = 20 }
+				floor_variable = ver_blood_tributary_total_population
+
+				while = {
+					count = ver_blood_tributary_total_population
+
+					random_owned_planet = {
+						limit = { num_pops > 1 }
+						random_owned_pop = {
+							species = { save_event_target_as = blood_tribute_species }
+							kill_pop = yes
 						}
+					}
 
+					ROOT = {
 						if = {
 							limit = { any_owned_planet = { free_housing > 0 } }
 							random_owned_planet = {
@@ -940,56 +659,40 @@ country_event = {
 						}
 					}
 				}
-
 			}
 		}
 	}
 
 	# Distribute them among our worlds
 	option = {
-		name = ver.40.distribute
-		custom_tooltip = ver.40.distribute.tooltip
+		name = ver.40.thrall
+		custom_tooltip = ver.40.thrall.tooltip
 		trigger = { any_owned_planet = { has_modifier = slave_colony } }
 
 		hidden_effect = {
-			set_variable = { which = ver_blood_tributary_total_population value = 0 }
+			
 			every_subject = {
-				limit = { has_country_flag = ver_blood_tributary }
+				limit = { is_ver_blood = yes }
+				set_variable = { which = ver_blood_tributary_total_population value = 0 }
 				every_owned_pop = {
-					Root = {
-						change_variable = { which = ver_blood_tributary_total_population value = 1 }
-					}
+					PREV = { change_variable = { which = ver_blood_tributary_total_population value = 1 } }
 				}
-				Root = {
-					if = {
-						limit = {
-							NOT = {
-								is_megacorp = yes
-							}
+
+				divide_variable = { which = ver_blood_tributary_total_population value = 20 }
+				floor_variable = ver_blood_tributary_total_population
+				
+				while = {
+					count = ver_blood_tributary_total_population
+
+					random_owned_planet = {
+						limit = { num_pops > 1 }
+						random_owned_pop = {
+							species = { save_event_target_as = blood_tribute_species }
+							kill_pop = yes
 						}
-						divide_variable = { which = ver_blood_tributary_total_population value = 10 }
-					}
-					else_if = {
-						limit = {
-							is_megacorp = yes
-						}
-						divide_variable = { which = ver_blood_tributary_total_population value = 20 }
 					}
 
-					while = {
-						count = ver_blood_tributary_total_population
-
-						Prev = {
-							random_owned_planet = {
-								limit = {
-									num_pops > 1
-								}
-								random_owned_pop = {
-									species = { save_event_target_as = blood_tribute_species }
-									kill_pop = yes
-								}
-							}
-						}
+					ROOT = {
 						random_owned_planet = {
 							limit = { has_modifier = slave_colony }
 							create_pop = {
@@ -1006,10 +709,6 @@ country_event = {
 		hidden_effect = {
 			set_timed_country_flag = { flag = ver_recent_blood_tribute years = 15 }
 			set_variable = { which = ver_blood_tributary_total_population value = 0 }
-			every_subject = {
-				limit = { has_country_flag = ver_blood_tributary }
-				remove_country_flag = ver_blood_tributary
-			}
 		}
 	}
 }
