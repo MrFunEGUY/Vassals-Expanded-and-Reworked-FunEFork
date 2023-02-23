@@ -103,18 +103,6 @@ resource_subsidies_ver_energy = {
 
 		modifier = {
 			set = 0.1
-			OR = {
-				agreement_preset = preset_ver_devotee
-				agreement_preset = preset_ver_armsdealer
-				agreement_preset = preset_ver_kobun
-				agreement_preset = preset_ver_worshipper
-				agreement_preset = preset_ver_subscriber
-				agreement_preset = preset_ver_subcontractor
-			}
-		}
-
-		modifier = {
-			set = 0.1
 			agreement_preset = preset_ver_puppet
 		}
 
@@ -281,16 +269,6 @@ resource_subsidies_ver_minerals = {
 				agreement_preset = preset_vassal
 				agreement_preset = preset_scholarium
 			}
-		}
-
-		modifier = {
-			set = 0.1
-			agreement_preset = preset_ver_kobun
-		}
-
-		modifier = {
-			set = 0.05
-			agreement_preset = preset_ver_puppet
 		}
 
 		modifier = {
@@ -463,6 +441,11 @@ resource_subsidies_ver_food = {
 		modifier = {
 			set = 0.15
 			agreement_preset = preset_auto_state
+		}
+
+		modifier = {
+			set = 0.1
+			agreement_preset = preset_ver_puppet
 		}
 	}
 
@@ -793,13 +776,18 @@ resource_subsidies_ver_consumer_goods = {
 		}
 
 		modifier = {
+			set = 0.15
+			agreement_preset = preset_auto_state
+		}
+
+		modifier = {
 			set = 0.2
 			agreement_preset = preset_ver_devolved
 		}
 
 		modifier = {
-			set = 0.15
-			agreement_preset = preset_auto_state
+			set = -0.05
+			agreement_preset = preset_ver_clientkingdom
 		}
 	}
 }
@@ -947,18 +935,7 @@ resource_subsidies_ver_hidden_unity = {
 
 subject_ver_ruler_restricted = {
 	term = subject_ver_ruler
-	activate_effect = {
-		target = {
-			if = {
-				limit = { has_country_flag = ver_ruler_them }
-				remove_country_flag = ver_ruler_them
-			}
-			if = {
-				limit = { has_country_flag = ver_ruler_anyone }
-				remove_country_flag = ver_ruler_anyone
-			}
-		}
-	}
+	loyalty_change = 15
 	possible = {
 		custom_tooltip = {
 			fail_text = not_allowed_for_ver_puppet
@@ -985,18 +962,6 @@ subject_ver_ruler_them = {
 			}
 		}
 		loyalty_change = -5
-	}
-	activate_effect = {
-		target = {
-			if = {
-				limit = { has_country_flag = ver_ruler_anyone }
-				remove_country_flag = ver_ruler_anyone
-			}
-			set_country_flag = ver_ruler_them
-		}
-	}
-	deactivate_effect = {
-		target = { remove_country_flag = ver_ruler_them }
 	}
 	target_modifier = {
 		monthly_loyalty = -2
@@ -1030,6 +995,10 @@ subject_ver_ruler_them = {
 			fail_text = not_allowed_for_ver_foederatus
 			NOT = { agreement_preset = preset_ver_foederatus }
 		}
+		custom_tooltip = {
+			fail_text = not_allowed_for_gestalt
+			owner = { is_gestalt = yes }
+		}
 	}
 }
 
@@ -1043,20 +1012,6 @@ subject_ver_ruler_anyone = {
 			}
 		}
 		loyalty_change = -10
-	}
-	activate_effect = {
-		target = {
-			if = {
-				limit = { has_country_flag = ver_ruler_them }
-				remove_country_flag = ver_ruler_them
-			}
-			set_country_flag = ver_ruler_anyone
-		}
-	}
-	deactivate_effect = {
-		target = {
-			remove_country_flag = ver_ruler_anyone
-		}
 	}
 	target_modifier = {
 		monthly_loyalty = -3.5
@@ -1102,6 +1057,10 @@ subject_ver_ruler_anyone = {
 			fail_text = not_allowed_for_ver_condo
 			NOT = { agreement_preset = preset_ver_condo }
 		}
+		custom_tooltip = {
+			fail_text = not_allowed_for_gestalt
+			owner = { is_gestalt = yes }
+		}
 	}
 }
 
@@ -1111,19 +1070,7 @@ subject_ver_ruler_anyone = {
 
 subject_ver_government_restricted = {
 	term = subject_ver_government
-	activate_effect = {
-		target = {
-			if = {
-				limit = { has_country_flag = ver_government_allowed }
-				remove_country_flag = ver_government_allowed
-			}
-		}
-	}
-	deactivate_effect = {
-		target = {
-			set_country_flag = ver_government_allowed
-		}
-	}
+	loyalty_change = 10
 
 	possible = {
 		custom_tooltip = {
@@ -1143,19 +1090,6 @@ subject_ver_government_allowed = {
 			}
 		}
 		loyalty_change = -5
-	}
-	activate_effect = {
-		target = {
-			set_country_flag = ver_government_allowed
-		}
-	}
-	deactivate_effect = {
-		target = {
-			if = {
-				limit = { has_country_flag = ver_government_allowed }
-				remove_country_flag = ver_government_allowed
-			}
-		}
 	}
 	target_modifier = {
 		monthly_loyalty = -2
@@ -1185,6 +1119,127 @@ subject_ver_government_allowed = {
 			fail_text = not_allowed_for_ver_foederatus
 			NOT = { agreement_preset = preset_ver_foederatus }
 		}
+		custom_tooltip = {
+			fail_text = not_allowed_for_gestalt
+			owner = { is_gestalt = yes }
+		}
+	}
+}
+
+############
+# Policies #
+############
+
+subject_ver_policy_restricted = {
+	term = subject_ver_policy
+	loyalty_change = 20
+}
+
+subject_ver_policy_allowed = {
+	term = subject_ver_policy
+	loyalty_change = -30
+	triggered_loyalty_change = {
+		trigger = {
+			target = { is_xenophobe = yes }
+		}
+		loyalty_change = -15
+	}
+	target_modifier = {
+		monthly_loyalty = -5
+	}
+	activate_effect = {
+		target = {
+			country_event = { id = veru_misc.2000 }
+		}
+	}
+	possible = {
+		custom_tooltip = {
+			fail_text = not_allowed_for_tributary
+			NOT = { agreement_preset = preset_tributary }
+		}
+		custom_tooltip = {
+			fail_text = not_allowed_for_protectorate
+			NOT = { agreement_preset = preset_protectorate }
+		}
+		custom_tooltip = {
+			fail_text = not_allowed_for_ver_devolved
+			NOT = { agreement_preset = preset_ver_devolved }
+		}
+		custom_tooltip = {
+			fail_text = not_allowed_for_auto_state
+			NOT = { agreement_preset = preset_auto_state }
+		}
+		custom_tooltip = {
+			fail_text = not_allowed_for_ver_condo
+			NOT = { agreement_preset = preset_ver_condo }
+		}
+		custom_tooltip = {
+			fail_text = not_allowed_for_ver_foederatus
+			NOT = { agreement_preset = preset_ver_foederatus }
+		}
+		custom_tooltip = {
+			fail_text = not_allowed_for_ver_jrpartner
+			NOT = { agreement_preset = preset_ver_jrpartner }
+		}
+		custom_tooltip = {
+			fail_text = not_allowed_for_ver_neocolony
+			NOT = { agreement_preset = preset_ver_neocolony }
+		}
+		custom_tooltip = {
+			fail_text = not_allowed_for_gestalt
+			owner = { is_gestalt = yes }
+		}
+	}
+}
+
+###########
+# Capital #
+###########
+
+subject_ver_capital_restricted = {
+	term = subject_ver_capital
+	loyalty_change = 10
+}
+
+subject_ver_capital_allowed = {
+	term = subject_ver_capital
+	loyalty_change = -15
+	triggered_loyalty_change = {
+		trigger = {
+			target = {
+				is_xenophobe = yes
+			}
+		}
+		loyalty_change = -10
+	}
+	target_modifier = {
+		monthly_loyalty = -2
+	}
+	possible = {
+		custom_tooltip = {
+			fail_text = not_allowed_for_tributary
+			NOT = { agreement_preset = preset_tributary }
+		}
+		custom_tooltip = {
+			fail_text = not_allowed_for_protectorate
+			NOT = { agreement_preset = preset_protectorate }
+		}
+		custom_tooltip = {
+			fail_text = not_allowed_for_ver_devolved
+			NOT = { agreement_preset = preset_ver_devolved }
+		}
+		custom_tooltip = {
+			fail_text = not_allowed_for_auto_state
+			NOT = { agreement_preset = preset_auto_state }
+		}
+		custom_tooltip = {
+			fail_text = not_allowed_for_ver_condo
+			NOT = { agreement_preset = preset_ver_condo }
+		}
+		custom_tooltip = {
+			fail_text = not_allowed_for_gestalt
+			owner = { is_gestalt = yes }
+		}
 	}
 }
 
@@ -1194,44 +1249,17 @@ subject_ver_government_allowed = {
 
 subject_ver_naming_restricted = {
 	term = subject_ver_naming
-	activate_effect = {
-		target = {
-			if = {
-				limit = { has_country_flag = ver_naming_allowed }
-				remove_country_flag = ver_naming_allowed
-			}
-		}
-	}
-	deactivate_effect = {
-		target = {
-			set_country_flag = ver_naming_allowed
-		}
-	}
+	loyalty_change = 5
 }
 
 subject_ver_naming_allowed = {
 	term = subject_ver_naming
-	loyalty_change = -10
+	loyalty_change = -15
 	triggered_loyalty_change = {
 		trigger = {
-			target = {
-				is_xenophobe = yes
-			}
+			target = { is_xenophobe = yes }
 		}
 		loyalty_change = -5
-	}
-	activate_effect = {
-		target = {
-			set_country_flag = ver_naming_allowed
-		}
-	}
-	deactivate_effect = {
-		target = {
-			if = {
-				limit = { has_country_flag = ver_naming_allowed }
-				remove_country_flag = ver_naming_allowed
-			}
-		}
 	}
 	target_modifier = {
 		monthly_loyalty = -0.5
@@ -1257,56 +1285,38 @@ subject_ver_naming_allowed = {
 			fail_text = not_allowed_for_ver_condo
 			NOT = { agreement_preset = preset_ver_condo }
 		}
-	}
-}
-
-###########
-# Capital #
-###########
-
-subject_ver_capital_restricted = {
-	term = subject_ver_capital
-	activate_effect = {
-		target = {
-			if = {
-				limit = { has_country_flag = ver_capital_allowed }
-				remove_country_flag = ver_capital_allowed
-			}
-		}
-	}
-	deactivate_effect = {
-		target = {
-			set_country_flag = ver_capital_allowed
+		custom_tooltip = {
+			fail_text = not_allowed_for_gestalt
+			owner = { is_gestalt = yes }
 		}
 	}
 }
 
-subject_ver_capital_allowed = {
-	term = subject_ver_capital
-	loyalty_change = -15
+#############
+# Proxy War #
+#############
+
+subject_ver_proxy_restricted = {
+	term = subject_ver_proxy
+	loyalty_change = 20
+}
+
+subject_ver_proxy_allowed = {
+	term = subject_ver_proxy
+	loyalty_change = -30
 	triggered_loyalty_change = {
 		trigger = {
 			target = {
-				is_xenophobe = yes
+				OR = {
+					is_xenophile = yes
+					is_egalitarian = yes
+				}
 			}
 		}
-		loyalty_change = -10
-	}
-	activate_effect = {
-		target = {
-			set_country_flag = ver_capital_allowed
-		}
-	}
-	deactivate_effect = {
-		target = {
-			if = {
-				limit = { has_country_flag = ver_capital_allowed }
-				remove_country_flag = ver_capital_allowed
-			}
-		}
+		loyalty_change = -15
 	}
 	target_modifier = {
-		monthly_loyalty = -2
+		monthly_loyalty = -5
 	}
 	possible = {
 		custom_tooltip = {
@@ -1322,12 +1332,34 @@ subject_ver_capital_allowed = {
 			NOT = { agreement_preset = preset_ver_devolved }
 		}
 		custom_tooltip = {
-			fail_text = not_allowed_for_auto_state
-			NOT = { agreement_preset = preset_auto_state }
-		}
-		custom_tooltip = {
 			fail_text = not_allowed_for_ver_condo
 			NOT = { agreement_preset = preset_ver_condo }
+		}
+		custom_tooltip = {
+			fail_text = not_allowed_for_ver_foederatus
+			NOT = { agreement_preset = preset_ver_foederatus }
+		}
+		custom_tooltip = {
+			fail_text = not_allowed_for_ver_satellite
+			NOT = { agreement_preset = preset_ver_satellite }
+		}
+		custom_tooltip = {
+			fail_text = not_allowed_for_term_subject_wars
+			NOR = {
+				has_term_value = { term = joins_subject_wars value = joins_subject_wars_offensive }
+				has_term_value = { term = joins_subject_wars value = joins_subject_wars_all }
+			}
+		}
+		custom_tooltip = {
+			fail_text = not_allowed_for_term_subject_diplomacy
+			NOR = {
+				has_term_value = { term = subject_diplomacy value = subject_can_do_diplomacy }
+				has_term_value = { term = subject_diplomacy value = subject_can_do_diplomacy_but_not_vote }
+			}
+		}
+		custom_tooltip = {
+			fail_text = not_allowed_for_auto_state
+			NOT = { agreement_preset = preset_auto_state }
 		}
 	}
 }
@@ -1382,27 +1414,8 @@ subject_ver_jrpartner_effect = {
 
 subject_ver_dependency_effect = {
 	term = subject_ver_effects
-	activate_effect = {
-		target = {
-			country_event = { id = veru.9000 }
-		}
-	}
-	overlord_resources = {
-		category = subjects
-		produces = {
-			unity = 0.15
-			multiplier = ver_monthly_unity
-		}
-	}
-	subject_resources = {
-		category = subjects
-		upkeep = {
-			unity = 0.15
-			multiplier = ver_monthly_unity
-		}
-	}
 	owner_modifier = {
-		country_unity_produces_mult = 0.01
+		country_unity_produces_mult = 0.02
 	}
 
 	extra_term_text_subject = ver_dependency_extra_subject
@@ -1502,6 +1515,20 @@ subject_ver_blood_effect = {
 
 	extra_term_text_subject = ver_blood_tax_subject
 	extra_term_text_overlord = ver_blood_tax_overlord
+}
+
+subject_ver_parallel_effect = {
+	term = subject_ver_effects
+
+	owner_modifier = {
+		all_technology_research_speed = 0.05
+	}
+	target_modifier = {
+		all_technology_research_speed = 0.1
+	}
+
+	extra_term_text_subject = ver_blood_parallel_subject
+	extra_term_text_overlord = ver_blood_parallel_overlord
 }
 
 subject_auto_state_effect = {
@@ -1645,7 +1672,7 @@ joins_overlord_wars_offensive = {
 			NOT = { agreement_preset = preset_ver_condo }
 		}
 		custom_tooltip = {
-			fail_text = not_allowed_for_ver_neocolonies
+			fail_text = not_allowed_for_ver_neocolony
 			NOT = { agreement_preset = preset_ver_neocolony }
 		}
 	}
@@ -1748,7 +1775,7 @@ joins_subject_wars_none = {
 			NOT = { agreement_preset = preset_ver_foederatus }
 		}
 		custom_tooltip = {
-			fail_text = not_allowed_for_ver_neocolonies
+			fail_text = not_allowed_for_ver_neocolony
 			NOT = { agreement_preset = preset_ver_neocolony }
 		}
 		custom_tooltip = {
@@ -1840,7 +1867,7 @@ joins_subject_wars_offensive = {
 			NOT = { agreement_preset = preset_ver_puppet }
 		}
 		custom_tooltip = {
-			fail_text = not_allowed_for_ver_neocolonies
+			fail_text = not_allowed_for_ver_neocolony
 			NOT = { agreement_preset = preset_ver_neocolony }
 		}
 		custom_tooltip = {
@@ -1878,6 +1905,10 @@ joins_subject_wars_all = {
 		custom_tooltip = {
 			fail_text = not_allowed_for_ver_condo
 			NOT = { agreement_preset = preset_ver_condo }
+		}
+		custom_tooltip = {
+			fail_text = not_allowed_for_ver_satellite
+			NOT = { agreement_preset = preset_ver_satellite }
 		}
 	}
 }

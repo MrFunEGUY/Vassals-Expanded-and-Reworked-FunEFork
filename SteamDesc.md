@@ -90,6 +90,13 @@
 
 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2177145527]- Intervene: Help Friendly Nations - FunEFork[/url]
 
+[hr][/hr]
+
+[url=https://www.patreon.com/mrfuneguy][img]https://i.imgur.com/pdV33j3.png[/img][/url]
+
+[url=https://paypal.me/Abreuhaha][img]https://i.imgur.com/OwoGCrW.png[/img][/url]
+
+[url=https://ko-fi.com/mrfuneguy][img]https://i.imgur.com/EEyEFg6.png[/img][/url]
 
 [hr][/hr]
 

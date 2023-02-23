@@ -36,6 +36,10 @@ subject_ver_government = {
 	term_type = discrete
 }
 
+subject_ver_policy = {
+	term_type = discrete
+}
+
 subject_ver_capital = {
 	term_type = discrete
 }
@@ -53,6 +57,10 @@ joins_overlord_wars = {
 }
 
 joins_subject_wars = {
+	term_type = discrete
+}
+
+subject_ver_proxy = {
 	term_type = discrete
 }
 

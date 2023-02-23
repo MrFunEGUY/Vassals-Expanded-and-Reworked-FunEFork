@@ -1,29 +1,9 @@
-# Serf's opinion of overlord
-ver_triggered_opinion_serfdom = {
-	trigger = {
-		any_agreement = { agreement_preset = preset_ver_serf }
-		FROM = {
-			any_subject = { is_same_value = ROOT }
-		}
-	}
-
-	opinion = {
-		base = -100
-	}
-}
 
 # Blood Tributary's opinion of overlord
 ver_triggered_opinion_blood = {
 	trigger = {
-		any_agreement = {
-			OR = {
-				agreement_preset = preset_ver_blood
-				agreement_preset = preset_ver_debtor
-			}
-		}
-		FROM = {
-			any_subject = { is_same_value = ROOT }
-		}
+		is_ver_blood = yes
+		has_overlord = from
 	}
 
 	opinion = {
@@ -31,74 +11,3 @@ ver_triggered_opinion_blood = {
 	}
 }
 
-# Subscriber opinion of Overlord
-ver_triggered_opinion_subscriber = {
-	trigger = {
-		any_agreement = { agreement_preset = preset_ver_subscriber }
-		From = {
-			any_subject = { is_same_value = ROOT }
-		}
-	}
-
-	opinion = {
-		base = 50
-	}
-}
-
-# overlord taxes
-ver_triggered_opinion_light_overlord_taxes = {
-	trigger = {
-		is_subject = yes
-		is_gestalt = no
-		FROM = {
-			any_subject = { is_same_value = ROOT }
-			has_policy_flag = ver_light_taxes
-		}
-	}
-
-	opinion = {
-		base = -25
-	}
-}
-ver_triggered_opinion_moderate_overlord_taxes = {
-	trigger = {
-		is_subject = yes
-		is_gestalt = no
-		FROM = {
-			any_subject = { is_same_value = ROOT }
-			has_policy_flag = ver_moderate_taxes
-		}
-	}
-
-	opinion = {
-		base = -50
-	}
-}
-ver_triggered_opinion_heavy_overlord_taxes = {
-	trigger = {
-		is_subject = yes
-		is_gestalt = no
-		FROM = {
-			any_subject = { is_same_value = ROOT }
-			has_policy_flag = ver_heavy_taxes
-		}
-	}
-
-	opinion = {
-		base = -100
-	}
-}
-ver_triggered_opinion_burdensome_overlord_taxes = {
-	trigger = {
-		is_subject = yes
-		is_gestalt = no
-		FROM = {
-			any_subject = { is_same_value = ROOT }
-			has_policy_flag = ver_burdensome_taxes
-		}
-	}
-
-	opinion = {
-		base = -200
-	}
-}

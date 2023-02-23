@@ -175,10 +175,7 @@ country_event = {
 				fail_text = contract_fail
 				event_target:chosen_subject = {
 					is_gestalt = no
-					OR = {
-						has_country_flag = ver_ruler_them
-						has_country_flag = ver_ruler_anyone
-					}
+					has_ruler_alllowed = yes
 				}
 			}
 		}
@@ -195,7 +192,7 @@ country_event = {
 				fail_text = contract_fail
 				event_target:chosen_subject = {
 					is_gestalt = no
-					has_country_flag = ver_government_allowed
+					has_government_allowed = yes
 				}
 			}
 		}
@@ -210,9 +207,7 @@ country_event = {
 		allow = {
 			custom_tooltip = {
 				fail_text = contract_fail
-				event_target:chosen_subject = {
-					has_country_flag = ver_capital_allowed
-				}
+				event_target:chosen_subject = { has_capital_allowed = yes }
 			}
 			custom_tooltip = {
 				fail_text = veru_tree_of_life_fail
@@ -223,14 +218,19 @@ country_event = {
 		}
 		hidden_effect = {
 			event_target:chosen_subject = { get_relocation_planets = yes }
-			country_event = { id = veru.7000 }
+			country_event = { id = veru.6700 }
 		}
 	}
 
 	# Proxy War
 	option = {
 		name = veru.1050.proxy
-		trigger = { event_target:chosen_subject = { is_ver_puppet = yes } }
+		allow = {
+			custom_tooltip = {
+				fail_text = contract_fail
+				event_target:chosen_subject = { has_proxy_allowed = yes }
+			}
+		}
 		hidden_effect = {
 			save_event_target_as = ver_puppeteer
 			event_target:chosen_subject = {
@@ -250,9 +250,7 @@ country_event = {
 			}
 			custom_tooltip = {
 				fail_text = contract_fail
-				event_target:chosen_subject = {
-					has_country_flag = ver_naming_allowed
-				}
+				event_target:chosen_subject = { has_naming_alllowed = yes }
 			}
 		}
 		add_resource = { influence = -25 }
@@ -5220,7 +5218,7 @@ country_event = {
 
 # Choose their capital
 country_event = {
-	id = veru.7000
+	id = veru.6700
 	title = veru.3000.name
 	location = event_target:chosen_subject
 	hide_window = no
@@ -5237,14 +5235,14 @@ country_event = {
 	}
 
 	desc = {
-		text = veru.7000.loyal.desc
+		text = veru.6700.loyal.desc
 		trigger = {
 			event_target:chosen_subject = { is_loyal_to = prev }
 		}
 	}
 
 	desc = {
-		text = veru.7000.disloyal.desc
+		text = veru.6700.disloyal.desc
 		trigger = {
 			event_target:chosen_subject = { is_disloyal_to = prev }
 		}
@@ -5255,7 +5253,7 @@ country_event = {
 
 	option = {
 		add_resource = { influence = -150 }
-		name = veru.7000.relocation_planet_1
+		name = veru.6700.relocation_planet_1
 		trigger = {
 			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 1 } }
 		}
@@ -5271,7 +5269,7 @@ country_event = {
 
 	option = {
 		add_resource = { influence = -150 }
-		name = veru.7000.relocation_planet_2
+		name = veru.6700.relocation_planet_2
 		trigger = {
 			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 2 } }
 		}
@@ -5287,7 +5285,7 @@ country_event = {
 
 	option = {
 		add_resource = { influence = -150 }
-		name = veru.7000.relocation_planet_3
+		name = veru.6700.relocation_planet_3
 		trigger = {
 			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 3 } }
 		}
@@ -5303,7 +5301,7 @@ country_event = {
 
 	option = {
 		add_resource = { influence = -150 }
-		name = veru.7000.relocation_planet_4
+		name = veru.6700.relocation_planet_4
 		trigger = {
 			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 4 } }
 		}
@@ -5319,7 +5317,7 @@ country_event = {
 
 	option = {
 		add_resource = { influence = -150 }
-		name = veru.7000.relocation_planet_5
+		name = veru.6700.relocation_planet_5
 		trigger = {
 			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 5 } }
 		}
@@ -5335,7 +5333,7 @@ country_event = {
 
 	option = {
 		add_resource = { influence = -150 }
-		name = veru.7000.relocation_planet_6
+		name = veru.6700.relocation_planet_6
 		trigger = {
 			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 6 } }
 		}
@@ -5351,7 +5349,7 @@ country_event = {
 
 	option = {
 		add_resource = { influence = -150 }
-		name = veru.7000.relocation_planet_7
+		name = veru.6700.relocation_planet_7
 		trigger = {
 			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 7 } }
 		}
@@ -5367,7 +5365,7 @@ country_event = {
 
 	option = {
 		add_resource = { influence = -150 }
-		name = veru.7000.relocation_planet_8
+		name = veru.6700.relocation_planet_8
 		trigger = {
 			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 8 } }
 		}
@@ -5383,7 +5381,7 @@ country_event = {
 
 	option = {
 		add_resource = { influence = -150 }
-		name = veru.7000.relocation_planet_9
+		name = veru.6700.relocation_planet_9
 		trigger = {
 			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 9 } }
 		}
@@ -5399,7 +5397,7 @@ country_event = {
 
 	option = {
 		add_resource = { influence = -150 }
-		name = veru.7000.relocation_planet_10
+		name = veru.6700.relocation_planet_10
 		trigger = {
 			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 10 } }
 		}
@@ -5419,7 +5417,7 @@ country_event = {
 
 	option = {
 		add_resource = { influence = -150 }
-		name = veru.7000.relocation_planet_11
+		name = veru.6700.relocation_planet_11
 		trigger = {
 			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 11 } }
 		}
@@ -5435,7 +5433,7 @@ country_event = {
 
 	option = {
 		add_resource = { influence = -150 }
-		name = veru.7000.relocation_planet_12
+		name = veru.6700.relocation_planet_12
 		trigger = {
 			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 12 } }
 		}
@@ -5451,7 +5449,7 @@ country_event = {
 
 	option = {
 		add_resource = { influence = -150 }
-		name = veru.7000.relocation_planet_13
+		name = veru.6700.relocation_planet_13
 		trigger = {
 			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 13 } }
 		}
@@ -5467,7 +5465,7 @@ country_event = {
 
 	option = {
 		add_resource = { influence = -150 }
-		name = veru.7000.relocation_planet_14
+		name = veru.6700.relocation_planet_14
 		trigger = {
 			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 14 } }
 		}
@@ -5483,7 +5481,7 @@ country_event = {
 
 	option = {
 		add_resource = { influence = -150 }
-		name = veru.7000.relocation_planet_15
+		name = veru.6700.relocation_planet_15
 		trigger = {
 			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 15 } }
 		}
@@ -5499,7 +5497,7 @@ country_event = {
 
 	option = {
 		add_resource = { influence = -150 }
-		name = veru.7000.relocation_planet_16
+		name = veru.6700.relocation_planet_16
 		trigger = {
 			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 16 } }
 		}
@@ -5515,7 +5513,7 @@ country_event = {
 
 	option = {
 		add_resource = { influence = -150 }
-		name = veru.7000.relocation_planet_17
+		name = veru.6700.relocation_planet_17
 		trigger = {
 			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 17 } }
 		}
@@ -5531,7 +5529,7 @@ country_event = {
 
 	option = {
 		add_resource = { influence = -150 }
-		name = veru.7000.relocation_planet_18
+		name = veru.6700.relocation_planet_18
 		trigger = {
 			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 18 } }
 		}
@@ -5547,7 +5545,7 @@ country_event = {
 
 	option = {
 		add_resource = { influence = -150 }
-		name = veru.7000.relocation_planet_19
+		name = veru.6700.relocation_planet_19
 		trigger = {
 			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 19 } }
 		}
@@ -5563,7 +5561,7 @@ country_event = {
 
 	option = {
 		add_resource = { influence = -150 }
-		name = veru.7000.relocation_planet_20
+		name = veru.6700.relocation_planet_20
 		trigger = {
 			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 20 } }
 		}
@@ -5575,97 +5573,5 @@ country_event = {
 		}
 		event_target:chosen_subject = { event_target:relocation_planet_20 = { set_capital = yes } }
 		ai_chance = { factor = 1 }
-	}
-}
-
-################
-# Misc Events
-
-# Client Kingdom Ruler Dies
-# Executed as a leader has died
-# This = Country
-# From = Leader
-country_event = {
-	id = veru.8000
-	hide_window = no
-	is_triggered_only = yes
-
-	trigger = {
-		is_ver_clientkingdom = yes
-		from = { is_same_value = root.leader }
-	}
-
-	immediate = {
-		save_event_target_as = chosen_subject
-		overlord = {
-			set_timed_country_flag = { flag = ck_desc days = 7 }
-			country_event = { id = veru.6400 }
-		}
-	}
-}
-
-################
-################
-################
-# FIX
-
-# Inward Perfection Issues
-country_event = {
-	id = veru.9000
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-		has_civic = civic_inwards_perfection
-		OR = {
-			AND = {
-				is_overlord = yes
-				any_subject = {
-					any_agreement = {
-						NOR = {
-							agreement_preset = preset_tributary
-							agreement_preset = preset_auto_state
-							agreement_preset = preset_protectorate
-						}
-					}
-				}
-			}
-			AND = {
-				is_subject = yes
-				any_agreement = {
-					NOR = {
-						agreement_preset = preset_tributary
-						agreement_preset = preset_auto_state
-						agreement_preset = preset_protectorate
-					}
-				}
-			}
-		}
-	}
-
-	immediate = {
-
-		if = {
-			limit = { is_overlord = yes }
-			every_subject = {
-				limit = {
-					any_agreement = {
-						NOR = {
-							agreement_preset = preset_tributary
-							agreement_preset = preset_auto_state
-							agreement_preset = preset_protectorate
-						}
-					}
-				}
-				random_agreement = {
-					set_agreement_preset = { preset = preset_tributary }
-				}
-			}
-		}
-		else = {
-			random_agreement = {
-				set_agreement_preset = { preset = preset_tributary }
-			}
-		}
 	}
 }

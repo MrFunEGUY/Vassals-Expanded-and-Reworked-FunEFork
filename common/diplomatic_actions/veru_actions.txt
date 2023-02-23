@@ -188,8 +188,9 @@ action_invite_to_federation = {
 action_form_research_agreement = {
 	icon = "GFX_diplomacy_status_research_agreement"
 	diplo_view_acceptance_icon = yes
-	should_notify_all_communications = yes
-	requires_actor_independence = yes
+	should_notify_all_communications = no
+	requires_actor_independence = no
+	requires_recipient_independence = no
 	AI_acceptance_base_value = -50
 	action_type = positive
 	potential = {
@@ -340,6 +341,7 @@ action_form_research_agreement = {
 			fail_text = "requires_good_or_better_opinion"
 
 			OR = {
+				is_overlord_to = from
 				opinion_level = { who = from level >= good }
 				is_improving_relations_with = from
 			}
