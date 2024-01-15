@@ -28,6 +28,11 @@ is_ver_foederatus = {
 	any_agreement = { agreement_preset = preset_ver_foederatus }
 }
 
+is_ver_condo = {
+	is_subject = yes
+	any_agreement = { agreement_preset = preset_ver_condo }
+}
+
 is_ver_satellite = {
 	is_subject = yes
 	any_agreement = { agreement_preset = preset_ver_satellite }
@@ -68,10 +73,54 @@ is_ver_blood = {
 	any_agreement = { agreement_preset = preset_ver_blood }
 }
 
+#####
+
+is_reg_vassal = {
+	is_subject = yes
+	any_agreement = { agreement_preset = preset_vassal }
+}
+
+is_subsidiary = {
+	is_subject = yes
+	any_agreement = { agreement_preset = preset_subsidiary }
+}
+
+is_protectorate = {
+	is_subject = yes
+	any_agreement = { agreement_preset = preset_protectorate }
+}
+
+is_tributary  = {
+	is_subject = yes
+	any_agreement = { agreement_preset = preset_tributary }
+}
+
+is_bulwark = {
+	is_subject = yes
+	any_agreement = { agreement_preset = preset_bulwark }
+}
+
+is_scholarium = {
+	is_subject = yes
+	any_agreement = { agreement_preset = preset_scholarium }
+}
+
+is_prospectorium = {
+	is_subject = yes
+	any_agreement = { agreement_preset = preset_prospectorium }
+}
+
+is_mercatorum = {
+	is_subject = yes
+	any_agreement = { agreement_preset = preset_mercatorum }
+}
+
 has_ruler_alllowed = {
-	OR = {
-		any_agreement = { has_term_value = { term = subject_ver_ruler value = subject_ver_ruler_them } }
-		any_agreement = { has_term_value = { term = subject_ver_ruler value = subject_ver_ruler_anyone } }
+	any_agreement = {
+		OR = {
+			has_term_value = { term = subject_ver_ruler value = subject_ver_ruler_them }
+			has_term_value = { term = subject_ver_ruler value = subject_ver_ruler_anyone }
+		}
 	}
 }
 
@@ -95,7 +144,6 @@ has_proxy_allowed = {
 	any_agreement = { has_term_value = { term = subject_ver_proxy value = subject_ver_proxy_allowed } }
 }
 
-
 ######
 
 is_auto_state = {
@@ -103,3 +151,15 @@ is_auto_state = {
 	any_agreement = { agreement_preset = preset_auto_state }
 }
 
+######
+
+## Faction Scope
+ruler_has_faction_ethic = {
+	has_ethic = ethic_$ETHIC$
+	owner = {
+		any_owned_leader = {
+			is_ruler = yes
+			has_ethic = ethic_$ETHIC$
+		}
+	}
+}

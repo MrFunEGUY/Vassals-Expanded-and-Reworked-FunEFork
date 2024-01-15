@@ -28,6 +28,8 @@ subject_expand = {
 	term_type = discrete
 }
 
+###### VEAR
+
 subject_ver_ruler = {
 	term_type = discrete
 }
@@ -47,6 +49,8 @@ subject_ver_capital = {
 subject_ver_naming = {
 	term_type = discrete
 }
+
+###### VEAR
 
 resource_subsidies = {
 	term_type = resource
@@ -102,6 +106,11 @@ subject_pompous = {
 }
 
 naval_capacity = {
+	term_type = discrete
+	hidden = yes
+}
+
+formless_conditions = {
 	term_type = discrete
 	hidden = yes
 }

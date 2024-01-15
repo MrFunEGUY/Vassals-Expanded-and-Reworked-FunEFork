@@ -9,7 +9,7 @@ wg_claim_subject = {
 		demand_surrender
 	}
 
-	surrender_acceptance = -150
+	surrender_acceptance = -50
 
 	potential = {
 		has_total_war_cb = no
@@ -28,7 +28,7 @@ wg_claim_subject = {
 	}
 
 	on_accept = {
-		custom_tooltip = chosen_subject_text
+		custom_tooltip = wg_claim_subject_accept
 		hidden_effect = {
 			save_global_event_target_as = buffer_zone_transition
 			from = { country_event = { id = veru.6200 } }
@@ -38,15 +38,12 @@ wg_claim_subject = {
 	on_wargoal_set = {
 		save_global_event_target_as = buffer_zone_mother
 		if = {
-			limit = {
-				NOT = { any_country = { has_country_flag = chosen_border_subject_@event_target:buffer_zone_mother } }
-				# NOT = { exists = event_target:chosen_border_subject }
-			}
+			limit = { NOT = { any_country = { has_country_flag = chosen_border_subject_@event_target:buffer_zone_mother } } }
 			from = { country_event = { id = veru.6000 } }
 		}
 	}
 
 	ai_weight = {
-		weight = 25
+		weight = 20
 	}
 }

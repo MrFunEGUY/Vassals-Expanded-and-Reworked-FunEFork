@@ -10,7 +10,7 @@ namespace = veru_misc
 # From = Leader
 country_event = {
 	id = veru_misc.1000
-	hide_window = no
+	hide_window = yes
 	is_triggered_only = yes
 
 	trigger = {
@@ -187,11 +187,19 @@ country_event = {
 		# Native Interference
 			if = {
 				limit = {
-					overlord = { has_policy_flag = interference_passive }
-					NOT = { has_policy_flag = interference_passive }
-					can_set_policy = { policy = interference option = interference_passive }
+					overlord = { has_policy_flag = interference_not_allowed }
+					NOT = { has_policy_flag = interference_not_allowed }
+					can_set_policy = { policy = interference option = interference_not_allowed }
 				}
-				set_policy = { policy = interference option = interference_passive cooldown = yes }
+				set_policy = { policy = interference option = interference_not_allowed cooldown = yes }
+			}
+			else_if = {
+				limit = {
+					overlord = { has_policy_flag = interference_subtle }
+					NOT = { has_policy_flag = interference_subtle }
+					can_set_policy = { policy = interference option = interference_subtle }
+				}
+				set_policy = { policy = interference option = interference_subtle cooldown = yes }
 			}
 			else_if = {
 				limit = {
@@ -203,11 +211,11 @@ country_event = {
 			}
 			else_if = {
 				limit = {
-					overlord = { has_policy_flag = interference_full }
-					NOT = { has_policy_flag = interference_full }
-					can_set_policy = { policy = interference option = interference_full }
+					overlord = { has_policy_flag = interference_aggressive }
+					NOT = { has_policy_flag = interference_aggressive }
+					can_set_policy = { policy = interference option = interference_aggressive }
 				}
-				set_policy = { policy = interference option = interference_full cooldown = yes }
+				set_policy = { policy = interference option = interference_aggressive cooldown = yes }
 			}
 
 		# Native Enlightenment
@@ -218,6 +226,14 @@ country_event = {
 					can_set_policy = { policy = enlightenment option = enlightenment_not_allowed }
 				}
 				set_policy = { policy = enlightenment option = enlightenment_not_allowed cooldown = yes }
+			}
+			else_if = {
+				limit = {
+					overlord = { has_policy_flag = enlightenment_covert_only }
+					NOT = { has_policy_flag = enlightenment_covert_only }
+					can_set_policy = { policy = enlightenment option = enlightenment_covert_only }
+				}
+				set_policy = { policy = enlightenment option = enlightenment_covert_only cooldown = yes }
 			}
 			else_if = {
 				limit = {
@@ -334,6 +350,34 @@ country_event = {
 				set_policy = { policy = border_policy option = border_policy_closed cooldown = yes }
 			}
 
+		# Leader Enhancement
+			if = {
+				limit = {
+					overlord = { has_policy_flag = leader_enhancement_natural_selection }
+					NOT = { has_policy_flag = leader_enhancement_natural_selection }
+					can_set_policy = { policy = leader_enhancement option = leader_enhancement_natural_selection }
+				}
+				set_policy = { policy = leader_enhancement option = leader_enhancement_natural_selection cooldown = yes }
+			}
+			else_if = {
+				limit = {
+					overlord = { has_policy_flag = leader_enhancement_selected_lineages }
+					NOT = { has_policy_flag = leader_enhancement_selected_lineages }
+					has_technology = tech_selected_lineages
+					can_set_policy = { policy = leader_enhancement option = leader_enhancement_selected_lineages }
+				}
+				set_policy = { policy = leader_enhancement option = leader_enhancement_selected_lineages cooldown = yes }
+			}
+			else_if = {
+				limit = {
+					overlord = { has_policy_flag = leader_enhancement_capacity_boosters }
+					NOT = { has_policy_flag = leader_enhancement_capacity_boosters }
+					has_technology = tech_capacity_boosters
+					can_set_policy = { policy = leader_enhancement option = leader_enhancement_capacity_boosters }
+				}
+				set_policy = { policy = leader_enhancement option = leader_enhancement_capacity_boosters cooldown = yes }
+			}
+		
 		# Economic Policy  --- ??? No Policy Flags?
 			# if = {
 			# 	limit = {
@@ -361,46 +405,51 @@ country_event = {
 			# }
 
 		# Trade Policy  --- ??? No Policy Flags for default?
-			# if = {
-			# 	limit = {
-			# 		overlord = { has_policy_flag = trade_policy_default }
-			# 		NOT = { has_policy_flag = trade_policy_default }
-			# 		can_set_policy = { policy = trade_policy option = trade_policy_default }
-			# 	}
-			# 	set_policy = { policy = trade_policy option = trade_policy_default cooldown = yes }
-			# }
-			# else_if = {
-			# 	limit = {
-			# 		overlord = { has_policy_flag = trade_conversion_consumer_goods }
-			# 		NOT = { has_policy_flag = trade_conversion_consumer_goods }
-			# 		can_set_policy = { policy = trade_policy option = trade_conversion_consumer_goods }
-			# 	}
-			# 	set_policy = { policy = trade_policy option = trade_conversion_consumer_goods cooldown = yes }
-			# }
-			# else_if = {
-			# 	limit = {
-			# 		overlord = { has_policy_flag = trade_conversion_unity }
-			# 		NOT = { has_policy_flag = trade_conversion_unity }
-			# 		can_set_policy = { policy = trade_policy option = trade_conversion_unity }
-			# 	}
-			# 	set_policy = { policy = trade_policy option = trade_conversion_unity cooldown = yes }
-			# }
-			# else_if = {
-			# 	limit = {
-			# 		overlord = { has_policy_flag = trade_conversion_trade_league }
-			# 		NOT = { has_policy_flag = trade_conversion_trade_league }
-			# 		can_set_policy = { policy = trade_policy option = trade_conversion_trade_league }
-			# 	}
-			# 	set_policy = { policy = trade_policy option = trade_conversion_trade_league cooldown = yes }
-			# }
-			# else_if = {
-			# 	limit = {
-			# 		overlord = { has_policy_flag = trade_conversion_holy_covenant }
-			# 		NOT = { has_policy_flag = trade_conversion_holy_covenant }
-			# 		can_set_policy = { policy = trade_policy option = trade_conversion_holy_covenant }
-			# 	}
-			# 	set_policy = { policy = trade_policy option = trade_conversion_holy_covenant cooldown = yes }
-			# }
+			if = {
+				limit = {
+					overlord = { has_policy_flag = trade_policy_default }
+					NOR = {
+						has_policy_flag = trade_conversion_consumer_goods
+						has_policy_flag = trade_conversion_unity
+						has_policy_flag = trade_conversion_trade_league
+						has_policy_flag = trade_conversion_holy_covenant
+					}
+					can_set_policy = { policy = trade_policy option = trade_policy_default }
+				}
+				set_policy = { policy = trade_policy option = trade_policy_default cooldown = yes }
+			}
+			else_if = {
+				limit = {
+					overlord = { has_policy_flag = trade_conversion_consumer_goods }
+					NOT = { has_policy_flag = trade_conversion_consumer_goods }
+					can_set_policy = { policy = trade_policy option = trade_policy_consumer_goods }
+				}
+				set_policy = { policy = trade_policy option = trade_policy_consumer_goods cooldown = yes }
+			}
+			else_if = {
+				limit = {
+					overlord = { has_policy_flag = trade_conversion_unity }
+					NOT = { has_policy_flag = trade_conversion_unity }
+					can_set_policy = { policy = trade_policy option = trade_policy_unity }
+				}
+				set_policy = { policy = trade_policy option = trade_policy_unity cooldown = yes }
+			}
+			else_if = {
+				limit = {
+					overlord = { has_policy_flag = trade_conversion_trade_league }
+					NOT = { has_policy_flag = trade_conversion_trade_league }
+					can_set_policy = { policy = trade_policy option = trade_policy_trade_league }
+				}
+				set_policy = { policy = trade_policy option = trade_policy_trade_league cooldown = yes }
+			}
+			else_if = {
+				limit = {
+					overlord = { has_policy_flag = trade_conversion_holy_covenant }
+					NOT = { has_policy_flag = trade_conversion_holy_covenant }
+					can_set_policy = { policy = trade_policy option = trade_policy_holy_covenant }
+				}
+				set_policy = { policy = trade_policy option = trade_policy_holy_covenant cooldown = yes }
+			}
 
 		# Drone Policy  --- ??? No Policy Flags?
 			# if = {
@@ -459,17 +508,17 @@ country_event = {
 				limit = {
 					overlord = { has_policy_flag = robots_outlawed }
 					NOT = { has_policy_flag = robots_outlawed }
-					can_set_policy = { policy = robot_pop_policy option = robots_outlawed }
+					can_set_policy = { policy = robot_pop_policy option = robot_pops_outlawed }
 				}
-				set_policy = { policy = robot_pop_policy option = robots_outlawed cooldown = yes }
+				set_policy = { policy = robot_pop_policy option = robot_pops_outlawed cooldown = yes }
 			}
 			else_if = {
 				limit = {
 					overlord = { has_policy_flag = robots_allowed }
 					NOT = { has_policy_flag = robots_allowed }
-					can_set_policy = { policy = robot_pop_policy option = robots_allowed }
+					can_set_policy = { policy = robot_pop_policy option = robot_pops_allowed }
 				}
-				set_policy = { policy = robot_pop_policy option = robots_allowed cooldown = yes }
+				set_policy = { policy = robot_pop_policy option = robot_pops_allowed cooldown = yes }
 			}
 
 		# Pre Sapients
@@ -625,33 +674,33 @@ country_event = {
 				limit = {
 					overlord = { has_policy_flag = toxic_knights_questing }
 					NOT = { has_policy_flag = toxic_knights_questing }
-					can_set_policy = { policy = knightly_duties option = toxic_knights_questing }
+					can_set_policy = { policy = knightly_duties option = questing_knights }
 				}
-				set_policy = { policy = knightly_duties option = toxic_knights_questing cooldown = yes }
+				set_policy = { policy = knightly_duties option = questing_knights cooldown = yes }
 			}
 			else_if = {
 				limit = {
 					overlord = { has_policy_flag = toxic_knights_military }
 					NOT = { has_policy_flag = toxic_knights_military }
-					can_set_policy = { policy = knightly_duties option = toxic_knights_military }
+					can_set_policy = { policy = knightly_duties option = military_knights }
 				}
-				set_policy = { policy = knightly_duties option = toxic_knights_military cooldown = yes }
+				set_policy = { policy = knightly_duties option = military_knights cooldown = yes }
 			}
 			else_if = {
 				limit = {
 					overlord = { has_policy_flag = toxic_knights_diplomats }
 					NOT = { has_policy_flag = toxic_knights_diplomats }
-					can_set_policy = { policy = knightly_duties option = toxic_knights_diplomats }
+					can_set_policy = { policy = knightly_duties option = diplomats_knights }
 				}
-				set_policy = { policy = knightly_duties option = toxic_knights_diplomats cooldown = yes }
+				set_policy = { policy = knightly_duties option = diplomats_knights cooldown = yes }
 			}
 			else_if = {
 				limit = {
 					overlord = { has_policy_flag = toxic_knights_herald }
 					NOT = { has_policy_flag = toxic_knights_herald }
-					can_set_policy = { policy = knightly_duties option = toxic_knights_herald }
+					can_set_policy = { policy = knightly_duties option = herald_knights }
 				}
-				set_policy = { policy = knightly_duties option = toxic_knights_herald cooldown = yes }
+				set_policy = { policy = knightly_duties option = herald_knights cooldown = yes }
 			}
 
 		# Relentless Industrialists Policy
@@ -685,18 +734,287 @@ country_event = {
 				limit = {
 					overlord = { has_policy_flag = roboticist_output_build_robots }
 					NOT = { has_policy_flag = roboticist_output_build_robots }
-					can_set_policy = { policy = roboticist_output option = roboticist_output_build_robots }
+					can_set_policy = { policy = roboticist_output option = build_robots }
 				}
-				set_policy = { policy = roboticist_output option = roboticist_output_build_robots cooldown = yes }
+				set_policy = { policy = roboticist_output option = build_robots cooldown = yes }
 			}
 			else_if = {
 				limit = {
 					overlord = { has_policy_flag = roboticist_output_build_cyborgs }
 					NOT = { has_policy_flag = roboticist_output_build_cyborgs }
-					can_set_policy = { policy = roboticist_output option = roboticist_output_build_cyborgs }
+					can_set_policy = { policy = roboticist_output option = build_cyborgs }
 				}
-				set_policy = { policy = roboticist_output option = roboticist_output_build_cyborgs cooldown = yes }
+				set_policy = { policy = roboticist_output option = build_cyborgs cooldown = yes }
 			}
 	}
 }
 
+# Get Buffer Zone Flag
+country_event = {
+	id = veru_misc.3000
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_country_type_with_subjects = yes
+		OR = {
+			any_system_within_border = {
+				closest_system = {
+					limit = {
+						exists = space_owner
+						space_owner = {
+							is_auto_state = no
+							exists = overlord
+							overlord = {
+								NOT = { is_same_value = root }
+								is_country_type_with_subjects = yes
+								NOT = { has_country_flag = valid_buffer_for_@root }
+							}
+						}
+					}
+					use_bypasses = yes
+					max_steps = 1
+				}
+			}
+			any_subject = {
+				is_auto_state = no
+				any_system_within_border = {
+					closest_system = {
+						limit = {
+							exists = space_owner
+							space_owner = {
+								is_auto_state = no
+								exists = overlord
+								overlord = {
+									NOT = { is_same_value = root }
+									is_country_type_with_subjects = yes
+									NOT = { has_country_flag = valid_buffer_for_@root }
+								}
+							}
+						}
+						use_bypasses = yes
+						max_steps = 1
+					}
+				}
+			}
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				any_system_within_border = {
+					closest_system = {
+						limit = {
+							exists = space_owner
+							space_owner = {
+								is_auto_state = no
+								exists = overlord
+								overlord = {
+									NOT = { is_same_value = root }
+									is_country_type_with_subjects = yes
+									NOT = { has_country_flag = valid_buffer_for_@root }
+								}
+							}
+						}
+						use_bypasses = yes
+						max_steps = 1
+					}
+				}
+			}
+			every_system_within_border = {
+				closest_system = {
+					limit = {
+						exists = space_owner
+						space_owner = {
+							is_auto_state = no
+							exists = overlord
+							overlord = {
+								NOT = { is_same_value = root }
+								is_country_type_with_subjects = yes
+								NOT = { has_country_flag = valid_buffer_for_@root }
+							}
+						}
+					}
+					use_bypasses = yes
+					max_steps = 1
+					space_owner.overlord = { set_country_flag = valid_buffer_for_@root }
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				any_subject = {
+					is_auto_state = no
+					any_system_within_border = {
+						closest_system = {
+							limit = {
+								exists = space_owner
+								space_owner = {
+									is_auto_state = no
+									exists = overlord
+									overlord = {
+										NOT = { is_same_value = root }
+										is_country_type_with_subjects = yes
+									}
+								}
+							}
+							use_bypasses = yes
+							max_steps = 1
+						}
+					}
+				}
+			}
+			every_subject = {
+				limit = {
+					is_auto_state = no
+					any_system_within_border = {
+						closest_system = {
+							limit = {
+								exists = space_owner
+								space_owner = {
+									is_auto_state = no
+									exists = overlord
+									overlord = {
+										NOT = { is_same_value = root }
+										is_country_type_with_subjects = yes
+									}
+								}
+							}
+							use_bypasses = yes
+							max_steps = 1
+						}
+					}
+				}				
+				every_system_within_border = {
+					closest_system = {
+						limit = {
+							exists = space_owner
+							space_owner = {
+								is_auto_state = no
+								exists = overlord
+								overlord = {
+									NOT = { is_same_value = root }
+									is_country_type_with_subjects = yes
+								}
+							}
+						}
+						use_bypasses = yes
+						max_steps = 1
+						space_owner.overlord = { set_country_flag = valid_buffer_for_@root }
+					}
+				}
+			}
+		}		
+	}
+}
+
+# Remove Buffer Zone Flag
+country_event = {
+	id = veru_misc.3010
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		any_country = {
+			has_country_flag = valid_buffer_for_@root
+			NOT = {
+				any_subject = {
+					is_auto_state = no
+					any_system_within_border = {
+						closest_system = {
+							limit = {
+								exists = space_owner
+								OR = {
+									space_owner = { is_same_value = root }
+									space_owner = { has_overlord = root }
+								}
+							}
+							use_bypasses = yes
+							max_steps = 1
+						}
+					}
+				}
+			}
+		}
+	}
+
+	immediate = {
+		random_country = {
+			limit = {
+				has_country_flag = valid_buffer_for_@root
+				NOT = {
+					any_subject = {
+						is_auto_state = no
+						any_system_within_border = {
+							closest_system = {
+								limit = {
+									exists = space_owner
+									OR = {
+										space_owner = { is_same_value = root }
+										space_owner = { has_overlord = root }
+									}
+								}
+								use_bypasses = yes
+								max_steps = 1
+							}
+						}
+					}
+				}
+			}
+			remove_country_flag = valid_buffer_for_@root
+		}		
+	}
+}
+
+# Stop Wars if Buffer Target(s) are gone
+country_event = {
+	id = veru_misc.3015
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		any_war = {
+			using_war_goal = { type = wg_claim_subject owner = root }
+			OR = {
+				AND = {
+					attacker = { is_same_value = root }
+					defender = { NOT = { has_country_flag = valid_buffer_for_@root } }
+				}
+				AND = {
+					defender = { is_same_value = root }
+					attacker = { NOT = { has_country_flag = valid_buffer_for_@root } }
+				}
+			}
+		}
+	}
+
+	immediate = {
+		every_war = {
+			limit = {
+				using_war_goal = { type = wg_claim_subject owner = root }
+				OR = {
+					AND = {
+						attacker = { is_same_value = root }
+						defender = { NOT = { has_country_flag = valid_buffer_for_@root } }
+					}
+					AND = {
+						defender = { is_same_value = root }
+						attacker = { NOT = { has_country_flag = valid_buffer_for_@root } }
+					}
+				}
+			}
+			random_war_participant = {
+				limit = {
+					is_war_leader = yes
+					NOT = { is_same_value = root }
+				}
+				save_event_target_as = buffer_war_opponent
+			}
+			every_war_participant = { prev = { remove_war_participant = prev }  }
+		}
+
+		set_truce = { target = event_target:buffer_war_opponent type = war }
+	}
+}

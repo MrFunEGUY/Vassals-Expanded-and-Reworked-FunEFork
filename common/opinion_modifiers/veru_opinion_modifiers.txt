@@ -30,3 +30,55 @@ opinion_changed_vassal = {
 		base = 5
 	}
 }
+
+opinion_stopped_tribute = {
+	opinion = {
+		base = -100
+	}
+	decay = {
+		base = 3
+	}
+}
+
+########
+
+# Blood Tributary's opinion of overlord
+ver_triggered_opinion_blood = {
+	trigger = {
+		is_ver_blood = yes
+		has_overlord = from
+	}
+
+	opinion = {
+		base = -1000
+	}
+}
+
+# Condominia increase neighbor opinion
+ver_triggered_opinion_condo = {
+	trigger = {
+		# any_neighbor_country = {
+		# 	is_ver_condo = yes
+		# 	has_overlord = from
+		# }
+		any_system_within_border = {
+			closest_system = {
+				limit = {
+					exists = space_owner
+					space_owner = {
+						is_ver_condo = yes
+						has_overlord = from
+					}
+				}
+				use_bypasses = yes
+				max_steps = 1
+			}
+		}
+	}
+
+	opinion = {
+		base = 50
+	}
+
+	unique = yes
+}

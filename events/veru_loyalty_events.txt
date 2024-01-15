@@ -367,29 +367,24 @@ country_event = {
 	# Keep Status Quo.
 	option = {
 		name = veru_l.2100.a
-		trigger = { is_ai = no }
 		hidden_effect = {
-			random_list = {
-				# No Independence War
-				85 = { }
-				# Independence War
-				15 = {
-					event_target:demanding_subject = {
-						declare_war = {
-							target = root
-							name = "NAME_vassal_War"
-							attacker_war_goal = "wg_independence"
-						}
+			random = {
+				chance = 15
+				event_target:demanding_subject = {
+					declare_war = {
+						target = root
+						name = "NAME_vassal_War"
+						attacker_war_goal = "wg_independence"
 					}
 				}
 			}
 		}
+		ai_chance = { factor = 3 }
 	}
 
 	# Accept offer to be released
 	option = {
 		name = veru_l.2100.b
-		trigger = { is_ai = no }
 		event_target:demanding_subject = {
 			set_subject_of = {
 				who = none
@@ -399,42 +394,7 @@ country_event = {
 				modifier = opinion_released_vassal
 			}
 		}
-	}
-
-	# AI Option
-	option = {
-		name = ai.random
-		trigger = { 	is_ai = yes }
 		ai_chance = { factor = 1 }
-		random_list = {
-			15 = {
-				set_subject_of = {
-					who = none
-				}
-				add_opinion_modifier = {
-					who = root
-					modifier = opinion_released_vassal
-				}
-			}
-			85 = {
-				hidden_effect = {
-					random_list = {
-						# No Independence War
-						85 = { }
-						# Independence War
-						15 = {
-							event_target:demanding_subject = {
-								declare_war = {
-									target = root
-									name = "NAME_vassal_War"
-									attacker_war_goal = "wg_independence"
-								}
-							}
-						}
-					}
-				}
-			}
-		}
 	}
 }
 
@@ -474,7 +434,6 @@ country_event = {
 	# Deny them, start Independence War
 	option = {
 		name = veru_l.2150.a
-		trigger = { is_ai = no }
 		event_target:demanding_subject = {
 			declare_war = {
 				target = root
@@ -482,12 +441,12 @@ country_event = {
 				attacker_war_goal = "wg_independence"
 			}
 		}
+		ai_chance = { factor = 3 }
 	}
 
 	# Accept offer to be released
 	option = {
 		name = veru_l.2100.b
-		trigger = { is_ai = no }
 		event_target:demanding_subject = {
 			set_subject_of = {
 				who = none
@@ -497,33 +456,7 @@ country_event = {
 				modifier = opinion_released_vassal
 			}
 		}
-	}
-
-	# AI Option
-	option = {
-		name = ai.random
-		trigger = { 	is_ai = yes }
 		ai_chance = { factor = 1 }
-		random_list = {
-			15 = {
-				set_subject_of = {
-					who = none
-				}
-				add_opinion_modifier = {
-					who = root
-					modifier = opinion_released_vassal
-				}
-			}
-			85 = {
-				event_target:demanding_subject = {
-					declare_war = {
-						target = root
-						name = "NAME_vassal_War"
-						attacker_war_goal = "wg_independence"
-					}
-				}
-			}
-		}
 	}
 }
 
@@ -563,30 +496,25 @@ country_event = {
 	# Keep Status Quo.
 	option = {
 		name = veru_l.2100.a
-		trigger = { is_ai = no }
 		hidden_effect = {
-			random_list = {
-				# No Independence War
-				85 = { }
-				# Independence War
-				15 = {
-					event_target:demanding_subject = {
-						declare_war = {
-							target = root
-							name = "NAME_vassal_War"
-							attacker_war_goal = "wg_independence"
-						}
+			random = {
+				chance = 15
+				event_target:demanding_subject = {
+					declare_war = {
+						target = root
+						name = "NAME_vassal_War"
+						attacker_war_goal = "wg_independence"
 					}
 				}
 			}
 		}
+		ai_chance = { factor = 3 }
 	}
 
 	# Accept offer to become Autonomous State
 	option = {
 		name = veru_l.2200.b
 		custom_tooltip = veru_autonomous_state.tooltip
-		trigger = { is_ai = no }
 		event_target:demanding_subject = {
 			set_subject_of = {
 				who = root
@@ -597,43 +525,7 @@ country_event = {
 				modifier = opinion_changed_vassal
 			}
 		}
-	}
-
-	# AI Option
-	option = {
-		name = ai.random
-		trigger = { 	is_ai = yes }
 		ai_chance = { factor = 1 }
-		random_list = {
-			15 = {
-				set_subject_of = {
-					who = root
-					preset = preset_auto_state
-				}
-				add_opinion_modifier = {
-					who = root
-					modifier = opinion_changed_vassal
-				}
-			}
-			85 = {
-				hidden_effect = {
-					random_list = {
-						# No Independence War
-						85 = { }
-						# Independence War
-						15 = {
-							event_target:demanding_subject = {
-								declare_war = {
-									target = root
-									name = "NAME_vassal_War"
-									attacker_war_goal = "wg_independence"
-								}
-							}
-						}
-					}
-				}
-			}
-		}
 	}
 }
 
@@ -673,7 +565,6 @@ country_event = {
 	# Deny them, start Independence War
 	option = {
 		name = veru_l.2150.a
-		trigger = { is_ai = no }
 		event_target:demanding_subject = {
 			declare_war = {
 				target = root
@@ -681,13 +572,13 @@ country_event = {
 				attacker_war_goal = "wg_independence"
 			}
 		}
+		ai_chance = { factor = 3 }
 	}
 
 	# Accept offer to become Autonomous State
 	option = {
 		name = veru_l.2200.b
 		custom_tooltip = veru_autonomous_state.tooltip
-		trigger = { is_ai = no }
 		event_target:demanding_subject = {
 			set_subject_of = {
 				who = root
@@ -698,33 +589,124 @@ country_event = {
 				modifier = opinion_changed_vassal
 			}
 		}
+		ai_chance = { factor = 1 }
+	}
+}
+
+####
+
+# Tributary Potential Stop Check, bi-yearly check Initializer
+country_event = {
+	id = veru_l.3000
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = yes
+		is_tributary = yes
+		NOT = { has_country_flag = new_tributary }
 	}
 
-	# AI Option
-	option = {
-		name = ai.random
-		trigger = { 	is_ai = yes }
-		ai_chance = { factor = 1 }
-		random_list = {
-			15 = {
-				set_subject_of = {
-					who = root
-					preset = preset_auto_state
-				}
-				add_opinion_modifier = {
-					who = root
-					modifier = opinion_changed_vassal
-				}
-			}
-			85 = {
-				event_target:demanding_subject = {
-					declare_war = {
-						target = root
-						name = "NAME_vassal_War"
-						attacker_war_goal = "wg_independence"
-					}
-				}
+	immediate = {
+
+		overlord = {
+			export_trigger_value_to_variable = {
+				trigger = fleet_power
+				variable = overlord_fleet_power
 			}
 		}
+
+		export_trigger_value_to_variable = {
+			trigger = fleet_power
+			variable = subject_fleet_power
+		}
+
+		divide_variable = { which = subject_fleet_power value = overlord.overlord_fleet_power }
+
+		if = {
+			limit = { is_disloyal_to = overlord }
+			random = {
+				chance = 5
+				country_event = { id = veru_l.3010 days = 1 random = 90 }
+				break = yes
+			}
+		}
+
+		if = {
+			limit = {
+				check_variable = { which = subject_fleet_power value >= 0.7 }
+				check_variable = { which = subject_fleet_power value < 0.8 }
+			}
+			random = {
+				chance = 15
+				country_event = { id = veru_l.3010 days = 1 random = 90 }
+				break = yes
+			}
+		}
+
+		else_if = {
+			limit = {
+				check_variable = { which = subject_fleet_power value >= 0.80 }
+				check_variable = { which = subject_fleet_power value < 0.9 }
+			}
+			random = {
+				chance = 25
+				country_event = { id = veru_l.3010 days = 1 random = 90 }
+				break = yes
+			}
+		}
+
+		else_if = {
+			limit = { check_variable = { which = subject_fleet_power value >= 0.9 } }
+			random = {
+				chance = 50
+				country_event = { id = veru_l.3010 days = 1 random = 90 }
+				break = yes
+			}
+		}
+
+		clear_variable = subject_fleet_power
+		overlord = { clear_variable = overlord_fleet_power }
+	}
+}
+
+# Tributary Stop Event
+country_event = {
+	id = veru_l.3010
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		
+		overlord = {
+			save_event_target_as = former_overlord
+			add_opinion_modifier = {
+				who = prev
+				modifier = opinion_stopped_tribute
+			}
+			if = {
+				limit = { is_ai = no }
+				root = { save_event_target_as = tributary_that_stopped }
+				country_event = { id = veru_l.3015 }
+			}
+		}
+		set_subject_of = { who = none }
+		end_truce = event_target:former_overlord
+	}
+}
+
+# Overlord Notification
+country_event = {
+	id = veru_l.3015
+	title = veru_l.3015.name
+	desc = veru_l.3015.desc
+	picture = GFX_evt_alien_propaganda
+	location = event_target:tributary_that_stopped.capital_scope
+	hide_window = no
+	is_triggered_only = yes
+
+
+	option = {
+		name = veru_l.3015.preposterous
 	}
 }

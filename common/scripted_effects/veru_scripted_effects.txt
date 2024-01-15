@@ -126,7 +126,18 @@ get_intervention_effect = {
 		event_target:chosen_subject = {
 			every_pop_faction = {
 				limit = {
-					leader = { NOT = { leader_class = ruler } }
+					NOR = {
+						ruler_has_faction_ethic = { ETHIC = xenophobe }
+						ruler_has_faction_ethic = { ETHIC = xenophile }
+						ruler_has_faction_ethic = { ETHIC = militarist }
+						ruler_has_faction_ethic = { ETHIC = pacifist }
+						ruler_has_faction_ethic = { ETHIC = materialist }
+						ruler_has_faction_ethic = { ETHIC = spiritualist }
+						ruler_has_faction_ethic = { ETHIC = authoritarian }
+						ruler_has_faction_ethic = { ETHIC = egalitarian }
+						ruler_has_faction_ethic = { ETHIC = socialism }
+						ruler_has_faction_ethic = { ETHIC = capitalism }
+					}
 				}
 				add_modifier = {
 	                modifier = overlord_intervention_disloyal_faction
@@ -135,7 +146,18 @@ get_intervention_effect = {
 			}
 			random_pop_faction = {
 				limit = {
-					leader = { leader_class = ruler }
+					OR = {
+						ruler_has_faction_ethic = { ETHIC = xenophobe }
+						ruler_has_faction_ethic = { ETHIC = xenophile }
+						ruler_has_faction_ethic = { ETHIC = militarist }
+						ruler_has_faction_ethic = { ETHIC = pacifist }
+						ruler_has_faction_ethic = { ETHIC = materialist }
+						ruler_has_faction_ethic = { ETHIC = spiritualist }
+						ruler_has_faction_ethic = { ETHIC = authoritarian }
+						ruler_has_faction_ethic = { ETHIC = egalitarian }
+						ruler_has_faction_ethic = { ETHIC = socialism }
+						ruler_has_faction_ethic = { ETHIC = capitalism }
+					}
 				}
 				add_modifier = {
 	                modifier = overlord_intervention_disloyal_leader
@@ -161,7 +183,18 @@ get_intervention_effect = {
 		event_target:chosen_subject = {
 			every_pop_faction = {
 				limit = {
-					leader = { NOT = { leader_class = ruler } }
+					NOR = {
+						ruler_has_faction_ethic = { ETHIC = xenophobe }
+						ruler_has_faction_ethic = { ETHIC = xenophile }
+						ruler_has_faction_ethic = { ETHIC = militarist }
+						ruler_has_faction_ethic = { ETHIC = pacifist }
+						ruler_has_faction_ethic = { ETHIC = materialist }
+						ruler_has_faction_ethic = { ETHIC = spiritualist }
+						ruler_has_faction_ethic = { ETHIC = authoritarian }
+						ruler_has_faction_ethic = { ETHIC = egalitarian }
+						ruler_has_faction_ethic = { ETHIC = socialism }
+						ruler_has_faction_ethic = { ETHIC = capitalism }
+					}
 				}
 				add_modifier = {
 	                modifier = overlord_intervention_loyal_faction
@@ -170,7 +203,18 @@ get_intervention_effect = {
 			}
 			random_pop_faction = {
 				limit = {
-					leader = { leader_class = ruler }
+					OR = {
+						ruler_has_faction_ethic = { ETHIC = xenophobe }
+						ruler_has_faction_ethic = { ETHIC = xenophile }
+						ruler_has_faction_ethic = { ETHIC = militarist }
+						ruler_has_faction_ethic = { ETHIC = pacifist }
+						ruler_has_faction_ethic = { ETHIC = materialist }
+						ruler_has_faction_ethic = { ETHIC = spiritualist }
+						ruler_has_faction_ethic = { ETHIC = authoritarian }
+						ruler_has_faction_ethic = { ETHIC = egalitarian }
+						ruler_has_faction_ethic = { ETHIC = socialism }
+						ruler_has_faction_ethic = { ETHIC = capitalism }
+					}
 				}
 				add_modifier = {
 	                modifier = overlord_intervention_loyal_leader
@@ -223,8 +267,18 @@ get_intervention_effect_gov = {
 		event_target:chosen_subject = {
 			every_pop_faction = {
 				limit = {
-					exists = leader
-					leader = { NOT = { leader_class = ruler } }
+					NOR = {
+						ruler_has_faction_ethic = { ETHIC = xenophobe }
+						ruler_has_faction_ethic = { ETHIC = xenophile }
+						ruler_has_faction_ethic = { ETHIC = militarist }
+						ruler_has_faction_ethic = { ETHIC = pacifist }
+						ruler_has_faction_ethic = { ETHIC = materialist }
+						ruler_has_faction_ethic = { ETHIC = spiritualist }
+						ruler_has_faction_ethic = { ETHIC = authoritarian }
+						ruler_has_faction_ethic = { ETHIC = egalitarian }
+						ruler_has_faction_ethic = { ETHIC = socialism }
+						ruler_has_faction_ethic = { ETHIC = capitalism }
+					}
 				}
 				add_modifier = {
 	                modifier = overlord_intervention_disloyal_faction
@@ -233,8 +287,18 @@ get_intervention_effect_gov = {
 			}
 			random_pop_faction = {
 				limit = {
-					exists = leader
-					leader = { leader_class = ruler }
+					OR = {
+						ruler_has_faction_ethic = { ETHIC = xenophobe }
+						ruler_has_faction_ethic = { ETHIC = xenophile }
+						ruler_has_faction_ethic = { ETHIC = militarist }
+						ruler_has_faction_ethic = { ETHIC = pacifist }
+						ruler_has_faction_ethic = { ETHIC = materialist }
+						ruler_has_faction_ethic = { ETHIC = spiritualist }
+						ruler_has_faction_ethic = { ETHIC = authoritarian }
+						ruler_has_faction_ethic = { ETHIC = egalitarian }
+						ruler_has_faction_ethic = { ETHIC = socialism }
+						ruler_has_faction_ethic = { ETHIC = capitalism }
+					}
 				}
 				add_modifier = {
 	                modifier = overlord_intervention_disloyal_leader
@@ -260,7 +324,18 @@ get_intervention_effect_gov = {
 		event_target:chosen_subject = {
 			every_pop_faction = {
 				limit = {
-					leader = { NOT = { leader_class = ruler } }
+					NOR = {
+						ruler_has_faction_ethic = { ETHIC = xenophobe }
+						ruler_has_faction_ethic = { ETHIC = xenophile }
+						ruler_has_faction_ethic = { ETHIC = militarist }
+						ruler_has_faction_ethic = { ETHIC = pacifist }
+						ruler_has_faction_ethic = { ETHIC = materialist }
+						ruler_has_faction_ethic = { ETHIC = spiritualist }
+						ruler_has_faction_ethic = { ETHIC = authoritarian }
+						ruler_has_faction_ethic = { ETHIC = egalitarian }
+						ruler_has_faction_ethic = { ETHIC = socialism }
+						ruler_has_faction_ethic = { ETHIC = capitalism }
+					}
 				}
 				add_modifier = {
 	                modifier = overlord_intervention_loyal_faction
@@ -269,7 +344,18 @@ get_intervention_effect_gov = {
 			}
 			random_pop_faction = {
 				limit = {
-					leader = { leader_class = ruler }
+					OR = {
+						ruler_has_faction_ethic = { ETHIC = xenophobe }
+						ruler_has_faction_ethic = { ETHIC = xenophile }
+						ruler_has_faction_ethic = { ETHIC = militarist }
+						ruler_has_faction_ethic = { ETHIC = pacifist }
+						ruler_has_faction_ethic = { ETHIC = materialist }
+						ruler_has_faction_ethic = { ETHIC = spiritualist }
+						ruler_has_faction_ethic = { ETHIC = authoritarian }
+						ruler_has_faction_ethic = { ETHIC = egalitarian }
+						ruler_has_faction_ethic = { ETHIC = socialism }
+						ruler_has_faction_ethic = { ETHIC = capitalism }
+					}
 				}
 				add_modifier = {
 	                modifier = overlord_intervention_loyal_leader
@@ -316,7 +402,18 @@ get_intervention_effect_leader = {
 		event_target:chosen_subject = {
 			every_pop_faction = {
 				limit = {
-					leader = { NOT = { leader_class = ruler } }
+					NOR = {
+						ruler_has_faction_ethic = { ETHIC = xenophobe }
+						ruler_has_faction_ethic = { ETHIC = xenophile }
+						ruler_has_faction_ethic = { ETHIC = militarist }
+						ruler_has_faction_ethic = { ETHIC = pacifist }
+						ruler_has_faction_ethic = { ETHIC = materialist }
+						ruler_has_faction_ethic = { ETHIC = spiritualist }
+						ruler_has_faction_ethic = { ETHIC = authoritarian }
+						ruler_has_faction_ethic = { ETHIC = egalitarian }
+						ruler_has_faction_ethic = { ETHIC = socialism }
+						ruler_has_faction_ethic = { ETHIC = capitalism }
+					}
 				}
 				add_modifier = {
 	                modifier = overlord_intervention_disloyal_faction
@@ -325,7 +422,18 @@ get_intervention_effect_leader = {
 			}
 			random_pop_faction = {
 				limit = {
-					leader = { leader_class = ruler }
+					OR = {
+						ruler_has_faction_ethic = { ETHIC = xenophobe }
+						ruler_has_faction_ethic = { ETHIC = xenophile }
+						ruler_has_faction_ethic = { ETHIC = militarist }
+						ruler_has_faction_ethic = { ETHIC = pacifist }
+						ruler_has_faction_ethic = { ETHIC = materialist }
+						ruler_has_faction_ethic = { ETHIC = spiritualist }
+						ruler_has_faction_ethic = { ETHIC = authoritarian }
+						ruler_has_faction_ethic = { ETHIC = egalitarian }
+						ruler_has_faction_ethic = { ETHIC = socialism }
+						ruler_has_faction_ethic = { ETHIC = capitalism }
+					}
 				}
 				add_modifier = {
 	                modifier = overlord_intervention_disloyal_leader
@@ -352,7 +460,18 @@ get_intervention_effect_leader = {
 		event_target:chosen_subject = {
 			every_pop_faction = {
 				limit = {
-					leader = { NOT = { leader_class = ruler } }
+					NOR = {
+						ruler_has_faction_ethic = { ETHIC = xenophobe }
+						ruler_has_faction_ethic = { ETHIC = xenophile }
+						ruler_has_faction_ethic = { ETHIC = militarist }
+						ruler_has_faction_ethic = { ETHIC = pacifist }
+						ruler_has_faction_ethic = { ETHIC = materialist }
+						ruler_has_faction_ethic = { ETHIC = spiritualist }
+						ruler_has_faction_ethic = { ETHIC = authoritarian }
+						ruler_has_faction_ethic = { ETHIC = egalitarian }
+						ruler_has_faction_ethic = { ETHIC = socialism }
+						ruler_has_faction_ethic = { ETHIC = capitalism }
+					}
 				}
 				add_modifier = {
 	                modifier = overlord_intervention_loyal_faction
@@ -361,7 +480,18 @@ get_intervention_effect_leader = {
 			}
 			random_pop_faction = {
 				limit = {
-					leader = { leader_class = ruler }
+					OR = {
+						ruler_has_faction_ethic = { ETHIC = xenophobe }
+						ruler_has_faction_ethic = { ETHIC = xenophile }
+						ruler_has_faction_ethic = { ETHIC = militarist }
+						ruler_has_faction_ethic = { ETHIC = pacifist }
+						ruler_has_faction_ethic = { ETHIC = materialist }
+						ruler_has_faction_ethic = { ETHIC = spiritualist }
+						ruler_has_faction_ethic = { ETHIC = authoritarian }
+						ruler_has_faction_ethic = { ETHIC = egalitarian }
+						ruler_has_faction_ethic = { ETHIC = socialism }
+						ruler_has_faction_ethic = { ETHIC = capitalism }
+					}
 				}
 				add_modifier = {
 	                modifier = overlord_intervention_loyal_leader
@@ -381,290 +511,192 @@ get_intervention_effect_leader = {
 	}
 }
 
-# Get Governor Leaders
-get_governors = {
-	set_variable = { which = total_governors value = 0 }
+# Get Official Leaders
+get_officials = {
+	set_variable = { which = total_officials value = 0 }
 
 	every_owned_leader = {
 		limit = {
-			leader_class = governor
+			leader_class = official
 		}
-		set_leader_flag = governor_leader
-		prev = { change_variable = { which = total_governors value = 1 } }
+		set_leader_flag = official_leader
+		prev = { change_variable = { which = total_officials value = 1 } }
 	}
 
 	# Next, we save each subject as an Event Target
 	# As the scripting language doesn't have proper loops, we use a lot of ifs if there are more than 10, the event can be run again.
 	if = {
-		limit = { check_variable = { which = total_governors value >= 1 } }
+		limit = { check_variable = { which = total_officials value >= 1 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = governor_leader }
-			remove_leader_flag = governor_leader
-			save_event_target_as = governor_leader_1
+			limit = { has_leader_flag = official_leader }
+			remove_leader_flag = official_leader
+			save_event_target_as = official_leader_1
 		}
 	}
 	if = {
-		limit = { check_variable = { which = total_governors value >= 2 } }
+		limit = { check_variable = { which = total_officials value >= 2 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = governor_leader }
-			remove_leader_flag = governor_leader
-			save_event_target_as = governor_leader_2
+			limit = { has_leader_flag = official_leader }
+			remove_leader_flag = official_leader
+			save_event_target_as = official_leader_2
 		}
 	}
 	if = {
-		limit = { check_variable = { which = total_governors value >= 3 } }
+		limit = { check_variable = { which = total_officials value >= 3 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = governor_leader }
-			remove_leader_flag = governor_leader
-			save_event_target_as = governor_leader_3
+			limit = { has_leader_flag = official_leader }
+			remove_leader_flag = official_leader
+			save_event_target_as = official_leader_3
 		}
 	}
 	if = {
-		limit = { check_variable = { which = total_governors value >= 4 } }
+		limit = { check_variable = { which = total_officials value >= 4 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = governor_leader }
-			remove_leader_flag = governor_leader
-			save_event_target_as = governor_leader_4
+			limit = { has_leader_flag = official_leader }
+			remove_leader_flag = official_leader
+			save_event_target_as = official_leader_4
 		}
 	}
 	if = {
-		limit = { check_variable = { which = total_governors value >= 5 } }
+		limit = { check_variable = { which = total_officials value >= 5 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = governor_leader }
-			remove_leader_flag = governor_leader
-			save_event_target_as = governor_leader_5
+			limit = { has_leader_flag = official_leader }
+			remove_leader_flag = official_leader
+			save_event_target_as = official_leader_5
 		}
 	}
 	if = {
-		limit = { check_variable = { which = total_governors value >= 6 } }
+		limit = { check_variable = { which = total_officials value >= 6 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = governor_leader }
-			remove_leader_flag = governor_leader
-			save_event_target_as = governor_leader_6
+			limit = { has_leader_flag = official_leader }
+			remove_leader_flag = official_leader
+			save_event_target_as = official_leader_6
 		}
 	}
 	if = {
-		limit = { check_variable = { which = total_governors value >= 7 } }
+		limit = { check_variable = { which = total_officials value >= 7 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = governor_leader }
-			remove_leader_flag = governor_leader
-			save_event_target_as = governor_leader_7
+			limit = { has_leader_flag = official_leader }
+			remove_leader_flag = official_leader
+			save_event_target_as = official_leader_7
 		}
 	}
 	if = {
-		limit = { check_variable = { which = total_governors value >= 8 } }
+		limit = { check_variable = { which = total_officials value >= 8 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = governor_leader }
-			remove_leader_flag = governor_leader
-			save_event_target_as = governor_leader_8
+			limit = { has_leader_flag = official_leader }
+			remove_leader_flag = official_leader
+			save_event_target_as = official_leader_8
 		}
 	}
 	if = {
-		limit = { check_variable = { which = total_governors value >= 9 } }
+		limit = { check_variable = { which = total_officials value >= 9 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = governor_leader }
-			remove_leader_flag = governor_leader
-			save_event_target_as = governor_leader_9
+			limit = { has_leader_flag = official_leader }
+			remove_leader_flag = official_leader
+			save_event_target_as = official_leader_9
 		}
 	}
 	if = {
-		limit = { check_variable = { which = total_governors value >= 10 } }
+		limit = { check_variable = { which = total_officials value >= 10 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = governor_leader }
-			remove_leader_flag = governor_leader
-			save_event_target_as = governor_leader_10
+			limit = { has_leader_flag = official_leader }
+			remove_leader_flag = official_leader
+			save_event_target_as = official_leader_10
 		}
 	}
 }
 
-# Get Admiral Leaders
-get_admirals = {
-	set_variable = { which = total_admirals value = 0 }
+# Get Commander Leaders
+get_commanders = {
+	set_variable = { which = total_commanders value = 0 }
 
 	every_owned_leader = {
-		limit = {
-			leader_class = admiral
-		}
-		set_leader_flag = admiral_leader
-		prev = { change_variable = { which = total_admirals value = 1 } }
+		limit = { leader_class = commander }
+		set_leader_flag = commander_leader
+		prev = { change_variable = { which = total_commanders value = 1 } }
 	}
 
 	# Next, we save each subject as an Event Target
 	# As the scripting language doesn't have proper loops, we use a lot of ifs if there are more than 10, the event can be run again.
 	if = {
-		limit = { check_variable = { which = total_admirals value >= 1 } }
+		limit = { check_variable = { which = total_commanders value >= 1 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = admiral_leader }
-			remove_leader_flag = admiral_leader
-			save_event_target_as = admiral_leader_1
+			limit = { has_leader_flag = commander_leader }
+			remove_leader_flag = commander_leader
+			save_event_target_as = commander_leader_1
 		}
 	}
 	if = {
-		limit = { check_variable = { which = total_admirals value >= 2 } }
+		limit = { check_variable = { which = total_commanders value >= 2 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = admiral_leader }
-			remove_leader_flag = admiral_leader
-			save_event_target_as = admiral_leader_2
+			limit = { has_leader_flag = commander_leader }
+			remove_leader_flag = commander_leader
+			save_event_target_as = commander_leader_2
 		}
 	}
 	if = {
-		limit = { check_variable = { which = total_admirals value >= 3 } }
+		limit = { check_variable = { which = total_commanders value >= 3 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = admiral_leader }
-			remove_leader_flag = admiral_leader
-			save_event_target_as = admiral_leader_3
+			limit = { has_leader_flag = commander_leader }
+			remove_leader_flag = commander_leader
+			save_event_target_as = commander_leader_3
 		}
 	}
 	if = {
-		limit = { check_variable = { which = total_admirals value >= 4 } }
+		limit = { check_variable = { which = total_commanders value >= 4 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = admiral_leader }
-			remove_leader_flag = admiral_leader
-			save_event_target_as = admiral_leader_4
+			limit = { has_leader_flag = commander_leader }
+			remove_leader_flag = commander_leader
+			save_event_target_as = commander_leader_4
 		}
 	}
 	if = {
-		limit = { check_variable = { which = total_admirals value >= 5 } }
+		limit = { check_variable = { which = total_commanders value >= 5 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = admiral_leader }
-			remove_leader_flag = admiral_leader
-			save_event_target_as = admiral_leader_5
+			limit = { has_leader_flag = commander_leader }
+			remove_leader_flag = commander_leader
+			save_event_target_as = commander_leader_5
 		}
 	}
 	if = {
-		limit = { check_variable = { which = total_admirals value >= 6 } }
+		limit = { check_variable = { which = total_commanders value >= 6 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = admiral_leader }
-			remove_leader_flag = admiral_leader
-			save_event_target_as = admiral_leader_6
+			limit = { has_leader_flag = commander_leader }
+			remove_leader_flag = commander_leader
+			save_event_target_as = commander_leader_6
 		}
 	}
 	if = {
-		limit = { check_variable = { which = total_admirals value >= 7 } }
+		limit = { check_variable = { which = total_commanders value >= 7 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = admiral_leader }
-			remove_leader_flag = admiral_leader
-			save_event_target_as = admiral_leader_7
+			limit = { has_leader_flag = commander_leader }
+			remove_leader_flag = commander_leader
+			save_event_target_as = commander_leader_7
 		}
 	}
 	if = {
-		limit = { check_variable = { which = total_admirals value >= 8 } }
+		limit = { check_variable = { which = total_commanders value >= 8 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = admiral_leader }
-			remove_leader_flag = admiral_leader
-			save_event_target_as = admiral_leader_8
+			limit = { has_leader_flag = commander_leader }
+			remove_leader_flag = commander_leader
+			save_event_target_as = commander_leader_8
 		}
 	}
 	if = {
-		limit = { check_variable = { which = total_admirals value >= 9 } }
+		limit = { check_variable = { which = total_commanders value >= 9 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = admiral_leader }
-			remove_leader_flag = admiral_leader
-			save_event_target_as = admiral_leader_9
+			limit = { has_leader_flag = commander_leader }
+			remove_leader_flag = commander_leader
+			save_event_target_as = commander_leader_9
 		}
 	}
 	if = {
-		limit = { check_variable = { which = total_admirals value >= 10 } }
+		limit = { check_variable = { which = total_commanders value >= 10 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = admiral_leader }
-			remove_leader_flag = admiral_leader
-			save_event_target_as = admiral_leader_10
-		}
-	}
-}
-
-# Get General Leaders
-get_generals = {
-	set_variable = { which = total_generals value = 0 }
-
-	every_owned_leader = {
-		limit = {
-			leader_class = general
-		}
-		set_leader_flag = general_leader
-		prev = { change_variable = { which = total_generals value = 1 } }
-	}
-
-	# Next, we save each subject as an Event Target
-	# As the scripting language doesn't have proper loops, we use a lot of ifs if there are more than 10, the event can be run again.
-	if = {
-		limit = { check_variable = { which = total_generals value >= 1 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = general_leader }
-			remove_leader_flag = general_leader
-			save_event_target_as = general_leader_1
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_generals value >= 2 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = general_leader }
-			remove_leader_flag = general_leader
-			save_event_target_as = general_leader_2
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_generals value >= 3 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = general_leader }
-			remove_leader_flag = general_leader
-			save_event_target_as = general_leader_3
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_generals value >= 4 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = general_leader }
-			remove_leader_flag = general_leader
-			save_event_target_as = general_leader_4
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_generals value >= 5 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = general_leader }
-			remove_leader_flag = general_leader
-			save_event_target_as = general_leader_5
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_generals value >= 6 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = general_leader }
-			remove_leader_flag = general_leader
-			save_event_target_as = general_leader_6
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_generals value >= 7 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = general_leader }
-			remove_leader_flag = general_leader
-			save_event_target_as = general_leader_7
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_generals value >= 8 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = general_leader }
-			remove_leader_flag = general_leader
-			save_event_target_as = general_leader_8
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_generals value >= 9 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = general_leader }
-			remove_leader_flag = general_leader
-			save_event_target_as = general_leader_9
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_generals value >= 10 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = general_leader }
-			remove_leader_flag = general_leader
-			save_event_target_as = general_leader_10
+			limit = { has_leader_flag = commander_leader }
+			remove_leader_flag = commander_leader
+			save_event_target_as = commander_leader_10
 		}
 	}
 }

@@ -20,12 +20,12 @@ country_event = {
 
 	# No valid target
 	option = {
-		name = veru.1000.fail
+		name = UNFORTUNATE
 		trigger = { check_variable = { which = veru_total_subjects value = 0 } }
 	}
 
 	option = {
-		name = veru.1000.back
+		name = veru.nevermind
 		trigger = { check_variable = { which = veru_total_subjects value > 0 } }
 	}
 
@@ -165,7 +165,7 @@ country_event = {
 	}
 
 	# Back
-	option = { name = veru.1000.back }
+	option = { name = veru.nevermind }
 
 	# Install New Leader
 	option = {
@@ -281,379 +281,7 @@ country_event = {
 	}
 }
 
-###########
-# Proxy War
-
-# Pick Proxy Subject
-country_event = {
-	id = veru.3000
-	title = veru.3000.name
-	location = event_target:chosen_subject
-	hide_window = no
-	is_triggered_only = yes
-
-	diplomatic = yes
-
-	picture_event_data = {
-		portrait = event_target:chosen_subject.ruler
-		planet_background = event_target:chosen_subject
-		graphical_culture = event_target:chosen_subject
-		city_level = event_target:chosen_subject.capital_scope
-		room = event_target:chosen_subject.ruler
-	}
-
-	desc = {
-		text = veru.5000.loyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_loyal_to = prev }
-		}
-	}
-
-	desc = {
-		text = veru.5000.disloyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_disloyal_to = prev }
-		}
-	}
-
-	# Back
-	option = { name = veru.back }
-
-	# Choose one of our Leaders
-	option = {
-		name = veru.6400.us
-		hidden_effect = {
-			country_event = { id = veru.5010 }
-		}
-		ai_chance = { base = 5 }
-	}
-
-	# Choose one of their Leaders
-	option = {
-		name = veru.6400.them
-		trigger = { event_target:chosen_subject = { num_owned_leaders > 2 } }
-		hidden_effect = {
-			country_event = { id = veru.5020 }
-		}
-		ai_chance = { base = 2 }
-	}
-}
-
-# Choose our Governor
-country_event = {
-	id = veru.3000
-	title = veru.3000.name
-	location = event_target:chosen_subject
-	hide_window = no
-	is_triggered_only = yes
-
-	diplomatic = yes
-
-	picture_event_data = {
-		portrait = event_target:chosen_subject.ruler
-		planet_background = root.capital_scope
-		graphical_culture = root
-		city_level = root
-		room = root.ruler
-	}
-
-	desc = {
-		text = veru.5000.loyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_loyal_to = prev }
-		}
-	}
-
-	desc = {
-		text = veru.5000.disloyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_disloyal_to = prev }
-		}
-	}
-
-	# Back
-	option = { name = veru.back }
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.governor_leader_1
-		trigger = { check_variable = { which = total_governors value >= 1 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			clone_leader = {
-				target = event_target:governor_leader_1
-				class = ruler
-				effect = {
-					save_event_target_as = new_vassal_leader_cloned
-					exile_leader_as = new_vassal_leader_cloned
-				}
-			}
-			event_target:chosen_subject = { set_leader = event_target:new_vassal_leader_cloned
-			}
-			event_target:governor_leader_1 = {
-				kill_leader = { show_notification = no } }
-			get_autocratic_gov = yes
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.governor_leader_2
-		trigger = { check_variable = { which = total_governors value >= 2 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			clone_leader = {
-				target = event_target:governor_leader_2
-				class = ruler
-				effect = {
-					save_event_target_as = new_vassal_leader_cloned
-					exile_leader_as = new_vassal_leader_cloned
-				}
-			}
-			event_target:chosen_subject = { set_leader = event_target:new_vassal_leader_cloned
-			}
-			event_target:governor_leader_2 = {
-				kill_leader = { show_notification = no } }
-			get_autocratic_gov = yes
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.governor_leader_3
-		trigger = { check_variable = { which = total_governors value >= 3 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			clone_leader = {
-				target = event_target:governor_leader_3
-				class = ruler
-				effect = {
-					save_event_target_as = new_vassal_leader_cloned
-					exile_leader_as = new_vassal_leader_cloned
-				}
-			}
-			event_target:chosen_subject = { set_leader = event_target:new_vassal_leader_cloned
-			}
-			event_target:governor_leader_3 = {
-				kill_leader = { show_notification = no } }
-			get_autocratic_gov = yes
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.governor_leader_4
-		trigger = { check_variable = { which = total_governors value >= 4 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			clone_leader = {
-				target = event_target:governor_leader_4
-				class = ruler
-				effect = {
-					save_event_target_as = new_vassal_leader_cloned
-					exile_leader_as = new_vassal_leader_cloned
-				}
-			}
-			event_target:chosen_subject = { set_leader = event_target:new_vassal_leader_cloned
-			}
-			event_target:governor_leader_4 = {
-				kill_leader = { show_notification = no } }
-			get_autocratic_gov = yes
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.governor_leader_5
-		trigger = { check_variable = { which = total_governors value >= 5 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			clone_leader = {
-				target = event_target:governor_leader_5
-				class = ruler
-				effect = {
-					save_event_target_as = new_vassal_leader_cloned
-					exile_leader_as = new_vassal_leader_cloned
-				}
-			}
-			event_target:chosen_subject = { set_leader = event_target:new_vassal_leader_cloned
-			}
-			event_target:governor_leader_5 = {
-				kill_leader = { show_notification = no } }
-			get_autocratic_gov = yes
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.governor_leader_6
-		trigger = { check_variable = { which = total_governors value >= 6 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			clone_leader = {
-				target = event_target:governor_leader_6
-				class = ruler
-				effect = {
-					save_event_target_as = new_vassal_leader_cloned
-					exile_leader_as = new_vassal_leader_cloned
-				}
-			}
-			event_target:chosen_subject = { set_leader = event_target:new_vassal_leader_cloned
-			}
-			event_target:governor_leader_6 = {
-				kill_leader = { show_notification = no } }
-			get_autocratic_gov = yes
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.governor_leader_7
-		trigger = { check_variable = { which = total_governors value >= 7 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			clone_leader = {
-				target = event_target:governor_leader_7
-				class = ruler
-				effect = {
-					save_event_target_as = new_vassal_leader_cloned
-					exile_leader_as = new_vassal_leader_cloned
-				}
-			}
-			event_target:chosen_subject = { set_leader = event_target:new_vassal_leader_cloned
-			}
-			event_target:governor_leader_7 = {
-				kill_leader = { show_notification = no } }
-			get_autocratic_gov = yes
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.governor_leader_8
-		trigger = { check_variable = { which = total_governors value >= 8 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			clone_leader = {
-				target = event_target:governor_leader_8
-				class = ruler
-				effect = {
-					save_event_target_as = new_vassal_leader_cloned
-					exile_leader_as = new_vassal_leader_cloned
-				}
-			}
-			event_target:chosen_subject = { set_leader = event_target:new_vassal_leader_cloned
-			}
-			event_target:governor_leader_8 = {
-				kill_leader = { show_notification = no } }
-			get_autocratic_gov = yes
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.governor_leader_9
-		trigger = { check_variable = { which = total_governors value >= 9 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			clone_leader = {
-				target = event_target:governor_leader_9
-				class = ruler
-				effect = {
-					save_event_target_as = new_vassal_leader_cloned
-					exile_leader_as = new_vassal_leader_cloned
-				}
-			}
-			event_target:chosen_subject = { set_leader = event_target:new_vassal_leader_cloned
-			}
-			event_target:governor_leader_9 = {
-				kill_leader = { show_notification = no } }
-			get_autocratic_gov = yes
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.governor_leader_10
-		trigger = { check_variable = { which = total_governors value >= 10 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			clone_leader = {
-				target = event_target:governor_leader_10
-				class = ruler
-				effect = {
-					save_event_target_as = new_vassal_leader_cloned
-					exile_leader_as = new_vassal_leader_cloned
-				}
-			}
-			event_target:chosen_subject = { set_leader = event_target:new_vassal_leader_cloned
-			}
-			event_target:governor_leader_10 = {
-				kill_leader = { show_notification = no } }
-			get_autocratic_gov = yes
-		}
-		ai_chance = { factor = 1 }
-	}
-}
+### 3000 open
 
 ############
 # Government
@@ -662,7 +290,7 @@ country_event = {
 # Change Government Structure
 country_event = {
 	id = veru.4000
-	title = veru.3000.name
+	title = veru.subject_leader.name
 	location = event_target:chosen_subject
 	hide_window = no
 	is_triggered_only = yes
@@ -691,8 +319,13 @@ country_event = {
 		}
 	}
 
-	# Back
-	option = { name = veru.back }
+	# Do something else
+	option = {
+		name = veru.something_else
+		hidden_effect = {
+			country_event = { id = veru.1050 }
+		}
+	}
 
 	# Transform into Dictatorial
 	option = {
@@ -777,7 +410,7 @@ country_event = {
 		name = veru.4000.democratic_dictatorship
 		trigger = {
 			has_global_flag = more_authorities_activated
-			event_target:chosen_subject = { NOT = { has_authority = auth_democratic_dictatorship } }
+			event_target:chosen_subject = { NOT = { has_authority = auth_dict_democratic } }
 		}
 		allow = {
 			custom_tooltip = {
@@ -790,7 +423,7 @@ country_event = {
 			event_target:chosen_subject = {
 				get_ethics_check_fan = yes
 				change_government = {
-					authority = auth_democratic_dictatorship
+					authority = auth_dict_democratic
 					remove_invalid_civics = yes
 					cooldown = no
 				}
@@ -939,6 +572,9 @@ country_event = {
 			get_intervention_effect_gov = yes
 		}
 	}
+
+	# Back
+	option = { name = veru.remain }
 }
 
 ################
@@ -947,7 +583,7 @@ country_event = {
 # Install New Leader
 country_event = {
 	id = veru.5000
-	title = veru.3000.name
+	title = veru.subject_leader.name
 	location = event_target:chosen_subject
 	hide_window = no
 	is_triggered_only = yes
@@ -976,8 +612,13 @@ country_event = {
 		}
 	}
 
-	# Back
-	option = { name = veru.back }
+	# Do something else
+	option = {
+		name = veru.something_else
+		hidden_effect = {
+			country_event = { id = veru.1050 }
+		}
+	}
 
 	# Choose one of our Leaders
 	option = {
@@ -995,12 +636,15 @@ country_event = {
 			country_event = { id = veru.5020 }
 		}
 	}
+
+	# Back
+	option = { name = veru.remain }
 }
 
 # Install Our Leader
 country_event = {
 	id = veru.5010
-	title = veru.3000.name
+	title = veru.subject_leader.name
 	location = event_target:chosen_subject
 	hide_window = no
 	is_triggered_only = yes
@@ -1017,88 +661,68 @@ country_event = {
 
 	desc = {
 		text = veru.5000.loyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_loyal_to = prev }
-		}
+		trigger = { event_target:chosen_subject = { is_loyal_to = prev } }
 	}
 
 	desc = {
 		text = veru.5000.disloyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_disloyal_to = prev }
+		trigger = { event_target:chosen_subject = { is_disloyal_to = prev } }
+	}
+
+	# Do something else
+	option = {
+		name = veru.something_else
+		hidden_effect = {
+			country_event = { id = veru.1050 }
 		}
 	}
 
-	# Back
-	option = { name = veru.back }
-
-	# Choose one of our Governors
+	# Change Mind to their Leader
 	option = {
-		name = veru.5000.governor
+		name = veru.their_leaders
 		hidden_effect = {
-			get_governors = yes
+			country_event = { id = veru.5020 }
+		}
+	}
+
+	# Choose one of our Officials
+	option = {
+		name = veru.5000.official
+		trigger = { any_owned_leader = { leader_class = official } }
+		hidden_effect = {
+			get_officials = yes
 			country_event = { id = veru.5100 }
 		}
 	}
 
-	# Choose one of our Admirals
+	# Choose one of our Commanders
 	option = {
-		name = veru.5000.admiral
+		name = veru.5000.commander
+		trigger = { any_owned_leader = { leader_class = commander } }
 		hidden_effect = {
-			get_admirals = yes
+			get_commanders = yes
 			country_event = { id = veru.5200 }
-		}
-	}
-
-	# Choose one of our Generals
-	option = {
-		name = veru.5000.general
-		hidden_effect = {
-			get_generals = yes
-			country_event = { id = veru.5300 }
 		}
 	}
 
 	# Choose one of our Scientists
 	option = {
 		name = veru.5000.scientist
+		trigger = { any_owned_leader = { leader_class = scientist } }
 		hidden_effect = {
 			get_scientists = yes
 			country_event = { id = veru.5400 }
 		}
 	}
 
-	# Choose our heir
-	option = {
-		name = veru.5000.heir
-		trigger = {
-			exists = heir
-		}
-		hidden_effect = {
-			heir = {
-				save_event_target_as = heir_new_nation
-			}
-			clone_leader = {
-				target = event_target:heir_new_nation
-				class = ruler
-				effect = {
-					save_event_target_as = new_vassal_leader_cloned
-					exile_leader_as = new_vassal_leader_cloned
-				}
-			}
-			event_target:chosen_subject = { set_leader = event_target:new_vassal_leader_cloned
-			}
-			event_target:heir_new_nation = {
-				kill_leader = { show_notification = no } }
-			get_autocratic_gov = yes
-		}
-	}
+	# Back
+	option = { name = veru.remain }
 }
 
 # Install one of their leaders
 country_event = {
 	id = veru.5020
-	title = veru.3000.name
+	title = veru.subject_leader.name
 	location = event_target:chosen_subject
 	hide_window = no
 	is_triggered_only = yes
@@ -1116,92 +740,70 @@ country_event = {
 
 	desc = {
 		text = veru.5000.loyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_loyal_to = prev }
-		}
+		trigger = { event_target:chosen_subject = { is_loyal_to = prev } }
 	}
 
 	desc = {
 		text = veru.5000.disloyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_disloyal_to = prev }
+		trigger = { event_target:chosen_subject = { is_disloyal_to = prev } }
+	}
+
+	# Do something else
+	option = {
+		name = veru.something_else
+		hidden_effect = {
+			country_event = { id = veru.1050 }
 		}
 	}
 
-	# Back
-	option = { name = veru.back }
-
-	# Choose one of their Governors
+	# Change Mind to our Leader
 	option = {
-		name = veru.6500.governor
-		trigger = {
-			event_target:chosen_subject = {
-				any_owned_leader = { leader_class = governor }
-			}
-		}
+		name = veru.our_leaders
 		hidden_effect = {
-			event_target:chosen_subject = {
-				get_governors = yes
-			}
+			country_event = { id = veru.5010 }
+		}
+	}
+
+	# Choose one of their Officials
+	option = {
+		name = veru.6500.official
+		trigger = { event_target:chosen_subject = { any_owned_leader = { leader_class = official } } }
+		hidden_effect = {
+			event_target:chosen_subject = { get_officials = yes }
 			country_event = { id = veru.5500 }
 		}
 	}
 
-	# Choose one of their Admirals
+	# Choose one of their Commanders
 	option = {
-		name = veru.6500.admiral
-		trigger = {
-			event_target:chosen_subject = {
-				any_owned_leader = { leader_class = admiral }
-			}
-		}
+		name = veru.6500.commander
+		trigger = { event_target:chosen_subject = { any_owned_leader = { leader_class = commander } } }
 		hidden_effect = {
-			event_target:chosen_subject = {
-				get_admirals = yes
-			}
+			event_target:chosen_subject = { get_commanders = yes }
 			country_event = { id = veru.5600 }
-		}
-	}
-
-	# Choose one of their Generals
-	option = {
-		name = veru.6500.general
-		trigger = {
-			event_target:chosen_subject = {
-				any_owned_leader = { leader_class = general }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = {
-				get_generals = yes
-			}
-			country_event = { id = veru.5700 }
 		}
 	}
 
 	# Choose one of their Scientists
 	option = {
 		name = veru.6500.scientist
-		trigger = {
-			event_target:chosen_subject = {
-				any_owned_leader = { leader_class = scientist }
-			}
-		}
+		trigger = { event_target:chosen_subject = { any_owned_leader = { leader_class = scientist } } }
 		hidden_effect = {
-			event_target:chosen_subject = {
-				get_scientists = yes
-			}
+			event_target:chosen_subject = { get_scientists = yes }
 			country_event = { id = veru.5800 }
 		}
 	}
+
+	# Back
+	option = { name = veru.remain }
 }
 
 #########
 
-# Choose our Governor
+# Choose our Official
 country_event = {
 	id = veru.5100
-	title = veru.3000.name
+	title = veru.subject_leader.name
 	location = event_target:chosen_subject
 	hide_window = no
 	is_triggered_only = yes
@@ -1230,224 +832,232 @@ country_event = {
 		}
 	}
 
+	# Maybe a different class
+	option = {
+		name = veru.another_class
+		hidden_effect = {
+			country_event = { id = veru.5010 }
+		}
+	}
+
+	option = {
+		add_resource = { influence = -150 }
+		name = veru.5000.official_leader_1
+		trigger = { check_variable = { which = total_officials value >= 1 } }
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		hidden_effect = {
+			event_target:chosen_subject = { set_leader = event_target:official_leader_1 }
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
+		}
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		add_resource = { influence = -150 }
+		name = veru.5000.official_leader_2
+		trigger = { check_variable = { which = total_officials value >= 2 } }
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		hidden_effect = {
+			event_target:chosen_subject = { set_leader = event_target:official_leader_2 }
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
+		}
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		add_resource = { influence = -150 }
+		name = veru.5000.official_leader_3
+		trigger = { check_variable = { which = total_officials value >= 3 } }
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		hidden_effect = {
+			event_target:chosen_subject = { set_leader = event_target:official_leader_3 }
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
+		}
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		add_resource = { influence = -150 }
+		name = veru.5000.official_leader_4
+		trigger = { check_variable = { which = total_officials value >= 4 } }
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		hidden_effect = {
+			event_target:chosen_subject = { set_leader = event_target:official_leader_4 }
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
+		}
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		add_resource = { influence = -150 }
+		name = veru.5000.official_leader_5
+		trigger = { check_variable = { which = total_officials value >= 5 } }
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		hidden_effect = {
+			event_target:chosen_subject = { set_leader = event_target:official_leader_5 }
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
+		}
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		add_resource = { influence = -150 }
+		name = veru.5000.official_leader_6
+		trigger = { check_variable = { which = total_officials value >= 6 } }
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		hidden_effect = {
+			event_target:chosen_subject = { set_leader = event_target:official_leader_6 }
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
+		}
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		add_resource = { influence = -150 }
+		name = veru.5000.official_leader_7
+		trigger = { check_variable = { which = total_officials value >= 7 } }
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		hidden_effect = {
+			event_target:chosen_subject = { set_leader = event_target:official_leader_7 }
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
+		}
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		add_resource = { influence = -150 }
+		name = veru.5000.official_leader_8
+		trigger = { check_variable = { which = total_officials value >= 8 } }
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		hidden_effect = {
+			event_target:chosen_subject = { set_leader = event_target:official_leader_8 }
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
+		}
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		add_resource = { influence = -150 }
+		name = veru.5000.official_leader_9
+		trigger = { check_variable = { which = total_officials value >= 9 } }
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		hidden_effect = {
+			event_target:chosen_subject = { set_leader = event_target:official_leader_9 }
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
+		}
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		add_resource = { influence = -150 }
+		name = veru.5000.official_leader_10
+		trigger = { check_variable = { which = total_officials value >= 10 } }
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		hidden_effect = {
+			event_target:chosen_subject = { set_leader = event_target:official_leader_10 }
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty = yes
+			}
+			else = { get_autocratic_gov = yes }
+		}
+		ai_chance = { factor = 1 }
+	}
+
 	# Back
-	option = { name = veru.back }
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.governor_leader_1
-		trigger = { check_variable = { which = total_governors value >= 1 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_1 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.governor_leader_2
-		trigger = { check_variable = { which = total_governors value >= 2 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_1 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.governor_leader_3
-		trigger = { check_variable = { which = total_governors value >= 3 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_3 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.governor_leader_4
-		trigger = { check_variable = { which = total_governors value >= 4 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_4 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.governor_leader_5
-		trigger = { check_variable = { which = total_governors value >= 5 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_5 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.governor_leader_6
-		trigger = { check_variable = { which = total_governors value >= 6 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_6 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.governor_leader_7
-		trigger = { check_variable = { which = total_governors value >= 7 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_7 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.governor_leader_8
-		trigger = { check_variable = { which = total_governors value >= 8 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_8 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.governor_leader_9
-		trigger = { check_variable = { which = total_governors value >= 9 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_9 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.governor_leader_10
-		trigger = { check_variable = { which = total_governors value >= 10 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_10 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
+	option = { name = veru.remain }
 }
 
-# Choose our Admiral
+# Choose our Commander
 country_event = {
 	id = veru.5200
-	title = veru.3000.name
+	title = veru.subject_leader.name
 	location = event_target:chosen_subject
 	hide_window = no
 	is_triggered_only = yes
@@ -1476,13 +1086,18 @@ country_event = {
 		}
 	}
 
-	# Back
-	option = { name = veru.back }
+	# Maybe a different class
+	option = {
+		name = veru.another_class
+		hidden_effect = {
+			country_event = { id = veru.5010 }
+		}
+	}
 
 	option = {
 		add_resource = { influence = -150 }
-		name = veru.5000.admiral_leader_1
-		trigger = { check_variable = { which = total_admirals value >= 1 } }
+		name = veru.5000.commander_leader_1
+		trigger = { check_variable = { which = total_commanders value >= 1 } }
 		allow = {
 			custom_tooltip = {
 				fail_text = influencefail_text_veru_150
@@ -1490,7 +1105,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_1 }
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_1 }
 			if = {
 				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
 				get_autocratic_gov_no_penalty = yes
@@ -1502,8 +1117,8 @@ country_event = {
 
 	option = {
 		add_resource = { influence = -150 }
-		name = veru.5000.admiral_leader_2
-		trigger = { check_variable = { which = total_admirals value >= 2 } }
+		name = veru.5000.commander_leader_2
+		trigger = { check_variable = { which = total_commanders value >= 2 } }
 		allow = {
 			custom_tooltip = {
 				fail_text = influencefail_text_veru_150
@@ -1511,7 +1126,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_2 }
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_2 }
 			if = {
 				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
 				get_autocratic_gov_no_penalty = yes
@@ -1523,8 +1138,8 @@ country_event = {
 
 	option = {
 		add_resource = { influence = -150 }
-		name = veru.5000.admiral_leader_3
-		trigger = { check_variable = { which = total_admirals value >= 3 } }
+		name = veru.5000.commander_leader_3
+		trigger = { check_variable = { which = total_commanders value >= 3 } }
 		allow = {
 			custom_tooltip = {
 				fail_text = influencefail_text_veru_150
@@ -1532,7 +1147,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_3 }
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_3 }
 			if = {
 				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
 				get_autocratic_gov_no_penalty = yes
@@ -1544,8 +1159,8 @@ country_event = {
 
 	option = {
 		add_resource = { influence = -150 }
-		name = veru.5000.admiral_leader_4
-		trigger = { check_variable = { which = total_admirals value >= 4 } }
+		name = veru.5000.commander_leader_4
+		trigger = { check_variable = { which = total_commanders value >= 4 } }
 		allow = {
 			custom_tooltip = {
 				fail_text = influencefail_text_veru_150
@@ -1553,7 +1168,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_4 }
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_4 }
 			if = {
 				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
 				get_autocratic_gov_no_penalty = yes
@@ -1565,8 +1180,8 @@ country_event = {
 
 	option = {
 		add_resource = { influence = -150 }
-		name = veru.5000.admiral_leader_5
-		trigger = { check_variable = { which = total_admirals value >= 5 } }
+		name = veru.5000.commander_leader_5
+		trigger = { check_variable = { which = total_commanders value >= 5 } }
 		allow = {
 			custom_tooltip = {
 				fail_text = influencefail_text_veru_150
@@ -1574,7 +1189,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_5 }
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_5 }
 			if = {
 				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
 				get_autocratic_gov_no_penalty = yes
@@ -1586,8 +1201,8 @@ country_event = {
 
 	option = {
 		add_resource = { influence = -150 }
-		name = veru.5000.admiral_leader_6
-		trigger = { check_variable = { which = total_admirals value >= 6 } }
+		name = veru.5000.commander_leader_6
+		trigger = { check_variable = { which = total_commanders value >= 6 } }
 		allow = {
 			custom_tooltip = {
 				fail_text = influencefail_text_veru_150
@@ -1595,7 +1210,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_6 }
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_6 }
 			if = {
 				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
 				get_autocratic_gov_no_penalty = yes
@@ -1607,8 +1222,8 @@ country_event = {
 
 	option = {
 		add_resource = { influence = -150 }
-		name = veru.5000.admiral_leader_7
-		trigger = { check_variable = { which = total_admirals value >= 7 } }
+		name = veru.5000.commander_leader_7
+		trigger = { check_variable = { which = total_commanders value >= 7 } }
 		allow = {
 			custom_tooltip = {
 				fail_text = influencefail_text_veru_150
@@ -1616,7 +1231,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_7 }
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_7 }
 			if = {
 				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
 				get_autocratic_gov_no_penalty = yes
@@ -1628,8 +1243,8 @@ country_event = {
 
 	option = {
 		add_resource = { influence = -150 }
-		name = veru.5000.admiral_leader_8
-		trigger = { check_variable = { which = total_admirals value >= 8 } }
+		name = veru.5000.commander_leader_8
+		trigger = { check_variable = { which = total_commanders value >= 8 } }
 		allow = {
 			custom_tooltip = {
 				fail_text = influencefail_text_veru_150
@@ -1637,7 +1252,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_8 }
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_8 }
 			if = {
 				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
 				get_autocratic_gov_no_penalty = yes
@@ -1649,8 +1264,8 @@ country_event = {
 
 	option = {
 		add_resource = { influence = -150 }
-		name = veru.5000.admiral_leader_9
-		trigger = { check_variable = { which = total_admirals value >= 9 } }
+		name = veru.5000.commander_leader_9
+		trigger = { check_variable = { which = total_commanders value >= 9 } }
 		allow = {
 			custom_tooltip = {
 				fail_text = influencefail_text_veru_150
@@ -1658,7 +1273,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_9 }
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_9 }
 			if = {
 				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
 				get_autocratic_gov_no_penalty = yes
@@ -1670,8 +1285,8 @@ country_event = {
 
 	option = {
 		add_resource = { influence = -150 }
-		name = veru.5000.admiral_leader_10
-		trigger = { check_variable = { which = total_admirals value >= 10 } }
+		name = veru.5000.commander_leader_10
+		trigger = { check_variable = { which = total_commanders value >= 10 } }
 		allow = {
 			custom_tooltip = {
 				fail_text = influencefail_text_veru_150
@@ -1679,7 +1294,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_10 }
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_10 }
 			if = {
 				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
 				get_autocratic_gov_no_penalty = yes
@@ -1687,259 +1302,16 @@ country_event = {
 			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
-	}
-}
-
-# Choose our General
-country_event = {
-	id = veru.5300
-	title = veru.3000.name
-	location = event_target:chosen_subject
-	hide_window = no
-	is_triggered_only = yes
-
-	diplomatic = yes
-
-	picture_event_data = {
-		portrait = event_target:chosen_subject.ruler
-		planet_background = root.capital_scope
-		graphical_culture = root
-		city_level = root
-		room = root.ruler
-	}
-
-	desc = {
-		text = veru.5000.loyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_loyal_to = prev }
-		}
-	}
-
-	desc = {
-		text = veru.5000.disloyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_disloyal_to = prev }
-		}
 	}
 
 	# Back
-	option = { name = veru.back }
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.general_leader_1
-		trigger = { check_variable = { which = total_generals value >= 1 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_1 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.general_leader_2
-		trigger = { check_variable = { which = total_generals value >= 2 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_2 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.general_leader_3
-		trigger = { check_variable = { which = total_generals value >= 3 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_3 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.general_leader_4
-		trigger = { check_variable = { which = total_generals value >= 4 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_4 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.general_leader_5
-		trigger = { check_variable = { which = total_generals value >= 5 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_5 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.general_leader_6
-		trigger = { check_variable = { which = total_generals value >= 6 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_6 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.general_leader_7
-		trigger = { check_variable = { which = total_generals value >= 7 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_7 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.general_leader_8
-		trigger = { check_variable = { which = total_generals value >= 8 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_8 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.general_leader_9
-		trigger = { check_variable = { which = total_generals value >= 9 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_9 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.general_leader_10
-		trigger = { check_variable = { which = total_generals value >= 10 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_10 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
+	option = { name = veru.remain }
 }
 
 # Choose our Scientist
 country_event = {
 	id = veru.5400
-	title = veru.3000.name
+	title = veru.subject_leader.name
 	location = event_target:chosen_subject
 	hide_window = no
 	is_triggered_only = yes
@@ -1968,8 +1340,13 @@ country_event = {
 		}
 	}
 
-	# Back
-	option = { name = veru.back }
+	# Maybe a different class
+	option = {
+		name = veru.another_class
+		hidden_effect = {
+			country_event = { id = veru.5010 }
+		}
+	}
 
 	option = {
 		add_resource = { influence = -150 }
@@ -2180,11 +1557,14 @@ country_event = {
 		}
 		ai_chance = { factor = 1 }
 	}
+
+	# Back
+	option = { name = veru.remain }
 }
 
 #########
 
-# Choose their Governor
+# Choose their Official
 country_event = {
 	id = veru.5500
 	title = veru.6510.name
@@ -2216,261 +1596,269 @@ country_event = {
 		}
 	}
 
+	# Maybe a different class
+	option = {
+		name = veru.another_class
+		hidden_effect = {
+			country_event = { id = veru.5020 }
+		}
+	}
+
+	option = {
+		add_resource = { influence = -150 }
+		name = veru.5000.official_leader_1
+		trigger = {
+			event_target:chosen_subject = {
+				check_variable = { which = total_officials value >= 1 }
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		hidden_effect = {
+			event_target:chosen_subject = { set_leader = event_target:official_leader_1 }
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
+		}
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		add_resource = { influence = -150 }
+		name = veru.5000.official_leader_2
+		trigger = {
+			event_target:chosen_subject = {
+				check_variable = { which = total_officials value >= 2 }
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		hidden_effect = {
+			event_target:chosen_subject = { set_leader = event_target:official_leader_2 }
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
+		}
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		add_resource = { influence = -150 }
+		name = veru.5000.official_leader_3
+		trigger = {
+			event_target:chosen_subject = {
+				check_variable = { which = total_officials value >= 3 }
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		hidden_effect = {
+			event_target:chosen_subject = { set_leader = event_target:official_leader_3 }
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
+		}
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		add_resource = { influence = -150 }
+		name = veru.5000.official_leader_4
+		trigger = {
+			event_target:chosen_subject = {
+				check_variable = { which = total_officials value >= 4 }
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		hidden_effect = {
+			event_target:chosen_subject = { set_leader = event_target:official_leader_4 }
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
+		}
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		add_resource = { influence = -150 }
+		name = veru.5000.official_leader_5
+		trigger = {
+			event_target:chosen_subject = {
+				check_variable = { which = total_officials value >= 5 }
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		hidden_effect = {
+			event_target:chosen_subject = { set_leader = event_target:official_leader_5 }
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
+		}
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		add_resource = { influence = -150 }
+		name = veru.5000.official_leader_6
+		trigger = {
+			event_target:chosen_subject = {
+				check_variable = { which = total_officials value >= 6 }
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		hidden_effect = {
+			event_target:chosen_subject = { set_leader = event_target:official_leader_6 }
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
+		}
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		add_resource = { influence = -150 }
+		name = veru.5000.official_leader_7
+		trigger = {
+			event_target:chosen_subject = {
+				check_variable = { which = total_officials value >= 7 }
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		hidden_effect = {
+			event_target:chosen_subject = { set_leader = event_target:official_leader_7 }
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
+		}
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		add_resource = { influence = -150 }
+		name = veru.5000.official_leader_8
+		trigger = {
+			event_target:chosen_subject = {
+				check_variable = { which = total_officials value >= 8 }
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		hidden_effect = {
+			event_target:chosen_subject = { set_leader = event_target:official_leader_8 }
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
+		}
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		add_resource = { influence = -150 }
+		name = veru.5000.official_leader_9
+		trigger = {
+			event_target:chosen_subject = {
+				check_variable = { which = total_officials value >= 9 }
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		hidden_effect = {
+			event_target:chosen_subject = { set_leader = event_target:official_leader_9 }
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
+		}
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		add_resource = { influence = -150 }
+		name = veru.5000.official_leader_10
+		trigger = {
+			event_target:chosen_subject = {
+				check_variable = { which = total_officials value >= 10 }
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		hidden_effect = {
+			event_target:chosen_subject = { set_leader = event_target:official_leader_10 }
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
+		}
+		ai_chance = { factor = 1 }
+	}
+
 	# Back
-	option = { name = veru.back }
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.governor_leader_1
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_governors value >= 1 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_1 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.governor_leader_2
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_governors value >= 2 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_2 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.governor_leader_3
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_governors value >= 3 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_3 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.governor_leader_4
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_governors value >= 4 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_4 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.governor_leader_5
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_governors value >= 5 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_5 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.governor_leader_6
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_governors value >= 6 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_6 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.governor_leader_7
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_governors value >= 7 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_7 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.governor_leader_8
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_governors value >= 8 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_8 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.governor_leader_9
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_governors value >= 9 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_9 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.governor_leader_10
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_governors value >= 10 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_10 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
+	option = { name = veru.remain }
 }
 
-# Choose their Admiral
+# Choose their Commander
 country_event = {
 	id = veru.5600
 	title = veru.6520.name
@@ -2502,263 +1890,271 @@ country_event = {
 		}
 	}
 
+	# Maybe a different class
+	option = {
+		name = veru.another_class
+		hidden_effect = {
+			country_event = { id = veru.5020 }
+		}
+	}
+
+	option = {
+		add_resource = { influence = -150 }
+		name = veru.5000.commander_leader_1
+		trigger = {
+			event_target:chosen_subject = {
+				check_variable = { which = total_commanders value >= 1 }
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		hidden_effect = {
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_1 }
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
+		}
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		add_resource = { influence = -150 }
+		name = veru.5000.commander_leader_2
+		trigger = {
+			event_target:chosen_subject = {
+				check_variable = { which = total_commanders value >= 2 }
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		hidden_effect = {
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_2 }
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
+		}
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		add_resource = { influence = -150 }
+		name = veru.5000.commander_leader_3
+		trigger = {
+			event_target:chosen_subject = {
+				check_variable = { which = total_commanders value >= 3 }
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		hidden_effect = {
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_3 }
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
+		}
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		add_resource = { influence = -150 }
+		name = veru.5000.commander_leader_4
+		trigger = {
+			event_target:chosen_subject = {
+				check_variable = { which = total_commanders value >= 4 }
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		hidden_effect = {
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_4 }
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
+		}
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		add_resource = { influence = -150 }
+		name = veru.5000.commander_leader_5
+		trigger = {
+			event_target:chosen_subject = {
+				check_variable = { which = total_commanders value >= 5 }
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		hidden_effect = {
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_5 }
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
+		}
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		add_resource = { influence = -150 }
+		name = veru.5000.commander_leader_6
+		trigger = {
+			event_target:chosen_subject = {
+				check_variable = { which = total_commanders value >= 6 }
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		hidden_effect = {
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_6 }
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
+		}
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		add_resource = { influence = -150 }
+		name = veru.5000.commander_leader_7
+		trigger = {
+			event_target:chosen_subject = {
+				check_variable = { which = total_commanders value >= 7 }
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		hidden_effect = {
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_7 }
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
+		}
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		add_resource = { influence = -150 }
+		name = veru.5000.commander_leader_8
+		trigger = {
+			event_target:chosen_subject = {
+				check_variable = { which = total_commanders value >= 8 }
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		hidden_effect = {
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_8 }
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
+		}
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		add_resource = { influence = -150 }
+		name = veru.5000.commander_leader_9
+		trigger = {
+			event_target:chosen_subject = {
+				check_variable = { which = total_commanders value >= 9 }
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		hidden_effect = {
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_9 }
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
+		}
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		add_resource = { influence = -150 }
+		name = veru.5000.commander_leader_10
+		trigger = {
+			event_target:chosen_subject = {
+				check_variable = { which = total_commanders value >= 10 }
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		hidden_effect = {
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_10 }
+			if = {
+				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+				get_autocratic_gov_no_penalty_subject_leader = yes
+			}
+			else = { get_autocratic_gov_subject_leader = yes }
+		}
+		ai_chance = { factor = 1 }
+	}
+
 	# Back
-	option = { name = veru.back }
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.admiral_leader_1
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_admirals value >= 1 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_1 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.admiral_leader_2
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_admirals value >= 2 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_2 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.admiral_leader_3
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_admirals value >= 3 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_3 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.admiral_leader_4
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_admirals value >= 4 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_4 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.admiral_leader_5
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_admirals value >= 5 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_5 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.admiral_leader_6
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_admirals value >= 6 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_6 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.admiral_leader_7
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_admirals value >= 7 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_7 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.admiral_leader_8
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_admirals value >= 8 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_8 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.admiral_leader_9
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_admirals value >= 9 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_9 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.admiral_leader_10
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_admirals value >= 10 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_10 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
+	option = { name = veru.remain }
 }
 
-# Choose their General
+# Choose their Scientist
 country_event = {
-	id = veru.5700
+	id = veru.5800
 	title = veru.6530.name
 	location = event_target:chosen_subject
 	hide_window = no
@@ -2788,294 +2184,13 @@ country_event = {
 		}
 	}
 
-	# Back
-	option = { name = veru.back }
-
+	# Maybe a different class
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.general_leader_1
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_generals value >= 1 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
+		name = veru.another_class
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_1 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.general_leader_2
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_generals value >= 2 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_2 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.general_leader_3
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_generals value >= 3 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_3 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.general_leader_4
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_generals value >= 4 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_4 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.general_leader_5
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_generals value >= 5 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_5 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.general_leader_6
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_generals value >= 6 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_6 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.general_leader_7
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_generals value >= 7 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_7 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.general_leader_8
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_generals value >= 8 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_8 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.general_leader_9
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_generals value >= 9 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_9 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.general_leader_10
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_generals value >= 10 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_10 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-}
-
-# Choose their Scientist
-country_event = {
-	id = veru.5800
-	title = veru.6540.name
-	location = event_target:chosen_subject
-	hide_window = no
-	is_triggered_only = yes
-
-	diplomatic = yes
-
-	picture_event_data = {
-		portrait = root.ruler
-		planet_background = root.capital_scope
-		graphical_culture = root
-		city_level = root
-		room = root.ruler
-	}
-
-	desc = {
-		text = veru.5000.loyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_loyal_to = prev }
+			country_event = { id = veru.5020 }
 		}
 	}
-
-	desc = {
-		text = veru.5000.disloyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_disloyal_to = prev }
-		}
-	}
-
-	# Back
-	option = { name = veru.back }
 
 	option = {
 		add_resource = { influence = -150 }
@@ -3326,6 +2441,9 @@ country_event = {
 		}
 		ai_chance = { factor = 1 }
 	}
+
+	# Back
+	option = { name = veru.remain }
 }
 
 #########
@@ -3338,7 +2456,7 @@ country_event = {
 
 	trigger = {
 		from = {
-			leader_class = ruler
+			is_ruler = yes
 			has_leader_flag = grateful_installed_vassal_leader_@this
 		}
 	}
@@ -3508,7 +2626,6 @@ country_event = {
 	id = veru.6100
 	title = veru.6100.name
 	desc = veru.6100.desc
-	picture = GFX_evt_board_meeting
 	location = from
 
 	diplomatic = yes
@@ -3530,7 +2647,11 @@ country_event = {
 			from = { check_variable = { which = num_border_subjects value >= 1 } }	
 		}
 		hidden_effect = {
-			event_target:border_subject_1 = { set_country_flag = chosen_border_subject_@root }
+			event_target:border_subject_1 = {
+				set_country_flag = chosen_border_subject_@root
+				save_event_target_as = chosen_border_subject_final
+			}
+			from = { country_event = { id = veru.6110 } }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -3540,7 +2661,11 @@ country_event = {
 			from = { check_variable = { which = num_border_subjects value >= 2 } }	
 		}
 		hidden_effect = {
-			event_target:border_subject_2 = { set_country_flag = chosen_border_subject_@root }
+			event_target:border_subject_2 = {
+				set_country_flag = chosen_border_subject_@root
+				save_event_target_as = chosen_border_subject_final
+			}
+			from = { country_event = { id = veru.6110 } }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -3550,7 +2675,11 @@ country_event = {
 			from = { check_variable = { which = num_border_subjects value >= 3 } }	
 		}
 		hidden_effect = {
-			event_target:border_subject_3 = { set_country_flag = chosen_border_subject_@root }
+			event_target:border_subject_3 = {
+				set_country_flag = chosen_border_subject_@root
+				save_event_target_as = chosen_border_subject_final
+			}
+			from = { country_event = { id = veru.6110 } }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -3560,7 +2689,11 @@ country_event = {
 			from = { check_variable = { which = num_border_subjects value >= 4 } }	
 		}
 		hidden_effect = {
-			event_target:border_subject_4 = { set_country_flag = chosen_border_subject_@root }
+			event_target:border_subject_4 = {
+				set_country_flag = chosen_border_subject_@root
+				save_event_target_as = chosen_border_subject_final
+			}
+			from = { country_event = { id = veru.6110 } }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -3570,7 +2703,11 @@ country_event = {
 			from = { check_variable = { which = num_border_subjects value >= 5 } }	
 		}
 		hidden_effect = {
-			event_target:border_subject_5 = { set_country_flag = chosen_border_subject_@root }
+			event_target:border_subject_5 = {
+				set_country_flag = chosen_border_subject_@root
+				save_event_target_as = chosen_border_subject_final
+			}
+			from = { country_event = { id = veru.6110 } }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -3580,7 +2717,11 @@ country_event = {
 			from = { check_variable = { which = num_border_subjects value >= 6 } }	
 		}
 		hidden_effect = {
-			event_target:border_subject_6 = { set_country_flag = chosen_border_subject_@root }
+			event_target:border_subject_6 = {
+				set_country_flag = chosen_border_subject_@root
+				save_event_target_as = chosen_border_subject_final
+			}
+			from = { country_event = { id = veru.6110 } }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -3590,7 +2731,11 @@ country_event = {
 			from = { check_variable = { which = num_border_subjects value >= 7 } }	
 		}
 		hidden_effect = {
-			event_target:border_subject_7 = { set_country_flag = chosen_border_subject_@root }
+			event_target:border_subject_7 = {
+				set_country_flag = chosen_border_subject_@root
+				save_event_target_as = chosen_border_subject_final
+			}
+			from = { country_event = { id = veru.6110 } }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -3600,7 +2745,11 @@ country_event = {
 			from = { check_variable = { which = num_border_subjects value >= 8 } }	
 		}
 		hidden_effect = {
-			event_target:border_subject_8 = { set_country_flag = chosen_border_subject_@root }
+			event_target:border_subject_8 = {
+				set_country_flag = chosen_border_subject_@root
+				save_event_target_as = chosen_border_subject_final
+			}
+			from = { country_event = { id = veru.6110 } }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -3610,7 +2759,11 @@ country_event = {
 			from = { check_variable = { which = num_border_subjects value >= 9 } }	
 		}
 		hidden_effect = {
-			event_target:border_subject_9 = { set_country_flag = chosen_border_subject_@root }
+			event_target:border_subject_9 = {
+				set_country_flag = chosen_border_subject_@root
+				save_event_target_as = chosen_border_subject_final
+			}
+			from = { country_event = { id = veru.6110 } }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -3620,9 +2773,36 @@ country_event = {
 			from = { check_variable = { which = num_border_subjects value >= 10 } }	
 		}
 		hidden_effect = {
-			event_target:border_subject_10 = { set_country_flag = chosen_border_subject_@root }
+			event_target:border_subject_10 = {
+				set_country_flag = chosen_border_subject_@root
+				save_event_target_as = chosen_border_subject_final
+			}
+			from = { country_event = { id = veru.6110 } }
 		}
 		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = {
+	id = veru.6110
+	title = veru.6100.name
+	desc = veru.6110.desc
+	location = event_target:chosen_border_subject_final.capital_scope
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = from.ruler
+		planet_background = from.capital_scope
+		graphical_culture = from
+		city_level = from.capital_scope
+		room = from.ruler
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = WILL_FAIL
 	}
 }
 
@@ -3652,8 +2832,11 @@ country_event = {
 	}
 
 	after = {
-		event_target:buffer_zone_winner = {
-			country_event = { id = veru.6400 days = 3 }
+		if = {
+			limit = { event_target:chosen_subject = { is_ai = yes } }
+			event_target:buffer_zone_winner = {
+				country_event = { id = veru.6400 days = 3 }
+			}
 		}
 	}
 }
@@ -3692,7 +2875,7 @@ country_event = {
 ###############################
 # After War Leader Installation
 
-# Install New Leader after buffer zone war
+# Install New Leader after buffer zone war or when CK ruler dies
 country_event = {
 	id = veru.6400
 	title = veru.6400.name
@@ -3748,19 +2931,6 @@ country_event = {
 		ai_chance = { base = 5 }
 	}
 
-	# Choose one of our leaders
-	option = {
-		name = veru.6400.us
-		custom_tooltip = veru.6400.us.tooltip
-		trigger = {
-			event_target:chosen_subject = { is_ver_clientkingdom = no }
-		}
-		hidden_effect = {
-			country_event = { id = veru.6600 }
-		}
-		ai_chance = { base = 2 }
-	}
-
 	# Choose one of their leaders
 	option = {
 		name = veru.6400.them
@@ -3779,9 +2949,18 @@ country_event = {
 	# Choose one of our leaders
 	option = {
 		name = veru.6400.us
-		trigger = {
-			event_target:chosen_subject = { is_ver_clientkingdom = yes }
+		custom_tooltip = veru.6400.us.tooltip
+		trigger = { event_target:chosen_subject = { is_ver_clientkingdom = no } }
+		hidden_effect = {
+			country_event = { id = veru.6600 }
 		}
+		ai_chance = { base = 2 }
+	}
+
+	# Choose one of our leaders
+	option = {
+		name = veru.6400.us
+		trigger = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
 		hidden_effect = {
 			country_event = { id = veru.6600 }
 		}
@@ -3810,51 +2989,41 @@ country_event = {
 		room = event_target:chosen_subject.ruler
 	}
 
-	# Choose one of their Governors
+	# Change Mind to Our Leader
 	option = {
-		name = veru.6500.governor
+		name = veru.our_leaders
+		hidden_effect = {
+			country_event = { id = veru.6600 }
+		}
+	}
+
+	# Choose one of their Officials
+	option = {
+		name = veru.6500.official
 		trigger = {
 			event_target:chosen_subject = {
-				any_owned_leader = { leader_class = governor }
+				any_owned_leader = { leader_class = official }
 			}
 		}
 		hidden_effect = {
 			event_target:chosen_subject = {
-				get_governors = yes
+				get_officials = yes
 			}
 			country_event = { id = veru.6510 }
 		}
 	}
 
-	# Choose one of their Admirals
+	# Choose one of their Commanders
 	option = {
-		name = veru.6500.admiral
+		name = veru.6500.Commander
 		trigger = {
 			event_target:chosen_subject = {
-				any_owned_leader = { leader_class = admiral }
+				any_owned_leader = { leader_class = commander }
 			}
 		}
 		hidden_effect = {
-			event_target:chosen_subject = {
-				get_admirals = yes
-			}
+			event_target:chosen_subject = { get_commanders = yes }
 			country_event = { id = veru.6520 }
-		}
-	}
-
-	# Choose one of their Generals
-	option = {
-		name = veru.6500.general
-		trigger = {
-			event_target:chosen_subject = {
-				any_owned_leader = { leader_class = general }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = {
-				get_generals = yes
-			}
-			country_event = { id = veru.6530 }
 		}
 	}
 
@@ -3870,12 +3039,12 @@ country_event = {
 			event_target:chosen_subject = {
 				get_scientists = yes
 			}
-			country_event = { id = veru.6540 }
+			country_event = { id = veru.6530 }
 		}
 	}
 }
 
-# Choose Governor
+# Choose Official
 country_event = {
 	id = veru.6510
 	title = veru.6510.name
@@ -3894,148 +3063,156 @@ country_event = {
 		room = root.ruler
 	}
 
+	# Maybe a different class
 	option = {
-		name = veru.5000.governor_leader_1
+		name = veru.another_class
+		hidden_effect = {
+			country_event = { id = veru.6500 }
+		}
+	}
+
+	option = {
+		name = veru.5000.official_leader_1
 		trigger = {
 			event_target:chosen_subject = {
-				check_variable = { which = total_governors value >= 1 }
+				check_variable = { which = total_officials value >= 1 }
 			}
 		}
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_1 }
+			event_target:chosen_subject = { set_leader = event_target:official_leader_1 }
 			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
 
 	option = {
-		name = veru.5000.governor_leader_2
+		name = veru.5000.official_leader_2
 		trigger = {
 			event_target:chosen_subject = {
-				check_variable = { which = total_governors value >= 2 }
+				check_variable = { which = total_officials value >= 2 }
 			}
 		}
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_2 }
+			event_target:chosen_subject = { set_leader = event_target:official_leader_2 }
 			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
 
 	option = {
-		name = veru.5000.governor_leader_3
+		name = veru.5000.official_leader_3
 		trigger = {
 			event_target:chosen_subject = {
-				check_variable = { which = total_governors value >= 3 }
+				check_variable = { which = total_officials value >= 3 }
 			}
 		}
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_3 }
+			event_target:chosen_subject = { set_leader = event_target:official_leader_3 }
 			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
 
 	option = {
-		name = veru.5000.governor_leader_4
+		name = veru.5000.official_leader_4
 		trigger = {
 			event_target:chosen_subject = {
-				check_variable = { which = total_governors value >= 4 }
+				check_variable = { which = total_officials value >= 4 }
 			}
 		}
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_4 }
+			event_target:chosen_subject = { set_leader = event_target:official_leader_4 }
 			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
 
 	option = {
-		name = veru.5000.governor_leader_5
+		name = veru.5000.official_leader_5
 		trigger = {
 			event_target:chosen_subject = {
-				check_variable = { which = total_governors value >= 5 }
+				check_variable = { which = total_officials value >= 5 }
 			}
 		}
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_5 }
+			event_target:chosen_subject = { set_leader = event_target:official_leader_5 }
 			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
 
 	option = {
-		name = veru.5000.governor_leader_6
+		name = veru.5000.official_leader_6
 		trigger = {
 			event_target:chosen_subject = {
-				check_variable = { which = total_governors value >= 6 }
+				check_variable = { which = total_officials value >= 6 }
 			}
 		}
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_6 }
+			event_target:chosen_subject = { set_leader = event_target:official_leader_6 }
 			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
 
 	option = {
-		name = veru.5000.governor_leader_7
+		name = veru.5000.official_leader_7
 		trigger = {
 			event_target:chosen_subject = {
-				check_variable = { which = total_governors value >= 7 }
+				check_variable = { which = total_officials value >= 7 }
 			}
 		}
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_7 }
+			event_target:chosen_subject = { set_leader = event_target:official_leader_7 }
 			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
 
 	option = {
-		name = veru.5000.governor_leader_8
+		name = veru.5000.official_leader_8
 		trigger = {
 			event_target:chosen_subject = {
-				check_variable = { which = total_governors value >= 8 }
+				check_variable = { which = total_officials value >= 8 }
 			}
 		}
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_8 }
+			event_target:chosen_subject = { set_leader = event_target:official_leader_8 }
 			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
 
 	option = {
-		name = veru.5000.governor_leader_9
+		name = veru.5000.official_leader_9
 		trigger = {
 			event_target:chosen_subject = {
-				check_variable = { which = total_governors value >= 9 }
+				check_variable = { which = total_officials value >= 9 }
 			}
 		}
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_9 }
+			event_target:chosen_subject = { set_leader = event_target:official_leader_9 }
 			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
 
 	option = {
-		name = veru.5000.governor_leader_10
+		name = veru.5000.official_leader_10
 		trigger = {
 			event_target:chosen_subject = {
-				check_variable = { which = total_governors value >= 10 }
+				check_variable = { which = total_officials value >= 10 }
 			}
 		}
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_10 }
+			event_target:chosen_subject = { set_leader = event_target:official_leader_10 }
 			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
 }
 
-# Choose Admiral
+# Choose Commander
 country_event = {
 	id = veru.6520
 	title = veru.6520.name
@@ -4054,148 +3231,156 @@ country_event = {
 		room = root.ruler
 	}
 
+	# Maybe a different class
 	option = {
-		name = veru.5000.admiral_leader_1
+		name = veru.another_class
+		hidden_effect = {
+			country_event = { id = veru.6500 }
+		}
+	}
+
+	option = {
+		name = veru.5000.commander_leader_1
 		trigger = {
 			event_target:chosen_subject = {
-				check_variable = { which = total_admirals value >= 1 }
+				check_variable = { which = total_commanders value >= 1 }
 			}
 		}
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_1 }
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_1 }
 			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
 
 	option = {
-		name = veru.5000.admiral_leader_2
+		name = veru.5000.commander_leader_2
 		trigger = {
 			event_target:chosen_subject = {
-				check_variable = { which = total_admirals value >= 2 }
+				check_variable = { which = total_commanders value >= 2 }
 			}
 		}
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_2 }
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_2 }
 			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
 
 	option = {
-		name = veru.5000.admiral_leader_3
+		name = veru.5000.commander_leader_3
 		trigger = {
 			event_target:chosen_subject = {
-				check_variable = { which = total_admirals value >= 3 }
+				check_variable = { which = total_commanders value >= 3 }
 			}
 		}
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_3 }
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_3 }
 			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
 
 	option = {
-		name = veru.5000.admiral_leader_4
+		name = veru.5000.commander_leader_4
 		trigger = {
 			event_target:chosen_subject = {
-				check_variable = { which = total_admirals value >= 4 }
+				check_variable = { which = total_commanders value >= 4 }
 			}
 		}
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_4 }
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_4 }
 			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
 
 	option = {
-		name = veru.5000.admiral_leader_5
+		name = veru.5000.commander_leader_5
 		trigger = {
 			event_target:chosen_subject = {
-				check_variable = { which = total_admirals value >= 5 }
+				check_variable = { which = total_commanders value >= 5 }
 			}
 		}
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_5 }
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_5 }
 			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
 
 	option = {
-		name = veru.5000.admiral_leader_6
+		name = veru.5000.commander_leader_6
 		trigger = {
 			event_target:chosen_subject = {
-				check_variable = { which = total_admirals value >= 6 }
+				check_variable = { which = total_commanders value >= 6 }
 			}
 		}
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_6 }
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_6 }
 			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
 
 	option = {
-		name = veru.5000.admiral_leader_7
+		name = veru.5000.commander_leader_7
 		trigger = {
 			event_target:chosen_subject = {
-				check_variable = { which = total_admirals value >= 7 }
+				check_variable = { which = total_commanders value >= 7 }
 			}
 		}
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_7 }
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_7 }
 			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
 
 	option = {
-		name = veru.5000.admiral_leader_8
+		name = veru.5000.commander_leader_8
 		trigger = {
 			event_target:chosen_subject = {
-				check_variable = { which = total_admirals value >= 8 }
+				check_variable = { which = total_commanders value >= 8 }
 			}
 		}
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_8 }
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_8 }
 			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
 
 	option = {
-		name = veru.5000.admiral_leader_9
+		name = veru.5000.commander_leader_9
 		trigger = {
 			event_target:chosen_subject = {
-				check_variable = { which = total_admirals value >= 9 }
+				check_variable = { which = total_commanders value >= 9 }
 			}
 		}
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_9 }
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_9 }
 			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
 
 	option = {
-		name = veru.5000.admiral_leader_10
+		name = veru.5000.commander_leader_10
 		trigger = {
 			event_target:chosen_subject = {
-				check_variable = { which = total_admirals value >= 10 }
+				check_variable = { which = total_commanders value >= 10 }
 			}
 		}
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_10 }
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_10 }
 			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
 }
 
-# Choose General
+# Choose Scientist
 country_event = {
 	id = veru.6530
 	title = veru.6530.name
@@ -4214,164 +3399,12 @@ country_event = {
 		room = root.ruler
 	}
 
+	# Maybe a different class
 	option = {
-		name = veru.5000.general_leader_1
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_generals value >= 1 }
-			}
-		}
+		name = veru.another_class
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_1 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
+			country_event = { id = veru.6500 }
 		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.general_leader_2
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_generals value >= 2 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_2 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.general_leader_3
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_generals value >= 3 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_3 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.general_leader_4
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_generals value >= 4 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_4 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.general_leader_5
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_generals value >= 5 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_5 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.general_leader_6
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_generals value >= 6 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_6 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.general_leader_7
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_generals value >= 7 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_7 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.general_leader_8
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_generals value >= 8 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_8 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.general_leader_9
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_generals value >= 9 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_9 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.general_leader_10
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_generals value >= 10 }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_10 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
-		}
-		ai_chance = { factor = 1 }
-	}
-}
-
-# Choose Scientist
-country_event = {
-	id = veru.6540
-	title = veru.6540.name
-	desc = veru.6510.desc
-	location = event_target:chosen_subject
-	hide_window = no
-	is_triggered_only = yes
-
-	diplomatic = yes
-
-	picture_event_data = {
-		portrait = event_target:chosen_subject.ruler
-		planet_background = root.capital_scope
-		graphical_culture = root
-		city_level = root
-		room = root.ruler
 	}
 
 	option = {
@@ -4536,30 +3569,29 @@ country_event = {
 		room = root.ruler
 	}
 
-	# Choose one of our Governors
+	# Change Mind to their Leader
 	option = {
-		name = veru.5000.governor
+		name = veru.their_leaders
 		hidden_effect = {
-			get_governors = yes
+			country_event = { id = veru.6500 }
+		}
+	}
+
+	# Choose one of our Officials
+	option = {
+		name = veru.5000.official
+		hidden_effect = {
+			get_officials = yes
 			country_event = { id = veru.6610 }
 		}
 	}
 
-	# Choose one of our Admirals
+	# Choose one of our Commanders
 	option = {
-		name = veru.5000.admiral
+		name = veru.5000.commander
 		hidden_effect = {
-			get_admirals = yes
+			get_commanders = yes
 			country_event = { id = veru.6620 }
-		}
-	}
-
-	# Choose one of our Generals
-	option = {
-		name = veru.5000.general
-		hidden_effect = {
-			get_generals = yes
-			country_event = { id = veru.6630 }
 		}
 	}
 
@@ -4573,7 +3605,7 @@ country_event = {
 	}
 }
 
-# Choose Governor
+# Choose Official
 country_event = {
 	id = veru.6610
 	title = veru.6510.name
@@ -4592,11 +3624,19 @@ country_event = {
 		room = root.ruler
 	}
 
+	# Maybe a different class
 	option = {
-		name = veru.5000.governor_leader_1
-		trigger = { check_variable = { which = total_governors value >= 1 } }
+		name = veru.another_class
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_1 }
+			country_event = { id = veru.6600 }
+		}
+	}
+
+	option = {
+		name = veru.5000.official_leader_1
+		trigger = { check_variable = { which = total_officials value >= 1 } }
+		hidden_effect = {
+			event_target:chosen_subject = { set_leader = event_target:official_leader_1 }
 			if = {
 				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
 				get_autocratic_gov_no_penalty = yes
@@ -4607,10 +3647,10 @@ country_event = {
 	}
 
 	option = {
-		name = veru.5000.governor_leader_2
-		trigger = { check_variable = { which = total_governors value >= 2 } }
+		name = veru.5000.official_leader_2
+		trigger = { check_variable = { which = total_officials value >= 2 } }
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_2 }
+			event_target:chosen_subject = { set_leader = event_target:official_leader_2 }
 			if = {
 				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
 				get_autocratic_gov_no_penalty = yes
@@ -4621,10 +3661,10 @@ country_event = {
 	}
 
 	option = {
-		name = veru.5000.governor_leader_3
-		trigger = { check_variable = { which = total_governors value >= 3 } }
+		name = veru.5000.official_leader_3
+		trigger = { check_variable = { which = total_officials value >= 3 } }
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_3 }
+			event_target:chosen_subject = { set_leader = event_target:official_leader_3 }
 			if = {
 				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
 				get_autocratic_gov_no_penalty = yes
@@ -4635,10 +3675,10 @@ country_event = {
 	}
 
 	option = {
-		name = veru.5000.governor_leader_4
-		trigger = { check_variable = { which = total_governors value >= 4 } }
+		name = veru.5000.official_leader_4
+		trigger = { check_variable = { which = total_officials value >= 4 } }
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_4 }
+			event_target:chosen_subject = { set_leader = event_target:official_leader_4 }
 			if = {
 				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
 				get_autocratic_gov_no_penalty = yes
@@ -4649,10 +3689,10 @@ country_event = {
 	}
 
 	option = {
-		name = veru.5000.governor_leader_5
-		trigger = { check_variable = { which = total_governors value >= 5 } }
+		name = veru.5000.official_leader_5
+		trigger = { check_variable = { which = total_officials value >= 5 } }
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_5 }
+			event_target:chosen_subject = { set_leader = event_target:official_leader_5 }
 			if = {
 				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
 				get_autocratic_gov_no_penalty = yes
@@ -4663,10 +3703,10 @@ country_event = {
 	}
 
 	option = {
-		name = veru.5000.governor_leader_6
-		trigger = { check_variable = { which = total_governors value >= 6 } }
+		name = veru.5000.official_leader_6
+		trigger = { check_variable = { which = total_officials value >= 6 } }
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_6 }
+			event_target:chosen_subject = { set_leader = event_target:official_leader_6 }
 			if = {
 				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
 				get_autocratic_gov_no_penalty = yes
@@ -4677,10 +3717,10 @@ country_event = {
 	}
 
 	option = {
-		name = veru.5000.governor_leader_7
-		trigger = { check_variable = { which = total_governors value >= 7 } }
+		name = veru.5000.official_leader_7
+		trigger = { check_variable = { which = total_officials value >= 7 } }
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_7 }
+			event_target:chosen_subject = { set_leader = event_target:official_leader_7 }
 			if = {
 				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
 				get_autocratic_gov_no_penalty = yes
@@ -4691,10 +3731,10 @@ country_event = {
 	}
 
 	option = {
-		name = veru.5000.governor_leader_8
-		trigger = { check_variable = { which = total_governors value >= 8 } }
+		name = veru.5000.official_leader_8
+		trigger = { check_variable = { which = total_officials value >= 8 } }
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_8 }
+			event_target:chosen_subject = { set_leader = event_target:official_leader_8 }
 			if = {
 				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
 				get_autocratic_gov_no_penalty = yes
@@ -4705,10 +3745,10 @@ country_event = {
 	}
 
 	option = {
-		name = veru.5000.governor_leader_9
-		trigger = { check_variable = { which = total_governors value >= 9 } }
+		name = veru.5000.official_leader_9
+		trigger = { check_variable = { which = total_officials value >= 9 } }
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_9 }
+			event_target:chosen_subject = { set_leader = event_target:official_leader_9 }
 			if = {
 				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
 				get_autocratic_gov_no_penalty = yes
@@ -4719,10 +3759,10 @@ country_event = {
 	}
 
 	option = {
-		name = veru.5000.governor_leader_10
-		trigger = { check_variable = { which = total_governors value >= 10 } }
+		name = veru.5000.official_leader_10
+		trigger = { check_variable = { which = total_officials value >= 10 } }
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:governor_leader_10 }
+			event_target:chosen_subject = { set_leader = event_target:official_leader_10 }
 			if = {
 				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
 				get_autocratic_gov_no_penalty = yes
@@ -4733,7 +3773,7 @@ country_event = {
 	}
 }
 
-# Choose Admiral
+# Choose Commander
 country_event = {
 	id = veru.6620
 	title = veru.6520.name
@@ -4752,11 +3792,19 @@ country_event = {
 		room = root.ruler
 	}
 
+	# Maybe a different class
 	option = {
-		name = veru.5000.admiral_leader_1
-		trigger = { check_variable = { which = total_admirals value >= 1 } }
+		name = veru.another_class
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_1 }
+			country_event = { id = veru.6600 }
+		}
+	}
+
+	option = {
+		name = veru.5000.commander_leader_1
+		trigger = { check_variable = { which = total_commanders value >= 1 } }
+		hidden_effect = {
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_1 }
 			if = {
 				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
 				get_autocratic_gov_no_penalty = yes
@@ -4767,10 +3815,10 @@ country_event = {
 	}
 
 	option = {
-		name = veru.5000.admiral_leader_2
-		trigger = { check_variable = { which = total_admirals value >= 2 } }
+		name = veru.5000.commander_leader_2
+		trigger = { check_variable = { which = total_commanders value >= 2 } }
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_2 }
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_2 }
 			if = {
 				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
 				get_autocratic_gov_no_penalty = yes
@@ -4781,10 +3829,10 @@ country_event = {
 	}
 
 	option = {
-		name = veru.5000.admiral_leader_3
-		trigger = { check_variable = { which = total_admirals value >= 3 } }
+		name = veru.5000.commander_leader_3
+		trigger = { check_variable = { which = total_commanders value >= 3 } }
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_3 }
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_3 }
 			if = {
 				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
 				get_autocratic_gov_no_penalty = yes
@@ -4795,10 +3843,10 @@ country_event = {
 	}
 
 	option = {
-		name = veru.5000.admiral_leader_4
-		trigger = { check_variable = { which = total_admirals value >= 4 } }
+		name = veru.5000.commander_leader_4
+		trigger = { check_variable = { which = total_commanders value >= 4 } }
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_4 }
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_4 }
 			if = {
 				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
 				get_autocratic_gov_no_penalty = yes
@@ -4809,10 +3857,10 @@ country_event = {
 	}
 
 	option = {
-		name = veru.5000.admiral_leader_5
-		trigger = { check_variable = { which = total_admirals value >= 5 } }
+		name = veru.5000.commander_leader_5
+		trigger = { check_variable = { which = total_commanders value >= 5 } }
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_5 }
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_5 }
 			if = {
 				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
 				get_autocratic_gov_no_penalty = yes
@@ -4823,10 +3871,10 @@ country_event = {
 	}
 
 	option = {
-		name = veru.5000.admiral_leader_6
-		trigger = { check_variable = { which = total_admirals value >= 6 } }
+		name = veru.5000.commander_leader_6
+		trigger = { check_variable = { which = total_commanders value >= 6 } }
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_6 }
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_6 }
 			if = {
 				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
 				get_autocratic_gov_no_penalty = yes
@@ -4837,10 +3885,10 @@ country_event = {
 	}
 
 	option = {
-		name = veru.5000.admiral_leader_7
-		trigger = { check_variable = { which = total_admirals value >= 7 } }
+		name = veru.5000.commander_leader_7
+		trigger = { check_variable = { which = total_commanders value >= 7 } }
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_7 }
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_7 }
 			if = {
 				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
 				get_autocratic_gov_no_penalty = yes
@@ -4851,10 +3899,10 @@ country_event = {
 	}
 
 	option = {
-		name = veru.5000.admiral_leader_8
-		trigger = { check_variable = { which = total_admirals value >= 8 } }
+		name = veru.5000.commander_leader_8
+		trigger = { check_variable = { which = total_commanders value >= 8 } }
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_8 }
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_8 }
 			if = {
 				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
 				get_autocratic_gov_no_penalty = yes
@@ -4865,10 +3913,10 @@ country_event = {
 	}
 
 	option = {
-		name = veru.5000.admiral_leader_9
-		trigger = { check_variable = { which = total_admirals value >= 9 } }
+		name = veru.5000.commander_leader_9
+		trigger = { check_variable = { which = total_commanders value >= 9 } }
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_9 }
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_9 }
 			if = {
 				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
 				get_autocratic_gov_no_penalty = yes
@@ -4879,10 +3927,10 @@ country_event = {
 	}
 
 	option = {
-		name = veru.5000.admiral_leader_10
-		trigger = { check_variable = { which = total_admirals value >= 10 } }
+		name = veru.5000.commander_leader_10
+		trigger = { check_variable = { which = total_commanders value >= 10 } }
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:admiral_leader_10 }
+			event_target:chosen_subject = { set_leader = event_target:commander_leader_10 }
 			if = {
 				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
 				get_autocratic_gov_no_penalty = yes
@@ -4893,9 +3941,9 @@ country_event = {
 	}
 }
 
-# Choose General
+# Choose Scientist
 country_event = {
-	id = veru.6630
+	id = veru.6640
 	title = veru.6530.name
 	desc = veru.6510.desc
 	location = event_target:chosen_subject
@@ -4912,164 +3960,12 @@ country_event = {
 		room = root.ruler
 	}
 
+	# Maybe a different class
 	option = {
-		name = veru.5000.general_leader_1
-		trigger = { check_variable = { which = total_generals value >= 1 } }
+		name = veru.another_class
 		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_1 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
+			country_event = { id = veru.6600 }
 		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.general_leader_2
-		trigger = { check_variable = { which = total_generals value >= 2 } }
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_2 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.general_leader_3
-		trigger = { check_variable = { which = total_generals value >= 3 } }
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_3 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.general_leader_4
-		trigger = { check_variable = { which = total_generals value >= 4 } }
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_4 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.general_leader_5
-		trigger = { check_variable = { which = total_generals value >= 5 } }
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_5 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.general_leader_6
-		trigger = { check_variable = { which = total_generals value >= 6 } }
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_6 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.general_leader_7
-		trigger = { check_variable = { which = total_generals value >= 7 } }
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_7 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.general_leader_8
-		trigger = { check_variable = { which = total_generals value >= 8 } }
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_8 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.general_leader_9
-		trigger = { check_variable = { which = total_generals value >= 9 } }
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_9 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.general_leader_10
-		trigger = { check_variable = { which = total_generals value >= 10 } }
-		hidden_effect = {
-			event_target:chosen_subject = { set_leader = event_target:general_leader_10 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
-		}
-		ai_chance = { factor = 1 }
-	}
-}
-
-# Choose Scientist
-country_event = {
-	id = veru.6640
-	title = veru.6540.name
-	desc = veru.6510.desc
-	location = event_target:chosen_subject
-	hide_window = no
-	is_triggered_only = yes
-
-	diplomatic = yes
-
-	picture_event_data = {
-		portrait = root.ruler
-		planet_background = root.capital_scope
-		graphical_culture = root
-		city_level = root
-		room = root.ruler
 	}
 
 	option = {
@@ -5219,7 +4115,7 @@ country_event = {
 # Choose their capital
 country_event = {
 	id = veru.6700
-	title = veru.3000.name
+	title = veru.subject_leader.name
 	location = event_target:chosen_subject
 	hide_window = no
 	is_triggered_only = yes
@@ -5248,8 +4144,13 @@ country_event = {
 		}
 	}
 
-	# Back
-	option = { name = veru.1000.back }
+	# Do something else
+	option = {
+		name = veru.something_else
+		hidden_effect = {
+			country_event = { id = veru.1050 }
+		}
+	}
 
 	option = {
 		add_resource = { influence = -150 }
@@ -5574,4 +4475,7 @@ country_event = {
 		event_target:chosen_subject = { event_target:relocation_planet_20 = { set_capital = yes } }
 		ai_chance = { factor = 1 }
 	}
+
+	# Back
+	option = { name = veru.nevermind }
 }

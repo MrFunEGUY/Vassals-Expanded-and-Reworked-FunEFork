@@ -1,0 +1,88 @@
+
+preset_mercatorum = {
+	icon = "GFX_diplomacy_status_is_vassal"
+	term_data = {
+		discrete_terms = {
+			{
+				key = specialist_type
+				value = specialist_none
+			}
+			{
+				key = subject_integration
+				value = subject_can_not_be_integrated
+			}
+			{
+				key = subject_diplomacy
+				value = subject_can_do_diplomacy_but_not_vote
+			}
+			{
+				key = subject_expand
+				value = subject_can_expand_with_tithe
+			}
+			####
+			{
+				key = subject_ver_ruler
+				value = subject_ver_ruler_them
+			}
+			{
+				key = subject_ver_government
+				value = subject_ver_government_restricted
+			}
+			{
+				key = subject_ver_policy
+				value = subject_ver_policy_restricted
+			}
+			{
+				key = subject_ver_naming
+				value = subject_ver_naming_restricted
+			}
+			{
+				key = subject_ver_capital
+				value = subject_ver_capital_restricted
+			}
+			####
+			{
+				key = joins_overlord_wars
+				value = joins_overlord_wars_defensive
+			}
+			{
+				key = joins_subject_wars
+				value = joins_subject_wars_defensive
+			}
+			####
+			{
+				key = subject_ver_proxy
+				value = subject_ver_proxy_restricted
+			}
+			####
+			{
+				key = subject_holdings_limit
+				value = subject_holdings_limit_1
+			}
+			{
+				key = subject_loyalty
+				value = subject_loyalty_effects
+			}
+			{
+				key = protectorate
+				value = subject_is_not_protectorate
+			}
+			####
+			{
+				key = subject_ver_effects
+				value = subject_no_ver_effect
+			}
+		}
+	}
+
+	overlord_weight = {
+		base = 0
+	}
+	subject_weight = {
+		base = 0
+	}
+
+	potential = {
+		always = no
+	}
+}

@@ -11,9 +11,13 @@
 
 - Government Restructuring: Determines whether or not the Overlord can change the subject's government authority (Democratic, Imperial, etc.).
 
+- Domestic Affairs: Determines whether or not the Subject must align their policies with that of their Overlord. Once this is enabled, at that moment, and then every year, the subject's policies will attempt to change to match those of the Overlord.
+
 - Capital Relocation: Determines whether the Overlord can relocate the capital of their subject.
 
 - Naming Rights: Determines whether the overlord is allowed to rename their subject.
+
+- Proxy War: Determines whether the Overlord is allowed to force the Subject to partake in Proxy Wars, which is a mechanic where the Overlord can direct a subject to attack someone without participating themselves.
 
 [h1]Other Features:[/h1]
 
@@ -33,24 +37,24 @@
 
 --
 
-- There is a new Casus Belli and War Goal to go to war to steal another nation's subject if the subject is neighboring you. If you win the war, you will be prompted to install a new leader in the subject nation (as this is how it has been done historically, think Rome and Parthia).
+- There is a new Casus Belli/War Goal to go to war to steal another nation's subject if the subject is neighboring you. If you win the war, you will be prompted to install a new leader in the subject nation (as this is how it has been done historically, think Rome and Parthia).
 
 
 [hr][/hr]
 
 [h1]Notes:[/h1]
 
-- If using my [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2434790082]Civil Wars[/url] mod, place this mod after it in the load order.
+- Condiminum can only be made from Subjects who border a nation that is not your Subject.
 
-- For the best experience, you should use [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1623423360]UI Overhaul Dynamic.[/url] It makes the negotiation screen larger, which is very nice with the newly added terms. It is used for the screenshots.
+- You can only have 1 of each type of Specialized Subject (Prospectorium/Scholarium/Bulwark)
 
-- Regular Empires can choose from any of the available Subject Types.
+- You may only have one Blood Tributary.
 
-- Megacorp Empires can choose from any of the available megacorp Subject Types.
+- If using my [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2434790082]Civil Wars[/url] mod, place this mod after/below it in the load order.
 
-- You may only have one Blood Tributary/Debtor, and need the appropriate Civic for each. Indentured Servants for Debtors, and either Slaver Guilds or Barbaric Despoilers for the Blood Tributary.
+- For the best experience, I recommend [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1623423360]UI Overhaul Dynamic.[/url] If you use it, you must place it after this mod in the load order.
 
-- If  you have more than 10 subjects and want to change a subject's type, you may have to refresh the edict a few times to get it to appear on the list.
+- If you have more than 10 subjects and want to manage one, you may have to refresh the edict a few times to get the correct subject to appear on the list.
 
 
 [hr][/hr]
@@ -61,7 +65,11 @@
 
 - Spanish Localisation by [url=https://steamcommunity.com/profiles/76561198199986345]Darh[/url]. Thank you!
 
-- Russian Localisation by [url=https://steamcommunity.com/profiles/99006664646]Anti4iteR[/url]. Thank you!
+- Chinese Localisation by [url=https://steamcommunity.com/id/MyresMkG]MyresMkG[/url]. Thank you!
+
+- Russian Localisation by [url=https://steamcommunity.com/id/99006664646]Anti4iteR[/url]. Thank you!
+
+- Decision Icons: [url=https://steamcommunity.com/id/76561198858429698]FirePrince[/url].
 
 - Thumbnail Image: [i]The submission of Torrhen Stark, the King Who Knelt[/i] by Chase Stone
 
@@ -86,7 +94,9 @@
 
 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2732567565]- No More Exclaves[/url]
 
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2801992671]- Occupied Resources[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2949463581]- Ethics and Civics Alternative - FunEFork[/url]
+
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2956036384]- Galactic Bank - FunEFork[/url]
 
 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2177145527]- Intervene: Help Friendly Nations - FunEFork[/url]
 
