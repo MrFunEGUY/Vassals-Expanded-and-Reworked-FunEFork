@@ -149,10 +149,18 @@ l_russian:
  veru.1050.exile: "Мы предоставим вам территорию."
  veru.1050.tech.tooltip: "§Y[event_target:chosen_subject.GetName]§! будет предоставлен доступ ко всем технологиям, которые мы исследовали до сих пор."
  veru.1050.name_change: "Мы меняем название вашей нации."
- veru.1050.name_change.tooltip: "§Y[event_target:chosen_subject.GetName]§! будет переименован в §Y[root.capital_scope.solar_system.GetName]§!."
+ veru.3000.empire_name_change.tooltip: "§Y[event_target:chosen_subject.GetName]§! будет переименован в §Y[root.capital_scope.solar_system.GetName]§!."
 
  # Change Subject Type
  veru.subject_leader.name: "[event_target:chosen_subject.ruler.GetTitle] §H[event_target:chosen_subject.ruler.GetName]§! of the §Y[event_target:chosen_subject.GetName]§!"
+
+ # Change Subject Names
+ veru.3000.loyal.desc: "What aspect of our government would you like renamed?"
+ veru.3000.disloyal.desc: "What is being renamed?"
+
+ veru.3000.empire: "Your §YEmpire§! is being renamed."
+ veru.3000.male_ruler_title: "The §Ytitle§! of your §Ymale§! rulers is being changed."
+ veru.3000.female_ruler_title: "The §Ytitle§! of your §Yfemale§! rulers is being changed."
 
  # Change Government Type
  veru.4000.loyal.desc: "Как бы вы хотели, чтобы §Y[event_target:chosen_subject.GetName]§! управлялось?"
@@ -228,10 +236,10 @@ l_russian:
 
  veru_l.2150.a: "Ваш статус не будет изменен. Это означает войну."
 
- # Autonomous State
+ # Tributary
  veru_l.2200.loyal.desc: "§Y[event_target:demanding_subject.GetName]§! долгое время был верноподданным [root.GetName]. В награду за эту верную службу, [event_target:demanding_subject.GetName] официально запрашивает изменение статуса на §YАвтономное государство§!."
  veru_l.2200.disloyal.desc: "§Y[event_target:demanding_subject.GetName]§! долгое время трудился в качестве субъекта [root.GetName]. Мы считаем, что пришло время изменить эти отношения, и просим изменить статус на §YАвтономное государство§!."
- veru_l.2200.b: "Very well, you will be an §YAutonomous State§!."
+ veru_l.2200.b: "Very well, you will be a §YTributary§!."
 
  veru_l.2250.loyal.desc: "The §Y[event_target:demanding_subject.GetName]§! долгое время был верноподданным [root.GetName]. В награду за эту верную службу, [event_target:demanding_subject.GetName] официально требует изменения статуса на §YАвтономное государство§!. Если вы откажетесь, у нас не будет другого выбора, кроме как силой провозгласить нашу независимость."
  veru_l.2250.disloyal.desc: "The §Y[event_target:demanding_subject.GetName]§! долгое время трудился в качестве субъекта [root.GetName]. Мы считаем, что пришло время изменить эти отношения, и требуем изменения статуса на §YАвтономное государство§!. Если вы откажетесь, у нас не будет другого выбора, кроме как силой провозгласить нашу независимость."
@@ -419,7 +427,6 @@ l_russian:
  subject_ver_neocolony_effect: "$preset_ver_neocolony$"
  
  subject_ver_blood_effect: "$subject_ver_blood$"
- subject_auto_state_effect: "$preset_auto_state$"
 
  subject_ver_effects: "Специальные эффекты"
  subject_ver_hidden_resources: "Специальные ресурсы"
@@ -474,7 +481,7 @@ l_russian:
  protectorate_extra_subject:1 "$MODIFIER$\n"
 
  # Other
- veru_autonomous_state.tooltip: "§Y[event_target:demanding_subject.GetName]§! станет §YАвтономным государством§! внутри нашей державы. Они будут платить нам §Y15%§! всех их ресурсов§!. Они будут иметь полный контроль над своими внутренними и внешними делами. Они будут нести ответственность за свою собственную оборону. Их содержание будет стоить нам 0.2 £influence£ §HВлияние§! каждый месяц. §RМы никогда не сможем их интегрировать.§!"
+ veru_become_tributary.tooltip: "§Y[event_target:demanding_subject.GetName]§! станет §YАвтономным государством§! внутри нашей державы. Они будут платить нам §Y15%§! всех их ресурсов§!. Они будут иметь полный контроль над своими внутренними и внешними делами. Они будут нести ответственность за свою собственную оборону. Их содержание будет стоить нам 0.2 £influence£ §HВлияние§! каждый месяц. §RМы никогда не сможем их интегрировать.§!"
 
  # Preset blocked terms
  not_allowed_for_ver_foederatus: "$TRIGGER_FAIL$Не допускается для §YФедерата§!."
@@ -494,7 +501,6 @@ l_russian:
  not_allowed_for_ver_parallel: "$TRIGGER_FAIL$Не допускается для §Y$preset_ver_parallel$s§!."
 
  not_allowed_for_megacorp: "$TRIGGER_FAIL$Не допускается для §YКорпораций§!."
- not_allowed_for_auto_state: "$TRIGGER_FAIL$Не допускается для §YАвтономных государств§!."
 
  not_allowed_for_gestalt: "$TRIGGER_FAIL$Не допускается для §Y$ethic_gestalt_consciousness$§!."
 

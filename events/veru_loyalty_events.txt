@@ -8,10 +8,7 @@ country_event = {
 
 	trigger = {
 		is_subject = yes
-		NOR = {
-			any_agreement = { agreement_preset = preset_auto_state }
-			years_passed < 20
-		}
+		NOT = { years_passed < 20 }
 	}
 
 	immediate = {
@@ -278,7 +275,7 @@ country_event = {
 			random_list = {
 				# Release - Subject Asks - may cause war on denial
 				25 = { country_event = { id = veru_l.2100 } }
-				# Autonomous State - Subject Asks - may cause war on denial
+				# Tributary - Subject Asks - may cause war on denial
 				75 = { country_event = { id = veru_l.2200 } }
 			}
 		}
@@ -306,7 +303,7 @@ country_event = {
 						10 = { country_event = { id = veru_l.2150 } }
 					}
 				}
-				# Autonomous State
+				# Tributary
 				40 = {
 					random_list = {
 						# Subject Asks - may cause war on denial
@@ -460,7 +457,7 @@ country_event = {
 	}
 }
 
-# Request to become an Autonomous State
+# Request to become a Tributary
 country_event = {
 	id = veru_l.2200
 	title = veru_l.2100.name
@@ -511,14 +508,14 @@ country_event = {
 		ai_chance = { factor = 3 }
 	}
 
-	# Accept offer to become Autonomous State
+	# Accept offer to become a Tributary
 	option = {
 		name = veru_l.2200.b
-		custom_tooltip = veru_autonomous_state.tooltip
+		custom_tooltip = veru_become_tributary.tooltip
 		event_target:demanding_subject = {
 			set_subject_of = {
 				who = root
-				preset = preset_auto_state
+				preset = preset_tributary
 			}
 			add_opinion_modifier = {
 				who = root
@@ -529,7 +526,7 @@ country_event = {
 	}
 }
 
-# Demand to become an Autonomous State
+# Demand to become a Tributary
 country_event = {
 	id = veru_l.2250
 	title = veru_l.2100.name
@@ -575,14 +572,14 @@ country_event = {
 		ai_chance = { factor = 3 }
 	}
 
-	# Accept offer to become Autonomous State
+	# Accept offer to become a Tributary
 	option = {
 		name = veru_l.2200.b
-		custom_tooltip = veru_autonomous_state.tooltip
+		custom_tooltip = veru_become_tributary.tooltip
 		event_target:demanding_subject = {
 			set_subject_of = {
 				who = root
-				preset = preset_auto_state
+				preset = preset_tributary
 			}
 			add_opinion_modifier = {
 				who = root

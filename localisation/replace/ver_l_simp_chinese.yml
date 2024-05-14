@@ -150,10 +150,18 @@ l_simp_chinese:
  veru.1050.exile: "我们会给你们领土。"
  veru.1050.tech.tooltip: "§Y[event_target:chosen_subject.GetName]§!将获得我们迄今为止研究的所有技术。"
  veru.1050.name_change: "我们要改变你们国家的名称。"
- veru.1050.name_change.tooltip: "§Y[event_target:chosen_subject.GetName]§! 将被重命名为 §Y[root.capital_scope.solar_system.GetName]§!."
+ veru.3000.empire_name_change.tooltip: "§Y[event_target:chosen_subject.GetName]§! 将被重命名为 §Y[root.capital_scope.solar_system.GetName]§!."
 
  # Change subject Type
  veru.subject_leader.name: "§Y[event_target:chosen_subject.GetName]§! 的 [event_target:chosen_subject.ruler.GetTitle] §H[event_target:chosen_subject.ruler.GetName]§!"
+
+ # Change Subject Names
+ veru.3000.loyal.desc: "What aspect of our government would you like renamed?"
+ veru.3000.disloyal.desc: "What is being renamed?"
+
+ veru.3000.empire: "Your §YEmpire§! is being renamed."
+ veru.3000.male_ruler_title: "The §Ytitle§! of your §Ymale§! rulers is being changed."
+ veru.3000.female_ruler_title: "The §Ytitle§! of your §Yfemale§! rulers is being changed."
 
  # Change Government Type
  veru.4000.loyal.desc: "您想要§Y[event_target:chosen_subject.GetName]§!采用什么权力制度？"
@@ -229,7 +237,7 @@ l_simp_chinese:
 
  veru_l.2150.a: "你们的地位不会更改，这意味着战争。"
 
- # Autonomous State
+ # Tributary
  veru_l.2200.loyal.desc: "The §Y[event_target:demanding_subject.GetName]§!一直以来都是[root.GetName]忠诚的附庸。作为对忠诚效劳的回报，[event_target:demanding_subject.GetName]要正式请求将地位更改为§Y自治区§!。"
  veru_l.2200.disloyal.desc: "The §Y[event_target:demanding_subject.GetName]§!已长期作为[root.GetName]的附庸而辛劳。我们认为，现在是改变这种关系的时候了，并要求将地位更改为§Y自治区§!。"
  veru_l.2200.b: "很好，你们将变为§Y自治区§!。"
@@ -420,7 +428,6 @@ l_simp_chinese:
  subject_ver_neocolony_effect: "$preset_ver_neocolony$"
  
  subject_ver_blood_effect: "$subject_ver_blood$"
- subject_auto_state_effect: "$preset_auto_state$"
 
  subject_ver_effects: "特殊效果"
  subject_ver_hidden_resources: "特殊资源"
@@ -475,7 +482,7 @@ l_simp_chinese:
  protectorate_extra_subject:1 "$MODIFIER$\n"
 
  # Other
- veru_autonomous_state.tooltip: "§Y[event_target:demanding_subject.GetName]§!将成为我们国家之内的一个§Y自治区§!，他们会向我们支付他们所有资源的§Y15%§!。他们将完全控制其国内和外交事务，也将负责自己的国防。这将每月消耗我们0.2 £influence£ §H影响力§!。§R我们将永远无法整合它们。§!"
+ veru_become_tributary.tooltip: "§Y[event_target:demanding_subject.GetName]§!将成为我们国家之内的一个§Y自治区§!，他们会向我们支付他们所有资源的§Y15%§!。他们将完全控制其国内和外交事务，也将负责自己的国防。这将每月消耗我们0.2 £influence£ §H影响力§!。§R我们将永远无法整合它们。§!"
 
  # Preset blocked terms
  not_allowed_for_ver_foederatus: "$TRIGGER_FAIL$对§YFoederati§!不允许。"
@@ -495,7 +502,6 @@ l_simp_chinese:
  not_allowed_for_ver_parallel: "$TRIGGER_FAIL$对§Y$preset_ver_parallel$s§!不允许。"
 
  not_allowed_for_megacorp: "$TRIGGER_FAIL$对§YMegacorps§!不允许。"
- not_allowed_for_auto_state: "$TRIGGER_FAIL$对§YAutonomous States§!不允许。"
 
  not_allowed_for_gestalt: "$TRIGGER_FAIL$对§Y$ethic_gestalt_consciousness$§!不允许。"
 

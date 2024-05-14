@@ -68,3 +68,61 @@ veru_cancel_tribute = {
 		weight = 0
 	}
 }
+
+veru_unlimited_special_subjects = {
+
+	icon = "GFX_edict_type_policy"
+	length = 1
+
+	resources = {
+		category = edicts
+		cost = {
+			influence = 0
+		}
+	}
+
+	effect = {
+		hidden_effect = { set_global_flag = unlimited_special_subjects }
+	}
+
+	potential = {
+		NOT = { has_global_flag = unlimited_special_subjects }
+	}
+
+	allow = {
+		always = yes
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+veru_unlimited_special_subjects_2 = {
+
+	icon = "GFX_edict_type_policy"
+	length = 1
+
+	resources = {
+		category = edicts
+		cost = {
+			influence = 0
+		}
+	}
+
+	effect = {
+		hidden_effect = { remove_global_flag = unlimited_special_subjects }
+	}
+
+	potential = {
+		has_global_flag = unlimited_special_subjects
+	}
+
+	allow = {
+		always = yes
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}

@@ -730,22 +730,22 @@ country_event = {
 			}
 
 		# Roboticist Output
-			if = {
-				limit = {
-					overlord = { has_policy_flag = roboticist_output_build_robots }
-					NOT = { has_policy_flag = roboticist_output_build_robots }
-					can_set_policy = { policy = roboticist_output option = build_robots }
-				}
-				set_policy = { policy = roboticist_output option = build_robots cooldown = yes }
-			}
-			else_if = {
-				limit = {
-					overlord = { has_policy_flag = roboticist_output_build_cyborgs }
-					NOT = { has_policy_flag = roboticist_output_build_cyborgs }
-					can_set_policy = { policy = roboticist_output option = build_cyborgs }
-				}
-				set_policy = { policy = roboticist_output option = build_cyborgs cooldown = yes }
-			}
+			# if = {
+			# 	limit = {
+			# 		overlord = { has_policy_flag = roboticist_output_build_robots }
+			# 		NOT = { has_policy_flag = roboticist_output_build_robots }
+			# 		can_set_policy = { policy = roboticist_output option = build_robots }
+			# 	}
+			# 	set_policy = { policy = roboticist_output option = build_robots cooldown = yes }
+			# }
+			# else_if = {
+			# 	limit = {
+			# 		overlord = { has_policy_flag = roboticist_output_build_cyborgs }
+			# 		NOT = { has_policy_flag = roboticist_output_build_cyborgs }
+			# 		can_set_policy = { policy = roboticist_output option = build_cyborgs }
+			# 	}
+			# 	set_policy = { policy = roboticist_output option = build_cyborgs cooldown = yes }
+			# }
 	}
 }
 
@@ -763,7 +763,6 @@ country_event = {
 					limit = {
 						exists = space_owner
 						space_owner = {
-							is_auto_state = no
 							exists = overlord
 							overlord = {
 								NOT = { is_same_value = root }
@@ -777,13 +776,11 @@ country_event = {
 				}
 			}
 			any_subject = {
-				is_auto_state = no
 				any_system_within_border = {
 					closest_system = {
 						limit = {
 							exists = space_owner
 							space_owner = {
-								is_auto_state = no
 								exists = overlord
 								overlord = {
 									NOT = { is_same_value = root }
@@ -808,7 +805,6 @@ country_event = {
 						limit = {
 							exists = space_owner
 							space_owner = {
-								is_auto_state = no
 								exists = overlord
 								overlord = {
 									NOT = { is_same_value = root }
@@ -827,7 +823,6 @@ country_event = {
 					limit = {
 						exists = space_owner
 						space_owner = {
-							is_auto_state = no
 							exists = overlord
 							overlord = {
 								NOT = { is_same_value = root }
@@ -846,13 +841,11 @@ country_event = {
 		if = {
 			limit = {
 				any_subject = {
-					is_auto_state = no
 					any_system_within_border = {
 						closest_system = {
 							limit = {
 								exists = space_owner
 								space_owner = {
-									is_auto_state = no
 									exists = overlord
 									overlord = {
 										NOT = { is_same_value = root }
@@ -868,13 +861,11 @@ country_event = {
 			}
 			every_subject = {
 				limit = {
-					is_auto_state = no
 					any_system_within_border = {
 						closest_system = {
 							limit = {
 								exists = space_owner
 								space_owner = {
-									is_auto_state = no
 									exists = overlord
 									overlord = {
 										NOT = { is_same_value = root }
@@ -892,7 +883,6 @@ country_event = {
 						limit = {
 							exists = space_owner
 							space_owner = {
-								is_auto_state = no
 								exists = overlord
 								overlord = {
 									NOT = { is_same_value = root }
@@ -921,7 +911,6 @@ country_event = {
 			has_country_flag = valid_buffer_for_@root
 			NOT = {
 				any_subject = {
-					is_auto_state = no
 					any_system_within_border = {
 						closest_system = {
 							limit = {
@@ -946,7 +935,6 @@ country_event = {
 				has_country_flag = valid_buffer_for_@root
 				NOT = {
 					any_subject = {
-						is_auto_state = no
 						any_system_within_border = {
 							closest_system = {
 								limit = {

@@ -156,11 +156,21 @@ l_spanish:
  veru.1050.tech: "We're giving you access to all of our technology."
  veru.1050.exile: "We'll grant you territory."
  veru.1050.tech.tooltip: "The §Y[event_target:chosen_subject.GetName]§! will be given access to all of the technologies that we have researched thus far."
- veru.1050.name_change: "We're changing the name of your nation."
- veru.1050.name_change.tooltip: "The §Y[event_target:chosen_subject.GetName]§! will be renamed to the §Y[root.capital_scope.solar_system.GetName]§!."
+ veru.1050.name_change: "We're renaming an aspect of your government."
+ veru.3000.empire_name_change.tooltip: "The §Y[event_target:chosen_subject.GetName]§! will be renamed to the §Y[root.capital_scope.solar_system.GetName]§!."
+ veru.3000.male_ruler_title_name_change.tooltip: "The §Y[event_target:chosen_subject.GetName]§!'s male rulers will be styled as §Y[root.capital_scope.solar_system.GetName]§!."
+ veru.3000.female_ruler_title_name_change.tooltip: "The §Y[event_target:chosen_subject.GetName]§!'s female rulers will be styled as §Y[root.capital_scope.solar_system.GetName]§!."
 
  # Change Subject Type
  veru.subject_leader.name: "[event_target:chosen_subject.ruler.GetTitle] §H[event_target:chosen_subject.ruler.GetName]§! of the §Y[event_target:chosen_subject.GetName]§!"
+
+ # Change Subject Names
+ veru.3000.loyal.desc: "What aspect of our government would you like renamed?"
+ veru.3000.disloyal.desc: "What is being renamed?"
+
+ veru.3000.empire: "Your §YEmpire§! is being renamed."
+ veru.3000.male_ruler_title: "The §Ytitle§! of your §Ymale§! rulers is being changed."
+ veru.3000.female_ruler_title: "The §Ytitle§! of your §Yfemale§! rulers is being changed."
 
  # Change Government Type
  veru.4000.loyal.desc: "How would you like the §Y[event_target:chosen_subject.GetName]§! to be governed?"
@@ -236,13 +246,13 @@ l_spanish:
 
  veru_l.2150.a: "Your status will not be changed. This means war."
 
- # Autonomous State
- veru_l.2200.loyal.desc: "The §Y[event_target:demanding_subject.GetName]§! has long been a loyal subject of the [root.GetName]. As a reward for this loyal service, the [event_target:demanding_subject.GetName] is formally requesting a change in status to that of an §YAutonomous State§!."
- veru_l.2200.disloyal.desc: "The §Y[event_target:demanding_subject.GetName]§! has long toiled away as a subject of the [root.GetName]. We believe that the time has come for this relationship to change, and request a change in status to that of an §YAutonomous State§!."
- veru_l.2200.b: "Very well, you will be an §YAutonomous State§!."
+ # Tributary
+ veru_l.2200.loyal.desc: "The §Y[event_target:demanding_subject.GetName]§! has long been a loyal subject of the [root.GetName]. As a reward for this loyal service, the [event_target:demanding_subject.GetName] is formally requesting a change in status to that of a §YTributary§!."
+ veru_l.2200.disloyal.desc: "The §Y[event_target:demanding_subject.GetName]§! has long toiled away as a subject of the [root.GetName]. We believe that the time has come for this relationship to change, and request a change in status to that of a §YTributary§!."
+ veru_l.2200.b: "Very well, you will be a §YTributary§!."
 
- veru_l.2250.loyal.desc: "The §Y[event_target:demanding_subject.GetName]§! has long been a loyal subject of the [root.GetName]. As a reward for this loyal service, the [event_target:demanding_subject.GetName] is formally demanding a change in status to that of an §YAutonomous State§!. Should you decline, we will have no choice but to forcefully declare our independence."
- veru_l.2250.disloyal.desc: "The §Y[event_target:demanding_subject.GetName]§! has long toiled away as a subject of the [root.GetName]. We believe that the time has come for this relationship to change, and demand a change in status to that of an §YAutonomous State§!. Should you decline, we will have no choice but to forcefully declare our independence."
+ veru_l.2250.loyal.desc: "The §Y[event_target:demanding_subject.GetName]§! has long been a loyal subject of the [root.GetName]. As a reward for this loyal service, the [event_target:demanding_subject.GetName] is formally demanding a change in status to that of a §YTributary§!. Should you decline, we will have no choice but to forcefully declare our independence."
+ veru_l.2250.disloyal.desc: "The §Y[event_target:demanding_subject.GetName]§! has long toiled away as a subject of the [root.GetName]. We believe that the time has come for this relationship to change, and demand a change in status to that of a §YTributary§!. Should you decline, we will have no choice but to forcefully declare our independence."
 
  # Lifted straight from Imperator: Rome
  veru_l.3015.name: "[tributary_that_stopped.GetAdj] Tribute Ceases"
@@ -271,6 +281,8 @@ l_spanish:
  overlord_intervention_disloyal_planet_leader_desc: "The populace of this planet is upset about their leader being chosen by a foreign power."
 
  influencefail_text_veru: "§RRequires§! §Y100§! £influence£ §HInfluence§!"
+ influencefail_text_veru_15: "§RRequires§! §Y15§! £influence£ §HInfluence§!"
+ influencefail_text_veru_25: "§RRequires§! §Y25§! £influence£ §HInfluence§!"
  influencefail_text_veru_50: "§RRequires§! §Y50§! £influence£ §HInfluence§!"
  influencefail_text_veru_150: "§RRequires§! §Y150§! £influence£ §HInfluence§!"
  influencefail_text_veru_200: "§RRequires§! §Y200§! £influence£ §HInfluence§!"
@@ -427,7 +439,6 @@ l_spanish:
  subject_ver_neocolony_effect: "$preset_ver_neocolony$"
  
  subject_ver_blood_effect: "$subject_ver_blood$"
- subject_auto_state_effect: "$preset_auto_state$"
 
  subject_ver_effects: "Special Effects"
  subject_ver_hidden_resources: "Special Resources"
@@ -482,7 +493,7 @@ l_spanish:
  # protectorate_extra_subject:1 "$MODIFIER$\n"
 
  # Other
- veru_autonomous_state.tooltip: "The §Y[event_target:demanding_subject.GetName]§! will become an §YAutonomous State§! within our nation. They will pay us §Y15%§! of all their resources§!. They will have complete control over their domestic and foreign affairs. They will be responsible for their own defense. They will cost us §R0.2§! £influence£ §HInfluence§! per month. §RWe will never be able to integrate them.§!"
+ veru_become_tributary.tooltip: "The §Y[event_target:demanding_subject.GetName]§! will become a §YTributary§! within our nation. They will pay us §Y15%§! of all their resources§!. They will have complete control over their domestic and foreign affairs. They will be responsible for their own defense. They will cost us §R0.2§! £influence£ §HInfluence§! per month. §RWe will never be able to integrate them.§!"
 
  # Preset blocked terms
  not_allowed_for_ver_foederatus: "$TRIGGER_FAIL$Not allowed for §YFoederati§!."
@@ -502,7 +513,6 @@ l_spanish:
  not_allowed_for_ver_parallel: "$TRIGGER_FAIL$Not allowed for §Y$preset_ver_parallel$s§!."
 
  not_allowed_for_megacorp: "$TRIGGER_FAIL$Not allowed for §YMegacorps§!."
- not_allowed_for_auto_state: "$TRIGGER_FAIL$Not allowed for §YAutonomous States§!."
 
  not_allowed_for_gestalt: "$TRIGGER_FAIL$Not allowed for a §Y$ethic_gestalt_consciousness$§!."
 

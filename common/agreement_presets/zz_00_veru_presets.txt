@@ -123,7 +123,6 @@ preset_vassal = {
 
 	potential = {
 		is_tributary = no
-		is_auto_state = no
 		from = {
 			NOR = {
 				is_megacorp = yes
@@ -242,7 +241,6 @@ preset_subsidiary = {
 
 	potential = {
 		is_tributary = no
-		is_auto_state = no
 		from = { is_megacorp = yes }
 		tech_unlocked_ratio = {
 			who = from
@@ -349,7 +347,6 @@ preset_tributary = {
 	}
 
 	potential = {
-		is_auto_state = no
 		from = {
 			is_megacorp = no
 			NOT = { is_country_type = awakened_fallen_empire }
@@ -487,8 +484,8 @@ preset_bulwark = {
 	potential = {
 		has_overlord_dlc = yes
 		is_tributary = no
-		is_auto_state = no
 		OR = {
+			has_global_flag = unlimited_special_subjects
 			from = { NOT = { any_subject = { is_bulwark = yes } } }
 			AND = {
 				from = {
@@ -498,7 +495,7 @@ preset_bulwark = {
 					}
 				}
 				is_bulwark = yes
-			}	
+			}
 		}
 		NOR = {
 			has_civic = civic_inwards_perfection
@@ -624,8 +621,8 @@ preset_scholarium = {
 	potential = {
 		has_overlord_dlc = yes
 		is_tributary = no
-		is_auto_state = no
 		OR = {
+			has_global_flag = unlimited_special_subjects
 			from = { NOT = { any_subject = { is_scholarium = yes } } }
 			AND = {
 				from = {
@@ -767,8 +764,8 @@ preset_prospectorium = {
 	potential = {
 		has_overlord_dlc = yes
 		is_tributary = no
-		is_auto_state = no
 		OR = {
+			has_global_flag = unlimited_special_subjects
 			from = { NOT = { any_subject = { is_prospectorium = yes } } }
 			AND = {
 				from = {
@@ -864,7 +861,6 @@ preset_protectorate = {
 
 	potential = {
 		is_tributary = no
-		is_auto_state = no
 		from = {
 			NOT = { has_origin = origin_imperial_vassal_overlord }
 			is_country_type_with_subjects = yes
@@ -1052,11 +1048,6 @@ preset_dominion = {
 				key = protectorate
 				value = subject_is_not_protectorate
 			}
-			####
-			{
-				key = subject_ver_effects
-				value = subject_auto_state_effect
-			}
 		}
 		resource_terms = {
 			{
@@ -1136,11 +1127,6 @@ preset_satellite = {
 			{
 				key = protectorate
 				value = subject_is_not_protectorate
-			}
-			####
-			{
-				key = subject_ver_effects
-				value = subject_auto_state_effect
 			}
 		}
 		resource_terms = {
@@ -1222,11 +1208,6 @@ preset_signatory = {
 				key = protectorate
 				value = subject_is_not_protectorate
 			}
-			####
-			{
-				key = subject_ver_effects
-				value = subject_auto_state_effect
-			}
 		}
 	}
 	potential = {
@@ -1300,11 +1281,6 @@ preset_thrall = {
 			{
 				key = protectorate
 				value = subject_is_not_protectorate
-			}
-			####
-			{
-				key = subject_ver_effects
-				value = subject_auto_state_effect
 			}
 		}
 		resource_terms = {
@@ -1389,11 +1365,6 @@ preset_satrapy = {
 			{
 				key = protectorate
 				value = subject_is_not_protectorate
-			}
-			####
-			{
-				key = subject_ver_effects
-				value = subject_auto_state_effect
 			}
 		}
 		resource_terms = {
@@ -1481,11 +1452,6 @@ preset_relic_satrapy = {
 			{
 				key = protectorate
 				value = subject_is_not_protectorate
-			}
-			####
-			{
-				key = subject_ver_effects
-				value = subject_auto_state_effect
 			}
 		}
 		resource_terms = {

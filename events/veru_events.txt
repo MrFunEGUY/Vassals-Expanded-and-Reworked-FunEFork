@@ -242,7 +242,6 @@ country_event = {
 	# Alter Subject Name
 	option = {
 		name = veru.1050.name_change
-		custom_tooltip = veru.1050.name_change.tooltip
 		allow = {
 			custom_tooltip = {
 				fail_text = influencefail_text_veru
@@ -253,12 +252,8 @@ country_event = {
 				event_target:chosen_subject = { has_naming_alllowed = yes }
 			}
 		}
-		add_resource = { influence = -25 }
 		hidden_effect = {
-			event_target:chosen_subject = {
-				set_name = prev.capital_scope.solar_system
-			}
-			get_intervention_effect = yes
+			country_event = { id = veru.3000 }
 		}
 	}
 
@@ -281,11 +276,110 @@ country_event = {
 	}
 }
 
-### 3000 open
+############
+# Change Subject Names
+country_event = {
+	id = veru.3000
+	title = veru.subject_leader.name
+	location = event_target:chosen_subject
+	hide_window = no
+	is_triggered_only = yes
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:chosen_subject.ruler
+		planet_background = root.capital_scope
+		graphical_culture = root
+		city_level = root
+		room = root.ruler
+	}
+
+	desc = {
+		text = veru.3000.loyal.desc
+		trigger = {
+			event_target:chosen_subject = { is_loyal_to = prev }
+		}
+	}
+
+	desc = {
+		text = veru.3000.disloyal.desc
+		trigger = {
+			event_target:chosen_subject = { is_disloyal_to = prev }
+		}
+	}
+
+	# Do something else
+	option = {
+		name = veru.something_else
+		hidden_effect = {
+			country_event = { id = veru.1050 }
+		}
+	}
+
+	# Change Empire Name
+	option = {
+		name = veru.3000.empire
+		custom_tooltip = veru.3000.empire_name_change.tooltip
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_25
+				has_resource = { type = influence amount >= 25 }
+			}
+		}
+		add_resource = { influence = -25 }
+		hidden_effect = {
+			event_target:chosen_subject = {
+				set_name = root.capital_scope.solar_system
+			}
+			get_intervention_effect = yes
+		}
+	}
+	
+	# Change Male Ruler Title
+	option = {
+		name = veru.3000.male_ruler_title
+		custom_tooltip = veru.3000.male_ruler_title_name_change.tooltip
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_15
+				has_resource = { type = influence amount >= 15 }
+			}
+		}
+		add_resource = { influence = -15 }
+		hidden_effect = {
+			event_target:chosen_subject = {
+				set_male_ruler_title = root.capital_scope.solar_system
+			}
+			get_intervention_effect = yes
+		}
+	}
+
+	# Change Female Ruler Title
+	option = {
+		name = veru.3000.female_ruler_title
+		custom_tooltip = veru.3000.female_ruler_title_name_change.tooltip
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_15
+				has_resource = { type = influence amount >= 15 }
+			}
+		}
+		add_resource = { influence = -15 }
+		hidden_effect = {
+			event_target:chosen_subject = {
+				set_female_ruler_title = root.capital_scope.solar_system
+			}
+			get_intervention_effect = yes
+		}
+	}
+
+	# Back
+	option = { name = veru.remain }
+}
 
 ############
 # Government
-
 
 # Change Government Structure
 country_event = {

@@ -146,13 +146,6 @@ has_proxy_allowed = {
 
 ######
 
-is_auto_state = {
-	is_subject = yes
-	any_agreement = { agreement_preset = preset_auto_state }
-}
-
-######
-
 ## Faction Scope
 ruler_has_faction_ethic = {
 	has_ethic = ethic_$ETHIC$

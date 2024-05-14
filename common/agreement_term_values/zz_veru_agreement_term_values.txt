@@ -116,10 +116,7 @@ resource_subsidies_ver_energy = {
 
 		modifier = {
 			set = 0.15
-			OR = {
-				agreement_preset = preset_auto_state
-				agreement_preset = preset_ver_neocolony
-			}
+			agreement_preset = preset_ver_neocolony
 		}
 
 		modifier = {
@@ -168,11 +165,6 @@ resource_subsidies_ver_energy = {
 		modifier = {
 			set = 0.2
 			agreement_preset = preset_ver_devolved
-		}
-
-		modifier = {
-			set = 0.15
-			agreement_preset = preset_auto_state
 		}
 
 		modifier = {
@@ -228,10 +220,6 @@ resource_subsidies_ver_volatile_motes = {
 			}
 		}
 
-		modifier = {
-			set = 0.15
-			agreement_preset = preset_auto_state
-		}
 	}
 	resource_max = {
 		base = @subsidy_maximum
@@ -264,10 +252,6 @@ resource_subsidies_ver_volatile_motes = {
 			agreement_preset = preset_ver_devolved
 		}
 
-		modifier = {
-			set = 0.15
-			agreement_preset = preset_auto_state
-		}
 	}
 }
 
@@ -300,10 +284,6 @@ resource_subsidies_ver_minerals = {
 			}
 		}
 
-		modifier = {
-			set = 0.15
-			agreement_preset = preset_auto_state
-		}
 	}
 
 	resource_max = {
@@ -350,10 +330,6 @@ resource_subsidies_ver_minerals = {
 			agreement_preset = preset_ver_devolved
 		}
 
-		modifier = {
-			set = 0.15
-			agreement_preset = preset_auto_state
-		}
 	}
 	potential = { NOT = { agreement_preset = preset_mercatorum } }
 }
@@ -398,10 +374,6 @@ resource_subsidies_ver_exotic_gases = {
 			}
 		}
 
-		modifier = {
-			set = 0.15
-			agreement_preset = preset_auto_state
-		}
 	}
 	resource_max = {
 		base = @subsidy_maximum
@@ -433,10 +405,6 @@ resource_subsidies_ver_exotic_gases = {
 			agreement_preset = preset_ver_devolved
 		}
 
-		modifier = {
-			set = 0.15
-			agreement_preset = preset_auto_state
-		}
 
 		modifier = {
 			set = -0.1
@@ -479,10 +447,6 @@ resource_subsidies_ver_food = {
 			agreement_preset = preset_ver_puppet
 		}
 
-		modifier = {
-			set = 0.15
-			agreement_preset = preset_auto_state
-		}
 
 		modifier = {
 			set = 0.25
@@ -534,10 +498,6 @@ resource_subsidies_ver_food = {
 			agreement_preset = preset_ver_devolved
 		}
 
-		modifier = {
-			set = 0.15
-			agreement_preset = preset_auto_state
-		}
 	}
 	potential = { NOT = { agreement_preset = preset_mercatorum } }
 }
@@ -582,10 +542,6 @@ resource_subsidies_ver_rare_crystals = {
 			}
 		}
 
-		modifier = {
-			set = 0.15
-			agreement_preset = preset_auto_state
-		}
 	}
 	resource_max = {
 		base = @subsidy_maximum
@@ -618,10 +574,6 @@ resource_subsidies_ver_rare_crystals = {
 			agreement_preset = preset_ver_devolved
 		}
 
-		modifier = {
-			set = 0.15
-			agreement_preset = preset_auto_state
-		}
 	}
 }
 
@@ -661,10 +613,7 @@ resource_subsidies_ver_alloys = {
 
 		modifier = {
 			set = 0.15
-			OR = {
-				agreement_preset = preset_auto_state
-				agreement_preset = preset_ver_satellite
-			}
+			agreement_preset = preset_ver_satellite
 		}
 	}
 
@@ -699,10 +648,6 @@ resource_subsidies_ver_alloys = {
 			agreement_preset = preset_ver_devolved
 		}
 
-		modifier = {
-			set = 0.15
-			agreement_preset = preset_auto_state
-		}
 
 		modifier = {
 			set = -0.05
@@ -752,10 +697,6 @@ resource_subsidies_ver_minor_artifacts = {
 			}
 		}
 
-		modifier = {
-			set = 0.15
-			agreement_preset = preset_auto_state
-		}
 	}
 	resource_max = {
 		base = @subsidy_maximum
@@ -788,10 +729,6 @@ resource_subsidies_ver_minor_artifacts = {
 			agreement_preset = preset_ver_devolved
 		}
 
-		modifier = {
-			set = 0.15
-			agreement_preset = preset_auto_state
-		}
 	}
 	potential = { NOT = { agreement_preset = preset_mercatorum } }
 }
@@ -830,10 +767,6 @@ resource_subsidies_ver_consumer_goods = {
 			}
 		}
 
-		modifier = {
-			set = 0.15
-			agreement_preset = preset_auto_state
-		}
 	}
 
 	resource_max = {
@@ -863,10 +796,6 @@ resource_subsidies_ver_consumer_goods = {
 			}
 		}
 
-		modifier = {
-			set = 0.15
-			agreement_preset = preset_auto_state
-		}
 
 		modifier = {
 			set = 0.2
@@ -925,10 +854,6 @@ resource_subsidies_ver_research = {
 			agreement_preset = preset_ver_jrpartner
 		}
 
-		modifier = {
-			set = 0.15
-			agreement_preset = preset_auto_state
-		}
 	}
 
 	resource_max = {
@@ -980,10 +905,6 @@ resource_subsidies_ver_research = {
 			agreement_preset = preset_ver_devolved
 		}
 
-		modifier = {
-			set = 0.15
-			agreement_preset = preset_auto_state
-		}
 	}
 }
 
@@ -1105,10 +1026,6 @@ subject_ver_ruler_them = {
 			fail_text = not_allowed_for_gestalt
 			owner = { is_gestalt = no }
 		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_auto_state
-			NOT = { agreement_preset = preset_auto_state }
-		}
 	}
 }
 
@@ -1171,10 +1088,6 @@ subject_ver_ruler_anyone = {
 		custom_tooltip = {
 			fail_text = not_allowed_for_gestalt
 			owner = { is_gestalt = no }
-		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_auto_state
-			NOT = { agreement_preset = preset_auto_state }
 		}
 	}
 }
@@ -1242,10 +1155,6 @@ subject_ver_government_allowed = {
 		custom_tooltip = {
 			fail_text = not_allowed_for_gestalt
 			owner = { is_gestalt = no }
-		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_auto_state
-			NOT = { agreement_preset = preset_auto_state }
 		}
 	}
 }
@@ -1320,10 +1229,6 @@ subject_ver_policy_allowed = {
 			fail_text = not_allowed_for_gestalt
 			owner = { is_gestalt = no }
 		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_auto_state
-			NOT = { agreement_preset = preset_auto_state }
-		}
 	}
 }
 
@@ -1380,10 +1285,6 @@ subject_ver_capital_allowed = {
 			fail_text = not_allowed_for_gestalt
 			owner = { is_gestalt = no }
 		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_auto_state
-			NOT = { agreement_preset = preset_auto_state }
-		}
 	}
 }
 
@@ -1439,10 +1340,6 @@ subject_ver_naming_allowed = {
 		custom_tooltip = {
 			fail_text = not_allowed_for_gestalt
 			owner = { is_gestalt = no }
-		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_auto_state
-			NOT = { agreement_preset = preset_auto_state }
 		}
 	}
 }
@@ -1522,10 +1419,6 @@ subject_ver_proxy_allowed = {
 				has_term_value = { term = subject_diplomacy value = subject_can_do_diplomacy }
 				has_term_value = { term = subject_diplomacy value = subject_can_do_diplomacy_but_not_vote }
 			}
-		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_auto_state
-			NOT = { agreement_preset = preset_auto_state }
 		}
 	}
 }
@@ -1707,22 +1600,6 @@ subject_ver_tributary_effect = {
 	}
 }
 
-subject_auto_state_effect = {
-	term = subject_ver_effects
-	overlord_resources = {
-		category = subjects
-		upkeep = {
-			influence = 0.25
-		}
-	}
-
-	target_modifier = {
-		monthly_loyalty = -1.5
-	}
-
-	extra_term_text_overlord = autostate_extra_overlord
-}
-
 ###############
 # Overwritten #
 ###############
@@ -1806,10 +1683,6 @@ joins_overlord_wars_defensive = {
 			fail_text = not_allowed_for_ver_condo
 			NOT = { agreement_preset = preset_ver_condo }
 		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_auto_state
-			NOT = { agreement_preset = preset_auto_state }
-		}
 	}
 }
 
@@ -1871,10 +1744,6 @@ joins_overlord_wars_offensive = {
 			fail_text = not_allowed_for_ver_neocolony
 			NOT = { agreement_preset = preset_ver_neocolony }
 		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_auto_state
-			NOT = { agreement_preset = preset_auto_state }
-		}
 	}
 }
 
@@ -1927,10 +1796,6 @@ joins_overlord_wars_all = {
 		custom_tooltip = {
 			fail_text = not_allowed_for_ver_condo
 			NOT = { agreement_preset = preset_ver_condo }
-		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_auto_state
-			NOT = { agreement_preset = preset_auto_state }
 		}
 	}
 }
@@ -2030,10 +1895,6 @@ joins_subject_wars_defensive = {
 			fail_text = not_allowed_for_ver_condo
 			NOT = { agreement_preset = preset_ver_condo }
 		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_auto_state
-			NOT = { agreement_preset = preset_auto_state }
-		}
 	}
 }
 
@@ -2106,10 +1967,6 @@ joins_subject_wars_offensive = {
 			fail_text = not_allowed_for_ver_blood
 			NOT = { agreement_preset = preset_ver_blood }
 		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_auto_state
-			NOT = { agreement_preset = preset_auto_state }
-		}
 	}
 }
 
@@ -2153,10 +2010,6 @@ joins_subject_wars_all = {
 		custom_tooltip = {
 			fail_text = not_allowed_for_ver_satellite
 			NOT = { agreement_preset = preset_ver_satellite }
-		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_auto_state
-			NOT = { agreement_preset = preset_auto_state }
 		}
 	}
 }
@@ -2231,10 +2084,6 @@ subject_can_be_integrated = {
 		custom_tooltip = {
 			fail_text = not_allowed_for_ver_condo
 			NOT = { agreement_preset = preset_ver_condo }
-		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_auto_state
-			NOT = { agreement_preset = preset_auto_state }
 		}
 	}
 }
@@ -2315,10 +2164,6 @@ subject_can_not_do_diplomacy = {
 			fail_text = not_allowed_for_ver_foederatus
 			NOT = { agreement_preset = preset_ver_foederatus }
 		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_auto_state
-			NOT = { agreement_preset = preset_auto_state }
-		}
 	}
 }
 
@@ -2394,10 +2239,6 @@ subject_can_do_diplomacy_but_not_vote = {
 		custom_tooltip = {
 			fail_text = not_allowed_for_ver_puppet
 			NOT = { agreement_preset = preset_ver_puppet }
-		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_auto_state
-			NOT = { agreement_preset = preset_auto_state }
 		}
 	}
 }
@@ -2514,10 +2355,6 @@ subject_cannot_expand = {
 			fail_text = not_allowed_for_ver_condo
 			NOT = { agreement_preset = preset_ver_condo }
 		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_auto_state
-			NOT = { agreement_preset = preset_auto_state }
-		}
 	}
 }
 
@@ -2543,10 +2380,6 @@ subject_can_expand_with_tithe = {
 		custom_tooltip = {
 			fail_text = not_allowed_for_luminarium
 			NOT = { agreement_preset = preset_luminarium }
-		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_auto_state
-			NOT = { agreement_preset = preset_auto_state }
 		}
 	}
 }
@@ -2605,10 +2438,6 @@ subject_holdings_limit_1 = {
 			fail_text = not_allowed_for_luminarium
 			NOT = { agreement_preset = preset_luminarium }
 		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_auto_state
-			NOT = { agreement_preset = preset_auto_state }
-		}
 	}
 }
 
@@ -2635,10 +2464,6 @@ subject_holdings_limit_2 = {
 		custom_tooltip = {
 			fail_text = not_allowed_for_ver_condo
 			NOT = { agreement_preset = preset_ver_condo }
-		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_auto_state
-			NOT = { agreement_preset = preset_auto_state }
 		}
 	}
 	potential = {
@@ -2680,10 +2505,6 @@ subject_holdings_limit_3 = {
 		custom_tooltip = {
 			fail_text = not_allowed_for_ver_condo
 			NOT = { agreement_preset = preset_ver_condo }
-		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_auto_state
-			NOT = { agreement_preset = preset_auto_state }
 		}
 	}
 	potential = {
@@ -2728,10 +2549,6 @@ subject_holdings_limit_4 = {
 		custom_tooltip = {
 			fail_text = not_allowed_for_ver_condo
 			NOT = { agreement_preset = preset_ver_condo }
-		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_auto_state
-			NOT = { agreement_preset = preset_auto_state }
 		}
 	}
 	potential = {
@@ -2798,19 +2615,11 @@ subject_gets_sensors = {
 				NOT = { agreement_preset = preset_tributary }
 			}
 		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_auto_state
-			NOT = { agreement_preset = preset_auto_state }
-		}
 	}
 }
 
 subject_loyalty_effects = {
 	term = subject_loyalty
-
-	potential = {
-		NOT = { agreement_preset = preset_auto_state }
-	}
 
 	activate_effect = {
 		target = { save_event_target_as = new_subject }
@@ -2895,7 +2704,6 @@ naval_cap_unmodified = {
 			agreement_preset = preset_relic_satrapy
 			agreement_preset = preset_luminarium
 			agreement_preset = preset_ver_condo
-			agreement_preset = preset_auto_state
 		}
 	}
 

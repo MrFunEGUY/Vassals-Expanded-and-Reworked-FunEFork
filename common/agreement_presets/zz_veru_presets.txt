@@ -150,7 +150,6 @@ preset_ver_foederatus = {
 
 	potential = {
 		is_tributary = no
-		is_auto_state = no
 		is_protectorate = no
 		from = {
 			is_gestalt = no
@@ -289,7 +288,6 @@ preset_ver_satellite = {
 
 	potential = {
 		is_tributary = no
-		is_auto_state = no
 		is_protectorate = no
 		from = {
 			is_gestalt = no
@@ -418,7 +416,6 @@ preset_ver_jrpartner = {
 
 	potential = {
 		is_tributary = no
-		is_auto_state = no
 		is_protectorate = no
 		from = {
 			is_gestalt = no
@@ -547,7 +544,6 @@ preset_ver_dependency = {
 	potential = {
 		is_gestalt = no
 		is_tributary = no
-		is_auto_state = no
 		is_protectorate = no
 		from = {
 			is_gestalt = no
@@ -670,7 +666,6 @@ preset_ver_clientkingdom = {
 	potential = {
 		is_gestalt = no
 		is_tributary = no
-		is_auto_state = no
 		is_protectorate = no
 		from = {
 			is_gestalt = no
@@ -786,7 +781,6 @@ preset_ver_devolved = {
 	potential = {
 		is_gestalt = no
 		is_tributary = no
-		is_auto_state = no
 		is_protectorate = no
 		from = {
 			is_gestalt = no
@@ -916,7 +910,6 @@ preset_ver_condo = {
 	potential = {
 		is_gestalt = no
 		is_tributary = no
-		is_auto_state = no
 		is_protectorate = no
 		any_system_within_border = { # Must be bordering someone not associated with your Overlord
 			closest_system = {
@@ -1050,7 +1043,6 @@ preset_ver_puppet = {
 	potential = {
 		is_gestalt = no
 		is_tributary = no
-		is_auto_state = no
 		is_protectorate = no
 		from = {
 			is_gestalt = no
@@ -1177,7 +1169,6 @@ preset_ver_neocolony = {
 	potential = {
 		is_gestalt = no
 		is_tributary = no
-		is_auto_state = no
 		is_protectorate = no
 		from = {
 			is_socialism = no
@@ -1292,7 +1283,6 @@ preset_ver_blood = {
 	potential = {
 		is_gestalt = no
 		is_tributary = no
-		is_auto_state = no
 		is_protectorate = no
 		from = {
 			is_gestalt = no
@@ -1405,7 +1395,6 @@ preset_ver_appendage = {
 
 	potential = {
 		is_tributary = no
-		is_auto_state = no
 		is_protectorate = no
 		from = { is_gestalt = yes }
 		tech_unlocked_ratio = {
@@ -1497,7 +1486,6 @@ preset_ver_organic = {
 	potential = {
 		is_machine_empire = no
 		is_tributary = no
-		is_auto_state = no
 		is_protectorate = no
 		from = {
 			is_machine_empire = yes
@@ -1597,105 +1585,11 @@ preset_ver_parallel = {
 	potential = {
 		is_machine_empire = yes
 		is_tributary = no
-		is_auto_state = no
 		is_protectorate = no
 		from = { is_machine_empire = yes }
 		tech_unlocked_ratio = {
 			who = from
 			ratio >= @protectorate_tech_threshold
 		}
-	}
-}
-
-##############
-# Overwrites #
-##############
-
-preset_auto_state = {
-	icon = "GFX_diplomacy_status_is_auto_state"
-	term_data = {
-		forced_initial_loyalty = -50
-		discrete_terms = {
-			{
-				key = specialist_type
-				value = specialist_none
-			}
-			{
-				key = subject_integration
-				value = subject_can_not_be_integrated
-			}
-			{
-				key = subject_diplomacy
-				value = subject_can_do_diplomacy
-			}
-			{
-				key = subject_expand
-				value = subject_can_expand
-			}
-			####
-			{
-				key = subject_ver_ruler
-				value = subject_ver_ruler_restricted
-			}
-			{
-				key = subject_ver_government
-				value = subject_ver_government_restricted
-			}
-			{
-				key = subject_ver_policy
-				value = subject_ver_policy_restricted
-			}
-			{
-				key = subject_ver_naming
-				value = subject_ver_naming_restricted
-			}
-			{
-				key = subject_ver_capital
-				value = subject_ver_capital_restricted
-			}
-			####
-			{
-				key = joins_overlord_wars
-				value = joins_overlord_wars_none
-			}
-			{
-				key = joins_subject_wars
-				value = joins_subject_wars_none
-			}
-			####
-			{
-				key = subject_ver_proxy
-				value = subject_ver_proxy_restricted
-			}
-			####
-			{
-				key = subject_holdings_limit
-				value = subject_holdings_limit_0
-			}
-			{
-				key = subject_loyalty
-				value = subject_loyalty_effects
-			}
-			{
-				key = protectorate
-				value = subject_is_not_protectorate
-			}
-			####
-			{
-				key = subject_ver_effects
-				value = subject_auto_state_effect
-			}
-		}
-	}
-
-	potential = {
-		is_auto_state = yes
-	}
-
-	overlord_weight = {
-		base = 0
-	}
-	subject_weight = {
-		base = 0
 	}
 }
