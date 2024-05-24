@@ -1469,7 +1469,7 @@ subject_ver_jrpartner_effect = {
 	}
 
 	extra_term_text_subject = ver_jrpartner_extra_subject
-	# extra_term_text_overlord = ver_jrpartner_extra_overlord
+	extra_term_text_overlord = ver_extra_overlord
 }
 
 subject_ver_dependency_effect = {
@@ -1509,20 +1509,15 @@ subject_ver_devolved_effect = {
 			influence = 0.5
 		}
 	}
-	subject_resources = {
-		category = subjects
-		upkeep = {
-			influence = 0.5
-		}
-	}
 	owner_modifier = {
 		pop_government_ethic_attraction = 0.05
 	}
 	target_modifier = {
-		country_naval_cap_mult = -0.5
+		pop_happiness = 0.10
+		country_base_influence_produces_add = -0.5
 	}
 
-	extra_term_text_subject = ver_devolved_extra_subject
+	extra_term_text_subject = ver_extra_subject
 	extra_term_text_overlord = ver_devolved_extra_overlord
 }
 
@@ -2644,18 +2639,6 @@ subject_loyalty_effects = {
 			}
 		}
 		if = {
-			limit = { owner = { has_civic = civic_feudal_realm } }
-			target = {
-				add_modifier = { modifier = feudal_lord }
-			}
-		}
-		else_if = {
-			limit = { owner = { has_civic = civic_franchising } }
-			target = {
-				add_modifier = { modifier = corporate_franchise }
-			}
-		}
-		if = {
 			limit = {
 				target = { is_galactic_community_member = yes }
 				OR = {
@@ -2683,8 +2666,7 @@ subject_loyalty_effects = {
 				limit = { target = { is_same_value = event_target:current_overlord } }
 				erase_modifier = { MOD = domestic_intelligence }
 			}
-			erase_modifier = { MOD = corporate_franchise }
-			erase_modifier = { MOD = feudal_lord }
+			erase_modifier = { MOD = commanding_presence }
 			erase_modifier = { MOD = divided_patronage }
 			erase_modifier = { MOD = overlord_ethics_compatibility }
 			erase_modifier = { MOD = newly_released_sector_loyalty }
@@ -2704,6 +2686,7 @@ naval_cap_unmodified = {
 			agreement_preset = preset_relic_satrapy
 			agreement_preset = preset_luminarium
 			agreement_preset = preset_ver_condo
+			agreement_preset = preset_ver_devolved
 		}
 	}
 
@@ -2717,7 +2700,7 @@ naval_cap_unmodified = {
 ###############
 
 resource_subsidies_basic = {
-	term = NONE
+	term = resource_subsidies
 	resources = {
 		energy
 		minerals
@@ -2728,7 +2711,7 @@ resource_subsidies_basic = {
 }
 
 resource_subsidies_advanced = {
-	term = NONE
+	term = resource_subsidies
 
 	resources = {
 		alloys
@@ -2739,7 +2722,7 @@ resource_subsidies_advanced = {
 }
 
 resource_subsidies_research = {
-	term = none
+	term = resource_subsidies
 
 	resources = {
 		physics_research
@@ -2751,7 +2734,7 @@ resource_subsidies_research = {
 }
 
 resource_subsidies_strategic = {
-	term = NONE
+	term = resource_subsidies
 	resources = {
 		volatile_motes
 		exotic_gases

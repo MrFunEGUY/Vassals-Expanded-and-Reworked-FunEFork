@@ -351,10 +351,10 @@ preset_tributary = {
 			is_megacorp = no
 			NOT = { is_country_type = awakened_fallen_empire }
 		}
-		tech_unlocked_ratio = {
-			who = from
-			ratio >= @protectorate_tech_threshold
-		}
+		# tech_unlocked_ratio = {
+		# 	who = from
+		# 	ratio >= @protectorate_tech_threshold
+		# }
 	}
 }
 

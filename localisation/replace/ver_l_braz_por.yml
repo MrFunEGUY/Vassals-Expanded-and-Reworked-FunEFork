@@ -22,19 +22,19 @@ l_braz_por:
  preset_ver_satellite_desc:"Satellite States are restricted in their foreign affairs and have effectively been disarmed. Whatever heavy industry remains is used to bolster the military capabilities of their overlord.\n\n§YTribute§!: §G15%§! £alloys£ §HAlloys§!\n§WSpecial Effects:§! \n§YSubject§!: £navy_size£ Naval Capacity: §R-50%§!\n§YOverlord§!: £navy_size£ Naval Capacity: §G+2%§!"
 
  preset_ver_jrpartner: "Junior Partner"
- preset_ver_jrpartner_desc:"Junior Partners assist their overlord in their reasearch.\n\n§YTribute§!: §G10%§! £society_research£ £engineering_research£ £physics_research£ §HResearch§!\n§YSubsidy§!: §R10%§! £exotic_gases£ §HExotic Gases§!\n§WSpecial Effects:§! \n§YSubject§!: §G-85%§! cost to known overlord Technologies\n§YOverlord§!: Research Speed: §G+2%§!"
+ preset_ver_jrpartner_desc:"Junior Partners assist their overlord in their research.\n\n§YTribute§!: §G10%§! £society_research£ £engineering_research£ £physics_research£ §HResearch§!\n§YSubsidy§!: §R10%§! £exotic_gases£ §HExotic Gases§!\n§WSpecial Effects:§! \n§YSubject§!: §G-85%§! cost to known overlord Technologies\n§YOverlord§!: Research Speed: §G+2%§!"
 
  preset_ver_dependency: "Dependency"
  preset_ver_dependency_desc:"Dependencies are responsible for producing domestic propaganda for their overlord.\n\n§YTribute§!: §G15%§! £unity£ §HUnity§!\n§YSubsidy§!: §R5%§! £energy£ §HEnergy§!\n§WSpecial Effects:§! \n§YOverlord§!: £unity£ §HUnity§!: §G+2%§!"
 
  preset_ver_clientkingdom: "Client Kingdom"
- preset_ver_clientkingdom_desc:"Client Kingdoms usually have rulers specifically chosen by their overlord, in order to assure their loyalty.\n\n§YSubsidy§!: §R10%§! £energy£ §HEnergy§!, §R5%§! £consumer_goods£ §HConsumer Goods§!\n§WSpecial Effects:§! \n§YSubject§!: £stability£ §HStability§!: §R-5§!\n§YOverlord§!: £stability£ §HStability§!: §G+1§!"
+ preset_ver_clientkingdom_desc:"Client Kingdoms usually have rulers specifically chosen by their overlord, in order to assure their loyalty.\n\n§YSubsidy§!: §R10%§! £energy£ §HEnergy§!, §R5%§! £consumer_goods£ §HConsumer Goods§!\n§WSpecial Effects:§! \n§YSubject§!: £stability£ §HStability§!: §R-5§!\n§YOverlord§!: £stability£ §HStability§!: §G+1§! \n§EOverlord Special Effect:§! Will always select subject Ruler"
  
  preset_ver_devolved: "Devolved Region"
- preset_ver_devolved_desc:"Devolved Regions have compelete sovereignty over domestic affairs.\n\n§YTribute§!: £influence£ §G+0.5§!\n§WSpecial Effects:§! \n§YSubject§!: £happiness£ Happiness: §G+10%§!\n§YOverlord§!: £mod_pop_government_ethic_attraction£ Governing Ethics Attraction: §G+5%§!"
+ preset_ver_devolved_desc:"Devolved Regions have complete sovereignty over domestic affairs.\n\n§YTribute§!: £influence£ §G+0.5§!\n§WSpecial Effects:§! \n§YSubject§!: £happiness£ Happiness: §G+10%§!\n§YOverlord§!: £mod_pop_government_ethic_attraction£ Governing Ethics Attraction: §G+5%§!"
 
  preset_ver_condo: "Condominium"
- preset_ver_condo_desc:"Condominia have complete sovereignty over their foreign affairs. They serve as neutral meeting locations for diplomats throughout the galaxy.\n§WSpecial Effects:§! \n§YSubject§!: £diplo_weight£ Diplomatic Weight: §G+20%§!\n§YOverlord§!: £diplo_weight£ Diplomatic Weight: §G+2%§!"
+ preset_ver_condo_desc:"Condominia have complete sovereignty over their foreign affairs. They serve as neutral meeting locations for diplomats throughout the galaxy.\n\n§WSpecial Effects:§! \n§YSubject§!: £diplo_weight£ Diplomatic Weight: §G+20%§!\n§YOverlord§!: £diplo_weight£ Diplomatic Weight: §G+2%§!"
 
  preset_ver_puppet: "Puppet State"
  preset_ver_puppet_desc: "Puppet States can be used to fight Proxy Wars for their overlord.\n\n§YTribute§!: §G10%§! £energy£ §HEnergy§!, §G10%§! £food£ §HFood§!\n§WSpecial Effects:§! \n§YSubject§!: £happiness£ Happiness: §R-10%§!\n§YOverlord§!: £happiness£ Happiness: §G+2%§!"
@@ -52,7 +52,7 @@ l_braz_por:
  preset_ver_organic_desc:"Organic Auxiliaries have no diplomatic freedom, but cannot be integrated and are protected by their Overlord"
 
  preset_ver_parallel: "Parallel Processor"
- preset_ver_parallel_desc:"The combined computing power of the Subject and their Overlord allow for vast increases in effeciency.\n§WSpecial Effects:§! \nOverlord: Research Speed: §G+5%§! per §Y$preset_ver_parallel$§!"
+ preset_ver_parallel_desc:"The combined computing power of the Subject and their Overlord allow for vast increases in efficiency.\n§WSpecial Effects:§! \nOverlord: Research Speed: §G+5%§! per §Y$preset_ver_parallel$§!"
 
  # Term Window:
  preset_ver_foederatus_flavor_desc: "$preset_ver_foederatus_desc$"
@@ -71,7 +71,7 @@ l_braz_por:
  preset_ver_parallel_flavor_desc: "$preset_ver_parallel_desc$"
 
  ver.33.name: "Proxy War - Target"
- ver.33.desc: "The [event_target:chosen_subject.GetName] shares its borders with the following states that are not alled with us. Which one should they should attack?"
+ ver.33.desc: "The [event_target:chosen_subject.GetName] shares its borders with the following states that are not allied with us. Which one should they should attack?"
  ver.33.puppet_neighbor_1: "[puppet_neighbor_1.GetName]"
  ver.33.puppet_neighbor_2: "[puppet_neighbor_2.GetName]"
  ver.33.puppet_neighbor_3: "[puppet_neighbor_3.GetName]"
@@ -311,8 +311,8 @@ l_braz_por:
  wg_claim_subject_accept: "§Y[Root.GetName]§! will §Ygain control of the contested subject§! and §Yinstall a new leader§! within it."
 
  veru.6400.name: "Leadership of the §Y[event_target:chosen_subject.GetName]§!"
- veru.6400.desc: "Now that we've secured control over §Y[event_target:chosen_subject.GetName]§!, we need to install leadership that is amenable to our rule. We can choose a leader sympathatic to our rule from amongst their own people. The benefit of this is that it will likely make the transition much smoother. However, we can also choose to install a leader from amongst our own people, which will all but guarantee their loyalty."
- veru.6400.clientkingdom: "Now that we've secured control over §Y[event_target:chosen_subject.GetName]§!, we need to install leadership that is amenable to our rule. We can choose a leader sympathatic to our rule from amongst their own people, or we can choose to install a leader from amongst our own people."
+ veru.6400.desc: "Now that we've secured control over §Y[event_target:chosen_subject.GetName]§!, we need to install leadership that is amenable to our rule. One option is choosing a leader sympathetic to our rule from amongst their own people. The benefit of this is that it will likely make the transition much smoother. However, we can also choose to install a leader from amongst our own people, which will all but guarantee their loyalty."
+ veru.6400.clientkingdom: "Now that we've secured control over §Y[event_target:chosen_subject.GetName]§!, we need to install leadership that is amenable to our rule. One option is choosing a leader sympathetic to our rule from amongst their own people, or we can choose to install a leader from amongst our own people."
  veru.6400.clientkingdom_passes: "Our hand-picked §Y[event_target:chosen_subject.GetRulerTitle]§! in the §Y[event_target:chosen_subject.GetName]§! has passed away, so we need to choose a successor."
 
  veru.6400.them: "One of §Ytheir§! people."
@@ -386,7 +386,7 @@ l_braz_por:
  subject_ver_capital_allowed: "Relocation Permitted"
  subject_ver_capital_allowed_desc: "The Overlord is permitted to relocate the Subject's capital."
 
- subject_ver_government: "Goverment Restructuring"
+ subject_ver_government: "Government Restructuring"
  subject_ver_government_desc: "This Term dictates whether the Overlord is allowed to change the form of government within the Subject."
 
  subject_ver_government_restricted: "Restructuring Prohibited"
@@ -484,10 +484,10 @@ l_braz_por:
  autostate_extra_overlord: "Monthly: £influence£ §R-0.5§!"
 
  d_overlord_unity_capital: "Subject Guidance Center"
- d_overlord_unity_capital_desc: "At this center, members of some of our subject's priestly class recieve guidance on how to better facilitate cooperation between our nations."
+ d_overlord_unity_capital_desc: "At this center, members of some of our subject's priestly class receive guidance on how to better facilitate cooperation between our nations."
 
  d_subject_unity_capital: "Overlord Coordination Facility"
- d_subject_unity_capital_desc: "At this facility, our ruling elite recieve guidance from our overlord on how to better facilitate cooperation between our nations."
+ d_subject_unity_capital_desc: "At this facility, our ruling elite receive guidance from our overlord on how to better facilitate cooperation between our nations."
 
  # Overwrites
  # protectorate_extra_subject:1 "$MODIFIER$\n"
