@@ -365,6 +365,9 @@
  ####################
  # Contracts
 
+ resource_ver_subsidies: "$resource_subsidies$"
+ resource_ver_subsidies_desc: "$resource_subsidies_desc$"
+
  subject_ver_ruler: "Ruler Designation"
  subject_ver_ruler_desc: "This Term dictates whether an Overlord is permitted to install their preferred leader as the ruler of the Subject nation."
 

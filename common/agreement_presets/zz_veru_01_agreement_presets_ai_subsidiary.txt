@@ -5,7 +5,15 @@ preset_subsidiary_mean_01 = {
 	term_data = {
 		resource_terms = {
 			{
-				key = resource_subsidies_basic
+				key = resource_subsidies_ver_energy
+				value = 0.3
+			}
+			{
+				key = resource_subsidies_ver_food
+				value = 0.3
+			}
+			{
+				key = resource_subsidies_ver_minerals
 				value = 0.3
 			}
 		}
@@ -102,11 +110,23 @@ preset_subsidiary_mean_02 = {
 	term_data = {
 		resource_terms = {
 			{
-				key = resource_subsidies_basic
+				key = resource_subsidies_ver_energy
 				value = 0.45
 			}
 			{
-				key = resource_subsidies_advanced
+				key = resource_subsidies_ver_food
+				value = 0.45
+			}
+			{
+				key = resource_subsidies_ver_minerals
+				value = 0.45
+			}
+			{
+				key = resource_subsidies_ver_alloys
+				value = 0.3
+			}
+			{
+				key = resource_subsidies_ver_consumer_goods
 				value = 0.3
 			}
 		}
@@ -203,15 +223,27 @@ preset_subsidiary_mean_03 = {
 	term_data = {
 		resource_terms = {
 			{
-				key = resource_subsidies_basic
+				key = resource_subsidies_ver_energy
 				value = 0.45
 			}
 			{
-				key = resource_subsidies_advanced
+				key = resource_subsidies_ver_food
 				value = 0.45
 			}
 			{
-				key = resource_subsidies_research
+				key = resource_subsidies_ver_minerals
+				value = 0.45
+			}
+			{
+				key = resource_subsidies_ver_alloys
+				value = 0.45
+			}
+			{
+				key = resource_subsidies_ver_consumer_goods
+				value = 0.45
+			}
+			{
+				key = resource_subsidies_ver_research
 				value = 0.3
 			}
 		}
@@ -308,7 +340,15 @@ preset_subsidiary_nice_01 = {
 	term_data = {
 		resource_terms = {
 			{
-				key = resource_subsidies_basic
+				key = resource_subsidies_ver_energy
+				value = 0.3
+			}
+			{
+				key = resource_subsidies_ver_food
+				value = 0.3
+			}
+			{
+				key = resource_subsidies_ver_minerals
 				value = 0.3
 			}
 		}
@@ -405,7 +445,15 @@ preset_subsidiary_nice_02 = {
 	term_data = {
 		resource_terms = {
 			{
-				key = resource_subsidies_basic
+				key = resource_subsidies_ver_energy
+				value = 0.3
+			}
+			{
+				key = resource_subsidies_ver_food
+				value = 0.3
+			}
+			{
+				key = resource_subsidies_ver_minerals
 				value = 0.3
 			}
 		}

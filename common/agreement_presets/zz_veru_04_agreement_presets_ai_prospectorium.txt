@@ -138,11 +138,23 @@ preset_prospectorium_nice_02 = {
 	term_data = {
 		resource_terms = {
 			{
-				key = resource_subsidies_basic
+				key = resource_subsidies_ver_energy
 				value = -0.3
 			}
 			{
-				key = resource_subsidies_advanced
+				key = resource_subsidies_ver_food
+				value = -0.3
+			}
+			{
+				key = resource_subsidies_ver_minerals
+				value = -0.3
+			}
+			{
+				key = resource_subsidies_ver_alloys
+				value = -0.3
+			}
+			{
+				key = resource_subsidies_ver_consumer_goods
 				value = -0.3
 			}
 		}
@@ -276,11 +288,23 @@ preset_prospectorium_mean_01 = {
 	term_data = {
 		resource_terms = {
 			{
-				key = resource_subsidies_basic
+				key = resource_subsidies_ver_energy
 				value = 0.45
 			}
 			{
-				key = resource_subsidies_advanced
+				key = resource_subsidies_ver_food
+				value = 0.45
+			}
+			{
+				key = resource_subsidies_ver_minerals
+				value = 0.45
+			}
+			{
+				key = resource_subsidies_ver_alloys
+				value = 0.3
+			}
+			{
+				key = resource_subsidies_ver_consumer_goods
 				value = 0.3
 			}
 		}
@@ -414,15 +438,35 @@ preset_prospectorium_mean_02 = {
 	term_data = {
 		resource_terms = {
 			{
-				key = resource_subsidies_basic
+				key = resource_subsidies_ver_energy
 				value = 0.6
 			}
 			{
-				key = resource_subsidies_advanced
+				key = resource_subsidies_ver_food
+				value = 0.6
+			}
+			{
+				key = resource_subsidies_ver_minerals
+				value = 0.6
+			}
+			{
+				key = resource_subsidies_ver_alloys
 				value = 0.45
 			}
 			{
-				key = resource_subsidies_strategic
+				key = resource_subsidies_ver_consumer_goods
+				value = 0.45
+			}
+			{
+				key = resource_subsidies_ver_volatile_motes
+				value = 0.3
+			}
+			{
+				key = resource_subsidies_ver_exotic_gases
+				value = 0.3
+			}
+			{
+				key = resource_subsidies_ver_rare_crystals
 				value = 0.3
 			}
 		}
@@ -556,15 +600,35 @@ preset_prospectorium_mean_03 = {
 	term_data = {
 		resource_terms = {
 			{
-				key = resource_subsidies_basic
+				key = resource_subsidies_ver_energy
 				value = 0.75
 			}
 			{
-				key = resource_subsidies_advanced
+				key = resource_subsidies_ver_food
+				value = 0.75
+			}
+			{
+				key = resource_subsidies_ver_minerals
+				value = 0.75
+			}
+			{
+				key = resource_subsidies_ver_alloys
 				value = 0.6
 			}
 			{
-				key = resource_subsidies_strategic
+				key = resource_subsidies_ver_consumer_goods
+				value = 0.6
+			}
+			{
+				key = resource_subsidies_ver_volatile_motes
+				value = 0.45
+			}
+			{
+				key = resource_subsidies_ver_exotic_gases
+				value = 0.45
+			}
+			{
+				key = resource_subsidies_ver_rare_crystals
 				value = 0.45
 			}
 		}

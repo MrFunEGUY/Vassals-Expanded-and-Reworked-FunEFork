@@ -120,7 +120,12 @@ l_korean:
 
  edict_veru_cancel_tribute: "Stop Paying Tribute"
  edict_veru_cancel_tribute_desc: "We will stop paying tribute to the §Y[overlord.GetName]§!"
- 
+
+ edict_veru_unlimited_special_subjects: "Uncap Specialized Subjects"
+ edict_veru_unlimited_special_subjects_desc: "Uncap Specialized Subjects, which are currently capped at §P1§! each"
+ edict_veru_unlimited_special_subjects_2: "Specialized Subjects: Uncapped"
+ edict_veru_unlimited_special_subjects_2_desc: "Cap Specialized Subjects, which are currently §Puncapped§!"
+
  # Manage Subject
  veru.1000.name: "Manage Subject States"
  veru.1000.desc: "Which subject needs to be dealt with?"
@@ -359,6 +364,9 @@ l_korean:
 
  ####################
  # Contracts
+
+ resource_ver_subsidies: "$resource_subsidies$"
+ resource_ver_subsidies_desc: "$resource_subsidies_desc$"
 
  subject_ver_ruler: "Ruler Designation"
  subject_ver_ruler_desc: "This Term dictates whether an Overlord is permitted to install their preferred leader as the ruler of the Subject nation."

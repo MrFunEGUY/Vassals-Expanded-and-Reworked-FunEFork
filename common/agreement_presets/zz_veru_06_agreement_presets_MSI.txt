@@ -8,11 +8,23 @@ preset_payback_subsidiary_oppressive = {
 		forced_initial_loyalty = -100
 		resource_terms = {
 			{
-				key = resource_subsidies_basic
+				key = resource_subsidies_ver_energy
 				value = 0.45
 			}
 			{
-				key = resource_subsidies_advanced
+				key = resource_subsidies_ver_food
+				value = 0.45
+			}
+			{
+				key = resource_subsidies_ver_minerals
+				value = 0.45
+			}
+			{
+				key = resource_subsidies_ver_alloys
+				value = 0.15
+			}
+			{
+				key = resource_subsidies_ver_consumer_goods
 				value = 0.15
 			}
 		}
@@ -106,7 +118,15 @@ preset_payback_subsidiary_balanced = {
 		forced_initial_loyalty = -50
 		resource_terms = {
 			{
-				key = resource_subsidies_basic
+				key = resource_subsidies_ver_energy
+				value = 0.3
+			}
+			{
+				key = resource_subsidies_ver_food
+				value = 0.3
+			}
+			{
+				key = resource_subsidies_ver_minerals
 				value = 0.3
 			}
 		}
@@ -201,7 +221,15 @@ preset_payback_subsidiary_benevolent = {
 		forced_initial_loyalty = 0
 		resource_terms = {
 			{
-				key = resource_subsidies_basic
+				key = resource_subsidies_ver_energy
+				value = 0.3
+			}
+			{
+				key = resource_subsidies_ver_food
+				value = 0.3
+			}
+			{
+				key = resource_subsidies_ver_minerals
 				value = 0.3
 			}
 		}

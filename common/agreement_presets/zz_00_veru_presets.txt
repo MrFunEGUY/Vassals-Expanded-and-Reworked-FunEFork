@@ -1051,7 +1051,15 @@ preset_dominion = {
 		}
 		resource_terms = {
 			{
-				key = resource_subsidies_basic
+				key = resource_subsidies_ver_energy
+				value = 0.3
+			}
+			{
+				key = resource_subsidies_ver_food
+				value = 0.3
+			}
+			{
+				key = resource_subsidies_ver_minerals
 				value = 0.3
 			}
 		}
@@ -1131,7 +1139,7 @@ preset_satellite = {
 		}
 		resource_terms = {
 			{
-				key = resource_subsidies_research
+				key = resource_subsidies_ver_research
 				value = 0.3
 			}
 		}
@@ -1285,7 +1293,15 @@ preset_thrall = {
 		}
 		resource_terms = {
 			{
-				key = resource_subsidies_basic
+				key = resource_subsidies_ver_energy
+				value = 0.3
+			}
+			{
+				key = resource_subsidies_ver_food
+				value = 0.3
+			}
+			{
+				key = resource_subsidies_ver_minerals
 				value = 0.3
 			}
 		}
@@ -1369,7 +1385,15 @@ preset_satrapy = {
 		}
 		resource_terms = {
 			{
-				key = resource_subsidies_basic
+				key = resource_subsidies_ver_energy
+				value = 0.3
+			}
+			{
+				key = resource_subsidies_ver_food
+				value = 0.3
+			}
+			{
+				key = resource_subsidies_ver_minerals
 				value = 0.3
 			}
 		}
@@ -1456,7 +1480,15 @@ preset_relic_satrapy = {
 		}
 		resource_terms = {
 			{
-				key = resource_subsidies_basic
+				key = resource_subsidies_ver_energy
+				value = 0.3
+			}
+			{
+				key = resource_subsidies_ver_food
+				value = 0.3
+			}
+			{
+				key = resource_subsidies_ver_minerals
 				value = 0.3
 			}
 		}

@@ -477,7 +477,7 @@ country_event = {
 	option = {
 		name = veru.4000.oligarchic
 		trigger = {
-			event_target:chosen_subject = { NOT = { has_authority = auth_oligarchic } }
+			event_target:chosen_subject = { NOT = { is_oligarchic_authority = yes } }
 		}
 		allow = {
 			custom_tooltip = {

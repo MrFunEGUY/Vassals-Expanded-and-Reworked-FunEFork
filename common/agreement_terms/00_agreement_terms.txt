@@ -52,7 +52,11 @@ subject_ver_naming = {
 
 ###### VEAR
 
-resource_subsidies = {
+# resource_subsidies = {
+# 	term_type = resource
+# }
+
+resource_ver_subsidies = {
 	term_type = resource
 }
 

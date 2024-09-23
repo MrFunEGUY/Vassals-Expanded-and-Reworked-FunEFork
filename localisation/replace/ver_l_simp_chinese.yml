@@ -116,6 +116,14 @@ l_simp_chinese:
  edict_veru_manage_subject: "管理附庸国"
  edict_veru_manage_subject_desc: "允许我们管理附属国。"
  edict_veru_manage_subject_tooltip: "允许我们管理附属国。"
+
+ edict_veru_cancel_tribute: "停止致敬"
+ edict_veru_cancel_tribute_desc: "我们将停止向 §Y[overlord.GetName]§!"
+
+ edict_veru_unlimited_special_subjects: "未封顶的专业科目"
+ edict_veru_unlimited_special_subjects_desc: "取消专业科目的上限，目前每个专业科目的上限为 §P1§!"
+ edict_veru_unlimited_special_subjects_2: "专业科目： 不封顶"
+ edict_veru_unlimited_special_subjects_2_desc: "目前未设上限的专业科目"
  
  # Manage subject
  veru.1000.name: "管理附庸国"
@@ -348,6 +356,9 @@ l_simp_chinese:
 
  ####################
  # Contracts
+
+ resource_ver_subsidies: "$resource_subsidies$"
+ resource_ver_subsidies_desc: "$resource_subsidies_desc$"
 
  subject_ver_ruler: "统治者指定"
  subject_ver_ruler_desc: "该条款决定是否允许宗主将他们选择的领导者安排为附庸国的统治者。"

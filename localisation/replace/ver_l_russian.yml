@@ -116,7 +116,15 @@ l_russian:
  edict_veru_manage_subject: "Управление субъектами"
  edict_veru_manage_subject_desc: "Позволяет нам управлять нашими субъектами."
  edict_veru_manage_subject_tooltip: "Позволяет нам управлять нашими субъектами."
- 
+
+ edict_veru_cancel_tribute: "Прекратить платить дань"
+ edict_veru_cancel_tribute_desc: "Мы перестанем платить дань §Y[overlord.GetName]§!"
+
+ edict_veru_unlimited_special_subjects: "Нелимитированные специализированные вассалы"
+ edict_veru_unlimited_special_subjects_desc: "Неограниченное количество специализированных вассалов, которые в настоящее время ограничены §P1§! каждый"
+ edict_veru_unlimited_special_subjects_2: "Специализированные вассалы: Неограниченно"
+ edict_veru_unlimited_special_subjects_2_desc: "Ограничить специализированных вассалов, которые в настоящее время §Pнеограниченное§!"
+
  # Manage Subject
  veru.1000.name: "Управление субъектами"
  veru.1000.desc: "С каким субъектом необходимо разобраться?"
@@ -347,6 +355,9 @@ l_russian:
 
  ####################
  # Contracts
+
+ resource_ver_subsidies: "$resource_subsidies$"
+ resource_ver_subsidies_desc: "$resource_subsidies_desc$"
 
  subject_ver_ruler: "Назначение правителя"
  subject_ver_ruler_desc: "Этот пункт определяет, разрешено ли Сюзерену назначать своего предпочтительного лидера правителем субъекта."
