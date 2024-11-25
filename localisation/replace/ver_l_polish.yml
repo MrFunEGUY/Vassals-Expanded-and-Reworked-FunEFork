@@ -155,6 +155,7 @@ l_polish:
 
  veru.1050.type: "We need to alter our relationship."
  veru.1050.gov: "We need to alter your governing structure."
+ veru.1050.faction: "We need to empower a faction of your government."
  veru.1050.cap: "We need to relocate your capital."
  veru.1050.leader: "We're installing a new leader."
  veru.1050.proxy: "We're initiating a Proxy War."
@@ -162,20 +163,31 @@ l_polish:
  veru.1050.exile: "We'll grant you territory."
  veru.1050.tech.tooltip: "The §Y[event_target:chosen_subject.GetName]§! will be given access to all of the technologies that we have researched thus far."
  veru.1050.name_change: "We're renaming an aspect of your government."
- veru.3000.empire_name_change.tooltip: "The §Y[event_target:chosen_subject.GetName]§! will be renamed to the §Y[root.capital_scope.solar_system.GetName]§!."
- veru.3000.male_ruler_title_name_change.tooltip: "The §Y[event_target:chosen_subject.GetName]§!'s male rulers will be styled as §Y[root.capital_scope.solar_system.GetName]§!."
- veru.3000.female_ruler_title_name_change.tooltip: "The §Y[event_target:chosen_subject.GetName]§!'s female rulers will be styled as §Y[root.capital_scope.solar_system.GetName]§!."
+ veru.2000.empire_name_change.tooltip: "The §Y[event_target:chosen_subject.GetName]§! will be renamed to the §Y[root.capital_scope.solar_system.GetName]§!."
+ veru.2000.male_ruler_title_name_change.tooltip: "The §Y[event_target:chosen_subject.GetName]§!'s male rulers will be styled as §Y[root.capital_scope.solar_system.GetName]§!."
+ veru.2000.female_ruler_title_name_change.tooltip: "The §Y[event_target:chosen_subject.GetName]§!'s female rulers will be styled as §Y[root.capital_scope.solar_system.GetName]§!."
 
  # Change Subject Type
  veru.subject_leader.name: "[event_target:chosen_subject.ruler.GetTitle] §H[event_target:chosen_subject.ruler.GetName]§! of the §Y[event_target:chosen_subject.GetName]§!"
 
  # Change Subject Names
- veru.3000.loyal.desc: "What aspect of our government would you like renamed?"
- veru.3000.disloyal.desc: "What is being renamed?"
+ veru.2000.loyal.desc: "What aspect of our government would you like renamed?"
+ veru.2000.disloyal.desc: "What is being renamed?"
 
- veru.3000.empire: "Your §YEmpire§! is being renamed."
- veru.3000.male_ruler_title: "The §Ytitle§! of your §Ymale§! rulers is being changed."
- veru.3000.female_ruler_title: "The §Ytitle§! of your §Yfemale§! rulers is being changed."
+ veru.2000.empire: "Your §YEmpire§! is being renamed."
+ veru.2000.male_ruler_title: "The §Ytitle§! of your §Ymale§! rulers is being changed."
+ veru.2000.female_ruler_title: "The §Ytitle§! of your §Yfemale§! rulers is being changed."
+
+ veru.3000.auth: "With more £authoritarian£ Authoritarian influence."
+ veru.3000.egal: "With more £egalitarian£ Egalitarian influence."
+ veru.3000.spi: "With more £spiritualist£ Spiritualist influence."
+ veru.3000.mat: "With more £materialist£ Materialist influence."
+ veru.3000.mil: "With more £militarist£ Militarist influence."
+ veru.3000.pac: "With more £pacifist£ Pacifist influence."
+ veru.3000.phobe: "With more £xenophobe£ Xenophobic influence."
+ veru.3000.phile: "With more £xenophile£ Xenophilic influence."
+ veru.3000.soc: "With more £socialism£ Socialist influence."
+ veru.3000.cap: "With more £capitalism£ Capitalist influence."
 
  # Change Government Type
  veru.4000.loyal.desc: "How would you like the §Y[event_target:chosen_subject.GetName]§! to be governed?"
@@ -496,6 +508,11 @@ l_polish:
 
  d_subject_unity_capital: "Overlord Coordination Facility"
  d_subject_unity_capital_desc: "At this facility, our ruling elite receive guidance from our overlord on how to better facilitate cooperation between our nations."
+
+ veru_misc.4000.title:0 "Forced Governing Ethics Shift in the [TargetFaction.Owner.GetName]"
+ veru_misc.4000.desc.start:0 "Due to support for the §Y[TargetFaction.GetName]§! in the §H[TargetFaction.Owner.Overlord.GetName]§!, the §Y[TargetFaction.Owner.GetName]§! has been forced to embrace the faction, adopting their core values and policies."
+
+ EMPOWER_FACTION_COOLDOWN: "They have recently §YEmbraced§! a Faction. This can only be done once every §Y10§! years."
 
  # Overwrites
  # protectorate_extra_subject:1 "$MODIFIER$\n"

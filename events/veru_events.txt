@@ -201,6 +201,29 @@ country_event = {
 		}
 	}
 
+	# Empower Specific Faction
+	option = {
+		name = veru.1050.faction
+		allow = {
+			custom_tooltip = {
+				fail_text = contract_fail
+				event_target:chosen_subject = {
+					is_gestalt = no
+					has_government_allowed = yes
+				}
+			}
+			custom_tooltip = {
+				fail_text = EMPOWER_FACTION_COOLDOWN
+				event_target:chosen_subject = {
+					NOT = { has_modifier = embraced_faction_timer }
+				}
+			}
+		}
+		hidden_effect = {
+			country_event = { id = veru.3000 }
+		}
+	}
+
 	# Relocate Capital
 	option = {
 		name = veru.1050.cap
@@ -253,7 +276,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			country_event = { id = veru.3000 }
+			country_event = { id = veru.2000 }
 		}
 	}
 
@@ -279,7 +302,7 @@ country_event = {
 ############
 # Change Subject Names
 country_event = {
-	id = veru.3000
+	id = veru.2000
 	title = veru.subject_leader.name
 	location = event_target:chosen_subject
 	hide_window = no
@@ -296,14 +319,14 @@ country_event = {
 	}
 
 	desc = {
-		text = veru.3000.loyal.desc
+		text = veru.2000.loyal.desc
 		trigger = {
 			event_target:chosen_subject = { is_loyal_to = prev }
 		}
 	}
 
 	desc = {
-		text = veru.3000.disloyal.desc
+		text = veru.2000.disloyal.desc
 		trigger = {
 			event_target:chosen_subject = { is_disloyal_to = prev }
 		}
@@ -319,8 +342,8 @@ country_event = {
 
 	# Change Empire Name
 	option = {
-		name = veru.3000.empire
-		custom_tooltip = veru.3000.empire_name_change.tooltip
+		name = veru.2000.empire
+		custom_tooltip = veru.2000.empire_name_change.tooltip
 		allow = {
 			custom_tooltip = {
 				fail_text = influencefail_text_veru_25
@@ -338,8 +361,8 @@ country_event = {
 	
 	# Change Male Ruler Title
 	option = {
-		name = veru.3000.male_ruler_title
-		custom_tooltip = veru.3000.male_ruler_title_name_change.tooltip
+		name = veru.2000.male_ruler_title
+		custom_tooltip = veru.2000.male_ruler_title_name_change.tooltip
 		allow = {
 			custom_tooltip = {
 				fail_text = influencefail_text_veru_15
@@ -357,8 +380,8 @@ country_event = {
 
 	# Change Female Ruler Title
 	option = {
-		name = veru.3000.female_ruler_title
-		custom_tooltip = veru.3000.female_ruler_title_name_change.tooltip
+		name = veru.2000.female_ruler_title
+		custom_tooltip = veru.2000.female_ruler_title_name_change.tooltip
 		allow = {
 			custom_tooltip = {
 				fail_text = influencefail_text_veru_15
@@ -380,6 +403,570 @@ country_event = {
 
 ############
 # Government
+
+# Empower Specific Faction
+country_event = {
+	id = veru.3000
+	title = veru.subject_leader.name
+	location = event_target:chosen_subject
+	hide_window = no
+	is_triggered_only = yes
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:chosen_subject.ruler
+		planet_background = root.capital_scope
+		graphical_culture = root
+		city_level = root
+		room = root.ruler
+	}
+
+	desc = {
+		text = veru.4000.loyal.desc
+		trigger = {
+			event_target:chosen_subject = { is_loyal_to = prev }
+		}
+	}
+
+	desc = {
+		text = veru.4000.disloyal.desc
+		trigger = {
+			event_target:chosen_subject = { is_disloyal_to = prev }
+		}
+	}
+
+	# Do something else
+	option = {
+		name = veru.something_else
+		hidden_effect = {
+			country_event = { id = veru.1050 }
+		}
+	}
+
+	# Empower Authoritarians
+	option = {
+		name = veru.3000.auth
+		trigger = {
+			event_target:chosen_subject = { any_pop_faction = { is_authoritarian = yes } }
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		add_resource = { influence = -150 }
+		hidden_effect = {
+			random_pop_faction = {
+				limit = { is_authoritarian = yes }
+				save_event_target_as = embraced_faction
+				add_modifier = { modifier = embraced_faction days = 3600 }
+				event_target:chosen_subject = {
+					shift_ethic = ethic_authoritarian
+					hidden_effect = {
+						add_modifier = { modifier = embraced_faction_timer days = 3600 }
+						every_pop_faction = {
+							limit = { NOT = { is_same_value = event_target:embraced_faction } }
+							add_modifier = { modifier = embraced_another_faction days = 3600 }
+						}
+					}
+				}
+				hidden_effect = {
+					save_event_target_as = TargetFaction
+					event_target:chosen_subject = {
+						every_relation = {
+							limit = {
+								NOT = { is_same_empire = root }
+								is_ai = no
+								is_country_type = default
+								has_communications = prev
+								has_intel_level = {
+									who = prev
+									category = government
+									level >= 1
+								}
+							}
+							country_event = { id = veru_misc.4000 }
+						}
+					}
+				}
+			}
+			get_intervention_effect_gov = yes
+		}
+	}
+
+	# Empower Egalitarians
+	option = {
+		name = veru.3000.egal
+		trigger = {
+			event_target:chosen_subject = { any_pop_faction = { is_egalitarian = yes } }
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		add_resource = { influence = -150 }
+		hidden_effect = {
+			random_pop_faction = {
+				limit = { is_egalitarian = yes }
+				save_event_target_as = embraced_faction
+				add_modifier = { modifier = embraced_faction days = 3600 }
+				event_target:chosen_subject = {
+					shift_ethic = ethic_egalitarian
+					hidden_effect = {
+						add_modifier = { modifier = embraced_faction_timer days = 3600 }
+						every_pop_faction = {
+							limit = { NOT = { is_same_value = event_target:embraced_faction } }
+							add_modifier = { modifier = embraced_another_faction days = 3600 }
+						}
+					}
+				}
+				hidden_effect = {
+					save_event_target_as = TargetFaction
+					event_target:chosen_subject = {
+						every_relation = {
+							limit = {
+								NOT = { is_same_empire = root }
+								is_ai = no
+								is_country_type = default
+								has_communications = prev
+								has_intel_level = {
+									who = prev
+									category = government
+									level >= 1
+								}
+							}
+							country_event = { id = veru_misc.4000 }
+						}
+					}
+				}
+			}
+			get_intervention_effect_gov = yes
+		}
+	}
+
+	# Empower Spiritualists
+	option = {
+		name = veru.3000.spi
+		trigger = {
+			event_target:chosen_subject = { any_pop_faction = { is_spiritualist = yes } }
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		add_resource = { influence = -150 }
+		hidden_effect = {
+			random_pop_faction = {
+				limit = { is_spiritualist = yes }
+				save_event_target_as = embraced_faction
+				add_modifier = { modifier = embraced_faction days = 3600 }
+				event_target:chosen_subject = {
+					shift_ethic = ethic_spiritualist
+					hidden_effect = {
+						add_modifier = { modifier = embraced_faction_timer days = 3600 }
+						every_pop_faction = {
+							limit = { NOT = { is_same_value = event_target:embraced_faction } }
+							add_modifier = { modifier = embraced_another_faction days = 3600 }
+						}
+					}
+				}
+				hidden_effect = {
+					save_event_target_as = TargetFaction
+					event_target:chosen_subject = {
+						every_relation = {
+							limit = {
+								NOT = { is_same_empire = root }
+								is_ai = no
+								is_country_type = default
+								has_communications = prev
+								has_intel_level = {
+									who = prev
+									category = government
+									level >= 1
+								}
+							}
+							country_event = { id = veru_misc.4000 }
+						}
+					}
+				}
+			}
+			get_intervention_effect_gov = yes
+		}
+	}
+
+	# Empower Materialists
+	option = {
+		name = veru.3000.mat
+		trigger = {
+			event_target:chosen_subject = { any_pop_faction = { is_materialist = yes } }
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		add_resource = { influence = -150 }
+		hidden_effect = {
+			random_pop_faction = {
+				limit = { is_materialist = yes }
+				save_event_target_as = embraced_faction
+				add_modifier = { modifier = embraced_faction days = 3600 }
+				event_target:chosen_subject = {
+					shift_ethic = ethic_materialist
+					hidden_effect = {
+						add_modifier = { modifier = embraced_faction_timer days = 3600 }
+						every_pop_faction = {
+							limit = { NOT = { is_same_value = event_target:embraced_faction } }
+							add_modifier = { modifier = embraced_another_faction days = 3600 }
+						}
+					}
+				}
+				hidden_effect = {
+					save_event_target_as = TargetFaction
+					event_target:chosen_subject = {
+						every_relation = {
+							limit = {
+								NOT = { is_same_empire = root }
+								is_ai = no
+								is_country_type = default
+								has_communications = prev
+								has_intel_level = {
+									who = prev
+									category = government
+									level >= 1
+								}
+							}
+							country_event = { id = veru_misc.4000 }
+						}
+					}
+				}
+			}
+			get_intervention_effect_gov = yes
+		}
+	}
+
+	# Empower Militarists
+	option = {
+		name = veru.3000.mil
+		trigger = {
+			event_target:chosen_subject = { any_pop_faction = { is_militarist = yes } }
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		add_resource = { influence = -150 }
+		hidden_effect = {
+			random_pop_faction = {
+				limit = { is_militarist = yes }
+				save_event_target_as = embraced_faction
+				add_modifier = { modifier = embraced_faction days = 3600 }
+				event_target:chosen_subject = {
+					shift_ethic = ethic_militarist
+					hidden_effect = {
+						add_modifier = { modifier = embraced_faction_timer days = 3600 }
+						every_pop_faction = {
+							limit = { NOT = { is_same_value = event_target:embraced_faction } }
+							add_modifier = { modifier = embraced_another_faction days = 3600 }
+						}
+					}
+				}
+				hidden_effect = {
+					save_event_target_as = TargetFaction
+					event_target:chosen_subject = {
+						every_relation = {
+							limit = {
+								NOT = { is_same_empire = root }
+								is_ai = no
+								is_country_type = default
+								has_communications = prev
+								has_intel_level = {
+									who = prev
+									category = government
+									level >= 1
+								}
+							}
+							country_event = { id = veru_misc.4000 }
+						}
+					}
+				}
+			}
+			get_intervention_effect_gov = yes
+		}
+	}
+
+	# Empower Pacifists
+	option = {
+		name = veru.3000.pac
+		trigger = {
+			event_target:chosen_subject = { any_pop_faction = { is_pacifist = yes } }
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		add_resource = { influence = -150 }
+		hidden_effect = {
+			random_pop_faction = {
+				limit = { is_pacifist = yes }
+				save_event_target_as = embraced_faction
+				add_modifier = { modifier = embraced_faction days = 3600 }
+				event_target:chosen_subject = {
+					shift_ethic = ethic_pacifist
+					hidden_effect = {
+						add_modifier = { modifier = embraced_faction_timer days = 3600 }
+						every_pop_faction = {
+							limit = { NOT = { is_same_value = event_target:embraced_faction } }
+							add_modifier = { modifier = embraced_another_faction days = 3600 }
+						}
+					}
+				}
+				hidden_effect = {
+					save_event_target_as = TargetFaction
+					event_target:chosen_subject = {
+						every_relation = {
+							limit = {
+								NOT = { is_same_empire = root }
+								is_ai = no
+								is_country_type = default
+								has_communications = prev
+								has_intel_level = {
+									who = prev
+									category = government
+									level >= 1
+								}
+							}
+							country_event = { id = veru_misc.4000 }
+						}
+					}
+				}
+			}
+			get_intervention_effect_gov = yes
+		}
+	}
+
+	# Empower Xenophobes
+	option = {
+		name = veru.3000.phobe
+		trigger = {
+			event_target:chosen_subject = { any_pop_faction = { is_xenophobe = yes } }
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		add_resource = { influence = -150 }
+		hidden_effect = {
+			random_pop_faction = {
+				limit = { is_xenophobe = yes }
+				save_event_target_as = embraced_faction
+				add_modifier = { modifier = embraced_faction days = 3600 }
+				event_target:chosen_subject = {
+					shift_ethic = ethic_xenophobe
+					hidden_effect = {
+						add_modifier = { modifier = embraced_faction_timer days = 3600 }
+						every_pop_faction = {
+							limit = { NOT = { is_same_value = event_target:embraced_faction } }
+							add_modifier = { modifier = embraced_another_faction days = 3600 }
+						}
+					}
+				}
+				hidden_effect = {
+					save_event_target_as = TargetFaction
+					event_target:chosen_subject = {
+						every_relation = {
+							limit = {
+								NOT = { is_same_empire = root }
+								is_ai = no
+								is_country_type = default
+								has_communications = prev
+								has_intel_level = {
+									who = prev
+									category = government
+									level >= 1
+								}
+							}
+							country_event = { id = veru_misc.4000 }
+						}
+					}
+				}
+			}
+			get_intervention_effect_gov = yes
+		}
+	}
+
+	# Empower Xenophiles
+	option = {
+		name = veru.3000.phile
+		trigger = {
+			event_target:chosen_subject = { any_pop_faction = { is_xenophile = yes } }
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		add_resource = { influence = -150 }
+		hidden_effect = {
+			random_pop_faction = {
+				limit = { is_xenophile = yes }
+				save_event_target_as = embraced_faction
+				add_modifier = { modifier = embraced_faction days = 3600 }
+				event_target:chosen_subject = {
+					shift_ethic = ethic_xenophile
+					hidden_effect = {
+						add_modifier = { modifier = embraced_faction_timer days = 3600 }
+						every_pop_faction = {
+							limit = { NOT = { is_same_value = event_target:embraced_faction } }
+							add_modifier = { modifier = embraced_another_faction days = 3600 }
+						}
+					}
+				}
+				hidden_effect = {
+					save_event_target_as = TargetFaction
+					event_target:chosen_subject = {
+						every_relation = {
+							limit = {
+								NOT = { is_same_empire = root }
+								is_ai = no
+								is_country_type = default
+								has_communications = prev
+								has_intel_level = {
+									who = prev
+									category = government
+									level >= 1
+								}
+							}
+							country_event = { id = veru_misc.4000 }
+						}
+					}
+				}
+			}
+			get_intervention_effect_gov = yes
+		}
+	}
+
+	# Empower Socialists
+	option = {
+		name = veru.3000.soc
+		trigger = {
+			event_target:chosen_subject = { any_pop_faction = { is_socialist = yes } }
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		add_resource = { influence = -150 }
+		hidden_effect = {
+			random_pop_faction = {
+				limit = { is_socialist = yes }
+				save_event_target_as = embraced_faction
+				add_modifier = { modifier = embraced_faction days = 3600 }
+				event_target:chosen_subject = {
+					shift_ethic = ethic_socialism
+					hidden_effect = {
+						add_modifier = { modifier = embraced_faction_timer days = 3600 }
+						every_pop_faction = {
+							limit = { NOT = { is_same_value = event_target:embraced_faction } }
+							add_modifier = { modifier = embraced_another_faction days = 3600 }
+						}
+					}
+				}
+				hidden_effect = {
+					save_event_target_as = TargetFaction
+					event_target:chosen_subject = {
+						every_relation = {
+							limit = {
+								NOT = { is_same_empire = root }
+								is_ai = no
+								is_country_type = default
+								has_communications = prev
+								has_intel_level = {
+									who = prev
+									category = government
+									level >= 1
+								}
+							}
+							country_event = { id = veru_misc.4000 }
+						}
+					}
+				}
+			}
+			get_intervention_effect_gov = yes
+		}
+	}
+
+	# Empower Capitalists
+	option = {
+		name = veru.3000.cap
+		trigger = {
+			event_target:chosen_subject = { any_pop_faction = { is_capitalism = yes } }
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = influencefail_text_veru_150
+				has_resource = { type = influence amount >= 150 }
+			}
+		}
+		add_resource = { influence = -150 }
+		hidden_effect = {
+			random_pop_faction = {
+				limit = { is_capitalism = yes }
+				save_event_target_as = embraced_faction
+				add_modifier = { modifier = embraced_faction days = 3600 }
+				event_target:chosen_subject = {
+					shift_ethic = ethic_capitalism
+					hidden_effect = {
+						add_modifier = { modifier = embraced_faction_timer days = 3600 }
+						every_pop_faction = {
+							limit = { NOT = { is_same_value = event_target:embraced_faction } }
+							add_modifier = { modifier = embraced_another_faction days = 3600 }
+						}
+					}
+				}
+				hidden_effect = {
+					save_event_target_as = TargetFaction
+					event_target:chosen_subject = {
+						every_relation = {
+							limit = {
+								NOT = { is_same_empire = root }
+								is_ai = no
+								is_country_type = default
+								has_communications = prev
+								has_intel_level = {
+									who = prev
+									category = government
+									level >= 1
+								}
+							}
+							country_event = { id = veru_misc.4000 }
+						}
+					}
+				}
+			}
+			get_intervention_effect_gov = yes
+		}
+	}
+
+	# Back
+	option = { name = veru.remain }
+}
 
 # Change Government Structure
 country_event = {
@@ -2917,21 +3504,139 @@ country_event = {
 		random_subject = {
 			limit = { has_country_flag = chosen_border_subject_@event_target:buffer_zone_winner }
 			remove_country_flag = chosen_border_subject_@event_target:buffer_zone_winner
-			set_subject_of = {
-				who = event_target:buffer_zone_winner
-				preset = preset_vassal
+
+			
+			if = {
+				limit = { is_tributary = yes }
+				set_subject_of = {
+					who = event_target:buffer_zone_winner
+					preset = preset_tributary
+				}
 			}
+			else_if = {
+				limit = {
+					is_ver_clientkingdom = yes
+					event_target:buffer_zone_winner = { is_gestalt = no }
+				}
+				set_subject_of = {
+					who = event_target:buffer_zone_winner
+					preset = preset_ver_clientkingdom
+				}
+			}
+			else_if = {
+				limit = {
+					is_ver_foederatus = yes
+					event_target:buffer_zone_winner = { is_gestalt = no }
+				}
+				set_subject_of = {
+					who = event_target:buffer_zone_winner
+					preset = preset_ver_foederatus
+				}
+			}
+			else_if = {
+				limit = { is_ver_condo = yes }
+				set_subject_of = {
+					who = event_target:buffer_zone_winner
+					preset = preset_ver_condo
+				}
+			}
+			else_if = {
+				limit = {
+					is_ver_satellite = yes
+					event_target:buffer_zone_winner = { is_gestalt = no }
+				}
+				set_subject_of = {
+					who = event_target:buffer_zone_winner
+					preset = preset_ver_satellite
+				}
+			}
+			else_if = {
+				limit = { is_ver_jrpartner = yes }
+				set_subject_of = {
+					who = event_target:buffer_zone_winner
+					preset = preset_ver_jrpartner
+				}
+			}
+			else_if = {
+				limit = {
+					is_ver_dependency = yes
+					event_target:buffer_zone_winner = { is_gestalt = no }
+				}
+				set_subject_of = {
+					who = event_target:buffer_zone_winner
+					preset = preset_ver_dependency
+				}
+			}
+			else_if = {
+				limit = {
+					is_ver_devolved = yes
+					event_target:buffer_zone_winner = { is_gestalt = no }
+				}
+				set_subject_of = {
+					who = event_target:buffer_zone_winner
+					preset = preset_ver_devolved
+				}
+			}
+			else_if = {
+				limit = { is_ver_puppet = yes }
+				set_subject_of = {
+					who = event_target:buffer_zone_winner
+					preset = preset_ver_puppet
+				}
+			}
+			else_if = {
+				limit = {
+					is_ver_neocolony = yes
+					event_target:buffer_zone_winner = {
+						is_gestalt = no
+						is_socialist = no
+					}
+				}
+				set_subject_of = {
+					who = event_target:buffer_zone_winner
+					preset = preset_ver_neocolony
+				}
+			}
+			else_if = {
+				limit = {
+					is_ver_blood = yes
+					event_target:buffer_zone_winner = {
+						is_gestalt = no
+						NOT = { any_subject = { is_ver_blood = yes } }
+						OR = {
+							is_death_cult_empire = yes
+							has_valid_civic = civic_barbaric_despoilers
+							has_valid_civic = civic_slaver_guilds
+							has_valid_civic = civic_indentured_assets
+						}
+					}
+				}
+				set_subject_of = {
+					who = event_target:buffer_zone_winner
+					preset = preset_ver_blood
+				}
+			}
+			else = {
+				set_subject_of = {
+					who = event_target:buffer_zone_winner
+					preset = preset_vassal
+				}
+			}
+			
 			save_event_target_as = chosen_subject
 		}
 	}
 
 	after = {
-		if = {
-			limit = { event_target:chosen_subject = { is_ai = yes } }
-			event_target:buffer_zone_winner = {
-				country_event = { id = veru.6400 days = 3 }
-			}
+		event_target:buffer_zone_winner = {
+			country_event = { id = veru.6400 days = 3 }
 		}
+		# if = {
+		# 	limit = { event_target:chosen_subject = { is_ai = yes } }
+		# 	event_target:buffer_zone_winner = {
+		# 		country_event = { id = veru.6400 days = 3 }
+		# 	}
+		# }
 	}
 }
 

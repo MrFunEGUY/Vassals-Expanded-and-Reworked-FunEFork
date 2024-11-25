@@ -1006,3 +1006,74 @@ country_event = {
 		set_truce = { target = event_target:buffer_war_opponent type = war }
 	}
 }
+
+# Notification event - other empire forced to shifts ethics
+country_event = {
+	id = veru_misc.4000
+	title = veru_misc.4000.title
+	location = event_target:TargetFaction.Owner.capital_scope
+	desc = {
+		trigger = {
+			text = veru_misc.4000.desc.start
+			text = newline
+			success_text = {
+				text = factions.2000.desc.imperialist
+				event_target:TargetFaction = { is_pop_faction_type = imperialist }
+			}
+			success_text = {
+				text = factions.2000.desc.isolationist
+				event_target:TargetFaction = { is_pop_faction_type = isolationist }
+			}
+			success_text = {
+				text = factions.2000.desc.progressive
+				event_target:TargetFaction = { is_pop_faction_type = progressive }
+			}
+			success_text = {
+				text = factions.2000.desc.prosperity
+				event_target:TargetFaction = { is_pop_faction_type = prosperity }
+			}
+			success_text = {
+				text = factions.2000.desc.supremacist
+				event_target:TargetFaction = { is_pop_faction_type = supremacist }
+			}
+			success_text = {
+				text = factions.2000.desc.technologist
+				event_target:TargetFaction = { is_pop_faction_type = technologist }
+			}
+			success_text = {
+				text = factions.2000.desc.totalitarian
+				event_target:TargetFaction = { is_pop_faction_type = totalitarian }
+			}
+			success_text = {
+				text = factions.2000.desc.traditionalist
+				event_target:TargetFaction = { is_pop_faction_type = traditionalist }
+			}
+			success_text = {
+				text = factions.2000.desc.xenoist
+				event_target:TargetFaction = { is_pop_faction_type = xenoist }
+			}
+			success_text = {
+				text = factions.2000.desc.manifesti
+				event_target:TargetFaction = { is_pop_faction_type = manifesti }
+			}
+			#####
+			success_text = {
+				text = factions.2000.desc.socialist
+				event_target:TargetFaction = { is_pop_faction_type = socialists }
+			}
+			success_text = {
+				text = factions.2000.desc.capitalist
+				event_target:TargetFaction = { is_pop_faction_type = bankers }
+			}
+		}
+	}
+
+	picture = GFX_evt_alien_propaganda
+	show_sound = event_factions
+
+	is_triggered_only = yes
+
+	option = {
+		name = OK
+	}
+}

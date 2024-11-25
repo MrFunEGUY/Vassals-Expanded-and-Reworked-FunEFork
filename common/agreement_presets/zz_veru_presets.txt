@@ -159,7 +159,6 @@ preset_ver_foederatus = {
 			}
 		}
 		NOT = { has_civic = civic_inwards_perfection }
-		from = { is_gestalt = no }
 		tech_unlocked_ratio = {
 			who = from
 			ratio >= @protectorate_tech_threshold
@@ -418,7 +417,7 @@ preset_ver_jrpartner = {
 		is_tributary = no
 		is_protectorate = no
 		from = {
-			is_gestalt = no
+			# is_gestalt = no
 			NOR = {
 				is_country_type = awakened_fallen_empire
 				has_civic = civic_inwards_perfection
@@ -927,7 +926,7 @@ preset_ver_condo = {
 			}
 		}
 		from = {
-			is_gestalt = no
+			# is_gestalt = no
 			NOR = {
 				is_country_type = awakened_fallen_empire
 				has_civic = civic_inwards_perfection
@@ -1045,7 +1044,7 @@ preset_ver_puppet = {
 		is_tributary = no
 		is_protectorate = no
 		from = {
-			is_gestalt = no
+			# is_gestalt = no
 			NOR = {
 				is_country_type = awakened_fallen_empire
 				has_civic = civic_inwards_perfection
@@ -1171,7 +1170,7 @@ preset_ver_neocolony = {
 		is_tributary = no
 		is_protectorate = no
 		from = {
-			is_socialism = no
+			is_socialist = no
 			is_gestalt = no
 			NOR = {
 				is_country_type = awakened_fallen_empire

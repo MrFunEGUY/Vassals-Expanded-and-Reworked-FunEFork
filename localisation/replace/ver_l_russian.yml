@@ -150,6 +150,7 @@ l_russian:
 
  veru.1050.type: "Нам нужно изменить наши отношения."
  veru.1050.gov: "Нам нужно изменить вашу структуру правительства."
+ veru.1050.faction: "Нам нужно расширить возможности фракции вашего правительства."
  veru.1050.cap: "Нам нужно перенести вашу столицу."
  veru.1050.leader: "Мы устанавливаем нового лидера."
  veru.1050.proxy: "Мы инициируем опосредованную войну."
@@ -157,18 +158,29 @@ l_russian:
  veru.1050.exile: "Мы предоставим вам территорию."
  veru.1050.tech.tooltip: "§Y[event_target:chosen_subject.GetName]§! будет предоставлен доступ ко всем технологиям, которые мы исследовали до сих пор."
  veru.1050.name_change: "Мы меняем название вашей нации."
- veru.3000.empire_name_change.tooltip: "§Y[event_target:chosen_subject.GetName]§! будет переименован в §Y[root.capital_scope.solar_system.GetName]§!."
+ veru.2000.empire_name_change.tooltip: "§Y[event_target:chosen_subject.GetName]§! будет переименован в §Y[root.capital_scope.solar_system.GetName]§!."
 
  # Change Subject Type
  veru.subject_leader.name: "[event_target:chosen_subject.ruler.GetTitle] §H[event_target:chosen_subject.ruler.GetName]§! of the §Y[event_target:chosen_subject.GetName]§!"
 
  # Change Subject Names
- veru.3000.loyal.desc: "What aspect of our government would you like renamed?"
- veru.3000.disloyal.desc: "What is being renamed?"
+ veru.2000.loyal.desc: "What aspect of our government would you like renamed?"
+ veru.2000.disloyal.desc: "What is being renamed?"
 
- veru.3000.empire: "Your §YEmpire§! is being renamed."
- veru.3000.male_ruler_title: "The §Ytitle§! of your §Ymale§! rulers is being changed."
- veru.3000.female_ruler_title: "The §Ytitle§! of your §Yfemale§! rulers is being changed."
+ veru.2000.empire: "Your §YEmpire§! is being renamed."
+ veru.2000.male_ruler_title: "The §Ytitle§! of your §Ymale§! rulers is being changed."
+ veru.2000.female_ruler_title: "The §Ytitle§! of your §Yfemale§! rulers is being changed."
+
+ veru.3000.auth: "With more £authoritarian£ Authoritarian influence."
+ veru.3000.egal: "With more £egalitarian£ Egalitarian influence."
+ veru.3000.spi: "With more £spiritualist£ Spiritualist influence."
+ veru.3000.mat: "With more £materialist£ Materialist influence."
+ veru.3000.mil: "With more £militarist£ Militarist influence."
+ veru.3000.pac: "With more £pacifist£ Pacifist influence."
+ veru.3000.phobe: "With more £xenophobe£ Xenophobic influence."
+ veru.3000.phile: "With more £xenophile£ Xenophilic influence."
+ veru.3000.soc: "With more £socialism£ Socialist influence."
+ veru.3000.cap: "With more £capitalism£ Capitalist influence."
 
  # Change Government Type
  veru.4000.loyal.desc: "Как бы вы хотели, чтобы §Y[event_target:chosen_subject.GetName]§! управлялось?"
@@ -487,6 +499,12 @@ l_russian:
 
  d_subject_unity_capital: "Храм Сюзерена"
  d_subject_unity_capital_desc: "В этом центре наша правящая элита получила указания от нашего сюзерена о том, как лучше содействовать сотрудничеству между нашими народами."
+
+ veru_misc.4000.title:0 "Вынужденная смена управляющей этики в [TargetFaction.Owner.GetName]"
+ veru_misc.4000.desc.start:0 "Из-за поддержки §Y[TargetFaction.GetName]§! в §H[TargetFaction.Owner.Overlord.GetName]§!, §Y[TargetFaction.Owner.GetName]§! был вынужден принять фракцию, приняв их основные ценности и политику."
+
+ EMPOWER_FACTION_COOLDOWN: "Они недавно §YEmbraced§! фракцию. Это можно сделать только раз в §Y10§! лет".
+
 
  # Overwrites
  protectorate_extra_subject:1 "$MODIFIER$\n"

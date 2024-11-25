@@ -151,6 +151,7 @@ l_simp_chinese:
 
  veru.1050.type: "我们需要改变我们的关系。"
  veru.1050.gov: "我们需要改变你们的管理结构。"
+ veru.1050.faction: "我们需要赋予你们政府中的一个派别权力。"
  veru.1050.cap: "我们需要迁移你们的首都。"
  veru.1050.leader: "我们要安排一个新领袖。"
  veru.1050.proxy: "我们要发起一场代理人战争。"
@@ -158,18 +159,29 @@ l_simp_chinese:
  veru.1050.exile: "我们会给你们领土。"
  veru.1050.tech.tooltip: "§Y[event_target:chosen_subject.GetName]§!将获得我们迄今为止研究的所有技术。"
  veru.1050.name_change: "我们要改变你们国家的名称。"
- veru.3000.empire_name_change.tooltip: "§Y[event_target:chosen_subject.GetName]§! 将被重命名为 §Y[root.capital_scope.solar_system.GetName]§!."
+ veru.2000.empire_name_change.tooltip: "§Y[event_target:chosen_subject.GetName]§! 将被重命名为 §Y[root.capital_scope.solar_system.GetName]§!."
 
  # Change subject Type
  veru.subject_leader.name: "§Y[event_target:chosen_subject.GetName]§! 的 [event_target:chosen_subject.ruler.GetTitle] §H[event_target:chosen_subject.ruler.GetName]§!"
 
  # Change Subject Names
- veru.3000.loyal.desc: "What aspect of our government would you like renamed?"
- veru.3000.disloyal.desc: "What is being renamed?"
+ veru.2000.loyal.desc: "What aspect of our government would you like renamed?"
+ veru.2000.disloyal.desc: "What is being renamed?"
 
- veru.3000.empire: "Your §YEmpire§! is being renamed."
- veru.3000.male_ruler_title: "The §Ytitle§! of your §Ymale§! rulers is being changed."
- veru.3000.female_ruler_title: "The §Ytitle§! of your §Yfemale§! rulers is being changed."
+ veru.2000.empire: "Your §YEmpire§! is being renamed."
+ veru.2000.male_ruler_title: "The §Ytitle§! of your §Ymale§! rulers is being changed."
+ veru.2000.female_ruler_title: "The §Ytitle§! of your §Yfemale§! rulers is being changed."
+
+ veru.3000.auth: "With more £authoritarian£ Authoritarian influence."
+ veru.3000.egal: "With more £egalitarian£ Egalitarian influence."
+ veru.3000.spi: "With more £spiritualist£ Spiritualist influence."
+ veru.3000.mat: "With more £materialist£ Materialist influence."
+ veru.3000.mil: "With more £militarist£ Militarist influence."
+ veru.3000.pac: "With more £pacifist£ Pacifist influence."
+ veru.3000.phobe: "With more £xenophobe£ Xenophobic influence."
+ veru.3000.phile: "With more £xenophile£ Xenophilic influence."
+ veru.3000.soc: "With more £socialism£ Socialist influence."
+ veru.3000.cap: "With more £capitalism£ Capitalist influence."
 
  # Change Government Type
  veru.4000.loyal.desc: "您想要§Y[event_target:chosen_subject.GetName]§!采用什么权力制度？"
@@ -488,6 +500,11 @@ l_simp_chinese:
 
  d_subject_unity_capital: "宗主寺庙"
  d_subject_unity_capital_desc: "在这个中心，我们的统治阶层精英从我们的宗主那里得到了关于如何更好地促进我们国家之间合作的指导。"
+
+ veru_misc.4000.title:0 "[TargetFaction.Owner.GetName]中的强制管理道德转变"。
+ veru_misc.4000.desc.start:0 "由于在§H[TargetFaction.Owner.Overlord.GetName]§！中支持§Y[TargetFaction.GetName]§！，§Y[TargetFaction.Owner.GetName]§！被迫拥抱该派别，采用他们的核心价值观和政策。"
+
+ EMPOWER_FACTION_COLDOWN："他们最近§Y拥抱§！了一个派系。这只能每§Y10§！年做一次。"
 
  # Overwrites
  protectorate_extra_subject:1 "$MODIFIER$\n"
