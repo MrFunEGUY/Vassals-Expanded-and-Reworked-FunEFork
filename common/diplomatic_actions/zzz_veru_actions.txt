@@ -29,7 +29,7 @@ action_invite_to_federation = {
 			}
 			OR = {
 				has_federation = no
-				federation = { NOT = { has_federation_type = vf_ef_federation } }
+				federation = { NOT = { has_federation_type = empire_federation } }
 			}
 		}
 	}

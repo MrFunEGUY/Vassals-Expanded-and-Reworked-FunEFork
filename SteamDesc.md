@@ -11,7 +11,9 @@
 
 - Government Restructuring: Determines whether or not the Overlord can change the subject's government authority (Democratic, Imperial, etc.).
 
-- Domestic Affairs: Determines whether or not the Subject must align their policies with that of their Overlord. Once this is enabled, at that moment, and then every year, the subject's policies will attempt to change to match those of the Overlord.
+- Domestic Affairs: Determines whether or not the Subject must align their policies with that of their Overlord. Once this is enabled, at that moment, and then every 5 years, the subject's policies will attempt to change to match those of the Overlord.
+
+- Ethnic Affairs: Determines whether or not the Subject must align their species rights (Citizenship Type and Living Standards) with that of their Overlord. Once this is enabled, at that moment, and then every 5 years, the subject's species policies will attempt to change to match those of the Overlord.
 
 - Capital Relocation: Determines whether the Overlord can relocate the capital of their subject.
 

@@ -42,6 +42,10 @@ subject_ver_policy = {
 	term_type = discrete
 }
 
+subject_ver_species_policy = {
+	term_type = discrete
+}
+
 subject_ver_capital = {
 	term_type = discrete
 }

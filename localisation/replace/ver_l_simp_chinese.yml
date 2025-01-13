@@ -413,6 +413,14 @@ l_simp_chinese:
  subject_ver_policy_restricted_desc: "附庸可以自由决定自己的政策。"
  subject_ver_policy_allowed: "政策对接"
  subject_ver_policy_allowed_desc: "附庸必须使他们的政策与宗主的政策保持一致。"
+
+ subject_ver_species_policy： "种族事务"
+ subject_ver_species_policy_desc："本条款规定了主体与物种相关的政策是否必须与霸主的政策保持一致"。
+
+ subject_ver_species_policy_restricted： "种族主权"
+ subject_ver_species_policy_restricted_desc: "主体可自由决定自己的种族政策"。
+ subject_ver_species_policy_allowed： "政策调整"
+ subject_ver_species_policy_allowed_desc: "主体必须与霸主的种族政策保持一致。"
  
  subject_ver_proxy: "代理人战争"
  subject_ver_proxy_desc: "该条款决定是否允许宗主强迫附庸参与代理人战争。"

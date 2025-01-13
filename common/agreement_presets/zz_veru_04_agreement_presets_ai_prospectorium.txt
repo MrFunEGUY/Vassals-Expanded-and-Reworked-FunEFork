@@ -1,4 +1,4 @@
-@protectorate_tech_threshold = 0.4
+@protectorate_tech_threshold = 0 #0.4
 @specialist_base_acceptance_value = 50
 @specialist_aligned_ethics_value = 100
 @specialist_unaligned_ethics_value = -50
@@ -37,6 +37,10 @@ preset_prospectorium_nice_01 = {
 			{
 				key = subject_ver_policy
 				value = subject_ver_policy_restricted
+			}
+			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
 			}
 			{
 				key = subject_ver_naming
@@ -189,6 +193,10 @@ preset_prospectorium_nice_02 = {
 				value = subject_ver_policy_restricted
 			}
 			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
+			}
+			{
 				key = subject_ver_naming
 				value = subject_ver_naming_restricted
 			}
@@ -337,6 +345,10 @@ preset_prospectorium_mean_01 = {
 			{
 				key = subject_ver_policy
 				value = subject_ver_policy_restricted
+			}
+			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
 			}
 			{
 				key = subject_ver_naming
@@ -501,6 +513,10 @@ preset_prospectorium_mean_02 = {
 				value = subject_ver_policy_restricted
 			}
 			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
+			}
+			{
 				key = subject_ver_naming
 				value = subject_ver_naming_restricted
 			}
@@ -661,6 +677,10 @@ preset_prospectorium_mean_03 = {
 			{
 				key = subject_ver_policy
 				value = subject_ver_policy_restricted
+			}
+			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
 			}
 			{
 				key = subject_ver_naming

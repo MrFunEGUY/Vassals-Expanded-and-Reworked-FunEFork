@@ -33,6 +33,10 @@ preset_mercatorum = {
 				value = subject_ver_policy_restricted
 			}
 			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
+			}
+			{
 				key = subject_ver_naming
 				value = subject_ver_naming_restricted
 			}

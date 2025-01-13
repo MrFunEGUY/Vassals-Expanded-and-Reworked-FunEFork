@@ -1,4 +1,4 @@
-@protectorate_tech_threshold = 0.4
+@protectorate_tech_threshold = 0 #0.4
 
 preset_vassal_mean_01 = {
 	parent = preset_vassal
@@ -34,6 +34,10 @@ preset_vassal_mean_01 = {
 			{
 				key = subject_ver_policy
 				value = subject_ver_policy_restricted
+			}
+			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
 			}
 			{
 				key = subject_ver_naming
@@ -158,6 +162,10 @@ preset_vassal_mean_02 = {
 			{
 				key = subject_ver_policy
 				value = subject_ver_policy_restricted
+			}
+			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
 			}
 			{
 				key = subject_ver_naming
@@ -288,6 +296,10 @@ preset_vassal_mean_03 = {
 				value = subject_ver_policy_restricted
 			}
 			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
+			}
+			{
 				key = subject_ver_naming
 				value = subject_ver_naming_restricted
 			}
@@ -388,6 +400,10 @@ preset_vassal_nice_01 = {
 			{
 				key = subject_ver_policy
 				value = subject_ver_policy_restricted
+			}
+			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
 			}
 			{
 				key = subject_ver_naming
@@ -512,6 +528,10 @@ preset_vassal_nice_02 = {
 			{
 				key = subject_ver_policy
 				value = subject_ver_policy_restricted
+			}
+			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
 			}
 			{
 				key = subject_ver_naming

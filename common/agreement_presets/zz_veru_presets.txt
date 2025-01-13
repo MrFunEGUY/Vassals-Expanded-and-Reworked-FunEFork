@@ -25,8 +25,8 @@
 # 	}
 # }
 
-@protectorate_tech_threshold = 0.4
-@protectorate_tech_switch = 0.5
+@protectorate_tech_threshold = 0 #0.4
+@protectorate_tech_switch = 0 #0.5 ## DOes this effectively disable this? Hope so.
 
 @specialist_base_acceptance_value = 50
 @specialist_subject_base_acceptance_value = 50
@@ -70,6 +70,10 @@ preset_ver_foederatus = {
 			{
 				key = subject_ver_policy
 				value = subject_ver_policy_restricted
+			}
+			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
 			}
 			{
 				key = subject_ver_naming
@@ -199,6 +203,10 @@ preset_ver_satellite = {
 			{
 				key = subject_ver_policy
 				value = subject_ver_policy_restricted
+			}
+			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
 			}
 			{
 				key = subject_ver_naming
@@ -337,6 +345,10 @@ preset_ver_jrpartner = {
 				value = subject_ver_policy_restricted
 			}
 			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
+			}
+			{
 				key = subject_ver_naming
 				value = subject_ver_naming_restricted
 			}
@@ -466,6 +478,10 @@ preset_ver_dependency = {
 				value = subject_ver_policy_restricted
 			}
 			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
+			}
+			{
 				key = subject_ver_naming
 				value = subject_ver_naming_restricted
 			}
@@ -591,7 +607,11 @@ preset_ver_clientkingdom = {
 			}
 			{
 				key = subject_ver_policy
-				value = subject_ver_policy_restricted
+				value = subject_ver_policy_allowed
+			}
+			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
 			}
 			{
 				key = subject_ver_naming
@@ -716,6 +736,10 @@ preset_ver_devolved = {
 				value = subject_ver_policy_restricted
 			}
 			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
+			}
+			{
 				key = subject_ver_naming
 				value = subject_ver_naming_restricted
 			}
@@ -825,6 +849,10 @@ preset_ver_condo = {
 			{
 				key = subject_ver_policy
 				value = subject_ver_policy_restricted
+			}
+			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
 			}
 			{
 				key = subject_ver_naming
@@ -972,7 +1000,11 @@ preset_ver_puppet = {
 			}
 			{
 				key = subject_ver_policy
-				value = subject_ver_policy_restricted
+				value = subject_ver_policy_allowed
+			}
+			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_allowed
 			}
 			{
 				key = subject_ver_naming
@@ -1091,6 +1123,10 @@ preset_ver_neocolony = {
 			{
 				key = subject_ver_policy
 				value = subject_ver_policy_restricted
+			}
+			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
 			}
 			{
 				key = subject_ver_naming
@@ -1222,6 +1258,10 @@ preset_ver_blood = {
 				value = subject_ver_policy_restricted
 			}
 			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
+			}
+			{
 				key = subject_ver_naming
 				value = subject_ver_naming_restricted
 			}
@@ -1348,6 +1388,10 @@ preset_ver_appendage = {
 				value = subject_ver_policy_restricted
 			}
 			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
+			}
+			{
 				key = subject_ver_naming
 				value = subject_ver_naming_restricted
 			}
@@ -1436,6 +1480,10 @@ preset_ver_organic = {
 			{
 				key = subject_ver_policy
 				value = subject_ver_policy_restricted
+			}
+			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
 			}
 			{
 				key = subject_ver_naming
@@ -1530,6 +1578,10 @@ preset_ver_parallel = {
 			{
 				key = subject_ver_policy
 				value = subject_ver_policy_restricted
+			}
+			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
 			}
 			{
 				key = subject_ver_naming

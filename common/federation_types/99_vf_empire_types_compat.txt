@@ -4,7 +4,7 @@
 @xp_to_level_4 = 4800
 @xp_to_level_5 = 9600
 
-vf_ef_federation = {
+empire_federation = {
 	base_intel = 10
 	icon = "GFX_empire_federation"
 	potential = {
@@ -18,46 +18,46 @@ vf_ef_federation = {
 			experience = @xp_to_level_2 # Experience until next rank
 			perks = {
 				# empire_federation_passive
-				cohesion_empire_join_1
-				emperor_diplo_weight_steal_1
+				# cohesion_empire_join_1
+				# emperor_diplo_weight_steal_1
 			}
 		}
 
 		level_2 = {
 			experience = @xp_to_level_3
 			perks = {
-				empire_trade_value_1
-				empire_fleet_speed_1
-				emperor_diplo_weight_steal_2
+				# empire_trade_value_1
+				# empire_fleet_speed_1
+				# emperor_diplo_weight_steal_2
 			}
 		}
 
 		level_3 = {
 			experience = @xp_to_level_4
 			perks = {
-				extra_imperial_envoy_1
-				empire_ship_gain
-				empire_research_boost_1
-				emperor_diplo_weight_steal_3
+				# extra_imperial_envoy_1
+				# empire_ship_gain
+				# empire_research_boost_1
+				# emperor_diplo_weight_steal_3
 			}
 		}
 
 		level_4 = {
 			experience = @xp_to_level_5
 			perks = {
-				imperial_influence_1
-				empire_fleet_size_1
-				vf_ef_job_output_1
-				emperor_diplo_weight_steal_4
+				# imperial_influence_1
+				# empire_fleet_size_1
+				# vf_ef_job_output_1
+				# emperor_diplo_weight_steal_4
 			}
 		}
 
 		level_5 = {
 			perks = {
-				damage_crisis_1
-				emperor_unity_1
-				emperor_megastructure_1
-				emperor_diplo_weight_steal_5
+				# damage_crisis_1
+				# emperor_unity_1
+				# emperor_megastructure_1
+				# emperor_diplo_weight_steal_5
 			}
 		}
 	}

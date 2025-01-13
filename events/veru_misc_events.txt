@@ -349,34 +349,6 @@ country_event = {
 				}
 				set_policy = { policy = border_policy option = border_policy_closed cooldown = yes }
 			}
-
-		# Leader Enhancement
-			if = {
-				limit = {
-					overlord = { has_policy_flag = leader_enhancement_natural_selection }
-					NOT = { has_policy_flag = leader_enhancement_natural_selection }
-					can_set_policy = { policy = leader_enhancement option = leader_enhancement_natural_selection }
-				}
-				set_policy = { policy = leader_enhancement option = leader_enhancement_natural_selection cooldown = yes }
-			}
-			else_if = {
-				limit = {
-					overlord = { has_policy_flag = leader_enhancement_selected_lineages }
-					NOT = { has_policy_flag = leader_enhancement_selected_lineages }
-					has_technology = tech_selected_lineages
-					can_set_policy = { policy = leader_enhancement option = leader_enhancement_selected_lineages }
-				}
-				set_policy = { policy = leader_enhancement option = leader_enhancement_selected_lineages cooldown = yes }
-			}
-			else_if = {
-				limit = {
-					overlord = { has_policy_flag = leader_enhancement_capacity_boosters }
-					NOT = { has_policy_flag = leader_enhancement_capacity_boosters }
-					has_technology = tech_capacity_boosters
-					can_set_policy = { policy = leader_enhancement option = leader_enhancement_capacity_boosters }
-				}
-				set_policy = { policy = leader_enhancement option = leader_enhancement_capacity_boosters cooldown = yes }
-			}
 		
 		# Economic Policy  --- ??? No Policy Flags?
 			# if = {
@@ -746,6 +718,235 @@ country_event = {
 			# 	}
 			# 	set_policy = { policy = roboticist_output option = build_cyborgs cooldown = yes }
 			# }
+	}
+}
+
+# Align Subject Species Policies
+country_event = {
+	id = veru_misc.2500
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_subject = yes
+		has_species_policy_allowed = yes
+	}
+
+	immediate = {
+		overlord = {
+			every_owned_species = {
+				## Citizenship Types
+				if = {
+					limit = { has_citizenship_type = { type = citizenship_full country = prev } }
+					root = {
+						every_owned_species = {
+							limit = { is_same_species = prevprev }
+							set_citizenship_type = { type = citizenship_full country = root cooldown = yes }
+						}
+					}
+				}
+				else_if = {
+					limit = { has_citizenship_type = { type = citizenship_full_machine country = prev } }
+					root = {
+						every_owned_species = {
+							limit = { is_same_species = prevprev }
+							set_citizenship_type = { type = citizenship_full_machine country = root cooldown = yes }
+						}
+					}
+				}
+				else_if = {
+					limit = { has_citizenship_type = { type = citizenship_limited country = prev } }
+					root = {
+						every_owned_species = {
+							limit = {
+								is_same_species = prevprev
+								NOT = { is_same_species = root.owner_main_species }
+							}
+							set_citizenship_type = { type = citizenship_limited country = root cooldown = yes }
+						}
+					}
+				}
+				else_if = {
+					limit = { has_citizenship_type = { type = citizenship_slavery country = prev } }
+					root = {
+						every_owned_species = {
+							limit = {
+								is_same_species = prevprev
+								NOT = { is_same_species = root.owner_main_species }
+							}
+							set_citizenship_type = { type = citizenship_slavery country = root cooldown = yes }
+						}
+					}
+				}
+				else_if = {
+					limit = { has_citizenship_type = { type = citizenship_robot_servitude country = prev } }
+					root = {
+						every_owned_species = {
+							limit = {
+								is_same_species = prevprev
+								NOT = { is_same_species = root.owner_main_species }
+							}
+							set_citizenship_type = { type = citizenship_robot_servitude country = root cooldown = yes }
+						}
+					}
+				}
+				else_if = {
+					limit = { has_citizenship_type = { type = citizenship_purge country = prev } }
+					root = {
+						every_owned_species = {
+							limit = {
+								is_same_species = prevprev
+								NOT = { is_same_species = root.owner_main_species }
+							}
+							set_citizenship_type = { type = citizenship_purge country = root cooldown = yes }
+						}
+					}
+				}
+				else_if = {
+					limit = { has_citizenship_type = { type = citizenship_purge_machine country = prev } }
+					root = {
+						every_owned_species = {
+							limit = {
+								is_same_species = prevprev
+								NOT = { is_same_species = root.owner_main_species }
+							}
+							set_citizenship_type = { type = citizenship_purge_machine country = root cooldown = yes }
+						}
+					}
+				}
+
+				## Living Standards
+				if = {
+					limit = { has_living_standard = { type = living_standard_normal country = prev } }
+					root = {
+						every_owned_species = {
+							limit = { is_same_species = prevprev }
+							set_living_standard = { type = living_standard_normal country = root cooldown = yes }
+						}
+					}
+				}
+				else_if = {
+					limit = { has_living_standard = { type = living_standard_good country = prev } }
+					root = {
+						every_owned_species = {
+							limit = { is_same_species = prevprev }
+							set_living_standard = { type = living_standard_good country = root cooldown = yes }
+						}
+					}
+				}
+				else_if = {
+					limit = { has_living_standard = { type = living_standard_utopian country = prev } }
+					root = {
+						every_owned_species = {
+							limit = { is_same_species = prevprev }
+							set_living_standard = { type = living_standard_utopian country = root cooldown = yes }
+						}
+					}
+				}
+				else_if = {
+					limit = { has_living_standard = { type = living_standard_academic_privilege country = prev } }
+					root = {
+						every_owned_species = {
+							limit = { is_same_species = prevprev }
+							set_living_standard = { type = living_standard_academic_privilege country = root cooldown = yes }
+						}
+					}
+				}
+				else_if = {
+					limit = { has_living_standard = { type = living_standard_stratified country = prev } }
+					root = {
+						every_owned_species = {
+							limit = { is_same_species = prevprev }
+							set_living_standard = { type = living_standard_stratified country = root cooldown = yes }
+						}
+					}
+				}
+				else_if = {
+					limit = { has_living_standard = { type = living_standard_subsistence country = prev } }
+					root = {
+						every_owned_species = {
+							limit = {
+								is_same_species = prevprev
+								NOT = { is_same_species = root.owner_main_species }
+							}
+							set_living_standard = { type = living_standard_subsistence country = root cooldown = yes }
+						}
+					}
+				}
+				else_if = {
+					limit = { has_living_standard = { type = living_standard_servitude country = prev } }
+					root = {
+						every_owned_species = {
+							limit = {
+								is_same_species = prevprev
+								NOT = { is_same_species = root.owner_main_species }
+							}
+							set_living_standard = { type = living_standard_servitude country = root cooldown = yes }
+						}
+					}
+				}
+				else_if = {
+					limit = { has_living_standard = { type = living_standard_chemical_bliss country = prev } }
+					root = {
+						if = {
+							limit = { has_technology = tech_subdermal_stimulation }
+							every_owned_species = {
+								limit = { is_same_species = prevprev }
+								set_living_standard = { type = living_standard_chemical_bliss country = root cooldown = yes }
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = { has_living_standard = { type = living_standard_shared_burden country = prev } }
+					root = {
+						if = {
+							limit = { has_valid_civic = civic_shared_burden }
+							every_owned_species = {
+								limit = { is_same_species = prevprev }
+								set_living_standard = { type = living_standard_shared_burden country = root cooldown = yes }
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = { has_living_standard = { type = living_standard_dystopian_society country = prev } }
+					root = {
+						if = {
+							limit = { has_valid_civic = civic_dystopian_society }
+							every_owned_species = {
+								limit = { is_same_species = prevprev }
+								set_living_standard = { type = living_standard_dystopian_society country = root cooldown = yes }
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = { has_living_standard = { type = living_standard_worker_ownership country = prev } }
+					root = {
+						if = {
+							limit = { is_worker_coop_empire = yes }
+							every_owned_species = {
+								limit = { is_same_species = prevprev }
+								set_living_standard = { type = living_standard_worker_ownership country = root cooldown = yes }
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = { has_living_standard = { type = living_standard_none country = prev } }
+					root = {
+						every_owned_species = {
+							limit = {
+								is_same_species = prevprev
+								NOT = { is_same_species = root.owner_main_species }
+							}
+							set_living_standard = { type = living_standard_none country = root cooldown = yes }
+						}
+					}
+				}
+			}
+		}
 	}
 }
 

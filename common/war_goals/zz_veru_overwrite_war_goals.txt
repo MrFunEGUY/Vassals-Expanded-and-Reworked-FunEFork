@@ -34,19 +34,63 @@ wg_independence = {
 	on_status_quo = {
 		custom_tooltip = wg_independence_status_quo
 		hidden_effect = {
-			set_subject_of = { who = none }
+			if = { # VFEF
+				limit = {
+					has_federation = yes
+					federation = { has_federation_type = empire_federation }
+				}
+				leave_alliance = { override_requirements = yes }
+			}
+			fromfrom = {
+				every_war_participant = {
+					limit = {
+						fromfrom = {
+							is_war_participant = {
+								who = prev
+								side = Root
+							}
+						}
+						has_overlord = Root.from
+					}
+					set_subject_of = {
+						who = none
+					}
+				}
+			}
 		}
 	}
 
 	on_accept = {
 		custom_tooltip = wg_independence_accept
 		hidden_effect = {
-			set_subject_of = { who = none }
-			every_system_within_border = {
+			if = { # VFEF
 				limit = {
-					from = { has_claim = prev }
+					has_federation = yes
+					federation = { has_federation_type = empire_federation }
 				}
-				remove_claims = { who = from }
+				leave_alliance = { override_requirements = yes }
+			}
+			fromfrom = {
+				every_war_participant = {
+					limit = {
+						fromfrom = {
+							is_war_participant = {
+								who = prev
+								side = Root
+							}
+						}
+						has_overlord = Root.from
+					}
+					set_subject_of = {
+						who = none
+					}
+					every_system_within_border = {
+						limit = {
+							Root.from = { has_claim = prev }
+						}
+						remove_claims = { who = Root.from }
+					}
+				}
 			}
 		}
 	}
@@ -74,4 +118,6 @@ wg_independence = {
 	ai_weight = {
 		weight = 100
 	}
+	
+	should_ignore_federations = yes
 }

@@ -48,6 +48,10 @@ preset_subsidiary_mean_01 = {
 				value = subject_ver_policy_restricted
 			}
 			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
+			}
+			{
 				key = subject_ver_naming
 				value = subject_ver_naming_restricted
 			}
@@ -159,6 +163,10 @@ preset_subsidiary_mean_02 = {
 			{
 				key = subject_ver_policy
 				value = subject_ver_policy_restricted
+			}
+			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
 			}
 			{
 				key = subject_ver_naming
@@ -278,6 +286,10 @@ preset_subsidiary_mean_03 = {
 				value = subject_ver_policy_restricted
 			}
 			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
+			}
+			{
 				key = subject_ver_naming
 				value = subject_ver_naming_restricted
 			}
@@ -383,6 +395,10 @@ preset_subsidiary_nice_01 = {
 				value = subject_ver_policy_restricted
 			}
 			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
+			}
+			{
 				key = subject_ver_naming
 				value = subject_ver_naming_restricted
 			}
@@ -486,6 +502,10 @@ preset_subsidiary_nice_02 = {
 			{
 				key = subject_ver_policy
 				value = subject_ver_policy_restricted
+			}
+			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
 			}
 			{
 				key = subject_ver_naming

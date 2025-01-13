@@ -421,6 +421,14 @@ l_korean:
  subject_ver_policy_restricted_desc: "The Subject is free to determine their own policies."
  subject_ver_policy_allowed: "Policy Alignment"
  subject_ver_policy_allowed_desc: "The Subject must align their policies with that of their Overlord."
+
+ subject_ver_species_policy: "Ethnic Affairs"
+ subject_ver_species_policy_desc: "This Term dictates whether the Subject's policies relating to species must align with the Overlord's."
+
+ subject_ver_species_policy_restricted: "Ethnic Sovereignty"
+ subject_ver_species_policy_restricted_desc: "The Subject is free to determine their own ethnic policies."
+ subject_ver_species_policy_allowed: "Policy Alignment"
+ subject_ver_species_policy_allowed_desc: "The Subject must align their ethnic policies with that of their Overlord."
  
  subject_ver_proxy: "Proxy Wars"
  subject_ver_proxy_desc: "This Term dictates whether the Overlord is allowed to force the Subject to engage in a Proxy War."

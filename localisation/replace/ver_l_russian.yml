@@ -412,6 +412,14 @@ l_russian:
  subject_ver_policy_restricted_desc: "The Subject is free to determine their own policies."
  subject_ver_policy_allowed: "Согласование политики"
  subject_ver_policy_allowed_desc: "Субъект должен согласовывать свою политику с политикой своего Сюзерена."
+
+ subject_ver_species_policy: "Этнические вопросы"
+ subject_ver_species_policy_desc: "Этот термин определяет, должна ли политика субъекта в отношении видов совпадать с политикой Повелителя".
+
+ subject_ver_species_policy_restricted: "Этнический суверенитет".
+ subject_ver_species_policy_restricted_desc: "Субъект волен определять свою собственную этническую политику".
+ subject_ver_species_policy_allowed: "Выравнивание политики".
+ subject_ver_species_policy_allowed_desc: "Субъект должен согласовывать свою этническую политику с политикой своего Повелителя".
  
  subject_ver_proxy: "Опосредованные войны"
  subject_ver_proxy_desc: "Этот пункт определяет, разрешено ли Сюзерену принуждать Субъект к участию в опосредованной войне."

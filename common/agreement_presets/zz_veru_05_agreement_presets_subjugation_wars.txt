@@ -50,6 +50,10 @@ preset_vassal_oppressive = {
 				value = subject_ver_policy_restricted
 			}
 			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
+			}
+			{
 				key = subject_ver_naming
 				value = subject_ver_naming_allowed
 			}
@@ -153,6 +157,10 @@ preset_vassal_oppressive_ai = {
 				value = subject_ver_policy_restricted
 			}
 			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
+			}
+			{
 				key = subject_ver_naming
 				value = subject_ver_naming_allowed
 			}
@@ -242,6 +250,10 @@ preset_vassal_balanced = {
 				value = subject_ver_policy_restricted
 			}
 			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
+			}
+			{
 				key = subject_ver_naming
 				value = subject_ver_naming_restricted
 			}
@@ -329,6 +341,10 @@ preset_vassal_benevolent = {
 			{
 				key = subject_ver_policy
 				value = subject_ver_policy_restricted
+			}
+			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
 			}
 			{
 				key = subject_ver_naming
@@ -442,6 +458,10 @@ preset_subsidiary_oppressive = {
 				value = subject_ver_policy_restricted
 			}
 			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
+			}
+			{
 				key = subject_ver_naming
 				value = subject_ver_naming_allowed
 			}
@@ -542,6 +562,10 @@ preset_subsidiary_oppressive_ai = {
 			{
 				key = subject_ver_policy
 				value = subject_ver_policy_restricted
+			}
+			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
 			}
 			{
 				key = subject_ver_naming
@@ -646,6 +670,10 @@ preset_subsidiary_balanced = {
 				value = subject_ver_policy_restricted
 			}
 			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
+			}
+			{
 				key = subject_ver_naming
 				value = subject_ver_naming_restricted
 			}
@@ -747,6 +775,10 @@ preset_subsidiary_benevolent = {
 			{
 				key = subject_ver_policy
 				value = subject_ver_policy_restricted
+			}
+			{
+				key = subject_ver_species_policy
+				value = subject_ver_species_policy_restricted
 			}
 			{
 				key = subject_ver_naming

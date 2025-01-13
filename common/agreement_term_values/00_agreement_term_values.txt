@@ -1349,10 +1349,6 @@ subject_ver_policy_allowed = {
 			NOT = { agreement_preset = preset_tributary }
 		}
 		custom_tooltip = {
-			fail_text = not_allowed_for_protectorate
-			NOT = { agreement_preset = preset_protectorate }
-		}
-		custom_tooltip = {
 			fail_text = not_allowed_for_ver_devolved
 			NOT = { agreement_preset = preset_ver_devolved }
 		}
@@ -1361,16 +1357,57 @@ subject_ver_policy_allowed = {
 			NOT = { agreement_preset = preset_ver_condo }
 		}
 		custom_tooltip = {
-			fail_text = not_allowed_for_ver_foederatus
-			NOT = { agreement_preset = preset_ver_foederatus }
+			fail_text = not_allowed_for_gestalt
+			owner = { is_gestalt = no }
+		}
+	}
+}
+
+subject_ver_species_policy_restricted = {
+	term = subject_ver_species_policy
+	loyalty_change = 20
+	ai_acceptance = {
+		overlord = -15
+		subject = 0
+	}
+}
+
+subject_ver_species_policy_allowed = {
+	term = subject_ver_species_policy
+	loyalty_change = -30
+	ai_acceptance = {
+		overlord = 50
+		subject = -200
+	}
+	triggered_loyalty_change = {
+		trigger = {
+			target = { is_xenophobe = yes }
+		}
+		loyalty_change = -15
+		ai_acceptance = {
+			subject = -150
+		}
+	}
+	target_modifier = {
+		monthly_loyalty = -5
+	}
+	activate_effect = {
+		target = {
+			country_event = { id = veru_misc.2500 }
+		}
+	}
+	possible = {
+		custom_tooltip = {
+			fail_text = not_allowed_for_tributary
+			NOT = { agreement_preset = preset_tributary }
 		}
 		custom_tooltip = {
-			fail_text = not_allowed_for_ver_jrpartner
-			NOT = { agreement_preset = preset_ver_jrpartner }
+			fail_text = not_allowed_for_ver_devolved
+			NOT = { agreement_preset = preset_ver_devolved }
 		}
 		custom_tooltip = {
-			fail_text = not_allowed_for_ver_neocolony
-			NOT = { agreement_preset = preset_ver_neocolony }
+			fail_text = not_allowed_for_ver_condo
+			NOT = { agreement_preset = preset_ver_condo }
 		}
 		custom_tooltip = {
 			fail_text = not_allowed_for_gestalt

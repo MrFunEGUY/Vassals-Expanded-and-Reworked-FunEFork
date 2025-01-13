@@ -15,13 +15,6 @@ on_monthly_pulse_country = {
 }
 
 # this = country
-on_yearly_pulse_country = {
-	events = {
-		veru_misc.2000				# Align Subject Policies
-	}
-}
-
-# this = country
 on_bi_yearly_pulse_country = {
 	events = {
 		veru_l.3000					# Tributary Potential Stop Check
@@ -32,6 +25,8 @@ on_bi_yearly_pulse_country = {
 on_five_year_pulse_country = {
 	events = {
 		vermain.40 					# The Blood Tax
+		veru_misc.2000				# Align Subject Policies
+		veru_misc.2500				# Align Subject Species Policies
 	}
 }
 

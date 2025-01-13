@@ -132,6 +132,10 @@ has_policy_allowed = {
 	any_agreement = { has_term_value = { term = subject_ver_policy value = subject_ver_policy_allowed } }
 }
 
+has_species_policy_allowed = {
+	any_agreement = { has_term_value = { term = subject_ver_species_policy value = subject_ver_species_policy_allowed } }
+}
+
 has_capital_allowed = {
 	any_agreement = { has_term_value = { term = subject_ver_capital value = subject_ver_capital_allowed } }
 }
