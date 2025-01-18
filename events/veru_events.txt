@@ -352,50 +352,45 @@ country_event = {
 		}
 		add_resource = { influence = -25 }
 		hidden_effect = {
-			event_target:chosen_subject = {
-				set_name = root.capital_scope.solar_system
-			}
+			event_target:chosen_subject = { set_name = { key = NAME_capital_solar_system variable_string = "[root.capital_scope.solar_system.GetName]" } }
 			get_intervention_effect = yes
 		}
 	}
 	
-	# Change Male Ruler Title
-	option = {
-		name = veru.2000.male_ruler_title
-		custom_tooltip = veru.2000.male_ruler_title_name_change.tooltip
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_15
-				has_resource = { type = influence amount >= 15 }
-			}
-		}
-		add_resource = { influence = -15 }
-		hidden_effect = {
-			event_target:chosen_subject = {
-				set_male_ruler_title = root.capital_scope.solar_system
-			}
-			get_intervention_effect = yes
-		}
-	}
+	## Broken by PDX. Will renable when they fix it.
+	# # Change Male Ruler Title
+	# option = {
+	# 	name = veru.2000.male_ruler_title
+	# 	custom_tooltip = veru.2000.male_ruler_title_name_change.tooltip
+	# 	allow = {
+	# 		custom_tooltip = {
+	# 			fail_text = influencefail_text_veru_15
+	# 			has_resource = { type = influence amount >= 15 }
+	# 		}
+	# 	}
+	# 	add_resource = { influence = -15 }
+	# 	hidden_effect = {
+	# 		event_target:chosen_subject = { set_male_ruler_title = NAME_capital_solar_system }
+	# 		get_intervention_effect = yes
+	# 	}
+	# }
 
-	# Change Female Ruler Title
-	option = {
-		name = veru.2000.female_ruler_title
-		custom_tooltip = veru.2000.female_ruler_title_name_change.tooltip
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_15
-				has_resource = { type = influence amount >= 15 }
-			}
-		}
-		add_resource = { influence = -15 }
-		hidden_effect = {
-			event_target:chosen_subject = {
-				set_female_ruler_title = root.capital_scope.solar_system
-			}
-			get_intervention_effect = yes
-		}
-	}
+	# # Change Female Ruler Title
+	# option = {
+	# 	name = veru.2000.female_ruler_title
+	# 	custom_tooltip = veru.2000.female_ruler_title_name_change.tooltip
+	# 	allow = {
+	# 		custom_tooltip = {
+	# 			fail_text = influencefail_text_veru_15
+	# 			has_resource = { type = influence amount >= 15 }
+	# 		}
+	# 	}
+	# 	add_resource = { influence = -15 }
+	# 	hidden_effect = {
+	# 		event_target:chosen_subject = { set_female_ruler_title = "[root.capital_scope.solar_system.GetName]" }
+	# 		get_intervention_effect = yes
+	# 	}
+	# }
 
 	# Back
 	option = { name = veru.remain }
@@ -1038,7 +1033,7 @@ country_event = {
 	option = {
 		name = veru.4000.imperial
 		trigger = {
-			event_target:chosen_subject = { NOT = { has_authority = auth_imperial } }
+			event_target:chosen_subject = { is_imperial_authority = no }
 		}
 		allow = {
 			custom_tooltip = {

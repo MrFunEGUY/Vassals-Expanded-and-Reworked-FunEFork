@@ -55,6 +55,12 @@ wg_independence = {
 					set_subject_of = {
 						who = none
 					}
+					fire_on_action = {
+                        on_action = on_becoming_independent
+                        scopes = {
+                            from = root.from
+                        }
+                    }
 				}
 			}
 		}
@@ -84,6 +90,12 @@ wg_independence = {
 					set_subject_of = {
 						who = none
 					}
+					fire_on_action = {
+                        on_action = on_becoming_independent
+                        scopes = {
+                            from = root.from
+                        }
+                    }
 					every_system_within_border = {
 						limit = {
 							Root.from = { has_claim = prev }

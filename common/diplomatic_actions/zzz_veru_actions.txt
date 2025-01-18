@@ -70,15 +70,27 @@ action_invite_to_federation = {
 		diplomacy_is_not_homicidal = yes
 		diplomacy_is_not_inward_perfection = yes
 		custom_tooltip = {
-			fail_text = "requires_excellent_or_better_opinion"
-
-			OR = {
-				from = { is_same_value = prevprev } # Bypass opinion check if we are proposing on behalf of recipient
-				opinion_level = { who = from level >= excellent }
-				is_improving_relations_with = from
-				from = { is_subject = yes } # You can always ask your own subjects
-			}
-		}
+            fail_text = requires_30_trust_or_excellent
+            OR = {
+                opinion_level = {
+                    who = from
+                    level >= good
+                }
+                from = {
+                    trust = {
+                        who = root
+                        value >= 30
+                    }
+                }
+            }
+        }
+        custom_tooltip = {
+            fail_text = requires_embassy_or_diplomatic_networking
+            OR = {
+                has_embassy = from
+                has_active_tradition = tr_diplomacy_diplomatic_networking
+            }
+        }
 		diplomacy_recipient_is_not_pompous_bypass = yes
 		# Members of the Galactic Empire can't be in federations
 		custom_tooltip = {
@@ -202,7 +214,7 @@ action_demand_subjugation = {
 	diplo_view_acceptance_icon = no
 	should_notify_all_communications = yes
 	requires_recipient_independence = no
-	AI_acceptance_base_value = -50
+	AI_acceptance_base_value = -100
 	action_type = aggressive
 
 	potential = {
@@ -449,16 +461,16 @@ action_ask_to_become_subjugated = {
 		get_border_test = yes
 	}
 	should_ai_propose = {
-        modifier = {
-            mult = 0
-            from = {
-                trust = {
-                    who = root
-                    value < 50
-                }
-            }
-        }
-        modifier = {
+		modifier = {
+			mult = 0
+			from = {
+				trust = {
+					who = root
+					value < 50
+				}
+			}
+		}
+		modifier = {
             mult = 0
             OR = {
             	relative_power = {
@@ -473,6 +485,14 @@ action_ask_to_become_subjugated = {
             	}
             }
         }
+		modifier = {
+			add = -100
+			root = {
+				is_militarist = yes
+				has_faction = imperialist
+			}
+			desc = TOO_IMPERIAL
+		}
     }
     ai_acceptance = {
         modifier = {
