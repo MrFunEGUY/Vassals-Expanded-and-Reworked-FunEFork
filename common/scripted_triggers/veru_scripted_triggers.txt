@@ -110,10 +110,20 @@ is_prospectorium = {
 	any_agreement = { agreement_preset = preset_prospectorium }
 }
 
+is_relic_satrapy = {
+	is_subject = yes
+	any_agreement = { agreement_preset = preset_relic_satrapy }
+}
+
 is_mercatorum = {
 	is_subject = yes
 	any_agreement = { agreement_preset = preset_mercatorum }
 }
+
+subject_can_wage_war = {
+	NOT = { any_agreement = { has_term_value = { term = subject_diplomacy value = subject_can_not_do_diplomacy } } }
+}
+
 
 has_ruler_alllowed = {
 	any_agreement = {
