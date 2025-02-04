@@ -455,6 +455,8 @@ l_spanish:
  contract_fail: "Prohibited by Contract"
  veru_tree_of_life_fail: "Due to this subject relying on their §YTree of Life§!, their capital cannot be relocated."
 
+ NAME_capital_solar_system: "[root.capital_scope.solar_system.GetName]"
+
  
  subject_ver_foederatus_effect: "$preset_ver_foederatus$"
  subject_ver_satellite_effect: "$preset_ver_satellite$"
