@@ -25,6 +25,8 @@
 
 - All of the subject interaction features of the mod are handled through a new edict: Manage Subject States.
 
+- You can create Planet-State vassals from individual planets via a planetary decision.
+
 - Changing your subject's name: To do this, I made it so your subject name will change to the name of your Capital system. You can easily rename your capital system, and so, you can easily rename your subjects.
 
 - You can give subjects all of the technology that you have researched.

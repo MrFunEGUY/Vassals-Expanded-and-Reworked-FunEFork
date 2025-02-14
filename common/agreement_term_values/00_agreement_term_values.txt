@@ -168,15 +168,25 @@ specialist_prospectorium = {
 # RESOURCE CONTRIBUTION #
 #########################
 
-@subsidy_multiplier_basic = 0.16 			# 0.5
-@subsidy_multiplier_advanced = 0.16 		# 0.5
-@subsidy_multiplier_research = 1
-@subsidy_multiplier_strategic = 0.5 		# 1.5
+# @subsidy_multiplier_basic = 0.16 			# 0.5
+# @subsidy_multiplier_advanced = 0.16 		# 0.5
+# @subsidy_multiplier_research = 1
+# @subsidy_multiplier_strategic = 0.5 		# 1.5
 
-@subsidy_monthly_multiplier_basic = 1.6 	# 5
-@subsidy_monthly_multiplier_advanced = 1.6 	# 5
+# @subsidy_monthly_multiplier_basic = 1.6 	# 5
+# @subsidy_monthly_multiplier_advanced = 1.6 	# 5
+# @subsidy_monthly_multiplier_research = 5
+# @subsidy_monthly_multiplier_strategic = 1.6 # 5
+
+@subsidy_multiplier_basic = 0.5
+@subsidy_multiplier_advanced = 0.5
+@subsidy_multiplier_research = 1
+@subsidy_multiplier_strategic = 1.5
+
+@subsidy_monthly_multiplier_basic = 5
+@subsidy_monthly_multiplier_advanced = 5
 @subsidy_monthly_multiplier_research = 5
-@subsidy_monthly_multiplier_strategic = 1.6 # 5
+@subsidy_monthly_multiplier_strategic = 5
 
 # When changing the maximum and minimum values here the following should also be updated:
 # In agreement_negotiation_view.gui
@@ -1276,7 +1286,7 @@ subject_ver_government_allowed = {
 		}
 	}
 	target_modifier = {
-		monthly_loyalty = -2
+		monthly_loyalty = -3.5
 	}
 	possible = {
 		custom_tooltip = {
@@ -1336,7 +1346,7 @@ subject_ver_policy_allowed = {
 		}
 	}
 	target_modifier = {
-		monthly_loyalty = -5
+		monthly_loyalty = -2
 	}
 	activate_effect = {
 		target = {
@@ -1389,7 +1399,7 @@ subject_ver_species_policy_allowed = {
 		}
 	}
 	target_modifier = {
-		monthly_loyalty = -5
+		monthly_loyalty = -2
 	}
 	activate_effect = {
 		target = {
@@ -1446,7 +1456,7 @@ subject_ver_capital_allowed = {
 		}
 	}
 	target_modifier = {
-		monthly_loyalty = -2
+		monthly_loyalty = -1
 	}
 	possible = {
 		custom_tooltip = {
@@ -1502,7 +1512,7 @@ subject_ver_naming_allowed = {
 		}
 	}
 	target_modifier = {
-		monthly_loyalty = -0.5
+		monthly_loyalty = -1
 	}
 	possible = {
 		custom_tooltip = {
@@ -1563,7 +1573,7 @@ subject_ver_proxy_allowed = {
 		}
 	}
 	target_modifier = {
-		monthly_loyalty = -5
+		monthly_loyalty = -4
 	}
 	possible = {
 		custom_tooltip = {

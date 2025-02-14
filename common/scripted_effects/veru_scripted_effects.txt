@@ -12,7 +12,6 @@ get_subjects_effect = {
 	every_subject = {
 		limit = {
 			NOR = {
-				# is_country_type = exile_country
 				any_agreement = {
 					agreement_preset = preset_protectorate
 					agreement_preset = preset_satrapy

@@ -11,7 +11,6 @@ origin_planet_state = {
 
 	modifier = {
 		pop_cat_ruler_happiness = 0.15
-		country_naval_capacity_contribution_to_overlord_mult = 0.05
 	}
 
 	random_weight = {

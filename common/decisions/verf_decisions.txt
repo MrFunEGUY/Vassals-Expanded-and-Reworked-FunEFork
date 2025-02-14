@@ -10,11 +10,9 @@ decision_create_planet_state = {
 		cost = { influence = 0 }
 	}
 	potential = {
-		NOR = {
-			solar_system = { is_capital_system = yes }
-			has_planet_flag = verf_maybe_planet_state
-		}
 		owner = { is_ai = no }
+		solar_system = { is_capital_system = no }
+		NOT = { has_planet_flag = verf_maybe_planet_state }
 	}
 	allow = {
 		num_pops >= 5
@@ -37,9 +35,9 @@ decision_affirm_planet_state = {
 		cost = { influence = 0 }
 	}
 	potential = {
-		NOT = { solar_system = { is_capital_system = yes } }
-		has_planet_flag = verf_maybe_planet_state
 		owner = { is_ai = no }
+		solar_system = { is_capital_system = no }
+		has_planet_flag = verf_maybe_planet_state
 	}
 	allow = {
 		num_pops >= 5
@@ -52,53 +50,50 @@ decision_affirm_planet_state = {
 		hidden_effect = {
 			remove_planet_flag = verf_maybe_planet_state
 			owner = { save_event_target_as = mother_country }
-			if = {
-				limit = { NOT = { any_owned_pop = { is_same_species = owner_species } } }
-				random_owned_pop = {
-					limit = {
-						can_think = yes
-						is_enslaved = no
-					}
-					species = { save_event_target_as = ps_species }
-				}
-			}
-			else = { owner_species = { save_event_target_as = ps_species } }
 
 			if = {
-				limit = { event_target:mother_country = { is_megacorp = no } }
-				create_country = {
-					name = random
-					type = default
-					species = event_target:ps_species
-					ignore_initial_colony_error = yes
-					day_zero_contact = no
-					origin = origin_planet_state
-					civics = event_target:mother_country
-					flag = random
-					authority = event_target:mother_country
-					ethos = event_target:mother_country
-					effect = {
-						save_event_target_as = new_ps_country
-						establish_communications_no_message = event_target:mother_country
+				limit = { NOT = { any_owned_pop = { is_same_species = owner_species } } }
+				every_owned_species = {
+					limit = {
+						any_species_pop = {
+							can_think = yes
+							is_enslaved = no
+							planet = { is_same_value = root }
+						}
+					}
+					set_variable = { which = species_pop_count value = 0 }
+					every_species_pop = {
+						limit = {
+							can_think = yes
+							is_enslaved = no
+							planet = { is_same_value = root }
+						}
+						prev = { change_variable = { which = species_pop_count value = 1 } }
 					}
 				}
+				ordered_owned_species = {
+					limit = { is_variable_set = species_pop_count }
+					position = 0
+					order_by = species_pop_count
+					save_event_target_as = planet_state_species
+				}
 			}
-			else = {
-				create_country = {
-					name = random
-					type = default
-					species = event_target:ps_species
-					ignore_initial_colony_error = yes
-					day_zero_contact = no
-					origin = origin_planet_state
-					civics = random
-					flag = random
-					authority = auth_oligarchic
-					ethos = random
-					effect = {
-						save_event_target_as = new_ps_country
-						establish_communications_no_message = event_target:mother_country
-					}
+			else = { owner_species = { save_event_target_as = planet_state_species } }
+
+			create_country = {
+				name = random
+				type = default
+				species = event_target:planet_state_species
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				origin = origin_planet_state
+				civics = event_target:mother_country
+				flag = random
+				authority = event_target:mother_country
+				ethos = event_target:mother_country
+				effect = {
+					save_event_target_as = new_ps_country
+					establish_communications_no_message = event_target:mother_country
 				}
 			}
 			
