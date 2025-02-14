@@ -144,10 +144,10 @@ country_event = {
 
 	picture_event_data = {
 		portrait = event_target:chosen_subject.ruler
-		planet_background = root.capital_scope
-		graphical_culture = root
-		city_level = root
-		room = root.ruler
+		planet_background = event_target:chosen_subject.capital_scope
+		graphical_culture = event_target:chosen_subject
+		city_level = event_target:chosen_subject
+		room = event_target:chosen_subject.ruler
 	}
 
 	desc = {
@@ -312,10 +312,10 @@ country_event = {
 
 	picture_event_data = {
 		portrait = event_target:chosen_subject.ruler
-		planet_background = root.capital_scope
-		graphical_culture = root
-		city_level = root
-		room = root.ruler
+		planet_background = event_target:chosen_subject.capital_scope
+		graphical_culture = event_target:chosen_subject
+		city_level = event_target:chosen_subject
+		room = event_target:chosen_subject.ruler
 	}
 
 	desc = {
@@ -411,10 +411,10 @@ country_event = {
 
 	picture_event_data = {
 		portrait = event_target:chosen_subject.ruler
-		planet_background = root.capital_scope
-		graphical_culture = root
-		city_level = root
-		room = root.ruler
+		planet_background = event_target:chosen_subject.capital_scope
+		graphical_culture = event_target:chosen_subject
+		city_level = event_target:chosen_subject
+		room = event_target:chosen_subject.ruler
 	}
 
 	desc = {
@@ -975,10 +975,10 @@ country_event = {
 
 	picture_event_data = {
 		portrait = event_target:chosen_subject.ruler
-		planet_background = root.capital_scope
-		graphical_culture = root
-		city_level = root
-		room = root.ruler
+		planet_background = event_target:chosen_subject.capital_scope
+		graphical_culture = event_target:chosen_subject
+		city_level = event_target:chosen_subject
+		room = event_target:chosen_subject.ruler
 	}
 
 	desc = {
@@ -1268,10 +1268,10 @@ country_event = {
 
 	picture_event_data = {
 		portrait = event_target:chosen_subject.ruler
-		planet_background = root.capital_scope
-		graphical_culture = root
-		city_level = root
-		room = root.ruler
+		planet_background = event_target:chosen_subject.capital_scope
+		graphical_culture = event_target:chosen_subject
+		city_level = event_target:chosen_subject
+		room = event_target:chosen_subject.ruler
 	}
 
 	desc = {
@@ -1329,10 +1329,10 @@ country_event = {
 
 	picture_event_data = {
 		portrait = event_target:chosen_subject.ruler
-		planet_background = root.capital_scope
-		graphical_culture = root
-		city_level = root
-		room = root.ruler
+		planet_background = event_target:chosen_subject.capital_scope
+		graphical_culture = event_target:chosen_subject
+		city_level = event_target:chosen_subject
+		room = event_target:chosen_subject.ruler
 	}
 
 	desc = {
@@ -1407,10 +1407,10 @@ country_event = {
 
 	picture_event_data = {
 		portrait = root.ruler
-		planet_background = root.capital_scope
-		graphical_culture = root
-		city_level = root
-		room = root.ruler
+		planet_background = event_target:chosen_subject.capital_scope
+		graphical_culture = event_target:chosen_subject
+		city_level = event_target:chosen_subject
+		room = event_target:chosen_subject.ruler
 	}
 
 
@@ -1488,10 +1488,10 @@ country_event = {
 
 	picture_event_data = {
 		portrait = event_target:chosen_subject.ruler
-		planet_background = root.capital_scope
-		graphical_culture = root
-		city_level = root
-		room = root.ruler
+		planet_background = event_target:chosen_subject.capital_scope
+		graphical_culture = event_target:chosen_subject
+		city_level = event_target:chosen_subject
+		room = event_target:chosen_subject.ruler
 	}
 
 	desc = {
@@ -1742,10 +1742,10 @@ country_event = {
 
 	picture_event_data = {
 		portrait = event_target:chosen_subject.ruler
-		planet_background = root.capital_scope
-		graphical_culture = root
-		city_level = root
-		room = root.ruler
+		planet_background = event_target:chosen_subject.capital_scope
+		graphical_culture = event_target:chosen_subject
+		city_level = event_target:chosen_subject
+		room = event_target:chosen_subject.ruler
 	}
 
 	desc = {
@@ -1996,10 +1996,10 @@ country_event = {
 
 	picture_event_data = {
 		portrait = event_target:chosen_subject.ruler
-		planet_background = root.capital_scope
-		graphical_culture = root
-		city_level = root
-		room = root.ruler
+		planet_background = event_target:chosen_subject.capital_scope
+		graphical_culture = event_target:chosen_subject
+		city_level = event_target:chosen_subject
+		room = event_target:chosen_subject.ruler
 	}
 
 	desc = {
@@ -2252,10 +2252,10 @@ country_event = {
 
 	picture_event_data = {
 		portrait = root.ruler
-		planet_background = root.capital_scope
-		graphical_culture = root
-		city_level = root
-		room = root.ruler
+		planet_background = event_target:chosen_subject.capital_scope
+		graphical_culture = event_target:chosen_subject
+		city_level = event_target:chosen_subject
+		room = event_target:chosen_subject.ruler
 	}
 
 	desc = {
@@ -2546,10 +2546,10 @@ country_event = {
 
 	picture_event_data = {
 		portrait = root.ruler
-		planet_background = root.capital_scope
-		graphical_culture = root
-		city_level = root
-		room = root.ruler
+		planet_background = event_target:chosen_subject.capital_scope
+		graphical_culture = event_target:chosen_subject
+		city_level = event_target:chosen_subject
+		room = event_target:chosen_subject.ruler
 	}
 
 	desc = {
@@ -2840,10 +2840,10 @@ country_event = {
 
 	picture_event_data = {
 		portrait = root.ruler
-		planet_background = root.capital_scope
-		graphical_culture = root
-		city_level = root
-		room = root.ruler
+		planet_background = event_target:chosen_subject.capital_scope
+		graphical_culture = event_target:chosen_subject
+		city_level = event_target:chosen_subject
+		room = event_target:chosen_subject.ruler
 	}
 
 	desc = {
@@ -3851,10 +3851,10 @@ country_event = {
 
 	picture_event_data = {
 		portrait = event_target:chosen_subject.ruler
-		planet_background = root.capital_scope
-		graphical_culture = root
-		city_level = root
-		room = root.ruler
+		planet_background = event_target:chosen_subject.capital_scope
+		graphical_culture = event_target:chosen_subject
+		city_level = event_target:chosen_subject
+		room = event_target:chosen_subject.ruler
 	}
 
 	# Maybe a different class
@@ -4019,10 +4019,10 @@ country_event = {
 
 	picture_event_data = {
 		portrait = event_target:chosen_subject.ruler
-		planet_background = root.capital_scope
-		graphical_culture = root
-		city_level = root
-		room = root.ruler
+		planet_background = event_target:chosen_subject.capital_scope
+		graphical_culture = event_target:chosen_subject
+		city_level = event_target:chosen_subject
+		room = event_target:chosen_subject.ruler
 	}
 
 	# Maybe a different class
@@ -4187,10 +4187,10 @@ country_event = {
 
 	picture_event_data = {
 		portrait = event_target:chosen_subject.ruler
-		planet_background = root.capital_scope
-		graphical_culture = root
-		city_level = root
-		room = root.ruler
+		planet_background = event_target:chosen_subject.capital_scope
+		graphical_culture = event_target:chosen_subject
+		city_level = event_target:chosen_subject
+		room = event_target:chosen_subject.ruler
 	}
 
 	# Maybe a different class
@@ -4357,10 +4357,10 @@ country_event = {
 
 	picture_event_data = {
 		portrait = root.ruler
-		planet_background = root.capital_scope
-		graphical_culture = root
-		city_level = root
-		room = root.ruler
+		planet_background = event_target:chosen_subject.capital_scope
+		graphical_culture = event_target:chosen_subject
+		city_level = event_target:chosen_subject
+		room = event_target:chosen_subject.ruler
 	}
 
 	# Change Mind to their Leader
@@ -4412,10 +4412,10 @@ country_event = {
 
 	picture_event_data = {
 		portrait = root.ruler
-		planet_background = root.capital_scope
-		graphical_culture = root
-		city_level = root
-		room = root.ruler
+		planet_background = event_target:chosen_subject.capital_scope
+		graphical_culture = event_target:chosen_subject
+		city_level = event_target:chosen_subject
+		room = event_target:chosen_subject.ruler
 	}
 
 	# Maybe a different class
@@ -4580,10 +4580,10 @@ country_event = {
 
 	picture_event_data = {
 		portrait = root.ruler
-		planet_background = root.capital_scope
-		graphical_culture = root
-		city_level = root
-		room = root.ruler
+		planet_background = event_target:chosen_subject.capital_scope
+		graphical_culture = event_target:chosen_subject
+		city_level = event_target:chosen_subject
+		room = event_target:chosen_subject.ruler
 	}
 
 	# Maybe a different class
@@ -4748,10 +4748,10 @@ country_event = {
 
 	picture_event_data = {
 		portrait = root.ruler
-		planet_background = root.capital_scope
-		graphical_culture = root
-		city_level = root
-		room = root.ruler
+		planet_background = event_target:chosen_subject.capital_scope
+		graphical_culture = event_target:chosen_subject
+		city_level = event_target:chosen_subject
+		room = event_target:chosen_subject.ruler
 	}
 
 	# Maybe a different class
@@ -4918,10 +4918,10 @@ country_event = {
 
 	picture_event_data = {
 		portrait = event_target:chosen_subject.ruler
-		planet_background = root.capital_scope
-		graphical_culture = root
-		city_level = root
-		room = root.ruler
+		planet_background = event_target:chosen_subject.capital_scope
+		graphical_culture = event_target:chosen_subject
+		city_level = event_target:chosen_subject
+		room = event_target:chosen_subject.ruler
 	}
 
 	desc = {
