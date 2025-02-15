@@ -28,10 +28,8 @@
 @protectorate_tech_threshold = 0 #0.4
 @protectorate_tech_switch = 0 #0.5 ## DOes this effectively disable this? Hope so.
 
-@specialist_base_acceptance_value = 50
-@specialist_subject_base_acceptance_value = 50
-@specialist_aligned_ethics_value = 50
-@specialist_unaligned_ethics_value = -50
+@vear_preset_base_acceptance_value = 60
+@vear_preset_subject_base_acceptance_value = 40
 
 ###############
 # VER Vassals #
@@ -119,17 +117,18 @@ preset_ver_foederatus = {
 	}
 
 	overlord_weight = {
-		base = 100
+		base = @vear_preset_base_acceptance_value
 		modifier = {
-			factor = 0.4
+			factor = 0.5
 			is_militarist = no
+			is_at_war = no
 		}
 		modifier = {
-			factor = 1.5
+			factor = 1.25
 			has_ethic = ethic_militarist
 		}
 		modifier = {
-			factor = 2
+			factor = 1.5
 			OR = {
 				has_ethic = ethic_fanatic_militarist
 				has_valid_civic = civic_warrior_culture
@@ -137,7 +136,7 @@ preset_ver_foederatus = {
 		}
 	}
 	subject_weight = {
-		base = 50
+		base = @vear_preset_subject_base_acceptance_value
 		modifier = {
 			factor = 0
 			is_pacifist = yes
@@ -252,17 +251,17 @@ preset_ver_satellite = {
 	}
 
 	overlord_weight = {
-		base = 100
+		base = @vear_preset_base_acceptance_value
 		modifier = {
-			factor = 0.3
+			factor = 0.5
 			is_pacifist = no
 		}
 		modifier = {
-			factor = 1.5
+			factor = 1.25
 			has_ethic = ethic_pacifist
 		}
 		modifier = {
-			factor = 2
+			factor = 1.5
 			has_ethic = ethic_fanatic_pacifist
 		}
 		modifier = {
@@ -271,13 +270,13 @@ preset_ver_satellite = {
 		}
 	}
 	subject_weight = {
-		base = 50
+		base = @vear_preset_subject_base_acceptance_value
 		modifier = {
-			factor = 0.1
+			factor = 0.25
 			is_militarist = yes
 		}
 		modifier = {
-			factor = 0.75
+			factor = 0.5
 			OR = {
 				is_xenophobe = yes
 				is_authoritarian = yes
@@ -399,13 +398,13 @@ preset_ver_jrpartner = {
 	}
 
 	overlord_weight = {
-		base = 100
+		base = @vear_preset_base_acceptance_value
 		modifier = {
-			factor = 1.5
+			factor = 1.25
 			has_ethic = ethic_materialist
 		}
 		modifier = {
-			factor = 2
+			factor = 1.5
 			has_ethic = ethic_fanatic_materialist
 		}
 		modifier = {
@@ -414,7 +413,7 @@ preset_ver_jrpartner = {
 		}
 	}
 	subject_weight = {
-		base = 50
+		base = @vear_preset_subject_base_acceptance_value
 		modifier = {
 			factor = 1.5
 			has_ethic = ethic_materialist
@@ -525,13 +524,13 @@ preset_ver_dependency = {
 	}
 
 	overlord_weight = {
-		base = 100
+		base = @vear_preset_base_acceptance_value
 		modifier = {
-			factor = 1.5
+			factor = 1.25
 			has_ethic = ethic_spiritualist
 		}
 		modifier = {
-			factor = 2
+			factor = 1.5
 			OR = {
 				has_ethic = ethic_fanatic_spiritualist
 				has_valid_civic = civic_exalted_priesthood
@@ -541,7 +540,7 @@ preset_ver_dependency = {
 		}
 	}
 	subject_weight = {
-		base = 50
+		base = @vear_preset_subject_base_acceptance_value
 		modifier = {
 			factor = 1.5
 			has_ethic = ethic_spiritualist
@@ -657,29 +656,29 @@ preset_ver_clientkingdom = {
 	}
 
 	overlord_weight = {
-		base = 100
+		base = @vear_preset_base_acceptance_value
 		modifier = {
-			factor = 1.25
+			factor = 1.15
 			is_xenophobe = yes
 		}
 		modifier = {
-			factor = 1.5
+			factor = 1.25
 			has_ethic = ethic_authoritarian
 		}
 		modifier = {
-			factor = 2
+			factor = 1.5
 			OR = {
 				has_ethic = ethic_fanatic_authoritarian
 				has_valid_civic = civic_shadow_council
 			}
 		}
 		modifier = {
-			factor = 2.1
+			factor = 2.5
 			has_valid_civic = civic_feudal_realm
 		}
 	}
 	subject_weight = {
-		base = 25
+		base = @vear_preset_subject_base_acceptance_value
 	}
 
 	potential = {
@@ -783,22 +782,22 @@ preset_ver_devolved = {
 	}
 
 	overlord_weight = {
-		base = 100
+		base = @vear_preset_base_acceptance_value
 		modifier = {
-			factor = 0.5
+			factor = 0.75
 			is_egalitarian = no
 		}
 		modifier = {
-			factor = 1.5
+			factor = 1.25
 			has_ethic = ethic_egalitarian
 		}
 		modifier = {
-			factor = 2
+			factor = 1.5
 			has_ethic = ethic_fanatic_egalitarian
 		}
 	}
 	subject_weight = {
-		base = 100
+		base = @vear_preset_subject_base_acceptance_value
 	}
 
 	potential = {
@@ -898,20 +897,16 @@ preset_ver_condo = {
 	}
 
 	overlord_weight = {
-		base = 100
+		base = @vear_preset_base_acceptance_value
 		modifier = {
-			factor = 0.3
-			NOR = {
-				is_pacifist = yes
+			factor = 1.25
+			OR = {
+				has_ethic = ethic_xenophile
 				has_valid_civic = civic_machine_servitor
 			}
 		}
 		modifier = {
 			factor = 1.5
-			has_ethic = ethic_xenophile
-		}
-		modifier = {
-			factor = 2
 			OR = {
 				has_ethic = ethic_fanatic_xenophile
 				has_valid_civic = civic_beacon_of_liberty
@@ -919,7 +914,7 @@ preset_ver_condo = {
 		}
 	}
 	subject_weight = {
-		base = 80
+		base = @vear_preset_subject_base_acceptance_value
 		modifier = {
 			factor = 0
 			is_xenophobe = yes
@@ -1050,16 +1045,16 @@ preset_ver_puppet = {
 	}
 
 	overlord_weight = {
-		base = 100
+		base = @vear_preset_base_acceptance_value
 		modifier = {
-			factor = 0.4
+			factor = 0.65
 			OR = {
 				is_xenophile = yes
 				is_egalitarian = yes
 			}
 		}
 		modifier = {
-			factor = 1.5
+			factor = 1.25
 			has_ethic = ethic_xenophobe
 		}
 		modifier = {
@@ -1068,7 +1063,7 @@ preset_ver_puppet = {
 		}
 	}
 	subject_weight = {
-		base = 20
+		base = @vear_preset_subject_base_acceptance_value
 	}
 
 	potential = {
@@ -1172,7 +1167,7 @@ preset_ver_neocolony = {
 	}
 
 	overlord_weight = {
-		base = 100
+		base = @vear_preset_base_acceptance_value
 		modifier = {
 			factor = 0.8
 			NOR = {
@@ -1181,18 +1176,25 @@ preset_ver_neocolony = {
 			}
 		}
 		modifier = {
-			factor = 2
+			factor = 1.25
+			is_socialist = yes
+		}
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_capitalism
+		}
+		modifier = {
+			factor = 1.5
 			OR = {
 				is_megacorp = yes
-				is_capitalism = yes
-				is_capitalist = yes
+				has_ethic = ethic_fanatic_capitalism
 			}
 		}
 	}
 	subject_weight = {
-		base = 40
+		base = @vear_preset_subject_base_acceptance_value
 		modifier = {
-			factor = 2.5
+			factor = 2
 			OR = {
 				is_megacorp = yes
 				is_capitalism = yes
@@ -1305,9 +1307,9 @@ preset_ver_blood = {
 	}
 
 	overlord_weight = {
-		base = 100
+		base = @vear_preset_base_acceptance_value
 		modifier = {
-			factor = 1.5
+			factor = 1.25
 			is_xenophobe = yes
 		}
 		modifier = {
@@ -1329,6 +1331,8 @@ preset_ver_blood = {
 				is_death_cult_empire = yes
 				has_valid_civic = civic_barbaric_despoilers
 				has_valid_civic = civic_slaver_guilds
+				has_valid_civic = civic_slaving_despots
+				has_valid_civic = civic_divine_order
 				has_valid_civic = civic_indentured_assets
 			}
 		}
@@ -1430,7 +1434,7 @@ preset_ver_appendage = {
 	}
 
 	overlord_weight = {
-		base = 100
+		base = @vear_preset_base_acceptance_value
 	}
 	subject_weight = {
 		base = 0
@@ -1524,7 +1528,7 @@ preset_ver_organic = {
 	}
 
 	overlord_weight = {
-		base = 100
+		base = @vear_preset_base_acceptance_value
 	}
 	subject_weight = {
 		base = 0
@@ -1627,7 +1631,7 @@ preset_ver_parallel = {
 	}
 
 	overlord_weight = {
-		base = 100
+		base = @vear_preset_base_acceptance_value
 	}
 	subject_weight = {
 		base = 0
