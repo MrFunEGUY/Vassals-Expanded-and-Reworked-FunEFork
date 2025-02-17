@@ -1,3 +1,5 @@
+has_vear_mod = { always = yes }
+
 is_vear_vassal = {
 	any_agreement = {
 		OR = {

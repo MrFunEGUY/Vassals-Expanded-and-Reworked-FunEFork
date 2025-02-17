@@ -1166,6 +1166,7 @@ country_event = {
 		name = veru.4000.direct_democratic
 		trigger = {
 			has_global_flag = cultural_overhaul_active
+			NOT = { has_global_flag = cultural_overhaul_funefork_active }
 			event_target:chosen_subject = { NOT = { has_authority = auth_direct_democratic } }
 		}
 		allow = {
@@ -1205,6 +1206,10 @@ country_event = {
 			event_target:chosen_subject = {
 				get_remove_civics = yes
 				get_ethics_check_fan = yes
+				if = {
+					limit = { has_global_flag = cultural_overhaul_active }
+					get_ethics_check_soc_cap = yes
+				}
 				change_government = {
 					authority = auth_corporate
 					remove_invalid_civics = yes
@@ -1220,7 +1225,10 @@ country_event = {
 	option = {
 		name = veru.4000.corporate_imperial
 		trigger = {
-			has_global_flag = more_authorities_activated
+			OR = {
+				has_ecaf_mod = yes
+				has_global_flag = more_authorities_activated
+			}
 			event_target:chosen_subject = { NOT = { has_authority = auth_corporate_imperial } }
 		}
 		allow = {

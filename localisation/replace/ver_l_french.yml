@@ -28,13 +28,13 @@ l_french:
  preset_ver_dependency_desc:"Dependencies are responsible for producing domestic propaganda for their overlord.\n\n§YTribute§!: §G15%§! £unity£ §HUnity§!\n§YSubsidy§!: §R5%§! £energy£ §HEnergy§!\n§WSpecial Effects:§! \n§YOverlord§!: £unity£ §HUnity§!: §G+2%§!"
 
  preset_ver_clientkingdom: "Client Kingdom"
- preset_ver_clientkingdom_desc:"Client Kingdoms usually have rulers specifically chosen by their overlord, in order to assure their loyalty.\n\n§YSubsidy§!: §R10%§! £energy£ §HEnergy§!, §R5%§! £consumer_goods£ §HConsumer Goods§!\n§WSpecial Effects:§! \n§YSubject§!: £stability£ §HStability§!: §R-5§!\n§YOverlord§!: £stability£ §HStability§!: §G+1§! \n§EOverlord Special Effect:§! Will always select subject Ruler"
+ preset_ver_clientkingdom_desc:"Client Kingdoms usually have rulers specifically chosen by their overlord, in order to assure their loyalty.\n\n§YSubsidy§!: §R10%§! £energy£ §HEnergy§!, §R5%§! £consumer_goods£ §HConsumer Goods§!\n§WSpecial Effects:§! \n§YSubject§!: £stability£ §HStability§!: §R-5§!, £diplo_weight£ Diplomatic Weight: §R-50%§!\n§YOverlord§!: £stability£ §HStability§!: §G+3§! \n§EOverlord Special Effect:§! Will always select subject Ruler"
  
  preset_ver_devolved: "Devolved Region"
  preset_ver_devolved_desc:"Devolved Regions have complete sovereignty over domestic affairs.\n\n§YTribute§!: £influence£ §G+0.5§!\n§WSpecial Effects:§! \n§YSubject§!: £happiness£ Happiness: §G+10%§!\n§YOverlord§!: £mod_pop_government_ethic_attraction£ Governing Ethics Attraction: §G+5%§!"
 
  preset_ver_condo: "Condominium"
- preset_ver_condo_desc:"Condominia have complete sovereignty over their foreign affairs. They serve as neutral meeting locations for diplomats throughout the galaxy.\n\n§WSpecial Effects:§! \n§YSubject§!: £diplo_weight£ Diplomatic Weight: §G+20%§!\n§YOverlord§!: £diplo_weight£ Diplomatic Weight: §G+2%§!"
+ preset_ver_condo_desc:"Condominia have complete sovereignty over their foreign affairs. They serve as neutral meeting locations for diplomats throughout the galaxy.\n\n§WSpecial Effects:§! \n§YSubject§!: £diplo_weight£ Diplomatic Weight: §G+20%§!\n§YOverlord§!: £diplo_weight£ Diplomatic Weight: §G+5%§!"
 
  preset_ver_puppet: "Puppet State"
  preset_ver_puppet_desc: "Puppet States can be used to fight Proxy Wars for their overlord.\n\n§YTribute§!: §G10%§! £energy£ §HEnergy§!, §G10%§! £food£ §HFood§!\n§WSpecial Effects:§! \n§YSubject§!: £happiness£ Happiness: §R-10%§!\n§YOverlord§!: £happiness£ Happiness: §G+2%§!"

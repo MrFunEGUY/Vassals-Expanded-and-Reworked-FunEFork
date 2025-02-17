@@ -22,3 +22,5 @@ has_civic_organic_zealots_active = {
 is_organic_zealots = {
 	always = no
 }
+
+has_ecaf_mod = { always = no }

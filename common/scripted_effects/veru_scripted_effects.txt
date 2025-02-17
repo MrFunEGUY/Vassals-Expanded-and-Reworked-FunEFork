@@ -879,15 +879,10 @@ get_ethics_check_auth_egal = {
 	}
 }
 
-# Remove Socialism and Capitalism 
+# Remove Socialism and add Capitalism 
 get_ethics_check_soc_cap = {
 	if = {
-		limit = {
-			OR = {
-				has_ethic = ethic_socialism
-				has_ethic = ethic_fanatic_socialism
-			}
-		}
+		limit = { is_socialist = yes }
 		if = {
 			limit = { has_ethic = ethic_socialism }
 			country_remove_ethic = ethic_socialism

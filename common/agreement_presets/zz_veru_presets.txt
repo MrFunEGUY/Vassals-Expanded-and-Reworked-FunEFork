@@ -1208,7 +1208,6 @@ preset_ver_neocolony = {
 		is_tributary = no
 		is_protectorate = no
 		from = {
-			is_socialist = no
 			is_gestalt = no
 			NOR = {
 				is_country_type = awakened_fallen_empire

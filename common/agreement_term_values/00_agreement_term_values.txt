@@ -1179,10 +1179,6 @@ subject_ver_ruler_them = {
 			fail_text = not_allowed_for_ver_foederatus
 			NOT = { agreement_preset = preset_ver_foederatus }
 		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_gestalt
-			owner = { is_gestalt = no }
-		}
 	}
 }
 
@@ -1280,7 +1276,7 @@ subject_ver_government_allowed = {
 		trigger = {
 			target = { is_xenophobe = yes }
 		}
-		loyalty_change = -5
+		loyalty_change = -20
 		ai_acceptance = {
 			subject = -100
 		}
@@ -1309,10 +1305,6 @@ subject_ver_government_allowed = {
 			fail_text = not_allowed_for_ver_foederatus
 			NOT = { agreement_preset = preset_ver_foederatus }
 		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_gestalt
-			owner = { is_gestalt = no }
-		}
 	}
 }
 
@@ -1340,7 +1332,7 @@ subject_ver_policy_allowed = {
 		trigger = {
 			target = { is_xenophobe = yes }
 		}
-		loyalty_change = -15
+		loyalty_change = -10
 		ai_acceptance = {
 			subject = -150
 		}
@@ -1366,10 +1358,6 @@ subject_ver_policy_allowed = {
 			fail_text = not_allowed_for_ver_condo
 			NOT = { agreement_preset = preset_ver_condo }
 		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_gestalt
-			owner = { is_gestalt = no }
-		}
 	}
 }
 
@@ -1393,7 +1381,7 @@ subject_ver_species_policy_allowed = {
 		trigger = {
 			target = { is_xenophobe = yes }
 		}
-		loyalty_change = -15
+		loyalty_change = -10
 		ai_acceptance = {
 			subject = -150
 		}
@@ -1450,7 +1438,7 @@ subject_ver_capital_allowed = {
 		trigger = {
 			target = { is_xenophobe = yes }
 		}
-		loyalty_change = -10
+		loyalty_change = -7.5
 		ai_acceptance = {
 			subject = -75
 		}
@@ -1474,10 +1462,6 @@ subject_ver_capital_allowed = {
 		custom_tooltip = {
 			fail_text = not_allowed_for_ver_condo
 			NOT = { agreement_preset = preset_ver_condo }
-		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_gestalt
-			owner = { is_gestalt = no }
 		}
 	}
 }
@@ -1530,10 +1514,6 @@ subject_ver_naming_allowed = {
 		custom_tooltip = {
 			fail_text = not_allowed_for_ver_condo
 			NOT = { agreement_preset = preset_ver_condo }
-		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_gestalt
-			owner = { is_gestalt = no }
 		}
 	}
 }
@@ -1603,8 +1583,8 @@ subject_ver_proxy_allowed = {
 		custom_tooltip = {
 			fail_text = not_allowed_for_term_subject_wars
 			NOR = {
-				has_term_value = { term = joins_subject_wars value = joins_subject_wars_offensive }
 				has_term_value = { term = joins_subject_wars value = joins_subject_wars_all }
+				has_term_value = { term = joins_subject_wars value = joins_subject_wars_offensive }
 			}
 		}
 		custom_tooltip = {
@@ -1718,10 +1698,10 @@ subject_ver_devolved_effect = {
 subject_ver_condo_effect = {
 	term = subject_ver_effects
 	owner_modifier = {
-		diplo_weight_mult = 0.02
+		diplo_weight_mult = 0.05
 	}
 	target_modifier = {
-		diplo_weight_mult = -0.15
+		diplo_weight_mult = 0.2
 	}
 
 	extra_term_text_subject = ver_condo_extra_subject
