@@ -949,16 +949,11 @@ get_autocratic_gov = {
 				}
 			}
 		}
-		if = {
-			limit = { is_egalitarian = yes }
-			if = {
-				limit = { has_ethic = ethic_egalitarian }
-				country_remove_ethic = ethic_egalitarian
-				country_add_ethic = ethic_authoritarian
-			}
-			else = {
-				country_remove_ethic = ethic_fanatic_egalitarian
-				country_add_ethic = ethic_fanatic_authoritarian
+		else_if = {
+			limit = { is_authoritarian = no }
+			while = {
+				limit = { is_authoritarian = no }
+				shift_ethic = ethic_authoritarian
 			}
 		}
 		if = { # Wasn't already Auth, just make a Dictatorship
@@ -969,27 +964,53 @@ get_autocratic_gov = {
 				cooldown = no
 			}
 		}
-		if = {
+		ruler = { set_leader_flag = grateful_installed_vassal_leader_@this }
+		add_opinion_modifier = {
+			who = prev
+			modifier = opinion_installed_as_vassal_leader
+		}
+	}
+	set_country_flag = vassal_installer_country_@event_target:chosen_subject.ruler
+}
+
+# Get New Government - No Penalties - Own Leader - Will be grateful
+get_autocratic_gov_no_penalty = {
+	event_target:chosen_subject = {
+		if = { # Already Auth, more amenable to a Monarchy
 			limit = {
-				OR = {
-					exists = heir
-					any_owned_leader = { has_leader_flag = appointed_heir }
+				is_authoritarian = yes
+				is_imp_or_dict = no
+			}
+			random_list = {
+				35 = {
+					change_government = {
+						authority = auth_imperial
+						remove_invalid_civics = yes
+						cooldown = no
+					}
+				}
+				65 = {
+					change_government = {
+						authority = auth_dictatorial
+						remove_invalid_civics = yes
+						cooldown = no
+					}
 				}
 			}
-			if = {
-				limit = { exists = heir }
-				heir = {
-					set_leader_flag = dead_ruler
-					kill_leader = { show_notification = no }
-				}
+		}
+		else_if = {
+			limit = { is_authoritarian = no }
+			while = {
+				limit = { is_authoritarian = no }
+				shift_ethic = ethic_authoritarian
 			}
-			if = {
-				limit = { any_owned_leader = { has_leader_flag = appointed_heir } }
-				every_owned_leader = {
-					limit = { has_leader_flag = appointed_heir }
-					set_leader_flag = dead_ruler
-					kill_leader = { show_notification = no }
-				}
+		}
+		if = { # Wasn't already Auth, just make a Dictatorship
+			limit = { is_imp_or_dict = no }
+			change_government = {
+				authority = auth_dictatorial
+				remove_invalid_civics = yes
+				cooldown = no
 			}
 		}
 		ruler = { set_leader_flag = grateful_installed_vassal_leader_@this }
@@ -1027,16 +1048,11 @@ get_autocratic_gov_subject_leader = {
 				}
 			}
 		}
-		if = {
-			limit = { is_egalitarian = yes }
-			if = {
-				limit = { has_ethic = ethic_egalitarian }
-				country_remove_ethic = ethic_egalitarian
-				country_add_ethic = ethic_authoritarian
-			}
-			else = {
-				country_remove_ethic = ethic_fanatic_egalitarian
-				country_add_ethic = ethic_fanatic_authoritarian
+		else_if = {
+			limit = { is_authoritarian = no }
+			while = {
+				limit = { is_authoritarian = no }
+				shift_ethic = ethic_authoritarian
 			}
 		}
 		if = { # Wasn't already Auth, just make a Dictatorship
@@ -1045,29 +1061,6 @@ get_autocratic_gov_subject_leader = {
 				authority = auth_dictatorial
 				remove_invalid_civics = yes
 				cooldown = no
-			}
-		}
-		if = {
-			limit = {
-				OR = {
-					exists = heir
-					any_owned_leader = { has_leader_flag = appointed_heir }
-				}
-			}
-			if = {
-				limit = { exists = heir }
-				heir = {
-					set_leader_flag = dead_ruler
-					kill_leader = { show_notification = no }
-				}
-			}
-			if = {
-				limit = { any_owned_leader = { has_leader_flag = appointed_heir } }
-				every_owned_leader = {
-					limit = { has_leader_flag = appointed_heir }
-					set_leader_flag = dead_ruler
-					kill_leader = { show_notification = no }
-				}
 			}
 		}
 		random = {
@@ -1080,85 +1073,6 @@ get_autocratic_gov_subject_leader = {
 			prev = { set_country_flag = vassal_installer_country_@event_target:chosen_subject.ruler }
 		}
 	}
-}
-
-# Get New Government - No Penalties - Own Leader - Will be grateful
-get_autocratic_gov_no_penalty = {
-	event_target:chosen_subject = {
-		if = { # Already Auth, more amenable to a Monarchy
-			limit = {
-				is_authoritarian = yes
-				is_imp_or_dict = no
-			}
-			random_list = {
-				50 = {
-					change_government = {
-						authority = auth_imperial
-						remove_invalid_civics = yes
-						cooldown = no
-					}
-				}
-				50 = {
-					change_government = {
-						authority = auth_dictatorial
-						remove_invalid_civics = yes
-						cooldown = no
-					}
-				}
-			}
-		}
-		if = {
-			limit = { is_egalitarian = yes }
-			if = {
-				limit = { has_ethic = ethic_egalitarian }
-				country_remove_ethic = ethic_egalitarian
-				country_add_ethic = ethic_authoritarian
-			}
-			else = {
-				country_remove_ethic = ethic_fanatic_egalitarian
-				country_add_ethic = ethic_fanatic_authoritarian
-			}
-		}
-		if = { # Wasn't already Auth, just make a Dictatorship
-			limit = { is_imp_or_dict = no }
-			change_government = {
-				authority = auth_dictatorial
-				remove_invalid_civics = yes
-				cooldown = no
-			}
-		}
-		if = {
-			limit = {
-				OR = {
-					exists = heir
-					any_owned_leader = { has_leader_flag = appointed_heir }
-				}
-			}
-			if = {
-				limit = {
-					exists = heir
-				}
-				heir = {
-					set_leader_flag = dead_ruler
-					kill_leader = { show_notification = no }
-				}
-			}
-			if = {
-				limit = { any_owned_leader = { has_leader_flag = appointed_heir } }
-				every_owned_leader = {
-					limit = { has_leader_flag = appointed_heir }
-					set_leader_flag = dead_ruler
-					kill_leader = { show_notification = no }
-				}
-			}
-		}
-		ruler = { set_leader_flag = grateful_installed_vassal_leader_@this }
-		add_opinion_modifier = {
-			who = prev
-			modifier = opinion_installed_as_vassal_leader
-		}
-	}
-	set_country_flag = vassal_installer_country_@event_target:chosen_subject.ruler
 }
 
 # Get New Government - No Penalties - Subject's Leader - Maybe will be grateful
@@ -1186,16 +1100,11 @@ get_autocratic_gov_no_penalty_subject_leader = {
 				}
 			}
 		}
-		if = {
-			limit = { is_egalitarian = yes }
-			if = {
-				limit = { has_ethic = ethic_egalitarian }
-				country_remove_ethic = ethic_egalitarian
-				country_add_ethic = ethic_authoritarian
-			}
-			else = {
-				country_remove_ethic = ethic_fanatic_egalitarian
-				country_add_ethic = ethic_fanatic_authoritarian
+		else_if = {
+			limit = { is_authoritarian = no }
+			while = {
+				limit = { is_authoritarian = no }
+				shift_ethic = ethic_authoritarian
 			}
 		}
 		if = { # Wasn't already Auth, just make a Dictatorship
@@ -1206,31 +1115,6 @@ get_autocratic_gov_no_penalty_subject_leader = {
 				cooldown = no
 			}
 		}
-		if = {
-			limit = {
-				OR = {
-					exists = heir
-					any_owned_leader = { has_leader_flag = appointed_heir }
-				}
-			}
-			if = {
-				limit = {
-					exists = heir
-				}
-				heir = {
-					set_leader_flag = dead_ruler
-					kill_leader = { show_notification = no }
-				}
-			}
-			if = {
-				limit = { any_owned_leader = { has_leader_flag = appointed_heir } }
-				every_owned_leader = {
-					limit = { has_leader_flag = appointed_heir }
-					set_leader_flag = dead_ruler
-					kill_leader = { show_notification = no }
-				}
-			}
-		}
 		random = {
 			chance = 30
 			ruler = { set_leader_flag = grateful_installed_vassal_leader_@this }
@@ -1239,6 +1123,50 @@ get_autocratic_gov_no_penalty_subject_leader = {
 				modifier = opinion_installed_as_vassal_leader
 			}
 			prev = { set_country_flag = vassal_installer_country_@event_target:chosen_subject.ruler }
+		}
+	}
+}
+
+vear_install_own_leader_effect = {
+	if = {
+		limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+		get_autocratic_gov_no_penalty = yes
+	}
+	else = { get_autocratic_gov = yes }
+
+	install_leader_heir_effect = yes
+}
+
+vear_install_subject_leader_effect = {
+	if = {
+		limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
+		get_autocratic_gov_no_penalty_subject_leader = yes
+	}
+	else = { get_autocratic_gov_subject_leader = yes }
+
+	install_leader_heir_effect = yes
+}
+
+install_leader_heir_effect = {
+	event_target:chosen_subject = {
+		if = {
+			limit = { exists = heir }
+			if = {
+				limit = { has_civil_wars_mod = yes }
+				heir = { save_event_target_as = disinherited_heir }
+				country_event = { id = civheir.1000 }
+			}
+			else = {
+				heir = {
+					set_leader_flag = dead_ruler
+					kill_leader = { show_notification = no }
+				}
+			}
+		}
+		if = {
+			limit = { has_adoptive_dynasties = yes }
+			remove_adoptive_dynasties = yes
+			country_event = { id = veru_misc.4005 days = 5 }
 		}
 	}
 }

@@ -1,0 +1,6 @@
+
+###############################
+### FunEFork by MrFunEGUY ###
+###############################
+
+remove_adoptive_dynasties = {  }

@@ -1,5 +1,7 @@
 is_socialist = { is_socialism = yes }
 
+has_adoptive_dynasties = { always = no }
+
 is_socialism = { always = no }
 
 is_capitalism = { always = no }

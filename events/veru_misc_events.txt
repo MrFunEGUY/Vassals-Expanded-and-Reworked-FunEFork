@@ -1278,3 +1278,18 @@ country_event = {
 		name = OK
 	}
 }
+
+# Notification event - Removed Adopted Dynasties
+country_event = {
+	id = veru_misc.4005
+	title = veru_misc.4005.title
+	desc = veru_misc.4005.desc
+
+	picture = GFX_evt_civil_action
+
+	is_triggered_only = yes
+
+	option = {
+		name = UNFORTUNATE
+	}
+}

@@ -522,6 +522,9 @@ l_polish:
  veru_misc.4000.title:0 "Forced Governing Ethics Shift in the [TargetFaction.Owner.GetName]"
  veru_misc.4000.desc.start:0 "Due to support for the §Y[TargetFaction.GetName]§! in the §H[TargetFaction.Owner.Overlord.GetName]§!, the §Y[TargetFaction.Owner.GetName]§! has been forced to embrace the faction, adopting their core values and policies."
 
+ veru_misc.4005.title: "No More Adoptive Dynasties"
+ veru_misc.4005.desc: "Due to our inability to securely choose our own §Y[root.GetRulerTitle]§!, we have lost the ['civic:civic_adoptive_dynasties'] civic."
+
  EMPOWER_FACTION_COOLDOWN: "They have recently §YEmbraced§! a Faction. This can only be done once every §Y10§! years."
 
  # Overwrites

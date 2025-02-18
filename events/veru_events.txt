@@ -1535,12 +1535,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_1 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1556,12 +1552,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_2 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1577,12 +1569,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_3 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1598,12 +1586,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_4 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1619,12 +1603,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_5 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1640,12 +1620,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_6 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1661,12 +1637,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_7 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1682,12 +1654,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_8 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1703,12 +1671,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_9 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1724,12 +1688,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_10 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1789,12 +1749,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_1 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1810,12 +1766,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_2 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1831,12 +1783,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_3 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1852,12 +1800,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_4 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1873,12 +1817,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_5 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1894,12 +1834,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_6 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1915,12 +1851,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_7 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1936,12 +1868,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_8 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1957,12 +1885,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_9 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1978,12 +1902,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_10 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2043,12 +1963,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_1 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2064,12 +1980,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_2 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2085,12 +1997,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_3 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2106,12 +2014,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_4 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2127,12 +2031,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_5 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2148,12 +2048,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_6 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2169,12 +2065,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_7 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2190,12 +2082,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_8 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2211,12 +2099,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_9 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2232,12 +2116,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_10 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2303,12 +2183,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_1 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2328,12 +2204,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_2 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2353,12 +2225,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_3 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2378,12 +2246,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_4 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2403,12 +2267,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_5 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2428,12 +2288,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_6 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2453,12 +2309,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_7 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2478,12 +2330,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_8 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2503,12 +2351,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_9 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2528,12 +2372,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_10 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2597,12 +2437,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_1 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2622,12 +2458,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_2 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2647,12 +2479,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_3 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2672,12 +2500,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_4 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2697,12 +2521,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_5 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2722,12 +2542,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_6 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2747,12 +2563,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_7 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2772,12 +2584,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_8 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2797,12 +2605,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_9 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2822,12 +2626,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_10 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2891,12 +2691,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_1 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2916,12 +2712,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_2 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2941,12 +2733,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_3 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2966,12 +2754,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_4 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -2991,12 +2775,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_5 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -3016,12 +2796,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_6 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -3041,12 +2817,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_7 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -3066,12 +2838,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_8 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -3091,12 +2859,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_9 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -3116,12 +2880,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_10 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty_subject_leader = yes
-			}
-			else = { get_autocratic_gov_subject_leader = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -3881,8 +3641,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_1 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -3895,8 +3655,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_2 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -3909,8 +3669,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_3 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -3923,8 +3683,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_4 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -3937,8 +3697,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_5 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -3951,8 +3711,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_6 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -3965,8 +3725,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_7 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -3979,8 +3739,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_8 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -3993,8 +3753,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_9 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4007,8 +3767,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_10 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4049,8 +3809,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_1 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4063,8 +3823,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_2 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4077,8 +3837,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_3 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4091,8 +3851,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_4 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4105,8 +3865,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_5 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4119,8 +3879,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_6 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4133,8 +3893,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_7 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4147,8 +3907,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_8 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4161,8 +3921,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_9 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4175,8 +3935,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_10 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4217,8 +3977,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_1 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4231,8 +3991,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_2 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4245,8 +4005,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_3 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4259,8 +4019,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_4 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4273,8 +4033,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_5 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4287,8 +4047,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_6 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4301,8 +4061,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_7 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4315,8 +4075,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_8 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4329,8 +4089,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_9 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4343,8 +4103,8 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			vear_install_subject_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_10 }
-			get_autocratic_gov_no_penalty_subject_leader = yes
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4438,12 +4198,8 @@ country_event = {
 		name = veru.5000.official_leader_1
 		trigger = { check_variable = { which = total_officials value >= 1 } }
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_1 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4452,12 +4208,8 @@ country_event = {
 		name = veru.5000.official_leader_2
 		trigger = { check_variable = { which = total_officials value >= 2 } }
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_2 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4466,12 +4218,8 @@ country_event = {
 		name = veru.5000.official_leader_3
 		trigger = { check_variable = { which = total_officials value >= 3 } }
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_3 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4480,12 +4228,8 @@ country_event = {
 		name = veru.5000.official_leader_4
 		trigger = { check_variable = { which = total_officials value >= 4 } }
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_4 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4494,12 +4238,8 @@ country_event = {
 		name = veru.5000.official_leader_5
 		trigger = { check_variable = { which = total_officials value >= 5 } }
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_5 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4508,12 +4248,8 @@ country_event = {
 		name = veru.5000.official_leader_6
 		trigger = { check_variable = { which = total_officials value >= 6 } }
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_6 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4522,12 +4258,8 @@ country_event = {
 		name = veru.5000.official_leader_7
 		trigger = { check_variable = { which = total_officials value >= 7 } }
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_7 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4536,12 +4268,8 @@ country_event = {
 		name = veru.5000.official_leader_8
 		trigger = { check_variable = { which = total_officials value >= 8 } }
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_8 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4550,12 +4278,8 @@ country_event = {
 		name = veru.5000.official_leader_9
 		trigger = { check_variable = { which = total_officials value >= 9 } }
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_9 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4564,12 +4288,8 @@ country_event = {
 		name = veru.5000.official_leader_10
 		trigger = { check_variable = { which = total_officials value >= 10 } }
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:official_leader_10 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4606,12 +4326,8 @@ country_event = {
 		name = veru.5000.commander_leader_1
 		trigger = { check_variable = { which = total_commanders value >= 1 } }
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_1 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4620,12 +4336,8 @@ country_event = {
 		name = veru.5000.commander_leader_2
 		trigger = { check_variable = { which = total_commanders value >= 2 } }
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_2 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4634,12 +4346,8 @@ country_event = {
 		name = veru.5000.commander_leader_3
 		trigger = { check_variable = { which = total_commanders value >= 3 } }
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_3 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4648,12 +4356,8 @@ country_event = {
 		name = veru.5000.commander_leader_4
 		trigger = { check_variable = { which = total_commanders value >= 4 } }
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_4 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4662,12 +4366,8 @@ country_event = {
 		name = veru.5000.commander_leader_5
 		trigger = { check_variable = { which = total_commanders value >= 5 } }
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_5 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4676,12 +4376,8 @@ country_event = {
 		name = veru.5000.commander_leader_6
 		trigger = { check_variable = { which = total_commanders value >= 6 } }
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_6 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4690,12 +4386,8 @@ country_event = {
 		name = veru.5000.commander_leader_7
 		trigger = { check_variable = { which = total_commanders value >= 7 } }
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_7 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4704,12 +4396,8 @@ country_event = {
 		name = veru.5000.commander_leader_8
 		trigger = { check_variable = { which = total_commanders value >= 8 } }
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_8 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4718,12 +4406,8 @@ country_event = {
 		name = veru.5000.commander_leader_9
 		trigger = { check_variable = { which = total_commanders value >= 9 } }
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_9 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4732,12 +4416,8 @@ country_event = {
 		name = veru.5000.commander_leader_10
 		trigger = { check_variable = { which = total_commanders value >= 10 } }
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:commander_leader_10 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4774,12 +4454,8 @@ country_event = {
 		name = veru.5000.scientist_leader_1
 		trigger = { check_variable = { which = total_scientists value >= 1 } }
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_1 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4788,12 +4464,8 @@ country_event = {
 		name = veru.5000.scientist_leader_2
 		trigger = { check_variable = { which = total_scientists value >= 2 } }
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_2 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4802,12 +4474,8 @@ country_event = {
 		name = veru.5000.scientist_leader_3
 		trigger = { check_variable = { which = total_scientists value >= 3 } }
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_3 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4816,12 +4484,8 @@ country_event = {
 		name = veru.5000.scientist_leader_4
 		trigger = { check_variable = { which = total_scientists value >= 4 } }
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_4 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4830,12 +4494,8 @@ country_event = {
 		name = veru.5000.scientist_leader_5
 		trigger = { check_variable = { which = total_scientists value >= 5 } }
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_5 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4844,12 +4504,8 @@ country_event = {
 		name = veru.5000.scientist_leader_6
 		trigger = { check_variable = { which = total_scientists value >= 6 } }
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_6 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4858,12 +4514,8 @@ country_event = {
 		name = veru.5000.scientist_leader_7
 		trigger = { check_variable = { which = total_scientists value >= 7 } }
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_7 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4872,12 +4524,8 @@ country_event = {
 		name = veru.5000.scientist_leader_8
 		trigger = { check_variable = { which = total_scientists value >= 8 } }
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_8 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4886,12 +4534,8 @@ country_event = {
 		name = veru.5000.scientist_leader_9
 		trigger = { check_variable = { which = total_scientists value >= 9 } }
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_9 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -4900,12 +4544,8 @@ country_event = {
 		name = veru.5000.scientist_leader_10
 		trigger = { check_variable = { which = total_scientists value >= 10 } }
 		hidden_effect = {
+			vear_install_own_leader_effect = yes
 			event_target:chosen_subject = { set_leader = event_target:scientist_leader_10 }
-			if = {
-				limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-				get_autocratic_gov_no_penalty = yes
-			}
-			else = { get_autocratic_gov = yes }
 		}
 		ai_chance = { factor = 1 }
 	}
