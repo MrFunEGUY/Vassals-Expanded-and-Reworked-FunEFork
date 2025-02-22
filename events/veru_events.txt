@@ -31,104 +31,34 @@ country_event = {
 
 	# Now we show a list of the subject states to the player
 	option = {
-		name = veru.1000.subject_1
-		trigger = { check_variable = { which = veru_total_subjects value >= 1 } }
-		hidden_effect = {
-			event_target:subject_1 = {
-				save_event_target_as = chosen_subject
-			}
-			country_event = { id = veru.1050 }
-		}
+		inline_script = { script = events/pick_subject_option NUM = 1 }
 	}
 	option = {
-		name = veru.1000.subject_2
-		trigger = { check_variable = { which = veru_total_subjects value >= 2 } }
-		hidden_effect = {
-			event_target:subject_2 = {
-				save_event_target_as = chosen_subject
-			}
-			country_event = { id = veru.1050 }
-		}
+		inline_script = { script = events/pick_subject_option NUM = 2 }
 	}
 	option = {
-		name = veru.1000.subject_3
-		trigger = { check_variable = { which = veru_total_subjects value >= 3 } }
-		hidden_effect = {
-			event_target:subject_3 = {
-				save_event_target_as = chosen_subject
-			}
-			country_event = { id = veru.1050 }
-		}
+		inline_script = { script = events/pick_subject_option NUM = 3 }
 	}
 	option = {
-		name = veru.1000.subject_4
-		trigger = { check_variable = { which = veru_total_subjects value >= 4 } }
-		hidden_effect = {
-			event_target:subject_4 = {
-				save_event_target_as = chosen_subject
-			}
-			country_event = { id = veru.1050 }
-		}
+		inline_script = { script = events/pick_subject_option NUM = 4 }
 	}
 	option = {
-		name = veru.1000.subject_5
-		trigger = { check_variable = { which = veru_total_subjects value >= 5 } }
-		hidden_effect = {
-			event_target:subject_5 = {
-				save_event_target_as = chosen_subject
-			}
-			country_event = { id = veru.1050 }
-		}
+		inline_script = { script = events/pick_subject_option NUM = 5 }
 	}
 	option = {
-		name = veru.1000.subject_6
-		trigger = { check_variable = { which = veru_total_subjects value >= 6 } }
-		hidden_effect = {
-			event_target:subject_6 = {
-				save_event_target_as = chosen_subject
-			}
-			country_event = { id = veru.1050 }
-		}
+		inline_script = { script = events/pick_subject_option NUM = 6 }
 	}
 	option = {
-		name = veru.1000.subject_7
-		trigger = { check_variable = { which = veru_total_subjects value >= 7 } }
-		hidden_effect = {
-			event_target:subject_7 = {
-				save_event_target_as = chosen_subject
-			}
-			country_event = { id = veru.1050 }
-		}
+		inline_script = { script = events/pick_subject_option NUM = 7 }
 	}
 	option = {
-		name = veru.1000.subject_8
-		trigger = { check_variable = { which = veru_total_subjects value >= 8 } }
-		hidden_effect = {
-			event_target:subject_8 = {
-				save_event_target_as = chosen_subject
-			}
-			country_event = { id = veru.1050 }
-		}
+		inline_script = { script = events/pick_subject_option NUM = 8 }
 	}
 	option = {
-		name = veru.1000.subject_9
-		trigger = { check_variable = { which = veru_total_subjects value >= 9 } }
-		hidden_effect = {
-			event_target:subject_9 = {
-				save_event_target_as = chosen_subject
-			}
-			country_event = { id = veru.1050 }
-		}
+		inline_script = { script = events/pick_subject_option NUM = 9 }
 	}
 	option = {
-		name = veru.1000.subject_10
-		trigger = { check_variable = { which = veru_total_subjects value >= 10 } }
-		hidden_effect = {
-			event_target:subject_10 = {
-				save_event_target_as = chosen_subject
-			}
-			country_event = { id = veru.1050 }
-		}
+		inline_script = { script = events/pick_subject_option NUM = 10 }
 	}
 }
 
@@ -292,9 +222,8 @@ country_event = {
 		}
 		add_resource = { influence = -200 }
 		hidden_effect = {
-			event_target:chosen_subject = {
-				copy_techs_from = { target = root }
-			}
+			event_target:chosen_subject = { copy_techs_from = { target = root } }
+			country_event = { id = veru.1050 }
 		}
 	}
 }
@@ -441,522 +370,52 @@ country_event = {
 
 	# Empower Authoritarians
 	option = {
-		name = veru.3000.auth
-		trigger = {
-			event_target:chosen_subject = { any_pop_faction = { is_authoritarian = yes } }
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		add_resource = { influence = -150 }
-		hidden_effect = {
-			random_pop_faction = {
-				limit = { is_authoritarian = yes }
-				save_event_target_as = embraced_faction
-				add_modifier = { modifier = embraced_faction days = 3600 }
-				event_target:chosen_subject = {
-					shift_ethic = ethic_authoritarian
-					hidden_effect = {
-						add_modifier = { modifier = embraced_faction_timer days = 3600 }
-						every_pop_faction = {
-							limit = { NOT = { is_same_value = event_target:embraced_faction } }
-							add_modifier = { modifier = embraced_another_faction days = 3600 }
-						}
-					}
-				}
-				hidden_effect = {
-					save_event_target_as = TargetFaction
-					event_target:chosen_subject = {
-						every_relation = {
-							limit = {
-								NOT = { is_same_empire = root }
-								is_ai = no
-								is_country_type = default
-								has_communications = prev
-								has_intel_level = {
-									who = prev
-									category = government
-									level >= 1
-								}
-							}
-							country_event = { id = veru_misc.4000 }
-						}
-					}
-				}
-			}
-			get_intervention_effect_gov = yes
-		}
+		inline_script = { script = events/pick_faction_option ETHIC = authoritarian }
 	}
 
 	# Empower Egalitarians
 	option = {
-		name = veru.3000.egal
-		trigger = {
-			event_target:chosen_subject = { any_pop_faction = { is_egalitarian = yes } }
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		add_resource = { influence = -150 }
-		hidden_effect = {
-			random_pop_faction = {
-				limit = { is_egalitarian = yes }
-				save_event_target_as = embraced_faction
-				add_modifier = { modifier = embraced_faction days = 3600 }
-				event_target:chosen_subject = {
-					shift_ethic = ethic_egalitarian
-					hidden_effect = {
-						add_modifier = { modifier = embraced_faction_timer days = 3600 }
-						every_pop_faction = {
-							limit = { NOT = { is_same_value = event_target:embraced_faction } }
-							add_modifier = { modifier = embraced_another_faction days = 3600 }
-						}
-					}
-				}
-				hidden_effect = {
-					save_event_target_as = TargetFaction
-					event_target:chosen_subject = {
-						every_relation = {
-							limit = {
-								NOT = { is_same_empire = root }
-								is_ai = no
-								is_country_type = default
-								has_communications = prev
-								has_intel_level = {
-									who = prev
-									category = government
-									level >= 1
-								}
-							}
-							country_event = { id = veru_misc.4000 }
-						}
-					}
-				}
-			}
-			get_intervention_effect_gov = yes
-		}
+		inline_script = { script = events/pick_faction_option ETHIC = egalitarian }
 	}
 
 	# Empower Spiritualists
 	option = {
-		name = veru.3000.spi
-		trigger = {
-			event_target:chosen_subject = { any_pop_faction = { is_spiritualist = yes } }
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		add_resource = { influence = -150 }
-		hidden_effect = {
-			random_pop_faction = {
-				limit = { is_spiritualist = yes }
-				save_event_target_as = embraced_faction
-				add_modifier = { modifier = embraced_faction days = 3600 }
-				event_target:chosen_subject = {
-					shift_ethic = ethic_spiritualist
-					hidden_effect = {
-						add_modifier = { modifier = embraced_faction_timer days = 3600 }
-						every_pop_faction = {
-							limit = { NOT = { is_same_value = event_target:embraced_faction } }
-							add_modifier = { modifier = embraced_another_faction days = 3600 }
-						}
-					}
-				}
-				hidden_effect = {
-					save_event_target_as = TargetFaction
-					event_target:chosen_subject = {
-						every_relation = {
-							limit = {
-								NOT = { is_same_empire = root }
-								is_ai = no
-								is_country_type = default
-								has_communications = prev
-								has_intel_level = {
-									who = prev
-									category = government
-									level >= 1
-								}
-							}
-							country_event = { id = veru_misc.4000 }
-						}
-					}
-				}
-			}
-			get_intervention_effect_gov = yes
-		}
+		inline_script = { script = events/pick_faction_option ETHIC = spiritualist }
 	}
 
 	# Empower Materialists
 	option = {
-		name = veru.3000.mat
-		trigger = {
-			event_target:chosen_subject = { any_pop_faction = { is_materialist = yes } }
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		add_resource = { influence = -150 }
-		hidden_effect = {
-			random_pop_faction = {
-				limit = { is_materialist = yes }
-				save_event_target_as = embraced_faction
-				add_modifier = { modifier = embraced_faction days = 3600 }
-				event_target:chosen_subject = {
-					shift_ethic = ethic_materialist
-					hidden_effect = {
-						add_modifier = { modifier = embraced_faction_timer days = 3600 }
-						every_pop_faction = {
-							limit = { NOT = { is_same_value = event_target:embraced_faction } }
-							add_modifier = { modifier = embraced_another_faction days = 3600 }
-						}
-					}
-				}
-				hidden_effect = {
-					save_event_target_as = TargetFaction
-					event_target:chosen_subject = {
-						every_relation = {
-							limit = {
-								NOT = { is_same_empire = root }
-								is_ai = no
-								is_country_type = default
-								has_communications = prev
-								has_intel_level = {
-									who = prev
-									category = government
-									level >= 1
-								}
-							}
-							country_event = { id = veru_misc.4000 }
-						}
-					}
-				}
-			}
-			get_intervention_effect_gov = yes
-		}
+		inline_script = { script = events/pick_faction_option ETHIC = materialist }
 	}
 
 	# Empower Militarists
 	option = {
-		name = veru.3000.mil
-		trigger = {
-			event_target:chosen_subject = { any_pop_faction = { is_militarist = yes } }
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		add_resource = { influence = -150 }
-		hidden_effect = {
-			random_pop_faction = {
-				limit = { is_militarist = yes }
-				save_event_target_as = embraced_faction
-				add_modifier = { modifier = embraced_faction days = 3600 }
-				event_target:chosen_subject = {
-					shift_ethic = ethic_militarist
-					hidden_effect = {
-						add_modifier = { modifier = embraced_faction_timer days = 3600 }
-						every_pop_faction = {
-							limit = { NOT = { is_same_value = event_target:embraced_faction } }
-							add_modifier = { modifier = embraced_another_faction days = 3600 }
-						}
-					}
-				}
-				hidden_effect = {
-					save_event_target_as = TargetFaction
-					event_target:chosen_subject = {
-						every_relation = {
-							limit = {
-								NOT = { is_same_empire = root }
-								is_ai = no
-								is_country_type = default
-								has_communications = prev
-								has_intel_level = {
-									who = prev
-									category = government
-									level >= 1
-								}
-							}
-							country_event = { id = veru_misc.4000 }
-						}
-					}
-				}
-			}
-			get_intervention_effect_gov = yes
-		}
+		inline_script = { script = events/pick_faction_option ETHIC = militarist }
 	}
 
 	# Empower Pacifists
 	option = {
-		name = veru.3000.pac
-		trigger = {
-			event_target:chosen_subject = { any_pop_faction = { is_pacifist = yes } }
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		add_resource = { influence = -150 }
-		hidden_effect = {
-			random_pop_faction = {
-				limit = { is_pacifist = yes }
-				save_event_target_as = embraced_faction
-				add_modifier = { modifier = embraced_faction days = 3600 }
-				event_target:chosen_subject = {
-					shift_ethic = ethic_pacifist
-					hidden_effect = {
-						add_modifier = { modifier = embraced_faction_timer days = 3600 }
-						every_pop_faction = {
-							limit = { NOT = { is_same_value = event_target:embraced_faction } }
-							add_modifier = { modifier = embraced_another_faction days = 3600 }
-						}
-					}
-				}
-				hidden_effect = {
-					save_event_target_as = TargetFaction
-					event_target:chosen_subject = {
-						every_relation = {
-							limit = {
-								NOT = { is_same_empire = root }
-								is_ai = no
-								is_country_type = default
-								has_communications = prev
-								has_intel_level = {
-									who = prev
-									category = government
-									level >= 1
-								}
-							}
-							country_event = { id = veru_misc.4000 }
-						}
-					}
-				}
-			}
-			get_intervention_effect_gov = yes
-		}
+		inline_script = { script = events/pick_faction_option ETHIC = pacifist }
 	}
 
 	# Empower Xenophobes
 	option = {
-		name = veru.3000.phobe
-		trigger = {
-			event_target:chosen_subject = { any_pop_faction = { is_xenophobe = yes } }
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		add_resource = { influence = -150 }
-		hidden_effect = {
-			random_pop_faction = {
-				limit = { is_xenophobe = yes }
-				save_event_target_as = embraced_faction
-				add_modifier = { modifier = embraced_faction days = 3600 }
-				event_target:chosen_subject = {
-					shift_ethic = ethic_xenophobe
-					hidden_effect = {
-						add_modifier = { modifier = embraced_faction_timer days = 3600 }
-						every_pop_faction = {
-							limit = { NOT = { is_same_value = event_target:embraced_faction } }
-							add_modifier = { modifier = embraced_another_faction days = 3600 }
-						}
-					}
-				}
-				hidden_effect = {
-					save_event_target_as = TargetFaction
-					event_target:chosen_subject = {
-						every_relation = {
-							limit = {
-								NOT = { is_same_empire = root }
-								is_ai = no
-								is_country_type = default
-								has_communications = prev
-								has_intel_level = {
-									who = prev
-									category = government
-									level >= 1
-								}
-							}
-							country_event = { id = veru_misc.4000 }
-						}
-					}
-				}
-			}
-			get_intervention_effect_gov = yes
-		}
+		inline_script = { script = events/pick_faction_option ETHIC = xenophobe }
 	}
 
 	# Empower Xenophiles
 	option = {
-		name = veru.3000.phile
-		trigger = {
-			event_target:chosen_subject = { any_pop_faction = { is_xenophile = yes } }
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		add_resource = { influence = -150 }
-		hidden_effect = {
-			random_pop_faction = {
-				limit = { is_xenophile = yes }
-				save_event_target_as = embraced_faction
-				add_modifier = { modifier = embraced_faction days = 3600 }
-				event_target:chosen_subject = {
-					shift_ethic = ethic_xenophile
-					hidden_effect = {
-						add_modifier = { modifier = embraced_faction_timer days = 3600 }
-						every_pop_faction = {
-							limit = { NOT = { is_same_value = event_target:embraced_faction } }
-							add_modifier = { modifier = embraced_another_faction days = 3600 }
-						}
-					}
-				}
-				hidden_effect = {
-					save_event_target_as = TargetFaction
-					event_target:chosen_subject = {
-						every_relation = {
-							limit = {
-								NOT = { is_same_empire = root }
-								is_ai = no
-								is_country_type = default
-								has_communications = prev
-								has_intel_level = {
-									who = prev
-									category = government
-									level >= 1
-								}
-							}
-							country_event = { id = veru_misc.4000 }
-						}
-					}
-				}
-			}
-			get_intervention_effect_gov = yes
-		}
+		inline_script = { script = events/pick_faction_option ETHIC = xenophile }
 	}
 
 	# Empower Socialists
 	option = {
-		name = veru.3000.soc
-		trigger = {
-			event_target:chosen_subject = { any_pop_faction = { is_socialist = yes } }
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		add_resource = { influence = -150 }
-		hidden_effect = {
-			random_pop_faction = {
-				limit = { is_socialist = yes }
-				save_event_target_as = embraced_faction
-				add_modifier = { modifier = embraced_faction days = 3600 }
-				event_target:chosen_subject = {
-					shift_ethic = ethic_socialism
-					hidden_effect = {
-						add_modifier = { modifier = embraced_faction_timer days = 3600 }
-						every_pop_faction = {
-							limit = { NOT = { is_same_value = event_target:embraced_faction } }
-							add_modifier = { modifier = embraced_another_faction days = 3600 }
-						}
-					}
-				}
-				hidden_effect = {
-					save_event_target_as = TargetFaction
-					event_target:chosen_subject = {
-						every_relation = {
-							limit = {
-								NOT = { is_same_empire = root }
-								is_ai = no
-								is_country_type = default
-								has_communications = prev
-								has_intel_level = {
-									who = prev
-									category = government
-									level >= 1
-								}
-							}
-							country_event = { id = veru_misc.4000 }
-						}
-					}
-				}
-			}
-			get_intervention_effect_gov = yes
-		}
+		inline_script = { script = events/pick_faction_option ETHIC = socialism }
 	}
 
 	# Empower Capitalists
 	option = {
-		name = veru.3000.cap
-		trigger = {
-			event_target:chosen_subject = { any_pop_faction = { is_capitalism = yes } }
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		add_resource = { influence = -150 }
-		hidden_effect = {
-			random_pop_faction = {
-				limit = { is_capitalism = yes }
-				save_event_target_as = embraced_faction
-				add_modifier = { modifier = embraced_faction days = 3600 }
-				event_target:chosen_subject = {
-					shift_ethic = ethic_capitalism
-					hidden_effect = {
-						add_modifier = { modifier = embraced_faction_timer days = 3600 }
-						every_pop_faction = {
-							limit = { NOT = { is_same_value = event_target:embraced_faction } }
-							add_modifier = { modifier = embraced_another_faction days = 3600 }
-						}
-					}
-				}
-				hidden_effect = {
-					save_event_target_as = TargetFaction
-					event_target:chosen_subject = {
-						every_relation = {
-							limit = {
-								NOT = { is_same_empire = root }
-								is_ai = no
-								is_country_type = default
-								has_communications = prev
-								has_intel_level = {
-									who = prev
-									category = government
-									level >= 1
-								}
-							}
-							country_event = { id = veru_misc.4000 }
-						}
-					}
-				}
-			}
-			get_intervention_effect_gov = yes
-		}
+		inline_script = { script = events/pick_faction_option ETHIC = capitalism }
 	}
 
 	# Back
@@ -1033,7 +492,7 @@ country_event = {
 	option = {
 		name = veru.4000.imperial
 		trigger = {
-			event_target:chosen_subject = { is_imperial_authority = no }
+			event_target:chosen_subject = { NOT = { has_authority = auth_imperial } }
 		}
 		allow = {
 			custom_tooltip = {
@@ -1059,7 +518,7 @@ country_event = {
 	option = {
 		name = veru.4000.oligarchic
 		trigger = {
-			event_target:chosen_subject = { NOT = { is_oligarchic_authority = yes } }
+			event_target:chosen_subject = { is_oligarchic_authority = no }
 		}
 		allow = {
 			custom_tooltip = {
@@ -1085,7 +544,10 @@ country_event = {
 	option = {
 		name = veru.4000.democratic_dictatorship
 		trigger = {
-			has_global_flag = more_authorities_activated
+			OR = {
+				has_ecaf_mod = yes
+				has_global_flag = more_authorities_activated
+			}
 			event_target:chosen_subject = { NOT = { has_authority = auth_dict_democratic } }
 		}
 		allow = {
@@ -1138,7 +600,10 @@ country_event = {
 	option = {
 		name = veru.4000.strict_democratic
 		trigger = {
-			has_global_flag = more_authorities_activated
+			OR = {
+				has_ecaf_mod = yes
+				has_global_flag = more_authorities_activated
+			}
 			event_target:chosen_subject = { NOT = { has_authority = auth_strict_democratic } }
 		}
 		allow = {
@@ -1208,6 +673,7 @@ country_event = {
 				get_ethics_check_fan = yes
 				if = {
 					limit = { has_global_flag = cultural_overhaul_active }
+					get_ethics_check_phobe = yes
 					get_ethics_check_soc_cap = yes
 				}
 				change_government = {
@@ -1244,6 +710,7 @@ country_event = {
 				get_ethics_check_egal_auth = yes
 				if = {
 					limit = { has_global_flag = cultural_overhaul_active }
+					get_ethics_check_phobe = yes
 					get_ethics_check_soc_cap = yes
 				}
 				change_government = {
@@ -1307,6 +774,7 @@ country_event = {
 	# Choose one of our Leaders
 	option = {
 		name = veru.6400.us
+		allow = { num_owned_leaders > 2 }
 		hidden_effect = {
 			country_event = { id = veru.5010 }
 		}
@@ -1315,9 +783,10 @@ country_event = {
 	# Choose one of their Leaders
 	option = {
 		name = veru.6400.them
-		trigger = { event_target:chosen_subject = { num_owned_leaders > 2 } }
+		allow = { event_target:chosen_subject = { num_owned_leaders > 2 } }
 		hidden_effect = {
 			country_event = { id = veru.5020 }
+			set_country_flag = install_their_leader
 		}
 	}
 
@@ -1325,7 +794,7 @@ country_event = {
 	option = { name = veru.remain }
 }
 
-# Install Our Leader
+# Choose Leader Class
 country_event = {
 	id = veru.5010
 	title = veru.subject_leader.name
@@ -1358,133 +827,154 @@ country_event = {
 		name = veru.something_else
 		hidden_effect = {
 			country_event = { id = veru.1050 }
+			if = {
+				limit = { has_country_flag = install_their_leader }
+				remove_country_flag = install_their_leader
+			}
 		}
 	}
 
 	# Change Mind to their Leader
 	option = {
 		name = veru.their_leaders
+		trigger = { NOT = { has_country_flag = install_their_leader } }
 		hidden_effect = {
-			country_event = { id = veru.5020 }
-		}
-	}
-
-	# Choose one of our Officials
-	option = {
-		name = veru.5000.official
-		trigger = { any_owned_leader = { leader_class = official } }
-		hidden_effect = {
-			get_officials = yes
-			country_event = { id = veru.5100 }
-		}
-	}
-
-	# Choose one of our Commanders
-	option = {
-		name = veru.5000.commander
-		trigger = { any_owned_leader = { leader_class = commander } }
-		hidden_effect = {
-			get_commanders = yes
-			country_event = { id = veru.5200 }
-		}
-	}
-
-	# Choose one of our Scientists
-	option = {
-		name = veru.5000.scientist
-		trigger = { any_owned_leader = { leader_class = scientist } }
-		hidden_effect = {
-			get_scientists = yes
-			country_event = { id = veru.5400 }
-		}
-	}
-
-	# Back
-	option = { name = veru.remain }
-}
-
-# Install one of their leaders
-country_event = {
-	id = veru.5020
-	title = veru.subject_leader.name
-	location = event_target:chosen_subject
-	hide_window = no
-	is_triggered_only = yes
-
-	diplomatic = yes
-
-	picture_event_data = {
-		portrait = root.ruler
-		planet_background = event_target:chosen_subject.capital_scope
-		graphical_culture = event_target:chosen_subject
-		city_level = event_target:chosen_subject
-		room = event_target:chosen_subject.ruler
-	}
-
-
-	desc = {
-		text = veru.5000.loyal.desc
-		trigger = { event_target:chosen_subject = { is_loyal_to = prev } }
-	}
-
-	desc = {
-		text = veru.5000.disloyal.desc
-		trigger = { event_target:chosen_subject = { is_disloyal_to = prev } }
-	}
-
-	# Do something else
-	option = {
-		name = veru.something_else
-		hidden_effect = {
-			country_event = { id = veru.1050 }
+			set_country_flag = install_their_leader
+			country_event = { id = veru.5010 }
 		}
 	}
 
 	# Change Mind to our Leader
 	option = {
 		name = veru.our_leaders
+		trigger = { has_country_flag = install_their_leader }
 		hidden_effect = {
+			remove_country_flag = install_their_leader
 			country_event = { id = veru.5010 }
 		}
 	}
 
-	# Choose one of their Officials
+	# Choose an Official
 	option = {
-		name = veru.6500.official
-		trigger = { event_target:chosen_subject = { any_owned_leader = { leader_class = official } } }
+		name = veru.5000.official
+		trigger = {
+			OR = {
+				AND = {
+					NOT = { has_country_flag = install_their_leader }
+					any_owned_leader = {
+						is_ruler = no
+						leader_class = official
+					}
+				}
+				AND = {
+					has_country_flag = install_their_leader
+					event_target:chosen_subject = {
+						any_owned_leader = {
+							is_ruler = no
+							leader_class = official
+						}
+					}
+				}
+			}
+		}
 		hidden_effect = {
-			event_target:chosen_subject = { get_officials = yes }
-			country_event = { id = veru.5500 }
+			if = {
+				limit = { has_country_flag = install_their_leader }
+				event_target:chosen_subject = { get_officials = yes }
+			}
+			else = {
+				get_officials = yes
+			}
+			country_event = { id = veru.5100 }
 		}
 	}
 
-	# Choose one of their Commanders
+	# Choose a Commander
 	option = {
-		name = veru.6500.commander
-		trigger = { event_target:chosen_subject = { any_owned_leader = { leader_class = commander } } }
+		name = veru.5000.commander
+		trigger = {
+			OR = {
+				AND = {
+					NOT = { has_country_flag = install_their_leader }
+					any_owned_leader = {
+						is_ruler = no
+						leader_class = commander
+					}
+				}
+				AND = {
+					has_country_flag = install_their_leader
+					event_target:chosen_subject = {
+						any_owned_leader = {
+							is_ruler = no
+							leader_class = commander
+						}
+					}
+				}
+			}
+		}
 		hidden_effect = {
-			event_target:chosen_subject = { get_commanders = yes }
-			country_event = { id = veru.5600 }
+			if = {
+				limit = { has_country_flag = install_their_leader }
+				event_target:chosen_subject = { get_commanders = yes }
+			}
+			else = {
+				get_commanders = yes
+			}
+			country_event = { id = veru.5200 }
 		}
 	}
 
-	# Choose one of their Scientists
+	# Choose a Scientist
 	option = {
-		name = veru.6500.scientist
-		trigger = { event_target:chosen_subject = { any_owned_leader = { leader_class = scientist } } }
+		name = veru.5000.scientist
+		trigger = {
+			OR = {
+				AND = {
+					NOT = { has_country_flag = install_their_leader }
+					any_owned_leader = {
+						is_ruler = no
+						leader_class = scientist
+					}
+				}
+				AND = {
+					has_country_flag = install_their_leader
+					event_target:chosen_subject = {
+						any_owned_leader = {
+							is_ruler = no
+							leader_class = scientist
+						}
+					}
+				}
+			}
+		}
 		hidden_effect = {
-			event_target:chosen_subject = { get_scientists = yes }
-			country_event = { id = veru.5800 }
+			if = {
+				limit = { has_country_flag = install_their_leader }
+				event_target:chosen_subject = { get_scientists = yes }
+			}
+			else = {
+				get_scientists = yes
+			}
+			country_event = { id = veru.5400 }
 		}
 	}
 
 	# Back
-	option = { name = veru.remain }
+	option = {
+		name = veru.remain
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = install_their_leader }
+				remove_country_flag = install_their_leader
+			}
+		}
+	}
+
 }
 
 #########
 
-# Choose our Official
+# Choose an Official
 country_event = {
 	id = veru.5100
 	title = veru.subject_leader.name
@@ -1525,180 +1015,59 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.official_leader_1
-		trigger = { check_variable = { which = total_officials value >= 1 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_1 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option CLASS = official NUM = 1 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.official_leader_2
-		trigger = { check_variable = { which = total_officials value >= 2 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_2 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option CLASS = official NUM = 2 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.official_leader_3
-		trigger = { check_variable = { which = total_officials value >= 3 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_3 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option CLASS = official NUM = 3 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.official_leader_4
-		trigger = { check_variable = { which = total_officials value >= 4 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_4 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option CLASS = official NUM = 4 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.official_leader_5
-		trigger = { check_variable = { which = total_officials value >= 5 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_5 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option CLASS = official NUM = 5 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.official_leader_6
-		trigger = { check_variable = { which = total_officials value >= 6 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_6 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option CLASS = official NUM = 6 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.official_leader_7
-		trigger = { check_variable = { which = total_officials value >= 7 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_7 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option CLASS = official NUM = 7 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.official_leader_8
-		trigger = { check_variable = { which = total_officials value >= 8 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_8 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option CLASS = official NUM = 8 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.official_leader_9
-		trigger = { check_variable = { which = total_officials value >= 9 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_9 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option CLASS = official NUM = 9 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.official_leader_10
-		trigger = { check_variable = { which = total_officials value >= 10 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_10 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option CLASS = official NUM = 10 }
 	}
 
 	# Back
 	option = { name = veru.remain }
+
+	after = {
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = install_their_leader }
+				remove_country_flag = install_their_leader
+			}
+		}
+	}
 }
 
-# Choose our Commander
+# Choose a Commander
 country_event = {
 	id = veru.5200
 	title = veru.subject_leader.name
@@ -1739,180 +1108,59 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.commander_leader_1
-		trigger = { check_variable = { which = total_commanders value >= 1 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_1 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option CLASS = commander NUM = 1 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.commander_leader_2
-		trigger = { check_variable = { which = total_commanders value >= 2 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_2 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option CLASS = commander NUM = 2 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.commander_leader_3
-		trigger = { check_variable = { which = total_commanders value >= 3 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_3 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option CLASS = commander NUM = 3 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.commander_leader_4
-		trigger = { check_variable = { which = total_commanders value >= 4 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_4 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option CLASS = commander NUM = 4 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.commander_leader_5
-		trigger = { check_variable = { which = total_commanders value >= 5 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_5 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option CLASS = commander NUM = 5 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.commander_leader_6
-		trigger = { check_variable = { which = total_commanders value >= 6 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_6 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option CLASS = commander NUM = 6 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.commander_leader_7
-		trigger = { check_variable = { which = total_commanders value >= 7 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_7 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option CLASS = commander NUM = 7 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.commander_leader_8
-		trigger = { check_variable = { which = total_commanders value >= 8 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_8 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option CLASS = commander NUM = 8 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.commander_leader_9
-		trigger = { check_variable = { which = total_commanders value >= 9 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_9 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option CLASS = commander NUM = 9 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.commander_leader_10
-		trigger = { check_variable = { which = total_commanders value >= 10 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_10 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option CLASS = commander NUM = 10 }
 	}
 
 	# Back
 	option = { name = veru.remain }
+
+	after = {
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = install_their_leader }
+				remove_country_flag = install_their_leader
+			}
+		}
+	}
 }
 
-# Choose our Scientist
+# Choose a Scientist
 country_event = {
 	id = veru.5400
 	title = veru.subject_leader.name
@@ -1953,973 +1201,82 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.scientist_leader_1
-		trigger = { check_variable = { which = total_scientists value >= 1 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_1 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option CLASS = scientist NUM = 1 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.scientist_leader_2
-		trigger = { check_variable = { which = total_scientists value >= 2 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_2 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option CLASS = scientist NUM = 2 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.scientist_leader_3
-		trigger = { check_variable = { which = total_scientists value >= 3 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_3 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option CLASS = scientist NUM = 3 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.scientist_leader_4
-		trigger = { check_variable = { which = total_scientists value >= 4 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_4 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option CLASS = scientist NUM = 4 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.scientist_leader_5
-		trigger = { check_variable = { which = total_scientists value >= 5 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_5 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option CLASS = scientist NUM = 5 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.scientist_leader_6
-		trigger = { check_variable = { which = total_scientists value >= 6 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_6 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option CLASS = scientist NUM = 6 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.scientist_leader_7
-		trigger = { check_variable = { which = total_scientists value >= 7 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_7 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option CLASS = scientist NUM = 7 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.scientist_leader_8
-		trigger = { check_variable = { which = total_scientists value >= 8 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_8 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option CLASS = scientist NUM = 8 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.scientist_leader_9
-		trigger = { check_variable = { which = total_scientists value >= 9 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_9 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option CLASS = scientist NUM = 9 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.scientist_leader_10
-		trigger = { check_variable = { which = total_scientists value >= 10 } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_10 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option CLASS = scientist NUM = 10 }
 	}
 
 	# Back
 	option = { name = veru.remain }
+
+	after = {
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = install_their_leader }
+				remove_country_flag = install_their_leader
+			}
+		}
+	}
 }
 
 #########
 
-# Choose their Official
-country_event = {
-	id = veru.5500
-	title = veru.6510.name
-	location = event_target:chosen_subject
-	hide_window = no
-	is_triggered_only = yes
-
-	diplomatic = yes
-
-	picture_event_data = {
-		portrait = root.ruler
-		planet_background = event_target:chosen_subject.capital_scope
-		graphical_culture = event_target:chosen_subject
-		city_level = event_target:chosen_subject
-		room = event_target:chosen_subject.ruler
-	}
-
-	desc = {
-		text = veru.5000.loyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_loyal_to = prev }
-		}
-	}
-
-	desc = {
-		text = veru.5000.disloyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_disloyal_to = prev }
-		}
-	}
-
-	# Maybe a different class
-	option = {
-		name = veru.another_class
-		hidden_effect = {
-			country_event = { id = veru.5020 }
-		}
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.official_leader_1
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_officials value >= 1 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_1 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.official_leader_2
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_officials value >= 2 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_2 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.official_leader_3
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_officials value >= 3 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_3 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.official_leader_4
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_officials value >= 4 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_4 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.official_leader_5
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_officials value >= 5 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_5 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.official_leader_6
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_officials value >= 6 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_6 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.official_leader_7
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_officials value >= 7 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_7 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.official_leader_8
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_officials value >= 8 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_8 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.official_leader_9
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_officials value >= 9 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_9 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.official_leader_10
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_officials value >= 10 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_10 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	# Back
-	option = { name = veru.remain }
-}
-
-# Choose their Commander
-country_event = {
-	id = veru.5600
-	title = veru.6520.name
-	location = event_target:chosen_subject
-	hide_window = no
-	is_triggered_only = yes
-
-	diplomatic = yes
-
-	picture_event_data = {
-		portrait = root.ruler
-		planet_background = event_target:chosen_subject.capital_scope
-		graphical_culture = event_target:chosen_subject
-		city_level = event_target:chosen_subject
-		room = event_target:chosen_subject.ruler
-	}
-
-	desc = {
-		text = veru.5000.loyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_loyal_to = prev }
-		}
-	}
-
-	desc = {
-		text = veru.5000.disloyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_disloyal_to = prev }
-		}
-	}
-
-	# Maybe a different class
-	option = {
-		name = veru.another_class
-		hidden_effect = {
-			country_event = { id = veru.5020 }
-		}
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.commander_leader_1
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_commanders value >= 1 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_1 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.commander_leader_2
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_commanders value >= 2 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_2 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.commander_leader_3
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_commanders value >= 3 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_3 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.commander_leader_4
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_commanders value >= 4 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_4 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.commander_leader_5
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_commanders value >= 5 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_5 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.commander_leader_6
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_commanders value >= 6 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_6 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.commander_leader_7
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_commanders value >= 7 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_7 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.commander_leader_8
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_commanders value >= 8 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_8 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.commander_leader_9
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_commanders value >= 9 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_9 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.commander_leader_10
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_commanders value >= 10 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_10 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	# Back
-	option = { name = veru.remain }
-}
-
-# Choose their Scientist
-country_event = {
-	id = veru.5800
-	title = veru.6530.name
-	location = event_target:chosen_subject
-	hide_window = no
-	is_triggered_only = yes
-
-	diplomatic = yes
-
-	picture_event_data = {
-		portrait = root.ruler
-		planet_background = event_target:chosen_subject.capital_scope
-		graphical_culture = event_target:chosen_subject
-		city_level = event_target:chosen_subject
-		room = event_target:chosen_subject.ruler
-	}
-
-	desc = {
-		text = veru.5000.loyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_loyal_to = prev }
-		}
-	}
-
-	desc = {
-		text = veru.5000.disloyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_disloyal_to = prev }
-		}
-	}
-
-	# Maybe a different class
-	option = {
-		name = veru.another_class
-		hidden_effect = {
-			country_event = { id = veru.5020 }
-		}
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.scientist_leader_1
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_scientists value >= 1 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_1 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.scientist_leader_2
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_scientists value >= 2 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_2 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.scientist_leader_3
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_scientists value >= 3 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_3 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.scientist_leader_4
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_scientists value >= 4 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_4 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.scientist_leader_5
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_scientists value >= 5 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_5 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.scientist_leader_6
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_scientists value >= 6 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_6 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.scientist_leader_7
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_scientists value >= 7 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_7 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.scientist_leader_8
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_scientists value >= 8 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_8 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.scientist_leader_9
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_scientists value >= 9 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_9 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		add_resource = { influence = -150 }
-		name = veru.5000.scientist_leader_10
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_scientists value >= 10 }
-			}
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_10 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	# Back
-	option = { name = veru.remain }
-}
-
-#########
-
-# Dead Installed Leader, remove grateful modifier
+# Remove grateful modifier
 country_event = {
 	id = veru.5900
 	hide_window = yes
 	is_triggered_only = yes
 
 	trigger = {
-		from = {
-			is_ruler = yes
-			has_leader_flag = grateful_installed_vassal_leader_@this
-		}
+		from = { has_leader_flag = grateful_installed_vassal_leader_@this }
+		any_playable_country = { has_country_flag = vassal_installer_country_@from }
 	}
 
 	immediate = {
 
 		from = {
-			save_global_event_target_as = dead_grateful_leader
+			save_event_target_as = grateful_leader_not_ruler
 		}
 
 		random_country = {
-			limit = {
-				has_country_flag = vassal_installer_country_@event_target:dead_grateful_leader
-			}
-			remove_country_flag = vassal_installer_country_@event_target:dead_grateful_leader
+			limit = { has_country_flag = vassal_installer_country_@event_target:grateful_leader_not_ruler }
+			remove_country_flag = vassal_installer_country_@event_target:grateful_leader_not_ruler
 			save_event_target_as = remove_grateful_modifier_country
 		}
-
-		clear_global_event_target = dead_grateful_leader
 
 		remove_opinion_modifier = {
 			who = event_target:remove_grateful_modifier_country
@@ -3086,144 +1443,34 @@ country_event = {
 
 	# Now we show a list of the subject states to the player
 	option = {
-		name = veru.6100.border_subject_1
-		trigger = {
-			from = { check_variable = { which = num_border_subjects value >= 1 } }	
-		}
-		hidden_effect = {
-			event_target:border_subject_1 = {
-				set_country_flag = chosen_border_subject_@root
-				save_event_target_as = chosen_border_subject_final
-			}
-			from = { country_event = { id = veru.6110 } }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/buffer_zone_war_option NUM = 1 }
 	}
 	option = {
-		name = veru.6100.border_subject_2
-		trigger = {
-			from = { check_variable = { which = num_border_subjects value >= 2 } }	
-		}
-		hidden_effect = {
-			event_target:border_subject_2 = {
-				set_country_flag = chosen_border_subject_@root
-				save_event_target_as = chosen_border_subject_final
-			}
-			from = { country_event = { id = veru.6110 } }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/buffer_zone_war_option NUM = 2 }
 	}
 	option = {
-		name = veru.6100.border_subject_3
-		trigger = {
-			from = { check_variable = { which = num_border_subjects value >= 3 } }	
-		}
-		hidden_effect = {
-			event_target:border_subject_3 = {
-				set_country_flag = chosen_border_subject_@root
-				save_event_target_as = chosen_border_subject_final
-			}
-			from = { country_event = { id = veru.6110 } }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/buffer_zone_war_option NUM = 3 }
 	}
 	option = {
-		name = veru.6100.border_subject_4
-		trigger = {
-			from = { check_variable = { which = num_border_subjects value >= 4 } }	
-		}
-		hidden_effect = {
-			event_target:border_subject_4 = {
-				set_country_flag = chosen_border_subject_@root
-				save_event_target_as = chosen_border_subject_final
-			}
-			from = { country_event = { id = veru.6110 } }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/buffer_zone_war_option NUM = 4 }
 	}
 	option = {
-		name = veru.6100.border_subject_5
-		trigger = {
-			from = { check_variable = { which = num_border_subjects value >= 5 } }	
-		}
-		hidden_effect = {
-			event_target:border_subject_5 = {
-				set_country_flag = chosen_border_subject_@root
-				save_event_target_as = chosen_border_subject_final
-			}
-			from = { country_event = { id = veru.6110 } }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/buffer_zone_war_option NUM = 5 }
 	}
 	option = {
-		name = veru.6100.border_subject_6
-		trigger = {
-			from = { check_variable = { which = num_border_subjects value >= 6 } }	
-		}
-		hidden_effect = {
-			event_target:border_subject_6 = {
-				set_country_flag = chosen_border_subject_@root
-				save_event_target_as = chosen_border_subject_final
-			}
-			from = { country_event = { id = veru.6110 } }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/buffer_zone_war_option NUM = 6 }
 	}
 	option = {
-		name = veru.6100.border_subject_7
-		trigger = {
-			from = { check_variable = { which = num_border_subjects value >= 7 } }	
-		}
-		hidden_effect = {
-			event_target:border_subject_7 = {
-				set_country_flag = chosen_border_subject_@root
-				save_event_target_as = chosen_border_subject_final
-			}
-			from = { country_event = { id = veru.6110 } }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/buffer_zone_war_option NUM = 7 }
 	}
 	option = {
-		name = veru.6100.border_subject_8
-		trigger = {
-			from = { check_variable = { which = num_border_subjects value >= 8 } }	
-		}
-		hidden_effect = {
-			event_target:border_subject_8 = {
-				set_country_flag = chosen_border_subject_@root
-				save_event_target_as = chosen_border_subject_final
-			}
-			from = { country_event = { id = veru.6110 } }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/buffer_zone_war_option NUM = 8 }
 	}
 	option = {
-		name = veru.6100.border_subject_9
-		trigger = {
-			from = { check_variable = { which = num_border_subjects value >= 9 } }	
-		}
-		hidden_effect = {
-			event_target:border_subject_9 = {
-				set_country_flag = chosen_border_subject_@root
-				save_event_target_as = chosen_border_subject_final
-			}
-			from = { country_event = { id = veru.6110 } }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/buffer_zone_war_option NUM = 9 }
 	}
 	option = {
-		name = veru.6100.border_subject_10
-		trigger = {
-			from = { check_variable = { which = num_border_subjects value >= 10 } }	
-		}
-		hidden_effect = {
-			event_target:border_subject_10 = {
-				set_country_flag = chosen_border_subject_@root
-				save_event_target_as = chosen_border_subject_final
-			}
-			from = { country_event = { id = veru.6110 } }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/buffer_zone_war_option NUM = 10 }
 	}
 }
 
@@ -3368,9 +1615,7 @@ country_event = {
 						NOT = { any_subject = { is_ver_blood = yes } }
 						OR = {
 							is_death_cult_empire = yes
-							has_valid_civic = civic_barbaric_despoilers
-							has_valid_civic = civic_slaver_guilds
-							has_valid_civic = civic_indentured_assets
+							has_ver_blood_civic = yes
 						}
 					}
 				}
@@ -3394,12 +1639,6 @@ country_event = {
 		event_target:buffer_zone_winner = {
 			country_event = { id = veru.6400 days = 3 }
 		}
-		# if = {
-		# 	limit = { event_target:chosen_subject = { is_ai = yes } }
-		# 	event_target:buffer_zone_winner = {
-		# 		country_event = { id = veru.6400 days = 3 }
-		# 	}
-		# }
 	}
 }
 
@@ -3481,14 +1720,11 @@ country_event = {
 	option = {
 		name = veru.6400.them
 		custom_tooltip = veru.6400.them.tooltip
-		trigger = {
-			event_target:chosen_subject = {
-				num_owned_leaders > 2
-				is_ver_clientkingdom = no
-			}
-		}
+		allow = { event_target:chosen_subject = { num_owned_leaders > 2 } }
+		trigger = { event_target:chosen_subject = { is_ver_clientkingdom = no } }
 		hidden_effect = {
-			country_event = { id = veru.6500 }
+			country_event = { id = veru.6600 }
+			set_country_flag = install_their_leader
 		}
 		ai_chance = { base = 5 }
 	}
@@ -3496,14 +1732,11 @@ country_event = {
 	# Choose one of their leaders
 	option = {
 		name = veru.6400.them
-		trigger = {
-			event_target:chosen_subject = {
-				num_owned_leaders > 2
-				is_ver_clientkingdom = yes
-			}
-		}
+		allow = { event_target:chosen_subject = { num_owned_leaders > 2 } }
+		trigger = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
 		hidden_effect = {
-			country_event = { id = veru.6500 }
+			country_event = { id = veru.6600 }
+			set_country_flag = install_their_leader
 		}
 		ai_chance = { base = 5 }
 	}
@@ -3512,6 +1745,7 @@ country_event = {
 	option = {
 		name = veru.6400.us
 		custom_tooltip = veru.6400.us.tooltip
+		allow = { num_owned_leaders > 2 }
 		trigger = { event_target:chosen_subject = { is_ver_clientkingdom = no } }
 		hidden_effect = {
 			country_event = { id = veru.6600 }
@@ -3522,6 +1756,7 @@ country_event = {
 	# Choose one of our leaders
 	option = {
 		name = veru.6400.us
+		allow = { num_owned_leaders > 2 }
 		trigger = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
 		hidden_effect = {
 			country_event = { id = veru.6600 }
@@ -3532,587 +1767,7 @@ country_event = {
 
 #########
 
-# Install one of their leaders
-country_event = {
-	id = veru.6500
-	title = veru.6400.name
-	desc = veru.6510.desc
-	location = event_target:chosen_subject
-	hide_window = no
-	is_triggered_only = yes
-
-	diplomatic = yes
-
-	picture_event_data = {
-		portrait = root.ruler
-		planet_background = event_target:chosen_subject
-		graphical_culture = event_target:chosen_subject
-		city_level = event_target:chosen_subject.capital_scope
-		room = event_target:chosen_subject.ruler
-	}
-
-	# Change Mind to Our Leader
-	option = {
-		name = veru.our_leaders
-		hidden_effect = {
-			country_event = { id = veru.6600 }
-		}
-	}
-
-	# Choose one of their Officials
-	option = {
-		name = veru.6500.official
-		trigger = {
-			event_target:chosen_subject = {
-				any_owned_leader = { leader_class = official }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = {
-				get_officials = yes
-			}
-			country_event = { id = veru.6510 }
-		}
-	}
-
-	# Choose one of their Commanders
-	option = {
-		name = veru.6500.Commander
-		trigger = {
-			event_target:chosen_subject = {
-				any_owned_leader = { leader_class = commander }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = { get_commanders = yes }
-			country_event = { id = veru.6520 }
-		}
-	}
-
-	# Choose one of their Scientists
-	option = {
-		name = veru.6500.scientist
-		trigger = {
-			event_target:chosen_subject = {
-				any_owned_leader = { leader_class = scientist }
-			}
-		}
-		hidden_effect = {
-			event_target:chosen_subject = {
-				get_scientists = yes
-			}
-			country_event = { id = veru.6530 }
-		}
-	}
-}
-
-# Choose Official
-country_event = {
-	id = veru.6510
-	title = veru.6510.name
-	desc = veru.6510.desc
-	location = event_target:chosen_subject
-	hide_window = no
-	is_triggered_only = yes
-
-	diplomatic = yes
-
-	picture_event_data = {
-		portrait = event_target:chosen_subject.ruler
-		planet_background = event_target:chosen_subject.capital_scope
-		graphical_culture = event_target:chosen_subject
-		city_level = event_target:chosen_subject
-		room = event_target:chosen_subject.ruler
-	}
-
-	# Maybe a different class
-	option = {
-		name = veru.another_class
-		hidden_effect = {
-			country_event = { id = veru.6500 }
-		}
-	}
-
-	option = {
-		name = veru.5000.official_leader_1
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_officials value >= 1 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_1 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.official_leader_2
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_officials value >= 2 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_2 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.official_leader_3
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_officials value >= 3 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_3 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.official_leader_4
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_officials value >= 4 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_4 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.official_leader_5
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_officials value >= 5 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_5 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.official_leader_6
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_officials value >= 6 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_6 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.official_leader_7
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_officials value >= 7 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_7 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.official_leader_8
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_officials value >= 8 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_8 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.official_leader_9
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_officials value >= 9 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_9 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.official_leader_10
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_officials value >= 10 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_10 }
-		}
-		ai_chance = { factor = 1 }
-	}
-}
-
-# Choose Commander
-country_event = {
-	id = veru.6520
-	title = veru.6520.name
-	desc = veru.6510.desc
-	location = event_target:chosen_subject
-	hide_window = no
-	is_triggered_only = yes
-
-	diplomatic = yes
-
-	picture_event_data = {
-		portrait = event_target:chosen_subject.ruler
-		planet_background = event_target:chosen_subject.capital_scope
-		graphical_culture = event_target:chosen_subject
-		city_level = event_target:chosen_subject
-		room = event_target:chosen_subject.ruler
-	}
-
-	# Maybe a different class
-	option = {
-		name = veru.another_class
-		hidden_effect = {
-			country_event = { id = veru.6500 }
-		}
-	}
-
-	option = {
-		name = veru.5000.commander_leader_1
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_commanders value >= 1 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_1 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.commander_leader_2
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_commanders value >= 2 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_2 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.commander_leader_3
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_commanders value >= 3 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_3 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.commander_leader_4
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_commanders value >= 4 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_4 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.commander_leader_5
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_commanders value >= 5 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_5 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.commander_leader_6
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_commanders value >= 6 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_6 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.commander_leader_7
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_commanders value >= 7 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_7 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.commander_leader_8
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_commanders value >= 8 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_8 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.commander_leader_9
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_commanders value >= 9 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_9 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.commander_leader_10
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_commanders value >= 10 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_10 }
-		}
-		ai_chance = { factor = 1 }
-	}
-}
-
-# Choose Scientist
-country_event = {
-	id = veru.6530
-	title = veru.6530.name
-	desc = veru.6510.desc
-	location = event_target:chosen_subject
-	hide_window = no
-	is_triggered_only = yes
-
-	diplomatic = yes
-
-	picture_event_data = {
-		portrait = event_target:chosen_subject.ruler
-		planet_background = event_target:chosen_subject.capital_scope
-		graphical_culture = event_target:chosen_subject
-		city_level = event_target:chosen_subject
-		room = event_target:chosen_subject.ruler
-	}
-
-	# Maybe a different class
-	option = {
-		name = veru.another_class
-		hidden_effect = {
-			country_event = { id = veru.6500 }
-		}
-	}
-
-	option = {
-		name = veru.5000.scientist_leader_1
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_scientists value >= 1 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_1 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.scientist_leader_2
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_scientists value >= 2 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_2 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.scientist_leader_3
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_scientists value >= 3 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_3 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.scientist_leader_4
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_scientists value >= 4 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_4 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.scientist_leader_5
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_scientists value >= 5 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_5 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.scientist_leader_6
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_scientists value >= 6 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_6 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.scientist_leader_7
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_scientists value >= 7 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_7 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.scientist_leader_8
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_scientists value >= 8 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_8 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.scientist_leader_9
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_scientists value >= 9 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_9 }
-		}
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = veru.5000.scientist_leader_10
-		trigger = {
-			event_target:chosen_subject = {
-				check_variable = { which = total_scientists value >= 10 }
-			}
-		}
-		hidden_effect = {
-			vear_install_subject_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_10 }
-		}
-		ai_chance = { factor = 1 }
-	}
-}
-
-#########
-
-# Install one of our leaders
+# Installed leader's Class
 country_event = {
 	id = veru.6600
 	title = veru.6400.name
@@ -4134,16 +1789,54 @@ country_event = {
 	# Change Mind to their Leader
 	option = {
 		name = veru.their_leaders
+		trigger = { NOT = { has_country_flag = install_their_leader } }
 		hidden_effect = {
-			country_event = { id = veru.6500 }
+			set_country_flag = install_their_leader
+			country_event = { id = veru.6600 }
+		}
+	}
+
+	# Change Mind to our Leader
+	option = {
+		name = veru.our_leaders
+		trigger = { has_country_flag = install_their_leader }
+		hidden_effect = {
+			remove_country_flag = install_their_leader
+			country_event = { id = veru.5010 }
 		}
 	}
 
 	# Choose one of our Officials
 	option = {
 		name = veru.5000.official
+		trigger = {
+			OR = {
+				AND = {
+					NOT = { has_country_flag = install_their_leader }
+					any_owned_leader = {
+						is_ruler = no
+						leader_class = official
+					}
+				}
+				AND = {
+					has_country_flag = install_their_leader
+					event_target:chosen_subject = {
+						any_owned_leader = {
+							is_ruler = no
+							leader_class = official
+						}
+					}
+				}
+			}
+		}
 		hidden_effect = {
-			get_officials = yes
+			if = {
+				limit = { has_country_flag = install_their_leader }
+				event_target:chosen_subject = { get_officials = yes }
+			}
+			else = {
+				get_officials = yes
+			}
 			country_event = { id = veru.6610 }
 		}
 	}
@@ -4151,8 +1844,34 @@ country_event = {
 	# Choose one of our Commanders
 	option = {
 		name = veru.5000.commander
+		trigger = {
+			OR = {
+				AND = {
+					NOT = { has_country_flag = install_their_leader }
+					any_owned_leader = {
+						is_ruler = no
+						leader_class = commander
+					}
+				}
+				AND = {
+					has_country_flag = install_their_leader
+					event_target:chosen_subject = {
+						any_owned_leader = {
+							is_ruler = no
+							leader_class = commander
+						}
+					}
+				}
+			}
+		}
 		hidden_effect = {
-			get_commanders = yes
+			if = {
+				limit = { has_country_flag = install_their_leader }
+				event_target:chosen_subject = { get_commanders = yes }
+			}
+			else = {
+				get_commanders = yes
+			}
 			country_event = { id = veru.6620 }
 		}
 	}
@@ -4160,8 +1879,34 @@ country_event = {
 	# Choose one of our Scientists
 	option = {
 		name = veru.5000.scientist
+		trigger = {
+			OR = {
+				AND = {
+					NOT = { has_country_flag = install_their_leader }
+					any_owned_leader = {
+						is_ruler = no
+						leader_class = scientist
+					}
+				}
+				AND = {
+					has_country_flag = install_their_leader
+					event_target:chosen_subject = {
+						any_owned_leader = {
+							is_ruler = no
+							leader_class = scientist
+						}
+					}
+				}
+			}
+		}
 		hidden_effect = {
-			get_scientists = yes
+			if = {
+				limit = { has_country_flag = install_their_leader }
+				event_target:chosen_subject = { get_scientists = yes }
+			}
+			else = {
+				get_scientists = yes
+			}
 			country_event = { id = veru.6640 }
 		}
 	}
@@ -4195,103 +1940,52 @@ country_event = {
 	}
 
 	option = {
-		name = veru.5000.official_leader_1
-		trigger = { check_variable = { which = total_officials value >= 1 } }
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_1 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option_ck CLASS = official NUM = 1 }
 	}
 
 	option = {
-		name = veru.5000.official_leader_2
-		trigger = { check_variable = { which = total_officials value >= 2 } }
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_2 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option_ck CLASS = official NUM = 2 }
 	}
 
 	option = {
-		name = veru.5000.official_leader_3
-		trigger = { check_variable = { which = total_officials value >= 3 } }
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_3 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option_ck CLASS = official NUM = 3 }
 	}
 
 	option = {
-		name = veru.5000.official_leader_4
-		trigger = { check_variable = { which = total_officials value >= 4 } }
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_4 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option_ck CLASS = official NUM = 4 }
 	}
 
 	option = {
-		name = veru.5000.official_leader_5
-		trigger = { check_variable = { which = total_officials value >= 5 } }
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_5 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option_ck CLASS = official NUM = 5 }
 	}
 
 	option = {
-		name = veru.5000.official_leader_6
-		trigger = { check_variable = { which = total_officials value >= 6 } }
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_6 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option_ck CLASS = official NUM = 6 }
 	}
 
 	option = {
-		name = veru.5000.official_leader_7
-		trigger = { check_variable = { which = total_officials value >= 7 } }
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_7 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option_ck CLASS = official NUM = 7 }
 	}
 
 	option = {
-		name = veru.5000.official_leader_8
-		trigger = { check_variable = { which = total_officials value >= 8 } }
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_8 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option_ck CLASS = official NUM = 8 }
 	}
 
 	option = {
-		name = veru.5000.official_leader_9
-		trigger = { check_variable = { which = total_officials value >= 9 } }
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_9 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option_ck CLASS = official NUM = 9 }
 	}
 
 	option = {
-		name = veru.5000.official_leader_10
-		trigger = { check_variable = { which = total_officials value >= 10 } }
+		inline_script = { script = events/install_leader_option_ck CLASS = official NUM = 10 }
+	}
+
+	after = {
 		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:official_leader_10 }
+			if = {
+				limit = { has_country_flag = install_their_leader }
+				remove_country_flag = install_their_leader
+			}
 		}
-		ai_chance = { factor = 1 }
 	}
 }
 
@@ -4323,103 +2017,52 @@ country_event = {
 	}
 
 	option = {
-		name = veru.5000.commander_leader_1
-		trigger = { check_variable = { which = total_commanders value >= 1 } }
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_1 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option_ck CLASS = commander NUM = 1 }
 	}
 
 	option = {
-		name = veru.5000.commander_leader_2
-		trigger = { check_variable = { which = total_commanders value >= 2 } }
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_2 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option_ck CLASS = commander NUM = 2 }
 	}
 
 	option = {
-		name = veru.5000.commander_leader_3
-		trigger = { check_variable = { which = total_commanders value >= 3 } }
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_3 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option_ck CLASS = commander NUM = 3 }
 	}
 
 	option = {
-		name = veru.5000.commander_leader_4
-		trigger = { check_variable = { which = total_commanders value >= 4 } }
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_4 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option_ck CLASS = commander NUM = 4 }
 	}
 
 	option = {
-		name = veru.5000.commander_leader_5
-		trigger = { check_variable = { which = total_commanders value >= 5 } }
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_5 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option_ck CLASS = commander NUM = 5 }
 	}
 
 	option = {
-		name = veru.5000.commander_leader_6
-		trigger = { check_variable = { which = total_commanders value >= 6 } }
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_6 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option_ck CLASS = commander NUM = 6 }
 	}
 
 	option = {
-		name = veru.5000.commander_leader_7
-		trigger = { check_variable = { which = total_commanders value >= 7 } }
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_7 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option_ck CLASS = commander NUM = 7 }
 	}
 
 	option = {
-		name = veru.5000.commander_leader_8
-		trigger = { check_variable = { which = total_commanders value >= 8 } }
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_8 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option_ck CLASS = commander NUM = 8 }
 	}
 
 	option = {
-		name = veru.5000.commander_leader_9
-		trigger = { check_variable = { which = total_commanders value >= 9 } }
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_9 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option_ck CLASS = commander NUM = 9 }
 	}
 
 	option = {
-		name = veru.5000.commander_leader_10
-		trigger = { check_variable = { which = total_commanders value >= 10 } }
+		inline_script = { script = events/install_leader_option_ck CLASS = commander NUM = 10 }
+	}
+
+	after = {
 		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:commander_leader_10 }
+			if = {
+				limit = { has_country_flag = install_their_leader }
+				remove_country_flag = install_their_leader
+			}
 		}
-		ai_chance = { factor = 1 }
 	}
 }
 
@@ -4451,103 +2094,52 @@ country_event = {
 	}
 
 	option = {
-		name = veru.5000.scientist_leader_1
-		trigger = { check_variable = { which = total_scientists value >= 1 } }
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_1 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option_ck CLASS = scientist NUM = 1 }
 	}
 
 	option = {
-		name = veru.5000.scientist_leader_2
-		trigger = { check_variable = { which = total_scientists value >= 2 } }
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_2 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option_ck CLASS = scientist NUM = 2 }
 	}
 
 	option = {
-		name = veru.5000.scientist_leader_3
-		trigger = { check_variable = { which = total_scientists value >= 3 } }
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_3 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option_ck CLASS = scientist NUM = 3 }
 	}
 
 	option = {
-		name = veru.5000.scientist_leader_4
-		trigger = { check_variable = { which = total_scientists value >= 4 } }
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_4 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option_ck CLASS = scientist NUM = 4 }
 	}
 
 	option = {
-		name = veru.5000.scientist_leader_5
-		trigger = { check_variable = { which = total_scientists value >= 5 } }
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_5 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option_ck CLASS = scientist NUM = 5 }
 	}
 
 	option = {
-		name = veru.5000.scientist_leader_6
-		trigger = { check_variable = { which = total_scientists value >= 6 } }
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_6 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option_ck CLASS = scientist NUM = 6 }
 	}
 
 	option = {
-		name = veru.5000.scientist_leader_7
-		trigger = { check_variable = { which = total_scientists value >= 7 } }
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_7 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option_ck CLASS = scientist NUM = 7 }
 	}
 
 	option = {
-		name = veru.5000.scientist_leader_8
-		trigger = { check_variable = { which = total_scientists value >= 8 } }
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_8 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option_ck CLASS = scientist NUM = 8 }
 	}
 
 	option = {
-		name = veru.5000.scientist_leader_9
-		trigger = { check_variable = { which = total_scientists value >= 9 } }
-		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_9 }
-		}
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/install_leader_option_ck CLASS = scientist NUM = 9 }
 	}
 
 	option = {
-		name = veru.5000.scientist_leader_10
-		trigger = { check_variable = { which = total_scientists value >= 10 } }
+		inline_script = { script = events/install_leader_option_ck CLASS = scientist NUM = 10 }
+	}
+
+	after = {
 		hidden_effect = {
-			vear_install_own_leader_effect = yes
-			event_target:chosen_subject = { set_leader = event_target:scientist_leader_10 }
+			if = {
+				limit = { has_country_flag = install_their_leader }
+				remove_country_flag = install_their_leader
+			}
 		}
-		ai_chance = { factor = 1 }
 	}
 }
 
@@ -4595,163 +2187,43 @@ country_event = {
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.6700.relocation_planet_1
-		trigger = {
-			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 1 } }
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		event_target:chosen_subject = { event_target:relocation_planet_1 = { set_capital = yes } }
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/capital_relocation_option NUM = 1 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.6700.relocation_planet_2
-		trigger = {
-			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 2 } }
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		event_target:chosen_subject = { event_target:relocation_planet_2 = { set_capital = yes } }
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/capital_relocation_option NUM = 2 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.6700.relocation_planet_3
-		trigger = {
-			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 3 } }
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		event_target:chosen_subject = { event_target:relocation_planet_3 = { set_capital = yes } }
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/capital_relocation_option NUM = 3 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.6700.relocation_planet_4
-		trigger = {
-			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 4 } }
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		event_target:chosen_subject = { event_target:relocation_planet_4 = { set_capital = yes } }
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/capital_relocation_option NUM = 4 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.6700.relocation_planet_5
-		trigger = {
-			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 5 } }
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		event_target:chosen_subject = { event_target:relocation_planet_5 = { set_capital = yes } }
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/capital_relocation_option NUM = 5 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.6700.relocation_planet_6
-		trigger = {
-			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 6 } }
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		event_target:chosen_subject = { event_target:relocation_planet_6 = { set_capital = yes } }
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/capital_relocation_option NUM = 6 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.6700.relocation_planet_7
-		trigger = {
-			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 7 } }
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		event_target:chosen_subject = { event_target:relocation_planet_7 = { set_capital = yes } }
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/capital_relocation_option NUM = 7 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.6700.relocation_planet_8
-		trigger = {
-			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 8 } }
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		event_target:chosen_subject = { event_target:relocation_planet_8 = { set_capital = yes } }
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/capital_relocation_option NUM = 8 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.6700.relocation_planet_9
-		trigger = {
-			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 9 } }
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		event_target:chosen_subject = { event_target:relocation_planet_9 = { set_capital = yes } }
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/capital_relocation_option NUM = 9 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.6700.relocation_planet_10
-		trigger = {
-			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 10 } }
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		event_target:chosen_subject = { event_target:relocation_planet_10 = { set_capital = yes } }
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/capital_relocation_option NUM = 10 }
 	}
 
 	######
@@ -4759,163 +2231,43 @@ country_event = {
 	######
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.6700.relocation_planet_11
-		trigger = {
-			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 11 } }
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		event_target:chosen_subject = { event_target:relocation_planet_11 = { set_capital = yes } }
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/capital_relocation_option NUM = 11 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.6700.relocation_planet_12
-		trigger = {
-			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 12 } }
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		event_target:chosen_subject = { event_target:relocation_planet_12 = { set_capital = yes } }
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/capital_relocation_option NUM = 12 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.6700.relocation_planet_13
-		trigger = {
-			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 13 } }
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		event_target:chosen_subject = { event_target:relocation_planet_13 = { set_capital = yes } }
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/capital_relocation_option NUM = 13 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.6700.relocation_planet_14
-		trigger = {
-			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 14 } }
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		event_target:chosen_subject = { event_target:relocation_planet_14 = { set_capital = yes } }
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/capital_relocation_option NUM = 14 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.6700.relocation_planet_15
-		trigger = {
-			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 15 } }
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		event_target:chosen_subject = { event_target:relocation_planet_15 = { set_capital = yes } }
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/capital_relocation_option NUM = 15 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.6700.relocation_planet_16
-		trigger = {
-			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 16 } }
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		event_target:chosen_subject = { event_target:relocation_planet_16 = { set_capital = yes } }
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/capital_relocation_option NUM = 16 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.6700.relocation_planet_17
-		trigger = {
-			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 17 } }
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		event_target:chosen_subject = { event_target:relocation_planet_17 = { set_capital = yes } }
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/capital_relocation_option NUM = 17 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.6700.relocation_planet_18
-		trigger = {
-			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 18 } }
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		event_target:chosen_subject = { event_target:relocation_planet_18 = { set_capital = yes } }
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/capital_relocation_option NUM = 18 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.6700.relocation_planet_19
-		trigger = {
-			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 19 } }
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		event_target:chosen_subject = { event_target:relocation_planet_19 = { set_capital = yes } }
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/capital_relocation_option NUM = 19 }
 	}
 
 	option = {
-		add_resource = { influence = -150 }
-		name = veru.6700.relocation_planet_20
-		trigger = {
-			event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= 20 } }
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_150
-				has_resource = { type = influence amount >= 150 }
-			}
-		}
-		event_target:chosen_subject = { event_target:relocation_planet_20 = { set_capital = yes } }
-		ai_chance = { factor = 1 }
+		inline_script = { script = events/capital_relocation_option NUM = 20 }
 	}
 
 	# Back

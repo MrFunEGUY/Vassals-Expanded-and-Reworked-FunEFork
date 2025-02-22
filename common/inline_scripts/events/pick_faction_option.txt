@@ -1,0 +1,15 @@
+name = veru.3000.$ETHIC$
+trigger = {
+	event_target:chosen_subject = { any_pop_faction = { is_$ETHIC$ = yes } }
+}
+allow = {
+	custom_tooltip = {
+		fail_text = influencefail_text_veru_150
+		has_resource = { type = influence amount >= 150 }
+	}
+}
+add_resource = { influence = -150 }
+hidden_effect = {
+	empower_subject_faction = { ETHIC = $ETHIC$ }
+	get_intervention_effect_gov = yes
+}

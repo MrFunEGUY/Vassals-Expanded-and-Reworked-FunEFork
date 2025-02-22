@@ -1,0 +1,13 @@
+add_resource = { influence = -150 }
+name = veru.6700.relocation_planet_$NUM$
+trigger = {
+	event_target:chosen_subject = { check_variable = { which = total_relocation_planets value >= $NUM$ } }
+}
+allow = {
+	custom_tooltip = {
+		fail_text = influencefail_text_veru_150
+		has_resource = { type = influence amount >= 150 }
+	}
+}
+event_target:chosen_subject = { event_target:relocation_planet_$NUM$ = { set_capital = yes } }
+ai_chance = { factor = 1 }

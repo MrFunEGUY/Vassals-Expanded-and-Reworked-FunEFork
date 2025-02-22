@@ -1,0 +1,12 @@
+name = veru.6100.border_subject_$NUM$
+trigger = {
+	from = { check_variable = { which = num_border_subjects value >= $NUM$ } }	
+}
+hidden_effect = {
+	event_target:border_subject_$NUM$ = {
+		set_country_flag = chosen_border_subject_@root
+		save_event_target_as = chosen_border_subject_final
+	}
+	from = { country_event = { id = veru.6110 } }
+}
+ai_chance = { factor = 1 }

@@ -1,0 +1,6 @@
+name = veru.1000.subject_$NUM$
+trigger = { check_variable = { which = veru_total_subjects value >= $NUM$ } }
+hidden_effect = {
+	event_target:subject_$NUM$ = { save_event_target_as = chosen_subject }
+	country_event = { id = veru.1050 }
+}

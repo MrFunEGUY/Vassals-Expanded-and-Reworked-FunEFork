@@ -515,6 +515,7 @@ get_officials = {
 
 	every_owned_leader = {
 		limit = {
+			is_ruler = no
 			leader_class = official
 		}
 		set_leader_flag = official_leader
@@ -610,7 +611,10 @@ get_commanders = {
 	set_variable = { which = total_commanders value = 0 }
 
 	every_owned_leader = {
-		limit = { leader_class = commander }
+		limit = {
+			is_ruler = no
+			leader_class = commander
+		}
 		set_leader_flag = commander_leader
 		prev = { change_variable = { which = total_commanders value = 1 } }
 	}
@@ -705,6 +709,7 @@ get_scientists = {
 
 	every_owned_leader = {
 		limit = {
+			is_ruler = no
 			leader_class = scientist
 		}
 		set_leader_flag = scientist_leader
@@ -797,43 +802,7 @@ get_scientists = {
 
 # Remove All Civics 
 get_remove_civics = {
-	if = {
-		limit = { civics_count >= 10 }
-		force_remove_civic = 10
-	}
-	if = {
-		limit = { civics_count >= 9 }
-		force_remove_civic = 9
-	}
-	if = {
-		limit = { civics_count >= 8 }
-		force_remove_civic = 8
-	}
-	if = {
-		limit = { civics_count >= 7 }
-		force_remove_civic = 7
-	}
-	if = {
-		limit = { civics_count >= 6 }
-		force_remove_civic = 6
-	}
-	if = {
-		limit = { civics_count >= 5 }
-		force_remove_civic = 5
-	}
-	if = {
-		limit = { civics_count >= 4 }
-		force_remove_civic = 4
-	}
-	if = {
-		limit = { civics_count >= 3 }
-		force_remove_civic = 3
-	}
-	if = {
-		limit = { civics_count >= 2 }
-		force_remove_civic = 2
-	}
-	if = {
+	while = {
 		limit = { civics_count >= 1 }
 		force_remove_civic = 1
 	}
@@ -842,65 +811,44 @@ get_remove_civics = {
 # Remove Egalitarian and add Authoritarian 
 get_ethics_check_egal_auth = {
 	if = {
-		limit = { is_egalitarian = yes }
-		if = {
-			limit = { has_ethic = ethic_egalitarian }
-			country_remove_ethic = ethic_egalitarian
-			country_add_ethic = ethic_authoritarian
-		}
-		else = {
-			country_remove_ethic = ethic_fanatic_egalitarian
-			country_add_ethic = ethic_fanatic_authoritarian
-		}
-	}
-	if = {
 		limit = { is_authoritarian = no }
-		shift_ethic = ethic_authoritarian
+		while = {
+			limit = { is_authoritarian = no }
+			shift_ethic = ethic_authoritarian
+		}
 	}
 }
 
 # Remove Authoritarian and add Egalitarian 
 get_ethics_check_auth_egal = {
 	if = {
-		limit = { is_authoritarian = yes }
-		if = {
-			limit = { has_ethic = ethic_authoritarian }
-			country_remove_ethic = ethic_authoritarian
-			country_add_ethic = ethic_egalitarian
-		}
-		else = {
-			country_remove_ethic = ethic_fanatic_authoritarian
-			country_add_ethic = ethic_fanatic_egalitarian
-		}
-	}
-	if = {
 		limit = { is_egalitarian = no }
-		shift_ethic = ethic_egalitarian
+		while = {
+			limit = { is_egalitarian = no }
+			shift_ethic = ethic_egalitarian
+		}
 	}
 }
 
 # Remove Socialism and add Capitalism 
 get_ethics_check_soc_cap = {
 	if = {
-		limit = { is_socialist = yes }
-		if = {
-			limit = { has_ethic = ethic_socialism }
-			country_remove_ethic = ethic_socialism
-			country_add_ethic = ethic_capitalism
-		}
-		else = {
-			country_remove_ethic = ethic_fanatic_socialism
-			country_add_ethic = ethic_fanatic_capitalism
+		limit = { is_capitalism = no }
+		while = {
+			limit = { is_capitalism = no }
+			shift_ethic = ethic_capitalism
 		}
 	}
+}
+
+# Remove Xenophobe 
+get_ethics_check_phobe = {
 	if = {
-		limit = {
-			NOR = {
-				has_ethic = ethic_capitalism
-				has_ethic = ethic_fanatic_capitalism
-			}
+		limit = { is_xenophobe = yes }
+		while = {
+			limit = { is_xenophobe = yes }
+			shift_ethic = ethic_xenophile
 		}
-		shift_ethic = ethic_capitalism
 	}
 }
 
@@ -964,11 +912,26 @@ get_autocratic_gov = {
 				cooldown = no
 			}
 		}
-		ruler = { set_leader_flag = grateful_installed_vassal_leader_@this }
-		add_opinion_modifier = {
-			who = prev
-			modifier = opinion_installed_as_vassal_leader
+		if = {
+			limit = { event_target:chosen_leader = { is_owned_by = event_target:chosen_subject } }
+			random = {
+				chance = 30
+				ruler = { set_leader_flag = grateful_installed_vassal_leader_@this }
+				add_opinion_modifier = {
+					who = prev
+					modifier = opinion_installed_as_vassal_leader
+				}
+				prev = { set_country_flag = vassal_installer_country_@event_target:chosen_subject.ruler }
+			}
 		}
+		else = {
+			ruler = { set_leader_flag = grateful_installed_vassal_leader_@this }
+			add_opinion_modifier = {
+				who = prev
+				modifier = opinion_installed_as_vassal_leader
+			}
+		}
+		
 	}
 	set_country_flag = vassal_installer_country_@event_target:chosen_subject.ruler
 }
@@ -1013,141 +976,43 @@ get_autocratic_gov_no_penalty = {
 				cooldown = no
 			}
 		}
-		ruler = { set_leader_flag = grateful_installed_vassal_leader_@this }
-		add_opinion_modifier = {
-			who = prev
-			modifier = opinion_installed_as_vassal_leader
+		if = {
+			limit = { event_target:chosen_leader = { is_owned_by = event_target:chosen_subject } }
+			random = {
+				chance = 30
+				ruler = { set_leader_flag = grateful_installed_vassal_leader_@this }
+				add_opinion_modifier = {
+					who = prev
+					modifier = opinion_installed_as_vassal_leader
+				}
+				prev = { set_country_flag = vassal_installer_country_@event_target:chosen_subject.ruler }
+			}
 		}
+		else = {
+			ruler = { set_leader_flag = grateful_installed_vassal_leader_@this }
+			add_opinion_modifier = {
+				who = prev
+				modifier = opinion_installed_as_vassal_leader
+			}
+		}
+		
 	}
 	set_country_flag = vassal_installer_country_@event_target:chosen_subject.ruler
 }
 
-# Get New Government - Subject's Leader - Maybe will be grateful
-get_autocratic_gov_subject_leader = {
-	get_intervention_effect_leader = yes
-	event_target:chosen_subject = {
-		if = { # Already Auth, more amenable to a Monarchy
-			limit = {
-				is_authoritarian = yes
-				is_imp_or_dict = no
-			}
-			random_list = {
-				50 = {
-					change_government = {
-						authority = auth_imperial
-						remove_invalid_civics = yes
-						cooldown = no
-					}
-				}
-				50 = {
-					change_government = {
-						authority = auth_dictatorial
-						remove_invalid_civics = yes
-						cooldown = no
-					}
-				}
-			}
-		}
-		else_if = {
-			limit = { is_authoritarian = no }
-			while = {
-				limit = { is_authoritarian = no }
-				shift_ethic = ethic_authoritarian
-			}
-		}
-		if = { # Wasn't already Auth, just make a Dictatorship
-			limit = { is_imp_or_dict = no }
-			change_government = {
-				authority = auth_dictatorial
-				remove_invalid_civics = yes
-				cooldown = no
-			}
-		}
-		random = {
-			chance = 30
-			ruler = { set_leader_flag = grateful_installed_vassal_leader_@this }
-			add_opinion_modifier = {
-				who = prev
-				modifier = opinion_installed_as_vassal_leader
-			}
-			prev = { set_country_flag = vassal_installer_country_@event_target:chosen_subject.ruler }
-		}
-	}
-}
-
-# Get New Government - No Penalties - Subject's Leader - Maybe will be grateful
-get_autocratic_gov_no_penalty_subject_leader = {
-	event_target:chosen_subject = {
-		if = { # Already Auth, more amenable to a Monarchy
-			limit = {
-				is_authoritarian = yes
-				is_imp_or_dict = no
-			}
-			random_list = {
-				50 = {
-					change_government = {
-						authority = auth_imperial
-						remove_invalid_civics = yes
-						cooldown = no
-					}
-				}
-				50 = {
-					change_government = {
-						authority = auth_dictatorial
-						remove_invalid_civics = yes
-						cooldown = no
-					}
-				}
-			}
-		}
-		else_if = {
-			limit = { is_authoritarian = no }
-			while = {
-				limit = { is_authoritarian = no }
-				shift_ethic = ethic_authoritarian
-			}
-		}
-		if = { # Wasn't already Auth, just make a Dictatorship
-			limit = { is_imp_or_dict = no }
-			change_government = {
-				authority = auth_dictatorial
-				remove_invalid_civics = yes
-				cooldown = no
-			}
-		}
-		random = {
-			chance = 30
-			ruler = { set_leader_flag = grateful_installed_vassal_leader_@this }
-			add_opinion_modifier = {
-				who = prev
-				modifier = opinion_installed_as_vassal_leader
-			}
-			prev = { set_country_flag = vassal_installer_country_@event_target:chosen_subject.ruler }
-		}
-	}
-}
-
-vear_install_own_leader_effect = {
+vear_install_leader_effect = {
 	if = {
 		limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
 		get_autocratic_gov_no_penalty = yes
 	}
 	else = { get_autocratic_gov = yes }
+	
 
-	install_leader_heir_effect = yes
+	event_target:chosen_subject = { set_leader = event_target:chosen_leader }
+	install_leader_heir_effects = yes
 }
 
-vear_install_subject_leader_effect = {
-	if = {
-		limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-		get_autocratic_gov_no_penalty_subject_leader = yes
-	}
-	else = { get_autocratic_gov_subject_leader = yes }
-
-	install_leader_heir_effect = yes
-}
-
-install_leader_heir_effect = {
+install_leader_heir_effects = {
 	event_target:chosen_subject = {
 		if = {
 			limit = { exists = heir }
@@ -1169,9 +1034,70 @@ install_leader_heir_effect = {
 			country_event = { id = veru_misc.4005 days = 5 }
 		}
 	}
+	if = {
+		limit = {
+			exists = heir
+			heir = { is_same_value = event_target:chosen_leader }
+		}
+		create_leader = {
+			class = random_ruler
+			event_leader = yes
+			species = owner_main_species
+			name = random
+			effect = {
+				set_leader_flag = dummy_leader
+				save_event_target_as = dummy_heir
+			}
+		}
+		set_heir = event_target:dummy_heir
+		event_target:dummy_heir = { kill_leader = { show_notification = no } }
+	}
 }
 
+
+
 ##########
+
+empower_subject_faction = {
+	event_target:chosen_subject = {
+		random_pop_faction = {
+			limit = { is_$ETHIC$ = yes }
+			save_event_target_as = embraced_faction
+			add_modifier = { modifier = embraced_faction days = 3600 }
+			event_target:chosen_subject = {
+				shift_ethic = ethic_$ETHIC$
+				hidden_effect = {
+					add_modifier = { modifier = embraced_faction_timer days = 3600 }
+					every_pop_faction = {
+						limit = { NOT = { is_same_value = event_target:embraced_faction } }
+						add_modifier = { modifier = embraced_another_faction days = 3600 }
+					}
+				}
+			}
+			hidden_effect = {
+				save_event_target_as = TargetFaction
+				event_target:chosen_subject = {
+					every_relation = {
+						limit = {
+							NOT = { is_same_empire = root }
+							is_ai = no
+							is_country_type = default
+							has_communications = prev
+							has_intel_level = {
+								who = prev
+								category = government
+								level >= 1
+							}
+						}
+						country_event = { id = veru_misc.4000 days = 3 }
+					}
+				}
+			}
+		}
+	}
+}
+##########
+
 
 # Get Subject Planets
 get_relocation_planets = {

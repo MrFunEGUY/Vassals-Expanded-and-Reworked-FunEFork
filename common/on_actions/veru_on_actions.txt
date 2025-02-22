@@ -40,6 +40,15 @@ on_leader_death = {
 	}
 }
 
+# Executed when a ruler has been removed
+# From = Previous Ruler
+# This = Country
+on_ruler_removed = {
+	events = {
+		veru.5900    				# Remove Grateful Leader modifier
+	}
+}
+
 # A war has been lost
 # Root = Loser Warleader
 # From = Winner Warleader

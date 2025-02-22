@@ -9,7 +9,7 @@
 # Rebel's opinion of nation that helped them with civil war, if via espionage
 opinion_installed_as_vassal_leader = {
 	opinion = {
-		base = 250
+		base = 125
 	}
 }
 

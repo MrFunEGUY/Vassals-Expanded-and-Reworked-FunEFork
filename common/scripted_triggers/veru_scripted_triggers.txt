@@ -160,6 +160,16 @@ has_proxy_allowed = {
 	any_agreement = { has_term_value = { term = subject_ver_proxy value = subject_ver_proxy_allowed } }
 }
 
+has_ver_blood_civic = {
+	OR = {
+		has_valid_civic = civic_barbaric_despoilers
+		has_valid_civic = civic_slaver_guilds
+		has_valid_civic = civic_slaving_despots
+		has_valid_civic = civic_divine_order
+		has_valid_civic = civic_indentured_assets
+	}
+}
+
 ######
 
 ## Faction Scope

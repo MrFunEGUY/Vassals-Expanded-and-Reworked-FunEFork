@@ -864,7 +864,7 @@ preset_ver_condo = {
 			####
 			{
 				key = joins_overlord_wars
-				value = joins_subject_wars_none
+				value = joins_overlord_wars_none
 			}
 			{
 				key = joins_subject_wars
@@ -1328,11 +1328,7 @@ preset_ver_blood = {
 			is_gestalt = no
 			OR = {
 				is_death_cult_empire = yes
-				has_valid_civic = civic_barbaric_despoilers
-				has_valid_civic = civic_slaver_guilds
-				has_valid_civic = civic_slaving_despots
-				has_valid_civic = civic_divine_order
-				has_valid_civic = civic_indentured_assets
+				has_ver_blood_civic = yes
 			}
 		}
 		OR = {

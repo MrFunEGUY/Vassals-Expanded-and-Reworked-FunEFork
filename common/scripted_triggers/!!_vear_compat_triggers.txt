@@ -13,10 +13,6 @@ is_imp_or_dict = { #Power of one
 	}
 }
 
-get_ethics_check_soc_cap = {
-	always = no
-}
-
 has_civic_organic_zealots_active = {
 	always = no
 }
