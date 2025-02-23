@@ -118,8 +118,10 @@ get_subjects_effect = {
 get_intervention_effect = {
 	if = {
 		limit = {
-			event_target:chosen_subject = { is_disloyal_to = root }
-			has_country_flag = intervened_twice@root
+			event_target:chosen_subject = {
+				is_disloyal_to = root
+				has_country_flag = intervened_once_@root
+			}
 		}
 		event_target:chosen_subject = {
 			every_pop_faction = {
@@ -175,8 +177,10 @@ get_intervention_effect = {
 	}
 	else_if = {
 		limit = {
-			event_target:chosen_subject = { is_disloyal_to = root }
-			has_country_flag = intervened_twice@root
+			event_target:chosen_subject = {
+				is_disloyal_to = root
+				has_country_flag = intervened_once_@root
+			}
 		}
 		event_target:chosen_subject = {
 			every_pop_faction = {
@@ -231,24 +235,9 @@ get_intervention_effect = {
 		}
 	}
 	if = {
-		limit = {
-			event_target:chosen_subject = {
-				NOT = { has_country_flag = intervened_once@root }
-			}
-		}
+		limit = { event_target:chosen_subject = { NOT = { has_country_flag = intervened_once_@root } } }
 		event_target:chosen_subject = {
-			set_country_flag = intervened_once@root
-		}
-	}
-	else_if = {
-		limit = {
-			event_target:chosen_subject = {
-				has_country_flag = intervened_once@root
-				NOT = { has_country_flag = intervened_twice@root }
-			}
-		}
-		event_target:chosen_subject = {
-			set_country_flag = intervened_twice@root
+			set_country_flag = intervened_once_@root
 		}
 	}
 }
@@ -378,424 +367,105 @@ get_intervention_effect_gov = {
 		}
 	}
 	if = {
-		limit = {
-			event_target:chosen_subject = {
-				NOT = { has_country_flag = gov_changed_once_@root }
-			}
-		}
+		limit = { event_target:chosen_subject = { NOT = { has_country_flag = gov_changed_once_@root } } }
 		event_target:chosen_subject = {
 			set_country_flag = gov_changed_once_@root
 		}
 	}
 }
 
-# Get Leader Intervention Effects
-get_intervention_effect_leader = {
-	if = {
-		limit = {
-			event_target:chosen_subject = {
-				is_disloyal_to = root
-			}
-		}
-		event_target:chosen_subject = {
-			every_pop_faction = {
-				limit = {
-					NOR = {
-						ruler_has_faction_ethic = { ETHIC = xenophobe }
-						ruler_has_faction_ethic = { ETHIC = xenophile }
-						ruler_has_faction_ethic = { ETHIC = militarist }
-						ruler_has_faction_ethic = { ETHIC = pacifist }
-						ruler_has_faction_ethic = { ETHIC = materialist }
-						ruler_has_faction_ethic = { ETHIC = spiritualist }
-						ruler_has_faction_ethic = { ETHIC = authoritarian }
-						ruler_has_faction_ethic = { ETHIC = egalitarian }
-						ruler_has_faction_ethic = { ETHIC = socialism }
-						ruler_has_faction_ethic = { ETHIC = capitalism }
-					}
-				}
-				add_modifier = {
-	                modifier = overlord_intervention_disloyal_faction
-	                years = 20
-	            }
-			}
-			random_pop_faction = {
-				limit = {
-					OR = {
-						ruler_has_faction_ethic = { ETHIC = xenophobe }
-						ruler_has_faction_ethic = { ETHIC = xenophile }
-						ruler_has_faction_ethic = { ETHIC = militarist }
-						ruler_has_faction_ethic = { ETHIC = pacifist }
-						ruler_has_faction_ethic = { ETHIC = materialist }
-						ruler_has_faction_ethic = { ETHIC = spiritualist }
-						ruler_has_faction_ethic = { ETHIC = authoritarian }
-						ruler_has_faction_ethic = { ETHIC = egalitarian }
-						ruler_has_faction_ethic = { ETHIC = socialism }
-						ruler_has_faction_ethic = { ETHIC = capitalism }
-					}
-				}
-				add_modifier = {
-	                modifier = overlord_intervention_disloyal_leader
-	                years = 20
-	            }
-			}
-			every_owned_planet = {
-				limit = {
-					num_pops > 3
-				}
-				add_modifier = {
-	                modifier = overlord_intervention_disloyal_planet_leader
-	                years = 20
-	            }
-			}
-		}
-	}
-	else_if = {
-		limit = {
-			event_target:chosen_subject = {
-				is_loyal_to = root
-			}
-		}
-		event_target:chosen_subject = {
-			every_pop_faction = {
-				limit = {
-					NOR = {
-						ruler_has_faction_ethic = { ETHIC = xenophobe }
-						ruler_has_faction_ethic = { ETHIC = xenophile }
-						ruler_has_faction_ethic = { ETHIC = militarist }
-						ruler_has_faction_ethic = { ETHIC = pacifist }
-						ruler_has_faction_ethic = { ETHIC = materialist }
-						ruler_has_faction_ethic = { ETHIC = spiritualist }
-						ruler_has_faction_ethic = { ETHIC = authoritarian }
-						ruler_has_faction_ethic = { ETHIC = egalitarian }
-						ruler_has_faction_ethic = { ETHIC = socialism }
-						ruler_has_faction_ethic = { ETHIC = capitalism }
-					}
-				}
-				add_modifier = {
-	                modifier = overlord_intervention_loyal_faction
-	                years = 15
-	            }
-			}
-			random_pop_faction = {
-				limit = {
-					OR = {
-						ruler_has_faction_ethic = { ETHIC = xenophobe }
-						ruler_has_faction_ethic = { ETHIC = xenophile }
-						ruler_has_faction_ethic = { ETHIC = militarist }
-						ruler_has_faction_ethic = { ETHIC = pacifist }
-						ruler_has_faction_ethic = { ETHIC = materialist }
-						ruler_has_faction_ethic = { ETHIC = spiritualist }
-						ruler_has_faction_ethic = { ETHIC = authoritarian }
-						ruler_has_faction_ethic = { ETHIC = egalitarian }
-						ruler_has_faction_ethic = { ETHIC = socialism }
-						ruler_has_faction_ethic = { ETHIC = capitalism }
-					}
-				}
-				add_modifier = {
-	                modifier = overlord_intervention_loyal_leader
-	                years = 15
-	            }
-			}
-			every_owned_planet = {
-				limit = {
-					num_pops > 3
-				}
-				add_modifier = {
-	                modifier = overlord_intervention_loyal_planet_leader
-	                years = 15
-	            }
-			}
-		}
-	}
-}
-
-# Get Official Leaders
-get_officials = {
-	set_variable = { which = total_officials value = 0 }
+get_leaders_in_class = {
+	set_variable = { which = total_class_leaders value = 0 }
 
 	every_owned_leader = {
 		limit = {
 			is_ruler = no
-			leader_class = official
+			leader_class = $CLASS$
 		}
-		set_leader_flag = official_leader
-		prev = { change_variable = { which = total_officials value = 1 } }
+		set_leader_flag = $CLASS$_leader
+		prev = { change_variable = { which = total_class_leaders value = 1 } }
 	}
 
 	# Next, we save each subject as an Event Target
 	# As the scripting language doesn't have proper loops, we use a lot of ifs if there are more than 10, the event can be run again.
 	if = {
-		limit = { check_variable = { which = total_officials value >= 1 } }
+		limit = { check_variable = { which = total_class_leaders value >= 1 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = official_leader }
-			remove_leader_flag = official_leader
-			save_event_target_as = official_leader_1
+			limit = { has_leader_flag = $CLASS$_leader }
+			remove_leader_flag = $CLASS$_leader
+			save_event_target_as = leader_1
 		}
 	}
 	if = {
-		limit = { check_variable = { which = total_officials value >= 2 } }
+		limit = { check_variable = { which = total_class_leaders value >= 2 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = official_leader }
-			remove_leader_flag = official_leader
-			save_event_target_as = official_leader_2
+			limit = { has_leader_flag = $CLASS$_leader }
+			remove_leader_flag = $CLASS$_leader
+			save_event_target_as = leader_2
 		}
 	}
 	if = {
-		limit = { check_variable = { which = total_officials value >= 3 } }
+		limit = { check_variable = { which = total_class_leaders value >= 3 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = official_leader }
-			remove_leader_flag = official_leader
-			save_event_target_as = official_leader_3
+			limit = { has_leader_flag = $CLASS$_leader }
+			remove_leader_flag = $CLASS$_leader
+			save_event_target_as = leader_3
 		}
 	}
 	if = {
-		limit = { check_variable = { which = total_officials value >= 4 } }
+		limit = { check_variable = { which = total_class_leaders value >= 4 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = official_leader }
-			remove_leader_flag = official_leader
-			save_event_target_as = official_leader_4
+			limit = { has_leader_flag = $CLASS$_leader }
+			remove_leader_flag = $CLASS$_leader
+			save_event_target_as = leader_4
 		}
 	}
 	if = {
-		limit = { check_variable = { which = total_officials value >= 5 } }
+		limit = { check_variable = { which = total_class_leaders value >= 5 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = official_leader }
-			remove_leader_flag = official_leader
-			save_event_target_as = official_leader_5
+			limit = { has_leader_flag = $CLASS$_leader }
+			remove_leader_flag = $CLASS$_leader
+			save_event_target_as = leader_5
 		}
 	}
 	if = {
-		limit = { check_variable = { which = total_officials value >= 6 } }
+		limit = { check_variable = { which = total_class_leaders value >= 6 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = official_leader }
-			remove_leader_flag = official_leader
-			save_event_target_as = official_leader_6
+			limit = { has_leader_flag = $CLASS$_leader }
+			remove_leader_flag = $CLASS$_leader
+			save_event_target_as = leader_6
 		}
 	}
 	if = {
-		limit = { check_variable = { which = total_officials value >= 7 } }
+		limit = { check_variable = { which = total_class_leaders value >= 7 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = official_leader }
-			remove_leader_flag = official_leader
-			save_event_target_as = official_leader_7
+			limit = { has_leader_flag = $CLASS$_leader }
+			remove_leader_flag = $CLASS$_leader
+			save_event_target_as = leader_7
 		}
 	}
 	if = {
-		limit = { check_variable = { which = total_officials value >= 8 } }
+		limit = { check_variable = { which = total_class_leaders value >= 8 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = official_leader }
-			remove_leader_flag = official_leader
-			save_event_target_as = official_leader_8
+			limit = { has_leader_flag = $CLASS$_leader }
+			remove_leader_flag = $CLASS$_leader
+			save_event_target_as = leader_8
 		}
 	}
 	if = {
-		limit = { check_variable = { which = total_officials value >= 9 } }
+		limit = { check_variable = { which = total_class_leaders value >= 9 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = official_leader }
-			remove_leader_flag = official_leader
-			save_event_target_as = official_leader_9
+			limit = { has_leader_flag = $CLASS$_leader }
+			remove_leader_flag = $CLASS$_leader
+			save_event_target_as = leader_9
 		}
 	}
 	if = {
-		limit = { check_variable = { which = total_officials value >= 10 } }
+		limit = { check_variable = { which = total_class_leaders value >= 10 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = official_leader }
-			remove_leader_flag = official_leader
-			save_event_target_as = official_leader_10
-		}
-	}
-}
-
-# Get Commander Leaders
-get_commanders = {
-	set_variable = { which = total_commanders value = 0 }
-
-	every_owned_leader = {
-		limit = {
-			is_ruler = no
-			leader_class = commander
-		}
-		set_leader_flag = commander_leader
-		prev = { change_variable = { which = total_commanders value = 1 } }
-	}
-
-	# Next, we save each subject as an Event Target
-	# As the scripting language doesn't have proper loops, we use a lot of ifs if there are more than 10, the event can be run again.
-	if = {
-		limit = { check_variable = { which = total_commanders value >= 1 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = commander_leader }
-			remove_leader_flag = commander_leader
-			save_event_target_as = commander_leader_1
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_commanders value >= 2 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = commander_leader }
-			remove_leader_flag = commander_leader
-			save_event_target_as = commander_leader_2
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_commanders value >= 3 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = commander_leader }
-			remove_leader_flag = commander_leader
-			save_event_target_as = commander_leader_3
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_commanders value >= 4 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = commander_leader }
-			remove_leader_flag = commander_leader
-			save_event_target_as = commander_leader_4
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_commanders value >= 5 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = commander_leader }
-			remove_leader_flag = commander_leader
-			save_event_target_as = commander_leader_5
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_commanders value >= 6 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = commander_leader }
-			remove_leader_flag = commander_leader
-			save_event_target_as = commander_leader_6
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_commanders value >= 7 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = commander_leader }
-			remove_leader_flag = commander_leader
-			save_event_target_as = commander_leader_7
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_commanders value >= 8 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = commander_leader }
-			remove_leader_flag = commander_leader
-			save_event_target_as = commander_leader_8
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_commanders value >= 9 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = commander_leader }
-			remove_leader_flag = commander_leader
-			save_event_target_as = commander_leader_9
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_commanders value >= 10 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = commander_leader }
-			remove_leader_flag = commander_leader
-			save_event_target_as = commander_leader_10
-		}
-	}
-}
-
-# Get Scientist Leaders
-get_scientists = {
-	set_variable = { which = total_scientists value = 0 }
-
-	every_owned_leader = {
-		limit = {
-			is_ruler = no
-			leader_class = scientist
-		}
-		set_leader_flag = scientist_leader
-		prev = { change_variable = { which = total_scientists value = 1 } }
-	}
-
-	# Next, we save each subject as an Event Target
-	# As the scripting language doesn't have proper loops, we use a lot of ifs if there are more than 10, the event can be run again.
-	if = {
-		limit = { check_variable = { which = total_scientists value >= 1 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = scientist_leader }
-			remove_leader_flag = scientist_leader
-			save_event_target_as = scientist_leader_1
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_scientists value >= 2 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = scientist_leader }
-			remove_leader_flag = scientist_leader
-			save_event_target_as = scientist_leader_2
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_scientists value >= 3 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = scientist_leader }
-			remove_leader_flag = scientist_leader
-			save_event_target_as = scientist_leader_3
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_scientists value >= 4 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = scientist_leader }
-			remove_leader_flag = scientist_leader
-			save_event_target_as = scientist_leader_4
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_scientists value >= 5 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = scientist_leader }
-			remove_leader_flag = scientist_leader
-			save_event_target_as = scientist_leader_5
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_scientists value >= 6 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = scientist_leader }
-			remove_leader_flag = scientist_leader
-			save_event_target_as = scientist_leader_6
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_scientists value >= 7 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = scientist_leader }
-			remove_leader_flag = scientist_leader
-			save_event_target_as = scientist_leader_7
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_scientists value >= 8 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = scientist_leader }
-			remove_leader_flag = scientist_leader
-			save_event_target_as = scientist_leader_8
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_scientists value >= 9 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = scientist_leader }
-			remove_leader_flag = scientist_leader
-			save_event_target_as = scientist_leader_9
-		}
-	}
-	if = {
-		limit = { check_variable = { which = total_scientists value >= 10 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = scientist_leader }
-			remove_leader_flag = scientist_leader
-			save_event_target_as = scientist_leader_10
+			limit = { has_leader_flag = $CLASS$_leader }
+			remove_leader_flag = $CLASS$_leader
+			save_event_target_as = leader_10
 		}
 	}
 }
@@ -855,165 +525,79 @@ get_ethics_check_phobe = {
 # Remove Fanatic Authoritarian and Fanatic Egalitarian
 get_ethics_check_fan = {
 	if = {
-		limit = {
-			OR = {
-				has_ethic = ethic_fanatic_egalitarian
-				has_ethic = ethic_fanatic_authoritarian
-			}
-		}
-		if = {
-			limit = { has_ethic = ethic_fanatic_egalitarian }
-			shift_ethic = ethic_fanatic_authoritarian
-		}
-		else = {
-			shift_ethic = ethic_fanatic_egalitarian
-		}
+		limit = { has_ethic = ethic_fanatic_egalitarian }
+		shift_ethic = ethic_authoritarian
 	}
-}
-
-# Get New Government - Own Leader - Will be grateful
-get_autocratic_gov = {
-	get_intervention_effect_leader = yes
-	event_target:chosen_subject = {
-		if = { # Already Auth, more amenable to a Monarchy
-			limit = {
-				is_authoritarian = yes
-				is_imp_or_dict = no
-			}
-			random_list = {
-				50 = {
-					change_government = {
-						authority = auth_imperial
-						remove_invalid_civics = yes
-						cooldown = no
-					}
-				}
-				50 = {
-					change_government = {
-						authority = auth_dictatorial
-						remove_invalid_civics = yes
-						cooldown = no
-					}
-				}
-			}
-		}
-		else_if = {
-			limit = { is_authoritarian = no }
-			while = {
-				limit = { is_authoritarian = no }
-				shift_ethic = ethic_authoritarian
-			}
-		}
-		if = { # Wasn't already Auth, just make a Dictatorship
-			limit = { is_imp_or_dict = no }
-			change_government = {
-				authority = auth_dictatorial
-				remove_invalid_civics = yes
-				cooldown = no
-			}
-		}
-		if = {
-			limit = { event_target:chosen_leader = { is_owned_by = event_target:chosen_subject } }
-			random = {
-				chance = 30
-				ruler = { set_leader_flag = grateful_installed_vassal_leader_@this }
-				add_opinion_modifier = {
-					who = prev
-					modifier = opinion_installed_as_vassal_leader
-				}
-				prev = { set_country_flag = vassal_installer_country_@event_target:chosen_subject.ruler }
-			}
-		}
-		else = {
-			ruler = { set_leader_flag = grateful_installed_vassal_leader_@this }
-			add_opinion_modifier = {
-				who = prev
-				modifier = opinion_installed_as_vassal_leader
-			}
-		}
-		
+	else_if = {
+		limit = { has_ethic = ethic_fanatic_authoritarian }
+		shift_ethic = ethic_egalitarian
 	}
-	set_country_flag = vassal_installer_country_@event_target:chosen_subject.ruler
-}
-
-# Get New Government - No Penalties - Own Leader - Will be grateful
-get_autocratic_gov_no_penalty = {
-	event_target:chosen_subject = {
-		if = { # Already Auth, more amenable to a Monarchy
-			limit = {
-				is_authoritarian = yes
-				is_imp_or_dict = no
-			}
-			random_list = {
-				35 = {
-					change_government = {
-						authority = auth_imperial
-						remove_invalid_civics = yes
-						cooldown = no
-					}
-				}
-				65 = {
-					change_government = {
-						authority = auth_dictatorial
-						remove_invalid_civics = yes
-						cooldown = no
-					}
-				}
-			}
-		}
-		else_if = {
-			limit = { is_authoritarian = no }
-			while = {
-				limit = { is_authoritarian = no }
-				shift_ethic = ethic_authoritarian
-			}
-		}
-		if = { # Wasn't already Auth, just make a Dictatorship
-			limit = { is_imp_or_dict = no }
-			change_government = {
-				authority = auth_dictatorial
-				remove_invalid_civics = yes
-				cooldown = no
-			}
-		}
-		if = {
-			limit = { event_target:chosen_leader = { is_owned_by = event_target:chosen_subject } }
-			random = {
-				chance = 30
-				ruler = { set_leader_flag = grateful_installed_vassal_leader_@this }
-				add_opinion_modifier = {
-					who = prev
-					modifier = opinion_installed_as_vassal_leader
-				}
-				prev = { set_country_flag = vassal_installer_country_@event_target:chosen_subject.ruler }
-			}
-		}
-		else = {
-			ruler = { set_leader_flag = grateful_installed_vassal_leader_@this }
-			add_opinion_modifier = {
-				who = prev
-				modifier = opinion_installed_as_vassal_leader
-			}
-		}
-		
-	}
-	set_country_flag = vassal_installer_country_@event_target:chosen_subject.ruler
 }
 
 vear_install_leader_effect = {
-	if = {
-		limit = { event_target:chosen_subject = { is_ver_clientkingdom = yes } }
-		get_autocratic_gov_no_penalty = yes
-	}
-	else = { get_autocratic_gov = yes }
-	
-
-	event_target:chosen_subject = { set_leader = event_target:chosen_leader }
-	install_leader_heir_effects = yes
-}
-
-install_leader_heir_effects = {
 	event_target:chosen_subject = {
+		if = { # Already Auth, more amenable to a Monarchy
+			limit = {
+				is_authoritarian = yes
+				is_imp_or_dict = no
+			}
+			random_list = {
+				50 = {
+					change_government = {
+						authority = auth_imperial
+						remove_invalid_civics = yes
+						cooldown = no
+					}
+				}
+				50 = {
+					change_government = {
+						authority = auth_dictatorial
+						remove_invalid_civics = yes
+						cooldown = no
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { is_authoritarian = no }
+			while = {
+				limit = { is_authoritarian = no }
+				shift_ethic = ethic_authoritarian
+			}
+		}
+		if = { # Wasn't already Auth, just make a Dictatorship
+			limit = { is_imp_or_dict = no }
+			change_government = {
+				authority = auth_dictatorial
+				remove_invalid_civics = yes
+				cooldown = no
+			}
+		}
+		if = {
+			limit = { event_target:chosen_leader = { is_owned_by = event_target:chosen_subject } }
+			random = {
+				chance = 30
+				ruler = { set_leader_flag = grateful_installed_vassal_leader_@this }
+				add_opinion_modifier = {
+					who = prev
+					modifier = opinion_installed_as_vassal_leader
+				}
+				prev = { set_country_flag = vassal_installer_country_@event_target:chosen_subject.ruler }
+			}
+		}
+		else = {
+			ruler = { set_leader_flag = grateful_installed_vassal_leader_@this }
+			add_opinion_modifier = {
+				who = prev
+				modifier = opinion_installed_as_vassal_leader
+			}
+		}
+		
+	}
+	set_country_flag = vassal_installer_country_@event_target:chosen_subject.ruler
+	event_target:chosen_subject = {
+		set_leader = event_target:chosen_leader
+
 		if = {
 			limit = { exists = heir }
 			if = {
@@ -1033,7 +617,115 @@ install_leader_heir_effects = {
 			remove_adoptive_dynasties = yes
 			country_event = { id = veru_misc.4005 days = 5 }
 		}
+
+		if = {
+			limit = { is_ver_clientkingdom = no }
+			if = {
+				limit = { is_loyal_to = root }
+				every_pop_faction = {
+					limit = {
+						NOR = {
+							ruler_has_faction_ethic = { ETHIC = xenophobe }
+							ruler_has_faction_ethic = { ETHIC = xenophile }
+							ruler_has_faction_ethic = { ETHIC = militarist }
+							ruler_has_faction_ethic = { ETHIC = pacifist }
+							ruler_has_faction_ethic = { ETHIC = materialist }
+							ruler_has_faction_ethic = { ETHIC = spiritualist }
+							ruler_has_faction_ethic = { ETHIC = authoritarian }
+							ruler_has_faction_ethic = { ETHIC = egalitarian }
+							ruler_has_faction_ethic = { ETHIC = socialism }
+							ruler_has_faction_ethic = { ETHIC = capitalism }
+						}
+					}
+					add_modifier = {
+						modifier = overlord_intervention_loyal_faction
+						years = 15
+					}
+				}
+				random_pop_faction = {
+					limit = {
+						OR = {
+							ruler_has_faction_ethic = { ETHIC = xenophobe }
+							ruler_has_faction_ethic = { ETHIC = xenophile }
+							ruler_has_faction_ethic = { ETHIC = militarist }
+							ruler_has_faction_ethic = { ETHIC = pacifist }
+							ruler_has_faction_ethic = { ETHIC = materialist }
+							ruler_has_faction_ethic = { ETHIC = spiritualist }
+							ruler_has_faction_ethic = { ETHIC = authoritarian }
+							ruler_has_faction_ethic = { ETHIC = egalitarian }
+							ruler_has_faction_ethic = { ETHIC = socialism }
+							ruler_has_faction_ethic = { ETHIC = capitalism }
+						}
+					}
+					add_modifier = {
+						modifier = overlord_intervention_loyal_leader
+						years = 15
+					}
+				}
+				every_owned_planet = {
+					limit = {
+						num_pops > 3
+					}
+					add_modifier = {
+						modifier = overlord_intervention_loyal_planet_leader
+						years = 15
+					}
+				}
+			}
+			else = {
+				every_pop_faction = {
+					limit = {
+						NOR = {
+							ruler_has_faction_ethic = { ETHIC = xenophobe }
+							ruler_has_faction_ethic = { ETHIC = xenophile }
+							ruler_has_faction_ethic = { ETHIC = militarist }
+							ruler_has_faction_ethic = { ETHIC = pacifist }
+							ruler_has_faction_ethic = { ETHIC = materialist }
+							ruler_has_faction_ethic = { ETHIC = spiritualist }
+							ruler_has_faction_ethic = { ETHIC = authoritarian }
+							ruler_has_faction_ethic = { ETHIC = egalitarian }
+							ruler_has_faction_ethic = { ETHIC = socialism }
+							ruler_has_faction_ethic = { ETHIC = capitalism }
+						}
+					}
+					add_modifier = {
+						modifier = overlord_intervention_disloyal_faction
+						years = 20
+					}
+				}
+				random_pop_faction = {
+					limit = {
+						OR = {
+							ruler_has_faction_ethic = { ETHIC = xenophobe }
+							ruler_has_faction_ethic = { ETHIC = xenophile }
+							ruler_has_faction_ethic = { ETHIC = militarist }
+							ruler_has_faction_ethic = { ETHIC = pacifist }
+							ruler_has_faction_ethic = { ETHIC = materialist }
+							ruler_has_faction_ethic = { ETHIC = spiritualist }
+							ruler_has_faction_ethic = { ETHIC = authoritarian }
+							ruler_has_faction_ethic = { ETHIC = egalitarian }
+							ruler_has_faction_ethic = { ETHIC = socialism }
+							ruler_has_faction_ethic = { ETHIC = capitalism }
+						}
+					}
+					add_modifier = {
+						modifier = overlord_intervention_disloyal_leader
+						years = 20
+					}
+				}
+				every_owned_planet = {
+					limit = {
+						num_pops > 3
+					}
+					add_modifier = {
+						modifier = overlord_intervention_disloyal_planet_leader
+						years = 20
+					}
+				}
+			}
+		}
 	}
+	
 	if = {
 		limit = {
 			exists = heir
@@ -1052,8 +744,8 @@ install_leader_heir_effects = {
 		set_heir = event_target:dummy_heir
 		event_target:dummy_heir = { kill_leader = { show_notification = no } }
 	}
+	
 }
-
 
 
 ##########
@@ -1096,6 +788,7 @@ empower_subject_faction = {
 		}
 	}
 }
+
 ##########
 
 

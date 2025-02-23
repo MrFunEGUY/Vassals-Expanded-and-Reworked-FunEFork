@@ -175,10 +175,5 @@ has_ver_blood_civic = {
 ## Faction Scope
 ruler_has_faction_ethic = {
 	has_ethic = ethic_$ETHIC$
-	owner = {
-		any_owned_leader = {
-			is_ruler = yes
-			has_ethic = ethic_$ETHIC$
-		}
-	}
+	owner = { ruler = { has_ethic = ethic_$ETHIC$ } }
 }

@@ -1,11 +1,11 @@
 add_resource = { influence = -150 }
-name = veru.5000.$CLASS$_leader_$NUM$
+name = veru.5000.leader_$NUM$
 trigger = {
 	if = {
 		limit = { has_country_flag = install_their_leader }
-		event_target:chosen_subject = { check_variable = { which = total_$CLASS$s value >= $NUM$ } }
+		event_target:chosen_subject = { check_variable = { which = total_class_leaders value >= $NUM$ } }
 	}
-	else = { check_variable = { which = total_$CLASS$s value >= $NUM$ } }
+	else = { check_variable = { which = total_class_leaders value >= $NUM$ } }
 }
 allow = {
 	custom_tooltip = {
@@ -13,8 +13,10 @@ allow = {
 		has_resource = { type = influence amount >= 150 }
 	}
 }
+custom_tooltip = veru.5000.leader_$NUM$.effect_desc
+custom_tooltip = veru.5000.leader_$NUM$.tooltip
 hidden_effect = {
-	event_target:$CLASS$_leader_$NUM$ = { save_event_target_as = chosen_leader }
+	event_target:leader_$NUM$ = { save_event_target_as = chosen_leader }
 	vear_install_leader_effect = yes
 }
 ai_chance = { factor = 1 }

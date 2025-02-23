@@ -82,16 +82,12 @@ country_event = {
 
 	desc = {
 		text = veru.1050.loyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_loyal_to = prev }
-		}
+		trigger = { event_target:chosen_subject = { is_loyal_to = prev } }
 	}
 
 	desc = {
 		text = veru.1050.disloyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_disloyal_to = prev }
-		}
+		trigger = { event_target:chosen_subject = { is_disloyal_to = prev } }
 	}
 
 	# Back
@@ -164,9 +160,7 @@ country_event = {
 			}
 			custom_tooltip = {
 				fail_text = veru_tree_of_life_fail
-				event_target:chosen_subject = {
-					NOT = { has_origin = origin_tree_of_life }
-				}
+				event_target:chosen_subject = { NOT = { has_origin = origin_tree_of_life } }
 			}
 		}
 		hidden_effect = {
@@ -249,16 +243,12 @@ country_event = {
 
 	desc = {
 		text = veru.2000.loyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_loyal_to = prev }
-		}
+		trigger = { event_target:chosen_subject = { is_loyal_to = prev } }
 	}
 
 	desc = {
 		text = veru.2000.disloyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_disloyal_to = prev }
-		}
+		trigger = { event_target:chosen_subject = { is_disloyal_to = prev } }
 	}
 
 	# Do something else
@@ -348,16 +338,12 @@ country_event = {
 
 	desc = {
 		text = veru.4000.loyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_loyal_to = prev }
-		}
+		trigger = { event_target:chosen_subject = { is_loyal_to = prev } }
 	}
 
 	desc = {
 		text = veru.4000.disloyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_disloyal_to = prev }
-		}
+		trigger = { event_target:chosen_subject = { is_disloyal_to = prev } }
 	}
 
 	# Do something else
@@ -442,16 +428,12 @@ country_event = {
 
 	desc = {
 		text = veru.4000.loyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_loyal_to = prev }
-		}
+		trigger = { event_target:chosen_subject = { is_loyal_to = prev } }
 	}
 
 	desc = {
 		text = veru.4000.disloyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_disloyal_to = prev }
-		}
+		trigger = { event_target:chosen_subject = { is_disloyal_to = prev } }
 	}
 
 	# Do something else
@@ -751,16 +733,12 @@ country_event = {
 
 	desc = {
 		text = veru.5000.loyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_loyal_to = prev }
-		}
+		trigger = { event_target:chosen_subject = { is_loyal_to = prev } }
 	}
 
 	desc = {
 		text = veru.5000.disloyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_disloyal_to = prev }
-		}
+		trigger = { event_target:chosen_subject = { is_disloyal_to = prev } }
 	}
 
 	# Do something else
@@ -856,7 +834,14 @@ country_event = {
 
 	# Choose an Official
 	option = {
-		name = veru.5000.official
+		name = {
+			text = veru.5000.official.ours
+			trigger = { NOT = { has_country_flag = install_their_leader } }
+		}
+		name = {
+			text = veru.5000.official.theirs
+			trigger = { has_country_flag = install_their_leader }
+		}
 		trigger = {
 			OR = {
 				AND = {
@@ -880,10 +865,10 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = { has_country_flag = install_their_leader }
-				event_target:chosen_subject = { get_officials = yes }
+				event_target:chosen_subject = { get_leaders_in_class = { CLASS = official }  }
 			}
 			else = {
-				get_officials = yes
+				get_leaders_in_class = { CLASS = official } 
 			}
 			country_event = { id = veru.5100 }
 		}
@@ -891,7 +876,14 @@ country_event = {
 
 	# Choose a Commander
 	option = {
-		name = veru.5000.commander
+		name = {
+			text = veru.5000.commander.ours
+			trigger = { NOT = { has_country_flag = install_their_leader } }
+		}
+		name = {
+			text = veru.5000.commander.theirs
+			trigger = { has_country_flag = install_their_leader }
+		}
 		trigger = {
 			OR = {
 				AND = {
@@ -915,18 +907,25 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = { has_country_flag = install_their_leader }
-				event_target:chosen_subject = { get_commanders = yes }
+				event_target:chosen_subject = { get_leaders_in_class = { CLASS = commander }  }
 			}
 			else = {
-				get_commanders = yes
+				get_leaders_in_class = { CLASS = commander } 
 			}
-			country_event = { id = veru.5200 }
+			country_event = { id = veru.5100 }
 		}
 	}
 
 	# Choose a Scientist
 	option = {
-		name = veru.5000.scientist
+		name = {
+			text = veru.5000.scientist.ours
+			trigger = { NOT = { has_country_flag = install_their_leader } }
+		}
+		name = {
+			text = veru.5000.scientist.theirs
+			trigger = { has_country_flag = install_their_leader }
+		}
 		trigger = {
 			OR = {
 				AND = {
@@ -950,12 +949,12 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = { has_country_flag = install_their_leader }
-				event_target:chosen_subject = { get_scientists = yes }
+				event_target:chosen_subject = { get_leaders_in_class = { CLASS = scientist }  }
 			}
 			else = {
-				get_scientists = yes
+				get_leaders_in_class = { CLASS = scientist } 
 			}
-			country_event = { id = veru.5400 }
+			country_event = { id = veru.5100 }
 		}
 	}
 
@@ -972,9 +971,7 @@ country_event = {
 
 }
 
-#########
-
-# Choose an Official
+# Choose Leader
 country_event = {
 	id = veru.5100
 	title = veru.subject_leader.name
@@ -994,16 +991,12 @@ country_event = {
 
 	desc = {
 		text = veru.5000.loyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_loyal_to = prev }
-		}
+		trigger = { event_target:chosen_subject = { is_loyal_to = prev } }
 	}
 
 	desc = {
 		text = veru.5000.disloyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_disloyal_to = prev }
-		}
+		trigger = { event_target:chosen_subject = { is_disloyal_to = prev } }
 	}
 
 	# Maybe a different class
@@ -1015,229 +1008,43 @@ country_event = {
 	}
 
 	option = {
-		inline_script = { script = events/install_leader_option CLASS = official NUM = 1 }
+		inline_script = { script = events/install_leader_option NUM = 1 }
 	}
 
 	option = {
-		inline_script = { script = events/install_leader_option CLASS = official NUM = 2 }
+		inline_script = { script = events/install_leader_option NUM = 2 }
 	}
 
 	option = {
-		inline_script = { script = events/install_leader_option CLASS = official NUM = 3 }
+		inline_script = { script = events/install_leader_option NUM = 3 }
 	}
 
 	option = {
-		inline_script = { script = events/install_leader_option CLASS = official NUM = 4 }
+		inline_script = { script = events/install_leader_option NUM = 4 }
 	}
 
 	option = {
-		inline_script = { script = events/install_leader_option CLASS = official NUM = 5 }
+		inline_script = { script = events/install_leader_option NUM = 5 }
 	}
 
 	option = {
-		inline_script = { script = events/install_leader_option CLASS = official NUM = 6 }
+		inline_script = { script = events/install_leader_option NUM = 6 }
 	}
 
 	option = {
-		inline_script = { script = events/install_leader_option CLASS = official NUM = 7 }
+		inline_script = { script = events/install_leader_option NUM = 7 }
 	}
 
 	option = {
-		inline_script = { script = events/install_leader_option CLASS = official NUM = 8 }
+		inline_script = { script = events/install_leader_option NUM = 8 }
 	}
 
 	option = {
-		inline_script = { script = events/install_leader_option CLASS = official NUM = 9 }
+		inline_script = { script = events/install_leader_option NUM = 9 }
 	}
 
 	option = {
-		inline_script = { script = events/install_leader_option CLASS = official NUM = 10 }
-	}
-
-	# Back
-	option = { name = veru.remain }
-
-	after = {
-		hidden_effect = {
-			if = {
-				limit = { has_country_flag = install_their_leader }
-				remove_country_flag = install_their_leader
-			}
-		}
-	}
-}
-
-# Choose a Commander
-country_event = {
-	id = veru.5200
-	title = veru.subject_leader.name
-	location = event_target:chosen_subject
-	hide_window = no
-	is_triggered_only = yes
-
-	diplomatic = yes
-
-	picture_event_data = {
-		portrait = event_target:chosen_subject.ruler
-		planet_background = event_target:chosen_subject.capital_scope
-		graphical_culture = event_target:chosen_subject
-		city_level = event_target:chosen_subject
-		room = event_target:chosen_subject.ruler
-	}
-
-	desc = {
-		text = veru.5000.loyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_loyal_to = prev }
-		}
-	}
-
-	desc = {
-		text = veru.5000.disloyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_disloyal_to = prev }
-		}
-	}
-
-	# Maybe a different class
-	option = {
-		name = veru.another_class
-		hidden_effect = {
-			country_event = { id = veru.5010 }
-		}
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option CLASS = commander NUM = 1 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option CLASS = commander NUM = 2 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option CLASS = commander NUM = 3 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option CLASS = commander NUM = 4 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option CLASS = commander NUM = 5 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option CLASS = commander NUM = 6 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option CLASS = commander NUM = 7 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option CLASS = commander NUM = 8 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option CLASS = commander NUM = 9 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option CLASS = commander NUM = 10 }
-	}
-
-	# Back
-	option = { name = veru.remain }
-
-	after = {
-		hidden_effect = {
-			if = {
-				limit = { has_country_flag = install_their_leader }
-				remove_country_flag = install_their_leader
-			}
-		}
-	}
-}
-
-# Choose a Scientist
-country_event = {
-	id = veru.5400
-	title = veru.subject_leader.name
-	location = event_target:chosen_subject
-	hide_window = no
-	is_triggered_only = yes
-
-	diplomatic = yes
-
-	picture_event_data = {
-		portrait = event_target:chosen_subject.ruler
-		planet_background = event_target:chosen_subject.capital_scope
-		graphical_culture = event_target:chosen_subject
-		city_level = event_target:chosen_subject
-		room = event_target:chosen_subject.ruler
-	}
-
-	desc = {
-		text = veru.5000.loyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_loyal_to = prev }
-		}
-	}
-
-	desc = {
-		text = veru.5000.disloyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_disloyal_to = prev }
-		}
-	}
-
-	# Maybe a different class
-	option = {
-		name = veru.another_class
-		hidden_effect = {
-			country_event = { id = veru.5010 }
-		}
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option CLASS = scientist NUM = 1 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option CLASS = scientist NUM = 2 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option CLASS = scientist NUM = 3 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option CLASS = scientist NUM = 4 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option CLASS = scientist NUM = 5 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option CLASS = scientist NUM = 6 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option CLASS = scientist NUM = 7 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option CLASS = scientist NUM = 8 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option CLASS = scientist NUM = 9 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option CLASS = scientist NUM = 10 }
+		inline_script = { script = events/install_leader_option NUM = 10 }
 	}
 
 	# Back
@@ -1765,8 +1572,6 @@ country_event = {
 	}
 }
 
-#########
-
 # Installed leader's Class
 country_event = {
 	id = veru.6600
@@ -1808,7 +1613,14 @@ country_event = {
 
 	# Choose one of our Officials
 	option = {
-		name = veru.5000.official
+		name = {
+			text = veru.5000.official.ours
+			trigger = { NOT = { has_country_flag = install_their_leader } }
+		}
+		name = {
+			text = veru.5000.official.theirs
+			trigger = { has_country_flag = install_their_leader }
+		}
 		trigger = {
 			OR = {
 				AND = {
@@ -1832,10 +1644,10 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = { has_country_flag = install_their_leader }
-				event_target:chosen_subject = { get_officials = yes }
+				event_target:chosen_subject = { get_leaders_in_class = { CLASS = official }  }
 			}
 			else = {
-				get_officials = yes
+				get_leaders_in_class = { CLASS = official } 
 			}
 			country_event = { id = veru.6610 }
 		}
@@ -1843,7 +1655,14 @@ country_event = {
 
 	# Choose one of our Commanders
 	option = {
-		name = veru.5000.commander
+		name = {
+			text = veru.5000.commander.ours
+			trigger = { NOT = { has_country_flag = install_their_leader } }
+		}
+		name = {
+			text = veru.5000.commander.theirs
+			trigger = { has_country_flag = install_their_leader }
+		}
 		trigger = {
 			OR = {
 				AND = {
@@ -1867,18 +1686,25 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = { has_country_flag = install_their_leader }
-				event_target:chosen_subject = { get_commanders = yes }
+				event_target:chosen_subject = { get_leaders_in_class = { CLASS = commander }  }
 			}
 			else = {
-				get_commanders = yes
+				get_leaders_in_class = { CLASS = commander } 
 			}
-			country_event = { id = veru.6620 }
+			country_event = { id = veru.6610 }
 		}
 	}
 
 	# Choose one of our Scientists
 	option = {
-		name = veru.5000.scientist
+		name = {
+			text = veru.5000.scientist.ours
+			trigger = { NOT = { has_country_flag = install_their_leader } }
+		}
+		name = {
+			text = veru.5000.scientist.theirs
+			trigger = { has_country_flag = install_their_leader }
+		}
 		trigger = {
 			OR = {
 				AND = {
@@ -1902,20 +1728,20 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = { has_country_flag = install_their_leader }
-				event_target:chosen_subject = { get_scientists = yes }
+				event_target:chosen_subject = { get_leaders_in_class = { CLASS = scientist }  }
 			}
 			else = {
-				get_scientists = yes
+				get_leaders_in_class = { CLASS = scientist } 
 			}
-			country_event = { id = veru.6640 }
+			country_event = { id = veru.6610 }
 		}
 	}
 }
 
-# Choose Official
+# Choose Leader
 country_event = {
 	id = veru.6610
-	title = veru.6510.name
+	title = veru.6400.name
 	desc = veru.6510.desc
 	location = event_target:chosen_subject
 	hide_window = no
@@ -1940,197 +1766,43 @@ country_event = {
 	}
 
 	option = {
-		inline_script = { script = events/install_leader_option_ck CLASS = official NUM = 1 }
+		inline_script = { script = events/install_leader_option_ck NUM = 1 }
 	}
 
 	option = {
-		inline_script = { script = events/install_leader_option_ck CLASS = official NUM = 2 }
+		inline_script = { script = events/install_leader_option_ck NUM = 2 }
 	}
 
 	option = {
-		inline_script = { script = events/install_leader_option_ck CLASS = official NUM = 3 }
+		inline_script = { script = events/install_leader_option_ck NUM = 3 }
 	}
 
 	option = {
-		inline_script = { script = events/install_leader_option_ck CLASS = official NUM = 4 }
+		inline_script = { script = events/install_leader_option_ck NUM = 4 }
 	}
 
 	option = {
-		inline_script = { script = events/install_leader_option_ck CLASS = official NUM = 5 }
+		inline_script = { script = events/install_leader_option_ck NUM = 5 }
 	}
 
 	option = {
-		inline_script = { script = events/install_leader_option_ck CLASS = official NUM = 6 }
+		inline_script = { script = events/install_leader_option_ck NUM = 6 }
 	}
 
 	option = {
-		inline_script = { script = events/install_leader_option_ck CLASS = official NUM = 7 }
+		inline_script = { script = events/install_leader_option_ck NUM = 7 }
 	}
 
 	option = {
-		inline_script = { script = events/install_leader_option_ck CLASS = official NUM = 8 }
+		inline_script = { script = events/install_leader_option_ck NUM = 8 }
 	}
 
 	option = {
-		inline_script = { script = events/install_leader_option_ck CLASS = official NUM = 9 }
+		inline_script = { script = events/install_leader_option_ck NUM = 9 }
 	}
 
 	option = {
-		inline_script = { script = events/install_leader_option_ck CLASS = official NUM = 10 }
-	}
-
-	after = {
-		hidden_effect = {
-			if = {
-				limit = { has_country_flag = install_their_leader }
-				remove_country_flag = install_their_leader
-			}
-		}
-	}
-}
-
-# Choose Commander
-country_event = {
-	id = veru.6620
-	title = veru.6520.name
-	desc = veru.6510.desc
-	location = event_target:chosen_subject
-	hide_window = no
-	is_triggered_only = yes
-
-	diplomatic = yes
-
-	picture_event_data = {
-		portrait = root.ruler
-		planet_background = event_target:chosen_subject.capital_scope
-		graphical_culture = event_target:chosen_subject
-		city_level = event_target:chosen_subject
-		room = event_target:chosen_subject.ruler
-	}
-
-	# Maybe a different class
-	option = {
-		name = veru.another_class
-		hidden_effect = {
-			country_event = { id = veru.6600 }
-		}
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option_ck CLASS = commander NUM = 1 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option_ck CLASS = commander NUM = 2 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option_ck CLASS = commander NUM = 3 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option_ck CLASS = commander NUM = 4 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option_ck CLASS = commander NUM = 5 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option_ck CLASS = commander NUM = 6 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option_ck CLASS = commander NUM = 7 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option_ck CLASS = commander NUM = 8 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option_ck CLASS = commander NUM = 9 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option_ck CLASS = commander NUM = 10 }
-	}
-
-	after = {
-		hidden_effect = {
-			if = {
-				limit = { has_country_flag = install_their_leader }
-				remove_country_flag = install_their_leader
-			}
-		}
-	}
-}
-
-# Choose Scientist
-country_event = {
-	id = veru.6640
-	title = veru.6530.name
-	desc = veru.6510.desc
-	location = event_target:chosen_subject
-	hide_window = no
-	is_triggered_only = yes
-
-	diplomatic = yes
-
-	picture_event_data = {
-		portrait = root.ruler
-		planet_background = event_target:chosen_subject.capital_scope
-		graphical_culture = event_target:chosen_subject
-		city_level = event_target:chosen_subject
-		room = event_target:chosen_subject.ruler
-	}
-
-	# Maybe a different class
-	option = {
-		name = veru.another_class
-		hidden_effect = {
-			country_event = { id = veru.6600 }
-		}
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option_ck CLASS = scientist NUM = 1 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option_ck CLASS = scientist NUM = 2 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option_ck CLASS = scientist NUM = 3 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option_ck CLASS = scientist NUM = 4 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option_ck CLASS = scientist NUM = 5 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option_ck CLASS = scientist NUM = 6 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option_ck CLASS = scientist NUM = 7 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option_ck CLASS = scientist NUM = 8 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option_ck CLASS = scientist NUM = 9 }
-	}
-
-	option = {
-		inline_script = { script = events/install_leader_option_ck CLASS = scientist NUM = 10 }
+		inline_script = { script = events/install_leader_option_ck NUM = 10 }
 	}
 
 	after = {
@@ -2166,16 +1838,12 @@ country_event = {
 
 	desc = {
 		text = veru.6700.loyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_loyal_to = prev }
-		}
+		trigger = { event_target:chosen_subject = { is_loyal_to = prev } }
 	}
 
 	desc = {
 		text = veru.6700.disloyal.desc
-		trigger = {
-			event_target:chosen_subject = { is_disloyal_to = prev }
-		}
+		trigger = { event_target:chosen_subject = { is_disloyal_to = prev } }
 	}
 
 	# Do something else
@@ -2225,10 +1893,6 @@ country_event = {
 	option = {
 		inline_script = { script = events/capital_relocation_option NUM = 10 }
 	}
-
-	######
-	######
-	######
 
 	option = {
 		inline_script = { script = events/capital_relocation_option NUM = 11 }
