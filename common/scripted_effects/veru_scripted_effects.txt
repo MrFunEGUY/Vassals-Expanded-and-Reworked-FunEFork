@@ -380,91 +380,113 @@ get_leaders_in_class = {
 	every_owned_leader = {
 		limit = {
 			is_ruler = no
+			is_fake_leader = no
 			leader_class = $CLASS$
 		}
-		set_leader_flag = $CLASS$_leader
+		set_leader_flag = vear_possible_leader
 		prev = { change_variable = { which = total_class_leaders value = 1 } }
 	}
 
 	# Next, we save each subject as an Event Target
 	# As the scripting language doesn't have proper loops, we use a lot of ifs if there are more than 10, the event can be run again.
+	## If we do ordered_owned_leader and there are more than 10, some will be inaccessible.
 	if = {
 		limit = { check_variable = { which = total_class_leaders value >= 1 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = $CLASS$_leader }
-			remove_leader_flag = $CLASS$_leader
+			limit = { has_leader_flag = vear_possible_leader }
+			# position = 0
+			# order_by = trigger:leader_age
+			remove_leader_flag = vear_possible_leader
 			save_event_target_as = leader_1
 		}
 	}
 	if = {
 		limit = { check_variable = { which = total_class_leaders value >= 2 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = $CLASS$_leader }
-			remove_leader_flag = $CLASS$_leader
+			limit = { has_leader_flag = vear_possible_leader }
+			# position = 0
+			# order_by = trigger:leader_age
+			remove_leader_flag = vear_possible_leader
 			save_event_target_as = leader_2
 		}
 	}
 	if = {
 		limit = { check_variable = { which = total_class_leaders value >= 3 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = $CLASS$_leader }
-			remove_leader_flag = $CLASS$_leader
+			limit = { has_leader_flag = vear_possible_leader }
+			# position = 0
+			# order_by = trigger:leader_age
+			remove_leader_flag = vear_possible_leader
 			save_event_target_as = leader_3
 		}
 	}
 	if = {
 		limit = { check_variable = { which = total_class_leaders value >= 4 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = $CLASS$_leader }
-			remove_leader_flag = $CLASS$_leader
+			limit = { has_leader_flag = vear_possible_leader }
+			# position = 0
+			# order_by = trigger:leader_age
+			remove_leader_flag = vear_possible_leader
 			save_event_target_as = leader_4
 		}
 	}
 	if = {
 		limit = { check_variable = { which = total_class_leaders value >= 5 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = $CLASS$_leader }
-			remove_leader_flag = $CLASS$_leader
+			limit = { has_leader_flag = vear_possible_leader }
+			# position = 0
+			# order_by = trigger:leader_age
+			remove_leader_flag = vear_possible_leader
 			save_event_target_as = leader_5
 		}
 	}
 	if = {
 		limit = { check_variable = { which = total_class_leaders value >= 6 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = $CLASS$_leader }
-			remove_leader_flag = $CLASS$_leader
+			limit = { has_leader_flag = vear_possible_leader }
+			# position = 0
+			# order_by = trigger:leader_age
+			remove_leader_flag = vear_possible_leader
 			save_event_target_as = leader_6
 		}
 	}
 	if = {
 		limit = { check_variable = { which = total_class_leaders value >= 7 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = $CLASS$_leader }
-			remove_leader_flag = $CLASS$_leader
+			limit = { has_leader_flag = vear_possible_leader }
+			# position = 0
+			# order_by = trigger:leader_age
+			remove_leader_flag = vear_possible_leader
 			save_event_target_as = leader_7
 		}
 	}
 	if = {
 		limit = { check_variable = { which = total_class_leaders value >= 8 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = $CLASS$_leader }
-			remove_leader_flag = $CLASS$_leader
+			limit = { has_leader_flag = vear_possible_leader }
+			# position = 0
+			# order_by = trigger:leader_age
+			remove_leader_flag = vear_possible_leader
 			save_event_target_as = leader_8
 		}
 	}
 	if = {
 		limit = { check_variable = { which = total_class_leaders value >= 9 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = $CLASS$_leader }
-			remove_leader_flag = $CLASS$_leader
+			limit = { has_leader_flag = vear_possible_leader }
+			# position = 0
+			# order_by = trigger:leader_age
+			remove_leader_flag = vear_possible_leader
 			save_event_target_as = leader_9
 		}
 	}
 	if = {
 		limit = { check_variable = { which = total_class_leaders value >= 10 } }
 		random_owned_leader = {
-			limit = { has_leader_flag = $CLASS$_leader }
-			remove_leader_flag = $CLASS$_leader
+			limit = { has_leader_flag = vear_possible_leader }
+			# position = 0
+			# order_by = trigger:leader_age
+			remove_leader_flag = vear_possible_leader
 			save_event_target_as = leader_10
 		}
 	}

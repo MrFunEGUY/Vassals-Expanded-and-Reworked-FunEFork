@@ -1,3 +1,14 @@
+is_fake_leader = {
+	OR = {
+		# Civil Wars Compat
+		has_leader_flag = dead_ruler
+		has_leader_flag = dummy_leader
+		has_leader_flag = dynastic_name_leader
+		has_leader_flag = civil_war_leader_nationalist_faction
+		has_leader_flag = new_faction_ruler
+	}
+}
+
 is_socialist = { is_socialism = yes }
 
 has_adoptive_dynasties = { always = no }
