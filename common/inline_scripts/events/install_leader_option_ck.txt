@@ -1,4 +1,25 @@
-name = veru.5000.leader_$NUM$
+name = {
+	text = veru.5000.leader_$NUM$.heir
+	trigger = { event_target:leader_$NUM$ = { is_heir = yes } }
+}
+name = {
+	text = veru.5000.leader_$NUM$.councilor
+	trigger = {
+		event_target:leader_$NUM$ = {
+			is_heir = no
+			is_councilor = yes
+		}
+	}
+}
+name = {
+	text = veru.5000.leader_$NUM$
+	trigger = {
+		event_target:leader_$NUM$ = {
+			is_heir = no
+			is_councilor = no
+		}
+	}
+}
 trigger = {
 	if = {
 		limit = { has_country_flag = install_their_leader }
