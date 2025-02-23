@@ -490,6 +490,8 @@ get_leaders_in_class = {
 			save_event_target_as = leader_10
 		}
 	}
+
+	root = { country_event = { id = veru.5100 } }
 }
 
 # Remove All Civics 

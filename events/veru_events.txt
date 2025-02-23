@@ -763,7 +763,7 @@ country_event = {
 		name = veru.6400.them
 		allow = { event_target:chosen_subject = { num_owned_leaders > 2 } }
 		hidden_effect = {
-			country_event = { id = veru.5020 }
+			country_event = { id = veru.5010 }
 			set_country_flag = install_their_leader
 		}
 	}
@@ -870,7 +870,6 @@ country_event = {
 			else = {
 				get_leaders_in_class = { CLASS = official } 
 			}
-			country_event = { id = veru.5100 }
 		}
 	}
 
@@ -912,7 +911,6 @@ country_event = {
 			else = {
 				get_leaders_in_class = { CLASS = commander } 
 			}
-			country_event = { id = veru.5100 }
 		}
 	}
 
@@ -954,7 +952,6 @@ country_event = {
 			else = {
 				get_leaders_in_class = { CLASS = scientist } 
 			}
-			country_event = { id = veru.5100 }
 		}
 	}
 

@@ -34,6 +34,8 @@ allow = {
 		has_resource = { type = influence amount >= 150 }
 	}
 }
+# custom_tooltip = "§Y[leader_$NUM$.GetName]§! will be installed as the §H[event_target:chosen_subject.GetRulerTitle]§! of the §Y[event_target:chosen_subject.GetName]§!\n"
+# custom_tooltip = "\n§Y[leader_$NUM$.GetName]'s§! §LBio§! - \n§LLength of Service§!: §Y[leader_$NUM$.GetYearsOfService]§! \n§LHomeworld§!: §Y[leader_$NUM$.GetBackgroundPlanet]§! in the §Y[leader_$NUM$.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[leader_$NUM$.GetBackgroundJob]§! \n§LSkill Level§!: §Y[leader_$NUM$.GetSkill]§!"
 custom_tooltip = veru.5000.leader_$NUM$.effect_desc
 custom_tooltip = veru.5000.leader_$NUM$.tooltip
 hidden_effect = {
