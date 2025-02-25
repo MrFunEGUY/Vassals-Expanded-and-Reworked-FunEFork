@@ -11,3 +11,125 @@
 # 		localization_key = NO_SUBCLASS
 # 	}
 # }
+
+## Scripted Loc Nonsense
+
+defined_text = {
+    name = ver_nl
+    default = vear_newline
+}
+
+defined_text = {
+    name = dc1
+    default = ""
+}
+
+defined_text = {
+	name = §W
+	default = "W"
+}
+
+defined_text = {
+	name = §T
+	default = "T"
+}
+
+defined_text = {
+	name = §g
+	default = "g"
+}
+
+defined_text = {
+	name = §L
+	default = "L"
+}
+
+defined_text = {
+	name = §P
+	default = "P"
+}
+
+defined_text = {
+	name = §R
+	default = "R"
+}
+
+defined_text = {
+	name = §S
+	default = "S"
+}
+
+defined_text = {
+	name = §H
+	default = "H"
+}
+
+defined_text = {
+	name = §Y
+	default = "Y"
+}
+
+defined_text = {
+	name = §G
+	default = "G"
+}
+
+defined_text = {
+	name = §V
+	default = "V"
+}
+
+defined_text = {
+	name = §E
+	default = "E"
+}
+
+defined_text = {
+	name = §C
+	default = "C"
+}
+
+defined_text = {
+	name = §B
+	default = "B"
+}
+
+defined_text = {
+	name = §M
+	default = "M"
+}
+
+defined_text = {
+	name = §_
+	default = "_"
+}
+
+defined_text = {
+	name = §c
+	default = "c"
+}
+
+defined_text = {
+	name = §v
+	default = "v"
+}
+
+defined_text = {
+	name = §d
+	default = "d"
+}
+
+defined_text = {
+	name = §r
+	default = "r"
+}
+
+defined_text = {
+	name = §l
+	default = "l"
+}
+
+defined_text = {
+	name = §n
+	default = "!"
+}

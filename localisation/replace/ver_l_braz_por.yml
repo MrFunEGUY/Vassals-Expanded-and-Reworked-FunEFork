@@ -213,7 +213,7 @@ l_braz_por:
  # Change Leader
  veru.5000.loyal.desc: "While I would prefer to remain in power, I will do as I am ordered. $veru.subject_ruler_bio$"
  veru.5000.disloyal.desc: "This is outrageous! $veru.subject_ruler_bio$"
- veru.subject_ruler_bio: "\n\n§L=======================§!\n\n§H[event_target:chosen_subject.ruler.GetTitle]§! [event_target:chosen_subject.ruler.GetName]'s §LBio§! - \n\n§LAge§!: [event_target:chosen_subject.ruler.GetAge] \n§LAffiliation§!: §Y[event_target:chosen_subject.ruler.GetBackgroundEthic]§! \n§LLength of Service§!: §Y[event_target:chosen_subject.ruler.GetYearsOfService]§! \n§LHomeworld§!: §Y[event_target:chosen_subject.ruler.GetBackgroundPlanet]§! in the §Y[event_target:chosen_subject.ruler.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[event_target:chosen_subject.ruler.GetBackgroundJob]§! \n§LSkill Level§!: §Y[event_target:chosen_subject.ruler.GetSkill]§!"
+ veru.subject_ruler_bio: "\n\n§L=======================§!\n\n§H[event_target:chosen_subject.ruler.GetTitle]§! [event_target:chosen_subject.ruler.GetName]'s §BBio§! - \n\n§LAge§!: [event_target:chosen_subject.ruler.GetAge] \n§LAffiliation§!: §Y[event_target:chosen_subject.ruler.GetBackgroundEthic]§! \n§LLength of Service§!: §Y[event_target:chosen_subject.ruler.GetYearsOfService]§! \n§LHomeworld§!: §Y[event_target:chosen_subject.ruler.GetBackgroundPlanet]§! in the §Y[event_target:chosen_subject.ruler.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[event_target:chosen_subject.ruler.GetBackgroundJob]§! \n§LSkill Level§!: §Y[event_target:chosen_subject.ruler.GetSkill]§!"
 
  veru.5000.official.ours: "One of our §Y$official_plural_with_icon$§! shall take over."
  veru.5000.official.theirs: "One of their §Y$official_plural_with_icon$§! shall take over."
@@ -227,70 +227,70 @@ l_braz_por:
  veru.5000.leader_1.heir: "§H[leader_1.owner.GetHeirTitle]§! §Y[leader_1.GetName]§!: Age - [leader_1.GetAge] | [leader_1.HasEthicIcon]"
  veru.5000.leader_1.councilor: "§H[leader_1.GetTitle]§! §Y[leader_1.GetName]§!: Age - [leader_1.GetAge] | [leader_1.HasEthicIcon]"
  
- veru.5000.leader_1.tooltip: "\n§Y[leader_1.GetName]'s§! §LBio§! - \n§LLength of Service§!: §Y[leader_1.GetYearsOfService]§! \n§LHomeworld§!: §Y[leader_1.GetBackgroundPlanet]§! in the §Y[leader_1.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[leader_1.GetBackgroundJob]§! \n§LSkill Level§!: §Y[leader_1.GetSkill]§!"
+ veru.5000.leader_1.tooltip: "\n§Y[leader_1.GetName]'s§! §BBio§! - \n§LLength of Service§!: §Y[leader_1.GetYearsOfService]§! \n§LHomeworld§!: §Y[leader_1.GetBackgroundPlanet]§! in the §Y[leader_1.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[leader_1.GetBackgroundJob]§! \n§LSkill Level§!: §Y[leader_1.GetSkill]§!"
  veru.5000.leader_1.effect_desc: "§Y[leader_1.GetName]§! will be installed as the §H[event_target:chosen_subject.GetRulerTitle]§! of the §Y[event_target:chosen_subject.GetName]§!\n"
  
  veru.5000.leader_2: "§Y[leader_2.GetName]§!: Age - [leader_2.GetAge] | [leader_2.HasEthicIcon]"
  veru.5000.leader_2.heir: "§H[leader_2.owner.GetHeirTitle]§! §Y[leader_2.GetName]§!: Age - [leader_2.GetAge] | [leader_2.HasEthicIcon]"
  veru.5000.leader_2.councilor: "§H[leader_2.GetTitle]§! §Y[leader_2.GetName]§!: Age - [leader_2.GetAge] | [leader_2.HasEthicIcon]"
  
- veru.5000.leader_2.tooltip: "\n§Y[leader_2.GetName]'s§! §LBio§! - \n§LLength of Service§!: §Y[leader_2.GetYearsOfService]§! \n§LHomeworld§!: §Y[leader_2.GetBackgroundPlanet]§! in the §Y[leader_1.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[leader_2.GetBackgroundJob]§! \n§LSkill Level§!: §Y[leader_2.GetSkill]§!"
+ veru.5000.leader_2.tooltip: "\n§Y[leader_2.GetName]'s§! §BBio§! - \n§LLength of Service§!: §Y[leader_2.GetYearsOfService]§! \n§LHomeworld§!: §Y[leader_2.GetBackgroundPlanet]§! in the §Y[leader_1.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[leader_2.GetBackgroundJob]§! \n§LSkill Level§!: §Y[leader_2.GetSkill]§!"
  veru.5000.leader_2.effect_desc: "§Y[leader_2.GetName]§! will be installed as the §H[event_target:chosen_subject.GetRulerTitle]§! of the §Y[event_target:chosen_subject.GetName]§!\n"
  
  veru.5000.leader_3: "§Y[leader_3.GetName]§!: Age - [leader_3.GetAge] | [leader_3.HasEthicIcon]"
  veru.5000.leader_3.heir: "§H[leader_3.owner.GetHeirTitle]§! §Y[leader_3.GetName]§!: Age - [leader_3.GetAge] | [leader_3.HasEthicIcon]"
  veru.5000.leader_3.councilor: "§H[leader_3.GetTitle]§! §Y[leader_3.GetName]§!: Age - [leader_3.GetAge] | [leader_3.HasEthicIcon]"
  
- veru.5000.leader_3.tooltip: "\n§Y[leader_3.GetName]'s§! §LBio§! - \n§LLength of Service§!: §Y[leader_3.GetYearsOfService]§! \n§LHomeworld§!: §Y[leader_3.GetBackgroundPlanet]§! in the §Y[leader_1.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[leader_3.GetBackgroundJob]§! \n§LSkill Level§!: §Y[leader_3.GetSkill]§!"
+ veru.5000.leader_3.tooltip: "\n§Y[leader_3.GetName]'s§! §BBio§! - \n§LLength of Service§!: §Y[leader_3.GetYearsOfService]§! \n§LHomeworld§!: §Y[leader_3.GetBackgroundPlanet]§! in the §Y[leader_1.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[leader_3.GetBackgroundJob]§! \n§LSkill Level§!: §Y[leader_3.GetSkill]§!"
  veru.5000.leader_3.effect_desc: "§Y[leader_3.GetName]§! will be installed as the §H[event_target:chosen_subject.GetRulerTitle]§! of the §Y[event_target:chosen_subject.GetName]§!\n"
  
  veru.5000.leader_4: "§Y[leader_4.GetName]§!: Age - [leader_4.GetAge] | [leader_4.HasEthicIcon]"
  veru.5000.leader_4.heir: "§H[leader_4.owner.GetHeirTitle]§! §Y[leader_4.GetName]§!: Age - [leader_4.GetAge] | [leader_4.HasEthicIcon]"
  veru.5000.leader_4.councilor: "§H[leader_4.GetTitle]§! §Y[leader_4.GetName]§!: Age - [leader_4.GetAge] | [leader_4.HasEthicIcon]"
  
- veru.5000.leader_4.tooltip: "\n§Y[leader_4.GetName]'s§! §LBio§! - \n§LLength of Service§!: §Y[leader_4.GetYearsOfService]§! \n§LHomeworld§!: §Y[leader_4.GetBackgroundPlanet]§! in the §Y[leader_1.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[leader_4.GetBackgroundJob]§! \n§LSkill Level§!: §Y[leader_4.GetSkill]§!"
+ veru.5000.leader_4.tooltip: "\n§Y[leader_4.GetName]'s§! §BBio§! - \n§LLength of Service§!: §Y[leader_4.GetYearsOfService]§! \n§LHomeworld§!: §Y[leader_4.GetBackgroundPlanet]§! in the §Y[leader_1.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[leader_4.GetBackgroundJob]§! \n§LSkill Level§!: §Y[leader_4.GetSkill]§!"
  veru.5000.leader_4.effect_desc: "§Y[leader_4.GetName]§! will be installed as the §H[event_target:chosen_subject.GetRulerTitle]§! of the §Y[event_target:chosen_subject.GetName]§!\n"
  
  veru.5000.leader_5: "§Y[leader_5.GetName]§!: Age - [leader_5.GetAge] | [leader_5.HasEthicIcon]"
  veru.5000.leader_5.heir: "§H[leader_5.owner.GetHeirTitle]§! §Y[leader_5.GetName]§!: Age - [leader_5.GetAge] | [leader_5.HasEthicIcon]"
  veru.5000.leader_5.councilor: "§H[leader_5.GetTitle]§! §Y[leader_5.GetName]§!: Age - [leader_5.GetAge] | [leader_5.HasEthicIcon]"
  
- veru.5000.leader_5.tooltip: "\n§Y[leader_5.GetName]'s§! §LBio§! - \n§LLength of Service§!: §Y[leader_5.GetYearsOfService]§! \n§LHomeworld§!: §Y[leader_5.GetBackgroundPlanet]§! in the §Y[leader_1.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[leader_5.GetBackgroundJob]§! \n§LSkill Level§!: §Y[leader_5.GetSkill]§!"
+ veru.5000.leader_5.tooltip: "\n§Y[leader_5.GetName]'s§! §BBio§! - \n§LLength of Service§!: §Y[leader_5.GetYearsOfService]§! \n§LHomeworld§!: §Y[leader_5.GetBackgroundPlanet]§! in the §Y[leader_1.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[leader_5.GetBackgroundJob]§! \n§LSkill Level§!: §Y[leader_5.GetSkill]§!"
  veru.5000.leader_5.effect_desc: "§Y[leader_5.GetName]§! will be installed as the §H[event_target:chosen_subject.GetRulerTitle]§! of the §Y[event_target:chosen_subject.GetName]§!\n"
  
  veru.5000.leader_6: "§Y[leader_6.GetName]§!: Age - [leader_6.GetAge] | [leader_6.HasEthicIcon]"
  veru.5000.leader_6.heir: "§H[leader_6.owner.GetHeirTitle]§! §Y[leader_6.GetName]§!: Age - [leader_6.GetAge] | [leader_6.HasEthicIcon]"
  veru.5000.leader_6.councilor: "§H[leader_6.GetTitle]§! §Y[leader_6.GetName]§!: Age - [leader_6.GetAge] | [leader_6.HasEthicIcon]"
  
- veru.5000.leader_6.tooltip: "\n§Y[leader_6.GetName]'s§! §LBio§! - \n§LLength of Service§!: §Y[leader_6.GetYearsOfService]§! \n§LHomeworld§!: §Y[leader_6.GetBackgroundPlanet]§! in the §Y[leader_1.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[leader_6.GetBackgroundJob]§! \n§LSkill Level§!: §Y[leader_6.GetSkill]§!"
+ veru.5000.leader_6.tooltip: "\n§Y[leader_6.GetName]'s§! §BBio§! - \n§LLength of Service§!: §Y[leader_6.GetYearsOfService]§! \n§LHomeworld§!: §Y[leader_6.GetBackgroundPlanet]§! in the §Y[leader_1.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[leader_6.GetBackgroundJob]§! \n§LSkill Level§!: §Y[leader_6.GetSkill]§!"
  veru.5000.leader_6.effect_desc: "§Y[leader_6.GetName]§! will be installed as the §H[event_target:chosen_subject.GetRulerTitle]§! of the §Y[event_target:chosen_subject.GetName]§!\n"
  
  veru.5000.leader_7: "§Y[leader_7.GetName]§!: Age - [leader_7.GetAge] | [leader_7.HasEthicIcon]"
  veru.5000.leader_7.heir: "§H[leader_7.owner.GetHeirTitle]§! §Y[leader_7.GetName]§!: Age - [leader_7.GetAge] | [leader_7.HasEthicIcon]"
  veru.5000.leader_7.councilor: "§H[leader_7.GetTitle]§! §Y[leader_7.GetName]§!: Age - [leader_7.GetAge] | [leader_7.HasEthicIcon]"
  
- veru.5000.leader_7.tooltip: "\n§Y[leader_7.GetName]'s§! §LBio§! - \n§LLength of Service§!: §Y[leader_7.GetYearsOfService]§! \n§LHomeworld§!: §Y[leader_7.GetBackgroundPlanet]§! in the §Y[leader_1.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[leader_7.GetBackgroundJob]§! \n§LSkill Level§!: §Y[leader_7.GetSkill]§!"
+ veru.5000.leader_7.tooltip: "\n§Y[leader_7.GetName]'s§! §BBio§! - \n§LLength of Service§!: §Y[leader_7.GetYearsOfService]§! \n§LHomeworld§!: §Y[leader_7.GetBackgroundPlanet]§! in the §Y[leader_1.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[leader_7.GetBackgroundJob]§! \n§LSkill Level§!: §Y[leader_7.GetSkill]§!"
  veru.5000.leader_7.effect_desc: "§Y[leader_7.GetName]§! will be installed as the §H[event_target:chosen_subject.GetRulerTitle]§! of the §Y[event_target:chosen_subject.GetName]§!\n"
  
  veru.5000.leader_8: "§Y[leader_8.GetName]§!: Age - [leader_8.GetAge] | [leader_8.HasEthicIcon]"
  veru.5000.leader_8.heir: "§H[leader_8.owner.GetHeirTitle]§! §Y[leader_8.GetName]§!: Age - [leader_8.GetAge] | [leader_8.HasEthicIcon]"
  veru.5000.leader_8.councilor: "§H[leader_8.GetTitle]§! §Y[leader_8.GetName]§!: Age - [leader_8.GetAge] | [leader_8.HasEthicIcon]"
  
- veru.5000.leader_8.tooltip: "\n§Y[leader_8.GetName]'s§! §LBio§! - \n§LLength of Service§!: §Y[leader_8.GetYearsOfService]§! \n§LHomeworld§!: §Y[leader_8.GetBackgroundPlanet]§! in the §Y[leader_1.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[leader_8.GetBackgroundJob]§! \n§LSkill Level§!: §Y[leader_8.GetSkill]§!"
+ veru.5000.leader_8.tooltip: "\n§Y[leader_8.GetName]'s§! §BBio§! - \n§LLength of Service§!: §Y[leader_8.GetYearsOfService]§! \n§LHomeworld§!: §Y[leader_8.GetBackgroundPlanet]§! in the §Y[leader_1.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[leader_8.GetBackgroundJob]§! \n§LSkill Level§!: §Y[leader_8.GetSkill]§!"
  veru.5000.leader_8.effect_desc: "§Y[leader_8.GetName]§! will be installed as the §H[event_target:chosen_subject.GetRulerTitle]§! of the §Y[event_target:chosen_subject.GetName]§!\n"
  
  veru.5000.leader_9: "§Y[leader_9.GetName]§!: Age - [leader_9.GetAge] | [leader_9.HasEthicIcon]"
  veru.5000.leader_9.heir: "§H[leader_9.owner.GetHeirTitle]§! §Y[leader_9.GetName]§!: Age - [leader_9.GetAge] | [leader_9.HasEthicIcon]"
  veru.5000.leader_9.councilor: "§H[leader_9.GetTitle]§! §Y[leader_9.GetName]§!: Age - [leader_9.GetAge] | [leader_9.HasEthicIcon]"
  
- veru.5000.leader_9.tooltip: "\n§Y[leader_9.GetName]'s§! §LBio§! - \n§LLength of Service§!: §Y[leader_9.GetYearsOfService]§! \n§LHomeworld§!: §Y[leader_9.GetBackgroundPlanet]§! in the §Y[leader_1.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[leader_9.GetBackgroundJob]§! \n§LSkill Level§!: §Y[leader_9.GetSkill]§!"
+ veru.5000.leader_9.tooltip: "\n§Y[leader_9.GetName]'s§! §BBio§! - \n§LLength of Service§!: §Y[leader_9.GetYearsOfService]§! \n§LHomeworld§!: §Y[leader_9.GetBackgroundPlanet]§! in the §Y[leader_1.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[leader_9.GetBackgroundJob]§! \n§LSkill Level§!: §Y[leader_9.GetSkill]§!"
  veru.5000.leader_9.effect_desc: "§Y[leader_9.GetName]§! will be installed as the §H[event_target:chosen_subject.GetRulerTitle]§! of the §Y[event_target:chosen_subject.GetName]§!\n"
  
  veru.5000.leader_10: "§Y[leader_10.GetName]§!: Age - [leader_10.GetAge] | [leader_10.HasEthicIcon]"
   veru.5000.leader_10.heir: "§H[leader_10.owner.GetHeirTitle]§! §Y[leader_10.GetName]§!: Age - [leader_10.GetAge] | [leader_10.HasEthicIcon]"
  veru.5000.leader_10.councilor: "§H[leader_10.GetTitle]§! §Y[leader_10.GetName]§!: Age - [leader_10.GetAge] | [leader_10.HasEthicIcon]"
 
- veru.5000.leader_10.tooltip: "\n§Y[leader_10.GetName]'s§! §LBio§! - \n§LLength of Service§!: §Y[leader_10.GetYearsOfService]§! \nHomeworld:  §Y[leader_10.GetBackgroundPlanet]§! in the §Y[leader_1.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[leader_10.GetBackgroundJob]§! \n§LSkill Level§!: §Y[leader_10.GetSkill]§!"
+ veru.5000.leader_10.tooltip: "\n§Y[leader_10.GetName]'s§! §BBio§! - \n§LLength of Service§!: §Y[leader_10.GetYearsOfService]§! \nHomeworld:  §Y[leader_10.GetBackgroundPlanet]§! in the §Y[leader_1.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[leader_10.GetBackgroundJob]§! \n§LSkill Level§!: §Y[leader_10.GetSkill]§!"
  veru.5000.leader_10.effect_desc: "§Y[leader_10.GetName]§! will be installed as the §H[event_target:chosen_subject.GetRulerTitle]§! of the §Y[event_target:chosen_subject.GetName]§!\n"
 
  ##### Loyalty Events

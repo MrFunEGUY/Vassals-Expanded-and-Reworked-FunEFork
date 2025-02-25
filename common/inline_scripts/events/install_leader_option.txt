@@ -1,10 +1,12 @@
 add_resource = { influence = -150 }
 name = {
 	text = veru.5000.leader_$NUM$.heir
+	# text = "[§H][leader_$NUM$.GetTitle][dc1]! [§Y][leader_$NUM$.GetName][dc1]!: Age - [leader_$NUM$.GetAge] | [leader_$NUM$.HasEthicIcon]"
 	trigger = { event_target:leader_$NUM$ = { is_heir = yes } }
 }
 name = {
 	text = veru.5000.leader_$NUM$.councilor
+	# text = "[§H][leader_$NUM$.GetTitle][dc1]! [§Y][leader_$NUM$.GetName][dc1]!: Age - [leader_$NUM$.GetAge] | [leader_$NUM$.HasEthicIcon]"
 	trigger = {
 		event_target:leader_$NUM$ = {
 			is_heir = no
@@ -14,6 +16,7 @@ name = {
 }
 name = {
 	text = veru.5000.leader_$NUM$
+	# text = "[§Y][leader_$NUM$.GetName][dc1]!: Age - [leader_$NUM$.GetAge] | [leader_$NUM$.HasEthicIcon]"
 	trigger = {
 		event_target:leader_$NUM$ = {
 			is_heir = no
@@ -34,8 +37,9 @@ allow = {
 		has_resource = { type = influence amount >= 150 }
 	}
 }
-# custom_tooltip = "§Y[leader_$NUM$.GetName]§! will be installed as the §H[event_target:chosen_subject.GetRulerTitle]§! of the §Y[event_target:chosen_subject.GetName]§!\n"
-# custom_tooltip = "\n§Y[leader_$NUM$.GetName]'s§! §LBio§! - \n§LLength of Service§!: §Y[leader_$NUM$.GetYearsOfService]§! \n§LHomeworld§!: §Y[leader_$NUM$.GetBackgroundPlanet]§! in the §Y[leader_$NUM$.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[leader_$NUM$.GetBackgroundJob]§! \n§LSkill Level§!: §Y[leader_$NUM$.GetSkill]§!"
+
+# custom_tooltip = "[§Y][leader_$NUM$.GetName][dc1]! will be installed as the [§H][event_target:chosen_subject.GetRulerTitle][dc1]! of the [§Y][event_target:chosen_subject.GetName][dc1]![ver_nl]"
+# custom_tooltip = "[ver_nl][§Y][leader_$NUM$.GetName]'s[dc1]! [§B]Bio[dc1]! - [ver_nl][§L]Length of Service[dc1]!: [§Y][leader_$NUM$.GetYearsOfService][dc1]! [ver_nl][§L]Homeworld[dc1]!: [§Y][leader_$NUM$.GetBackgroundPlanet][dc1]! in the [§Y][leader_$NUM$.background_planet.solar_system.GetName][dc1]! system [ver_nl][§L]Former Occupation[dc1]!: [§Y][leader_$NUM$.GetBackgroundJob][dc1]! [ver_nl][§L]Skill Level[dc1]!: [§Y][leader_$NUM$.GetSkill][dc1]!"
 custom_tooltip = veru.5000.leader_$NUM$.effect_desc
 custom_tooltip = veru.5000.leader_$NUM$.tooltip
 hidden_effect = {
