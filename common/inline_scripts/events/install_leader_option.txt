@@ -1,7 +1,7 @@
 add_resource = { influence = -150 }
 name = {
 	text = veru.5000.leader_$NUM$.heir
-	# text = "[§H][leader_$NUM$.GetTitle][dc1]! [§Y][leader_$NUM$.GetName][dc1]!: Age - [leader_$NUM$.GetAge] | [leader_$NUM$.HasEthicIcon]"
+	# text = "[§H][leader_$NUM$.owner.GetHeirTitle][dc1]! [§Y][leader_$NUM$.GetName][dc1]!: Age - [leader_$NUM$.GetAge] | [leader_$NUM$.HasEthicIcon]"
 	trigger = { event_target:leader_$NUM$ = { is_heir = yes } }
 }
 name = {
