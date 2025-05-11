@@ -166,7 +166,7 @@ get_intervention_effect = {
 			}
 			every_owned_planet = {
 				limit = {
-					num_pops > 3
+					pop_amount > 300
 				}
 				add_modifier = {
 	                modifier = overlord_intervention_disloyal_planet
@@ -225,7 +225,7 @@ get_intervention_effect = {
 			}
 			every_owned_planet = {
 				limit = {
-					num_pops > 3
+					pop_amount > 300
 				}
 				add_modifier = {
 	                modifier = overlord_intervention_loyal_planet
@@ -293,7 +293,7 @@ get_intervention_effect_gov = {
 	            }
 			}
 			every_owned_planet = {
-				limit = { num_pops > 3 }
+				limit = { pop_amount > 300 }
 				add_modifier = {
 	                modifier = overlord_intervention_disloyal_planet_gov
 	                years = 20
@@ -351,7 +351,7 @@ get_intervention_effect_gov = {
 			}
 			every_owned_planet = {
 				limit = {
-					num_pops > 3
+					pop_amount > 300
 				}
 				add_modifier = {
 	                modifier = overlord_intervention_loyal_planet_gov
@@ -688,7 +688,7 @@ vear_install_leader_effect = {
 				}
 				every_owned_planet = {
 					limit = {
-						num_pops > 3
+						pop_amount > 300
 					}
 					add_modifier = {
 						modifier = overlord_intervention_loyal_planet_leader
@@ -739,7 +739,7 @@ vear_install_leader_effect = {
 				}
 				every_owned_planet = {
 					limit = {
-						num_pops > 3
+						pop_amount > 300
 					}
 					add_modifier = {
 						modifier = overlord_intervention_disloyal_planet_leader

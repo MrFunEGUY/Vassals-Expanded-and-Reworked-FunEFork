@@ -523,7 +523,7 @@ country_event = {
 				is_ver_blood = yes
 				NOT = { is_at_war_with = overlord }
 			}
-			every_owned_pop = {
+			every_owned_pop_group = {
 				ROOT = {
 					change_variable = { which = ver_blood_tributary_total_population value = 1 }
 				}
@@ -550,7 +550,7 @@ country_event = {
 			every_subject = {
 				limit = { is_ver_blood = yes }
 				set_variable = { which = ver_blood_tributary_total_population value = 0 }
-				every_owned_pop = {
+				every_owned_pop_group = {
 					PREV = { change_variable = { which = ver_blood_tributary_total_population value = 1 } }
 				}
 
@@ -561,10 +561,10 @@ country_event = {
 					count = ver_blood_tributary_total_population
 
 					random_owned_planet = {
-						limit = { num_pops > 1 }
-						random_owned_pop = {
+						limit = { pop_amount >= 100 }
+						random_owned_pop_group = {
 							species = { save_event_target_as = blood_tribute_species }
-							kill_pop = yes
+							kill_pop_group = { pop_group = this amount = 100 }
 						}
 					}
 
@@ -573,12 +573,12 @@ country_event = {
 							limit = { any_owned_planet = { free_housing > 0 } }
 							random_owned_planet = {
 								limit = { free_housing > 0 }
-								create_pop = { species = event_target:blood_tribute_species }
+								create_pop_group = { species = event_target:blood_tribute_species }
 							}
 						}
 						else = {
 							random_owned_planet = {
-								create_pop = { species = event_target:blood_tribute_species }
+								create_pop_group = { species = event_target:blood_tribute_species }
 							}
 						}
 					}
@@ -598,7 +598,7 @@ country_event = {
 			every_subject = {
 				limit = { is_ver_blood = yes }
 				set_variable = { which = ver_blood_tributary_total_population value = 0 }
-				every_owned_pop = {
+				every_owned_pop_group = {
 					PREV = { change_variable = { which = ver_blood_tributary_total_population value = 1 } }
 				}
 
@@ -609,19 +609,18 @@ country_event = {
 					count = ver_blood_tributary_total_population
 
 					random_owned_planet = {
-						limit = { num_pops > 1 }
-						random_owned_pop = {
+						limit = { pop_amount >= 100 }
+						random_owned_pop_group = {
 							species = { save_event_target_as = blood_tribute_species }
-							kill_pop = yes
-						}
-					}
 
-					ROOT = {
-						random_owned_planet = {
-							limit = { has_modifier = slave_colony }
-							create_pop = {
-								species = event_target:blood_tribute_species
+							ROOT = {
+								random_owned_planet = {
+									limit = { has_modifier = slave_colony }
+									create_pop_group = { species = event_target:blood_tribute_species }
+								}
 							}
+
+							kill_pop_group = { pop_group = this amount = 100 }
 						}
 					}
 				}

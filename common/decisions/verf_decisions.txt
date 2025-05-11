@@ -15,8 +15,8 @@ decision_create_planet_state = {
 		NOT = { has_planet_flag = verf_maybe_planet_state }
 	}
 	allow = {
-		num_pops >= 5
-		any_owned_pop = {
+		pop_amount >= 500
+		any_owned_pop_group = {
 			can_think = yes
 			is_enslaved = no
 		}
@@ -40,8 +40,8 @@ decision_affirm_planet_state = {
 		has_planet_flag = verf_maybe_planet_state
 	}
 	allow = {
-		num_pops >= 5
-		any_owned_pop = {
+		pop_amount >= 500
+		any_owned_pop_group = {
 			can_think = yes
 			is_enslaved = no
 		}
@@ -52,17 +52,17 @@ decision_affirm_planet_state = {
 			owner = { save_event_target_as = mother_country }
 
 			if = {
-				limit = { NOT = { any_owned_pop = { is_same_species = owner_species } } }
+				limit = { NOT = { any_owned_pop_group = { is_same_species = owner_species } } }
 				every_owned_species = {
 					limit = {
-						any_species_pop = {
+						any_species_pop_group = {
 							can_think = yes
 							is_enslaved = no
 							planet = { is_same_value = root }
 						}
 					}
 					set_variable = { which = species_pop_count value = 0 }
-					every_species_pop = {
+					every_species_pop_group = {
 						limit = {
 							can_think = yes
 							is_enslaved = no

@@ -2587,6 +2587,13 @@ subject_can_expand = {
 	}
 }
 
+subject_holdings_limit_0 = {
+	term = subject_holdings_limit
+	target_modifier = {
+		planet_max_subject_holding_buildings_add = 0
+	}
+}
+
 subject_holdings_limit_1 = {
 	term = subject_holdings_limit
 	loyalty_change = -5

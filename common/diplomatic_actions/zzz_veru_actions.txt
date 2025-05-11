@@ -15,7 +15,6 @@ action_invite_to_federation = {
 	should_show_auto_accept_message_recipient = yes
 	should_open_auto_accept_message_recipient = yes
 	should_notify_auto_recipient_on_vote_fail = yes
-	requires_recipient_independence = no
 
 	potential = {
 		hidden_trigger = {
@@ -25,11 +24,19 @@ action_invite_to_federation = {
 		hidden_trigger = {
 			if = {
 				limit = { FROM = { is_subject = yes } }
-				is_overlord_to = FROM
+				from.overlord = { is_same_empire = root }
+				# is_overlord_to = FROM ## Seems broken
 			}
+		}
+		hidden_trigger = {
 			OR = {
 				has_federation = no
 				federation = { NOT = { has_federation_type = empire_federation } }
+				AND = {
+					from = { is_subject = yes }
+					from.overlord = { is_same_empire = root }
+					federation = { has_federation_type = empire_federation }
+				}
 			}
 		}
 	}
@@ -63,8 +70,8 @@ action_invite_to_federation = {
 				is_country_type_with_subjects = yes
 			}
 			custom_tooltip = {
-				fail_text = requires_tradition_the_federation
-				has_tradition = tr_diplomacy_the_federation
+				fail_text = requires_tech_federation_code
+				has_technology = tech_federation_code
 			}
 		}
 		diplomacy_is_not_homicidal = yes
@@ -82,6 +89,15 @@ action_invite_to_federation = {
                         value >= 30
                     }
                 }
+				AND = {
+					has_valid_civic = civic_hive_familiar_face
+					from = {
+						trust = {
+							who = root
+							value >= 15
+						}
+					}
+				}
             }
         }
         custom_tooltip = {
@@ -176,6 +192,15 @@ action_form_research_agreement = {
 					trust = {
 						who = root
 						value >= 20
+					}
+				}
+				AND = {
+					has_valid_civic = civic_hive_familiar_face
+					from = {
+						trust = {
+							who = root
+							value >= 10
+						}
 					}
 				}
 			}
@@ -277,6 +302,15 @@ action_demand_subjugation = {
 						trust = {
 							who = root
 							value >= 50
+						}
+					}
+					AND = {
+						has_valid_civic = civic_hive_familiar_face
+						from = {
+							trust = {
+								who = root
+								value >= 25
+							}
 						}
 					}
 				}
@@ -446,6 +480,15 @@ action_ask_to_become_subjugated = {
 					trust = {
 						who = root
 						value >= 50
+					}
+				}
+				AND = {
+					has_valid_civic = civic_hive_familiar_face
+					from = {
+						trust = {
+							who = root
+							value >= 25
+						}
 					}
 				}
 			}
