@@ -1135,84 +1135,34 @@ country_event = {
 			}
 		}
 		if = {
-			limit = { check_variable = { which = num_border_subjects value >= 1 } }
-			random_subject = {
-				limit = { has_country_flag = border_subject }
-				remove_country_flag = border_subject
-				save_global_event_target_as = border_subject_1
-			}
+			inline_script = { script = events/get_subjects_buffer_zone_effect NUM = 1 }
 		}
 		if = {
-			limit = { check_variable = { which = num_border_subjects value >= 2 } }
-			random_subject = {
-				limit = { has_country_flag = border_subject }
-				remove_country_flag = border_subject
-				save_global_event_target_as = border_subject_2
-			}
+			inline_script = { script = events/get_subjects_buffer_zone_effect NUM = 2 }
 		}
 		if = {
-			limit = { check_variable = { which = num_border_subjects value >= 3 } }
-			random_subject = {
-				limit = { has_country_flag = border_subject }
-				remove_country_flag = border_subject
-				save_global_event_target_as = border_subject_3
-			}
+			inline_script = { script = events/get_subjects_buffer_zone_effect NUM = 3 }
 		}
 		if = {
-			limit = { check_variable = { which = num_border_subjects value >= 4 } }
-			random_subject = {
-				limit = { has_country_flag = border_subject }
-				remove_country_flag = border_subject
-				save_global_event_target_as = border_subject_4
-			}
+			inline_script = { script = events/get_subjects_buffer_zone_effect NUM = 4 }
 		}
 		if = {
-			limit = { check_variable = { which = num_border_subjects value >= 5 } }
-			random_subject = {
-				limit = { has_country_flag = border_subject }
-				remove_country_flag = border_subject
-				save_global_event_target_as = border_subject_5
-			}
+			inline_script = { script = events/get_subjects_buffer_zone_effect NUM = 5 }
 		}
 		if = {
-			limit = { check_variable = { which = num_border_subjects value >= 6 } }
-			random_subject = {
-				limit = { has_country_flag = border_subject }
-				remove_country_flag = border_subject
-				save_global_event_target_as = border_subject_6
-			}
+			inline_script = { script = events/get_subjects_buffer_zone_effect NUM = 6 }
 		}
 		if = {
-			limit = { check_variable = { which = num_border_subjects value >= 7 } }
-			random_subject = {
-				limit = { has_country_flag = border_subject }
-				remove_country_flag = border_subject
-				save_global_event_target_as = border_subject_7
-			}
+			inline_script = { script = events/get_subjects_buffer_zone_effect NUM = 7 }
 		}
 		if = {
-			limit = { check_variable = { which = num_border_subjects value >= 8 } }
-			random_subject = {
-				limit = { has_country_flag = border_subject }
-				remove_country_flag = border_subject
-				save_global_event_target_as = border_subject_8
-			}
+			inline_script = { script = events/get_subjects_buffer_zone_effect NUM = 8 }
 		}
 		if = {
-			limit = { check_variable = { which = num_border_subjects value >= 9 } }
-			random_subject = {
-				limit = { has_country_flag = border_subject }
-				remove_country_flag = border_subject
-				save_global_event_target_as = border_subject_9
-			}
+			inline_script = { script = events/get_subjects_buffer_zone_effect NUM = 9 }
 		}
 		if = {
-			limit = { check_variable = { which = num_border_subjects value >= 10 } }
-			random_subject = {
-				limit = { has_country_flag = border_subject }
-				remove_country_flag = border_subject
-				save_global_event_target_as = border_subject_10
-			}
+			inline_script = { script = events/get_subjects_buffer_zone_effect NUM = 10 }
 		}
 	}
 

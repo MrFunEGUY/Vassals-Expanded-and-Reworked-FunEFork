@@ -1,0 +1,6 @@
+limit = { check_variable = { which = veru_total_subjects value >= $NUM$ } }
+random_subject = {
+	limit = { has_country_flag = subject_country }
+	remove_country_flag = subject_country
+	save_event_target_as = subject_$NUM$
+}

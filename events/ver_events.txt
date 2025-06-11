@@ -40,164 +40,64 @@ country_event = {
 		}
 
 		if = {
-			limit = { check_variable = { which = ver_puppet_neighbors value >= 1 } }
-			random_neighbor_country = {
-				limit = { has_country_flag = puppet_neighbor_counted }
-				remove_country_flag = puppet_neighbor_counted
-				save_event_target_as = puppet_neighbor_1
-			}
+			inline_script = { script = effects/get_puppet_neighbors_effect NUM = 1 }
 		}
 		if = {
-			limit = { check_variable = { which = ver_puppet_neighbors value >= 2 } }
-			random_neighbor_country = {
-				limit = { has_country_flag = puppet_neighbor_counted }
-				remove_country_flag = puppet_neighbor_counted
-				save_event_target_as = puppet_neighbor_2
-			}
+			inline_script = { script = effects/get_puppet_neighbors_effect NUM = 2 }
 		}
 		if = {
-			limit = { check_variable = { which = ver_puppet_neighbors value >= 3 } }
-			random_neighbor_country = {
-				limit = { has_country_flag = puppet_neighbor_counted }
-				remove_country_flag = puppet_neighbor_counted
-				save_event_target_as = puppet_neighbor_3
-			}
+			inline_script = { script = effects/get_puppet_neighbors_effect NUM = 3 }
 		}
 		if = {
-			limit = { check_variable = { which = ver_puppet_neighbors value >= 4 } }
-			random_neighbor_country = {
-				limit = { has_country_flag = puppet_neighbor_counted }
-				remove_country_flag = puppet_neighbor_counted
-				save_event_target_as = puppet_neighbor_4
-			}
+			inline_script = { script = effects/get_puppet_neighbors_effect NUM = 4 }
 		}
 		if = {
-			limit = { check_variable = { which = ver_puppet_neighbors value >= 5 } }
-			random_neighbor_country = {
-				limit = { has_country_flag = puppet_neighbor_counted }
-				remove_country_flag = puppet_neighbor_counted
-				save_event_target_as = puppet_neighbor_5
-			}
+			inline_script = { script = effects/get_puppet_neighbors_effect NUM = 5 }
 		}
 		if = {
-			limit = { check_variable = { which = ver_puppet_neighbors value >= 6 } }
-			random_neighbor_country = {
-				limit = { has_country_flag = puppet_neighbor_counted }
-				remove_country_flag = puppet_neighbor_counted
-				save_event_target_as = puppet_neighbor_6
-			}
+			inline_script = { script = effects/get_puppet_neighbors_effect NUM = 6 }
 		}
 		if = {
-			limit = { check_variable = { which = ver_puppet_neighbors value >= 7 } }
-			random_neighbor_country = {
-				limit = { has_country_flag = puppet_neighbor_counted }
-				remove_country_flag = puppet_neighbor_counted
-				save_event_target_as = puppet_neighbor_7
-			}
+			inline_script = { script = effects/get_puppet_neighbors_effect NUM = 7 }
 		}
 		if = {
-			limit = { check_variable = { which = ver_puppet_neighbors value >= 8 } }
-			random_neighbor_country = {
-				limit = { has_country_flag = puppet_neighbor_counted }
-				remove_country_flag = puppet_neighbor_counted
-				save_event_target_as = puppet_neighbor_8
-			}
+			inline_script = { script = effects/get_puppet_neighbors_effect NUM = 8 }
 		}
 		if = {
-			limit = { check_variable = { which = ver_puppet_neighbors value >= 9 } }
-			random_neighbor_country = {
-				limit = { has_country_flag = puppet_neighbor_counted }
-				remove_country_flag = puppet_neighbor_counted
-				save_event_target_as = puppet_neighbor_9
-			}
+			inline_script = { script = effects/get_puppet_neighbors_effect NUM = 9 }
 		}
 		if = {
-			limit = { check_variable = { which = ver_puppet_neighbors value >= 10 } }
-			random_neighbor_country = {
-				limit = { has_country_flag = puppet_neighbor_counted }
-				remove_country_flag = puppet_neighbor_counted
-				save_event_target_as = puppet_neighbor_10
-			}
+			inline_script = { script = effects/get_puppet_neighbors_effect NUM = 10 }
 		}
 		if = {
-			limit = { check_variable = { which = ver_puppet_neighbors value >= 11 } }
-			random_neighbor_country = {
-				limit = { has_country_flag = puppet_neighbor_counted }
-				remove_country_flag = puppet_neighbor_counted
-				save_event_target_as = puppet_neighbor_11
-			}
+			inline_script = { script = effects/get_puppet_neighbors_effect NUM = 11 }
 		}
 		if = {
-			limit = { check_variable = { which = ver_puppet_neighbors value >= 12 } }
-			random_neighbor_country = {
-				limit = { has_country_flag = puppet_neighbor_counted }
-				remove_country_flag = puppet_neighbor_counted
-				save_event_target_as = puppet_neighbor_12
-			}
+			inline_script = { script = effects/get_puppet_neighbors_effect NUM = 12 }
 		}
 		if = {
-			limit = { check_variable = { which = ver_puppet_neighbors value >= 13 } }
-			random_neighbor_country = {
-				limit = { has_country_flag = puppet_neighbor_counted }
-				remove_country_flag = puppet_neighbor_counted
-				save_event_target_as = puppet_neighbor_13
-			}
+			inline_script = { script = effects/get_puppet_neighbors_effect NUM = 13 }
 		}
 		if = {
-			limit = { check_variable = { which = ver_puppet_neighbors value >= 14 } }
-			random_neighbor_country = {
-				limit = { has_country_flag = puppet_neighbor_counted }
-				remove_country_flag = puppet_neighbor_counted
-				save_event_target_as = puppet_neighbor_14
-			}
+			inline_script = { script = effects/get_puppet_neighbors_effect NUM = 14 }
 		}
 		if = {
-			limit = { check_variable = { which = ver_puppet_neighbors value >= 15 } }
-			random_neighbor_country = {
-				limit = { has_country_flag = puppet_neighbor_counted }
-				remove_country_flag = puppet_neighbor_counted
-				save_event_target_as = puppet_neighbor_15
-			}
+			inline_script = { script = effects/get_puppet_neighbors_effect NUM = 15 }
 		}
 		if = {
-			limit = { check_variable = { which = ver_puppet_neighbors value >= 16 } }
-			random_neighbor_country = {
-				limit = { has_country_flag = puppet_neighbor_counted }
-				remove_country_flag = puppet_neighbor_counted
-				save_event_target_as = puppet_neighbor_16
-			}
+			inline_script = { script = effects/get_puppet_neighbors_effect NUM = 16 }
 		}
 		if = {
-			limit = { check_variable = { which = ver_puppet_neighbors value >= 17 } }
-			random_neighbor_country = {
-				limit = { has_country_flag = puppet_neighbor_counted }
-				remove_country_flag = puppet_neighbor_counted
-				save_event_target_as = puppet_neighbor_17
-			}
+			inline_script = { script = effects/get_puppet_neighbors_effect NUM = 17 }
 		}
 		if = {
-			limit = { check_variable = { which = ver_puppet_neighbors value >= 18 } }
-			random_neighbor_country = {
-				limit = { has_country_flag = puppet_neighbor_counted }
-				remove_country_flag = puppet_neighbor_counted
-				save_event_target_as = puppet_neighbor_18
-			}
+			inline_script = { script = effects/get_puppet_neighbors_effect NUM = 18 }
 		}
 		if = {
-			limit = { check_variable = { which = ver_puppet_neighbors value >= 19 } }
-			random_neighbor_country = {
-				limit = { has_country_flag = puppet_neighbor_counted }
-				remove_country_flag = puppet_neighbor_counted
-				save_event_target_as = puppet_neighbor_19
-			}
+			inline_script = { script = effects/get_puppet_neighbors_effect NUM = 19 }
 		}
 		if = {
-			limit = { check_variable = { which = ver_puppet_neighbors value >= 20 } }
-			random_neighbor_country = {
-				limit = { has_country_flag = puppet_neighbor_counted }
-				remove_country_flag = puppet_neighbor_counted
-				save_event_target_as = puppet_neighbor_20
-			}
+			inline_script = { script = effects/get_puppet_neighbors_effect NUM = 20 }
 		}
 
 		event_target:ver_puppeteer = { country_event = { id = ver.33 } }
@@ -232,264 +132,64 @@ country_event = {
 	}
 
 	option = {
-		name = ver.33.puppet_neighbor_1
-		trigger = { from = { check_variable = { which = ver_puppet_neighbors value >= 1 } } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_200
-				has_resource = { type = influence amount >= 200 }
-			}
-		}
-		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
-		FROM = { declare_war = { target = event_target:puppet_neighbor_1 attacker_war_goal = wg_humiliation } }
+		inline_script = { script = events/puppet_neighbor_list_option NUM = 1 }
 	}
 	option = {
-		name = ver.33.puppet_neighbor_2
-		trigger = { from = { check_variable = { which = ver_puppet_neighbors value >= 2 } } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_200
-				has_resource = { type = influence amount >= 200 }
-			}
-		}
-		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
-		FROM = { declare_war = { target = event_target:puppet_neighbor_2 attacker_war_goal = wg_humiliation } }
+		inline_script = { script = events/puppet_neighbor_list_option NUM = 2 }
 	}
 	option = {
-		name = ver.33.puppet_neighbor_3
-		trigger = { from = { check_variable = { which = ver_puppet_neighbors value >= 3 } } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_200
-				has_resource = { type = influence amount >= 200 }
-			}
-		}
-		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
-		FROM = { declare_war = { target = event_target:puppet_neighbor_3 attacker_war_goal = wg_humiliation } }
+		inline_script = { script = events/puppet_neighbor_list_option NUM = 3 }
 	}
 	option = {
-		name = ver.33.puppet_neighbor_4
-		trigger = { from = { check_variable = { which = ver_puppet_neighbors value >= 4 } } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_200
-				has_resource = { type = influence amount >= 200 }
-			}
-		}
-		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
-		FROM = { declare_war = { target = event_target:puppet_neighbor_4 attacker_war_goal = wg_humiliation } }
+		inline_script = { script = events/puppet_neighbor_list_option NUM = 4 }
 	}
 	option = {
-		name = ver.33.puppet_neighbor_5
-		trigger = { from = { check_variable = { which = ver_puppet_neighbors value >= 5 } } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_200
-				has_resource = { type = influence amount >= 200 }
-			}
-		}
-		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
-		FROM = { declare_war = { target = event_target:puppet_neighbor_5 attacker_war_goal = wg_humiliation } }
+		inline_script = { script = events/puppet_neighbor_list_option NUM = 5 }
 	}
 	option = {
-		name = ver.33.puppet_neighbor_6
-		trigger = { from = { check_variable = { which = ver_puppet_neighbors value >= 6 } } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_200
-				has_resource = { type = influence amount >= 200 }
-			}
-		}
-		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
-		FROM = { declare_war = { target = event_target:puppet_neighbor_6 attacker_war_goal = wg_humiliation } }
+		inline_script = { script = events/puppet_neighbor_list_option NUM = 6 }
 	}
 	option = {
-		name = ver.33.puppet_neighbor_7
-		trigger = { from = { check_variable = { which = ver_puppet_neighbors value >= 7 } } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_200
-				has_resource = { type = influence amount >= 200 }
-			}
-		}
-		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
-		FROM = { declare_war = { target = event_target:puppet_neighbor_7 attacker_war_goal = wg_humiliation } }
+		inline_script = { script = events/puppet_neighbor_list_option NUM = 7 }
 	}
 	option = {
-		name = ver.33.puppet_neighbor_8
-		trigger = { from = { check_variable = { which = ver_puppet_neighbors value >= 8 } } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_200
-				has_resource = { type = influence amount >= 200 }
-			}
-		}
-		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
-		FROM = { declare_war = { target = event_target:puppet_neighbor_8 attacker_war_goal = wg_humiliation } }
+		inline_script = { script = events/puppet_neighbor_list_option NUM = 8 }
 	}
 	option = {
-		name = ver.33.puppet_neighbor_9
-		trigger = { from = { check_variable = { which = ver_puppet_neighbors value >= 9 } } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_200
-				has_resource = { type = influence amount >= 200 }
-			}
-		}
-		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
-		FROM = { declare_war = { target = event_target:puppet_neighbor_9 attacker_war_goal = wg_humiliation } }
+		inline_script = { script = events/puppet_neighbor_list_option NUM = 9 }
 	}
 	option = {
-		name = ver.33.puppet_neighbor_10
-		trigger = { from = { check_variable = { which = ver_puppet_neighbors value >= 10 } } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_200
-				has_resource = { type = influence amount >= 200 }
-			}
-		}
-		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
-		FROM = { declare_war = { target = event_target:puppet_neighbor_10 attacker_war_goal = wg_humiliation } }
+		inline_script = { script = events/puppet_neighbor_list_option NUM = 10 }
 	}
 	option = {
-		name = ver.33.puppet_neighbor_11
-		trigger = { from = { check_variable = { which = ver_puppet_neighbors value >= 11 } } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_200
-				has_resource = { type = influence amount >= 200 }
-			}
-		}
-		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
-		FROM = { declare_war = { target = event_target:puppet_neighbor_11 attacker_war_goal = wg_humiliation } }
+		inline_script = { script = events/puppet_neighbor_list_option NUM = 11 }
 	}
 	option = {
-		name = ver.33.puppet_neighbor_12
-		trigger = { from = { check_variable = { which = ver_puppet_neighbors value >= 12 } } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_200
-				has_resource = { type = influence amount >= 200 }
-			}
-		}
-		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
-		FROM = { declare_war = { target = event_target:puppet_neighbor_12 attacker_war_goal = wg_humiliation } }
+		inline_script = { script = events/puppet_neighbor_list_option NUM = 12 }
 	}
 	option = {
-		name = ver.33.puppet_neighbor_13
-		trigger = { from = { check_variable = { which = ver_puppet_neighbors value >= 13 } } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_200
-				has_resource = { type = influence amount >= 200 }
-			}
-		}
-		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
-		FROM = { declare_war = { target = event_target:puppet_neighbor_13 attacker_war_goal = wg_humiliation } }
+		inline_script = { script = events/puppet_neighbor_list_option NUM = 13 }
 	}
 	option = {
-		name = ver.33.puppet_neighbor_14
-		trigger = { from = { check_variable = { which = ver_puppet_neighbors value >= 14 } } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_200
-				has_resource = { type = influence amount >= 200 }
-			}
-		}
-		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
-		FROM = { declare_war = { target = event_target:puppet_neighbor_14 attacker_war_goal = wg_humiliation } }
+		inline_script = { script = events/puppet_neighbor_list_option NUM = 14 }
 	}
 	option = {
-		name = ver.33.puppet_neighbor_15
-		trigger = { from = { check_variable = { which = ver_puppet_neighbors value >= 15 } } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_200
-				has_resource = { type = influence amount >= 200 }
-			}
-		}
-		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
-		FROM = { declare_war = { target = event_target:puppet_neighbor_15 attacker_war_goal = wg_humiliation } }
+		inline_script = { script = events/puppet_neighbor_list_option NUM = 15 }
 	}
 	option = {
-		name = ver.33.puppet_neighbor_16
-		trigger = { from = { check_variable = { which = ver_puppet_neighbors value >= 16 } } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_200
-				has_resource = { type = influence amount >= 200 }
-			}
-		}
-		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
-		FROM = { declare_war = { target = event_target:puppet_neighbor_16 attacker_war_goal = wg_humiliation } }
+		inline_script = { script = events/puppet_neighbor_list_option NUM = 16 }
 	}
 	option = {
-		name = ver.33.puppet_neighbor_17
-		trigger = { from = { check_variable = { which = ver_puppet_neighbors value >= 17 } } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_200
-				has_resource = { type = influence amount >= 200 }
-			}
-		}
-		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
-		FROM = { declare_war = { target = event_target:puppet_neighbor_17 attacker_war_goal = wg_humiliation } }
+		inline_script = { script = events/puppet_neighbor_list_option NUM = 17 }
 	}
 	option = {
-		name = ver.33.puppet_neighbor_18
-		trigger = { from = { check_variable = { which = ver_puppet_neighbors value >= 18 } } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_200
-				has_resource = { type = influence amount >= 200 }
-			}
-		}
-		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
-		FROM = { declare_war = { target = event_target:puppet_neighbor_18 attacker_war_goal = wg_humiliation } }
+		inline_script = { script = events/puppet_neighbor_list_option NUM = 18 }
 	}
 	option = {
-		name = ver.33.puppet_neighbor_19
-		trigger = { from = { check_variable = { which = ver_puppet_neighbors value >= 19 } } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_200
-				has_resource = { type = influence amount >= 200 }
-			}
-		}
-		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
-		FROM = { declare_war = { target = event_target:puppet_neighbor_19 attacker_war_goal = wg_humiliation } }
+		inline_script = { script = events/puppet_neighbor_list_option NUM = 19 }
 	}
 	option = {
-		name = ver.33.puppet_neighbor_20
-		trigger = { from = { check_variable = { which = ver_puppet_neighbors value >= 20 } } }
-		allow = {
-			custom_tooltip = {
-				fail_text = influencefail_text_veru_200
-				has_resource = { type = influence amount >= 200 }
-			}
-		}
-		add_resource = { influence = -200 }
-		set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
-		FROM = { declare_war = { target = event_target:puppet_neighbor_20 attacker_war_goal = wg_humiliation } }
+		inline_script = { script = events/puppet_neighbor_list_option NUM = 20 }
 	}
 
 	# Back

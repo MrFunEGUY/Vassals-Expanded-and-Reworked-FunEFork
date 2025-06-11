@@ -1,0 +1,11 @@
+name = ver.33.puppet_neighbor_$NUM$
+trigger = { from = { check_variable = { which = ver_puppet_neighbors value >= $NUM$ } } }
+allow = {
+	custom_tooltip = {
+		fail_text = influencefail_text_veru_200
+		has_resource = { type = influence amount >= 200 }
+	}
+}
+add_resource = { influence = -200 }
+set_timed_country_flag = { flag = ver_called_proxy_war years = 5 }
+FROM = { declare_war = { target = event_target:puppet_neighbor_$NUM$ attacker_war_goal = wg_humiliation } }

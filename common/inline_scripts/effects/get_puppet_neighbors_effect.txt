@@ -1,0 +1,6 @@
+limit = { check_variable = { which = ver_puppet_neighbors value >= $NUM$ } }
+random_neighbor_country = {
+	limit = { has_country_flag = puppet_neighbor_counted }
+	remove_country_flag = puppet_neighbor_counted
+	save_event_target_as = puppet_neighbor_$NUM$
+}

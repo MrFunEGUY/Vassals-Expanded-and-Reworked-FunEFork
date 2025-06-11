@@ -1,0 +1,6 @@
+limit = { check_variable = { which = total_relocation_planets value >= $NUM$ } }
+random_owned_planet = {
+	limit = { has_planet_flag = relocation_planet }
+	remove_planet_flag = relocation_planet
+	save_event_target_as = relocation_planet_$NUM$
+}

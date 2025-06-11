@@ -1,0 +1,8 @@
+limit = { check_variable = { which = total_class_leaders value >= $NUM$ } }
+random_owned_leader = {
+	limit = { has_leader_flag = vear_possible_leader }
+	# position = 0
+	# order_by = trigger:leader_age
+	remove_leader_flag = vear_possible_leader
+	save_event_target_as = leader_$NUM$
+}

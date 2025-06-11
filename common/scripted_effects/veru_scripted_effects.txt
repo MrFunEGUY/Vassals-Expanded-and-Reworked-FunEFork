@@ -23,84 +23,34 @@ get_subjects_effect = {
 	}
 
 	if = {
-		limit = { check_variable = { which = veru_total_subjects value >= 1 } }
-		random_subject = {
-			limit = { has_country_flag = subject_country }
-			remove_country_flag = subject_country
-			save_event_target_as = subject_1
-		}
+		inline_script = { script = effects/get_subjects_list_effect NUM = 1 }
 	}
 	if = {
-		limit = { check_variable = { which = veru_total_subjects value >= 2 } }
-		random_subject = {
-			limit = { has_country_flag = subject_country }
-			remove_country_flag = subject_country
-			save_event_target_as = subject_2
-		}
+		inline_script = { script = effects/get_subjects_list_effect NUM = 2 }
 	}
 	if = {
-		limit = { check_variable = { which = veru_total_subjects value >= 3 } }
-		random_subject = {
-			limit = { has_country_flag = subject_country }
-			remove_country_flag = subject_country
-			save_event_target_as = subject_3
-		}
+		inline_script = { script = effects/get_subjects_list_effect NUM = 3 }
 	}
 	if = {
-		limit = { check_variable = { which = veru_total_subjects value >= 4 } }
-		random_subject = {
-			limit = { has_country_flag = subject_country }
-			remove_country_flag = subject_country
-			save_event_target_as = subject_4
-		}
+		inline_script = { script = effects/get_subjects_list_effect NUM = 4 }
 	}
 	if = {
-		limit = { check_variable = { which = veru_total_subjects value >= 5 } }
-		random_subject = {
-			limit = { has_country_flag = subject_country }
-			remove_country_flag = subject_country
-			save_event_target_as = subject_5
-		}
+		inline_script = { script = effects/get_subjects_list_effect NUM = 5 }
 	}
 	if = {
-		limit = { check_variable = { which = veru_total_subjects value >= 6 } }
-		random_subject = {
-			limit = { has_country_flag = subject_country }
-			remove_country_flag = subject_country
-			save_event_target_as = subject_6
-		}
+		inline_script = { script = effects/get_subjects_list_effect NUM = 6 }
 	}
 	if = {
-		limit = { check_variable = { which = veru_total_subjects value >= 7 } }
-		random_subject = {
-			limit = { has_country_flag = subject_country }
-			remove_country_flag = subject_country
-			save_event_target_as = subject_7
-		}
+		inline_script = { script = effects/get_subjects_list_effect NUM = 7 }
 	}
 	if = {
-		limit = { check_variable = { which = veru_total_subjects value >= 8 } }
-		random_subject = {
-			limit = { has_country_flag = subject_country }
-			remove_country_flag = subject_country
-			save_event_target_as = subject_8
-		}
+		inline_script = { script = effects/get_subjects_list_effect NUM = 8 }
 	}
 	if = {
-		limit = { check_variable = { which = veru_total_subjects value >= 9 } }
-		random_subject = {
-			limit = { has_country_flag = subject_country }
-			remove_country_flag = subject_country
-			save_event_target_as = subject_9
-		}
+		inline_script = { script = effects/get_subjects_list_effect NUM = 9 }
 	}
 	if = {
-		limit = { check_variable = { which = veru_total_subjects value >= 10 } }
-		random_subject = {
-			limit = { has_country_flag = subject_country }
-			remove_country_flag = subject_country
-			save_event_target_as = subject_10
-		}
+		inline_script = { script = effects/get_subjects_list_effect NUM = 10 }
 	}
 
 	if = {
@@ -391,104 +341,34 @@ get_leaders_in_class = {
 	# As the scripting language doesn't have proper loops, we use a lot of ifs if there are more than 10, the event can be run again.
 	## If we do ordered_owned_leader and there are more than 10, some will be inaccessible.
 	if = {
-		limit = { check_variable = { which = total_class_leaders value >= 1 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = vear_possible_leader }
-			# position = 0
-			# order_by = trigger:leader_age
-			remove_leader_flag = vear_possible_leader
-			save_event_target_as = leader_1
-		}
+		inline_script = { script = effects/get_leaders_class_effect NUM = 1 }
 	}
 	if = {
-		limit = { check_variable = { which = total_class_leaders value >= 2 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = vear_possible_leader }
-			# position = 0
-			# order_by = trigger:leader_age
-			remove_leader_flag = vear_possible_leader
-			save_event_target_as = leader_2
-		}
+		inline_script = { script = effects/get_leaders_class_effect NUM = 2 }
 	}
 	if = {
-		limit = { check_variable = { which = total_class_leaders value >= 3 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = vear_possible_leader }
-			# position = 0
-			# order_by = trigger:leader_age
-			remove_leader_flag = vear_possible_leader
-			save_event_target_as = leader_3
-		}
+		inline_script = { script = effects/get_leaders_class_effect NUM = 3 }
 	}
 	if = {
-		limit = { check_variable = { which = total_class_leaders value >= 4 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = vear_possible_leader }
-			# position = 0
-			# order_by = trigger:leader_age
-			remove_leader_flag = vear_possible_leader
-			save_event_target_as = leader_4
-		}
+		inline_script = { script = effects/get_leaders_class_effect NUM = 4 }
 	}
 	if = {
-		limit = { check_variable = { which = total_class_leaders value >= 5 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = vear_possible_leader }
-			# position = 0
-			# order_by = trigger:leader_age
-			remove_leader_flag = vear_possible_leader
-			save_event_target_as = leader_5
-		}
+		inline_script = { script = effects/get_leaders_class_effect NUM = 5 }
 	}
 	if = {
-		limit = { check_variable = { which = total_class_leaders value >= 6 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = vear_possible_leader }
-			# position = 0
-			# order_by = trigger:leader_age
-			remove_leader_flag = vear_possible_leader
-			save_event_target_as = leader_6
-		}
+		inline_script = { script = effects/get_leaders_class_effect NUM = 6 }
 	}
 	if = {
-		limit = { check_variable = { which = total_class_leaders value >= 7 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = vear_possible_leader }
-			# position = 0
-			# order_by = trigger:leader_age
-			remove_leader_flag = vear_possible_leader
-			save_event_target_as = leader_7
-		}
+		inline_script = { script = effects/get_leaders_class_effect NUM = 7 }
 	}
 	if = {
-		limit = { check_variable = { which = total_class_leaders value >= 8 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = vear_possible_leader }
-			# position = 0
-			# order_by = trigger:leader_age
-			remove_leader_flag = vear_possible_leader
-			save_event_target_as = leader_8
-		}
+		inline_script = { script = effects/get_leaders_class_effect NUM = 8 }
 	}
 	if = {
-		limit = { check_variable = { which = total_class_leaders value >= 9 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = vear_possible_leader }
-			# position = 0
-			# order_by = trigger:leader_age
-			remove_leader_flag = vear_possible_leader
-			save_event_target_as = leader_9
-		}
+		inline_script = { script = effects/get_leaders_class_effect NUM = 9 }
 	}
 	if = {
-		limit = { check_variable = { which = total_class_leaders value >= 10 } }
-		random_owned_leader = {
-			limit = { has_leader_flag = vear_possible_leader }
-			# position = 0
-			# order_by = trigger:leader_age
-			remove_leader_flag = vear_possible_leader
-			save_event_target_as = leader_10
-		}
+		inline_script = { script = effects/get_leaders_class_effect NUM = 10 }
 	}
 
 	root = { country_event = { id = veru.5100 } }
@@ -834,163 +714,63 @@ get_relocation_planets = {
 	# Next, we save each subject as an Event Target
 	# As the scripting language doesn't have proper loops, we use a lot of ifs if there are more than 10, the event can be run again.
 	if = {
-		limit = { check_variable = { which = total_relocation_planets value >= 1 } }
-		random_owned_planet = {
-			limit = { has_planet_flag = relocation_planet }
-			remove_planet_flag = relocation_planet
-			save_event_target_as = relocation_planet_1
-		}
+		inline_script = { script = effects/get_relocation_planet_effect NUM = 1 }
 	}
 	if = {
-		limit = { check_variable = { which = total_relocation_planets value >= 2 } }
-		random_owned_planet = {
-			limit = { has_planet_flag = relocation_planet }
-			remove_planet_flag = relocation_planet
-			save_event_target_as = relocation_planet_2
-		}
+		inline_script = { script = effects/get_relocation_planet_effect NUM = 2 }
 	}
 	if = {
-		limit = { check_variable = { which = total_relocation_planets value >= 3 } }
-		random_owned_planet = {
-			limit = { has_planet_flag = relocation_planet }
-			remove_planet_flag = relocation_planet
-			save_event_target_as = relocation_planet_3
-		}
+		inline_script = { script = effects/get_relocation_planet_effect NUM = 3 }
 	}
 	if = {
-		limit = { check_variable = { which = total_relocation_planets value >= 4 } }
-		random_owned_planet = {
-			limit = { has_planet_flag = relocation_planet }
-			remove_planet_flag = relocation_planet
-			save_event_target_as = relocation_planet_4
-		}
+		inline_script = { script = effects/get_relocation_planet_effect NUM = 4 }
 	}
 	if = {
-		limit = { check_variable = { which = total_relocation_planets value >= 5 } }
-		random_owned_planet = {
-			limit = { has_planet_flag = relocation_planet }
-			remove_planet_flag = relocation_planet
-			save_event_target_as = relocation_planet_5
-		}
+		inline_script = { script = effects/get_relocation_planet_effect NUM = 5 }
 	}
 	if = {
-		limit = { check_variable = { which = total_relocation_planets value >= 6 } }
-		random_owned_planet = {
-			limit = { has_planet_flag = relocation_planet }
-			remove_planet_flag = relocation_planet
-			save_event_target_as = relocation_planet_6
-		}
+		inline_script = { script = effects/get_relocation_planet_effect NUM = 6 }
 	}
 	if = {
-		limit = { check_variable = { which = total_relocation_planets value >= 7 } }
-		random_owned_planet = {
-			limit = { has_planet_flag = relocation_planet }
-			remove_planet_flag = relocation_planet
-			save_event_target_as = relocation_planet_7
-		}
+		inline_script = { script = effects/get_relocation_planet_effect NUM = 7 }
 	}
 	if = {
-		limit = { check_variable = { which = total_relocation_planets value >= 8 } }
-		random_owned_planet = {
-			limit = { has_planet_flag = relocation_planet }
-			remove_planet_flag = relocation_planet
-			save_event_target_as = relocation_planet_8
-		}
+		inline_script = { script = effects/get_relocation_planet_effect NUM = 8 }
 	}
 	if = {
-		limit = { check_variable = { which = total_relocation_planets value >= 9 } }
-		random_owned_planet = {
-			limit = { has_planet_flag = relocation_planet }
-			remove_planet_flag = relocation_planet
-			save_event_target_as = relocation_planet_9
-		}
+		inline_script = { script = effects/get_relocation_planet_effect NUM = 9 }
 	}
 	if = {
-		limit = { check_variable = { which = total_relocation_planets value >= 10 } }
-		random_owned_planet = {
-			limit = { has_planet_flag = relocation_planet }
-			remove_planet_flag = relocation_planet
-			save_event_target_as = relocation_planet_10
-		}
+		inline_script = { script = effects/get_relocation_planet_effect NUM = 10 }
 	}
 	if = {
-		limit = { check_variable = { which = total_relocation_planets value >= 11 } }
-		random_owned_planet = {
-			limit = { has_planet_flag = relocation_planet }
-			remove_planet_flag = relocation_planet
-			save_event_target_as = relocation_planet_11
-		}
+		inline_script = { script = effects/get_relocation_planet_effect NUM = 11 }
 	}
 	if = {
-		limit = { check_variable = { which = total_relocation_planets value >= 12 } }
-		random_owned_planet = {
-			limit = { has_planet_flag = relocation_planet }
-			remove_planet_flag = relocation_planet
-			save_event_target_as = relocation_planet_12
-		}
+		inline_script = { script = effects/get_relocation_planet_effect NUM = 12 }
 	}
 	if = {
-		limit = { check_variable = { which = total_relocation_planets value >= 13 } }
-		random_owned_planet = {
-			limit = { has_planet_flag = relocation_planet }
-			remove_planet_flag = relocation_planet
-			save_event_target_as = relocation_planet_13
-		}
+		inline_script = { script = effects/get_relocation_planet_effect NUM = 13 }
 	}
 	if = {
-		limit = { check_variable = { which = total_relocation_planets value >= 14 } }
-		random_owned_planet = {
-			limit = { has_planet_flag = relocation_planet }
-			remove_planet_flag = relocation_planet
-			save_event_target_as = relocation_planet_14
-		}
+		inline_script = { script = effects/get_relocation_planet_effect NUM = 14 }
 	}
 	if = {
-		limit = { check_variable = { which = total_relocation_planets value >= 15 } }
-		random_owned_planet = {
-			limit = { has_planet_flag = relocation_planet }
-			remove_planet_flag = relocation_planet
-			save_event_target_as = relocation_planet_15
-		}
+		inline_script = { script = effects/get_relocation_planet_effect NUM = 15 }
 	}
 	if = {
-		limit = { check_variable = { which = total_relocation_planets value >= 16 } }
-		random_owned_planet = {
-			limit = { has_planet_flag = relocation_planet }
-			remove_planet_flag = relocation_planet
-			save_event_target_as = relocation_planet_16
-		}
+		inline_script = { script = effects/get_relocation_planet_effect NUM = 16 }
 	}
 	if = {
-		limit = { check_variable = { which = total_relocation_planets value >= 17 } }
-		random_owned_planet = {
-			limit = { has_planet_flag = relocation_planet }
-			remove_planet_flag = relocation_planet
-			save_event_target_as = relocation_planet_17
-		}
+		inline_script = { script = effects/get_relocation_planet_effect NUM = 17 }
 	}
 	if = {
-		limit = { check_variable = { which = total_relocation_planets value >= 18 } }
-		random_owned_planet = {
-			limit = { has_planet_flag = relocation_planet }
-			remove_planet_flag = relocation_planet
-			save_event_target_as = relocation_planet_18
-		}
+		inline_script = { script = effects/get_relocation_planet_effect NUM = 18 }
 	}
 	if = {
-		limit = { check_variable = { which = total_relocation_planets value >= 19 } }
-		random_owned_planet = {
-			limit = { has_planet_flag = relocation_planet }
-			remove_planet_flag = relocation_planet
-			save_event_target_as = relocation_planet_19
-		}
+		inline_script = { script = effects/get_relocation_planet_effect NUM = 19 }
 	}
 	if = {
-		limit = { check_variable = { which = total_relocation_planets value >= 20 } }
-		random_owned_planet = {
-			limit = { has_planet_flag = relocation_planet }
-			remove_planet_flag = relocation_planet
-			save_event_target_as = relocation_planet_20
-		}
+		inline_script = { script = effects/get_relocation_planet_effect NUM = 20 }
 	}
 }

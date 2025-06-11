@@ -1,0 +1,6 @@
+limit = { check_variable = { which = num_border_subjects value >= $NUM$ } }
+random_subject = {
+	limit = { has_country_flag = border_subject }
+	remove_country_flag = border_subject
+	save_global_event_target_as = border_subject_$NUM$
+}
