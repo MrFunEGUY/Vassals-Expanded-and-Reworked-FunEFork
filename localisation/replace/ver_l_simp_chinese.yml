@@ -13,46 +13,46 @@ l_simp_chinese:
  # Vassals Expanded and reworked
  ####################################
 
- ##### 附庸 types #####
+ ##### Subject types #####
 
- preset_ver_foederatus: "同谋邦"
- preset_ver_foederatus_desc:"同谋邦与他们的宗主双方都必须参加对方的战争。与宗主的例行联合军事演习能磨练双方的武装力量。\n\n§Y补贴§!: §R5%§! £alloys£ §H合金§!\n§W特殊效果:§! \n§Y附庸§!: £mod_ship_damage_mult£ 舰船武器伤害: §G+10%§!, £navy_size£ 海军容量: §G+25%§!\n§Y宗主§!: £mod_ship_damage_mult£ 舰船武器伤害: §G+2%§!, £navy_size£ 海军容量: §R-2%§!"
+preset_ver_foederatus: "同盟军"
+preset_ver_foederatus_desc:"同盟军与其宗主建立军事同盟关系，双方需参与彼此的战争。定期的联合军演可提升双方武装力量效能。\n\n§Y补贴§!: §R5%§! £alloys£ §H合金§!\n§W特殊效果:§! \n§Y附庸§!: £mod_ship_damage_mult£ 舰船武器伤害: §G+10%§!，£navy_size£ 海军容量: §G+25%§!\n§Y宗主§!: £mod_ship_damage_mult£ 舰船武器伤害: §G+2%§!，£navy_size£ 海军容量: §R-2%§!"
 
- preset_ver_satellite: "卫星国"
- preset_ver_satellite_desc:"卫星国在其外交事务中受到限制，实际上已被解除武装。剩下的任何重工业都被用来增强宗主的军事能力。\n\n§Y贡品§!: §G15%§! £alloys£ §H合金§!\n§W特殊效果:§! \n§Y附庸§!: £navy_size£ 海军容量: §R-50%§!\n§Y宗主§!: £navy_size£ 海军容量: §G+2%§!"
+preset_ver_satellite: "卫星国"
+preset_ver_satellite_desc:"卫星国的外交活动受限且实质上被解除武装，其残余重工业用于增强宗主军事实力。\n\n§Y贡赋§!: §G15%§! £alloys£ §H合金§!\n§W特殊效果:§! \n§Y附庸§!: £navy_size£ 海军容量: §R-50%§!\n§Y宗主§!: £navy_size£ 海军容量: §G+2%§!"
 
- preset_ver_jrpartner: "初级合作国"
- preset_ver_jrpartner_desc:"初级合作国协助他们的宗主进行研究。\n\n§Y贡品§!: §G10%§! £society_research£ £engineering_research£ £physics_research£ §H研究§!\n§Y补贴§!: §R10%§! £exotic_gases£ §H异星天然气§!\n§W特殊效果:§! \n§Y附庸§!: 对宗主已知的科技花费§G-85%§!\n§Y宗主§!: 研究速度: §G+2%§!"
+preset_ver_jrpartner: "次级伙伴国"
+preset_ver_jrpartner_desc:"次级伙伴国协助宗主进行科研。\n\n§Y贡赋§!: §G10%§! £society_research£ £engineering_research£ £physics_research£ §H研究§!\n§Y补贴§!: §R10%§! £exotic_gases£ §H稀有气体§!\n§W特殊效果:§! \n§Y附庸§!: 已知宗主科技研究成本 §G-85%§!\n§Y宗主§!: 研究速度: §G+2%§!"
 
- preset_ver_dependency: "门徒邦"
- preset_ver_dependency_desc:"门徒邦负责为其宗主进行国内宣传。\n\n§Y贡品§!: §G15%§! £unity£ §H凝聚力§!\n§Y补贴§!: §R5%§! £energy£ §H能量币§!\n§W特殊效果:§! \n§Y宗主§!: £unity£ §H凝聚力§!: §G+2%§!"
+preset_ver_dependency: "附属宣传区"
+preset_ver_dependency_desc:"附属宣传区负责为宗主生产本土宣传内容。\n\n§Y贡赋§!: §G15%§! £unity£ §H凝聚力§!\n§Y补贴§!: §R5%§! £energy£ §H能源§!\n§W特殊效果:§! \n§Y宗主§!: £unity£ §H凝聚力§!: §G+2%§!"
 
- preset_ver_clientkingdom: "附属王国"
- preset_ver_clientkingdom_desc:"附属王国通常由其宗主特别挑选统治者，以确保其忠诚。\n\n§Y补贴§!: §R10%§! £energy£ §H能量币§!, §R5%§! £consumer_goods£ §H消费品§!\n§W特殊效果:§! \n§Y附庸§!: £stability£ §H稳定度§!: §R-5§!\n§Y宗主§!: £stability£ §H稳定度§!: §G+1§!"
- 
- preset_ver_devolved: "分权邦"
- preset_ver_devolved_desc:"分权邦对国内事务拥有完全的主权。\n\n§Y贡品§!: £influence£ §G+0.5§!\n§W特殊效果:§! \n§Y附庸§!: £happiness£ 幸福度: §G+10%§!\n§Y宗主§!: £mod_pop_government_ethic_attraction£ 主流思潮吸引力: §G+5%§!"
+preset_ver_clientkingdom: "附庸王国"
+preset_ver_clientkingdom_desc:"附庸王国的统治者通常由宗主指定以确保忠诚。\n\n§Y补贴§!: §R10%§! £energy£ §H能源§!，§R5%§! £consumer_goods£ §H消费品§!\n§W特殊效果:§! \n§Y附庸§!: £stability£ §H稳定度§!: §R-5§!，£diplo_weight£ 外交权重: §R-50%§!\n§Y宗主§!: £stability£ §H稳定度§!: §G+3§! \n§E宗主特效§!: 永久指定附庸统治者"
 
- preset_ver_condo: "共管国"
- preset_ver_condo_desc:"共管国对其外交事务拥有完全主权，其是全银河外交官的中立性会面地点。\n§W特殊效果:§! \n§Y附庸§!: £diplo_weight£ 外交权重: §G+20%§!\n§Y宗主§!: £diplo_weight£ 外交权重: §G+2%§!"
+preset_ver_devolved: "分权邦"
+preset_ver_devolved_desc:"分权邦拥有完全内政主权。\n\n§Y贡赋§!: £influence£ §G+0.5§!\n§W特殊效果:§! \n§Y附庸§!: £happiness£ 幸福度: §G+10%§!\n§Y宗主§!: £mod_pop_government_ethic_attraction£ 主流思潮吸引力: §G+5%§!"
 
- preset_ver_puppet: "傀儡国"
- preset_ver_puppet_desc: "傀儡国可以被用来为其宗主打代理人战争。\n\n§Y贡品§!: §G10%§! £energy£ §H能量币§!, §G10%§! £food£ §HFood§!\n§W特殊效果:§! \n§Y附庸§!: £happiness£ 幸福度: §R-10%§!\n§Y宗主§!: £happiness£ 幸福度: §G+2%§!"
+preset_ver_condo: "共管域"
+preset_ver_condo_desc:"共管域拥有完全外交主权，作为银河外交官的中立会议场所。\n\n§W特殊效果:§! \n§Y附庸§!: £diplo_weight£ 外交权重: §G+20%§!\n§Y宗主§!: £diplo_weight£ 外交权重: §G+5%§!"
 
- preset_ver_neocolony: "新殖民地国家"
- preset_ver_neocolony_desc: "新殖民地国家是在经济上由其宗主统治的国家。\n\n§Y贡品§!: §G15%§! £energy£ §H能量币§!\n§Y补贴§!: §R5%§! £consumer_goods£ §H消费品§!\n§W特殊效果:§! \n§Y附庸§!: £trade_value£ 贸易价值: §G+10%§!, £crime£ 犯罪度: §R+30%§!\n§Y宗主§!: £trade_value£ 贸易价值: §G+2%§!"
+preset_ver_puppet: "傀儡国"
+preset_ver_puppet_desc: "傀儡国可代宗主进行代理人战争。\n\n§Y贡赋§!: §G10%§! £energy£ §H能源§!，§G10%§! £food£ §H食物§!\n§W特殊效果:§! \n§Y附庸§!: £happiness£ 幸福度: §R-10%§!\n§Y宗主§!: £happiness£ 幸福度: §G+2%§!"
 
- preset_ver_blood: "血邦"
- preset_ver_blood_desc:"血邦支付一种特殊的贡品——§Y血税§!。\n\n§Y贡品§!: 每15年 §G5%§! 的 £pops£ §H人口§!\n§W特殊效果:§! \n§Y附庸§!: §R-1000§! £opinion£ 对宗主 §H评价§!"
+preset_ver_neocolony: "新殖民区"
+preset_ver_neocolony_desc: "新殖民区经济受宗主支配。\n\n§Y贡赋§!: §G15%§! £energy£ §H能源§!\n§Y补贴§!: §R5%§! £consumer_goods£ §H消费品§!\n§W特殊效果:§! \n§Y附庸§!: £trade_value£ 贸易额: §G+10%§!，£crime£ 犯罪率: §R+30%§!\n§Y宗主§!: £trade_value£ 贸易额: §G+2%§!"
 
- preset_ver_appendage: "下属国"
- preset_ver_appendage_desc:"下属国可以被整合。"
+preset_ver_blood: "血邦"
+preset_ver_blood_desc:"血邦需缴纳特殊贡赋——§Y血税§!。\n\n§Y贡赋§!: 每15年征收§G5%§! £pops£ §H人口§!\n§W特殊效果:§! \n§Y附庸§!: 对宗主£opinion£ §H评价§!: §R-1000§!"
 
- preset_ver_organic: "有机附属品"
- preset_ver_organic_desc:"有机附属品没有外交自由，但不能被整合，并受到其宗主的保护。"
+preset_ver_appendage: "附属体"
+preset_ver_appendage_desc:"附属体可被兼并。"
 
- preset_ver_parallel: "协处理器"
- preset_ver_parallel_desc:"附庸和他们的宗主的联合计算能力使效率大大提高。\n§W特殊效果:§! \n宗主: 研究速度: §G+5%§! 每个 §Y$preset_ver_parallel$§!"
+preset_ver_organic: "有机附属体"
+preset_ver_organic_desc:"有机附属体无外交自由，但受宗主保护且不可兼并"
+
+preset_ver_parallel: "并行处理器"
+preset_ver_parallel_desc:"附庸与宗主的联合算力实现效率飞跃。\n§W特殊效果:§! \n宗主: 每拥有§Y$preset_ver_parallel$§!，研究速度§G+5%§!"
 
  # Term Window:
  preset_ver_foederatus_flavor_desc: "$preset_ver_foederatus_desc$"
@@ -71,7 +71,7 @@ l_simp_chinese:
  preset_ver_parallel_flavor_desc: "$preset_ver_parallel_desc$"
 
  ver.33.name: "代理人战争 - 目标"
- ver.33.desc: "[event_target:chosen_subject.GetName]与以下不属于我方的国家接壤。他们应该攻击哪一国？"
+ ver.33.desc: "[event_target:chosen_subject.GetName]与以下未与我方结盟的国家接壤。他们应该攻击哪一国？"
  ver.33.puppet_neighbor_1: "[puppet_neighbor_1.GetName]"
  ver.33.puppet_neighbor_2: "[puppet_neighbor_2.GetName]"
  ver.33.puppet_neighbor_3: "[puppet_neighbor_3.GetName]"
@@ -105,27 +105,28 @@ l_simp_chinese:
  ver.40.thrall.tooltip: "[This.ver_blood_tributary_total_population] £pops£ §H人口§!将会被分配到我们的奴隶星球上。"
 
  ##### Modifiers #####
- ## 评价/opinion modifiers
+ ## Opinion modifiers
  ver_triggered_opinion_serfdom: "附属"
  ver_triggered_opinion_puppeteer: "宗主"
- ver_triggered_opinion_blood: "血之贡品"
- ver_triggered_opinion_condo: "共管国"
+ ver_triggered_opinion_blood: "血税贡赋"
+ ver_triggered_opinion_condo: "共管域"
  opinion_installed_as_vassal_leader: "安排了统治者"
+ opinion_stopped_tribute: "停止上交贡赋"
  
  # Edict
  edict_veru_manage_subject: "管理附庸国"
  edict_veru_manage_subject_desc: "允许我们管理附属国。"
  edict_veru_manage_subject_tooltip: "允许我们管理附属国。"
 
- edict_veru_cancel_tribute: "停止致敬"
- edict_veru_cancel_tribute_desc: "我们将停止向 §Y[overlord.GetName]§!"
+ edict_veru_cancel_tribute: "停止缴纳贡赋"
+ edict_veru_cancel_tribute_desc: "我们将停止向§Y[overlord.GetName]§!缴纳贡赋！"
 
- edict_veru_unlimited_special_subjects: "未封顶的专业科目"
- edict_veru_unlimited_special_subjects_desc: "取消专业科目的上限，目前每个专业科目的上限为 §P1§!"
- edict_veru_unlimited_special_subjects_2: "专业科目： 不封顶"
- edict_veru_unlimited_special_subjects_2_desc: "目前未设上限的专业科目"
+ edict_veru_unlimited_special_subjects: "解除专项附庸国上限"
+ edict_veru_unlimited_special_subjects_desc: "解除当前§P每种仅限1个§!的专项附庸国数量限制"
+ edict_veru_unlimited_special_subjects_2: "专项附庸国：无上限状态"
+ edict_veru_unlimited_special_subjects_2_desc: "恢复专项附庸国数量上限（当前为§P无上限§!）"
  
- # Manage subject
+ # Manage Subject
  veru.1000.name: "管理附庸国"
  veru.1000.desc: "需要处理哪个附庸国？"
  veru.1000.desc.fail: "我们没有可以管理的附庸国。"
@@ -145,48 +146,55 @@ l_simp_chinese:
  veru.1000.subject_13: "§Y[event_target:subject_13.GetName]§!"
  veru.1000.subject_14: "§Y[event_target:subject_14.GetName]§!"
  veru.1000.subject_15: "§Y[event_target:subject_15.GetName]§!"
- veru.nevermind: "我改变主意了。"
- veru.remain: "保持原样。"
+ veru.nevermind: "算了。"
+ veru.remain: "维持现状。"
+ veru.our_leaders: "还是从我方领袖中指定。"
+ veru.their_leaders: "还是从附庸领袖中指定。"
+ veru.another_class: "还是另选领袖类型。"
+ veru.something_else: "还是需要调整其他事项。"
 
- # Change 附庸 Type or Name
- veru.1050.name: "§Y[event_target:chosen_subject.GetName]§! 的 [event_target:chosen_subject.ruler.GetTitle] §H[event_target:chosen_subject.ruler.GetName]§!"
- veru.1050.loyal.desc: "我该如何服务§Y[root.GetName]§!？"
- veru.1050.disloyal.desc: "您想要什么？"
- veru.1050.exile.desc: "我们很感谢您在我们国家这个困难时期接待我们。"
+ # Change Subject Type or Name
+veru.1050.name: "§Y[event_target:chosen_subject.GetName]§!的[event_target:chosen_subject.ruler.GetTitle] §H[event_target:chosen_subject.ruler.GetName]§!"
+veru.1050.loyal.desc: "臣当如何效忠§Y[root.GetName]§!？"
+veru.1050.disloyal.desc: "有何贵干？"
+veru.1050.exile.desc: "感谢贵国在此艰难时期收容我等。"
 
- veru.1050.type: "我们需要改变我们的关系。"
- veru.1050.gov: "我们需要改变你们的管理结构。"
- veru.1050.faction: "我们需要赋予你们政府中的一个派别权力。"
- veru.1050.cap: "我们需要迁移你们的首都。"
- veru.1050.leader: "我们要安排一个新领袖。"
- veru.1050.proxy: "我们要发起一场代理人战争。"
- veru.1050.tech: "我们要让你们可以使用我们的所有科技。"
- veru.1050.exile: "我们会给你们领土。"
- veru.1050.tech.tooltip: "§Y[event_target:chosen_subject.GetName]§!将获得我们迄今为止研究的所有技术。"
- veru.1050.name_change: "我们要改变你们国家的名称。"
- veru.2000.empire_name_change.tooltip: "§Y[event_target:chosen_subject.GetName]§! 将被重命名为 §Y[root.capital_scope.solar_system.GetName]§!."
+veru.1050.type: "需调整双边关系。"
+veru.1050.gov: "需改革你国政体。"
+veru.1050.faction: "需扶植你国政府派系。"
+veru.1050.cap: "需迁移你国首都。"
+veru.1050.leader: "将任命新领袖。"
+veru.1050.proxy: "即将发动代理人战争。"
+veru.1050.tech: "将向你国开放全部科技。"
+veru.1050.exile: "将为你方提供领土。"
+veru.1050.tech.tooltip: "§Y[event_target:chosen_subject.GetName]§!将获得我方所有已研发科技。"
+veru.1050.name_change: "将更改你国政府称谓。"
 
- # Change subject Type
+veru.2000.empire_name_change.tooltip: "§Y[event_target:chosen_subject.GetName]§!将更名为§Y[root.capital_scope.solar_system.GetName]§!。"
+veru.2000.male_ruler_title_name_change.tooltip: "§Y[event_target:chosen_subject.GetName]§!男性统治者头衔将变更为§Y[root.capital_scope.solar_system.GetName]§!。"
+veru.2000.female_ruler_title_name_change.tooltip: "§Y[event_target:chosen_subject.GetName]§!女性统治者头衔将变更为§Y[root.capital_scope.solar_system.GetName]§!。"
+
+ # Change Subject Type
  veru.subject_leader.name: "[event_target:chosen_subject.GetName] 的 §H[event_target:chosen_subject.ruler.GetTitle]§! §H[event_target:chosen_subject.ruler.GetName]§!"
 
  # Change Subject Names
- veru.2000.loyal.desc: "What aspect of our government would you like renamed?"
- veru.2000.disloyal.desc: "What is being renamed?"
+veru.2000.loyal.desc: "您欲更改我国政府哪项称谓？"
+veru.2000.disloyal.desc: "你们要改什么名称？"
 
- veru.2000.empire: "Your §YEmpire§! is being renamed."
- veru.2000.male_ruler_title: "The §Ytitle§! of your §Ymale§! rulers is being changed."
- veru.2000.female_ruler_title: "The §Ytitle§! of your §Yfemale§! rulers is being changed."
+veru.2000.empire: "你国§Y国名§!将被更改。"
+veru.2000.male_ruler_title: "你国§Y男性统治者头衔§!将被变更。"
+veru.2000.female_ruler_title: "你国§Y女性统治者头衔§!将被变更。"
 
- veru.3000.authoritarian: "With more £authoritarian£ Authoritarian influence."
- veru.3000.egalitarian: "With more £egalitarian£ Egalitarian influence."
- veru.3000.spiritualist: "With more £spiritualist£ Spiritualist influence."
- veru.3000.materialist: "With more £materialist£ Materialist influence."
- veru.3000.militarist: "With more £militarist£ Militarist influence."
- veru.3000.pacifist: "With more £pacifist£ Pacifist influence."
- veru.3000.xenophobe: "With more £xenophobe£ Xenophobic influence."
- veru.3000.xenophile: "With more £xenophile£ Xenophilic influence."
- veru.3000.socialism: "With more £socialism£ Socialist influence."
- veru.3000.capitalism: "With more £capitalism£ Capitalist influence."
+veru.3000.authoritarian: "增加£authoritarian£威权主义影响力"
+veru.3000.egalitarian: "增加£egalitarian£平等主义影响力"
+veru.3000.spiritualist: "增加£spiritualist£唯心主义影响力"
+veru.3000.materialist: "增加£materialist£唯物主义影响力"
+veru.3000.militarist: "增加£militarist£军国主义影响力"
+veru.3000.pacifist: "增加£pacifist£和平主义影响力"
+veru.3000.xenophobe: "增加£xenophobe£排外主义影响力"
+veru.3000.xenophile: "增加£xenophile£亲外主义影响力"
+veru.3000.socialism: "增加£socialism£社会主义影响力"
+veru.3000.capitalism: "增加£capitalism£资本主义影响力"
 
  # Change Government Type
  veru.4000.loyal.desc: "您想要§Y[event_target:chosen_subject.GetName]§!采用什么权力制度？"
@@ -205,409 +213,425 @@ l_simp_chinese:
  veru.4000.direct_democratic: "采用 §Y直接民主制§!."
 
  # Change Leader
- veru.5000.loyal.desc: "虽然我更愿意继续掌权，但我会按照命令行事。$veru.subject_ruler_bio$"
- veru.5000.disloyal.desc: "这太离谱了！$veru.subject_ruler_bio$"
- veru.subject_ruler_bio: "\n\n§L=======================§!\n\n§H[event_target:chosen_subject.ruler.GetTitle]§! [event_target:chosen_subject.ruler.GetName]'s §BBio§! - \n\n§LAge§!: [event_target:chosen_subject.ruler.GetAge] \n§LAffiliation§!: §Y[event_target:chosen_subject.ruler.GetBackgroundEthic]§! \n§LLength of Service§!: §Y[event_target:chosen_subject.ruler.GetYearsOfService]§! \n§LHomeworld§!: §Y[event_target:chosen_subject.ruler.GetBackgroundPlanet]§! in the §Y[event_target:chosen_subject.ruler.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[event_target:chosen_subject.ruler.GetBackgroundJob]§! \n§LSkill Level§!: §Y[event_target:chosen_subject.ruler.GetSkill]§!"
+veru.5000.loyal.desc: "虽然我更愿意继续留任，但我会按照命令行事。$veru.subject_ruler_bio$"
+veru.5000.disloyal.desc: "岂有此理！$veru.subject_ruler_bio$"
+veru.subject_ruler_bio: "\n\n§L=======================§!\n\n§H[event_target:chosen_subject.ruler.GetTitle]§! [event_target:chosen_subject.ruler.GetName]的§B履历§! - \n\n§L年龄§!: [event_target:chosen_subject.ruler.GetAge] \n§L执政年限§!: §Y[event_target:chosen_subject.ruler.GetYearsOfService]§! \n§L母星§!: §Y[event_target:chosen_subject.ruler.GetBackgroundPlanet]§!（位于§Y[event_target:chosen_subject.ruler.background_planet.solar_system.GetName]§!星系）\n§L前职§!: §Y[event_target:chosen_subject.ruler.GetBackgroundJob]§! \n§L能力等级§!: §Y[event_target:chosen_subject.ruler.GetSkill]§! \n\n§L派系归属§!: §Y[event_target:chosen_subject.ruler.HasEthicIcon]§!"
 
- veru.5000.official.ours: "我们将派一名§Y$official_plural_with_icon$§!接任职务。"
- veru.5000.official.theirs: "我们将使用他们的§Y$official_plural_with_icon$§!之一。"
- veru.5000.commander.ours: "我们将派一名§Y$commander_plural_with_icon$§!接任职务。"
- veru.5000.commander.theirs: "我们将使用他们的§Y$commander_plural_with_icon$§!之一。"
- veru.5000.scientist.ours: "我们将派一名§Y$scientist_plural_with_icon$§!接任职务。"
- veru.5000.scientist.theirs: "我们将使用他们的§Y$scientist_plural_with_icon$§!之一。"
+veru.5000.official.ours: "将由我方§Y$official_plural_with_icon$§!接任。"
+veru.5000.official.theirs: "将由你国§Y$official_plural_with_icon$§!接任。"
+veru.5000.commander.ours: "将由我方§Y$commander_plural_with_icon$§!接任。"
+veru.5000.commander.theirs: "将由你国§Y$commander_plural_with_icon$§!接任。"
+veru.5000.scientist.ours: "将由我方§Y$scientist_plural_with_icon$§!接任。"
+veru.5000.scientist.theirs: "将由你国§Y$scientist_plural_with_icon$§!接任。"
 
-  # Leaders
- leader_install_effect_end: "will be installed as the §H[event_target:chosen_subject.GetRulerTitle]§! of the §Y[event_target:chosen_subject.GetName]§!\n"
+NO_SUBCLASS: "§Y无§!"
+LEADER_SUBCLASS: "[this.GetSubClass]"
 
- veru.5000.leader_1: "§Y[leader_1.GetName]§!: Age - [leader_1.GetAge] | [leader_1.HasEthicIcon]"
- veru.5000.leader_1.heir: "§H[leader_1.owner.GetHeirTitle]§! $veru.5000.leader_1$"
- veru.5000.leader_1.councilor: "§H[leader_1.GetTitle]§! $veru.5000.leader_1$"
- 
- veru.5000.leader_1.tooltip: "\n§Y[leader_1.GetName]'s§! §BBio§! - \n§LLength of Service§!: §Y[leader_1.GetYearsOfService]§! \n§LHomeworld§!: §Y[leader_1.GetBackgroundPlanet]§! in the §Y[leader_1.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[leader_1.GetBackgroundJob]§! \n§LSkill Level§!: §Y[leader_1.GetSkill]§!"
- veru.5000.leader_1.effect_desc: "§Y[leader_1.GetName]§! $leader_install_effect_end$"
- 
- veru.5000.leader_2: "§Y[leader_2.GetName]§!: Age - [leader_2.GetAge] | [leader_2.HasEthicIcon]"
- veru.5000.leader_2.heir: "§H[leader_2.owner.GetHeirTitle]§! $veru.5000.leader_2$"
- veru.5000.leader_2.councilor: "§H[leader_2.GetTitle]§! $veru.5000.leader_2$"
- 
- veru.5000.leader_2.tooltip: "\n§Y[leader_2.GetName]'s§! §BBio§! - \n§LLength of Service§!: §Y[leader_2.GetYearsOfService]§! \n§LHomeworld§!: §Y[leader_2.GetBackgroundPlanet]§! in the §Y[leader_1.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[leader_2.GetBackgroundJob]§! \n§LSkill Level§!: §Y[leader_2.GetSkill]§!"
- veru.5000.leader_2.effect_desc: "§Y[leader_2.GetName]§! $leader_install_effect_end$"
- 
- veru.5000.leader_3: "§Y[leader_3.GetName]§!: Age - [leader_3.GetAge] | [leader_3.HasEthicIcon]"
- veru.5000.leader_3.heir: "§H[leader_3.owner.GetHeirTitle]§! §Y[leader_3.GetName]§!: Age - [leader_3.GetAge] | [leader_3.HasEthicIcon]"
- veru.5000.leader_3.councilor: "§H[leader_3.GetTitle]§! §Y[leader_3.GetName]§!: Age - [leader_3.GetAge] | [leader_3.HasEthicIcon]"
- 
- veru.5000.leader_3.tooltip: "\n§Y[leader_3.GetName]'s§! §BBio§! - \n§LLength of Service§!: §Y[leader_3.GetYearsOfService]§! \n§LHomeworld§!: §Y[leader_3.GetBackgroundPlanet]§! in the §Y[leader_1.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[leader_3.GetBackgroundJob]§! \n§LSkill Level§!: §Y[leader_3.GetSkill]§!"
- veru.5000.leader_3.effect_desc: "§Y[leader_3.GetName]§! $leader_install_effect_end$"
- 
- veru.5000.leader_4: "§Y[leader_4.GetName]§!: Age - [leader_4.GetAge] | [leader_4.HasEthicIcon]"
- veru.5000.leader_4.heir: "§H[leader_4.owner.GetHeirTitle]§! $veru.5000.leader_4$"
- veru.5000.leader_4.councilor: "§H[leader_4.GetTitle]§! $veru.5000.leader_4$"
- 
- veru.5000.leader_4.tooltip: "\n§Y[leader_4.GetName]'s§! §BBio§! - \n§LLength of Service§!: §Y[leader_4.GetYearsOfService]§! \n§LHomeworld§!: §Y[leader_4.GetBackgroundPlanet]§! in the §Y[leader_1.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[leader_4.GetBackgroundJob]§! \n§LSkill Level§!: §Y[leader_4.GetSkill]§!"
- veru.5000.leader_4.effect_desc: "§Y[leader_4.GetName]§! $leader_install_effect_end$"
- 
- veru.5000.leader_5: "§Y[leader_5.GetName]§!: Age - [leader_5.GetAge] | [leader_5.HasEthicIcon]"
- veru.5000.leader_5.heir: "§H[leader_5.owner.GetHeirTitle]§! $veru.5000.leader_5$"
- veru.5000.leader_5.councilor: "§H[leader_5.GetTitle]§! $veru.5000.leader_5$"
- 
- veru.5000.leader_5.tooltip: "\n§Y[leader_5.GetName]'s§! §BBio§! - \n§LLength of Service§!: §Y[leader_5.GetYearsOfService]§! \n§LHomeworld§!: §Y[leader_5.GetBackgroundPlanet]§! in the §Y[leader_1.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[leader_5.GetBackgroundJob]§! \n§LSkill Level§!: §Y[leader_5.GetSkill]§!"
- veru.5000.leader_5.effect_desc: "§Y[leader_5.GetName]§! $leader_install_effect_end$"
- 
- veru.5000.leader_6: "§Y[leader_6.GetName]§!: Age - [leader_6.GetAge] | [leader_6.HasEthicIcon]"
- veru.5000.leader_6.heir: "§H[leader_6.owner.GetHeirTitle]§! $veru.5000.leader_6$"
- veru.5000.leader_6.councilor: "§H[leader_6.GetTitle]§! $veru.5000.leader_6$"
- 
- veru.5000.leader_6.tooltip: "\n§Y[leader_6.GetName]'s§! §BBio§! - \n§LLength of Service§!: §Y[leader_6.GetYearsOfService]§! \n§LHomeworld§!: §Y[leader_6.GetBackgroundPlanet]§! in the §Y[leader_1.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[leader_6.GetBackgroundJob]§! \n§LSkill Level§!: §Y[leader_6.GetSkill]§!"
- veru.5000.leader_6.effect_desc: "§Y[leader_6.GetName]§! $leader_install_effect_end$"
- 
- veru.5000.leader_7: "§Y[leader_7.GetName]§!: Age - [leader_7.GetAge] | [leader_7.HasEthicIcon]"
- veru.5000.leader_7.heir: "§H[leader_7.owner.GetHeirTitle]§! $veru.5000.leader_7$"
- veru.5000.leader_7.councilor: "§H[leader_7.GetTitle]§! $veru.5000.leader_7$"
- 
- veru.5000.leader_7.tooltip: "\n§Y[leader_7.GetName]'s§! §BBio§! - \n§LLength of Service§!: §Y[leader_7.GetYearsOfService]§! \n§LHomeworld§!: §Y[leader_7.GetBackgroundPlanet]§! in the §Y[leader_1.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[leader_7.GetBackgroundJob]§! \n§LSkill Level§!: §Y[leader_7.GetSkill]§!"
- veru.5000.leader_7.effect_desc: "§Y[leader_7.GetName]§! $leader_install_effect_end$"
- 
- veru.5000.leader_8: "§Y[leader_8.GetName]§!: Age - [leader_8.GetAge] | [leader_8.HasEthicIcon]"
- veru.5000.leader_8.heir: "§H[leader_8.owner.GetHeirTitle]§! $veru.5000.leader_8$"
- veru.5000.leader_8.councilor: "§H[leader_8.GetTitle]§! $veru.5000.leader_8$"
- 
- veru.5000.leader_8.tooltip: "\n§Y[leader_8.GetName]'s§! §BBio§! - \n§LLength of Service§!: §Y[leader_8.GetYearsOfService]§! \n§LHomeworld§!: §Y[leader_8.GetBackgroundPlanet]§! in the §Y[leader_1.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[leader_8.GetBackgroundJob]§! \n§LSkill Level§!: §Y[leader_8.GetSkill]§!"
- veru.5000.leader_8.effect_desc: "§Y[leader_8.GetName]§! $leader_install_effect_end$"
- 
- veru.5000.leader_9: "§Y[leader_9.GetName]§!: Age - [leader_9.GetAge] | [leader_9.HasEthicIcon]"
- veru.5000.leader_9.heir: "§H[leader_9.owner.GetHeirTitle]§! $veru.5000.leader_9$"
- veru.5000.leader_9.councilor: "§H[leader_9.GetTitle]§! $veru.5000.leader_9$"
- 
- veru.5000.leader_9.tooltip: "\n§Y[leader_9.GetName]'s§! §BBio§! - \n§LLength of Service§!: §Y[leader_9.GetYearsOfService]§! \n§LHomeworld§!: §Y[leader_9.GetBackgroundPlanet]§! in the §Y[leader_1.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[leader_9.GetBackgroundJob]§! \n§LSkill Level§!: §Y[leader_9.GetSkill]§!"
- veru.5000.leader_9.effect_desc: "§Y[leader_9.GetName]§! $leader_install_effect_end$"
- 
- veru.5000.leader_10: "§Y[leader_10.GetName]§!: Age - [leader_10.GetAge] | [leader_10.HasEthicIcon]"
- veru.5000.leader_10.heir: "§H[leader_10.owner.GetHeirTitle]§! $veru.5000.leader_10$"
- veru.5000.leader_10.councilor: "§H[leader_10.GetTitle]§! $veru.5000.leader_10$"
+ # Leaders
+leader_install_effect_end: "将被任命为§Y[event_target:chosen_subject.GetName]§!的§H[event_target:chosen_subject.GetRulerTitle]§!\n"
 
- veru.5000.leader_10.tooltip: "\n§Y[leader_10.GetName]'s§! §BBio§! - \n§LLength of Service§!: §Y[leader_10.GetYearsOfService]§! \nHomeworld:  §Y[leader_10.GetBackgroundPlanet]§! in the §Y[leader_1.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[leader_10.GetBackgroundJob]§! \n§LSkill Level§!: §Y[leader_10.GetSkill]§!"
- veru.5000.leader_10.effect_desc: "§Y[leader_10.GetName]§! $leader_install_effect_end$"
+veru.5000.leader_1: "§Y[leader_1.GetName]§!：年龄 - [leader_1.GetAge] | [leader_1.HasEthicIcon]"
+veru.5000.leader_1.heir: "§H[leader_1.owner.GetHeirTitle]§! $veru.5000.leader_1$"
+veru.5000.leader_1.councilor: "§H[leader_1.GetTitle]§! $veru.5000.leader_1$"
+
+veru.5000.leader_1.tooltip: "\n§Y[leader_1.GetName]的§! §B简介§! - \n§L服役时长§!: §Y[leader_1.GetYearsOfService]§! \n§L母星§!: §Y[leader_1.GetBackgroundPlanet]§!，位于§Y[leader_1.background_planet.solar_system.GetName]§!星系 \n§L前任职业§!: §Y[leader_1.GetBackgroundJob]§! \n§L技能等级§!: §Y[leader_1.GetSkill]§!"
+veru.5000.leader_1.effect_desc: "§Y[leader_1.GetName]§! $leader_install_effect_end$"
+
+veru.5000.leader_2: "§Y[leader_2.GetName]§!：年龄 - [leader_2.GetAge] | [leader_2.HasEthicIcon]"
+veru.5000.leader_2.heir: "§H[leader_2.owner.GetHeirTitle]§! $veru.5000.leader_2$"
+veru.5000.leader_2.councilor: "§H[leader_2.GetTitle]§! $veru.5000.leader_2$"
+
+veru.5000.leader_2.tooltip: "\n§Y[leader_2.GetName]的§! §B简介§! - \n§L服役时长§!: §Y[leader_2.GetYearsOfService]§! \n§L母星§!: §Y[leader_2.GetBackgroundPlanet]§!，位于§Y[leader_1.background_planet.solar_system.GetName]§!星系 \n§L前任职业§!: §Y[leader_2.GetBackgroundJob]§! \n§L技能等级§!: §Y[leader_2.GetSkill]§!"
+veru.5000.leader_2.effect_desc: "§Y[leader_2.GetName]§! $leader_install_effect_end$"
+
+veru.5000.leader_3: "§Y[leader_3.GetName]§!：年龄 - [leader_3.GetAge] | [leader_3.HasEthicIcon]"
+veru.5000.leader_3.heir: "§H[leader_3.owner.GetHeirTitle]§! $veru.5000.leader_3$"
+veru.5000.leader_3.councilor: "§H[leader_3.GetTitle]§! $veru.5000.leader_3$"
+
+veru.5000.leader_3.tooltip: "\n§Y[leader_3.GetName]的§! §B简介§! - \n§L服役时长§!: §Y[leader_3.GetYearsOfService]§! \n§L母星§!: §Y[leader_3.GetBackgroundPlanet]§!，位于§Y[leader_1.background_planet.solar_system.GetName]§!星系 \n§L前任职业§!: §Y[leader_3.GetBackgroundJob]§! \n§L技能等级§!: §Y[leader_3.GetSkill]§!"
+veru.5000.leader_3.effect_desc: "§Y[leader_3.GetName]§! $leader_install_effect_end$"
+
+veru.5000.leader_4: "§Y[leader_4.GetName]§!：年龄 - [leader_4.GetAge] | [leader_4.HasEthicIcon]"
+veru.5000.leader_4.heir: "§H[leader_4.owner.GetHeirTitle]§! $veru.5000.leader_4$"
+veru.5000.leader_4.councilor: "§H[leader_4.GetTitle]§! $veru.5000.leader_4$"
+
+veru.5000.leader_4.tooltip: "\n§Y[leader_4.GetName]的§! §B简介§! - \n§L服役时长§!: §Y[leader_4.GetYearsOfService]§! \n§L母星§!: §Y[leader_4.GetBackgroundPlanet]§!，位于§Y[leader_1.background_planet.solar_system.GetName]§!星系 \n§L前任职业§!: §Y[leader_4.GetBackgroundJob]§! \n§L技能等级§!: §Y[leader_4.GetSkill]§!"
+veru.5000.leader_4.effect_desc: "§Y[leader_4.GetName]§! $leader_install_effect_end$"
+
+veru.5000.leader_5: "§Y[leader_5.GetName]§!：年龄 - [leader_5.GetAge] | [leader_5.HasEthicIcon]"
+veru.5000.leader_5.heir: "§H[leader_5.owner.GetHeirTitle]§! $veru.5000.leader_5$"
+veru.5000.leader_5.councilor: "§H[leader_5.GetTitle]§! $veru.5000.leader_5$"
+
+veru.5000.leader_5.tooltip: "\n§Y[leader_5.GetName]的§! §B简介§! - \n§L服役时长§!: §Y[leader_5.GetYearsOfService]§! \n§L母星§!: §Y[leader_5.GetBackgroundPlanet]§!，位于§Y[leader_1.background_planet.solar_system.GetName]§!星系 \n§L前任职业§!: §Y[leader_5.GetBackgroundJob]§! \n§L技能等级§!: §Y[leader_5.GetSkill]§!"
+veru.5000.leader_5.effect_desc: "§Y[leader_5.GetName]§! $leader_install_effect_end$"
+
+veru.5000.leader_6: "§Y[leader_6.GetName]§!：年龄 - [leader_6.GetAge] | [leader极.GetAge] | [leader_6.HasEthicIcon]"
+veru.5000.leader_6.heir: "§H[leader_6.owner.GetHeirTitle]§! $veru.5000.leader_6$"
+veru.5000.leader_6.councilor: "§H[leader_6.GetTitle]§! $veru.5000.leader_6$"
+
+veru.5000.leader_6.tooltip: "\n§Y[leader_6.GetName]的§! §B简介§! - \n§L服役时长§!: §Y[leader_6.GetYearsOfService]§! \n§L母星§!: §Y[leader_6.GetBackgroundPlanet]§!，位于§Y[leader_1.background_planet.solar_system.GetName]§!星系 \n§L前任职业§!: §Y[leader_6.GetBackgroundJob]§! \n§L技能等级§!: §Y[leader_6.GetSkill]§!"
+veru.5000.leader_6.effect_desc: "§Y[leader_6.GetName]§! $leader_install_effect_end$"
+
+veru.5000.leader_7: "§Y[leader_7.GetName]§!：年龄 - [leader_7.GetAge] | [leader_7.HasEthicIcon]"
+veru.5000.leader_7.heir: "§H[leader_7.owner.Get极irTitle]§! $veru.5000.leader_7$"
+veru.5000.leader_7.councilor: "§H[leader_7.GetTitle]§! $veru.5000.leader_7$"
+
+veru.5000.leader_7.tooltip: "\n§Y[leader_7.GetName]的§! §B简介§! - \n§L服役时长§!: §Y[leader_7.GetYearsOfService]§! \n§L母星§!: §Y[leader_7.GetBackgroundPlanet]§!，位于§Y[leader_1.background_planet.solar_system.GetName]§!星系 \n§L前任职业§!: §Y[leader_7.GetBackgroundJob]§! \n§L技能等级§!: §Y[leader_7.GetSkill]§!"
+veru.5000.leader_7.effect_desc: "§Y[leader_7.GetName]§! $leader_install_effect_end$"
+
+veru.5000.leader_8: "§Y[leader_8.GetName]§!：年龄 - [leader_8.GetAge] | [leader_8.HasEthicIcon]"
+veru.5000.leader_8.heir: "§H[leader_8.owner.GetHeirTitle]§! $veru.5000.leader_8$"
+veru.5000.leader_8.councilor: "§H[leader_8.GetTitle]§! $veru.5000.leader_8$"
+
+veru.5000.leader_8.tooltip: "\n§Y[leader_8.GetName]的§! §B简介§! - \n§L服役时长§!: §Y[leader_8.GetYearsOfService]§! \n§L母星§!: §Y[leader_8.GetBackgroundPlanet]§!，位于§Y[leader_1.background_planet.solar_system.GetName]§!星系 \n§L前任职业§!: §Y[leader_8.GetBackgroundJob]§! \n§L技能等级§!: §Y[leader_8.GetSkill]§!"
+veru.5000.leader_8.effect_desc: "§Y[leader_8.GetName]§! $leader_install_effect_end$"
+
+veru.5000.leader_9: "§Y[leader_9.GetName]§!：年龄 - [leader_9.GetAge] | [leader_9.HasEthicIcon]"
+veru.5000.leader_9.heir: "§H[leader_9.owner.GetHeirTitle]§! $veru.5000.leader_9$"
+veru.5000.leader_9.councilor: "§H[leader_9.GetTitle]§! $veru.5000.leader_9$"
+
+veru.5000.leader_9.tooltip: "\n§Y[leader_9.GetName]的§! §B简介§! - \n§L服役时长§!: §Y[leader_9.GetYearsOfService]§! \n§L母星§!: §Y[leader_9.GetBackgroundPlanet]§!，位于§Y[leader_1.background_planet.solar_system.GetName]§!星系 \n§L前任职业§!: §Y[leader_9.GetBackgroundJob]§! \n§L技能等级§!: §Y[leader_9.GetSkill]§!"
+veru.5000.leader_9.effect_desc: "§Y[leader_9.GetName]§! $leader_install_effect_end$"
+
+veru.5000.leader_10: "§Y[leader_10.GetName]§!：年龄 - [leader_10.GetAge] | [leader_10.HasEthicIcon]"
+veru.5000.leader_10.heir: "§H[leader_10.owner.GetHeirTitle]§! $veru.5000.leader_10$"
+veru.5000.leader_10.councilor: "§H[leader_10.GetTitle]§! $veru.5000.leader_10$"
+
+veru.5000.leader_10.tooltip: "\n§Y[leader_10.GetName]的§! §B简介§! - \n§L服役时长§!: §Y[leader_10.GetYearsOfService]§! \n母星:  §Y[leader_10.GetBackgroundPlanet]§!，位于§Y[leader_1.background_planet.solar_system.GetName]§!星系 \n§L前任职业§!: §Y[leader_10.GetBackgroundJob]§! \n§L技能等级§!: §Y[leader_10.GetSkill]§!"
+veru.5000.leader_10.effect_desc: "§Y[leader_10.GetName]§! $leader_install_effect_end$"
 
 
  ##### Loyalty Events
  # Release
- veru_l.2100.name: "[event_target:demanding_subject.ruler.GetTitle] §H[event_target:demanding_subject.ruler.GetName]§!"
- veru_l.2100.loyal.desc: "§Y[event_target:demanding_subject.GetName]§!一直以来都是[root.GetName]忠诚的附庸。作为对忠诚效劳的回报，[event_target:demanding_subject.GetName]正式要求解除这附庸关系。"
- veru_l.2100.disloyal.desc: "§Y[event_target:demanding_subject.GetName]§!已长期作为[root.GetName]的附庸而辛劳。我们相信，现在是结束这段关系的时候了，我们请求解除我们的附庸关系。"
+veru_l.2100.name: "[event_target:demanding_subject.ruler.GetTitle] §H[event_target:demanding_subject.ruler.GetName]§!"
+veru_l.2100.loyal.desc: "§Y[event_target:demanding_subject.GetName]§!长期以来都是[root.GetName]的忠诚附庸。为表彰这份忠诚服务，[event_target:demanding_subject.GetName]正式请求解除与我们的附庸关系。"
+veru_l.2100.disloyal.desc: "§Y[event_target:demanding_subject.GetName]§!作为[root.GetName]的附庸长期饱受压迫。我们认为终结此关系的时机已至，并要求解除附庸关系。"
 
- veru_l.2100.a: "你们的地位不会更改。"
- veru_l.2100.b: "很好，你们被免除了所有义务。"
+veru_l.2100.a: "你的地位不会改变。"
+veru_l.2100.b: "准，即日起免除你们的一切义务。"
 
- veru_l.2150.loyal.desc: "§Y[event_target:demanding_subject.GetName]§!一直以来都是[root.GetName]忠诚的附庸。作为对忠诚效劳的回报，[event_target:demanding_subject.GetName]正式要求解除这附庸关系。如果你拒绝，我们将别无选择，只能强行宣布独立。"
- veru_l.2150.disloyal.desc: "The §Y[event_target:demanding_subject.GetName]§!已长期作为[root.GetName]的附庸而辛劳。我们相信，现在是结束这段关系的时候了，我们请求解除我们的附庸关系。如果你拒绝，我们将别无选择，只能强行宣布独立。"
+veru_l.2150.loyal.desc: "§Y[event_target:demanding_subject.GetName]§!长期以来都是[root.GetName]的忠诚附庸。为表彰这份忠诚服务，[event_target:demanding_subject.GetName]正式要求解除附庸关系。若遭拒绝，我们将被迫武力宣告独立。"
+veru_l.2150.disloyal.desc: "§Y[event_target:demanding_subject.GetName]§!作为[root.GetName]的附庸长期饱受压迫。我们认为终结此关系的时机已至，并要求立即解除附庸关系。若遭拒绝，我们将被迫武力宣告独立。"
 
- veru_l.2150.a: "你们的地位不会更改，这意味着战争。"
+veru_l.2150.a: "你的地位不会改变——这意味着战争。"
 
- # Tributary
- veru_l.2200.loyal.desc: "The §Y[event_target:demanding_subject.GetName]§!一直以来都是[root.GetName]忠诚的附庸。作为对忠诚效劳的回报，[event_target:demanding_subject.GetName]要正式请求将地位更改为§Y自治区§!。"
- veru_l.2200.disloyal.desc: "The §Y[event_target:demanding_subject.GetName]§!已长期作为[root.GetName]的附庸而辛劳。我们认为，现在是改变这种关系的时候了，并要求将地位更改为§Y自治区§!。"
- veru_l.2200.b: "很好，你们将变为§Y自治区§!。"
+# 朝贡国
+veru_l.2200.loyal.desc: "§Y[event_target:demanding_subject.GetName]§!长期以来都是[root.GetName]的忠诚附庸。为表彰这份忠诚服务，[event_target:demanding_subject.GetName]正式请求将地位变更为§Y朝贡国§!。"
+veru_l.2200.disloyal.desc: "§Y[event_target:demanding_subject.GetName]§!作为[root.GetName]的附庸长期饱受压迫。我们认为改变此关系的时机已至，请求将地位变更为§Y朝贡国§!。"
+veru_l.2200.b: "准，你们将成为§Y朝贡国§!。"
 
- veru_l.2250.loyal.desc: "The §Y[event_target:demanding_subject.GetName]§!一直以来都是[root.GetName]忠诚的附庸。作为对忠诚效劳的回报，[event_target:demanding_subject.GetName]要正式请求将地位更改为§Y自治区§!。如果你拒绝，我们将别无选择，只能强行宣布独立。"
- veru_l.2250.disloyal.desc: "The §Y[event_target:demanding_subject.GetName]§!已长期作为[root.GetName]的附庸而辛劳。我们认为，现在是改变这种关系的时候了，并要求将地位更改为§Y自治区§!。如果你拒绝，我们将别无选择，只能强行宣布独立。"
+veru_l.2250.loyal.desc: "§Y[event_target:demanding_subject.GetName]§!长期以来都是[root.GetName]的忠诚附庸。为表彰这份忠诚服务，[event_target:demanding_subject.GetName]正式要求将地位变更为§Y朝贡国§!。若遭拒绝，我们将被迫武力宣告独立。"
+veru_l.2250.disloyal.desc: "§Y[event_target:demanding_subject.GetName]§!作为[root.GetName]的附庸长期饱受压迫。我们认为改变此关系的时机已至，并要求立即将地位变更为§Y朝贡国§!。若遭拒绝，我们将被迫武力宣告独立。"
 
- # Lifted straight from Imperator: Rome
- veru_l.3015.name: "[tributary_that_stopped.GetAdj] 贡品停止"
- veru_l.3015.desc: "从§H[tributary_that_stopped.GetName]§! 进贡已经停止。§Y[tributary_that_stopped.GetAdj]§! 的人认为，为我们的保护付费的安排不再符合他们的利益，他们最好通过其他方式寻求保护。"
-  veru_l.3015.preposterous: "荒谬的。"
+# 直接引用自《Imperator: Rome》
+veru_l.3015.name: "[tributary_that_stopped.GetAdj]朝贡终止"
+veru_l.3015.desc: "来自§H[tributary_that_stopped.GetName]§!的朝贡已经停止。§Y[tributary_that_stopped.GetAdj]§!民众认为支付保护费的安排已不符合其利益，寻求其他保护方式更为有利。"
+veru_l.3015.preposterous: "荒谬至极。"
 
- # Modifiers
- overlord_intervention_disloyal_faction: "宗主干涉"
- overlord_intervention_disloyal_leader: "宗主干涉"
- overlord_intervention_loyal_faction: "宗主干涉"
- overlord_intervention_loyal_leader: "宗主干涉"
+# 修正项
+overlord_intervention_disloyal_faction: "宗主干预"
+overlord_intervention_disloyal_leader: "宗主干预"
+overlord_intervention_loyal_faction: "宗主干预"
+overlord_intervention_loyal_leader: "宗主干预"
 
- overlord_intervention_loyal_planet: "宗主干涉"
- overlord_intervention_loyal_planet_desc: "这个星球上的民众对最近发生的侵犯其主权的行为感到不安。"
- overlord_intervention_disloyal_planet: "宗主干涉"
- overlord_intervention_disloyal_planet_desc: "这个星球上的民众对最近发生的侵犯其主权的行为感到不安。"
+overlord_intervention_loyal_planet: "宗主干预"
+overlord_intervention_loyal_planet_desc: "该星球民众对近期主权受侵感到不满。"
+overlord_intervention_disloyal_planet: "宗主干预"
+overlord_intervention_disloyal_planet_desc: "该星球民众对近期主权受侵感到不满。"
 
- overlord_intervention_loyal_planet_gov: "宗主干涉"
- overlord_intervention_loyal_planet_gov_desc: "这个星球的民众对他们的政权结构最近的变化感到不安。"
- overlord_intervention_disloyal_planet_gov: "宗主干涉"
- overlord_intervention_disloyal_planet_gov_desc: "这个星球的民众对他们的政权结构最近的变化感到不安。"
+overlord_intervention_loyal_planet_gov: "宗主干预"
+overlord_intervention_loyal_planet_gov_desc: "该星球民众对近期统治结构的变更感到不满。"
+overlord_intervention_disloyal_planet_gov: "宗主干预"
+overlord_intervention_disloyal_planet_gov_desc: "该星球民众对近期统治结构的变更感到不满。"
 
- overlord_intervention_loyal_planet_leader: "宗主干涉"
- overlord_intervention_loyal_planet_leader_desc: "这个星球上的民众对他们的领袖被一个境外势力选中感到不安。"
- overlord_intervention_disloyal_planet_leader: "宗主干涉"
- overlord_intervention_disloyal_planet_leader_desc: "这个星球上的民众对他们的领袖被一个境外势力选中感到不安。"
+overlord_intervention_loyal_planet_leader: "宗主干预"
+overlord_intervention_loyal_planet_leader_desc: "该星球民众对外国势力任命其领袖感到不满。"
+overlord_intervention_disloyal_planet_leader: "宗主干预"
+overlord_intervention_disloyal_planet_leader_desc: "该星球民众对外国势力任命其领袖感到不满。"
 
- influencefail_text_veru: "§R需要§! §Y100§! £influence£ §H影响力§!"
- influencefail_text_veru_50: "§R需要§! §Y50§! £influence£ §H影响力§!"
- influencefail_text_veru_150: "§R需要§! §Y150§! £influence£ §H影响力§!"
- influencefail_text_veru_200: "§R需要§! §Y200§! £influence£ §H影响力§!"
- influencefail_text_veru_300: "§R需要§! §Y300§! £influence£ §H影响力§!"
- 
- capitalist_auth_fail: "§R需要§! §Y竞争（主义？）§Y 与 §Y威权主义§Y 思潮的结合。"
+influencefail_text_veru: "§R需要§! §Y100§! £influence£ §H影响力§!"
+influencefail_text_veru_15: "§R需要§! §Y15§! £influence£ §H影响力§!"
+influencefail_text_veru_25: "§R需要§! §Y25§! £influence£ §H影响力§!"
+influencefail_text_veru_50: "§R需要§! §Y50§! £influence£ §H影响力§!"
+influencefail_text_veru_150: "§R需要§! §Y150§! £influence£ §H影响力§!"
+influencefail_text_veru_200: "§R需要§! §Y200§! £influence£ §H影响力§!"
+influencefail_text_veru_300: "§R需要§! §Y300§! £influence£ §H影响力§!"
+capitalist_auth_fail: "§R需要§!同时具备§Y优绩主义§!与§Y威权主义§!思潮。"
 
- # CBs and War Goals
- veru.6100.border_subject_1: "§Y[event_target:border_subject_1.GetName]§!"
- veru.6100.border_subject_2: "§Y[event_target:border_subject_2.GetName]§!"
- veru.6100.border_subject_3: "§Y[event_target:border_subject_3.GetName]§!"
- veru.6100.border_subject_4: "§Y[event_target:border_subject_4.GetName]§!"
- veru.6100.border_subject_5: "§Y[event_target:border_subject_5.GetName]§!"
- veru.6100.border_subject_6: "§Y[event_target:border_subject_6.GetName]§!"
- veru.6100.border_subject_7: "§Y[event_target:border_subject_7.GetName]§!"
- veru.6100.border_subject_8: "§Y[event_target:border_subject_8.GetName]§!"
- veru.6100.border_subject_9: "§Y[event_target:border_subject_9.GetName]§!"
- veru.6100.border_subject_10: "§Y[event_target:border_subject_10.GetName]§!"
- veru.6100.name: "[from.Ruler.GetTitle] §H[from.ruler.GetName]§!"
- veru.6100.desc: "你要求的是我们的哪一个临近的附庸国？"
- veru.6110.desc: "我们正在采取 §Y[chosen_border_subject_final.GetName]§!。"
+# 战争理由与战争目标
+veru.6100.border_subject_1: "§Y[event_target:border_subject_1.GetName]§!"
+veru.6100.border_subject_2: "§Y[event_target:border_subject_2.GetName]§!"
+veru.6100.border_subject_3: "§Y[event_target:border_subject_3.GetName]§!"
+veru.6100.border_subject_4: "§Y[event_target:border_subject_4.Get极ame]§!"
+veru.6100.border_subject_5: "§Y[event_target:border_subject_5.GetName]§!"
+veru.6100.border_subject_6: "§Y[event_target:border_subject_6.GetName]§!"
+veru.6100.border_subject_7: "§Y[event_target:border_subject_7.GetName]§!"
+veru.6100.border_subject_8: "§Y[event_target:border_subject_8.GetName]§!"
+veru.6100.border_subject_9: "§Y[event_target:border_subject_9.GetName]§!"
+veru.6100.border_subject_10: "§Y[event_target:border_subject_10.GetName]§!"
+veru.6100.name: "[from.Ruler.GetTitle] §H[from.ruler.GetName]§!"
+veru.6100.desc: "你要宣称哪个邻国附庸？"
+veru.6110.desc: "我们正宣称对§Y[chosen_border_subject_final.GetName]§!的宗主权。"
 
- casus_belli_cb_buffer_zone: "缓冲区"
- war_goal_wg_claim_subject: "夺取附庸"
- war_goal_wg_claim_subject_desc: "发动战争是为了夺取一个关键缓冲国家的控制权。战争开始后，我们将具体说明我们宣称的是哪个邻国。"
- wg_claim_subject_accept: "我们会向战争开始时我们选择的国家§Y安排我们想要的领袖§!，§Y让他们成为我们的附庸§!。"
+casus_belli_cb_buffer_zone: "缓冲区"
+war_goal_wg_claim_subject: "夺取附庸"
+war_goal_wg_claim_subject_desc: "此战争旨在夺取关键缓冲国的控制权。开战时需指定要宣称的邻国附庸。"
+wg_claim_subject_accept: "§Y[Root.GetName]§!将§Y获得争议附庸的控制权§!并§Y任命新领袖§!。"
 
- veru.6400.name: "§Y[event_target:chosen_subject.GetName]§!的领导"
- veru.6400.desc: "既然我们已经获得了对§Y[event_target:chosen_subject.GetName]§!的控制权，就需要建立一个服从我们规则的领导层。我们可以从他们自己的人中选出一位支持我们统治的领袖。这样做的好处是，它可能会使过渡更加顺利。不过，我们也可以选择从自己的人中选出一位领袖，这应该可以保证他们的忠诚。"
- veru.6400.clientkingdom: "既然我们已经获得了对§Y[event_target:chosen_subject.GetName]§!的控制权，就需要建立一个服从我们规则的领导层。我们可以从他们自己的人中选出一位支持我们统治的领袖,或者我们可以选择从我们自己的人中选出一位领袖。"
- veru.6400.clientkingdom_passes: "我们在§Y[event_target:chosen_subject.GetName]§!中亲手选出的§Y[event_target:chosen_subject.GetRulerTitle]§!已经去世，因此我们需要选择继任者。"
+veru.6400.name: "§Y[event_target:chosen_subject.GetName]§!的领导权"
+veru.6400.desc: "既然已控制§Y[event_target:chosen_subject.GetName]§!，需任命顺服我们的领导层。可选方案：从其民众中挑选亲善我方的领袖——此举能使过渡更平稳；或从我方人员中委派领袖——虽能确保忠诚，但将引发动荡。"
+veru.6400.clientkingdom: "既然已控制§Y[event_target:chosen_subject.GetName]§!，需任命顺服我们的领导层。可选方案：从其民众中挑选亲善我方的领袖，或从我方人员中委派领袖。"
+veru.6400.clientkingdom_passes: "我们在§Y[event_target:chosen_subject.GetName]§!钦定的§Y[event_target:chosen_subject.GetRulerTitle]§!已逝世，需指定继任者。"
 
- veru.6400.them: "§Y他们的§!人民之一。"
- veru.6400.them.tooltip: "在他们的领袖之中选择一个将使我们能够避免任何会发生在§Y[event_target:chosen_subject.GetName]§!的£stability£ §Y稳定度§! 与 £happiness£ §Y幸福度§! 惩罚。"
- veru.6400.us: "§你的§!人民之一"
- veru.6400.us.tooltip: "在我们的领袖之中选择一个会大幅提升§Y[event_target:chosen_subject.GetName]§!对我们的 £opinion£ §Y评价§!，直到我们安排的领袖死亡。然而，它也将在接下来的§Y15到20§!年中于§Y[event_target:chosen_subject.GetName]§!招致 £stability£ §Y稳定度§! 与 £happiness£ §Y幸福度§! §R惩罚§!。"
+veru.6400.them: "§Y本土§!人选"
+veru.6400.them.tooltip: "选用本土领袖可避免§Y[event_target:chosen_subject.GetName]§!遭受£stability£ §Y稳定度§!与£happiness£ §Y幸福度§!惩罚。"
+veru.6400.us: "§Y我方§!人选"
+veru.6400.us.tooltip: "选用我方领袖将使§Y[event_target:chosen_subject.GetName]§!在£opinion£ §Y好感度§!大幅提升（直至该领袖死亡），但未来§Y15-20年§!将承受£stability£ §Y稳定度§!与£happiness£ §Y幸福度§!的§R惩罚§!。"
 
- veru.6510.name: "总督"
- veru.6520.name: "舰队统帅"
- veru.6530.name: "科学家"
+veru.6510.desc: "由谁统领§Y[event_target:chosen_subject.GetName]§!？"
 
- veru.6510.desc: "谁会来领导§Y[event_target:chosen_subject.GetName]§!？"
-
- veru.6500.official: "一个他们的§Y总督§!应该接替。"
- veru.6500.commander: "一个他们的§Y舰队统帅§!应该接替。"
- veru.6500.scientist: "一个他们的§Y科学家§!应该接替。"
+veru.6500.official: "由其§Y$official_plural_with_icon$§!接管"
+veru.6500.commander: "由其§Y$commander_plural_with_icon$§!接管"
+veru.6500.scientist: "由其§Y$scientist_plural_with_icon$§!接管"
 
  ###############
- # Relocate Capital
- veru.6700.loyal.desc: "您希望我们把首都迁往何处？"
- veru.6700.disloyal.desc: "迁都？就跟我们受到的羞辱还不够多似的。迁到哪里？"
+# 迁都
+veru.6700.loyal.desc: "您希望我们将首都迁往何处？"
+veru.6700.disloyal.desc: "迁都？难道我们承受的屈辱还不够吗？迁到哪里？"
 
- # Potential Capitals
- veru.6700.relocation_planet_1: "§Y[event_target:relocation_planet_1.GetName]§!"
- veru.6700.relocation_planet_2: "§Y[event_target:relocation_planet_2.GetName]§!"
- veru.6700.relocation_planet_3: "§Y[event_target:relocation_planet_3.GetName]§!"
- veru.6700.relocation_planet_4: "§Y[event_target:relocation_planet_4.GetName]§!"
- veru.6700.relocation_planet_5: "§Y[event_target:relocation_planet_5.GetName]§!"
- veru.6700.relocation_planet_6: "§Y[event_target:relocation_planet_6.GetName]§!"
- veru.6700.relocation_planet_7: "§Y[event_target:relocation_planet_7.GetName]§!"
- veru.6700.relocation_planet_8: "§Y[event_target:relocation_planet_8.GetName]§!"
- veru.6700.relocation_planet_9: "§Y[event_target:relocation_planet_9.GetName]§!"
- veru.6700.relocation_planet_10: "§Y[event_target:relocation_planet_10.GetName]§!"
- veru.6700.relocation_planet_11: "§Y[event_target:relocation_planet_11.GetName]§!"
- veru.6700.relocation_planet_12: "§Y[event_target:relocation_planet_12.GetName]§!"
- veru.6700.relocation_planet_13: "§Y[event_target:relocation_planet_13.GetName]§!"
- veru.6700.relocation_planet_14: "§Y[event_target:relocation_planet_14.GetName]§!"
- veru.6700.relocation_planet_15: "§Y[event_target:relocation_planet_15.GetName]§!"
- veru.6700.relocation_planet_16: "§Y[event_target:relocation_planet_16.GetName]§!"
- veru.6700.relocation_planet_17: "§Y[event_target:relocation_planet_17.GetName]§!"
- veru.6700.relocation_planet_18: "§Y[event_target:relocation_planet_18.GetName]§!"
- veru.6700.relocation_planet_19: "§Y[event_target:relocation_planet_19.GetName]§!"
- veru.6700.relocation_planet_20: "§Y[event_target:relocation_planet_20.GetName]§!"
+# 候选首都
+veru.6700.relocation_planet_1: "§Y[event_target:relocation_planet_1.GetName]§!"
+veru.6700.relocation_planet_2: "§Y[event_target:relocation_planet_2.GetName]§!"
+veru.6700.relocation_planet_3: "§Y[event_target:relocation_planet_3.GetName]§!"
+veru.6700.relocation_planet_4: "§Y[event_target:relocation_planet_4.GetName]§!"
+veru.6700.relocation_planet_5: "§Y[event_target:relocation_planet_5.GetName]§!"
+veru.6700.relocation_planet_6: "§Y[event_target:relocation_planet_6.GetName]§!"
+veru.6700.relocation_planet_7: "§Y[event_target:relocation_planet_7.GetName]§!"
+veru.6700.relocation_planet_8: "§Y[event_target:relocation_planet_8.GetName]§!"
+veru.6700.relocation_planet_9: "§Y[event_target:relocation_planet_9.GetName]§!"
+veru.6700.relocation_planet_10: "§Y[event_target:relocation_planet_10.GetName]§!"
+veru.6700.relocation_planet_11: "§Y[event_target:relocation_planet_11.GetName]§!"
+veru.6700.relocation_planet_12: "§Y[event_target:relocation_planet_12.GetName]§!"
+veru.6700.relocation_planet_13: "§Y[event_target:relocation_planet_13.GetName]§!"
+veru.6700.relocation_planet_14: "§Y[event_target:relocation_planet_14.GetName]§!"
+veru.6700.relocation_planet_15: "§Y[event_target:relocation_planet_15.GetName]§!"
+veru.6700.relocation_planet_16: "§Y[event_target:relocation_planet_16.GetName]§!"
+veru.6700.relocation_planet_17: "§Y[event_target:relocation_planet_17.GetName]§!"
+veru.6700.relocation_planet_18: "§Y[event_target:relocation_planet_18.GetName]§!"
+veru.6700.relocation_planet_19: "§Y[event_target:relocation_planet_19.GetName]§!"
+veru.6700.relocation_planet_20: "§Y[event_target:relocation_planet_20.GetName]§!"
 
- ####################
- # Contracts
+####################
+# 契约条款
 
- resource_ver_subsidies: "$resource_subsidies$"
- resource_ver_subsidies_desc: "$resource_subsidies_desc$"
+resource_ver_subsidies: "$resource_subsidies$"
+resource_ver_subsidies_desc: "$resource_subsidies_desc$"
 
- subject_ver_ruler: "统治者指定"
- subject_ver_ruler_desc: "该条款决定是否允许宗主将他们选择的领导者安排为附庸国的统治者。"
+subject_ver_ruler: "统治者指定权"
+subject_ver_ruler_desc: "该条款规定宗主是否有权为附庸国任命统治者。"
 
- subject_ver_ruler_restricted: "禁止指定"
- subject_ver_ruler_restricted_desc: "不允许宗主改变附庸的统治者。"
- subject_ver_ruler_them: "有限指定"
- subject_ver_ruler_them_desc: "宗主可以选择附庸的统治者，但只能从附庸的领袖中选。"
- subject_ver_ruler_anyone: "无限指定"
- subject_ver_ruler_anyone_desc: "宗主可以任意选择领袖作为附庸的统治者。"
+subject_ver_ruler_restricted: "禁止指定"
+subject_ver_ruler_restricted_desc: "宗主无权更换附庸统治者。"
+subject_ver_ruler_them: "有限指定权"
+subject_ver_ruler_them_desc: "宗主可从附庸国本土领袖中任命统治者。"
+subject_ver_ruler_anyone: "无限制指定权"
+subject_ver_ruler_anyone_desc: "宗主可任命任何领袖为附庸统治者。"
 
- subject_ver_naming: "命名权"
- subject_ver_naming_desc: "该条款决定是否允许宗主重命名附庸。"
+subject_ver_naming: "命名权"
+subject_ver_naming_desc: "该条款规定宗主是否有权为附庸国重命名。"
 
- subject_ver_naming_restricted: "禁止重命名"
- subject_ver_naming_restricted_desc: "限制宗主重命名附庸。"
- subject_ver_naming_allowed: "允许重命名"
- subject_ver_naming_allowed_desc: "允许宗主重命名附庸。"
+subject_ver_naming_restricted: "禁止重命名"
+subject_ver_naming_restricted_desc: "宗主无权为附庸国重命名。"
+subject_ver_naming_allowed: "允许重命名"
+subject_ver_naming_allowed_desc: "宗主可为附庸国重命名。"
 
- subject_ver_capital: "迁都"
- subject_ver_capital_desc: "该条款决定宗主是否能选择迁移附庸的首都。"
+subject_ver_capital: "首都迁移权"
+subject_ver_capital_desc: "该条款规定宗主是否有权迁移附庸首都。"
 
- subject_ver_capital_restricted: "禁止迁都"
- subject_ver_capital_restricted_desc: "限制宗主迁移附庸的首都。"
- subject_ver_capital_allowed: "允许迁都"
- subject_ver_capital_allowed_desc: "允许宗主迁移附庸的首都。"
+subject_ver_capital_restricted: "禁止迁移"
+subject_ver_capital_restricted_desc: "宗主无权迁移附庸首都。"
+subject_ver_capital_allowed: "允许迁移"
+subject_ver_capital_allowed_desc: "宗主可迁移附庸首都。"
 
- subject_ver_government: "政府改组"
- subject_ver_government_desc: "该条款决定是否允许宗主改变附庸的政体。"
+subject_ver_government: "政府重组权"
+subject_ver_government_desc: "该条款规定宗主是否有权改变附庸政体。"
 
- subject_ver_government_restricted: "禁止改组"
- subject_ver_government_restricted_desc: "限制宗主改变附庸的政体。"
- subject_ver_government_allowed: "允许改组"
- subject_ver_government_allowed_desc: "宗主可以改变附庸的政体。"
+subject_ver_government_restricted: "禁止重组"
+subject_ver_government_restricted_desc: "宗主无权改变附庸政体。"
+subject_ver_government_allowed: "允许重组"
+subject_ver_government_allowed_desc: "宗主可改变附庸政体形式。"
 
- subject_ver_policy: "国内事务"
- subject_ver_policy_desc: "该条款决定附庸的政策是否必须与宗主的政策一致。"
+subject_ver_policy: "内政管辖权"
+subject_ver_policy_desc: "该条款规定附庸政策是否必须与宗主保持一致。"
 
- subject_ver_policy_restricted: "国内主权"
- subject_ver_policy_restricted_desc: "附庸可以自由决定自己的政策。"
- subject_ver_policy_allowed: "政策对接"
- subject_ver_policy_allowed_desc: "附庸必须使他们的政策与宗主的政策保持一致。"
+subject_ver_policy_restricted: "内政自治"
+subject_ver_policy_restricted_desc: "附庸可自主制定政策。"
+subject_ver_policy_allowed: "政策统一"
+subject_ver_policy_allowed_desc: "附庸政策必须与宗主保持一致。"
 
- subject_ver_species_policy： "种族事务"
- subject_ver_species_policy_desc："本条款规定了主体与物种相关的政策是否必须与霸主的政策保持一致"。
+subject_ver_species_policy: "种族政策权"
+subject_ver_species_policy_desc: "该条款规定附庸种族政策是否必须与宗主一致。"
 
- subject_ver_species_policy_restricted： "种族主权"
- subject_ver_species_policy_restricted_desc: "主体可自由决定自己的种族政策"。
- subject_ver_species_policy_allowed： "政策调整"
- subject_ver_species_policy_allowed_desc: "主体必须与霸主的种族政策保持一致。"
- 
- subject_ver_proxy: "代理人战争"
- subject_ver_proxy_desc: "该条款决定是否允许宗主强迫附庸参与代理人战争。"
+subject_ver_species_policy_restricted: "种族自治"
+subject_ver_species_policy_restricted_desc: "附庸可自主制定种族政策。"
+subject_ver_species_policy_allowed: "政策统一"
+subject_ver_species_policy_allowed_desc: "附庸种族政策必须与宗主一致。"
 
- subject_ver_proxy_restricted: "禁止代理人战争"
- subject_ver_proxy_restricted_desc: "限制宗主强迫附庸参与代理人战争。"
- subject_ver_proxy_allowed: "允许代理人战争"
- subject_ver_proxy_allowed_desc: "宗主可以强迫附庸参与代理人战争。"
+subject_ver_proxy: "代理人战争权"
+subject_ver_proxy_desc: "该条款规定宗主是否有权迫使附庸参与代理人战争。"
 
- resource_subsidies_ver_energy: "能量币"
- resource_subsidies_ver_minerals: "矿物"
- resource_subsidies_ver_food: "食物"
- resource_subsidies_ver_alloys: "合金"
- resource_subsidies_ver_consumer_goods: "消费品"
- resource_subsidies_ver_volatile_motes: "易爆微粒"
- resource_subsidies_ver_exotic_gases: "异星天然气"
- resource_subsidies_ver_rare_crystals: "稀有水晶"
- resource_subsidies_ver_minor_artifacts: "稀有文物"
- resource_subsidies_ver_research: "研究点"
- resource_subsidies_ver_hidden_unity: "凝聚力"
+subject_ver_proxy_restricted: "禁止代理人战争"
+subject_ver_proxy_restricted_desc: "宗主无权迫使附庸参与代理人战争。"
+subject_ver_proxy_allowed: "允许代理人战争"
+subject_ver_proxy_allowed_desc: "宗主可迫使附庸参与代理人战争。"
 
- resource_subsidies_ver: "贡献"
+resource_subsidies_ver_energy: "能量币"
+resource_subsidies_ver_minerals: "矿物"
+resource_subsidies_ver_food: "食物"
+resource_subsidies_ver_alloys: "合金"
+resource_subsidies_ver_consumer_goods: "消费品"
+resource_subsidies_ver_volatile_motes: "$volatile_motes$"
+resource_subsidies_ver_exotic_gases: "异星天然气"
+resource_subsidies_ver_rare_crystals: "稀有水晶"
+resource_subsidies_ver_minor_artifacts: "$minor_artifacts$"
+resource_subsidies_ver_research: "研究"
+resource_subsidies_ver_hidden_unity: "凝聚力"
 
- contract_fail: "依合同禁止"
- veru_tree_of_life_fail: "因该附庸依赖其§Y生命之树§!，他们的首都不能迁移。"
+resource_subsidies_ver: "资源贡献"
 
- 
- subject_ver_foederatus_effect: "$preset_ver_foederatus$"
- subject_ver_satellite_effect: "$preset_ver_satellite$"
- subject_ver_jrpartner_effect: "$preset_ver_jrpartner$"
- subject_ver_dependency_effect: "$preset_ver_dependency$"
- subject_ver_clientkingdom_effect: "$preset_ver_clientkingdom$"
- subject_ver_devolved_effect: "$preset_ver_devolved$"
- subject_ver_condo_effect: "$preset_ver_condo$"
- subject_ver_puppet_effect: "$preset_ver_puppet$"
- subject_ver_neocolony_effect: "$preset_ver_neocolony$"
- 
- subject_ver_blood_effect: "$subject_ver_blood$"
+contract_fail: "契约禁止"
+veru_tree_of_life_fail: "因该附庸依赖§Y生命之树§!，其首都不可迁移。"
 
- subject_ver_effects: "特殊效果"
- subject_ver_hidden_resources: "特殊资源"
+NAME_capital_solar_system: "[root.capital_scope.solar_system.GetName]"
 
- ver_extra_subject: "$MODIFIER$\n$RESOURCES$"
+subject_ver_foederatus_effect: "$preset_ver_foederatus$"
+subject_ver_satellite_effect: "$preset_ver_satellite$"
+subject_ver_jrpartner_effect: "$preset_ver_jrpartner$"
+subject_ver_dependency_effect: "$preset_ver_dependency$"
+subject_ver_clientkingdom_effect: "$preset_ver_clientkingdom$"
+subject_ver_devolved_effect: "$preset_ver_devolved$"
+subject_ver_condo_effect: "$preset_ver_condo$"
+subject_ver_puppet_effect: "$preset_ver_puppet$"
+subject_ver_neocolony_effect: "$preset_ver_neocolony$"
 
- ver_foederatus_extra_subject: "$MODIFIER$"
- ver_foederatus_extra_overlord: "$MODIFIER$"
+subject_ver_blood_effect: "$subject_ver_blood$"
 
- ver_satellite_extra_subject: "$MODIFIER$"
- ver_satellite_extra_overlord: "$MODIFIER$"
+subject_ver_effects: "特殊效果"
+subject_ver_hidden_resources: "特殊资源"
 
- ver_jrpartner_extra_subject: "$MODIFIER$"
- ver_jrpartner_extra_soverlord: "$MODIFIER$"
+ver_extra_subject: "$MODIFIER$\n$RESOURCES$"
+ver_extra_overlord: "$MODIFIER$\n$RESOURCES$"
 
- ver_dependency_extra_subject: "月度税款: £unity£ §R15%§!"
- ver_dependency_extra_overlord: "$MODIFIER$"
+ver_foederatus_extra_subject: "$MODIFIER$"
+ver_foederatus_extra_overlord: "$MODIFIER$"
 
- ver_clientkingdom_subject: "$MODIFIER$"
- ver_clientkingdom_overlord: "$MODIFIER$"
+ver_satellite_extra_subject: "$MODIFIER$"
+ver_satellite_extra_overlord: "$MODIFIER$"
 
- ver_devolved_extra_subject: "每月: £influence£ §R-0.5§!"
- ver_devolved_extra_overlord: "每月: £influence£ §G+0.5§!\n$MODIFIER$"
+ver_jrpartner_extra_subject: "$MODIFIER$"
+ver_jrpartner_extra_soverlord: "$MODIFIER$"
 
- ver_condo_extra_subject: "$MODIFIER$"
- ver_condo_extra_overlord: "$MODIFIER$"
+ver_dependency_extra_subject: "月贡：£unity£ §R15%§!"
+ver_dependency_extra_overlord: "$MODIFIER$"
 
- ver_puppet_extra_subject: "$MODIFIER$"
- ver_puppet_extra_overlord: "$MODIFIER$"
+ver_clientkingdom_subject: "$MODIFIER$"
+ver_clientkingdom_overlord: "$MODIFIER$"
 
- ver_neocolony_extra_subject: "$MODIFIER$"
- ver_neocolony_extra_overlord: "$MODIFIER$"
+ver_devolved_extra_overlord: "月度：£influence£ §G+0.5§!\n$MODIFIER$"
 
- ver_blood_parallel_subject: "$MODIFIER$"
- ver_blood_parallel_overlord: "$MODIFIER$"
+ver_condo_extra_subject: "$MODIFIER$"
+ver_condo_extra_overlord: "$MODIFIER$"
 
- ver_blood_tax_subject: "贡品: §Y5%§! £pops£ §HPops§! every 15-20 years\nSpecial Effect: §R-1000§! 评价 towards 宗主"
- ver_blood_tax_overlord: "§Y5%§! of subject's £pops£ §HPops§! every 15-20 years"
+ver_puppet_extra_subject: "$MODIFIER$"
+ver_puppet_extra_overlord: "$MODIFIER$"
 
- ver_rec_extra_subject: "$RESOURCES$"
- ver_rec_extra_overlord: "$RESOURCES$"
+ver_neocolony_extra_subject: "$MODIFIER$"
+ver_neocolony_extra_overlord: "$MODIFIER$"
 
- autostate_extra_overlord: "每月: £influence£ §R-0.5§!"
+ver_blood_parallel_subject: "$MODIFIER$"
+ver_blood_parallel_overlord: "$MODIFIER$"
 
- d_overlord_unity_capital: "附庸指导中心"
- d_overlord_unity_capital_desc: "在这个中心，我们的一些附庸的祭司阶层的成员接受如何更好地促进我们国家之间的合作的指导。"
+ver_blood_tax_subject: "贡赋：每15-20年征§Y5%§! £pops£ §H人口§!\n特殊效果：对宗主§R-1000§!好感度"
+ver_blood_tax_overlord: "每15-20年征收附庸£pops£ §H人口§!的§Y5%§!"
 
- d_subject_unity_capital: "宗主寺庙"
- d_subject_unity_capital_desc: "在这个中心，我们的统治阶层精英从我们的宗主那里得到了关于如何更好地促进我们国家之间合作的指导。"
+ver_rec_extra_subject: "$RESOURCES$"
+ver_rec_extra_overlord: "$RESOURCES$"
 
- veru_misc.4000.title:0 "[TargetFaction.Owner.GetName]中的强制管理道德转变"。
- veru_misc.4000.desc.start:0 "由于在§H[TargetFaction.Owner.Overlord.GetName]§！中支持§Y[TargetFaction.GetName]§！，§Y[TargetFaction.Owner.GetName]§！被迫拥抱该派别，采用他们的核心价值观和政策。"
+autostate_extra_overlord: "月度：£influence£ §R-0.5§!"
 
- EMPOWER_FACTION_COLDOWN："他们最近§Y拥抱§！了一个派系。这只能每§Y10§！年做一次。"
+d_overlord_unity_capital: "附庸指导中心"
+d_overlord_unity_capital_desc: "此处为我国部分附庸国的神职人员提供指导，促进两国合作。"
 
- # Overwrites
- protectorate_extra_subject:1 "$MODIFIER$\n"
+d_subject_unity_capital: "宗主协调设施"
+d_subject_unity_capital_desc: "此处由宗主指导我国统治精英，促进两国合作。"
 
- # Other
- veru_become_tributary.tooltip: "§Y[event_target:demanding_subject.GetName]§!将成为我们国家之内的一个§Y自治区§!，他们会向我们支付他们所有资源的§Y15%§!。他们将完全控制其国内和外交事务，也将负责自己的国防。这将每月消耗我们0.2 £influence£ §H影响力§!。§R我们将永远无法整合它们。§!"
+veru_misc.4000.title: "强制[TargetFaction.Owner.GetName]转变思潮"
+veru_misc.4000.desc.start: "因§Y[TargetFaction.GetName]§!派系在§H[TargetFaction.Owner.Overlord.GetName]§!支持下，§Y[TargetFaction.Owner.GetName]§!被迫接纳该派系，采用其核心价值与政策。"
 
- # Preset blocked terms
- not_allowed_for_ver_foederatus: "$TRIGGER_FAIL$对§YFoederati§!不允许。"
- not_allowed_for_ver_satellite: "$TRIGGER_FAIL$对§Y$preset_ver_satellite$s§!不允许。"
- not_allowed_for_ver_jrpartner: "$TRIGGER_FAIL$对§Y$preset_ver_jrpartner$s§!不允许。"
- not_allowed_for_ver_dependency: "$TRIGGER_FAIL$对§Y$preset_ver_dependency$s§!不允许。"
- not_allowed_for_ver_clientkingdom: "$TRIGGER_FAIL$对§Y$preset_ver_clientkingdom$s§!不允许。"
- not_allowed_for_ver_devolved: "$TRIGGER_FAIL$对§Y$preset_ver_devolved$s§!不允许。"
- not_allowed_for_ver_condo: "$TRIGGER_FAIL$对§YCondominia§!不允许。"
- not_allowed_for_ver_puppet: "$TRIGGER_FAIL$对§Y$preset_ver_puppet$s§!不允许。"
- not_allowed_for_ver_neocolony: "$TRIGGER_FAIL$对§YNeo-Colonies§!不允许。"
+veru_misc.4005.title: "废除$civic_adoptive_dynasties$"
+veru_misc.4005.desc: "因无法自主选择§Y[root.GetRulerTitle]§!，我们失去了['civic:civic_adoptive_dynasties']国民理念。"
 
- not_allowed_for_ver_blood: "$TRIGGER_FAIL$对§Y$preset_ver_blood$s§!不允许。"
-
- not_allowed_for_ver_appendage: "$TRIGGER_FAIL$对§Y$preset_ver_appendage$s§!不允许。"
- not_allowed_for_ver_organic: "$TRIGGER_FAIL$对§Y$preset_ver_organic$s§!不允许。"
- not_allowed_for_ver_parallel: "$TRIGGER_FAIL$对§Y$preset_ver_parallel$s§!不允许。"
-
- not_allowed_for_megacorp: "$TRIGGER_FAIL$对§YMegacorps§!不允许。"
-
- not_allowed_for_gestalt: "$TRIGGER_FAIL$对§Y$ethic_gestalt_consciousness$§!不允许。"
-
- not_allowed_for_term_subject_wars: "$TRIGGER_FAIL$对§Y附庸冲突§! 条款 §Y$joins_subject_wars_offensive$§! 或 §Y$joins_subject_wars_all$§! 不允许。"
- not_allowed_for_term_subject_diplomacy: "$TRIGGER_FAIL$对§Y外交自由§! 条款 §Y$subject_can_do_diplomacy$§! 或 §Y$subject_can_do_diplomacy_but_not_vote$§! 不允许。"
-
- # 附庸 Buffer Zone War
-
- NAME_vassal_War: "[This.MainAttacker.GetAdj]独立战争"
- NAME_veru_buffer_war: "[This.MainDefender.GetAdj]附属战争"
-
- # Responses:
- WILL_FAIL: "你将会失败。"
+EMPOWER_FACTION_COOLDOWN: "其近期已§Y接纳§!派系，该操作每§Y10§!年仅可执行一次。"
 
  # Overwrites
- not_allowed_for_protectorate:0 "$TRIGGER_FAIL$对§YProtectorates§!不允许。"
- not_allowed_for_tributary: "$TRIGGER_FAIL$对§YTributaries§!不允许。"
- not_allowed_for_bulwark: "$TRIGGER_FAIL$对§YBulwarks§!不允许。"
- not_allowed_for_scholarium: "$TRIGGER_FAIL$对§YScholaria§!不允许。"
- not_allowed_for_prospectorium: "$TRIGGER_FAIL$对§YProspectoria§!不允许。"
- 
- oppressive_terms_desc:2 "那些被我们征服的人比我们低级，我们容忍他们只是因为他们保持沉默，大量地送了我们那些可怜的礼物。\n\n§E初始附庸协议条款:\n$t$$subject_can_be_integrated$\n$t$$subject_can_not_do_diplomacy$\n$t$$subject_cannot_expand$\n$t$$subject_ver_ruler_anyone$\n$t$$subject_ver_government_allowed$\n$t$$subject_ver_policy_restricted$\n$t$$subject_ver_naming_allowed$\n$t$$subject_ver_capital_allowed$\n$t$加入宗主的战争: 所有\n$t$加入宗主的战争: 防御性\n$t$$subject_ver_proxy_allowed$\n$t$附庸地产限制: 1§!"
- balanced_terms_desc:2 "我们相信要公平对待我们的附庸。也许到时候，他们会看到我们的智慧和他们的错误。\n\n§E初始附庸协议条款:\n$t$$subject_can_not_be_integrated$\n$t$$subject_can_do_diplomacy_but_not_vote$\n$t$$subject_can_expand_with_tithe$\n$t$$subject_ver_ruler_them$\n$t$$subject_ver_government_allowed$\n$t$$subject_ver_policy_restricted$\n$t$$subject_ver_naming_restricted$\n$t$$subject_ver_capital_restricted$\n$t$加入宗主的战争: 防御性\n$t$加入附庸的战争: 防御性\n$t$$subject_ver_proxy_restricted$\n$t$附庸地产限制: 1§!"
- benevolent_terms_desc:2 "我们的附庸是我们的一部分，就像我们是他们的一部分一样，他们的成功就是我们的胜利，我们将作为一个整体向前推进。\n\n§E初始附庸协议条款:\n$t$$subject_can_not_be_integrated$\n$t$$subject_can_do_diplomacy$\n$t$$subject_can_expand$\n$t$$subject_ver_ruler_restricted$\n$t$$subject_ver_government_restricted$\n$t$$subject_ver_policy_restricted$\n$t$$subject_ver_naming_restricted$\n$t$$subject_ver_capital_restricted$\n$t$加入宗主的战争: 防御性\n$t$加入附庸的战争: 防御性\n$t$$subject_ver_proxy_restricted$\n$t$附庸地产限制: 1§!"
+ # protectorate_extra_subject:1 "$MODIFIER$\n"
 
- preset_tributary_desc:0 "支流国家大多是独立的。在最低期限之后，他们可以随时停止进贡。\n\n§Y致敬§!: §G25%§! £energy£ §H$energy$§! & £minerals£ §H$minerals$!\n§W特别效果:§! \n§Y附庸§!: 不能改变合同的内容，使之脱离 §HTributary§! 并可在§Y10§!年后的任何时候停止支付贡品"
+# 其他
+veru_become_tributary.tooltip: "§Y[event_target:demanding_subject.GetName]§!将成为我国的§Y朝贡国§!，需缴纳§Y15%§!所有资源§!。其保留完整内政外交自主权，需自行负责国防。每月消耗§R0.2§! £influence£ §H影响力§!。§R永不可被吞并§!。"
+
+# 预设类型限制
+not_allowed_for_ver_foederatus: "$TRIGGER_FAIL$§Y$preset_ver_foederatus$§!不可用此选项。"
+not_allowed_for_ver_satellite: "$TRIGGER_FAIL$§Y$preset_ver_satellite$§!不可用此选项。"
+not_allowed_for_ver_jrpartner: "$TRIGGER_FAIL$§Y$preset_ver_jrpartner$§!不可用此选项。"
+not_allowed_for_ver_dependency: "$TRIGGER_FAIL$§Y$preset_ver_dependency$§!不可用此选项。"
+not_allowed_for_ver_clientkingdom: "$TRIGGER_FAIL$§Y$preset_ver_clientkingdom$§!不可用此选项。"
+not_allowed_for_ver_devolved: "$TRIGGER_FAIL$§Y$preset_ver_devolved$§!不可用此选项。"
+not_allowed_for_ver_condo: "$TRIGGER_FAIL$§Y$preset_ver_condo$§!不可用此选项。"
+not_allowed_for_ver_puppet: "$TRIGGER_FAIL$§Y$preset_ver_puppet$§!不可用此选项。"
+not_allowed_for_ver_neocolony: "$TRIGGER_FAIL$§Y$preset_ver_puppet$§!不可用此选项。"
+
+not_allowed_for_ver_blood: "$TRIGGER_FAIL$§Y$preset_ver_blood$§!不可用此选项。"
+
+not_allowed_for_ver_appendage: "$TRIGGER_FAIL$§Y$preset_ver_appendage$§!不可用此选项。"
+not_allowed_for_ver_organic: "$TRIGGER_FAIL$§Y$preset_ver_organic$§!不可用此选项。"
+not_allowed_for_ver_parallel: "$TRIGGER_FAIL$§Y$preset_ver_parallel$§!不可用此选项。"
+
+not_allowed_for_megacorp: "$TRIGGER_FAIL$§Y企业国家§!不可用此选项。"
+
+not_allowed_for_gestalt: "$TRIGGER_FAIL$§Y$ethic_gestalt_consciousness$§!不可用此选项。"
+
+not_allowed_for_term_subject_wars: "$TRIGGER_FAIL$启用§Y附庸参战§!条款（§Y$joins_subject_wars_offensive$§!或§Y$joins_subject_wars_all$§!）时不可用。"
+not_allowed_for_term_subject_diplomacy: "$TRIGGER_FAIL$启用§Y外交自由§!条款（§Y$subject_can_do_diplomacy$§!或§Y$subject_can_do_diplomacy_but_not_vote$§!）时不可用。"
+
+# 附庸缓冲区战争
+NAME_vassal_War: "[This.MainAttacker.GetAdj]独立战争"
+NAME_veru_buffer_war: "[This.MainDefender.GetAdj]附庸战争"
+
+# 起源
+origin_planet_state: "附庸国"
+origin_planet_state_desc: "此国家由他国重组部分领土建立的附庸国。"
+
+# 决策
+decision_create_planet_state: "创建附庸国"
+decision_create_planet_state_desc: "可将本星球建立为附庸国。"
+
+decision_affirm_planet_state: "附庸国：§Y完成§!创建"
+decision_affirm_planet_state_desc: "将失去该星球及所在星系控制权，移交新建附庸国。"
+
+# 响应：
+WILL_FAIL: "此操作将失败。"
+
+# 覆盖设定
+not_allowed_for_protectorate: "$TRIGGER_FAIL$§Y保护国§!不可用此选项。"
+not_allowed_for_tributary: "$TRIGGER_FAIL$§Y朝贡国§!不可用此选项。"
+not_allowed_for_bulwark: "$TRIGGER_FAIL$§Y$preset_bulwark$§!不可用此选项。"
+not_allowed_for_scholarium: "$TRIGGER_FAIL$§Y$preset_scholarium$§!不可用此选项。"
+not_allowed_for_prospectorium: "$TRIGGER_FAIL$§Y$preset_prospectorium$§!不可用此选项。"
+
+oppressive_terms_desc: "被征服者皆为劣等，唯以缄默纳贡方可容其苟活。\n\n§E初始附庸协议条款：\n$t$$subject_can_be_integrated$\n$t$$subject_can_not_do_diplomacy$\n$t$$subject_cannot_expand$\n$t$$subject_ver_ruler_anyone$\n$t$$subject_ver_government_allowed$\n$t$$subject_ver_policy_restricted$\n$t$$subject_ver_naming_allowed$\n$t$$subject_ver_capital_allowed$\n$t$宗主战争：全面参战\n$t$附庸战争：防御作战\n$t$$subject_ver_proxy_allowed$\n$t$附庸领地上限：1§!"balanced_terms_desc: "吾等待附庸以公正，望其终悟吾道之明智。\n\n§E初始附庸协议条款：\n$t$$subject_can_not_be_integrated$\n$t$$subject_can_do_diplomacy_but_not_vote$\n$t$$subject_can_expand_with_tithe$\n$t$$subject_ver_ruler_them$\n$t$$subject_ver_government_allowed$\n$t$$subject_ver_policy_restricted$\n$t$$subject_ver_naming_restricted$\n$t$$subject_ver_capital_restricted$\n$t$宗主战争：防御作战\n$t$附庸战争：防御作战\n$t$$subject_ver_proxy_restricted$\n$t$附庸领地上限：1§!"
+benevolent_terms_desc: "附庸即吾手足，其成即吾之胜，当同心共进。\n\n§E初始附庸协议条款：\n$t$$subject_can_not_be_integrated$\n$t$$subject_can_do_diplomacy$\n$t$$subject_can_expand$\n$t$$subject_ver_ruler_restricted$\n$t$$subject_ver_government_restricted$\n$t$$subject_ver_policy_restricted$\n$t$$subject_ver_naming_restricted$\n$t$$subject_ver_capital_restricted$\n$t$宗主战争：防御作战\n$t$附庸战争：防御作战\n$t$$subject_ver_proxy_restricted$\n$t$附庸领地上限：1§!"
+
+preset_tributary_desc: "朝贡国享有高度自治，§Y10年§!后可随时停止纳贡。\n\n§Y贡赋§!：§G25%§! £energy£ §H能量币§!与£minerals£ §H矿物§!\n§W特殊效果§!：\n§Y附庸§!：§H10年内§!不可更改朝贡协议，期满后可随时停止纳贡"
+
+ ## Scripted Loc Nonsense
+ vear_newline: "\n"
