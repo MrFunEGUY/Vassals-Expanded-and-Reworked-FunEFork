@@ -41,6 +41,43 @@ diplomacy_recipient_is_not_homicidal = {
 	diplomacy_recipient_is_not_homicidal_gestalt = yes
 }
 
+diplomacy_is_not_scorched = {
+	custom_tooltip = {
+		fail_text = "requires_actor_not_scorched_earth"
+		OR = {
+			is_genocidal_infernal = no
+			from = { is_infernal_empire = yes }
+		}
+	}
+	if = {
+		limit = { from = { is_genocidal_infernal = yes } }
+		if = {
+			limit = {
+				has_intel = {
+					who = from
+					intel = civics
+				}
+			}
+			custom_tooltip = {
+				fail_text = "requires_recipient_not_scorched_earth"
+				OR = {
+					is_infernal_empire = yes
+					from = { is_genocidal_infernal = no }
+				}
+			}
+		}
+		else = {
+			custom_tooltip = {
+				fail_text = diplo_action_no_low_intel
+				OR = {
+					is_genocidal_infernal = no
+					from = { is_infernal_empire = yes }
+				}
+			}
+		}
+	}
+}
+
 # this = country, actor
 # from = country, recipient
 diplomacy_recipient_is_not_pompous = {

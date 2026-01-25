@@ -429,11 +429,11 @@ get_ethics_check_phobe = {
 # Remove Fanatic Authoritarian and Fanatic Egalitarian
 get_ethics_check_fan = {
 	if = {
-		limit = { has_ethic = ethic_fanatic_egalitarian }
+		limit = { is_fanatic_egalitarian = yes }
 		shift_ethic = ethic_authoritarian
 	}
 	else_if = {
-		limit = { has_ethic = ethic_fanatic_authoritarian }
+		limit = { is_fanatic_authoritarian = yes }
 		shift_ethic = ethic_egalitarian
 	}
 }

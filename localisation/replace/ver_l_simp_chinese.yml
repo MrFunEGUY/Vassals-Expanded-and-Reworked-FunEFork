@@ -495,6 +495,8 @@ resource_subsidies_ver_exotic_gases: "异星天然气"
 resource_subsidies_ver_rare_crystals: "稀有水晶"
 resource_subsidies_ver_minor_artifacts: "$minor_artifacts$"
 resource_subsidies_ver_research: "研究"
+resource_subsidies_ver_zro: "$sr_zro$"
+resource_subsidies_ver_trade: "$concept_trade$"
 resource_subsidies_ver_hidden_unity: "凝聚力"
 
 resource_subsidies_ver: "资源贡献"

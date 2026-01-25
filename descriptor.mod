@@ -5,5 +5,5 @@ tags={
 	"Gameplay"
 }
 name="Vassals Expanded and Reworked - FunEFork"
-supported_version="v4.0.*"
+supported_version="v4.2*"
 remote_file_id="2183551683"

@@ -244,11 +244,6 @@ resource_subsidies_ver_energy = {
 		}
 
 		modifier = {
-			set = 0.15
-			agreement_preset = preset_ver_neocolony
-		}
-
-		modifier = {
 			set = 0.25
 			agreement_preset = preset_ver_organic
 		}
@@ -966,6 +961,335 @@ resource_subsidies_ver_consumer_goods = {
 	potential = { NOT = { agreement_preset = preset_mercatorum } }
 }
 
+resource_subsidies_ver_trade = {
+	term = resource_ver_subsidies
+	resources = {
+		trade
+	}
+	subsidy_multiplier = @subsidy_multiplier_strategic
+	subsidy_monthly_multiplier = @subsidy_monthly_multiplier_strategic
+
+	resource_min = {
+		base = @subsidy_minimum
+
+		modifier = {
+			set = @set_factor_1
+			OR = {
+				agreement_preset = preset_prospectorium
+				agreement_preset = preset_tributary
+				agreement_preset = preset_subsidiary
+				agreement_preset = preset_relic_satrapy
+			}
+		}
+
+		modifier = {
+			set = @set_factor_2_neg
+			OR = {
+				agreement_preset = preset_vassal
+				agreement_preset = preset_scholarium
+			}
+		}
+
+		modifier = {
+			set = 0.1
+			agreement_preset = preset_ver_puppet
+		}
+
+		modifier = {
+			set = 0.33
+			agreement_preset = preset_ver_neocolony
+		}
+
+		modifier = {
+			set = 0.25
+			agreement_preset = preset_ver_organic
+		}
+	}
+
+	resource_max = {
+		base = @subsidy_maximum
+
+		modifier = {
+			set = @set_factor_1_neg
+			agreement_preset = preset_bulwark
+		}
+
+		modifier = {
+			set = @set_factor_2_neg
+			agreement_preset = preset_bulwark
+			has_active_specialization = specialist_bulwark
+			specialist_tier = 2
+		}
+
+		modifier = {
+			set = @set_factor_3_neg
+			agreement_preset = preset_bulwark
+			has_active_specialization = specialist_bulwark
+			specialist_tier = 3
+		}
+
+		modifier = {
+			set = @set_factor_2
+			OR = {
+				agreement_preset = preset_vassal
+				agreement_preset = preset_scholarium
+				agreement_preset = preset_protectorate
+				######################################
+				agreement_preset = preset_ver_foederatus
+				agreement_preset = preset_ver_satellite
+				agreement_preset = preset_ver_jrpartner
+				agreement_preset = preset_ver_condo
+				agreement_preset = preset_ver_blood
+			}
+		}
+
+		modifier = {
+			set = 0.2
+			agreement_preset = preset_ver_devolved
+		}
+
+		modifier = {
+			set = -0.05
+			agreement_preset = preset_ver_dependency
+		}
+
+		modifier = {
+			set = -0.1
+			agreement_preset = preset_ver_clientkingdom
+		}
+	}
+	potential = { NOT = { agreement_preset = preset_mercatorum } }
+}
+
+resource_subsidies_ver_zro = {
+	term = resource_ver_subsidies
+
+	resources = {
+		sr_zro
+	}
+
+	subsidy_multiplier = @subsidy_multiplier_advanced
+	subsidy_monthly_multiplier = @subsidy_monthly_multiplier_advanced
+
+	resource_min = {
+		base = @subsidy_minimum
+
+		modifier = {
+			set = @set_factor_0
+			agreement_preset = preset_prospectorium
+		}
+
+		modifier = {
+			set = 0.0
+			OR = {
+				agreement_preset = preset_subsidiary
+				agreement_preset = preset_tributary
+				agreement_preset = preset_relic_satrapy
+			}
+		}
+
+		modifier = {
+			set = @set_factor_2_neg
+			OR = {
+				agreement_preset = preset_vassal
+				agreement_preset = preset_scholarium
+			}
+		}
+
+		modifier = {
+			set = 0.15
+			agreement_preset = preset_ver_satellite
+		}
+	}
+
+	resource_max = {
+		base = @subsidy_maximum
+
+		modifier = {
+			set = 0.0
+			OR = {
+				agreement_preset = preset_protectorate
+				agreement_preset = preset_bulwark
+			}
+		}
+
+		modifier = {
+			set = @set_factor_2
+			OR = {
+				agreement_preset = preset_vassal
+				agreement_preset = preset_scholarium
+				agreement_preset = preset_relic_satrapy
+				######################################
+				agreement_preset = preset_ver_jrpartner
+				agreement_preset = preset_ver_dependency
+				agreement_preset = preset_ver_clientkingdom
+				agreement_preset = preset_ver_condo
+				agreement_preset = preset_ver_puppet
+				agreement_preset = preset_ver_blood
+			}
+		}
+
+		modifier = {
+			set = 0.2
+			agreement_preset = preset_ver_devolved
+		}
+	}
+	potential = { NOT = { agreement_preset = preset_mercatorum } }
+}
+
+resource_subsidies_ver_dark_matter = {
+	term = resource_ver_subsidies
+
+	resources = {
+		sr_dark_matter
+	}
+
+	subsidy_multiplier = @subsidy_multiplier_advanced
+	subsidy_monthly_multiplier = @subsidy_monthly_multiplier_advanced
+
+	resource_min = {
+		base = @subsidy_minimum
+
+		modifier = {
+			set = @set_factor_0
+			agreement_preset = preset_prospectorium
+		}
+
+		modifier = {
+			set = 0.0
+			OR = {
+				agreement_preset = preset_subsidiary
+				agreement_preset = preset_tributary
+				agreement_preset = preset_relic_satrapy
+			}
+		}
+
+		modifier = {
+			set = @set_factor_2_neg
+			OR = {
+				agreement_preset = preset_vassal
+				agreement_preset = preset_scholarium
+			}
+		}
+
+		modifier = {
+			set = 0.15
+			agreement_preset = preset_ver_satellite
+		}
+	}
+
+	resource_max = {
+		base = @subsidy_maximum
+
+		modifier = {
+			set = 0.0
+			OR = {
+				agreement_preset = preset_protectorate
+				agreement_preset = preset_bulwark
+			}
+		}
+
+		modifier = {
+			set = @set_factor_2
+			OR = {
+				agreement_preset = preset_vassal
+				agreement_preset = preset_scholarium
+				agreement_preset = preset_relic_satrapy
+				######################################
+				agreement_preset = preset_ver_jrpartner
+				agreement_preset = preset_ver_dependency
+				agreement_preset = preset_ver_clientkingdom
+				agreement_preset = preset_ver_condo
+				agreement_preset = preset_ver_puppet
+				agreement_preset = preset_ver_blood
+			}
+		}
+
+		modifier = {
+			set = 0.2
+			agreement_preset = preset_ver_devolved
+		}
+	}
+	potential = { NOT = { agreement_preset = preset_mercatorum } }
+}
+
+resource_subsidies_ver_metals = {
+	term = resource_ver_subsidies
+
+	resources = {
+		sr_living_metal
+		nanites
+	}
+
+	subsidy_multiplier = @subsidy_multiplier_advanced
+	subsidy_monthly_multiplier = @subsidy_monthly_multiplier_advanced
+
+	resource_min = {
+		base = @subsidy_minimum
+
+		modifier = {
+			set = @set_factor_0
+			agreement_preset = preset_prospectorium
+		}
+
+		modifier = {
+			set = 0.0
+			OR = {
+				agreement_preset = preset_subsidiary
+				agreement_preset = preset_tributary
+				agreement_preset = preset_relic_satrapy
+			}
+		}
+
+		modifier = {
+			set = @set_factor_2_neg
+			OR = {
+				agreement_preset = preset_vassal
+				agreement_preset = preset_scholarium
+			}
+		}
+
+		modifier = {
+			set = 0.15
+			agreement_preset = preset_ver_satellite
+		}
+	}
+
+	resource_max = {
+		base = @subsidy_maximum
+
+		modifier = {
+			set = 0.0
+			OR = {
+				agreement_preset = preset_protectorate
+				agreement_preset = preset_bulwark
+			}
+		}
+
+		modifier = {
+			set = @set_factor_2
+			OR = {
+				agreement_preset = preset_vassal
+				agreement_preset = preset_scholarium
+				agreement_preset = preset_relic_satrapy
+				######################################
+				agreement_preset = preset_ver_jrpartner
+				agreement_preset = preset_ver_dependency
+				agreement_preset = preset_ver_clientkingdom
+				agreement_preset = preset_ver_condo
+				agreement_preset = preset_ver_puppet
+				agreement_preset = preset_ver_blood
+			}
+		}
+
+		modifier = {
+			set = 0.2
+			agreement_preset = preset_ver_devolved
+		}
+	}
+	potential = { NOT = { agreement_preset = preset_mercatorum } }
+}
+
 resource_subsidies_ver_research = {
 	term = resource_ver_subsidies
 
@@ -1470,132 +1794,132 @@ subject_ver_capital_allowed = {
 # Naming #
 ##########
 
-subject_ver_naming_restricted = {
-	term = subject_ver_naming
-	loyalty_change = 5
-	ai_acceptance = {
-		overlord = -20
-		subject = 0
-	}
-}
+# subject_ver_naming_restricted = {
+# 	term = subject_ver_naming
+# 	loyalty_change = 5
+# 	ai_acceptance = {
+# 		overlord = -20
+# 		subject = 0
+# 	}
+# }
 
-subject_ver_naming_allowed = {
-	term = subject_ver_naming
-	loyalty_change = -15
-	ai_acceptance = {
-		overlord = 20
-		subject = -50
-	}
-	triggered_loyalty_change = {
-		trigger = {
-			target = { is_xenophobe = yes }
-		}
-		loyalty_change = -5
-		ai_acceptance = {
-			subject = -50
-		}
-	}
-	target_modifier = {
-		monthly_loyalty = -1
-	}
-	possible = {
-		custom_tooltip = {
-			fail_text = not_allowed_for_tributary
-			NOT = { agreement_preset = preset_tributary }
-		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_protectorate
-			NOT = { agreement_preset = preset_protectorate }
-		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_ver_devolved
-			NOT = { agreement_preset = preset_ver_devolved }
-		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_ver_condo
-			NOT = { agreement_preset = preset_ver_condo }
-		}
-	}
-}
+# subject_ver_naming_allowed = {
+# 	term = subject_ver_naming
+# 	loyalty_change = -15
+# 	ai_acceptance = {
+# 		overlord = 20
+# 		subject = -50
+# 	}
+# 	triggered_loyalty_change = {
+# 		trigger = {
+# 			target = { is_xenophobe = yes }
+# 		}
+# 		loyalty_change = -5
+# 		ai_acceptance = {
+# 			subject = -50
+# 		}
+# 	}
+# 	target_modifier = {
+# 		monthly_loyalty = -1
+# 	}
+# 	possible = {
+# 		custom_tooltip = {
+# 			fail_text = not_allowed_for_tributary
+# 			NOT = { agreement_preset = preset_tributary }
+# 		}
+# 		custom_tooltip = {
+# 			fail_text = not_allowed_for_protectorate
+# 			NOT = { agreement_preset = preset_protectorate }
+# 		}
+# 		custom_tooltip = {
+# 			fail_text = not_allowed_for_ver_devolved
+# 			NOT = { agreement_preset = preset_ver_devolved }
+# 		}
+# 		custom_tooltip = {
+# 			fail_text = not_allowed_for_ver_condo
+# 			NOT = { agreement_preset = preset_ver_condo }
+# 		}
+# 	}
+# }
 
 #############
 # Proxy War #
 #############
 
-subject_ver_proxy_restricted = {
-	term = subject_ver_proxy
-	loyalty_change = 20
-	ai_acceptance = {
-		overlord = -20
-		subject = 0
-	}
-}
+# subject_ver_proxy_restricted = {
+# 	term = subject_ver_proxy
+# 	loyalty_change = 20
+# 	ai_acceptance = {
+# 		overlord = -20
+# 		subject = 0
+# 	}
+# }
 
-subject_ver_proxy_allowed = {
-	term = subject_ver_proxy
-	loyalty_change = -30
-	ai_acceptance = {
-		overlord = 100
-		subject = -200
-	}
-	triggered_loyalty_change = {
-		trigger = {
-			target = {
-				OR = {
-					is_xenophile = yes
-					is_egalitarian = yes
-				}
-			}
-		}
-		loyalty_change = -15
-		ai_acceptance = {
-			subject = -200
-		}
-	}
-	target_modifier = {
-		monthly_loyalty = -4
-	}
-	possible = {
-		custom_tooltip = {
-			fail_text = not_allowed_for_tributary
-			NOT = { agreement_preset = preset_tributary }
-		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_protectorate
-			NOT = { agreement_preset = preset_protectorate }
-		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_ver_devolved
-			NOT = { agreement_preset = preset_ver_devolved }
-		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_ver_condo
-			NOT = { agreement_preset = preset_ver_condo }
-		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_ver_foederatus
-			NOT = { agreement_preset = preset_ver_foederatus }
-		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_ver_satellite
-			NOT = { agreement_preset = preset_ver_satellite }
-		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_term_subject_wars
-			NOR = {
-				has_term_value = { term = joins_subject_wars value = joins_subject_wars_all }
-				has_term_value = { term = joins_subject_wars value = joins_subject_wars_offensive }
-			}
-		}
-		custom_tooltip = {
-			fail_text = not_allowed_for_term_subject_diplomacy
-			NOR = {
-				has_term_value = { term = subject_diplomacy value = subject_can_do_diplomacy }
-				has_term_value = { term = subject_diplomacy value = subject_can_do_diplomacy_but_not_vote }
-			}
-		}
-	}
-}
+# subject_ver_proxy_allowed = {
+# 	term = subject_ver_proxy
+# 	loyalty_change = -30
+# 	ai_acceptance = {
+# 		overlord = 100
+# 		subject = -200
+# 	}
+# 	triggered_loyalty_change = {
+# 		trigger = {
+# 			target = {
+# 				OR = {
+# 					is_xenophile = yes
+# 					is_egalitarian = yes
+# 				}
+# 			}
+# 		}
+# 		loyalty_change = -15
+# 		ai_acceptance = {
+# 			subject = -200
+# 		}
+# 	}
+# 	target_modifier = {
+# 		monthly_loyalty = -4
+# 	}
+# 	possible = {
+# 		custom_tooltip = {
+# 			fail_text = not_allowed_for_tributary
+# 			NOT = { agreement_preset = preset_tributary }
+# 		}
+# 		custom_tooltip = {
+# 			fail_text = not_allowed_for_protectorate
+# 			NOT = { agreement_preset = preset_protectorate }
+# 		}
+# 		custom_tooltip = {
+# 			fail_text = not_allowed_for_ver_devolved
+# 			NOT = { agreement_preset = preset_ver_devolved }
+# 		}
+# 		custom_tooltip = {
+# 			fail_text = not_allowed_for_ver_condo
+# 			NOT = { agreement_preset = preset_ver_condo }
+# 		}
+# 		custom_tooltip = {
+# 			fail_text = not_allowed_for_ver_foederatus
+# 			NOT = { agreement_preset = preset_ver_foederatus }
+# 		}
+# 		custom_tooltip = {
+# 			fail_text = not_allowed_for_ver_satellite
+# 			NOT = { agreement_preset = preset_ver_satellite }
+# 		}
+# 		custom_tooltip = {
+# 			fail_text = not_allowed_for_term_subject_wars
+# 			NOR = {
+# 				has_term_value = { term = joins_subject_wars value = joins_subject_wars_all }
+# 				has_term_value = { term = joins_subject_wars value = joins_subject_wars_offensive }
+# 			}
+# 		}
+# 		custom_tooltip = {
+# 			fail_text = not_allowed_for_term_subject_diplomacy
+# 			NOR = {
+# 				has_term_value = { term = subject_diplomacy value = subject_can_do_diplomacy }
+# 				has_term_value = { term = subject_diplomacy value = subject_can_do_diplomacy_but_not_vote }
+# 			}
+# 		}
+# 	}
+# }
 
 ##########
 # Hidden #
@@ -2970,7 +3294,7 @@ subject_is_fanatic_xenophobe = {
 					has_overlord = ROOT.owner
 					ROOT.owner = { has_overlord = ROOT.target }
 				}
-				has_ethic = ethic_fanatic_xenophobe
+				is_fanatic_xenophobe = yes
 			}
 		}
 		loyalty_change = -40

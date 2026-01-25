@@ -28,6 +28,7 @@ action_invite_to_federation = {
 				# is_overlord_to = FROM ## Seems broken
 			}
 		}
+		hidden_trigger = { NOT = { has_origin = origin_endbringers } }
 		hidden_trigger = {
 			OR = {
 				has_federation = no
@@ -75,6 +76,7 @@ action_invite_to_federation = {
 			}
 		}
 		diplomacy_is_not_homicidal = yes
+		diplomacy_is_not_scorched = yes
 		diplomacy_is_not_inward_perfection = yes
 		custom_tooltip = {
             fail_text = requires_30_trust_or_excellent
@@ -136,12 +138,18 @@ action_form_research_agreement = {
 	potential = {
 		hidden_trigger = {
 			is_country_type = default
-			from = { is_country_type = default }
+			from = {
+				OR = {
+					is_country_type = default
+					is_country_type = exiled
+				}
+			}
 		}
 	}
 
 	possible = {
 		diplomacy_is_not_homicidal = yes
+		diplomacy_is_not_scorched = yes
 		diplomacy_is_not_inward_perfection = yes
 		custom_tooltip = {
 			fail_text = "federation_actor_no_separate_treaties"
@@ -254,6 +262,7 @@ action_demand_subjugation = {
 
 	possible = {
 		diplomacy_is_not_homicidal = yes
+		diplomacy_is_not_scorched = yes
 		diplomacy_recipient_is_not_pompous = yes
 		custom_tooltip = {
 			fail_text = "requires_recipient_not_in_galactic_empire"
@@ -411,6 +420,7 @@ action_ask_to_become_subjugated = {
 
 	possible = {
 		diplomacy_is_not_homicidal = yes
+		diplomacy_is_not_scorched = yes
 		custom_tooltip = {
 			fail_text = "federation_actor_no_separate_treaties"
 			NOT = {

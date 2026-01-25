@@ -50,9 +50,9 @@ subject_ver_capital = {
 	term_type = discrete
 }
 
-subject_ver_naming = {
-	term_type = discrete
-}
+# subject_ver_naming = {
+# 	term_type = discrete
+# }
 
 ###### VEAR
 
@@ -72,9 +72,9 @@ joins_subject_wars = {
 	term_type = discrete
 }
 
-subject_ver_proxy = {
-	term_type = discrete
-}
+# subject_ver_proxy = {
+# 	term_type = discrete
+# }
 
 subject_holdings_limit = {
 	term_type = discrete_number

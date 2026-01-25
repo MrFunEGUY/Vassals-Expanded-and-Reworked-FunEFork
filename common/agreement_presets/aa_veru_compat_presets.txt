@@ -36,10 +36,10 @@ preset_mercatorum = {
 				key = subject_ver_species_policy
 				value = subject_ver_species_policy_restricted
 			}
-			{
-				key = subject_ver_naming
-				value = subject_ver_naming_restricted
-			}
+			# {
+			# 	key = subject_ver_naming
+			# 	value = subject_ver_naming_restricted
+			# }
 			{
 				key = subject_ver_capital
 				value = subject_ver_capital_restricted
@@ -54,10 +54,10 @@ preset_mercatorum = {
 				value = joins_subject_wars_defensive
 			}
 			####
-			{
-				key = subject_ver_proxy
-				value = subject_ver_proxy_restricted
-			}
+			# {
+			# 	key = subject_ver_proxy
+			# 	value = subject_ver_proxy_restricted
+			# }
 			####
 			{
 				key = subject_holdings_limit

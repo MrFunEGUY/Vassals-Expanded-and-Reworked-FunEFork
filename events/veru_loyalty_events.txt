@@ -269,7 +269,7 @@ country_event = {
 		# Loyal Subjects
 		if = {
 			limit = {
-				has_global_flag = civil_wars_active
+				has_global_flag = CWM_active
 				event_target:demanding_subject = { is_loyal_to = prev }
 			}
 			random_list = {
@@ -290,7 +290,7 @@ country_event = {
 		# Disloyal Subjects
 		if = {
 			limit = {
-				has_global_flag = civil_wars_active
+				has_global_flag = CWM_active
 				event_target:demanding_subject = { is_disloyal_to = prev }
 			}
 			random_list = {
@@ -349,7 +349,7 @@ country_event = {
 	desc = {
 		text = veru_l.2100.loyal.desc
 		trigger = {
-			has_global_flag = civil_wars_active
+			has_global_flag = CWM_active
 			event_target:demanding_subject = { is_loyal_to = prev }
 		}
 	}
@@ -416,7 +416,7 @@ country_event = {
 	desc = {
 		text = veru_l.2150.loyal.desc
 		trigger = {
-			has_global_flag = civil_wars_active
+			has_global_flag = CWM_active
 			event_target:demanding_subject = { is_loyal_to = prev }
 		}
 	}
@@ -478,7 +478,7 @@ country_event = {
 	desc = {
 		text = veru_l.2200.loyal.desc
 		trigger = {
-			has_global_flag = civil_wars_active
+			has_global_flag = CWM_active
 			event_target:demanding_subject = { is_loyal_to = prev }
 		}
 	}
@@ -547,7 +547,7 @@ country_event = {
 	desc = {
 		text = veru_l.2250.loyal.desc
 		trigger = {
-			has_global_flag = civil_wars_active
+			has_global_flag = CWM_active
 			event_target:demanding_subject = { is_loyal_to = prev }
 		}
 	}

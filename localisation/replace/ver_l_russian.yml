@@ -484,6 +484,10 @@ l_russian:
  resource_subsidies_ver_rare_crystals: "Редкие кристаллы"
  resource_subsidies_ver_minor_artifacts: "Малые артефакты"
  resource_subsidies_ver_research: "Исследования"
+ resource_subsidies_ver_zro: "$sr_zro$"
+ resource_subsidies_ver_dark_matter: "$sr_dark_matter$"
+ resource_subsidies_ver_metals: "$sr_living_metal$ & $nanites$"
+ resource_subsidies_ver_trade: "$concept_trade$"
  resource_subsidies_ver_hidden_unity: "Единство"
 
  resource_subsidies_ver: "Вклад"

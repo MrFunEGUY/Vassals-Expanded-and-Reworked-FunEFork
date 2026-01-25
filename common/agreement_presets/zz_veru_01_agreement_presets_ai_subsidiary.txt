@@ -51,10 +51,10 @@ preset_subsidiary_mean_01 = {
 				key = subject_ver_species_policy
 				value = subject_ver_species_policy_restricted
 			}
-			{
-				key = subject_ver_naming
-				value = subject_ver_naming_restricted
-			}
+			# {
+			# 	key = subject_ver_naming
+			# 	value = subject_ver_naming_restricted
+			# }
 			{
 				key = subject_ver_capital
 				value = subject_ver_capital_restricted
@@ -69,10 +69,10 @@ preset_subsidiary_mean_01 = {
 				value = joins_subject_wars_defensive
 			}
 			####
-			{
-				key = subject_ver_proxy
-				value = subject_ver_proxy_restricted
-			}
+			# {
+			# 	key = subject_ver_proxy
+			# 	value = subject_ver_proxy_restricted
+			# }
 			####
 			{
 				key = subject_holdings_limit
@@ -168,10 +168,10 @@ preset_subsidiary_mean_02 = {
 				key = subject_ver_species_policy
 				value = subject_ver_species_policy_restricted
 			}
-			{
-				key = subject_ver_naming
-				value = subject_ver_naming_restricted
-			}
+			# {
+			# 	key = subject_ver_naming
+			# 	value = subject_ver_naming_restricted
+			# }
 			{
 				key = subject_ver_capital
 				value = subject_ver_capital_restricted
@@ -186,10 +186,10 @@ preset_subsidiary_mean_02 = {
 				value = joins_subject_wars_defensive
 			}
 			####
-			{
-				key = subject_ver_proxy
-				value = subject_ver_proxy_restricted
-			}
+			# {
+			# 	key = subject_ver_proxy
+			# 	value = subject_ver_proxy_restricted
+			# }
 			####
 			{
 				key = subject_holdings_limit
@@ -289,10 +289,10 @@ preset_subsidiary_mean_03 = {
 				key = subject_ver_species_policy
 				value = subject_ver_species_policy_restricted
 			}
-			{
-				key = subject_ver_naming
-				value = subject_ver_naming_restricted
-			}
+			# {
+			# 	key = subject_ver_naming
+			# 	value = subject_ver_naming_restricted
+			# }
 			{
 				key = subject_ver_capital
 				value = subject_ver_capital_restricted
@@ -307,10 +307,10 @@ preset_subsidiary_mean_03 = {
 				value = joins_subject_wars_defensive
 			}
 			####
-			{
-				key = subject_ver_proxy
-				value = subject_ver_proxy_restricted
-			}
+			# {
+			# 	key = subject_ver_proxy
+			# 	value = subject_ver_proxy_restricted
+			# }
 			####
 			{
 				key = subject_holdings_limit
@@ -398,10 +398,10 @@ preset_subsidiary_nice_01 = {
 				key = subject_ver_species_policy
 				value = subject_ver_species_policy_restricted
 			}
-			{
-				key = subject_ver_naming
-				value = subject_ver_naming_restricted
-			}
+			# {
+			# 	key = subject_ver_naming
+			# 	value = subject_ver_naming_restricted
+			# }
 			{
 				key = subject_ver_capital
 				value = subject_ver_capital_restricted
@@ -416,10 +416,10 @@ preset_subsidiary_nice_01 = {
 				value = joins_subject_wars_defensive
 			}
 			####
-			{
-				key = subject_ver_proxy
-				value = subject_ver_proxy_restricted
-			}
+			# {
+			# 	key = subject_ver_proxy
+			# 	value = subject_ver_proxy_restricted
+			# }
 			####
 			{
 				key = subject_holdings_limit
@@ -507,10 +507,10 @@ preset_subsidiary_nice_02 = {
 				key = subject_ver_species_policy
 				value = subject_ver_species_policy_restricted
 			}
-			{
-				key = subject_ver_naming
-				value = subject_ver_naming_restricted
-			}
+			# {
+			# 	key = subject_ver_naming
+			# 	value = subject_ver_naming_restricted
+			# }
 			{
 				key = subject_ver_capital
 				value = subject_ver_capital_restricted
@@ -525,10 +525,10 @@ preset_subsidiary_nice_02 = {
 				value = joins_subject_wars_defensive
 			}
 			####
-			{
-				key = subject_ver_proxy
-				value = subject_ver_proxy_restricted
-			}
+			# {
+			# 	key = subject_ver_proxy
+			# 	value = subject_ver_proxy_restricted
+			# }
 			####
 			{
 				key = subject_holdings_limit

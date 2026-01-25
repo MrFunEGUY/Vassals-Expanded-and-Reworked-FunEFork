@@ -3,4 +3,4 @@
 ### FunEFork by MrFunEGUY ###
 ###############################
 
-remove_adoptive_dynasties = {  }
+remove_adoptive_dynasties = { always = no }

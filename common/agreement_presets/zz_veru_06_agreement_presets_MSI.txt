@@ -62,10 +62,10 @@ preset_payback_subsidiary_oppressive = {
 				key = subject_ver_species_policy
 				value = subject_ver_species_policy_restricted
 			}
-			{
-				key = subject_ver_naming
-				value = subject_ver_naming_allowed
-			}
+			# {
+			# 	key = subject_ver_naming
+			# 	value = subject_ver_naming_allowed
+			# }
 			{
 				key = subject_ver_capital
 				value = subject_ver_capital_allowed
@@ -80,10 +80,10 @@ preset_payback_subsidiary_oppressive = {
 				value = joins_subject_wars_defensive
 			}
 			####
-			{
-				key = subject_ver_proxy
-				value = subject_ver_proxy_restricted
-			}
+			# {
+			# 	key = subject_ver_proxy
+			# 	value = subject_ver_proxy_restricted
+			# }
 			####
 			{
 				key = subject_holdings_limit
@@ -168,10 +168,10 @@ preset_payback_subsidiary_balanced = {
 				key = subject_ver_species_policy
 				value = subject_ver_species_policy_restricted
 			}
-			{
-				key = subject_ver_naming
-				value = subject_ver_naming_restricted
-			}
+			# {
+			# 	key = subject_ver_naming
+			# 	value = subject_ver_naming_restricted
+			# }
 			{
 				key = subject_ver_capital
 				value = subject_ver_capital_restricted
@@ -186,10 +186,10 @@ preset_payback_subsidiary_balanced = {
 				value = joins_subject_wars_defensive
 			}
 			####
-			{
-				key = subject_ver_proxy
-				value = subject_ver_proxy_restricted
-			}
+			# {
+			# 	key = subject_ver_proxy
+			# 	value = subject_ver_proxy_restricted
+			# }
 			####
 			{
 				key = subject_holdings_limit
@@ -275,10 +275,10 @@ preset_payback_subsidiary_benevolent = {
 				key = subject_ver_species_policy
 				value = subject_ver_species_policy_restricted
 			}
-			{
-				key = subject_ver_naming
-				value = subject_ver_naming_restricted
-			}
+			# {
+			# 	key = subject_ver_naming
+			# 	value = subject_ver_naming_restricted
+			# }
 			{
 				key = subject_ver_capital
 				value = subject_ver_capital_restricted
@@ -293,10 +293,10 @@ preset_payback_subsidiary_benevolent = {
 				value = joins_subject_wars_defensive
 			}
 			####
-			{
-				key = subject_ver_proxy
-				value = subject_ver_proxy_restricted
-			}
+			# {
+			# 	key = subject_ver_proxy
+			# 	value = subject_ver_proxy_restricted
+			# }
 			####
 			{
 				key = subject_holdings_limit

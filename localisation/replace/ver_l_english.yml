@@ -37,7 +37,7 @@
  preset_ver_condo_desc:"Condominia have complete sovereignty over their foreign affairs. They serve as neutral meeting locations for diplomats throughout the galaxy.\n\n§WSpecial Effects:§! \n§YSubject§!: £diplo_weight£ Diplomatic Weight: §G+20%§!\n§YOverlord§!: £diplo_weight£ Diplomatic Weight: §G+5%§!"
 
  preset_ver_puppet: "Puppet State"
- preset_ver_puppet_desc: "Puppet States can be used to fight Proxy Wars for their overlord.\n\n§YTribute§!: §G10%§! £energy£ §HEnergy§!, §G10%§! £food£ §HFood§!\n§WSpecial Effects:§! \n§YSubject§!: £happiness£ Happiness: §R-10%§!\n§YOverlord§!: £happiness£ Happiness: §G+2%§!"
+ preset_ver_puppet_desc: "Puppet States lack any true autonomy.\n\n§YTribute§!: §G10%§! £energy£ §HEnergy§!, §G10%§! £food£ §HFood§!\n§WSpecial Effects:§! \n§YSubject§!: £happiness£ Happiness: §R-10%§!\n§YOverlord§!: £happiness£ Happiness: §G+2%§!"
 
  preset_ver_neocolony: "Neo-Colony"
  preset_ver_neocolony_desc: "Neo-Colonies are states that are economically dominated by their overlord.\n\n§YTribute§!: §G15%§! £energy£ §HEnergy§!\n§YSubsidy§!: §R5%§! £consumer_goods£ §HConsumer Goods§!\n§WSpecial Effects:§! \n§YSubject§!: £trade_value£ Trade Value: §G+10%§!, £crime£ Crime: §R+30%§!\n§YOverlord§!: £trade_value£ Trade Value: §G+2%§!"
@@ -484,17 +484,21 @@
  subject_ver_proxy_allowed: "Proxy Wars Permitted"
  subject_ver_proxy_allowed_desc: "The Overlord may force the Subject to engage in a Proxy War."
 
- resource_subsidies_ver_energy: "Energy"
- resource_subsidies_ver_minerals: "Minerals"
- resource_subsidies_ver_food: "Food"
- resource_subsidies_ver_alloys: "Alloys"
- resource_subsidies_ver_consumer_goods: "Consumer Goods"
- resource_subsidies_ver_volatile_motes: "Volatile Motes"
- resource_subsidies_ver_exotic_gases: "Exotic Gases"
- resource_subsidies_ver_rare_crystals: "Rare Crystals"
- resource_subsidies_ver_minor_artifacts: "Minor Artifacts"
- resource_subsidies_ver_research: "Research"
- resource_subsidies_ver_hidden_unity: "Unity"
+ resource_subsidies_ver_energy: "$energy$"
+ resource_subsidies_ver_minerals: "$minerals$"
+ resource_subsidies_ver_food: "$food$"
+ resource_subsidies_ver_alloys: "$alloys$"
+ resource_subsidies_ver_consumer_goods: "$consumer_goods$"
+ resource_subsidies_ver_volatile_motes: "$volatile_motes$"
+ resource_subsidies_ver_exotic_gases: "$exotic_gases$"
+ resource_subsidies_ver_rare_crystals: "$rare_crystals$"
+ resource_subsidies_ver_minor_artifacts: "$minor_artifacts$"
+ resource_subsidies_ver_research: "$research$"
+ resource_subsidies_ver_zro: "$sr_zro$"
+ resource_subsidies_ver_dark_matter: "$sr_dark_matter$"
+ resource_subsidies_ver_metals: "Advanced Metals"
+ resource_subsidies_ver_trade: "$concept_trade$"
+ resource_subsidies_ver_hidden_unity: "$concept_unity$"
 
  resource_subsidies_ver: "Contribution"
 
@@ -597,7 +601,7 @@
 
  not_allowed_for_megacorp: "$TRIGGER_FAIL$Not allowed for §YMegacorps§!."
 
- not_allowed_for_gestalt: "$TRIGGER_FAIL$Not allowed for a §Y$ethic_gestalt_consciousness$§!."
+ not_allowed_for_lt: "$TRIGGER_FAIL$Not allowed for a §Y$ethic_lt_consciousness$§!."
 
  not_allowed_for_term_subject_wars: "$TRIGGER_FAIL$Not allowed for §YSubject Conflict§! terms §Y$joins_subject_wars_offensive$§! or §Y$joins_subject_wars_all$§!."
  not_allowed_for_term_subject_diplomacy: "$TRIGGER_FAIL$Not allowed for §YDiplomatic Freedom§! terms §Y$subject_can_do_diplomacy$§! or §Y$subject_can_do_diplomacy_but_not_vote$§!."

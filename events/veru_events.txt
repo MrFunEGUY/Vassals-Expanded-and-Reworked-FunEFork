@@ -170,21 +170,21 @@ country_event = {
 	}
 
 	# Proxy War
-	option = {
-		name = veru.1050.proxy
-		allow = {
-			custom_tooltip = {
-				fail_text = contract_fail
-				event_target:chosen_subject = { has_proxy_allowed = yes }
-			}
-		}
-		hidden_effect = {
-			save_event_target_as = ver_puppeteer
-			event_target:chosen_subject = {
-				country_event = { id = ver.32 }
-			}
-		}
-	}
+	# option = {
+	# 	name = veru.1050.proxy
+	# 	allow = {
+	# 		custom_tooltip = {
+	# 			fail_text = contract_fail
+	# 			event_target:chosen_subject = { has_proxy_allowed = yes }
+	# 		}
+	# 	}
+	# 	hidden_effect = {
+	# 		save_event_target_as = ver_puppeteer
+	# 		event_target:chosen_subject = {
+	# 			country_event = { id = ver.32 }
+	# 		}
+	# 	}
+	# }
 
 	# Alter Subject Name
 	option = {

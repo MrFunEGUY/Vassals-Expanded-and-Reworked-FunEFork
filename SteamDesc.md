@@ -2,7 +2,6 @@
 
 - This is a fork of the [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1813104049]Vassals Expanded and Reworked mod by lpslucasps[/url].
 
-
 [hr][/hr]
 
 [h1]New Contract Terms:[/h1]
@@ -17,9 +16,7 @@
 
 - Capital Relocation: Determines whether the Overlord can relocate the capital of their subject.
 
-- Naming Rights: Determines whether the overlord is allowed to rename their subject.
-
-- Proxy War: Determines whether the Overlord is allowed to force the Subject to partake in Proxy Wars, which is a mechanic where the Overlord can direct a subject to attack someone without participating themselves.
+- Naming Rights: Determines whether the overlord is allowed to rename their subject. -- CURRENTLY DISABLED
 
 [h1]Other Features:[/h1]
 
@@ -72,6 +69,8 @@
 - Chinese Localisation by [url=https://steamcommunity.com/id/MyresMkG]MyresMkG[/url]. Thank you!
 
 - Russian Localisation by [url=https://steamcommunity.com/id/99006664646]Anti4iteR[/url]. Thank you!
+
+- Korean Localisation by [url=https://steamcommunity.com/profiles/76561198005833464]The Engineer Pop[/url]. Thank you!
 
 - Decision Icons: [url=https://steamcommunity.com/id/76561198858429698]FirePrince[/url].
 

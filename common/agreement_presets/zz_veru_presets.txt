@@ -73,10 +73,10 @@ preset_ver_foederatus = {
 				key = subject_ver_species_policy
 				value = subject_ver_species_policy_restricted
 			}
-			{
-				key = subject_ver_naming
-				value = subject_ver_naming_restricted
-			}
+			# {
+			# 	key = subject_ver_naming
+			# 	value = subject_ver_naming_restricted
+			# }
 			{
 				key = subject_ver_capital
 				value = subject_ver_capital_restricted
@@ -91,10 +91,10 @@ preset_ver_foederatus = {
 				value = joins_subject_wars_all
 			}
 			####
-			{
-				key = subject_ver_proxy
-				value = subject_ver_proxy_restricted
-			}
+			# {
+			# 	key = subject_ver_proxy
+			# 	value = subject_ver_proxy_restricted
+			# }
 			####
 			{
 				key = subject_holdings_limit
@@ -130,7 +130,7 @@ preset_ver_foederatus = {
 		modifier = {
 			factor = 1.5
 			OR = {
-				has_ethic = ethic_fanatic_militarist
+				is_fanatic_militarist = yes
 				has_valid_civic = civic_warrior_culture
 			}
 		}
@@ -147,7 +147,7 @@ preset_ver_foederatus = {
 		}
 		modifier = {
 			factor = 2
-			has_ethic = ethic_fanatic_militarist
+			is_fanatic_militarist = yes
 		}
 	}
 
@@ -207,10 +207,10 @@ preset_ver_satellite = {
 				key = subject_ver_species_policy
 				value = subject_ver_species_policy_restricted
 			}
-			{
-				key = subject_ver_naming
-				value = subject_ver_naming_restricted
-			}
+			# {
+			# 	key = subject_ver_naming
+			# 	value = subject_ver_naming_restricted
+			# }
 			{
 				key = subject_ver_capital
 				value = subject_ver_capital_restricted
@@ -225,10 +225,10 @@ preset_ver_satellite = {
 				value = joins_subject_wars_defensive
 			}
 			####
-			{
-				key = subject_ver_proxy
-				value = subject_ver_proxy_restricted
-			}
+			# {
+			# 	key = subject_ver_proxy
+			# 	value = subject_ver_proxy_restricted
+			# }
 			####
 			{
 				key = subject_holdings_limit
@@ -262,7 +262,7 @@ preset_ver_satellite = {
 		}
 		modifier = {
 			factor = 1.5
-			has_ethic = ethic_fanatic_pacifist
+			is_fanatic_pacifist = yes
 		}
 		modifier = {
 			factor = 2
@@ -288,7 +288,7 @@ preset_ver_satellite = {
 		}
 		modifier = {
 			factor = 2
-			has_ethic = ethic_fanatic_pacifist
+			is_fanatic_pacifist = yes
 		}
 	}
 
@@ -347,10 +347,10 @@ preset_ver_jrpartner = {
 				key = subject_ver_species_policy
 				value = subject_ver_species_policy_restricted
 			}
-			{
-				key = subject_ver_naming
-				value = subject_ver_naming_restricted
-			}
+			# {
+			# 	key = subject_ver_naming
+			# 	value = subject_ver_naming_restricted
+			# }
 			{
 				key = subject_ver_capital
 				value = subject_ver_capital_allowed
@@ -365,10 +365,10 @@ preset_ver_jrpartner = {
 				value = joins_subject_wars_defensive
 			}
 			####
-			{
-				key = subject_ver_proxy
-				value = subject_ver_proxy_restricted
-			}
+			# {
+			# 	key = subject_ver_proxy
+			# 	value = subject_ver_proxy_restricted
+			# }
 			####
 			{
 				key = subject_holdings_limit
@@ -405,7 +405,7 @@ preset_ver_jrpartner = {
 		}
 		modifier = {
 			factor = 1.5
-			has_ethic = ethic_fanatic_materialist
+			is_fanatic_materialist = yes
 		}
 		modifier = {
 			factor = 2
@@ -420,7 +420,7 @@ preset_ver_jrpartner = {
 		}
 		modifier = {
 			factor = 2
-			has_ethic = ethic_fanatic_materialist
+			is_fanatic_materialist = yes
 		}
 	}
 
@@ -480,10 +480,10 @@ preset_ver_dependency = {
 				key = subject_ver_species_policy
 				value = subject_ver_species_policy_restricted
 			}
-			{
-				key = subject_ver_naming
-				value = subject_ver_naming_restricted
-			}
+			# {
+			# 	key = subject_ver_naming
+			# 	value = subject_ver_naming_restricted
+			# }
 			{
 				key = subject_ver_capital
 				value = subject_ver_capital_restricted
@@ -498,10 +498,10 @@ preset_ver_dependency = {
 				value = joins_subject_wars_defensive
 			}
 			####
-			{
-				key = subject_ver_proxy
-				value = subject_ver_proxy_restricted
-			}
+			# {
+			# 	key = subject_ver_proxy
+			# 	value = subject_ver_proxy_restricted
+			# }
 			####
 			{
 				key = subject_holdings_limit
@@ -532,7 +532,7 @@ preset_ver_dependency = {
 		modifier = {
 			factor = 1.5
 			OR = {
-				has_ethic = ethic_fanatic_spiritualist
+				is_fanatic_spiritualist = yes
 				has_valid_civic = civic_exalted_priesthood
 				has_valid_civic = civic_byzantine_bureaucracy
 				has_ai_personality = evangelising_zealots
@@ -548,7 +548,7 @@ preset_ver_dependency = {
 		modifier = {
 			factor = 2
 			OR = {
-				has_ethic = ethic_fanatic_spiritualist
+				is_fanatic_spiritualist = yes
 				has_valid_civic = civic_exalted_priesthood
 				has_valid_civic = civic_byzantine_bureaucracy
 			}
@@ -612,10 +612,10 @@ preset_ver_clientkingdom = {
 				key = subject_ver_species_policy
 				value = subject_ver_species_policy_restricted
 			}
-			{
-				key = subject_ver_naming
-				value = subject_ver_naming_allowed
-			}
+			# {
+			# 	key = subject_ver_naming
+			# 	value = subject_ver_naming_allowed
+			# }
 			{
 				key = subject_ver_capital
 				value = subject_ver_capital_allowed
@@ -630,10 +630,10 @@ preset_ver_clientkingdom = {
 				value = joins_subject_wars_defensive
 			}
 			####
-			{
-				key = subject_ver_proxy
-				value = subject_ver_proxy_restricted
-			}
+			# {
+			# 	key = subject_ver_proxy
+			# 	value = subject_ver_proxy_restricted
+			# }
 			####
 			{
 				key = subject_holdings_limit
@@ -668,7 +668,7 @@ preset_ver_clientkingdom = {
 		modifier = {
 			factor = 1.5
 			OR = {
-				has_ethic = ethic_fanatic_authoritarian
+				is_fanatic_authoritarian = yes
 				has_valid_civic = civic_shadow_council
 			}
 		}
@@ -738,10 +738,10 @@ preset_ver_devolved = {
 				key = subject_ver_species_policy
 				value = subject_ver_species_policy_restricted
 			}
-			{
-				key = subject_ver_naming
-				value = subject_ver_naming_restricted
-			}
+			# {
+			# 	key = subject_ver_naming
+			# 	value = subject_ver_naming_restricted
+			# }
 			{
 				key = subject_ver_capital
 				value = subject_ver_capital_restricted
@@ -756,10 +756,10 @@ preset_ver_devolved = {
 				value = joins_subject_wars_defensive
 			}
 			####
-			{
-				key = subject_ver_proxy
-				value = subject_ver_proxy_restricted
-			}
+			# {
+			# 	key = subject_ver_proxy
+			# 	value = subject_ver_proxy_restricted
+			# }
 			####
 			{
 				key = subject_holdings_limit
@@ -793,7 +793,7 @@ preset_ver_devolved = {
 		}
 		modifier = {
 			factor = 1.5
-			has_ethic = ethic_fanatic_egalitarian
+			is_fanatic_egalitarian = yes
 		}
 	}
 	subject_weight = {
@@ -853,10 +853,10 @@ preset_ver_condo = {
 				key = subject_ver_species_policy
 				value = subject_ver_species_policy_restricted
 			}
-			{
-				key = subject_ver_naming
-				value = subject_ver_naming_restricted
-			}
+			# {
+			# 	key = subject_ver_naming
+			# 	value = subject_ver_naming_restricted
+			# }
 			{
 				key = subject_ver_capital
 				value = subject_ver_capital_restricted
@@ -871,10 +871,10 @@ preset_ver_condo = {
 				value = joins_subject_wars_defensive
 			}
 			####
-			{
-				key = subject_ver_proxy
-				value = subject_ver_proxy_restricted
-			}
+			# {
+			# 	key = subject_ver_proxy
+			# 	value = subject_ver_proxy_restricted
+			# }
 			####
 			{
 				key = subject_holdings_limit
@@ -908,7 +908,7 @@ preset_ver_condo = {
 		modifier = {
 			factor = 1.5
 			OR = {
-				has_ethic = ethic_fanatic_xenophile
+				is_fanatic_xenophile = yes
 				has_valid_civic = civic_beacon_of_liberty
 			}
 		}
@@ -925,7 +925,7 @@ preset_ver_condo = {
 		}
 		modifier = {
 			factor = 2
-			has_ethic = ethic_fanatic_xenophile
+			is_fanatic_xenophile = yes
 		}
 	}
 
@@ -1001,10 +1001,10 @@ preset_ver_puppet = {
 				key = subject_ver_species_policy
 				value = subject_ver_species_policy_allowed
 			}
-			{
-				key = subject_ver_naming
-				value = subject_ver_naming_restricted
-			}
+			# {
+			# 	key = subject_ver_naming
+			# 	value = subject_ver_naming_restricted
+			# }
 			{
 				key = subject_ver_capital
 				value = subject_ver_capital_allowed
@@ -1019,10 +1019,10 @@ preset_ver_puppet = {
 				value = joins_subject_wars_defensive
 			}
 			####
-			{
-				key = subject_ver_proxy
-				value = subject_ver_proxy_restricted
-			}
+			# {
+			# 	key = subject_ver_proxy
+			# 	value = subject_ver_proxy_restricted
+			# }
 			####
 			{
 				key = subject_holdings_limit
@@ -1059,7 +1059,7 @@ preset_ver_puppet = {
 		}
 		modifier = {
 			factor = 2
-			has_ethic = ethic_fanatic_xenophobe
+			is_fanatic_xenophobe = yes
 		}
 	}
 	subject_weight = {
@@ -1123,10 +1123,10 @@ preset_ver_neocolony = {
 				key = subject_ver_species_policy
 				value = subject_ver_species_policy_restricted
 			}
-			{
-				key = subject_ver_naming
-				value = subject_ver_naming_restricted
-			}
+			# {
+			# 	key = subject_ver_naming
+			# 	value = subject_ver_naming_restricted
+			# }
 			{
 				key = subject_ver_capital
 				value = subject_ver_capital_allowed
@@ -1141,10 +1141,10 @@ preset_ver_neocolony = {
 				value = joins_subject_wars_defensive
 			}
 			####
-			{
-				key = subject_ver_proxy
-				value = subject_ver_proxy_restricted
-			}
+			# {
+			# 	key = subject_ver_proxy
+			# 	value = subject_ver_proxy_restricted
+			# }
 			####
 			{
 				key = subject_holdings_limit
@@ -1187,7 +1187,7 @@ preset_ver_neocolony = {
 			factor = 1.5
 			OR = {
 				is_megacorp = yes
-				has_ethic = ethic_fanatic_capitalism
+				is_fanatic_capitalist = yes
 			}
 		}
 	}
@@ -1262,10 +1262,10 @@ preset_ver_blood = {
 				key = subject_ver_species_policy
 				value = subject_ver_species_policy_restricted
 			}
-			{
-				key = subject_ver_naming
-				value = subject_ver_naming_restricted
-			}
+			# {
+			# 	key = subject_ver_naming
+			# 	value = subject_ver_naming_restricted
+			# }
 			{
 				key = subject_ver_capital
 				value = subject_ver_capital_restricted
@@ -1280,10 +1280,10 @@ preset_ver_blood = {
 				value = joins_subject_wars_defensive
 			}
 			####
-			{
-				key = subject_ver_proxy
-				value = subject_ver_proxy_restricted
-			}
+			# {
+			# 	key = subject_ver_proxy
+			# 	value = subject_ver_proxy_restricted
+			# }
 			####
 			{
 				key = subject_holdings_limit
@@ -1390,10 +1390,10 @@ preset_ver_appendage = {
 				key = subject_ver_species_policy
 				value = subject_ver_species_policy_restricted
 			}
-			{
-				key = subject_ver_naming
-				value = subject_ver_naming_restricted
-			}
+			# {
+			# 	key = subject_ver_naming
+			# 	value = subject_ver_naming_restricted
+			# }
 			{
 				key = subject_ver_capital
 				value = subject_ver_capital_allowed
@@ -1408,10 +1408,10 @@ preset_ver_appendage = {
 				value = joins_subject_wars_defensive
 			}
 			####
-			{
-				key = subject_ver_proxy
-				value = subject_ver_proxy_restricted
-			}
+			# {
+			# 	key = subject_ver_proxy
+			# 	value = subject_ver_proxy_restricted
+			# }
 			####
 			{
 				key = subject_holdings_limit
@@ -1484,10 +1484,10 @@ preset_ver_organic = {
 				key = subject_ver_species_policy
 				value = subject_ver_species_policy_restricted
 			}
-			{
-				key = subject_ver_naming
-				value = subject_ver_naming_restricted
-			}
+			# {
+			# 	key = subject_ver_naming
+			# 	value = subject_ver_naming_restricted
+			# }
 			{
 				key = subject_ver_capital
 				value = subject_ver_capital_restricted
@@ -1502,10 +1502,10 @@ preset_ver_organic = {
 				value = joins_subject_wars_defensive
 			}
 			####
-			{
-				key = subject_ver_proxy
-				value = subject_ver_proxy_restricted
-			}
+			# {
+			# 	key = subject_ver_proxy
+			# 	value = subject_ver_proxy_restricted
+			# }
 			####
 			{
 				key = subject_holdings_limit
@@ -1582,10 +1582,10 @@ preset_ver_parallel = {
 				key = subject_ver_species_policy
 				value = subject_ver_species_policy_restricted
 			}
-			{
-				key = subject_ver_naming
-				value = subject_ver_naming_allowed
-			}
+			# {
+			# 	key = subject_ver_naming
+			# 	value = subject_ver_naming_allowed
+			# }
 			{
 				key = subject_ver_capital
 				value = subject_ver_capital_allowed
@@ -1600,10 +1600,10 @@ preset_ver_parallel = {
 				value = joins_subject_wars_defensive
 			}
 			####
-			{
-				key = subject_ver_proxy
-				value = subject_ver_proxy_restricted
-			}
+			# {
+			# 	key = subject_ver_proxy
+			# 	value = subject_ver_proxy_restricted
+			# }
 			####
 			{
 				key = subject_holdings_limit

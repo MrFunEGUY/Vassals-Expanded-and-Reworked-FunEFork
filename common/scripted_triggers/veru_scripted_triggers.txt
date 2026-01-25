@@ -156,9 +156,9 @@ has_naming_alllowed = {
 	any_agreement = { has_term_value = { term = subject_ver_naming value = subject_ver_naming_allowed } }
 }
 
-has_proxy_allowed = {
-	any_agreement = { has_term_value = { term = subject_ver_proxy value = subject_ver_proxy_allowed } }
-}
+# has_proxy_allowed = {
+# 	any_agreement = { has_term_value = { term = subject_ver_proxy value = subject_ver_proxy_allowed } }
+# }
 
 has_ver_blood_civic = {
 	OR = {
