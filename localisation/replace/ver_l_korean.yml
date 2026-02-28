@@ -147,10 +147,13 @@ l_korean:
  veru.1000.subject_15: "§Y[event_target:subject_15.GetName]§!"
  veru.nevermind: "아무 것도 아닙니다."
  veru.remain: "당신들은 지금 상태 그대로 있을 것입니다."
+ veru.they_remain: "그들은 지금 상태로 괜찮다."
  veru.our_leaders: "사실, 우리는 우리의 지도자들 중 한 명을 고를 겁니다."
  veru.their_leaders: "사실, 우리는 그들의 지도자들 중 한 명을 고를 겁니다."
  veru.another_class: "사실, 우리는 다른 분류의 지도자들을 고를 겁니다."
  veru.something_else: "사실, 우리는 다른 걸 바꿔야 합니다."
+ veru.remain_vassal: "단순한 속국"
+ veru.same_authority: "우리와 동일: [root.owner.GetAuthority]"
 
  # Change Subject Type or Name
  veru.1050.name: "§Y[event_target:chosen_subject.GetName]§!의 [event_target:chosen_subject.ruler.GetTitle] §H[event_target:chosen_subject.ruler.GetName]§!"
@@ -416,6 +419,16 @@ l_korean:
  veru.6700.relocation_planet_19: "§Y[event_target:relocation_planet_19.GetName]§!"
  veru.6700.relocation_planet_20: "§Y[event_target:relocation_planet_20.GetName]§!"
 
+ veru.7002.name: "[target.GetName]§의 서비스 유형"
+ veru.7002.desc: "§Y[target.GetName]§!가 권한이 이양된 후 어떤 유형의 속국이어야 합니까?"
+
+ veru.7001.name: "[target.GetName]의 통치 형태"
+ veru.7001.desc: "§Y[target.GetName]§!의 새로운 통치 구조는 어떻게 될 것인가?"
+
+ veru.7005.name: "[new_ps_country.capital_scope.GetName]의 권한 이양 완료"
+ veru.7005.desc: "§Y[new_ps_country.capital_scope.GetName]§!의 권한이 §H[new_ps_country.GetName]§!로 완전히 이양되었습니다. 우리 지도자 중 한 명을 그들의 §Y[new_ps_country.GetRulerTitle]§!로 임명할까요?"
+ veru.7005.desc_2: "§Y[new_ps_country.capital_scope.GetName]§!의 §H[new_ps_country.GetName]§!로의 이양 절차가 완료되었습니다."
+
  ####################
  # Contracts
 
@@ -612,11 +625,46 @@ l_korean:
  origin_planet_state_desc: "이 나라는 다른 나라가 자신의 영토의 일부를 피후원국으로 전환함으로써 설립되었습니다."
 
  # Decisions
- decision_create_planet_state: "피후원국 생성"
- decision_create_planet_state_desc: "우리는 이 성계를 피후원국으로 만들 수 있습니다."
+ decision_create_planet_state: "Create Planet-State"
+ decision_create_planet_state_desc: "We can create a vassal out of this planet."
+ decision_create_planet_state_effects_short: "We can give this planet sovereignty over itself and its system."
+ decision_create_planet_state_effects: "We will begin the process of transferring control of §Y[this.GetName]§! and the §Y[this.solar_system.GetName]§! system to a newly created government."
 
- decision_affirm_planet_state: "피후원국 생성 §Y완료§!"
- decision_affirm_planet_state_desc: "우리는 이 행성의 통제권을 잃고 그 성계 전체를 새롭게 창설된 종속국에게 넘겨줄 것입니다."
+ situation_planet_state: "Devolution of §Y[target.GetName]§!"
+ situation_planet_state_type: "Devolution"
+ situation_planet_state_desc: "The administrators of §Y[target.GetName]§! are working on a plan for governance of the §Y[target.solar_system.GetName]§! system."
+ situation_planet_state_monthly_change_tooltip: "Plans for self-governance take time."
+
+ situation_planet_state_completed_effect: "Control of §Y[this.target.GetName]§! and the §Y[this.target.solar_system.GetName]§! system will be transferred to a newly created government."
+ situation_planet_state_failed_effect: "The project to transfer control of §Y[this.target.GetName]§! and the §Y[this.target.solar_system.GetName]§! system to a new government will be scrapped."
+
+ planet_state_stage_1: "Self-Governance"
+ planet_state_stage_1_desc: "Details for self-governance are being worked out."
+
+ planet_state_stage_2: "Interstellar Relationship"
+ planet_state_stage_2_desc: "Details around the relationship between us and the new government are being discussed."
+
+ approach_planet_state_normal: "Normal"
+ approach_planet_state_normal_desc: "Plans for self-governnance are progressing as expected."
+ planet_state_normal_tooltip: "Plans for self-governnance will progress as expected."
+
+ approach_planet_state_rollback: "Cancel Devolution"
+ approach_planet_state_rollback_desc: "Plans for self-governnance are being rolled back."
+ planet_state_rollback_tooltip: "Plans for self-governnance will be rolled back."
+
+ planet_state_pop_req: "$TRIGGER_FAIL$Requires at least §Y1000§! £pop£ §HPops§! and for §G10%§! of §Ysentient§! £pop£ §HPops§! to be §Yunenslaved§!"
+ stability_help: "§GStability§!"
+ stability_interference: "§PStability§!"
+ stability_interference_2: "§RStability§!"
+ ps_separatists: "§RSeparatists§!"
+
+ decision_affirm_planet_state: "Planet-State: §BFinish§! Creation"
+ decision_affirm_planet_state_desc: "We will tranfer control of §Y[this.GetName]§! of the §Y[this.solar_system.GetName]§! system to a newly created planetary government."
+ decision_affirm_planet_state_effects_short: "We will give this planet sovereignty over itself and its system."
+ decision_affirm_planet_state_effects: "$decision_affirm_planet_state_desc$"
+
+ need_1000_pops: "$TRIGGER_FAIL$Requires at least §Y1000§! £pop£ §HPops§!."
+ planet_state_pop_group: "$TRIGGER_FAIL$Requires at least §G10%§! of §Ysentient§! £pop£ §HPops§! be §Yunenslaved§!"
 
  # Responses:
  WILL_FAIL: "그렇게는 안 됩니다."

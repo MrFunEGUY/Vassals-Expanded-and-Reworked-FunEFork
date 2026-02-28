@@ -126,6 +126,187 @@ subject_can_wage_war = {
 	NOT = { any_agreement = { has_term_value = { term = subject_diplomacy value = subject_can_not_do_diplomacy } } }
 }
 
+basic_vassal_reqs = {
+	is_tributary = no
+	is_protectorate = no
+	# tech_unlocked_ratio = {
+	# 	who = $OL$
+	# 	ratio >= @protectorate_tech_threshold
+	# }
+}
+
+ver_foederatus_reqs = {
+	basic_vassal_reqs = yes
+	NOT = { has_civic = civic_inwards_perfection }
+	$OL$ = {
+		is_gestalt = no
+		NOR = {
+			is_country_type = awakened_fallen_empire
+			has_civic = civic_inwards_perfection
+		}
+	}
+}
+
+ver_satellite_reqs = {
+	basic_vassal_reqs = yes
+	$OL$ = {
+		is_gestalt = no
+		NOR = {
+			is_country_type = awakened_fallen_empire
+			has_civic = civic_inwards_perfection
+		}
+	}
+}
+
+ver_jrpartner_reqs = {
+	basic_vassal_reqs = yes
+	NOT = { has_civic = civic_inwards_perfection }
+	$OL$ = {
+		NOR = {
+			is_country_type = awakened_fallen_empire
+			has_civic = civic_inwards_perfection
+		}
+	}
+}
+
+ver_dependency_reqs = {
+	basic_vassal_reqs = yes
+	is_gestalt = no
+	NOT = { has_civic = civic_inwards_perfection }
+	$OL$ = {
+		is_gestalt = no
+		NOR = {
+			is_country_type = awakened_fallen_empire
+			has_civic = civic_inwards_perfection
+		}
+	}
+}
+
+ver_clientkingdom_reqs = {
+	basic_vassal_reqs = yes
+	is_gestalt = no
+	NOT = { has_civic = civic_inwards_perfection }
+	$OL$ = {
+		is_gestalt = no
+		NOR = {
+			is_country_type = awakened_fallen_empire
+			has_civic = civic_inwards_perfection
+		}
+	}
+}
+
+ver_devolved_reqs = {
+	basic_vassal_reqs = yes
+	is_gestalt = no
+	NOT = { has_civic = civic_inwards_perfection }
+	$OL$ = {
+		is_gestalt = no
+		NOR = {
+			is_country_type = awakened_fallen_empire
+			has_civic = civic_inwards_perfection
+		}
+	}
+}
+
+ver_condo_reqs = {
+	basic_vassal_reqs = yes
+	is_gestalt = no
+	NOT = { has_civic = civic_inwards_perfection }
+	$OL$ = {
+		# is_gestalt = no
+		NOR = {
+			is_country_type = awakened_fallen_empire
+			has_civic = civic_inwards_perfection
+		}
+	}
+	any_system_within_border = { # Must be bordering someone not associated with your Overlord
+		closest_system = {
+			limit = {
+				exists = space_owner
+				space_owner = {
+					NOR = {
+						has_overlord = from
+						is_same_value = from
+					}
+				}
+			}
+			use_bypasses = yes
+			max_steps = 1
+		}
+	}
+}
+
+ver_puppet_reqs = {
+	basic_vassal_reqs = yes
+	is_gestalt = no
+	NOT = { has_civic = civic_inwards_perfection }
+	$OL$ = {
+		# is_gestalt = no
+		NOR = {
+			is_country_type = awakened_fallen_empire
+			has_civic = civic_inwards_perfection
+		}
+	}
+}
+
+ver_neocolony_reqs = {
+	basic_vassal_reqs = yes
+	is_gestalt = no
+	NOT = { has_civic = civic_inwards_perfection }
+	$OL$ = {
+		is_gestalt = no
+		NOR = {
+			is_country_type = awakened_fallen_empire
+			has_civic = civic_inwards_perfection
+		}
+	}
+}
+
+ver_blood_reqs = {
+	# basic_vassal_reqs = yes
+	is_gestalt = no
+	is_tributary = no
+	is_protectorate = no
+	$OL$ = {
+		is_gestalt = no
+		OR = {
+			is_death_cult_empire = yes
+			has_ver_blood_civic = yes
+		}
+	}
+	OR = { ## Limiter
+		$OL$ = { NOT = { any_subject = { is_ver_blood = yes } } }
+		AND = {
+			$OL$ = {
+				count_subject = {
+					count = 1
+					limit = { is_ver_blood = yes }
+				}
+			}
+			is_ver_blood = yes
+		}	
+	}
+}
+
+ver_appendage_reqs = {
+	basic_vassal_reqs = yes
+	$OL$ = { is_gestalt = yes }
+}
+
+ver_organic_reqs = {
+	basic_vassal_reqs = yes
+	is_machine_empire = no
+	$OL$ = {
+		is_machine_empire = yes
+		NOT = { has_valid_civic = civic_machine_servitor }
+	}
+}
+
+ver_parallel_reqs = {
+	basic_vassal_reqs = yes
+	is_machine_empire = yes
+	$OL$ = { is_machine_empire = yes }
+}
 
 has_ruler_alllowed = {
 	any_agreement = {
@@ -153,7 +334,8 @@ has_capital_allowed = {
 }
 
 has_naming_alllowed = {
-	any_agreement = { has_term_value = { term = subject_ver_naming value = subject_ver_naming_allowed } }
+	always = no
+	# any_agreement = { has_term_value = { term = subject_ver_naming value = subject_ver_naming_allowed } }
 }
 
 # has_proxy_allowed = {

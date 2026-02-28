@@ -147,10 +147,13 @@
  veru.1000.subject_15: "§Y[event_target:subject_15.GetName]§!"
  veru.nevermind: "Nevermind."
  veru.remain: "You shall remain as you are."
+ veru.they_remain: "They are fine as they are."
  veru.our_leaders: "Actually, we will choose one of our leaders."
  veru.their_leaders: "Actually, we will choose one of their leaders."
  veru.another_class: "Actually, we will choose another type of leader."
  veru.something_else: "Actually, we need to change something else."
+ veru.remain_vassal: "Simple Vassal"
+ veru.same_authority: "The same as us: [root.owner.GetAuthority]"
 
  # Change Subject Type or Name
  veru.1050.name: "[event_target:chosen_subject.ruler.GetTitle] §H[event_target:chosen_subject.ruler.GetName]§! of the §Y[event_target:chosen_subject.GetName]§!"
@@ -420,6 +423,16 @@
  veru.6700.relocation_planet_19: "§Y[event_target:relocation_planet_19.GetName]§!"
  veru.6700.relocation_planet_20: "§Y[event_target:relocation_planet_20.GetName]§!"
 
+ veru.7002.name: "Service Type for [target.GetName]"
+ veru.7002.desc: "What type of vassal should §Y[target.GetName]§! be after they have been devolved?"
+
+ veru.7001.name: "Government of [target.GetName]"
+ veru.7001.desc: "What will the new governmening structure of §Y[target.GetName]§! be?"
+
+ veru.7005.name: "Devolution of [new_ps_country.capital_scope.GetName] Complete"
+ veru.7005.desc: "The devolution of §Y[new_ps_country.capital_scope.GetName]§! into the §H[new_ps_country.GetName]§! is complete. Do we want to select one of our leaders to serve as their §Y[new_ps_country.GetRulerTitle]§!?"
+ veru.7005.desc_2: "The devolution of §Y[new_ps_country.capital_scope.GetName]§! into the §H[new_ps_country.GetName]§! is complete."
+
  ####################
  # Contracts
 
@@ -612,15 +625,50 @@
  NAME_veru_buffer_war: "[This.MainDefender.GetAdj] Client War"
 
  # Origin
- origin_planet_state: "Client State"
- origin_planet_state_desc: "This state was founded after another state reorganized part of their territory into an a client state."
+ origin_planet_state: "Planet-State"
+ origin_planet_state_desc: "This state was founded after another state reorganized part of their territory into a vassal state."
 
  # Decisions
- decision_create_planet_state: "Create Client State"
- decision_create_planet_state_desc: "We can create a client state out of this planet."
+ decision_create_planet_state: "Create Planet-State"
+ decision_create_planet_state_desc: "We can create a vassal out of this planet."
+ decision_create_planet_state_effects_short: "We can give this planet sovereignty over itself and its system."
+ decision_create_planet_state_effects: "We will begin the process of transferring control of §Y[this.GetName]§! and the §Y[this.solar_system.GetName]§! system to a newly created government."
 
- decision_affirm_planet_state: "Client State: §YFinish§! Creation"
- decision_affirm_planet_state_desc: "We will lose control of the planet and the entire system it is within to a newly created subject state."
+ situation_planet_state: "Devolution of §Y[target.GetName]§!"
+ situation_planet_state_type: "Devolution"
+ situation_planet_state_desc: "The administrators of §Y[target.GetName]§! are working on a plan for governance of the §Y[target.solar_system.GetName]§! system."
+ situation_planet_state_monthly_change_tooltip: "Plans for self-governance take time."
+
+ situation_planet_state_completed_effect: "Control of §Y[this.target.GetName]§! and the §Y[this.target.solar_system.GetName]§! system will be transferred to a newly created government."
+ situation_planet_state_failed_effect: "The project to transfer control of §Y[this.target.GetName]§! and the §Y[this.target.solar_system.GetName]§! system to a new government will be scrapped."
+
+ planet_state_stage_1: "Self-Governance"
+ planet_state_stage_1_desc: "Details for self-governance are being worked out."
+
+ planet_state_stage_2: "Interstellar Relationship"
+ planet_state_stage_2_desc: "Details around the relationship between us and the new government are being discussed."
+
+ approach_planet_state_normal: "Normal"
+ approach_planet_state_normal_desc: "Plans for self-governnance are progressing as expected."
+ planet_state_normal_tooltip: "Plans for self-governnance will progress as expected."
+
+ approach_planet_state_rollback: "Cancel Devolution"
+ approach_planet_state_rollback_desc: "Plans for self-governnance are being rolled back."
+ planet_state_rollback_tooltip: "Plans for self-governnance will be rolled back."
+
+ planet_state_pop_req: "$TRIGGER_FAIL$Requires at least §Y1000§! £pop£ §HPops§! and for §G10%§! of §Ysentient§! £pop£ §HPops§! to be §Yunenslaved§!"
+ stability_help: "§GStability§!"
+ stability_interference: "§PStability§!"
+ stability_interference_2: "§RStability§!"
+ ps_separatists: "§RSeparatists§!"
+
+ decision_affirm_planet_state: "Planet-State: §BFinish§! Creation"
+ decision_affirm_planet_state_desc: "We will tranfer control of §Y[this.GetName]§! of the §Y[this.solar_system.GetName]§! system to a newly created planetary government."
+ decision_affirm_planet_state_effects_short: "We will give this planet sovereignty over itself and its system."
+ decision_affirm_planet_state_effects: "$decision_affirm_planet_state_desc$"
+
+ need_1000_pops: "$TRIGGER_FAIL$Requires at least §Y1000§! £pop£ §HPops§!."
+ planet_state_pop_group: "$TRIGGER_FAIL$Requires at least §G10%§! of §Ysentient§! £pop£ §HPops§! be §Yunenslaved§!"
 
  # Responses:
  WILL_FAIL: "You will fail."

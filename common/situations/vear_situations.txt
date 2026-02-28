@@ -1,0 +1,239 @@
+
+# Separatist Planet
+situation_planet_state = {
+	picture = GFX_evt_partition
+	category = positive
+
+	fail_icon = GFX_situation_outcome_meh
+	fail_icon_frame = GFX_situation_outcome_frame_red
+	complete_icon = GFX_situation_outcome_positive
+	complete_icon_frame = GFX_situation_outcome_frame_green
+
+	on_start = { }
+
+	on_progress_complete = {
+		custom_tooltip = situation_planet_state_completed_effect
+		hidden_effect = {
+			owner = { save_event_target_as = mother_country }
+			target = {
+				if = {
+					limit = { NOT = { any_owned_pop_group = { is_same_species = owner_species } } }
+					every_owned_species = {
+						limit = {
+							any_species_pop_group = {
+								can_think = yes
+								is_enslaved = no
+								planet = { is_same_value = root.target }
+							}
+						}
+						set_variable = { which = species_pop_count value = 0 }
+						every_species_pop_group = {
+							limit = {
+								can_think = yes
+								is_enslaved = no
+								planet = { is_same_value = root.target }
+							}
+							prev = { change_variable = { which = species_pop_count value = 1 } }
+						}
+					}
+					ordered_owned_species = {
+						limit = { is_variable_set = species_pop_count }
+						position = 0
+						order_by = species_pop_count
+						save_event_target_as = planet_state_species
+					}
+				}
+				else = { owner_species = { save_event_target_as = planet_state_species } }
+
+				prev = {
+					switch = {
+						trigger = has_situation_flag
+						auth_root_flag = { create_ps_country = { PS_AUTH = event_target:mother_country } }
+						auth_democratic_flag = { create_ps_country = { PS_AUTH = auth_democratic } }
+						auth_oligarchic_flag = { create_ps_country = { PS_AUTH = auth_oligarchic } }
+						auth_dictatorial_flag = { create_ps_country = { PS_AUTH = auth_dictatorial } }
+						auth_imperial_flag = { create_ps_country = { PS_AUTH = auth_imperial } }
+						auth_corporate_flag = { create_ps_country = { PS_AUTH = auth_corporate } }
+						auth_corporate_imperial_flag = { create_ps_country = { PS_AUTH = auth_corporate_imperial } }
+						auth_strict_democratic_flag = { create_ps_country = { PS_AUTH = auth_strict_democratic } }
+						auth_dict_democratic_flag = { create_ps_country = { PS_AUTH = auth_dict_democratic } }
+						auth_direct_democratic_flag = { create_ps_country = { PS_AUTH = auth_direct_democratic } }
+						auth_bugged_corporate_imperial_flag = { create_ps_country = { PS_AUTH = auth_bugged_corporate_imperial } }
+						auth_bugged_corporate_democratic_flag = { create_ps_country = { PS_AUTH = auth_bugged_corporate_democratic } }
+						auth_bugged_direct_democratic_flag = { create_ps_country = { PS_AUTH = auth_bugged_direct_democratic } }
+					}
+				}
+				
+				solar_system = {
+					starbase = { set_owner = event_target:new_ps_country }
+					every_system_planet = { 
+						limit = {
+							exists = owner
+							OR = {
+								is_colony = yes
+								is_under_colonization = yes
+							}
+						}                
+						set_owner = event_target:new_ps_country 
+					}
+				}
+
+				event_target:new_ps_country = { set_timed_country_flag = { flag = veru6400stop days = 90 } }
+			}
+
+			switch = {
+				trigger = has_situation_flag
+				ver_vassal_flag = { choose_ps_vassal_type = { PRESET = vassal } }
+				ver_foederatus_flag = { choose_ps_vassal_type = { PRESET = ver_foederatus } }
+				ver_satellite_flag = { choose_ps_vassal_type = { PRESET = ver_satellite } }
+				ver_jrpartner_flag = { choose_ps_vassal_type = { PRESET = ver_jrpartner } }
+				ver_dependency_flag = { choose_ps_vassal_type = { PRESET = ver_dependency } }
+				ver_clientkingdom_flag = { choose_ps_vassal_type = { PRESET = ver_clientkingdom } }
+				ver_devolved_flag = { choose_ps_vassal_type = { PRESET = ver_devolved } }
+				ver_condo_flag = { choose_ps_vassal_type = { PRESET = ver_condo } }
+				ver_puppet_flag = { choose_ps_vassal_type = { PRESET = ver_puppet } }
+				ver_neocolony_flag = { choose_ps_vassal_type = { PRESET = ver_neocolony } }
+				ver_blood_flag = { choose_ps_vassal_type = { PRESET = ver_blood } }
+				ver_appendage_flag = { choose_ps_vassal_type = { PRESET = ver_appendage } }
+				ver_organic_flag = { choose_ps_vassal_type = { PRESET = ver_organic } }
+				ver_parallel_flag = { choose_ps_vassal_type = { PRESET = ver_parallel } }
+			}
+
+			event_target:new_ps_country = { set_name = random }
+
+			root.owner = { country_event = { id = veru.7005 } }
+
+			destroy_situation = this
+		}
+	}
+
+	on_fail = {
+		custom_tooltip = situation_planet_state_failed_effect
+		hidden_effect = { destroy_situation = this }
+	}
+
+	on_abort = { }
+
+	abort_trigger = {
+		OR = {
+			owner = { is_ai = yes }
+			target = { solar_system = { is_capital_system = yes } }
+		}
+	}
+
+	start_value = 0
+
+	stages = {
+		planet_state_stage_1 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_blue
+			# modifier = { planet_stability_add = -5 }
+			on_first_enter = {
+				situation_event = { id = veru.7001 days = 1 random = 300 }
+			}
+			end = 60
+		}
+		planet_state_stage_2 = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_green
+			modifier = { planet_stability_add = -2.5 }
+			on_first_enter = {
+				situation_event = { id = veru.7002 days = 0 random = 150 }
+			}
+			end = 100
+		}
+	}
+
+	approach = {
+		name = approach_planet_state_normal
+		icon = GFX_situation_approach_handshake
+		icon_background = GFX_situation_approach_bg_green
+		default = yes
+		modifier = { planet_stability_add = -5 }
+		# allow = { NOT = { current_situation_approach = approach_election_obstruct } }
+		on_select = { custom_tooltip = planet_state_normal_tooltip }
+		ai_weight = {
+			base = 5
+		}
+	}
+
+	approach = {
+		name = approach_planet_state_rollback
+		icon = GFX_situation_approach_discurage_conversation
+		icon_background = GFX_situation_approach_bg_yellow
+		on_select = { custom_tooltip = planet_state_rollback_tooltip }
+		# modifier = { planet_stability_add = 5 }
+		ai_weight = {
+			base = 2
+		}
+	}
+
+	on_monthly = {
+	    random_events = {
+			85 = 0
+			# 10 = civleader.1010		## Protests
+			# 3 = civleader.1011		## Terror
+		}
+	}
+
+	monthly_progress = {
+		base = 4.2
+
+		modifier = {
+			add = -9.5
+			desc = approach_planet_state_rollback
+			current_situation_approach = approach_planet_state_rollback
+		}
+
+		modifier = {
+			add = -5.5
+			desc = ps_separatists
+			OR = {
+				target = { any_targeting_situation = { is_civstrife_plan_sit = yes } }
+				AND = {
+					exists = target.sector
+					OR = {
+						target.sector = { any_targeting_situation = { is_civstrife_sec_sit = yes } }
+						target.sector = { any_owned_pop_group = { exists = pop_faction pop_faction = { is_separatist_faction = yes } } }
+					}
+				}
+			}
+		}
+
+		modifier = {
+			add = -4.5
+			desc = planet_state_pop_req
+			target = {
+				OR = {
+					pop_amount < 1000
+					pop_amount_percentage = {
+						percentage < 0.1
+						limit = { is_enslaved = no }
+						exclude = { can_think = no }
+					}
+				}
+			}
+		}
+
+		modifier = {
+			add = 2
+			desc = stability_help
+			target = { planet_stability > 95 }
+			NOT = { current_situation_approach = approach_planet_state_rollback }
+		}
+
+		modifier = {
+			add = -2
+			desc = stability_interference
+			target = { planet_stability >= 25 planet_stability < 50 }
+			NOT = { current_situation_approach = approach_planet_state_rollback }
+		}
+
+		modifier = {
+			add = -3.4
+			desc = stability_interference_2
+			target = { planet_stability < 25 }
+			NOT = { current_situation_approach = approach_planet_state_rollback }
+		}
+	}
+}

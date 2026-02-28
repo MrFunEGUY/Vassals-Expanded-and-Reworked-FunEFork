@@ -1,0 +1,16 @@
+is_tributary = no
+is_protectorate = no
+is_inward_perfection = $S_IP$
+$OL$ = { is_gestalt = $O_G$ }
+$OL$ = { is_inward_perfection = $O_IP$ }
+$OL$ = {
+	NOR = {
+		is_country_type = awakened_fallen_empire
+		has_civic = civic_inwards_perfection
+	}
+}
+NOT = { has_civic = civic_inwards_perfection }
+tech_unlocked_ratio = {
+	who = $OL$
+	ratio >= @protectorate_tech_threshold
+}

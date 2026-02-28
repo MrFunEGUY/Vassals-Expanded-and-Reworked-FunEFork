@@ -24,6 +24,10 @@ is_imp_or_dict = { #Power of one
 	}
 }
 
+is_civstrife_sec_sit = { always = no }
+is_civstrife_sec_sit = { always = no }
+is_separatist_faction = { always = no }
+
 has_civic_organic_zealots_active = {
 	always = no
 }

@@ -12,6 +12,71 @@
 # 	}
 # }
 
+defined_text = {
+	name = GetAuthority
+	random = no
+	text = {
+		trigger = { has_authority = auth_democratic }
+		localization_key = auth_democratic
+	}
+	text = {
+		trigger = { has_authority = auth_oligarchic }
+		localization_key = auth_oligarchic
+	}
+	text = {
+		trigger = { has_authority = auth_dictatorial }
+		localization_key = auth_dictatorial
+	}
+	text = {
+		trigger = { has_authority = auth_imperial }
+		localization_key = auth_imperial
+	}
+	text = {
+		trigger = { has_authority = auth_hive_mind }
+		localization_key = auth_hive_mind
+	}
+	text = {
+		trigger = { has_authority = auth_machine_intelligence }
+		localization_key = auth_machine_intelligence
+	}
+	text = {
+		trigger = { has_authority = auth_corporate }
+		localization_key = auth_corporate
+	}
+	## ECAF
+	text = {
+		trigger = { has_authority = auth_corporate_imperial }
+		localization_key = auth_corporate_imperial
+	}
+	text = {
+		trigger = { has_authority = auth_strict_democratic }
+		localization_key = auth_strict_democratic
+	}
+	text = {
+		trigger = { has_authority = auth_dict_democratic }
+		localization_key = auth_dict_democratic
+	}
+	## Bugged
+	text = {
+		trigger = { has_authority = auth_bugged_direct_democratic }
+		localization_key = auth_bugged_direct_democratic
+	}
+	text = {
+		trigger = { has_authority = auth_bugged_corporate_imperial }
+		localization_key = auth_bugged_corporate_imperial
+	}
+	text = {
+		trigger = { has_authority = auth_bugged_corporate_democratic }
+		localization_key = auth_bugged_corporate_democratic
+	}
+	## ECA
+	text = {
+		trigger = { has_authority = auth_direct_democratic }
+		localization_key = auth_direct_democratic
+	}
+	default = government_is_gov
+}
+
 ## Scripted Loc Nonsense
 
 defined_text = {

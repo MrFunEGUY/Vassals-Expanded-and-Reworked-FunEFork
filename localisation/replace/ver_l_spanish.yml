@@ -1,11 +1,11 @@
 ﻿# l_english:
-l_spanish:
+# l_spanish:
 # l_german:
 # l_french:
 # l_polish:
 # l_russian:
 # l_braz_por:
-# l_simp_chinese:
+l_simp_chinese:
 # l_korean:
 # l_japanese:
 
@@ -125,7 +125,7 @@ l_spanish:
  edict_veru_unlimited_special_subjects_desc: "Uncap Specialized Subjects, which are currently capped at §P1§! each"
  edict_veru_unlimited_special_subjects_2: "Specialized Subjects: Uncapped"
  edict_veru_unlimited_special_subjects_2_desc: "Cap Specialized Subjects, which are currently §Puncapped§!"
-
+ 
  # Manage Subject
  veru.1000.name: "Manage Subject States"
  veru.1000.desc: "Which subject needs to be dealt with?"
@@ -147,10 +147,13 @@ l_spanish:
  veru.1000.subject_15: "§Y[event_target:subject_15.GetName]§!"
  veru.nevermind: "Nevermind."
  veru.remain: "You shall remain as you are."
+ veru.they_remain: "They are fine as they are."
  veru.our_leaders: "Actually, we will choose one of our leaders."
  veru.their_leaders: "Actually, we will choose one of their leaders."
  veru.another_class: "Actually, we will choose another type of leader."
  veru.something_else: "Actually, we need to change something else."
+ veru.remain_vassal: "Simple Vassal"
+ veru.same_authority: "The same as us: [root.owner.GetAuthority]"
 
  # Change Subject Type or Name
  veru.1050.name: "[event_target:chosen_subject.ruler.GetTitle] §H[event_target:chosen_subject.ruler.GetName]§! of the §Y[event_target:chosen_subject.GetName]§!"
@@ -173,7 +176,7 @@ l_spanish:
  veru.2000.female_ruler_title_name_change.tooltip: "The §Y[event_target:chosen_subject.GetName]§!'s female rulers will be styled as §Y[root.capital_scope.solar_system.GetName]§!."
 
  # Change Subject Type
-  veru.subject_leader.name: "§H[event_target:chosen_subject.ruler.GetTitle]§! [event_target:chosen_subject.ruler.GetName] - §Y[event_target:chosen_subject.GetName]§!"
+ veru.subject_leader.name: "§H[event_target:chosen_subject.ruler.GetTitle]§! [event_target:chosen_subject.ruler.GetName] - §Y[event_target:chosen_subject.GetName]§!"
 
  # Change Subject Names
  veru.2000.loyal.desc: "What aspect of our government would you like renamed?"
@@ -213,7 +216,7 @@ l_spanish:
  # Change Leader
  veru.5000.loyal.desc: "While I would prefer to remain in power, I will do as I am ordered. $veru.subject_ruler_bio$"
  veru.5000.disloyal.desc: "This is outrageous! $veru.subject_ruler_bio$"
- veru.subject_ruler_bio: "\n\n§L=======================§!\n\n§H[event_target:chosen_subject.ruler.GetTitle]§! [event_target:chosen_subject.ruler.GetName]'s §BBio§! - \n\n§LAge§!: [event_target:chosen_subject.ruler.GetAge] \n§LAffiliation§!: §Y[event_target:chosen_subject.ruler.GetBackgroundEthic]§! \n§LLength of Service§!: §Y[event_target:chosen_subject.ruler.GetYearsOfService]§! \n§LHomeworld§!: §Y[event_target:chosen_subject.ruler.GetBackgroundPlanet]§! in the §Y[event_target:chosen_subject.ruler.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[event_target:chosen_subject.ruler.GetBackgroundJob]§! \n§LSkill Level§!: §Y[event_target:chosen_subject.ruler.GetSkill]§!"
+ veru.subject_ruler_bio: "\n\n§L=======================§!\n\n§H[event_target:chosen_subject.ruler.GetTitle]§! [event_target:chosen_subject.ruler.GetName]'s §BBio§! - \n\n§LAge§!: [event_target:chosen_subject.ruler.GetAge] \n§LLength of Service§!: §Y[event_target:chosen_subject.ruler.GetYearsOfService]§! \n§LHomeworld§!: §Y[event_target:chosen_subject.ruler.GetBackgroundPlanet]§! in the §Y[event_target:chosen_subject.ruler.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[event_target:chosen_subject.ruler.GetBackgroundJob]§! \n§LSkill Level§!: §Y[event_target:chosen_subject.ruler.GetSkill]§! \n\n§LAffiliation§!: §Y[event_target:chosen_subject.ruler.HasEthicIcon]§!"
 
  veru.5000.official.ours: "One of our §Y$official_plural_with_icon$§! shall take over."
  veru.5000.official.theirs: "One of their §Y$official_plural_with_icon$§! shall take over."
@@ -221,6 +224,9 @@ l_spanish:
  veru.5000.commander.theirs: "One of their §Y$commander_plural_with_icon$§! shall take over."
  veru.5000.scientist.ours: "One of our §Y$scientist_plural_with_icon$§! shall take over."
  veru.5000.scientist.theirs: "One of their §Y$scientist_plural_with_icon$§! shall take over."
+
+ NO_SUBCLASS: "§YNone§!"
+ LEADER_SUBCLASS: "[.GetSubClass]"
 
  # Leaders
  leader_install_effect_end: "will be installed as the §H[event_target:chosen_subject.GetRulerTitle]§! of the §Y[event_target:chosen_subject.GetName]§!\n"
@@ -275,8 +281,8 @@ l_spanish:
  veru.5000.leader_7.effect_desc: "§Y[leader_7.GetName]§! $leader_install_effect_end$"
  
  veru.5000.leader_8: "§Y[leader_8.GetName]§!: Age - [leader_8.GetAge] | [leader_8.HasEthicIcon]"
- veru.5000.leader_8.heir: "§H[leader_8.owner.GetHeirTitle]§! §Y[leader_8.GetName]§!: Age - [leader_8.GetAge] | [leader_8.HasEthicIcon]"
- veru.5000.leader_8.councilor: "§H[leader_8.GetTitle]§! §Y[leader_8.GetName]§!: Age - [leader_8.GetAge] | [leader_8.HasEthicIcon]"
+ veru.5000.leader_8.heir: "§H[leader_8.owner.GetHeirTitle]§! $veru.5000.leader_8$"
+ veru.5000.leader_8.councilor: "§H[leader_8.GetTitle]§! $veru.5000.leader_8$"
  
  veru.5000.leader_8.tooltip: "\n§Y[leader_8.GetName]'s§! §BBio§! - \n§LLength of Service§!: §Y[leader_8.GetYearsOfService]§! \n§LHomeworld§!: §Y[leader_8.GetBackgroundPlanet]§! in the §Y[leader_1.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[leader_8.GetBackgroundJob]§! \n§LSkill Level§!: §Y[leader_8.GetSkill]§!"
  veru.5000.leader_8.effect_desc: "§Y[leader_8.GetName]§! $leader_install_effect_end$"
@@ -289,11 +295,12 @@ l_spanish:
  veru.5000.leader_9.effect_desc: "§Y[leader_9.GetName]§! $leader_install_effect_end$"
  
  veru.5000.leader_10: "§Y[leader_10.GetName]§!: Age - [leader_10.GetAge] | [leader_10.HasEthicIcon]"
-  veru.5000.leader_10.heir: "§H[leader_10.owner.GetHeirTitle]§! $veru.5000.leader_10$"
+ veru.5000.leader_10.heir: "§H[leader_10.owner.GetHeirTitle]§! $veru.5000.leader_10$"
  veru.5000.leader_10.councilor: "§H[leader_10.GetTitle]§! $veru.5000.leader_10$"
 
  veru.5000.leader_10.tooltip: "\n§Y[leader_10.GetName]'s§! §BBio§! - \n§LLength of Service§!: §Y[leader_10.GetYearsOfService]§! \nHomeworld:  §Y[leader_10.GetBackgroundPlanet]§! in the §Y[leader_1.background_planet.solar_system.GetName]§! system \n§LFormer Occupation§!: §Y[leader_10.GetBackgroundJob]§! \n§LSkill Level§!: §Y[leader_10.GetSkill]§!"
  veru.5000.leader_10.effect_desc: "§Y[leader_10.GetName]§! $leader_install_effect_end$"
+
 
  ##### Loyalty Events
  # Release
@@ -416,6 +423,16 @@ l_spanish:
  veru.6700.relocation_planet_19: "§Y[event_target:relocation_planet_19.GetName]§!"
  veru.6700.relocation_planet_20: "§Y[event_target:relocation_planet_20.GetName]§!"
 
+ veru.7002.name: "Service Type for [target.GetName]"
+ veru.7002.desc: "What type of vassal should §Y[target.GetName]§! be after they have been devolved?"
+
+ veru.7001.name: "Government of [target.GetName]"
+ veru.7001.desc: "What will the new governmening structure of §Y[target.GetName]§! be?"
+
+ veru.7005.name: "Devolution of [new_ps_country.capital_scope.GetName] Complete"
+ veru.7005.desc: "The devolution of §Y[new_ps_country.capital_scope.GetName]§! into the §H[new_ps_country.GetName]§! is complete. Do we want to select one of our leaders to serve as their §Y[new_ps_country.GetRulerTitle]§!?"
+ veru.7005.desc_2: "The devolution of §Y[new_ps_country.capital_scope.GetName]§! into the §H[new_ps_country.GetName]§! is complete."
+
  ####################
  # Contracts
 
@@ -492,7 +509,7 @@ l_spanish:
  resource_subsidies_ver_research: "$research$"
  resource_subsidies_ver_zro: "$sr_zro$"
  resource_subsidies_ver_dark_matter: "$sr_dark_matter$"
- resource_subsidies_ver_metals: "$sr_living_metal$ & $nanites$"
+ resource_subsidies_ver_metals: "Advanced Metals"
  resource_subsidies_ver_trade: "$concept_trade$"
  resource_subsidies_ver_hidden_unity: "$concept_unity$"
 
@@ -502,7 +519,6 @@ l_spanish:
  veru_tree_of_life_fail: "Due to this subject relying on their §YTree of Life§!, their capital cannot be relocated."
 
  NAME_capital_solar_system: "[root.capital_scope.solar_system.GetName]"
-
  
  subject_ver_foederatus_effect: "$preset_ver_foederatus$"
  subject_ver_satellite_effect: "$preset_ver_satellite$"
@@ -520,6 +536,7 @@ l_spanish:
  subject_ver_hidden_resources: "Special Resources"
 
  ver_extra_subject: "$MODIFIER$\n$RESOURCES$"
+ ver_extra_overlord: "$MODIFIER$\n$RESOURCES$"
 
  ver_foederatus_extra_subject: "$MODIFIER$"
  ver_foederatus_extra_overlord: "$MODIFIER$"
@@ -536,7 +553,6 @@ l_spanish:
  ver_clientkingdom_subject: "$MODIFIER$"
  ver_clientkingdom_overlord: "$MODIFIER$"
 
- ver_devolved_extra_subject: "Monthly: £influence£ §R-0.5§!"
  ver_devolved_extra_overlord: "Monthly: £influence£ §G+0.5§!\n$MODIFIER$"
 
  ver_condo_extra_subject: "$MODIFIER$"
@@ -598,7 +614,7 @@ l_spanish:
 
  not_allowed_for_megacorp: "$TRIGGER_FAIL$Not allowed for §YMegacorps§!."
 
- not_allowed_for_gestalt: "$TRIGGER_FAIL$Not allowed for a §Y$ethic_gestalt_consciousness$§!."
+ not_allowed_for_lt: "$TRIGGER_FAIL$Not allowed for a §Y$ethic_lt_consciousness$§!."
 
  not_allowed_for_term_subject_wars: "$TRIGGER_FAIL$Not allowed for §YSubject Conflict§! terms §Y$joins_subject_wars_offensive$§! or §Y$joins_subject_wars_all$§!."
  not_allowed_for_term_subject_diplomacy: "$TRIGGER_FAIL$Not allowed for §YDiplomatic Freedom§! terms §Y$subject_can_do_diplomacy$§! or §Y$subject_can_do_diplomacy_but_not_vote$§!."
@@ -609,15 +625,52 @@ l_spanish:
  NAME_veru_buffer_war: "[This.MainDefender.GetAdj] Client War"
 
  # Origin
- origin_planet_state: "Client State"
- origin_planet_state_desc: "This state was founded after another state reorganized part of their territory into an a client state."
+ origin_planet_state: "Planet-State"
+ origin_planet_state_desc: "This state was founded after another state reorganized part of their territory into a vassal state."
 
  # Decisions
- decision_create_planet_state: "Create Client State"
- decision_create_planet_state_desc: "We can create a client state out of this planet."
+ decision_create_planet_state: "Create Planet-State"
+ decision_create_planet_state_desc: "We can create a vassal out of this planet."
+ decision_create_planet_state_effects_short: "We can give this planet sovereignty over itself and its system."
+ decision_create_planet_state_effects: "We will begin the process of transferring control of §Y[this.GetName]§! and the §Y[this.solar_system.GetName]§! system to a newly created government."
 
- decision_affirm_planet_state: "Client State: §YFinish§! Creation"
- decision_affirm_planet_state_desc: "We will lose control of the planet and the entire system it is within to a newly created subject state."
+ situation_planet_state: "Devolution of §Y[target.GetName]§!"
+ situation_planet_state_type: "Devolution"
+ situation_planet_state_desc: "The administrators of §Y[target.GetName]§! are working on a plan for governance of the §Y[target.solar_system.GetName]§! system."
+ situation_planet_state_monthly_change_tooltip: "Plans for self-governance take time."
+#  situation_planet_state_desc_1: "The administrators of §Y[target.GetName]§! are working on implementing self-governance."
+#  situation_planet_state_desc_2: "The administrators of §Y[target.GetName]§! are working on a plan for governance of the §Y[target.solar_system.GetName]§! system."
+
+ situation_planet_state_completed_effect: "Control of §Y[this.target.GetName]§! and the §Y[this.target.solar_system.GetName]§! system will be transferred to a newly created government."
+ situation_planet_state_failed_effect: "The project to transfer control of §Y[this.target.GetName]§! and the §Y[this.target.solar_system.GetName]§! system to a new government will be scrapped."
+
+ planet_state_stage_1: "Self-Governance"
+ planet_state_stage_1_desc: "Details for self-governance are being worked out."
+
+ planet_state_stage_2: "Interstellar Relationship"
+ planet_state_stage_2_desc: "Details around the relationship between us and the new government are being discussed."
+
+ approach_planet_state_normal: "Normal"
+ approach_planet_state_normal_desc: "Plans for self-governnance are progressing as expected."
+ planet_state_normal_tooltip: "Plans for self-governnance will progress as expected."
+
+ approach_planet_state_rollback: "Cancel Devolution"
+ approach_planet_state_rollback_desc: "Plans for self-governnance are being rolled back."
+ planet_state_rollback_tooltip: "Plans for self-governnance will be rolled back."
+
+ planet_state_pop_req: "$TRIGGER_FAIL$Requires at least §Y1000§! £pop£ §HPops§! and for §G10%§! of §Ysentient§! £pop£ §HPops§! to be §Yunenslaved§!"
+ stability_help: "§GStability§!"
+ stability_interference: "§PStability§!"
+ stability_interference_2: "§RStability§!"
+ ps_separatists: "§RSeparatists§!"
+
+ decision_affirm_planet_state: "Planet-State: §BFinish§! Creation"
+ decision_affirm_planet_state_desc: "We will tranfer control of §Y[this.GetName]§! of the §Y[this.solar_system.GetName]§! system to a newly created planetary government."
+ decision_affirm_planet_state_effects_short: "We will give this planet sovereignty over itself and its system."
+ decision_affirm_planet_state_effects: "$decision_affirm_planet_state_desc$"
+
+ need_1000_pops: "$TRIGGER_FAIL$Requires at least §Y1000§! £pop£ §HPops§!."
+ planet_state_pop_group: "$TRIGGER_FAIL$Requires at least §G10%§! of §Ysentient§! £pop£ §HPops§! be §Yunenslaved§!"
 
  # Responses:
  WILL_FAIL: "You will fail."
@@ -634,3 +687,6 @@ l_spanish:
  benevolent_terms_desc:2 "Our subjects are as much part of us as we are of them, their success is our victory, and we shall move forward as one.\n\n§EInitial Vassal Agreement Terms:\n$t$$subject_can_not_be_integrated$\n$t$$subject_can_do_diplomacy$\n$t$$subject_can_expand$\n$t$$subject_ver_ruler_restricted$\n$t$$subject_ver_government_restricted$\n$t$$subject_ver_policy_restricted$\n$t$$subject_ver_naming_restricted$\n$t$$subject_ver_capital_restricted$\n$t$Joins Overlord Wars: Defensive\n$t$Joins Subject Wars: Defensive\n$t$$subject_ver_proxy_restricted$\n$t$Subject Holdings Limit: 1§!"
 
  preset_tributary_desc:0 "Tributaries are mostly independent. After a minimum period, they may stop paying tribute whenever they wish.\n\n§YTribute§!: §G25%§! £energy£ §HEnergy§! & £minerals£ §HMinerals§!\n§WSpecial Effects:§! \n§YSubject§!: Cannot have contract altered away from §HTributary§! and can stop paying tribute any time after §Y10§! years"
+
+ ## Scripted Loc Nonsense
+ vear_newline: "\n"

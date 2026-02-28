@@ -870,6 +870,7 @@ country_event = {
 			else = {
 				get_leaders_in_class = { CLASS = official } 
 			}
+			country_event = { id = veru.5100 }
 		}
 	}
 
@@ -911,6 +912,7 @@ country_event = {
 			else = {
 				get_leaders_in_class = { CLASS = commander } 
 			}
+			country_event = { id = veru.5100 }
 		}
 	}
 
@@ -952,6 +954,7 @@ country_event = {
 			else = {
 				get_leaders_in_class = { CLASS = scientist } 
 			}
+			country_event = { id = veru.5100 }
 		}
 	}
 
@@ -1066,7 +1069,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		from = { has_leader_flag = grateful_installed_vassal_leader_@this }
+		from = { has_leader_flag = grateful_installed_vassal_leader }
 		any_playable_country = { has_country_flag = vassal_installer_country_@from }
 	}
 
@@ -1468,6 +1471,10 @@ country_event = {
 		graphical_culture = event_target:chosen_subject
 		city_level = event_target:chosen_subject.capital_scope
 		room = event_target:chosen_subject.ruler
+	}
+
+	trigger = {
+		NOT = { event_target:chosen_subject = { has_country_flag = veru6400stop } }
 	}
 
 	# Choose one of their leaders
@@ -1883,4 +1890,477 @@ country_event = {
 
 	# Back
 	option = { name = veru.nevermind }
+}
+
+################
+# Planet-State Events
+
+## Government Type
+situation_event = {
+	id = veru.7001
+	title = veru.7001.name
+	desc = veru.7001.desc
+	picture = GFX_evt_striking_a_deal
+	location = target
+	hide_window = no
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_situation_flag = government_type_set }
+	}
+
+	immediate = {
+		set_situation_flag = government_type_set
+	}
+
+	option = {
+		name = veru.same_authority
+		hidden_effect = {
+			set_situation_flag = auth_root_flag
+		}
+	}
+
+	option = {
+		name = auth_democratic
+		trigger = {
+			owner = {
+				OR = {
+					is_authoritarian = no
+				}
+			}
+		}
+		hidden_effect = {
+			set_situation_flag = auth_democratic_flag
+		}
+	}
+
+	option = {
+		name = auth_oligarchic
+		trigger = {
+			owner = {
+				is_fanatic_egalitarian = no
+				is_fanatic_authoritarian = no
+			}
+		}
+		hidden_effect = {
+			set_situation_flag = auth_oligarchic_flag
+		}
+	}
+
+	option = {
+		name = auth_dictatorial
+		trigger = {
+			owner = {
+				OR = {
+					is_egalitarian = no
+				}
+			}
+		}
+		hidden_effect = {
+			set_situation_flag = auth_dictatorial_flag
+		}
+	}
+
+	option = {
+		name = auth_imperial
+		trigger = {
+			owner = {
+				OR = {
+					is_egalitarian = no
+				}
+			}
+		}
+		hidden_effect = {
+			set_situation_flag = auth_imperial_flag
+		}
+	}
+
+	option = {
+		name = auth_corporate
+		trigger = {
+			owner = {
+				is_fanatic_egalitarian = no
+				is_fanatic_authoritarian = no
+			}
+		}
+		hidden_effect = {
+			set_situation_flag = auth_corporate_flag
+		}
+	}
+
+	option = {
+		name = auth_corporate_imperial
+		trigger = { has_ecaf_mod = yes owner = { is_egalitarian = no } }
+		hidden_effect = {
+			set_situation_flag = auth_corporate_imperial_flag
+		}
+	}
+
+	option = {
+		name = auth_strict_democratic
+		trigger = { has_ecaf_mod = yes owner = { is_egalitarian = yes } }
+		hidden_effect = {
+			set_situation_flag = auth_strict_democratic_flag
+		}
+	}
+
+	option = {
+		name = auth_dict_democratic
+		trigger = {
+			has_ecaf_mod = yes
+			owner = {
+				is_fanatic_egalitarian = no
+				is_fanatic_authoritarian = no
+			}
+		}
+		hidden_effect = {
+			set_situation_flag = auth_dict_democratic_flag
+		}
+	}
+
+	option = {
+		name = auth_bugged_corporate_imperial
+		trigger = { has_bug_branch = yes }
+		hidden_effect = {
+			set_situation_flag = auth_bugged_corporate_imperial_flag
+		}
+	}
+
+	option = {
+		name = auth_bugged_corporate_democratic
+		trigger = { has_bug_branch = yes }
+		hidden_effect = {
+			set_situation_flag = auth_bugged_corporate_democratic_flag
+		}
+	}
+
+	option = {
+		name = auth_direct_democratic
+		trigger = { OR = { has_bug_branch = yes any_playable_country = { is_ecc_direct_democracy = yes } } }
+		hidden_effect = {
+			if = {
+				limit = { has_bug_branch = yes }
+				set_situation_flag = auth_bugged_direct_democratic_flag
+			}
+			else = {
+				set_situation_flag = auth_direct_democratic_flag
+			}
+		}
+	}
+}
+
+## Vassal Type
+situation_event = {
+	id = veru.7002
+	title = veru.7002.name
+	desc = veru.7002.desc
+	picture = GFX_evt_two_sided_deal
+	location = target
+	hide_window = no
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_situation_flag = vassal_type_set }
+	}
+
+	immediate = {
+		set_situation_flag = vassal_type_set
+	}
+
+	option = {
+		name = veru.remain_vassal
+		hidden_effect = {
+			set_situation_flag = ver_vassal_flag
+		}
+	}
+
+	option = {
+		name = preset_ver_foederatus
+		trigger = { owner = { ver_foederatus_reqs = { OL = root.owner } } }
+		hidden_effect = {
+			set_situation_flag = ver_foederatus_flag
+		}
+	}
+
+	option = {
+		name = preset_ver_satellite
+		trigger = { owner = { ver_satellite_reqs = { OL = root.owner } } }
+		hidden_effect = {
+			set_situation_flag = ver_satellite_flag
+		}
+	}
+
+	option = {
+		name = preset_ver_jrpartner
+		trigger = { owner = { ver_jrpartner_reqs = { OL = root.owner } } }
+		hidden_effect = {
+			set_situation_flag = ver_jrpartner_flag
+		}
+	}
+
+	option = {
+		name = preset_ver_dependency
+		trigger = { owner = { ver_dependency_reqs = { OL = root.owner } } }
+		hidden_effect = {
+			set_situation_flag = ver_dependency_flag
+		}
+	}
+
+	option = {
+		name = preset_ver_clientkingdom
+		trigger = {
+			owner = { ver_clientkingdom_reqs = { OL = root.owner } }
+			OR = {
+				has_situation_flag = auth_imperial_flag
+				has_situation_flag = auth_dictatorial_flag
+				has_situation_flag = auth_corporate_imperial_flag
+				has_situation_flag = auth_bugged_corporate_imperial_flag
+			}
+		}
+		hidden_effect = {
+			set_situation_flag = ver_clientkingdom_flag
+		}
+	}
+
+	option = {
+		name = preset_ver_devolved
+		trigger = { owner = { ver_devolved_reqs = { OL = root.owner } } }
+		hidden_effect = {
+			set_situation_flag = ver_devolved_flag
+		}
+	}
+
+	# option = {
+	# 	name = preset_ver_condo
+	# 	trigger = { always = no }
+	# 	# trigger = { owner = { ver_condo_reqs = { OL = root.owner } } }
+	# 	hidden_effect = {
+	# 		set_situation_flag = ver_condo_flag
+	# 	}
+	# }
+
+	option = {
+		name = preset_ver_puppet
+		trigger = { owner = { ver_puppet_reqs = { OL = root.owner } } }
+		hidden_effect = {
+			set_situation_flag = ver_puppet_flag
+		}
+	}
+
+	option = {
+		name = preset_ver_neocolony
+		trigger = { owner = { ver_neocolony_reqs = { OL = root.owner } } }
+		hidden_effect = {
+			set_situation_flag = ver_neocolony_flag
+		}
+	}
+
+	option = {
+		name = preset_ver_blood
+		trigger = {
+			owner = { ver_blood_reqs = { OL = root.owner } }
+			NOR = {
+				has_situation_flag = auth_democratic_flag
+				has_situation_flag = auth_bugged_corporate_democratic_flag
+			}
+		}
+		hidden_effect = {
+			set_situation_flag = ver_blood_flag
+		}
+	}
+
+	option = {
+		name = preset_ver_appendage
+		trigger = { owner = { ver_appendage_reqs = { OL = root.owner } } }
+		hidden_effect = {
+			set_situation_flag = ver_appendage_flag
+		}
+	}
+
+	option = {
+		name = preset_ver_organic
+		trigger = { owner = { ver_organic_reqs = { OL = root.owner } } }
+		hidden_effect = {
+			set_situation_flag = ver_organic_flag
+		}
+	}
+
+	option = {
+		name = preset_ver_parallel
+		trigger = { owner = { ver_parallel_reqs = { OL = root.owner } } }
+		hidden_effect = {
+			set_situation_flag = ver_parallel_flag
+		}
+	}
+}
+
+## Devolution Finished, Install Leader?
+country_event = {
+	id = veru.7005
+	title = veru.7005.name
+	# desc = veru.7005.desc
+	picture = GFX_evt_signing
+	location = event_target:new_ps_country.capital_scope
+	hide_window = no
+	is_triggered_only = yes
+
+	desc = {
+		text = veru.7005.desc
+		trigger = { num_owned_leaders > 2 }
+	}
+
+	desc = {
+		text = veru.7005.desc_2
+		trigger = { num_owned_leaders < 2 }
+	}
+
+	# diplomatic = yes
+
+	# picture_event_data = {
+	# 	portrait = root.ruler
+	# 	planet_background = event_target:new_ps_country.capital_scope
+	# 	graphical_culture = event_target:new_ps_country
+	# 	city_level = event_target:new_ps_country
+	# 	room = event_target:new_ps_country.ruler
+	# }
+
+	immediate = {
+		event_target:new_ps_country = { save_event_target_as = chosen_subject }
+	}
+
+	option = {
+		name = veru.they_remain
+		trigger = { num_owned_leaders > 2 }
+	}
+
+	option = {
+		name = GOOD
+		trigger = { num_owned_leaders < 2 }
+	}
+
+	# Choose one of our Officials
+	option = {
+		name = veru.5000.official.ours
+		trigger = {
+			num_owned_leaders > 2
+			count_owned_leader = {
+				count > 0 
+				limit = {
+					is_ruler = no
+					leader_class = official 
+				}
+			}
+		}
+		hidden_effect = {
+			get_leaders_in_class = { CLASS = official } 
+			country_event = { id = veru.7006 }
+		}
+	}
+
+	# Choose one of our Commanders
+	option = {
+		name = veru.5000.commander.ours
+		trigger = {
+			num_owned_leaders > 2
+			count_owned_leader = {
+				count > 0 
+				limit = {
+					is_ruler = no
+					leader_class = commander 
+				}
+			}
+		}
+		hidden_effect = {
+			get_leaders_in_class = { CLASS = commander } 
+			country_event = { id = veru.7006 }
+		}
+	}
+
+	# Choose one of our Scientists
+	option = {
+		name = veru.5000.scientist.ours
+		trigger = {
+			num_owned_leaders > 2
+			count_owned_leader = {
+				count > 0 
+				limit = {
+					is_ruler = no
+					leader_class = scientist 
+				}
+			}
+		}
+		hidden_effect = {
+			get_leaders_in_class = { CLASS = scientist } 
+			country_event = { id = veru.7006 }
+		}
+	}
+
+}
+
+# Choose Leader
+country_event = {
+	id = veru.7006
+	title = veru.6400.name
+	desc = veru.6510.desc
+	location = event_target:chosen_subject.capital_scope
+	hide_window = no
+	is_triggered_only = yes
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = root.ruler
+		planet_background = event_target:new_ps_country.capital_scope
+		graphical_culture = event_target:new_ps_country
+		city_level = event_target:new_ps_country
+		room = event_target:new_ps_country.ruler
+	}
+
+	# Maybe a different class
+	option = {
+		name = veru.another_class
+		hidden_effect = {
+			country_event = { id = veru.7005 }
+		}
+	}
+
+	option = {
+		inline_script = { script = events/install_leader_option_ps NUM = 1 }
+	}
+
+	option = {
+		inline_script = { script = events/install_leader_option_ps NUM = 2 }
+	}
+
+	option = {
+		inline_script = { script = events/install_leader_option_ps NUM = 3 }
+	}
+
+	option = {
+		inline_script = { script = events/install_leader_option_ps NUM = 4 }
+	}
+
+	option = {
+		inline_script = { script = events/install_leader_option_ps NUM = 5 }
+	}
+
+	option = {
+		inline_script = { script = events/install_leader_option_ps NUM = 6 }
+	}
+
+	option = {
+		inline_script = { script = events/install_leader_option_ps NUM = 7 }
+	}
+
+	option = {
+		inline_script = { script = events/install_leader_option_ps NUM = 8 }
+	}
+
+	option = {
+		inline_script = { script = events/install_leader_option_ps NUM = 9 }
+	}
+
+	option = {
+		inline_script = { script = events/install_leader_option_ps NUM = 10 }
+	}
 }

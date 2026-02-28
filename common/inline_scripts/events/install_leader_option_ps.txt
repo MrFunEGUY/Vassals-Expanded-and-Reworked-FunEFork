@@ -1,0 +1,58 @@
+name = {
+	text = veru.5000.leader_$NUM$.heir
+	trigger = { event_target:leader_$NUM$ = { is_heir = yes } }
+}
+name = {
+	text = veru.5000.leader_$NUM$.councilor
+	trigger = {
+		event_target:leader_$NUM$ = {
+			is_heir = no
+			is_councilor = yes
+		}
+	}
+}
+name = {
+	text = veru.5000.leader_$NUM$
+	trigger = {
+		event_target:leader_$NUM$ = {
+			is_heir = no
+			is_councilor = no
+		}
+	}
+}
+trigger = {
+	check_variable = { which = total_class_leaders value >= $NUM$ }
+}
+custom_tooltip = veru.5000.leader_$NUM$.effect_desc
+custom_tooltip = veru.5000.leader_$NUM$.tooltip
+hidden_effect = {
+	event_target:leader_$NUM$ = { save_event_target_as = chosen_leader }
+	event_target:chosen_leader = { set_leader_flag = grateful_installed_vassal_leader }
+	event_target:chosen_subject = {
+		set_leader = event_target:chosen_leader
+		add_opinion_modifier = {
+			who = prev
+			modifier = opinion_installed_as_vassal_leader
+		}
+	}
+	set_country_flag = vassal_installer_country_@event_target:chosen_leader
+	if = {
+		limit = {
+			exists = heir
+			heir = { is_same_value = event_target:chosen_leader }
+		}
+		create_leader = {
+			class = random_ruler
+			event_leader = yes
+			species = owner_main_species
+			name = random
+			effect = {
+				set_leader_flag = dummy_leader
+				save_event_target_as = dummy_heir
+			}
+		}
+		set_heir = event_target:dummy_heir
+		event_target:dummy_heir = { kill_leader = { show_notification = no } }
+	}
+}
+ai_chance = { factor = 1 }

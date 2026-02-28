@@ -370,8 +370,6 @@ get_leaders_in_class = {
 	if = {
 		inline_script = { script = effects/get_leaders_class_effect NUM = 10 }
 	}
-
-	root = { country_event = { id = veru.5100 } }
 }
 
 # Remove All Civics 
@@ -477,31 +475,31 @@ vear_install_leader_effect = {
 				cooldown = no
 			}
 		}
+
 		if = {
 			limit = { event_target:chosen_leader = { is_owned_by = event_target:chosen_subject } }
 			random = {
 				chance = 30
-				ruler = { set_leader_flag = grateful_installed_vassal_leader_@this }
+				event_target:chosen_leader = { set_leader_flag = grateful_installed_vassal_leader }
 				add_opinion_modifier = {
 					who = prev
 					modifier = opinion_installed_as_vassal_leader
 				}
-				prev = { set_country_flag = vassal_installer_country_@event_target:chosen_subject.ruler }
 			}
 		}
 		else = {
-			ruler = { set_leader_flag = grateful_installed_vassal_leader_@this }
+			event_target:chosen_leader = { set_leader_flag = grateful_installed_vassal_leader }
 			add_opinion_modifier = {
 				who = prev
 				modifier = opinion_installed_as_vassal_leader
 			}
 		}
 		
-	}
-	set_country_flag = vassal_installer_country_@event_target:chosen_subject.ruler
-	event_target:chosen_subject = {
+		#####
 		set_leader = event_target:chosen_leader
-
+	}
+	set_country_flag = vassal_installer_country_@event_target:chosen_leader
+	event_target:chosen_subject = {
 		if = {
 			limit = { exists = heir }
 			if = {
@@ -772,5 +770,33 @@ get_relocation_planets = {
 	}
 	if = {
 		inline_script = { script = effects/get_relocation_planet_effect NUM = 20 }
+	}
+}
+
+create_ps_country = {
+	create_country = {
+		name = random
+		type = default
+		species = event_target:planet_state_species
+		ignore_initial_colony_error = yes
+		day_zero_contact = no
+		origin = origin_planet_state
+		civics = event_target:mother_country
+		flag = random
+		authority = $PS_AUTH$
+		ethos = event_target:mother_country
+		effect = {
+			save_event_target_as = new_ps_country
+			establish_communications_no_message = event_target:mother_country
+		}
+	}
+}
+
+choose_ps_vassal_type = {
+	event_target:new_ps_country = {
+		set_subject_of = {
+			who = root
+			preset = preset_$PRESET$
+		}
 	}
 }

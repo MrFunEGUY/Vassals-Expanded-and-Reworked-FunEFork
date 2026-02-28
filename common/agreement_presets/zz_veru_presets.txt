@@ -152,20 +152,21 @@ preset_ver_foederatus = {
 	}
 
 	potential = {
-		is_tributary = no
-		is_protectorate = no
-		from = {
-			is_gestalt = no
-			NOR = {
-				is_country_type = awakened_fallen_empire
-				has_civic = civic_inwards_perfection
-			}
-		}
-		NOT = { has_civic = civic_inwards_perfection }
-		tech_unlocked_ratio = {
-			who = from
-			ratio >= @protectorate_tech_threshold
-		}
+		ver_foederatus_reqs = { OL = from }
+		# is_tributary = no
+		# is_protectorate = no
+		# from = {
+		# 	is_gestalt = no
+		# 	NOR = {
+		# 		is_country_type = awakened_fallen_empire
+		# 		has_civic = civic_inwards_perfection
+		# 	}
+		# }
+		# NOT = { has_civic = civic_inwards_perfection }
+		# tech_unlocked_ratio = {
+		# 	who = from
+		# 	ratio >= @protectorate_tech_threshold
+		# }
 	}
 }
 
@@ -293,19 +294,20 @@ preset_ver_satellite = {
 	}
 
 	potential = {
-		is_tributary = no
-		is_protectorate = no
-		from = {
-			is_gestalt = no
-			NOR = {
-				is_country_type = awakened_fallen_empire
-				has_civic = civic_inwards_perfection
-			}
-		}
-		tech_unlocked_ratio = {
-			who = from
-			ratio >= @protectorate_tech_threshold
-		}
+		ver_satellite_reqs = { OL = from }
+		# is_tributary = no
+		# is_protectorate = no
+		# from = {
+		# 	is_gestalt = no
+		# 	NOR = {
+		# 		is_country_type = awakened_fallen_empire
+		# 		has_civic = civic_inwards_perfection
+		# 	}
+		# }
+		# tech_unlocked_ratio = {
+		# 	who = from
+		# 	ratio >= @protectorate_tech_threshold
+		# }
 	}
 }
 
@@ -425,20 +427,21 @@ preset_ver_jrpartner = {
 	}
 
 	potential = {
-		is_tributary = no
-		is_protectorate = no
-		from = {
-			# is_gestalt = no
-			NOR = {
-				is_country_type = awakened_fallen_empire
-				has_civic = civic_inwards_perfection
-			}
-		}
-		NOT = { has_civic = civic_inwards_perfection }
-		tech_unlocked_ratio = {
-			who = from
-			ratio >= @protectorate_tech_threshold
-		}
+		ver_jrpartner_reqs = { OL = from }
+		# is_tributary = no
+		# is_protectorate = no
+		# from = {
+		# 	# is_gestalt = no
+		# 	NOR = {
+		# 		is_country_type = awakened_fallen_empire
+		# 		has_civic = civic_inwards_perfection
+		# 	}
+		# }
+		# NOT = { has_civic = civic_inwards_perfection }
+		# tech_unlocked_ratio = {
+		# 	who = from
+		# 	ratio >= @protectorate_tech_threshold
+		# }
 	}
 }
 
@@ -556,21 +559,22 @@ preset_ver_dependency = {
 	}
 
 	potential = {
-		is_gestalt = no
-		is_tributary = no
-		is_protectorate = no
-		from = {
-			is_gestalt = no
-			NOR = {
-				is_country_type = awakened_fallen_empire
-				has_civic = civic_inwards_perfection
-			}
-		}
-		NOT = { has_civic = civic_inwards_perfection }
-		tech_unlocked_ratio = {
-			who = from
-			ratio >= @protectorate_tech_threshold
-		}
+		ver_dependency_reqs = { OL = from }
+		# is_gestalt = no
+		# is_tributary = no
+		# is_protectorate = no
+		# from = {
+		# 	is_gestalt = no
+		# 	NOR = {
+		# 		is_country_type = awakened_fallen_empire
+		# 		has_civic = civic_inwards_perfection
+		# 	}
+		# }
+		# NOT = { has_civic = civic_inwards_perfection }
+		# tech_unlocked_ratio = {
+		# 	who = from
+		# 	ratio >= @protectorate_tech_threshold
+		# }
 	}
 }
 
@@ -682,21 +686,22 @@ preset_ver_clientkingdom = {
 	}
 
 	potential = {
-		is_gestalt = no
-		is_tributary = no
-		is_protectorate = no
-		from = {
-			is_gestalt = no
-			NOR = {
-				is_country_type = awakened_fallen_empire
-				has_civic = civic_inwards_perfection
-			}
-		}
-		NOT = { has_civic = civic_inwards_perfection }
-		tech_unlocked_ratio = {
-			who = from
-			ratio >= @protectorate_tech_threshold
-		}
+		ver_clientkingdom_reqs = { OL = from }
+		# is_gestalt = no
+		# is_tributary = no
+		# is_protectorate = no
+		# from = {
+		# 	is_gestalt = no
+		# 	NOR = {
+		# 		is_country_type = awakened_fallen_empire
+		# 		has_civic = civic_inwards_perfection
+		# 	}
+		# }
+		# NOT = { has_civic = civic_inwards_perfection }
+		# tech_unlocked_ratio = {
+		# 	who = from
+		# 	ratio >= @protectorate_tech_threshold
+		# }
 	}
 }
 
@@ -801,17 +806,18 @@ preset_ver_devolved = {
 	}
 
 	potential = {
-		is_gestalt = no
-		is_tributary = no
-		is_protectorate = no
-		from = {
-			is_gestalt = no
-			NOT = { is_country_type = awakened_fallen_empire }
-		}
-		tech_unlocked_ratio = {
-			who = from
-			ratio >= @protectorate_tech_threshold
-		}
+		ver_devolved_reqs = { OL = from }
+		# is_gestalt = no
+		# is_tributary = no
+		# is_protectorate = no
+		# from = {
+		# 	is_gestalt = no
+		# 	NOT = { is_country_type = awakened_fallen_empire }
+		# }
+		# tech_unlocked_ratio = {
+		# 	who = from
+		# 	ratio >= @protectorate_tech_threshold
+		# }
 	}
 }
 
@@ -930,36 +936,37 @@ preset_ver_condo = {
 	}
 
 	potential = {
-		is_gestalt = no
-		is_tributary = no
-		is_protectorate = no
-		any_system_within_border = { # Must be bordering someone not associated with your Overlord
-			closest_system = {
-				limit = {
-					exists = space_owner
-					space_owner = {
-						NOR = {
-							has_overlord = from
-							is_same_value = from
-						}
-					}
-				}
-				use_bypasses = yes
-				max_steps = 1
-			}
-		}
-		from = {
-			# is_gestalt = no
-			NOR = {
-				is_country_type = awakened_fallen_empire
-				has_civic = civic_inwards_perfection
-			}
-		}
-		NOT = { has_civic = civic_inwards_perfection }
-		tech_unlocked_ratio = {
-			who = from
-			ratio >= @protectorate_tech_threshold
-		}
+		ver_condo_reqs = { OL = from }
+		# is_gestalt = no
+		# is_tributary = no
+		# is_protectorate = no
+		# any_system_within_border = { # Must be bordering someone not associated with your Overlord
+		# 	closest_system = {
+		# 		limit = {
+		# 			exists = space_owner
+		# 			space_owner = {
+		# 				NOR = {
+		# 					has_overlord = from
+		# 					is_same_value = from
+		# 				}
+		# 			}
+		# 		}
+		# 		use_bypasses = yes
+		# 		max_steps = 1
+		# 	}
+		# }
+		# from = {
+		# 	# is_gestalt = no
+		# 	NOR = {
+		# 		is_country_type = awakened_fallen_empire
+		# 		has_civic = civic_inwards_perfection
+		# 	}
+		# }
+		# NOT = { has_civic = civic_inwards_perfection }
+		# tech_unlocked_ratio = {
+		# 	who = from
+		# 	ratio >= @protectorate_tech_threshold
+		# }
 	}
 }
 
@@ -1067,21 +1074,22 @@ preset_ver_puppet = {
 	}
 
 	potential = {
-		is_gestalt = no
-		is_tributary = no
-		is_protectorate = no
-		from = {
-			# is_gestalt = no
-			NOR = {
-				is_country_type = awakened_fallen_empire
-				has_civic = civic_inwards_perfection
-			}
-		}
-		NOT = { has_civic = civic_inwards_perfection }
-		tech_unlocked_ratio = {
-			who = from
-			ratio >= @protectorate_tech_threshold
-		}
+		ver_puppet_reqs = { OL = from }
+		# is_gestalt = no
+		# is_tributary = no
+		# is_protectorate = no
+		# from = {
+		# 	# is_gestalt = no
+		# 	NOR = {
+		# 		is_country_type = awakened_fallen_empire
+		# 		has_civic = civic_inwards_perfection
+		# 	}
+		# }
+		# NOT = { has_civic = civic_inwards_perfection }
+		# tech_unlocked_ratio = {
+		# 	who = from
+		# 	ratio >= @protectorate_tech_threshold
+		# }
 	}
 }
 
@@ -1204,21 +1212,22 @@ preset_ver_neocolony = {
 	}
 
 	potential = {
-		is_gestalt = no
-		is_tributary = no
-		is_protectorate = no
-		from = {
-			is_gestalt = no
-			NOR = {
-				is_country_type = awakened_fallen_empire
-				has_civic = civic_inwards_perfection
-			}
-		}
-		NOT = { has_civic = civic_inwards_perfection }
-		tech_unlocked_ratio = {
-			who = from
-			ratio >= @protectorate_tech_threshold
-		}
+		ver_neocolony_reqs = { OL = from }
+		# is_gestalt = no
+		# is_tributary = no
+		# is_protectorate = no
+		# from = {
+		# 	is_gestalt = no
+		# 	NOR = {
+		# 		is_country_type = awakened_fallen_empire
+		# 		has_civic = civic_inwards_perfection
+		# 	}
+		# }
+		# NOT = { has_civic = civic_inwards_perfection }
+		# tech_unlocked_ratio = {
+		# 	who = from
+		# 	ratio >= @protectorate_tech_threshold
+		# }
 	}
 }
 
@@ -1321,32 +1330,29 @@ preset_ver_blood = {
 	}
 
 	potential = {
-		is_gestalt = no
-		is_tributary = no
-		is_protectorate = no
-		from = {
-			is_gestalt = no
-			OR = {
-				is_death_cult_empire = yes
-				has_ver_blood_civic = yes
-			}
-		}
-		OR = {
-			from = { NOT = { any_subject = { is_ver_blood = yes } } }
-			AND = {
-				from = {
-					count_subject = {
-						count = 1
-						limit = { is_ver_blood = yes }
-					}
-				}
-				is_ver_blood = yes
-			}	
-		}
-		tech_unlocked_ratio = {
-			who = from
-			ratio >= @protectorate_tech_threshold
-		}
+		ver_blood_reqs = { OL = from }
+		# is_gestalt = no
+		# is_tributary = no
+		# is_protectorate = no
+		# from = {
+		# 	is_gestalt = no
+		# 	OR = {
+		# 		is_death_cult_empire = yes
+		# 		has_ver_blood_civic = yes
+		# 	}
+		# }
+		# OR = {
+		# 	from = { NOT = { any_subject = { is_ver_blood = yes } } }
+		# 	AND = {
+		# 		from = {
+		# 			count_subject = {
+		# 				count = 1
+		# 				limit = { is_ver_blood = yes }
+		# 			}
+		# 		}
+		# 		is_ver_blood = yes
+		# 	}	
+		# }
 	}
 }
 
@@ -1436,13 +1442,14 @@ preset_ver_appendage = {
 	}
 
 	potential = {
-		is_tributary = no
-		is_protectorate = no
-		from = { is_gestalt = yes }
-		tech_unlocked_ratio = {
-			who = from
-			ratio >= @protectorate_tech_threshold
-		}
+		ver_appendage_reqs = { OL = from }
+		# is_tributary = no
+		# is_protectorate = no
+		# from = { is_gestalt = yes }
+		# tech_unlocked_ratio = {
+		# 	who = from
+		# 	ratio >= @protectorate_tech_threshold
+		# }
 	}
 }
 
@@ -1530,17 +1537,18 @@ preset_ver_organic = {
 	}
 
 	potential = {
-		is_machine_empire = no
-		is_tributary = no
-		is_protectorate = no
-		from = {
-			is_machine_empire = yes
-			NOT = { has_valid_civic = civic_machine_servitor }
-		}
-		tech_unlocked_ratio = {
-			who = from
-			ratio >= @protectorate_tech_threshold
-		}
+		ver_organic_reqs = { OL = from }
+		# is_machine_empire = no
+		# is_tributary = no
+		# is_protectorate = no
+		# from = {
+		# 	is_machine_empire = yes
+		# 	NOT = { has_valid_civic = civic_machine_servitor }
+		# }
+		# tech_unlocked_ratio = {
+		# 	who = from
+		# 	ratio >= @protectorate_tech_threshold
+		# }
 	}
 }
 
@@ -1633,13 +1641,14 @@ preset_ver_parallel = {
 	}
 
 	potential = {
-		is_machine_empire = yes
-		is_tributary = no
-		is_protectorate = no
-		from = { is_machine_empire = yes }
-		tech_unlocked_ratio = {
-			who = from
-			ratio >= @protectorate_tech_threshold
-		}
+		ver_parallel_reqs = { OL = from }
+		# is_machine_empire = yes
+		# is_tributary = no
+		# is_protectorate = no
+		# from = { is_machine_empire = yes }
+		# tech_unlocked_ratio = {
+		# 	who = from
+		# 	ratio >= @protectorate_tech_threshold
+		# }
 	}
 }
