@@ -124,6 +124,17 @@ action_invite_to_federation = {
 		# Shared Borders
 		get_border_test = yes
 	}
+
+	on_accept = {
+		hidden_effect = {
+			country_event = { # Patron Objective Counter: po_establish_diplomatic_pact
+				id = shroud.10400
+				scopes = {
+					from = from
+				}
+			}
+		}
+	}
 }
 
 # Form a research agreement with another empire
